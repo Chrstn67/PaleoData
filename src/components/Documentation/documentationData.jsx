@@ -118,6 +118,37 @@ const documentationData = [
         illustration: './assets/images_doc/fossiles/Coelophysis_fossile.jpg',
         alt: 'Fossile de Coelophysis',
       },
+      {
+        notion: 'Big Al',
+        explications:
+          "Découvert en 1991, ce squelette du dinosaure (nommé Allosaurus jimmadseni en 2020) a été retrouvé complet à 95%. <br /> Mesurant 8 mètres de long, il est possible que ce dinosaure n'ait pas atteint sa taille adulte au moment de sa mort. <br />Le squelette présente 19 os brisés ou montrant des signes d’infection qui pourrait avoir contribué à sa mort. <br /> Parmi les os atteints se trouvent cinq côtes, cinq vertèbres et quatre os du pied; plusieurs os endommagés montrent des signes d’ostéomyélite, une infection osseuse dûe à une bactérie présente de le sang et s'attaquant aux os longs. L’animal était probablement très gêné par l’infection au pied droit pour marcher et cela a peut-être aussi prédisposé l’autre pied à des blessures. <br /> Les os brisés peuvent être dû à des bagarres entre congénères ou causées par des proies se défendant contre Big Al. <br /><br /> Big Al a droit à un documentaire produit par la BBC.",
+        illustration: './assets/images_doc/fossiles/BigAl.jpg',
+        alt: 'Squelette de Big Al exposé au Museum of the Rockies, Bozeman, Montana.',
+      },
+      // {
+      //   notion: '',
+      //   explications: '',
+      //   illustration: '',
+      //   alt: '',
+      // },
+      // {
+      //   notion: '',
+      //   explications: '',
+      //   illustration: '',
+      //   alt: '',
+      // },
+      // {
+      //   notion: '',
+      //   explications: '',
+      //   illustration: '',
+      //   alt: '',
+      // },
+      // {
+      //   notion: '',
+      //   explications: '',
+      //   illustration: '',
+      //   alt: '',
+      // },
       // {
       //   notion: '',
       //   explications: '',
