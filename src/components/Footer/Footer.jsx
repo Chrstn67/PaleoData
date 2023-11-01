@@ -11,7 +11,7 @@ const Footer = () => {
         <p>
           &copy; {currentYear} PaleoData. Tous droits réservés. <Link to="/mentions-legales">Mentions légales</Link>
         </p>
-        <img src="Logo.png" alt="Logo développeur" />
+        <img src="Logo.jpg" alt="Logo développeur" />
       </div>
     </footer>
   );
