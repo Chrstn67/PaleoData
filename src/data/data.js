@@ -5614,7 +5614,7 @@ const data = [
   },
   {
     nom: 'Sarcosuchus',
-    etymologie: 'Crocodule de chair',
+    etymologie: 'Crocodile de chair',
     image_url: './assets/images/Sarcosuchus.jpeg',
     taxonomie: {
       regne: 'Animalia',
