@@ -114,7 +114,7 @@ const documentationData = [
       {
         notion: 'Coelophysis',
         explications:
-          "Ce fossile de Coelophysis adulte présente une étranche particularité: à l'emplacement de son estomac, on y voit un squelette plus petit de Coelophysis. Ce squelette est trop gros pour être un fœtus. La seule explication plausible est que Coelophysis devait être cannibale.",
+          "Ce fossile de Coelophysis adulte présente une étrange particularité: à l'emplacement de son estomac, on y voit un squelette plus petit de Coelophysis. Ce squelette est trop gros pour être un fœtus. La seule explication plausible est que Coelophysis devait être cannibale.",
         illustration: './assets/images_doc/fossiles/Coelophysis_fossile.jpg',
         alt: 'Fossile de Coelophysis',
       },
