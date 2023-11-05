@@ -23,6 +23,7 @@ function EtymoPage() {
     { root: '-archus', meaning: 'maître' },
     { root: '-long', meaning: 'dragon' },
     { root: '-cera-', meaning: 'corne' },
+    { root: '-caris', meaning: 'crevette' },
   ];
 
   etymologyData.sort((a, b) => a.root.replace('-', '').localeCompare(b.root.replace('-', '')));
