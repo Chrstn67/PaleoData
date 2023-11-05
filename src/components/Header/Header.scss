@@ -1,6 +1,41 @@
 header {
   text-align: center;
   padding: 1em;
-  background-color: #000;
+  background-color: #272286;
   color: #fff;
+  margin-bottom: 0.5em;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0.5em;
+
+    img {
+      width: 7em;
+      height: 7em;
+      margin-right: 1em;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0.5em;
+    }
+
+    p {
+      margin: 0.5em;
+    }
+  }
+
+  @media (max-width: 900px) {
+    div {
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        margin-bottom: 1em;
+      }
+    }
+  }
 }

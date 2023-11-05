@@ -4,8 +4,11 @@ import './Header.scss';
 function Header() {
   return (
     <header className="Header">
-      <h1>PaleoData</h1>
-      <p>Venez faire un safari préhistorique à la rencontre d'animaux ayant peuplé notre Terre !</p>
+      <div>
+        <img src="Logo-site.jpg" alt="Logo du site PaleoData" />
+        <h1>PaleoData</h1>
+        <p>Un safari préhistorique à la rencontre d'animaux ayant peuplé notre Terre !</p>
+      </div>
       <NavBar />
     </header>
   );
