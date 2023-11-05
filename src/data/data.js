@@ -4378,7 +4378,7 @@ const data = [
       extinction: '-100 Ma',
     },
     description:
-      "Ornithocheirus n'est connu que par des fragments de mâchoire. Au bout de son bec se trouvait une crête de forme bi-convexe, comme des demi-lunes. On a longtmeps pensé que ce ptérosaure était le plus grand n'ayant jamais existé. En réalité, il entre la catégorie des ptérosaures de taille moyenne, son envergure ayant été exagérément calculée.",
+      "Ornithocheirus n'est connu que par des fragments de mâchoire. Au bout de son bec se trouvait une crête de forme bi-convexe, comme des demi-lunes. On a longtemps pensé que ce ptérosaure était le plus grand n'ayant jamais existé. En réalité, il entre la catégorie des ptérosaures de taille moyenne, son envergure ayant été exagérément calculée entre 12 et 14 mètres.",
     autres_infos: {
       taille: {
         longueur: '2 mètres',
