@@ -16,6 +16,7 @@ function EtymoPage() {
     { root: '-raptor', meaning: 'voleur' },
     { root: '-mimus', meaning: 'imitateur' },
     { root: 'ornitho-', meaning: 'oiseau' },
+    { root: '-ornis', meaning: 'oiseau' },
     { root: '-pleur-', meaning: 'côté' },
     { root: '-arthro-', meaning: 'articulé' },
     { root: '-avis', meaning: 'oiseau' },
@@ -24,6 +25,8 @@ function EtymoPage() {
     { root: '-long', meaning: 'dragon' },
     { root: '-cera-', meaning: 'corne' },
     { root: '-caris', meaning: 'crevette' },
+    { root: 'pro-', meaning: 'premier' },
+    { root: 'micro-', meaning: 'petit' },
   ];
 
   etymologyData.sort((a, b) => a.root.replace('-', '').localeCompare(b.root.replace('-', '')));
