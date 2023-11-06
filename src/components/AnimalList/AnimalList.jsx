@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import { BsFillShareFill } from 'react-icons/bs';
 import './AnimalList.scss';
 
 const AnimalList = ({ data }) => {
@@ -82,6 +84,15 @@ const AnimalList = ({ data }) => {
 
   const toggleMoreFilters = () => {
     setShowMoreFilters(!showMoreFilters);
+  };
+
+  const copyToClipboard = (url) => {
+    const textField = document.createElement('textarea');
+    textField.innerText = url;
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand('copy');
+    document.body.removeChild(textField);
   };
 
   return (
@@ -189,6 +200,15 @@ const AnimalList = ({ data }) => {
                 <img src={animal.image_url} alt={animal.nom} />
                 <h3>{animal.nom}</h3>
               </Link>
+              <button
+                type="button"
+                onClick={() => {
+                  const animalUrl = `${window.location.origin}/animal/${encodeURIComponent(animal.nom)}`;
+                  copyToClipboard(animalUrl);
+                }}
+              >
+                <BsFillShareFill size={20} />
+              </button>
             </li>
           ))}
         </ul>
