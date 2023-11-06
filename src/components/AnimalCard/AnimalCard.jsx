@@ -24,8 +24,6 @@ const AnimalCard = ({ data }) => {
     return '';
   };
 
-  const taxonEntries = Object.entries(animal.taxonomie).filter(([_, value]) => value !== '');
-
   const imageUrl = `${animal.image_url}`;
 
   return (
@@ -35,7 +33,7 @@ const AnimalCard = ({ data }) => {
 
       <div>
         <h3>Etymologie</h3>
-        <p>{animal.etymologie}</p>
+        {animal.etymologie && <p>{animal.etymologie}</p>}
       </div>
 
       {animal.description && (
@@ -51,6 +49,7 @@ const AnimalCard = ({ data }) => {
           <p>{animal.regime_alimentaire}</p>
         </div>
       )}
+
       {animal.habitat && (
         <div>
           <h3>Habitat</h3>
@@ -82,12 +81,12 @@ const AnimalCard = ({ data }) => {
           )}
           {animal.geologie.apparition && (
             <p>
-              <span>Apparition:</span> {animal.geologie.apparition}
+              <span>Apparition:</span> {animal.geologie.apparition} Ma
             </p>
           )}
           {animal.geologie.extinction && (
             <p>
-              <span>Extinction:</span> {animal.geologie.extinction}
+              <span>Extinction:</span> {animal.geologie.extinction} Ma
             </p>
           )}
         </div>
@@ -139,19 +138,22 @@ const AnimalCard = ({ data }) => {
         </div>
       )}
 
-      {taxonEntries.length > 0 && (
+      {Object.entries(animal.taxonomie).length > 0 && (
         <div className="taxon">
           <h3>Taxonomie</h3>
           <table>
             <tbody>
-              {taxonEntries.map(([key, value]) => (
-                <tr key={key}>
-                  <td>
-                    <span>{formatTaxonName(key)}:</span>
-                  </td>
-                  <td>{value}</td>
-                </tr>
-              ))}
+              {Object.entries(animal.taxonomie).map(
+                ([key, value]) =>
+                  value && (
+                    <tr key={key}>
+                      <td>
+                        <span>{formatTaxonName(key)}:</span>
+                      </td>
+                      <td>{value}</td>
+                    </tr>
+                  ),
+              )}
             </tbody>
           </table>
         </div>
