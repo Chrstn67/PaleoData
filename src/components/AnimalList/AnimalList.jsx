@@ -86,36 +86,22 @@ const AnimalList = ({ data }) => {
     setShowMoreFilters(!showMoreFilters);
   };
 
-  const [showModal, setShowModal] = useState(false);
-  const [copiedAnimal, setCopiedAnimal] = useState(null);
-
-  const copyToClipboard = (url, animal) => {
-    const textField = document.createElement('textarea');
-    textField.innerText = url;
-    document.body.appendChild(textField);
-    textField.select();
-    document.execCommand('copy');
-    document.body.removeChild(textField);
-
-    setCopiedAnimal(animal);
-    setShowModal(true);
-
-    setTimeout(() => {
-      setShowModal(false);
-    }, 4000);
+  const shareLink = async (animal) => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `Partage les informations de ${animal.nom} avec tes amis`,
+          text: `Partage les informations de ${animal.nom} avec tes amis`,
+          url: `${window.location.origin}/PaleoData/#/animal/${encodeURIComponent(animal.nom)}`,
+        });
+      } catch (error) {
+        console.error('Erreur lors du partage :', error);
+      }
+    }
   };
 
   return (
     <>
-      {showModal && (
-        <div className="modal">
-          <p>
-            Partage les informations de {copiedAnimal && `${copiedAnimal.nom}`} à tes amis en leur envoyant le lien
-            copié.
-          </p>
-        </div>
-      )}
-
       <section className="search-option">
         <input type="text" placeholder="Rechercher par nom" value={searchQuery} onChange={handleSearchChange} />
 
@@ -221,8 +207,7 @@ const AnimalList = ({ data }) => {
               <button
                 type="button"
                 onClick={() => {
-                  const animalUrl = `${window.location.origin}/PaleoData/#/animal/${encodeURIComponent(animal.nom)}`;
-                  copyToClipboard(animalUrl, animal);
+                  shareLink(animal);
                 }}
               >
                 <BiShareAlt size={20} />
