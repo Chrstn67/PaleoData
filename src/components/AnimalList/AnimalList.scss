@@ -84,7 +84,7 @@
     }
 
     li {
-      background-color: rgba(143, 143, 97, 0.4784313725);
+      background-color: #75553f7e;
       outline: 1px solid #ddd;
       border-radius: 0.5rem;
       padding: 1rem;
@@ -100,7 +100,7 @@
 
       &:hover {
         color: #fff;
-        background-color: #74af99ab;
+        background-color: #75553fb6;
         transform: perspective(500px) rotateX(7deg) rotateY(7deg);
       }
 
