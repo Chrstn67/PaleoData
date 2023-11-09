@@ -57,6 +57,27 @@
   }
 }
 
+.modal {
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: auto;
+  background-color: #75553fc9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  p {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
 .animal-listing {
   ul {
     background: linear-gradient(

@@ -86,19 +86,37 @@ const AnimalList = ({ data }) => {
     setShowMoreFilters(!showMoreFilters);
   };
 
-  const copyToClipboard = (url) => {
+  const [showModal, setShowModal] = useState(false);
+  const [copiedAnimal, setCopiedAnimal] = useState(null);
+
+  const copyToClipboard = (url, animal) => {
     const textField = document.createElement('textarea');
     textField.innerText = url;
     document.body.appendChild(textField);
     textField.select();
     document.execCommand('copy');
     document.body.removeChild(textField);
+
+    setCopiedAnimal(animal);
+    setShowModal(true);
+
+    setTimeout(() => {
+      setShowModal(false);
+    }, 4000);
   };
 
   return (
     <>
+      {showModal && (
+        <div className="modal">
+          <p>
+            Partage les informations de {copiedAnimal && `${copiedAnimal.nom}`} à tes amis en leur envoyant le lien
+            copié.
+          </p>
+        </div>
+      )}
+
       <section className="search-option">
-        {/* Barre de recherche */}
         <input type="text" placeholder="Rechercher par nom" value={searchQuery} onChange={handleSearchChange} />
 
         <button onClick={toggleMoreFilters} type="button">
@@ -204,7 +222,7 @@ const AnimalList = ({ data }) => {
                 type="button"
                 onClick={() => {
                   const animalUrl = `${window.location.origin}/PaleoData/#/animal/${encodeURIComponent(animal.nom)}`;
-                  copyToClipboard(animalUrl);
+                  copyToClipboard(animalUrl, animal);
                 }}
               >
                 <BiShareAlt size={20} />
