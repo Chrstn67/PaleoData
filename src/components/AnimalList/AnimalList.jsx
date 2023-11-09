@@ -93,7 +93,6 @@ const AnimalList = ({ data }) => {
           title: `Découvre des informations sur ${animal.nom}.`,
           text: `Découvre des informations sur ${animal.nom}.`,
           url: `${window.location.origin}/PaleoData/#/animal/${encodeURIComponent(animal.nom)}`,
-          icon: animal.image_url,
         });
       } catch (error) {
         console.error('Erreur lors du partage :', error);
