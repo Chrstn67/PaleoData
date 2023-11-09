@@ -91,7 +91,7 @@ const AnimalList = ({ data }) => {
       try {
         await navigator.share({
           title: `Découvre des informations sur ${animal.nom}.`,
-          text: `Partage les informations de ${animal.nom} avec tes amis`,
+          text: `Découvre des informations sur ${animal.nom}.`,
           url: `${window.location.origin}/PaleoData/#/animal/${encodeURIComponent(animal.nom)}`,
         });
       } catch (error) {
