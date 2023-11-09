@@ -59,6 +59,11 @@ const AnimalCard = ({ data }) => {
       {animal.geologie && (
         <div>
           <h3>Geologie</h3>
+          {animal.geologie.apparition && (
+            <p>
+              <span>Apparition:</span> {animal.geologie.apparition} Ma
+            </p>
+          )}
           {animal.geologie.ere && (
             <p>
               <span>Ère:</span> {animal.geologie.ere}
@@ -79,11 +84,7 @@ const AnimalCard = ({ data }) => {
               <span>Étage:</span> {animal.geologie.etage}
             </p>
           )}
-          {animal.geologie.apparition && (
-            <p>
-              <span>Apparition:</span> {animal.geologie.apparition} Ma
-            </p>
-          )}
+
           {animal.geologie.extinction && (
             <p>
               <span>Extinction:</span> {animal.geologie.extinction} Ma

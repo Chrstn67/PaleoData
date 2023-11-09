@@ -9,7 +9,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <p>
-          &copy; {currentYear} PaleoData. Tous droits réservés. <Link to="/mentions-legales">Mentions légales</Link>
+          &copy; {currentYear} PaleoData. Tous droits réservés. <br />{' '}
+          <Link to="/mentions-legales">Mentions légales</Link>
         </p>
         <img src="Logo.jpg" alt="Logo développeur" />
       </div>

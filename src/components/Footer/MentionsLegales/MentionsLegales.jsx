@@ -5,10 +5,10 @@ function MentionsLegales() {
       <main className="mentions">
         <p>
           1 - Édition du site : En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans
-          l'économie numérique, il est précisé aux utilisateurs du site internet
-          https://chrstn67.github.io/PaleoData/#//#/ l'identité des différents intervenants dans le cadre de sa
-          réalisation et de son suivi: Propriétaire du site : Christian HUMBERT - Contact : chrstn.hmbrt67@outlook.com -
-          Hébergeur : GitHub
+          l'économie numérique, il est précisé aux utilisateurs du site internet https://chrstn67.github.io/PaleoData/#/
+          l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi: Propriétaire du site :
+          Christian HUMBERT - Contact : <i>chrstn.hmbrt67@outlook.com</i> ou <i>paleodata@outlook.com</i> - Hébergeur :
+          GitHub
         </p>
 
         <p>
