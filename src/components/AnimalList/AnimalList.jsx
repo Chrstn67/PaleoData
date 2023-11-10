@@ -30,8 +30,8 @@ const AnimalList = ({ data }) => {
         animal.nom.toLowerCase().includes(searchQuery.toLowerCase()) &&
         (filters.diet === '' ||
           (animal.regime_alimentaire && animal.regime_alimentaire.toLowerCase() === filters.diet.toLowerCase())) &&
-        (filters.habitat === '' ||
-          (animal.habitat && animal.habitat.toLowerCase() === filters.habitat.toLowerCase())) &&
+        // (filters.habitat === '' ||
+        //   (animal.habitat && animal.habitat.toLowerCase() === filters.habitat.toLowerCase())) &&
         (filters.geologyEra === '' ||
           (animal.geologie &&
             animal.geologie.ere &&
@@ -70,7 +70,7 @@ const AnimalList = ({ data }) => {
   const resetFilters = () => {
     setFilters({
       diet: '',
-      habitat: '',
+      // habitat: '',
       geologyEra: '',
       geologyPeriod: '',
       geologyEpoch: '',
@@ -123,7 +123,7 @@ const AnimalList = ({ data }) => {
               </select>
             </div>
 
-            <div>
+            {/* <div>
               <label>Filtrer par habitat: </label>
               <select onChange={(e) => handleFilterChange('habitat', e.target.value)} value={filters.habitat}>
                 <option value="">Tous</option>
@@ -134,7 +134,7 @@ const AnimalList = ({ data }) => {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
             <div>
               <label>Filtrer par ère géologique: </label>
               <select onChange={(e) => handleFilterChange('geologyEra', e.target.value)} value={filters.geologyEra}>

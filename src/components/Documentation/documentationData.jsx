@@ -28,7 +28,8 @@ const documentationData = [
     data: [
       {
         notion: 'Georges Cuvier (1769-1832)',
-        explications: 'Georges Cuvier est le fondateur de la paléontologie des vertébrés.',
+        explications:
+          "Georges Cuvier est le fondateur de la paléontologie des vertébrés. Il avait émis l'hypothèse que certains fossiles pouvaient appartenir à des espèces animales disparues et en particulier à des reptiles.",
         illustration: './assets/images_doc/paleontologues/Georges_Cuvier.jpg',
         alt: 'Portrait de Georges Cuvier',
       },
@@ -125,12 +126,14 @@ const documentationData = [
         illustration: './assets/images_doc/fossiles/BigAl.jpg',
         alt: 'Squelette de Big Al exposé au Museum of the Rockies, Bozeman, Montana.',
       },
-      // {
-      //   notion: '',
-      //   explications: '',
-      //   illustration: '',
-      //   alt: '',
-      // },
+      {
+        notion: 'Mégalosaurus: Le premier fossile de dinosaure',
+        explications:
+          "C'est dans une carrière de l'Angleterre de 1676 qu'a été découvert le premier os appartenant à un dinosaure. Envoyé au conservateur Robert Plot, l'os trouvé était considéré comme un fossile d'un géant baptisé 'Scrotum Humanum' et fut le premier fossile de dinosaure à être dessiné dans la publications 'Histoire naturelle du comté d'Oxford', sans toutefois savoir qui s'agit là d'un dinosaure. <br /><br /> C'est seulement en 1824 que le paléontologue William Buckland identifia l'os en question comme celui d'une espèce disparue de reptile qui sera appelée plus tard 'Megalosaurus'. <br /> En combinant les recherches de plusieurs paléontologues avant lui, tel que Georges Cuvier, Buckland rassembla plusieurs os longs, des vertèbres et une mâchoire arborant encore plusieurs dents comprimées et tranchantes trouvés dans les carrières. Buckland suppose que les os qu'il a rassemblés ont appartenu à un lézard géant éteint. Il reçoit la visite de Cuvier en 1818 et lui montre les os énormes qu'il collectionne. En 1824, Buckland donne à l'animal disparu le nom scientifique 'Megalosaurus'. Dans les années 1830, on imagine Megalosaurus comme une sorte de lézard géant d'environ 30 mètres de long et on le représente avec des pattes courtes, marchant avec le ventre au ras du sol. <br /> Durant les années 1840 et sous l'influence du paléontologue Richad Owen, la conception du Megalosaurus, et des dinosaures en général, change : on commence à les représenter non plus avec des pattes courbées et écartées de chaque côté du ventre comme celles des lézards et des crocodiles, mais avec des membres verticaux sous le corps, ce qui redresse nettement leur silhouette. <br /><br /> En 2016, aucun squelette complet de Megalosaurus n'a encore été retrouvé; aucun fossile notable du crâne de Megalosaurus n'est venu compléter ce que Buckland avait déjà décrit de cette partie de son squelette.",
+        illustration: './assets/images_doc/fossiles/premiere_representation_megalosaurus.jpeg',
+        alt: 'Premiere représentation de Megalosaurus',
+        video: 'https://www.youtube.com/watch?v=VG75p7e6bIY',
+      },
       // {
       //   notion: '',
       //   explications: '',

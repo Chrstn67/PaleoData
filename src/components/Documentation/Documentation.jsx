@@ -47,6 +47,19 @@ const Documentation = ({ documentationData }) => {
                   <summary>{item.notion}</summary>
                   <p dangerouslySetInnerHTML={{ __html: item.explications.replace(/<br\s*[/]?>/gi, '<br />') }} />
                   <img src={item.illustration} alt={item.alt} />
+
+                  {item.video && (
+                    <div className="video-container">
+                      <iframe
+                        title="Video"
+                        width="560"
+                        height="315"
+                        src={item.video.replace('watch?v=', 'embed/')}
+                        frameBorder="0"
+                        allowFullScreen
+                      />
+                    </div>
+                  )}
                 </details>
               ))}
           </section>
