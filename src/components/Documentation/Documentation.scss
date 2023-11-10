@@ -77,6 +77,16 @@ details {
   }
 
   @media (max-width: 768px) {
+    .video-container {
+      padding-bottom: 75%;
+    }
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
     h3 {
       font-size: 1.2rem;
     }

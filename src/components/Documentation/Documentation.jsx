@@ -51,7 +51,7 @@ const Documentation = ({ documentationData }) => {
                   {item.video && (
                     <div className="video-container">
                       <iframe
-                        title="Video"
+                        title="Les précieux fossiles du tout premier dinosaure jamais décrit: Mégalosaurus"
                         width="560"
                         height="315"
                         src={item.video.replace('watch?v=', 'embed/')}
