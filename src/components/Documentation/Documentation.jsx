@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { BiShareAlt } from 'react-icons/bi';
 import './Documentation.scss';
 
 const Documentation = ({ documentationData }) => {
@@ -25,6 +26,23 @@ const Documentation = ({ documentationData }) => {
     );
   });
 
+  const shareNotion = (notion) => {
+    const shareURL = `https://chrstn67.github.io/PaleoData/#/documentation?notion=${encodeURIComponent(notion)}`;
+    if (navigator.share) {
+      navigator
+        .share({
+          title: `Découvre des informations concernant ${notion}.`,
+          text: `Découvre des informations concernant ${notion}.`,
+          url: shareURL,
+        })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing:', error));
+    } else {
+      // Fallback for browsers that do not support Web Share API
+      window.location.href = shareURL;
+    }
+  };
+
   return (
     <section>
       <div className="search-notions">
@@ -44,14 +62,24 @@ const Documentation = ({ documentationData }) => {
               )
               .map((item, index) => (
                 <details key={index}>
-                  <summary>{item.notion}</summary>
+                  <summary>
+                    {item.notion}{' '}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        shareNotion(item.notion);
+                      }}
+                    >
+                      <BiShareAlt size={20} />
+                    </button>
+                  </summary>
                   <p dangerouslySetInnerHTML={{ __html: item.explications.replace(/<br\s*[/]?>/gi, '<br />') }} />
                   <img src={item.illustration} alt={item.alt} />
 
                   {item.video && (
                     <div className="video-container">
                       <iframe
-                        title="Les précieux fossiles du tout premier dinosaure jamais décrit: Mégalosaurus"
+                        title="Title"
                         width="560"
                         height="315"
                         src={item.video.replace('watch?v=', 'embed/')}

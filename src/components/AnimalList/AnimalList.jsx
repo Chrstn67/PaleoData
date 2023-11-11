@@ -9,7 +9,7 @@ const AnimalList = ({ data }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState({
     diet: '',
-    habitat: '',
+    // habitat: '',
     geologyEra: '',
     geologyPeriod: '',
     geologyEpoch: '',
@@ -17,7 +17,7 @@ const AnimalList = ({ data }) => {
   });
 
   const uniqueDiets = new Set(data.map((animal) => animal.regime_alimentaire));
-  const uniqueHabitats = new Set(data.map((animal) => animal.habitat));
+  // const uniqueHabitats = new Set(data.map((animal) => animal.habitat));
   const uniqueGeologyEras = new Set(data.map((animal) => animal.geologie.ere));
   const uniqueGeologyPeriods = new Set(data.map((animal) => animal.geologie.periode));
   const uniqueGeologyEpochs = new Set(data.map((animal) => animal.geologie.epoque));
