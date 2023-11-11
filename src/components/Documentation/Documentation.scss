@@ -44,23 +44,6 @@ details {
   summary {
     font-size: 1.2rem;
     color: $primary-color;
-    position: relative;
-
-    button {
-      background-color: #75553f;
-      color: #fff;
-      outline: none;
-      border: none;
-      border-radius: 0.5rem;
-      padding: 0.5em;
-      font-size: 0.5em;
-      cursor: pointer;
-      transition: background-color 0.2s;
-
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
   }
 
   p {

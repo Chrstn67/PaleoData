@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { BiShareAlt } from 'react-icons/bi';
 import './Documentation.scss';
 
 const Documentation = ({ documentationData }) => {
@@ -31,8 +30,8 @@ const Documentation = ({ documentationData }) => {
     if (navigator.share) {
       navigator
         .share({
-          title: `Découvre des informations concernant ${notion}.`,
-          text: `Découvre des informations concernant ${notion}.`,
+          title: 'Share Notion',
+          text: `Check out this notion: ${notion}`,
           url: shareURL,
         })
         .then(() => console.log('Successful share'))
@@ -62,17 +61,7 @@ const Documentation = ({ documentationData }) => {
               )
               .map((item, index) => (
                 <details key={index}>
-                  <summary>
-                    {item.notion}{' '}
-                    <button
-                      type="button"
-                      onClick={() => {
-                        shareNotion(item.notion);
-                      }}
-                    >
-                      <BiShareAlt size={20} />
-                    </button>
-                  </summary>
+                  <summary>{item.notion}</summary>
                   <p dangerouslySetInnerHTML={{ __html: item.explications.replace(/<br\s*[/]?>/gi, '<br />') }} />
                   <img src={item.illustration} alt={item.alt} />
 
@@ -88,6 +77,8 @@ const Documentation = ({ documentationData }) => {
                       />
                     </div>
                   )}
+
+                  <button onClick={() => shareNotion(item.notion)}>Share Notion</button>
                 </details>
               ))}
           </section>
