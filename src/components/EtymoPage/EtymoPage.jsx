@@ -10,7 +10,7 @@ function EtymoPage() {
     { root: '-don', meaning: 'dent' },
     { root: '-pis', meaning: 'écaille' },
     { root: 'pter-', meaning: 'aile' },
-    { root: '-ceratops', meaning: 'visage cornu' },
+    { root: '-tops', meaning: 'visage' },
     { root: '-dactyl', meaning: 'doigt' },
     { root: '-titan-', meaning: 'géant' },
     { root: '-raptor', meaning: 'voleur' },
@@ -27,6 +27,8 @@ function EtymoPage() {
     { root: '-caris', meaning: 'crevette' },
     { root: 'pro-', meaning: 'premier' },
     { root: 'micro-', meaning: 'petit' },
+    { root: 'drepan-', meaning: 'faucille' },
+    { root: '-pelta', meaning: 'bouclier' },
   ];
 
   etymologyData.sort((a, b) => a.root.replace('-', '').localeCompare(b.root.replace('-', '')));
