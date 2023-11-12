@@ -25,23 +25,6 @@ const Documentation = ({ documentationData }) => {
     );
   });
 
-  const shareNotion = (notion) => {
-    const shareURL = `https://chrstn67.github.io/PaleoData/#/documentation?notion=${encodeURIComponent(notion)}`;
-    if (navigator.share) {
-      navigator
-        .share({
-          title: 'Share Notion',
-          text: `Check out this notion: ${notion}`,
-          url: shareURL,
-        })
-        .then(() => console.log('Successful share'))
-        .catch((error) => console.log('Error sharing:', error));
-    } else {
-      // Fallback for browsers that do not support Web Share API
-      window.location.href = shareURL;
-    }
-  };
-
   return (
     <section>
       <div className="search-notions">
@@ -77,8 +60,6 @@ const Documentation = ({ documentationData }) => {
                       />
                     </div>
                   )}
-
-                  <button onClick={() => shareNotion(item.notion)}>Share Notion</button>
                 </details>
               ))}
           </section>

@@ -43,14 +43,14 @@ const documentationData = [
       {
         notion: 'Mary Anning (1799-1847)',
         explications:
-          "Sa famille pauvre vendait des fossiles sur les marchés. Les fossiles proviennent des falaises proches de Lyme Regis, composées de roches sédimentaires déposées en milieu marin au début du Jurassique, il y a environ 200 millions d’années. So frère Joseph découvre le crâne d’un grand reptile, le reste du squelette étant trouvé par Mary l’année suivante. Étudié par des savants de l'époque, il s'est avéré qu'il s'agissait d'un reptil marin dont le nom donné est Ichthyosaurus. À la suite de cette découverte, Mary Anning acquiert une renommée certaine en tant que chercheuse de fossiles.",
+          "Sa famille pauvre vendait des fossiles sur les marchés. Les fossiles proviennent des falaises proches de Lyme Regis, composées de roches sédimentaires déposées en milieu marin au début du Jurassique, il y a environ 200 millions d’années. So frère Joseph découvre le crâne d’un grand reptile, le reste du squelette étant trouvé par Mary l’année suivante. Étudié par des savants de l'époque, il s'est avéré qu'il s'agissait d'un reptile marin dont le nom donné est Ichthyosaurus. À la suite de cette découverte, Mary Anning acquiert une renommée certaine en tant que chercheuse de fossiles.",
         illustration: './assets/images_doc/paleontologues/Mary_Anning.jpg',
         alt: 'Portrait de Mary Anning',
       },
       {
         notion: "Alcide Dessalines d'Orbigny (1802-1857)",
         explications:
-          "Ce français a voyagé en Amérique deu Sud et a exploré ses contrées durant 8 ans de 1826 à 1834. Il se lance alors dans l'étude des fossiles ; son activité dans ce domaine est immense, surtout dans la description et l'identification de milliers d'espèces. On lui doit la connaissance de certains groupes peu connus alors, tel celui des foraminifères (eucaryotes unicellulaires du début du Cambrien).",
+          "Ce français a voyagé en Amérique du Sud et a exploré ses contrées durant 8 ans de 1826 à 1834. Il se lance alors dans l'étude des fossiles ; son activité dans ce domaine est immense, surtout dans la description et l'identification de milliers d'espèces. On lui doit la connaissance de certains groupes peu connus alors, tel celui des foraminifères (eucaryotes unicellulaires du début du Cambrien).",
         illustration: './assets/images_doc/paleontologues/Alcide_Dessalines_dOrbigny.jpg',
         alt: "Portrait de Alcide Dessalines d'Orbigny",
       },
