@@ -7,7 +7,7 @@ function EtymoPage() {
     { root: 'archeo-', meaning: 'ancien' },
     { root: '-suchus', meaning: 'crocodile' },
     { root: '-saurus', meaning: 'lézard' },
-    { root: '-don', meaning: 'dent' },
+    { root: '-odon', meaning: 'dent' },
     { root: '-pis', meaning: 'écaille' },
     { root: 'pter-', meaning: 'aile' },
     { root: '-tops', meaning: 'visage' },
