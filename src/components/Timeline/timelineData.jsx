@@ -65,13 +65,15 @@ const timelineData = [
             name: 'Miaolingien',
             epochStart: -509,
             epochEnd: -497,
-            epochInfo: 'Infos à venir :) ',
+            epochInfo:
+              "Autrefois appelé 'Acadien', puis 'Série 3' ou 'Cambrien moyen', le Miaolingien est la troisième période du Cambrien. Elle se distingue par l'existence de nouvelles espèces de trilobites. Son nom vient des montagnes de Mioling situées en Chine où ont été retrouvée des traces de cette époque et des 3 étages la composant.",
             stage: [
               {
                 name: 'Wuliuen',
                 stageStart: -509,
                 stageEnd: -504.5,
-                stageInfo: 'Infos à venir :) ',
+                stageInfo:
+                  "Baptisé ainsi en 2018, le Wulien est le premier étage du Miaolingien. La 'pointe d'or' qui définit formellement la base de la période est enfoncée dans la section Wuliu-Zengjiayan de la formation de Kaili, près du village de Balang dans les montagnes de Miaoling, Guizhou, Chine.",
               },
               {
                 name: 'Drumien',
