@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { BiShareAlt } from 'react-icons/bi';
 import './AnimalCard.scss';
 
 const AnimalCard = ({ data }) => {
@@ -26,8 +27,30 @@ const AnimalCard = ({ data }) => {
 
   const imageUrl = `${animal.image_url}`;
 
+  const shareLink = async (animal) => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `Découvre des informations sur ${animal.nom}.`,
+          text: `Découvre des informations sur ${animal.nom}.`,
+          url: `${window.location.origin}/PaleoData/#/animal/${encodeURIComponent(animal.nom)}`,
+        });
+      } catch (error) {
+        console.error('Erreur lors du partage :', error);
+      }
+    }
+  };
+
   return (
     <div className="animal-card">
+      <button
+        type="button"
+        onClick={() => {
+          shareLink(animal);
+        }}
+      >
+        <BiShareAlt size={20} />
+      </button>
       <h2>{animal.nom}</h2>
       <img src={imageUrl} alt={animal.nom} />
 
