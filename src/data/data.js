@@ -7589,7 +7589,7 @@ const data = [
       extinction: '-63',
     },
     description:
-      "Purgatorius reste mal connu du fait de la rareté des fossiles découverts à ce jour. Seuls quelques fragments de mandibules et de maxillaires et des canines et molaires isolées ont été exhumés. Purgatorius avait probablement le même aspect qu'un rat ou un petit écureuil. Grâce à ses mœurs semi-arboricoles, permises par des chevilles très mobiles, il devait être aussi à l'aise dans les arbres que sur la terre ferme.",
+      "Purgatorius reste mal connu du fait de la rareté des fossiles découverts à ce jour. Seuls quelques fragments de mâchoire et des dents isolées (canines et molaires) ont été exhumés. Purgatorius avait probablement le même aspect qu'un rat ou un petit écureuil. Grâce à ses mœurs semi-arboricoles, permises par des chevilles très mobiles, il devait être aussi à l'aise dans les arbres que sur la terre ferme.",
     autres_infos: {
       taille: {
         longueur: '15 centimètres',
