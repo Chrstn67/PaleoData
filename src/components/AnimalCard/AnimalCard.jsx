@@ -121,18 +121,18 @@ const AnimalCard = ({ data }) => {
           {animal.autres_infos.taille && (
             <>
               <p>
-                <span>Taille (Longueur): </span>
+                <span>Taille (Longueur): </span> <br />
                 {animal.autres_infos.taille.longueur}
               </p>
               {animal.autres_infos.taille.hauteur && (
                 <p>
-                  <span>Taille (Hauteur): </span>
+                  <span>Taille (Hauteur): </span> <br />
                   {animal.autres_infos.taille.hauteur}
                 </p>
               )}
               {animal.autres_infos.taille.envergure && (
                 <p>
-                  <span>Taille (Envergure): </span>
+                  <span>Taille (Envergure): </span> <br />
                   {animal.autres_infos.taille.envergure}
                 </p>
               )}
@@ -140,7 +140,8 @@ const AnimalCard = ({ data }) => {
           )}
           {animal.autres_infos.poids && (
             <p>
-              <span>Poids:</span> {animal.autres_infos.poids}
+              <span>Poids:</span> <br />
+              {animal.autres_infos.poids}
             </p>
           )}
         </div>
