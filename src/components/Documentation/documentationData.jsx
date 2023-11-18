@@ -180,12 +180,13 @@ const documentationData = [
         alt: 'Premiere représentation de Megalosaurus',
         video: 'https://www.youtube.com/watch?v=VG75p7e6bIY',
       },
-      // {
-      //   notion: '',
-      //   explications: '',
-      //   illustration: '',
-      //   alt: '',
-      // },
+      {
+        notion: 'Repenomamus vs Psittacosaurus',
+        explications:
+          "Il y a 125 millions d’années, un mammifère de la taille d’un opossum, Repenomamus robustus, et un dinosaure herbivore trois fois plus gros que lui, Psittacosaurus lujiatunensis, se livraient un combat à mort. Sauf que la proie n’est pas celle que l’on pourrait imaginer : tout porte à croire que c’est le plus petit qui a commencé la bataille ! <br /><br /> Repenomamus était même sur le point de l’emporter quand les deux animaux ont été soudainement ensevelis par une coulée de boue consécutive à des éruptions volcaniques. Le paléobiologiste Jordan Mallon, qui a réalisé l’étude explique : <br /> 'Le mammifère, juché sur le dos de son adversaire, lui attrape la mâchoire, le plaque au sol et lui mord les côtes'. <br /> Le chercheur balaie l’hypothèse d’un comportement charognard : le psittacosaure ne porte pas d’autres marques de morsure. C’est la première fois que le Repenomamus, déjà connu pour manger des bébés dinosaures, est identifié comme un prédateur. Une preuve que les mammifères ne vivaient pas tous dans l’ombre des terribles lézards…",
+        illustration: './assets/images_doc/fossiles/Repenomamus_vs_Psittacosaurus.jpeg',
+        alt: 'Fossile de la bataille entre Repenomamus robustus et Psittacosaurus lujiatunensis',
+      },
       // {
       //   notion: '',
       //   explications: '',
@@ -233,6 +234,13 @@ const documentationData = [
         alt: "Exemple de fossilisation d'un poisson",
       },
 
+      {
+        notion: 'Oeufs de dinosaures : Que sont-ils ?',
+        explications:
+          "Chez les reptiles, on distingue trois types d'oeufs différents. <br /><br /> D'abord, les oeufs à coquilles dures : <br /> Solides et minérales, elles sont principalement composées de carbonate de calcium. Ces oeufs sont courants chez les oiseaux et chez certains reptiles comme les tortues. <br /><br /> Ensuite, les coquilles molles : <br /> Flexibles, elles ne sont pas minéralisées contrairement aux coquilles dures. On les trouve chez certains reptiles modernes, tels que les lézards et les serpents, ainsi que chez certains mammifères comme les monotrèmes (ornithorynques, échidnés). Ces oeufs sont souvent déposés dans des environnements où la protection contre la dessiccation (le fait de dessécher, de faire évaporer l'humidité) n’est pas une préoccupation majeure. <br /><br /> Enfin, les coquille 'coriaces' : <br /> Elles sont plus épaisses et résistantes que les coquilles molles, mais elles ne sont pas aussi dures que les coquilles d’oeufs typiques. Souvent composées de différentes couches, notamment une couche mamillaire et une couche continue, on les retrouve chez certains dinosaures et reptiles anciens.",
+        illustration: '',
+        alt: '',
+      },
       // {
       //   notion: '',
       //   explications: '',
@@ -275,12 +283,19 @@ const documentationData = [
       //   illustration: '',
       //   alt: '',
       // },
-      // {
-      //   notion: '',
-      //   explications: '',
-      //   illustration: '',
-      //   alt: '',
-      // },
+    ],
+  },
+
+  {
+    section: 'Découvertes récentes',
+    data: [
+      {
+        notion: 'La reproduction des sauropodomorphes',
+        explications:
+          "Des paléontologues chinois rapportent la découverte de trois squelettes adultes et cinq couvées contenant des embryons d’un nouveau dinosaure du Jurassique inférieur du sud-ouest de la Chine. L’espèce concernée, désormais baptisée 'Qianlong shouhu', vivait il y a environ 200 à 193 millions d’années. Il intégrait le groupe des sauropodomorphes qui comprend les dinosaures herbivores à long cou. <br /><br /> Mesurant environ six mètres de long et pesant environ une tonne, cette créature ancienne offre des informations fascinantes sur la reproduction des sauropodomorphes. <br /><br /> Les fossiles, découverts dans la formation de Ziliujing, dans la province du Guizhou, présentent des caractéristiques intéressantes. Les embryons de Qianlong shouhu révèlent en effet des différences notables par rapport aux adultes, telles qu’un crâne plus long et un museau différent. <br /><br />Des analyses allométriques (méthodes d’analyse statistique qui examinent les relations entre les différentes parties d’un organisme en fonction de leur taille) suggèrent que les adultes étaient bipèdes, tandis que les bébés étaient probablement quadrupèdes. <br /> En ce qui concerne les oeufs, dont la coquille coriace mesurait de 70 à 200 μm, ils étaient relativement gros, avec une coquille calcaire inhabituellement épaisse formée de cônes mamillaires proéminents. Les chercheurs estiment que cette espèce pratiquait probablement la nidification coloniale, un comportement reproducteur similaire à d’autres sauropodomorphes.",
+        // illustration: './assets/images_doc/fossiles/.jpg',
+        // alt: '',
+      },
     ],
   },
 
