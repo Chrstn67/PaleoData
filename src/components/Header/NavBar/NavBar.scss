@@ -2,7 +2,17 @@
   background-color: #333;
   border-radius: 0.5em;
 
-  ul.nav-list {
+  .navbar__burger {
+    cursor: pointer;
+    display: none; // Masquer le burger menu par défaut sur les écrans larges
+    font-size: 1.5em;
+
+    @media screen and (max-width: 768px) {
+      display: block; // Afficher le burger menu sur les écrans étroits
+    }
+  }
+
+  .navbar__list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -10,6 +20,19 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+
+      width: 100%;
+      background-color: #5e5a5a77;
+      z-index: 1;
+      display: none;
+
+      &.show {
+        display: flex;
+      }
+    }
 
     li {
       position: relative;
@@ -58,11 +81,9 @@
       background-color: #ff990018;
       box-shadow: 0 0 30px #75553f;
     }
-  }
 
-  /* Responsive styles */
-  @media screen and (max-width: 768px) {
-    ul.nav-list {
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
       flex-direction: column;
 
       li {
