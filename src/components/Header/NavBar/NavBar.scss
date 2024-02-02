@@ -2,17 +2,17 @@
   background-color: #333;
   border-radius: 0.5em;
 
-  .navbar__burger {
+  .navbar-burger {
     cursor: pointer;
-    display: none; // Masquer le burger menu par défaut sur les écrans larges
+    display: none;
     font-size: 1.5em;
 
     @media screen and (max-width: 768px) {
-      display: block; // Afficher le burger menu sur les écrans étroits
+      display: block;
     }
   }
 
-  .navbar__list {
+  .navbar-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -38,7 +38,7 @@
       position: relative;
       padding: 1rem;
 
-      &:hover > .subnav {
+      &:hover {
         display: flex;
         flex-direction: column;
       }
@@ -49,28 +49,6 @@
 
         &:hover {
           color: #ff9900;
-        }
-      }
-
-      .subnav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #444;
-        width: 100%;
-        z-index: 1;
-
-        li {
-          padding: 0.5rem;
-
-          a {
-            color: white;
-
-            &:hover {
-              color: #ff9900;
-            }
-          }
         }
       }
     }
@@ -89,15 +67,6 @@
       li {
         padding: 0.5rem;
         position: relative;
-
-        .subnav {
-          position: static;
-          display: none;
-
-          li {
-            padding: 0.3rem;
-          }
-        }
 
         a {
           padding: 0.3rem;

@@ -1,10 +1,11 @@
-// ScrollToTopButton.jsx
+// BackButton.jsx
 import React, { useState, useEffect } from 'react';
-import './ScrollToTopButton.scss';
+import { useLocation } from 'react-router-dom';
+import './BackButton.scss';
 
-const ScrollToTopButton = () => {
+const BackButton = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
@@ -13,39 +14,26 @@ const ScrollToTopButton = () => {
 
     const progress = (scrollY / (bodyHeight - windowHeight)) * 100;
     setScrollProgress(progress);
-
-    if (scrollY > 100) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
-    <div className={`scroll-to-top-button ${isVisible ? 'show' : 'hide'}`}>
+    <div className={`back-button ${location.pathname !== '/' ? 'visible' : ''}`}>
       <div
         className="progress-circle"
-        style={{ background: `conic-gradient(#E7AD25 ${scrollProgress}%, transparent 0%)` }}
-        onClick={scrollToTop}
+        style={{ background: `conic-gradient(#ff66007a ${scrollProgress}%, transparent 0%)` }}
       >
-        <div className="arrow-up"></div>
+        <button onClick={() => window.history.back()}>&larr;</button>
       </div>
     </div>
   );
 };
 
-export default ScrollToTopButton;
+export default BackButton;
