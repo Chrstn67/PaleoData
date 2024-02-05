@@ -42,7 +42,7 @@ const ScrollToTopButton = () => {
         style={{ background: `conic-gradient(#E7AD25 ${scrollProgress}%, transparent 0%)` }}
         onClick={scrollToTop}
       >
-        <div className="arrow-up"></div>
+        <button type="button" className="arrow-up"></button>
       </div>
     </div>
   );

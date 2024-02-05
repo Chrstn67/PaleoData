@@ -30,7 +30,7 @@ const BackButton = () => {
         className="progress-circle"
         style={{ background: `conic-gradient(#ff66007a ${scrollProgress}%, transparent 0%)` }}
       >
-        <button onClick={() => window.history.back()}>&larr;</button>
+        <button type="button" className="arrow-left" onClick={() => window.history.back()}></button>
       </div>
     </div>
   );

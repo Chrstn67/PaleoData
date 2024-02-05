@@ -22,7 +22,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-100%, -50%);
       width: 2.5rem;
       height: 2.5rem;
       border: none;
@@ -31,15 +31,17 @@
       cursor: pointer;
       color: #fff;
       border-radius: 50%;
-    }
 
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      clip-path: polygon(0 0, 0 0, 0 0);
-      transition: clip-path 0.3s ease-in-out;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 1.25rem solid transparent;
+        border-bottom: 1.25rem solid transparent;
+        border-right: 1.75rem solid #fff;
+        transform: translateY(-50%);
+      }
     }
   }
 
