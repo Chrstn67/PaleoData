@@ -24,9 +24,11 @@
 }
 
 .about-section {
-  background-color: #c7c1c18c;
+  background-color: rgba(199, 193, 193, 0.54); /* Glassmorphism background color */
+  backdrop-filter: blur(10px); /* Glassmorphism blur effect */
   border-radius: 1em;
   padding: 1em;
+
   .random-animal-section {
     ul {
       background-color: #75553f;
@@ -47,6 +49,7 @@
         transition:
           background-color 0.2s,
           transform 0.2s;
+
         &:hover {
           color: #fff;
           background-color: #74af99ab;
@@ -77,7 +80,7 @@
 }
 
 .contact-section {
-  background-color: #ecffd38c;
+  background-color: rgba(236, 255, 211, 0.55); /* Glassmorphism background color */
   border-radius: 1em;
   border: 1px solid #ccc;
   padding: 1em;
@@ -120,6 +123,7 @@
     margin-top: 10px;
     font-size: 0.9rem;
     color: #463838;
+
     b {
       text-decoration: underline;
     }

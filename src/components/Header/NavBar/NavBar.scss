@@ -17,15 +17,13 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
-
       width: 100%;
-      background-color: #5e5a5a77;
+      background-color: #5e5a5a;
       z-index: 1;
       display: none;
 
@@ -37,15 +35,16 @@
     li {
       position: relative;
       padding: 1rem;
+      transition: background-color 0.3s;
 
       &:hover {
-        display: flex;
-        flex-direction: column;
+        background-color: #5e5a5a;
       }
 
       a {
         color: white;
         text-decoration: none;
+        transition: color 0.3s;
 
         &:hover {
           color: #ff9900;
@@ -55,15 +54,12 @@
 
     .active {
       color: #ff9900;
-      padding: 0.2em;
-      background-color: #ff990018;
-      box-shadow: 0 0 30px #75553f;
+      background-color: #f8c4715e;
+      padding: 0.5em;
     }
 
     /* Responsive styles */
     @media screen and (max-width: 768px) {
-      flex-direction: column;
-
       li {
         padding: 0.5rem;
         position: relative;
