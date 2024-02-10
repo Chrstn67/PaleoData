@@ -106,15 +106,28 @@
   a {
     margin: 0.5em;
     display: inline-block;
-    padding: 10px 2em;
-    background-color: #75553f96;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    background-color: #75553f;
+    font-style: italic;
+
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    box-shadow:
+      inset 3px -3px 30px #9c7154,
+      inset -4px 4px 4px #ffffff,
+      0 10px 20px #4e392ac0;
 
     &:hover {
-      background-color: #0056b3;
+      box-shadow:
+        inset 3px -3px 10px #9c7154,
+        inset -2px 2px 2px #ffffff,
+        0 5px 10px #4e392ac0;
+      color: #d2b48c;
     }
   }
 
