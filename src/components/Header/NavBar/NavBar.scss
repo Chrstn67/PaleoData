@@ -37,10 +37,6 @@
       padding: 1rem;
       transition: background-color 0.3s;
 
-      &:hover {
-        background-color: #5e5a5a;
-      }
-
       a {
         color: white;
         text-decoration: none;
@@ -53,8 +49,9 @@
     }
 
     .active {
-      color: #ff9900;
-      background-color: #f8c4715e;
+      box-shadow:
+        inset 0px 0px 20px 5px #9c7154,
+        0px 0px 20px 5px #9c7154;
       padding: 0.5em;
     }
 

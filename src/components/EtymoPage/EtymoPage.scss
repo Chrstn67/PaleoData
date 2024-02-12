@@ -4,7 +4,10 @@
   margin: 2rem;
   font-family: Arial, sans-serif;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    inset 3px -3px 500px #9c7154,
+    // inset -2px 2px 2px #58402f,
+    0 10px 20px #4e392ac0;
 
   table {
     width: 100%;
@@ -13,6 +16,10 @@
       position: sticky;
       top: 0;
       z-index: 3;
+
+      box-shadow:
+        inset 3px -3px 500px #9c7154,
+        0 10px 20px #4e392ac0;
     }
     th,
     td {

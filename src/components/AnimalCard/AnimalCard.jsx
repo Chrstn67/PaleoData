@@ -81,7 +81,7 @@ const AnimalCard = ({ data }) => {
       )}
       {animal.geologie && (
         <div>
-          <h3>Geologie</h3>
+          <h3>Géologie</h3>
           {animal.geologie.apparition && (
             <p>
               <span>Apparition:</span> {animal.geologie.apparition} Ma
