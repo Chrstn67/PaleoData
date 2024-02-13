@@ -17,7 +17,7 @@
     border-radius: 50%;
     border: 0.25em solid transparent;
     cursor: pointer;
-    transition: border-image 1s ease-in-out;
+    transition: border-image 0.01s ease-in-out;
 
     &:hover {
       border-color: #ffb300;

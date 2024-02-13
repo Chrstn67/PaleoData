@@ -1,14 +1,24 @@
 .navbar {
-  background-color: #333;
+  background-color: #d8ac6586;
   border-radius: 0.5em;
+
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    height: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    top: 10px;
+    left: 1.4em;
+    z-index: 10;
+  }
 
   .navbar-burger {
     cursor: pointer;
     display: none;
     font-size: 1.5em;
-
     @media screen and (max-width: 768px) {
       display: block;
+      margin: 0.25em;
     }
   }
 
@@ -22,8 +32,7 @@
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
-      width: 100%;
-      background-color: #5e5a5a;
+      background-color: #88624ab7;
       z-index: 1;
       display: none;
 
@@ -43,15 +52,15 @@
         transition: color 0.3s;
 
         &:hover {
-          color: #ff9900;
+          color: #ffffff83;
         }
       }
     }
 
     .active {
       box-shadow:
-        inset 0px 0px 20px 5px #9c7154,
-        0px 0px 20px 5px #9c7154;
+        inset 0px 0px 20px 5px #f8c471,
+        0px 0px 20px 5px #f8c471;
       padding: 0.5em;
     }
 
