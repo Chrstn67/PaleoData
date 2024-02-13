@@ -1,43 +1,48 @@
 .scroll-to-top-button {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: #ff66007a;
+  bottom: 2em;
+  right: 2em;
   opacity: 0;
-  pointer-events: none;
   transition: opacity 0.3s ease-in-out;
   z-index: 999;
-  border-radius: 50%;
-
-  &:hover {
-    .progress-circle {
-      background-color: #e8f7189a;
-    }
-  }
 
   &.show {
     opacity: 1;
-    pointer-events: auto;
   }
 
   .progress-circle {
     position: relative;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3em;
+    height: 3em;
     border-radius: 50%;
-    background-color: #ff6600b2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 0.25em solid transparent;
     cursor: pointer;
+    transition: border-image 1s ease-in-out;
+
+    &:hover {
+      border-color: #ffb300;
+    }
 
     .arrow-up {
-      width: 0;
-      height: 0;
-      border-left: 1rem solid transparent;
-      border-right: 1rem solid transparent;
-      border-bottom: 1.5rem solid #fff;
-      transform: translateY(-2px);
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-135deg);
+      width: 1.5em;
+      height: 1.5em;
+      border: solid #ffb300;
+      border-width: 0 0.2em 0.2em 0;
+      display: inline-block;
+
+      border-radius: 0.2em;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  // Styles pour les écrans de taille réduite
+  .scroll-to-top-button {
+    bottom: 1em;
+    right: 1em;
   }
 }

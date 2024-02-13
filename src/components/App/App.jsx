@@ -11,7 +11,7 @@ import EtymoPage from '../EtymoPage/EtymoPage';
 import Documentation from '../Documentation/Documentation';
 import documentationData from '../Documentation/documentationData';
 import MentionsLegales from '../Footer/MentionsLegales/MentionsLegales';
-import BackButton from '../BackButton/BackButton';
+
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import data from '../../data/data';
 
@@ -25,7 +25,7 @@ function App() {
       <HashRouter>
         <div>
           <Header />
-          <BackButton />
+
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/animaux" element={<AnimalList data={data} />} />

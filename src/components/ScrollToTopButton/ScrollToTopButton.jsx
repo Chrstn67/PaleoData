@@ -39,7 +39,7 @@ const ScrollToTopButton = () => {
     <div className={`scroll-to-top-button ${isVisible ? 'show' : 'hide'}`}>
       <div
         className="progress-circle"
-        style={{ background: `conic-gradient(#E7AD25 ${scrollProgress}%, transparent 0%)` }}
+        style={{ borderImage: `conic-gradient(#75553f ${scrollProgress}%, transparent 0%) 1` }}
         onClick={scrollToTop}
       >
         <div className="arrow-up"></div>
