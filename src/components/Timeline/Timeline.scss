@@ -27,6 +27,13 @@
       0 5px 10px #4e392ac0;
     border-radius: 5px;
     width: 80%;
+    &:hover {
+      background: linear-gradient(to top, #dfc8de, #75553f);
+      box-shadow:
+        inset 3px -3px 10px #4e392ac0,
+        inset -2px 20px 20px #ffffff,
+        0 5px 10px #9c7154;
+    }
 
     .period {
       background: linear-gradient(to top, #886249, #bdb6a0);
@@ -38,6 +45,14 @@
         inset -2px 20px 20px #e65858,
         10px 5px 100px #4e392ac0;
 
+      &:hover {
+        background: linear-gradient(to top, #bdb6a0, #886249);
+        box-shadow:
+          inset 3px 10px 10px #4e392ac0,
+          inset -2px 20px 20px #e65858,
+          10px 5px 100px #573f2e;
+      }
+
       .epoch {
         background: linear-gradient(to top, #996f53, #a0885d);
         margin-top: 20px;
@@ -48,6 +63,14 @@
           inset -2px 20px 20px #ff6600,
           10px 5px 100px #4e392ac0;
 
+        &:hover {
+          background: linear-gradient(to top, #a0885d, #996f53);
+          box-shadow:
+            inset 3px 10px 10px #4e392ac0,
+            inset -2px 20px 20px #ff6600,
+            10px 5px 100px #573f2e;
+        }
+
         .stage {
           background: linear-gradient(to top, #d19974, #814e36);
           margin-top: 20px;
@@ -57,6 +80,14 @@
             inset 3px 10px 10px #573f2e,
             inset -2px 20px 20px #fc9700,
             10px 5px 100px #4e392ac0;
+
+          &:hover {
+            background: linear-gradient(to top, #814e36, #d19974);
+            box-shadow:
+              inset 3px 10px 10px #4e392ac0,
+              inset -2px 20px 20px #fc9700,
+              10px 5px 100px #573f2e;
+          }
         }
       }
     }

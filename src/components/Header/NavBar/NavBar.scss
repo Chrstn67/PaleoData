@@ -4,7 +4,7 @@
 
   @media screen and (max-width: 768px) {
     position: fixed;
-    height: auto;
+
     margin-top: 4px;
     margin-bottom: 4px;
     top: 10px;
@@ -45,30 +45,35 @@
       position: relative;
       padding: 1rem;
       transition: background-color 0.3s;
+      box-sizing: border-box;
 
       a {
         color: white;
         text-decoration: none;
         transition: color 0.3s;
 
-        &:hover {
-          color: #ffffff83;
+        &:not(.active):hover {
+          color: #f8c471;
         }
       }
-    }
 
-    .active {
-      box-shadow:
-        inset 0px 0px 20px 5px #f8c471,
-        0px 0px 20px 5px #f8c471;
-      padding: 0.5em;
+      .active {
+        box-shadow:
+          inset 0 0 10px 5px #f8c471,
+          0 0 5px 10px #f8c471;
+        width: 100%;
+        display: block;
+        padding: 0;
+      }
     }
 
     /* Responsive styles */
     @media screen and (max-width: 768px) {
       li {
-        padding: 0.5rem;
+        padding: 0;
         position: relative;
+        width: 100%;
+        margin: 0.5rem;
 
         a {
           padding: 0.3rem;
