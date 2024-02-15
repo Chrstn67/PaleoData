@@ -20,7 +20,8 @@ header {
     img {
       width: 7em;
       height: 7em;
-      box-shadow: 5px 5px 5px 5px #000000;
+      box-shadow: 5px 5px 10px #000000;
+      border-radius: 16px;
       object-fit: cover;
     }
 
@@ -28,7 +29,7 @@ header {
       font-size: 3em;
       margin: 0.5em;
       color: #f8c471;
-      text-shadow: 10px 10px 2px rgba(0, 0, 0, 0.5);
+      text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.5);
     }
 
     p {

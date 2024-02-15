@@ -1,6 +1,6 @@
 .animal-listing {
   ul {
-    background: linear-gradient(to bottom, #00324e, #0077be, #f6d02e, #e5c888, #ff6633, #006400, #87ceeb, #abf5ff);
+    background-color: #75553fce;
     border-radius: 0.5rem;
     list-style: none;
     padding: 1em;
@@ -35,10 +35,6 @@
           inset 30px -3px 30px #75553f,
           inset -4px 4px 4px #b9a45e,
           10px 10px 20px #9c7154;
-        h3 {
-          text-shadow: 0px 10px 2px #000000b6;
-          transition: 0.2s ease-in-out;
-        }
       }
 
       a {
@@ -52,14 +48,13 @@
           max-width: 100%;
           height: auto;
           border-radius: 0.5rem;
-          box-shadow:
-            inset 30px -3px 30px #ff6600,
-            inset -4px 4px 4px #ffffff,
-            10px 10px 20px #ff6600;
+          box-shadow: 10px 10px 5px #2b1f1779;
         }
 
         h3 {
           font-size: 1.5rem;
+          text-shadow: 5px 5px 5px #000000b6;
+          transition: 0.2s ease-in-out;
         }
       }
 

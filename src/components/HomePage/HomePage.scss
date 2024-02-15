@@ -1,16 +1,6 @@
 .home-page {
-  background: linear-gradient(
-    to bottom,
-    #00324e,
-    #0077be,
-    #f6d02e,
-    #e5c888,
-    #ff6633,
-    #8b4513,
-    #006400,
-    #87ceeb,
-    #abf5ff
-  );
+  background-color: #75553f;
+
   text-align: center;
   border-radius: 0.5em;
   display: grid;
@@ -24,8 +14,8 @@
 }
 
 .about-section {
-  background-color: rgba(199, 193, 193, 0.54); /* Glassmorphism background color */
-  backdrop-filter: blur(10px); /* Glassmorphism blur effect */
+  background-color: #c7c1c18a;
+  backdrop-filter: blur(10px);
   border-radius: 1em;
   padding: 1em;
 
@@ -96,7 +86,7 @@
 }
 
 .contact-section {
-  background-color: rgba(236, 255, 211, 0.55); /* Glassmorphism background color */
+  background-color: #c7c1c18a;
   border-radius: 1em;
   border: 1px solid #ccc;
   padding: 1em;
