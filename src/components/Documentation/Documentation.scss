@@ -6,7 +6,8 @@
 }
 
 details {
-  margin-top: 1rem;
+  margin: 1rem;
+
   padding: 1rem;
   background-color: #f5f5f5;
   box-shadow:
@@ -16,6 +17,9 @@ details {
   border-radius: 0.5em;
   cursor: pointer;
   transition: background-color 0.3s;
+  @media (min-width: 700px) {
+    margin-inline: 8em;
+  }
 
   &:hover {
     box-shadow:
