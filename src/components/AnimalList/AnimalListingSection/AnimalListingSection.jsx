@@ -40,9 +40,10 @@ const AnimalCard = ({ animal }) => {
         <div
           style={{
             background: `center / contain no-repeat url(${animal.image_url})`,
-            height: '20em',
-            width: '20em',
+            height: '17em',
+            width: '17em',
             borderRadius: '0.5rem',
+            maxWidth: '80%',
           }}
         />
         <h3>{animal.nom}</h3>

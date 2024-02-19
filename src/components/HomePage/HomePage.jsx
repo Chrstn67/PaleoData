@@ -48,14 +48,7 @@ const HomePage = () => {
             <ul>
               <li key={randomAnimal.nom} ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={resetCardTransform}>
                 <Link to={`/animal/${encodeURIComponent(randomAnimal.nom)}`}>
-                  <div
-                    style={{
-                      background: `center / contain no-repeat url(${randomAnimal.image_url})`,
-                      height: '20em',
-                      width: '20em',
-                      borderRadius: '0.5rem',
-                    }}
-                  />
+                  <img src={randomAnimal.image_url} alt={randomAnimal.nom} />
                   <h3>{randomAnimal.nom}</h3>
                 </Link>
               </li>
