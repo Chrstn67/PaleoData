@@ -52,10 +52,6 @@
             inset 30px -3px 30px #75553f,
             inset -4px 4px 4px #b9a45e,
             10px 10px 20px #9c7154;
-          h3 {
-            text-shadow: 0px 10px 2px #000000b6;
-            transition: 0.2s ease-in-out;
-          }
         }
 
         a {
@@ -65,19 +61,10 @@
           text-decoration: none;
           color: #ffffff;
 
-          img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            box-shadow:
-              inset 30px -3px 30px #ff6600,
-              inset -4px 4px 4px #ffffff,
-              10px 10px 20px #ff6600;
-          }
-
           h3 {
-            margin-top: 0.5rem;
             font-size: 1.5rem;
+            text-shadow: 5px 5px 5px #000000b6;
+            transition: 0.2s ease-in-out;
           }
         }
       }

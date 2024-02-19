@@ -37,10 +37,22 @@ const AnimalCard = ({ animal }) => {
   return (
     <li ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={resetCardTransform}>
       <Link to={`/animal/${encodeURIComponent(animal.nom)}`}>
-        <img src={animal.image_url} alt={animal.nom} />
+        <div
+          style={{
+            background: `center / contain no-repeat url(${animal.image_url})`,
+            height: '20em',
+            width: '20em',
+            borderRadius: '0.5rem',
+          }}
+        />
         <h3>{animal.nom}</h3>
       </Link>
-      <button type="button" onClick={shareLink}>
+      <button
+        type="button"
+        onClick={() => {
+          shareLink(animal);
+        }}
+      >
         <BiShareAlt size={20} />
       </button>
     </li>
