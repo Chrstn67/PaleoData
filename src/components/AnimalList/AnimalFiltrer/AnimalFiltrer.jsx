@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import './AnimalFiltrer.scss';
 
@@ -78,7 +79,14 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
 
   return (
     <section className="search-option">
-      <input type="text" placeholder="Rechercher par nom" value={searchQuery} onChange={handleSearchChange} />
+      <label htmlFor="searchQuery">Rechercher par nom:</label>
+      <input
+        id="searchQuery"
+        type="text"
+        placeholder="Rechercher par nom"
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
 
       <button onClick={toggleMoreFilters} type="button">
         {showMoreFilters ? 'Masquer les filtres avancés' : 'Afficher les filtres avancés'}
@@ -86,8 +94,8 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
       {showMoreFilters && (
         <section className="more-filter">
           <div>
-            <label>Filtrer par régime alimentaire: </label>
-            <select onChange={(e) => handleFilterChange('diet', e.target.value)} value={filters.diet}>
+            <label htmlFor="diet">Filtrer par régime alimentaire:</label>
+            <select id="diet" onChange={(e) => handleFilterChange('diet', e.target.value)} value={filters.diet}>
               <option value="">Tous</option>
               {[...uniqueDiets].sort().map((diet) => (
                 <option key={diet} value={diet}>
@@ -98,8 +106,12 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
           </div>
 
           <div>
-            <label>Filtrer par ère géologique: </label>
-            <select onChange={(e) => handleFilterChange('geologyEra', e.target.value)} value={filters.geologyEra}>
+            <label htmlFor="geologyEra">Filtrer par ère géologique:</label>
+            <select
+              id="geologyEra"
+              onChange={(e) => handleFilterChange('geologyEra', e.target.value)}
+              value={filters.geologyEra}
+            >
               <option value="">Tous</option>
               {[...uniqueGeologyEras].sort().map((era) => (
                 <option key={era} value={era}>
@@ -110,8 +122,12 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
           </div>
 
           <div>
-            <label>Filtrer par période géologique: </label>
-            <select onChange={(e) => handleFilterChange('geologyPeriod', e.target.value)} value={filters.geologyPeriod}>
+            <label htmlFor="geologyPeriod">Filtrer par période géologique: </label>
+            <select
+              id="geologyPeriod"
+              onChange={(e) => handleFilterChange('geologyPeriod', e.target.value)}
+              value={filters.geologyPeriod}
+            >
               <option value="">Tous</option>
               {[...uniqueGeologyPeriods].sort().map((period) => (
                 <option key={period} value={period}>
@@ -122,8 +138,12 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
           </div>
 
           <div>
-            <label>Filtrer par époque géologique: </label>
-            <select onChange={(e) => handleFilterChange('geologyEpoch', e.target.value)} value={filters.geologyEpoch}>
+            <label htmlFor="geologyEpoch">Filtrer par époque géologique: </label>
+            <select
+              id="geologyEpoch"
+              onChange={(e) => handleFilterChange('geologyEpoch', e.target.value)}
+              value={filters.geologyEpoch}
+            >
               <option value="">Tous</option>
               {[...uniqueGeologyEpochs].sort().map((epoch) => (
                 <option key={epoch} value={epoch}>
@@ -134,8 +154,12 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
           </div>
 
           <div>
-            <label>Filtrer par étage géologique: </label>
-            <select onChange={(e) => handleFilterChange('geologyStage', e.target.value)} value={filters.geologyStage}>
+            <label htmlFor="geologyStage">Filtrer par étage géologique: </label>
+            <select
+              id="geologyStage"
+              onChange={(e) => handleFilterChange('geologyStage', e.target.value)}
+              value={filters.geologyStage}
+            >
               <option value="">Tous</option>
               {[...uniqueGeologyStages].sort().map((stage) => (
                 <option key={stage} value={stage}>
@@ -151,6 +175,26 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
       </button>
     </section>
   );
+};
+
+AnimalFiltrer.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      nom: PropTypes.string,
+      regime_alimentaire: PropTypes.string,
+      geologie: PropTypes.shape({
+        ere: PropTypes.string,
+        periode: PropTypes.string,
+        epoque: PropTypes.string,
+        etage: PropTypes.string,
+      }),
+    }),
+  ),
+  onFilterChange: PropTypes.func.isRequired,
+};
+
+AnimalFiltrer.defaultProps = {
+  data: [],
 };
 
 export default AnimalFiltrer;

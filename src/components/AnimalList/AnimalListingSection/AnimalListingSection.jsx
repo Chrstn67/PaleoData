@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { BiShareAlt } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import './AnimalListingSection.scss';
@@ -60,6 +61,13 @@ const AnimalCard = ({ animal }) => {
   );
 };
 
+AnimalCard.propTypes = {
+  animal: PropTypes.shape({
+    nom: PropTypes.string.isRequired,
+    image_url: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 const AnimalListingSection = ({ animals }) => {
   return (
     <section className="animal-listing">
@@ -70,6 +78,15 @@ const AnimalListingSection = ({ animals }) => {
       </ul>
     </section>
   );
+};
+
+AnimalListingSection.propTypes = {
+  animals: PropTypes.arrayOf(
+    PropTypes.shape({
+      nom: PropTypes.string.isRequired,
+      image_url: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default AnimalListingSection;

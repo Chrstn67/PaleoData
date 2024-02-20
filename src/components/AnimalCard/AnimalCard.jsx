@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { BiShareAlt } from 'react-icons/bi';
 import './AnimalCard.scss';
 
@@ -8,6 +9,8 @@ const AnimalCard = ({ data }) => {
     window.scrollTo(0, 0);
   }, []);
   const { nom } = useParams();
+
+  PropTypes.checkPropTypes({ data: PropTypes.array.isRequired }, { data }, 'prop', 'AnimalCard');
 
   const animal = data.find((animal) => animal.nom === decodeURIComponent(nom));
 
@@ -185,6 +188,14 @@ const AnimalCard = ({ data }) => {
       )}
     </div>
   );
+};
+
+AnimalCard.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      nom: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default AnimalCard;

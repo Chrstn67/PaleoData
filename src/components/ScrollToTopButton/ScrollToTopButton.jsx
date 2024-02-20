@@ -1,5 +1,5 @@
 // ScrollToTopButton.jsx
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './ScrollToTopButton.scss';
 
 const ScrollToTopButton = () => {
@@ -7,7 +7,7 @@ const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
-    const scrollY = window.scrollY;
+    const { scrollY } = window;
     const windowHeight = window.innerHeight;
     const bodyHeight = document.body.clientHeight;
 
@@ -41,8 +41,11 @@ const ScrollToTopButton = () => {
         className="progress-circle"
         style={{ borderImage: `conic-gradient(#75553f ${scrollProgress}%, transparent 0%) 1` }}
         onClick={scrollToTop}
+        onKeyDown={scrollToTop}
+        role="button"
+        tabIndex={0}
       >
-        <div className="arrow-up"></div>
+        <div className="arrow-up" />
       </div>
     </div>
   );
