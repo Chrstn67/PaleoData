@@ -79,8 +79,8 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
 
   return (
     <section className="search-option">
-      <label htmlFor="searchQuery">Rechercher par nom:</label>
       <input
+        htmlFor="searchQuery"
         id="searchQuery"
         type="text"
         placeholder="Rechercher par nom"
