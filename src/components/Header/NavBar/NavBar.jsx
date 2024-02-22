@@ -30,8 +30,8 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li className="navbar-item">
-          <NavLink to="/frise-chronologique" onClick={toggleMenu}>
-            Chronologie
+          <NavLink to="/echelle-des-temps-geologiques" onClick={toggleMenu}>
+            Échelle des temps
           </NavLink>
         </li>
         <li className="navbar-item">
