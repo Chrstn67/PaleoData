@@ -1,6 +1,5 @@
 .animal-card {
   padding: 2rem;
-
   background-color: #ffffff;
   box-shadow:
     inset 3px -3px 300px #9c7154,
@@ -8,116 +7,207 @@
     0 10px 20px #4e392ac0;
   border-radius: 10px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
-  button {
-    margin-top: 0.5rem;
-    background-color: #75553f;
-    color: #fff;
-    outline: none;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition:
-      background-color 0.2s,
-      color 0.2s;
-    box-shadow:
-      inset 3px -3px 30px #9c7154,
-      inset -4px 4px 4px #ffffff,
-      0 10px 20px #4e392ac0;
+  @media (min-width: 630px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 
-    &:hover {
+    .left-section,
+    .right-section {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .left-section {
+    align-items: center;
+
+    button {
+      margin-top: 0.5rem;
+      background-color: #75553f;
+      color: #fff;
+      outline: none;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition:
+        background-color 0.2s,
+        color 0.2s;
       box-shadow:
-        inset 3px -3px 10px #9c7154,
-        inset -2px 2px 2px #ffffff,
-        0 5px 10px #4e392ac0;
-      color: #d2b48c;
+        inset 3px -3px 30px #9c7154,
+        inset -4px 4px 4px #ffffff,
+        0 10px 20px rgba(78, 57, 42, 0.7529411765);
     }
-  }
 
-  img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1em;
+    .animal-generalites {
+      button {
+        margin-top: 0.5rem;
+        background-color: #75553f;
+        color: #fff;
+        outline: none;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition:
+          background-color 0.2s,
+          color 0.2s;
+        box-shadow:
+          inset 3px -3px 30px #9c7154,
+          inset -4px 4px 4px #ffffff,
+          0 10px 20px #4e392ac0;
 
-    border-radius: 0.5em;
-    box-shadow:
-      inset 30px -3px 30px #75553f,
-      inset -4px 4px 20px #75553f,
-      10px 10px 20px #75553f;
-  }
+        &:hover {
+          box-shadow:
+            inset 3px -3px 10px #9c7154,
+            inset -2px 2px 2px #ffffff,
+            0 5px 10px #4e392ac0;
+          color: #d2b48c;
+        }
+      }
 
-  h2 {
-    margin-bottom: 1em;
-    font-size: 2rem;
+      h2 {
+        margin-bottom: 1em;
+        font-size: 2rem;
 
-    @media (max-width: 768px) {
-      font-size: 1.5rem;
-    }
-  }
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
+      }
 
-  h3 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    background-color: #75553f;
-    color: #fff;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    box-shadow:
-      inset 3px -3px 30px #9c7154,
-      inset -4px 4px 4px #ffffff,
-      0 10px 20px #4e392ac0;
-  }
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+        border-radius: 0.5em;
+        box-shadow:
+          inset 30px -3px 30px #75553f,
+          inset -4px 4px 20px #75553f,
+          10px 10px 20px #75553f;
+      }
 
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
+      div {
+        h3 {
+          font-size: 1.5rem;
+          margin-top: 1rem;
+          background-color: #75553f;
+          color: #fff;
+          padding: 0.5rem;
+          border-radius: 1rem;
+          box-shadow:
+            inset 3px -3px 30px #9c7154,
+            inset -4px 4px 4px #ffffff,
+            0 10px 20px #4e392ac0;
+        }
 
-  span {
-    font-weight: bold;
-  }
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+        }
 
-  .taxon {
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: center;
-
-      td {
-        padding: 1rem;
-        border-bottom: 1px solid #ccc;
+        span {
+          font-weight: bold;
+        }
       }
     }
 
-    @media (max-width: 768px) {
-      table {
-        td {
-          display: block;
-          padding: 0.5rem;
-          text-align: left;
+    // Move .animal-geologie styles here
+    .animal-geologie {
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        background-color: #75553f;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        box-shadow:
+          inset 3px -3px 30px #9c7154,
+          inset -4px 4px 4px #ffffff,
+          0 10px 20px #4e392ac0;
+      }
+
+      div {
+        p {
+          span {
+            font-weight: bold;
+          }
         }
       }
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 1rem;
+  .right-section {
+    .animal-description,
+    .animal-autresInfos {
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        background-color: #75553f;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        box-shadow:
+          inset 3px -3px 30px #9c7154,
+          inset -4px 4px 4px #ffffff,
+          0 10px 20px #4e392ac0;
+      }
 
-    h2 {
-      font-size: 1.5rem;
+      div {
+        p {
+          span {
+            font-weight: bold;
+          }
+        }
+      }
     }
+  }
 
-    h3 {
-      font-size: 1.2rem;
-    }
+  .bottom-section {
+    grid-column: span 2;
+    grid-row: 3;
 
-    p {
-      font-size: 1rem;
+    .taxonomy {
+      h3 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        background-color: #75553f;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        box-shadow:
+          inset 3px -3px 30px #9c7154,
+          inset -4px 4px 4px #ffffff,
+          0 10px 20px #4e392ac0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+
+        td {
+          padding: 1rem;
+          border-bottom: 1px solid #ccc;
+        }
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      @media (max-width: 768px) {
+        table {
+          td {
+            display: block;
+            padding: 0.5rem;
+            text-align: left;
+          }
+        }
+      }
     }
   }
 }
