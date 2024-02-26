@@ -101,6 +101,22 @@ const AnimalCard = ({ data }) => {
               )}
             </div>
           )}
+          {animal.decouverte && (
+            <div>
+              <h3>Découverte</h3>
+              {animal.decouverte.date && (
+                <p>
+                  <span>Date:</span> {animal.decouverte.date}
+                </p>
+              )}
+              {animal.decouverte.lieu && (
+                <p>
+                  <span>Lieu: </span>
+                  {animal.decouverte.lieu}
+                </p>
+              )}
+            </div>
+          )}
         </section>
       </section>
 
@@ -156,22 +172,6 @@ const AnimalCard = ({ data }) => {
                 <p>
                   <span>Poids:</span> <br />
                   {animal.autres_infos.poids}
-                </p>
-              )}
-            </div>
-          )}
-          {animal.decouverte && (
-            <div>
-              <h3>Découverte</h3>
-              {animal.decouverte.date && (
-                <p>
-                  <span>Date:</span> {animal.decouverte.date}
-                </p>
-              )}
-              {animal.decouverte.lieu && (
-                <p>
-                  <span>Lieu: </span>
-                  {animal.decouverte.lieu}
                 </p>
               )}
             </div>
