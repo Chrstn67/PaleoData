@@ -107,7 +107,7 @@ const AnimalCard = ({ data }) => {
       <section className="right-section">
         <section className="animal-description">
           {animal.description && (
-            <div>
+            <div className="description">
               <h3>Description</h3>
               <p>{animal.description}</p>
             </div>

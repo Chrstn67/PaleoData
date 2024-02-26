@@ -115,7 +115,6 @@
       }
     }
 
-    // Move .animal-geologie styles here
     .animal-geologie {
       h3 {
         font-size: 1.5rem;
@@ -161,6 +160,17 @@
           span {
             font-weight: bold;
           }
+        }
+      }
+      .description {
+        p {
+          height: 20em;
+          overflow-y: auto;
+          box-shadow:
+            inset 3px -3px 100px #9c7154,
+            inset -1px 1px 1px #58402f,
+            0 10px 20px #4e392ac0;
+          padding: 1em;
         }
       }
     }
