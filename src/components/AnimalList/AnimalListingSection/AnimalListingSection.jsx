@@ -14,7 +14,7 @@ const AnimalCard = ({ animal }) => {
     const x = (clientX - left) / width - 0.5;
     const y = (clientY - top) / height - 0.5;
 
-    cardRef.current.style.transform = `perspective(500px) rotateX(${y * 20}deg) rotateY(${x * 20}deg)`;
+    cardRef.current.style.transform = `perspective(500px) rotateX(${y * -20}deg) rotateY(${x * 20}deg)`;
   };
 
   const resetCardTransform = () => {
