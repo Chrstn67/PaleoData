@@ -2,7 +2,7 @@
   padding: 2rem;
   background-color: #ffffff;
   box-shadow:
-    inset 3px -3px 300px #9c7154,
+    inset 3px -3px 100px #9c7154,
     inset -4px 4px 4px #58402f,
     0 10px 20px #4e392ac0;
   border-radius: 10px;
@@ -116,21 +116,25 @@
     }
 
     .animal-geologie {
-      h3 {
-        font-size: 1.5rem;
-        margin-top: 1rem;
-        background-color: #75553f;
-        color: #fff;
-        padding: 0.5rem;
-        border-radius: 1rem;
-        box-shadow:
-          inset 3px -3px 30px #9c7154,
-          inset -4px 4px 4px #ffffff,
-          0 10px 20px #4e392ac0;
-      }
-
       div {
+        h3 {
+          font-size: 1.5rem;
+          margin-top: 1rem;
+          background-color: #75553f;
+          color: #fff;
+          padding: 0.5rem;
+          border-radius: 1rem;
+          box-shadow:
+            inset 3px -3px 30px #9c7154,
+            inset -4px 4px 4px #ffffff,
+            0 10px 20px #4e392ac0;
+        }
+
         p {
+          text-align: left;
+          @media (max-width: 630px) {
+            text-align: center;
+          }
           span {
             font-weight: bold;
           }
@@ -171,6 +175,7 @@
             inset -1px 1px 1px #58402f,
             0 10px 20px #4e392ac0;
           padding: 1em;
+          border-radius: 0.5em;
         }
       }
     }
@@ -209,7 +214,7 @@
         }
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 550px) {
         table {
           td {
             display: block;
