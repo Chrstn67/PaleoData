@@ -89,12 +89,12 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
       />
 
       <button onClick={toggleMoreFilters} type="button">
-        {showMoreFilters ? 'Masquer les filtres avancés' : 'Afficher les filtres avancés'}
+        {showMoreFilters ? 'Masquer les filtres avancés' : 'Filtres avancés'}
       </button>
       {showMoreFilters && (
         <section className="more-filter">
           <div>
-            <label htmlFor="diet">Filtrer par régime alimentaire:</label>
+            <label htmlFor="diet">Filtrer par régime alimentaire :</label>
             <select id="diet" onChange={(e) => handleFilterChange('diet', e.target.value)} value={filters.diet}>
               <option value="">Tous</option>
               {[...uniqueDiets].sort().map((diet) => (
@@ -106,7 +106,7 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
           </div>
 
           <div>
-            <label htmlFor="geologyEra">Filtrer par ère géologique:</label>
+            <label htmlFor="geologyEra">Filtrer par ère :</label>
             <select
               id="geologyEra"
               onChange={(e) => handleFilterChange('geologyEra', e.target.value)}
@@ -122,7 +122,7 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
           </div>
 
           <div>
-            <label htmlFor="geologyPeriod">Filtrer par période géologique: </label>
+            <label htmlFor="geologyPeriod">Filtrer par période : </label>
             <select
               id="geologyPeriod"
               onChange={(e) => handleFilterChange('geologyPeriod', e.target.value)}
@@ -138,7 +138,7 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
           </div>
 
           <div>
-            <label htmlFor="geologyEpoch">Filtrer par époque géologique: </label>
+            <label htmlFor="geologyEpoch">Filtrer par époque : </label>
             <select
               id="geologyEpoch"
               onChange={(e) => handleFilterChange('geologyEpoch', e.target.value)}
@@ -154,7 +154,7 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
           </div>
 
           <div>
-            <label htmlFor="geologyStage">Filtrer par étage géologique: </label>
+            <label htmlFor="geologyStage">Filtrer par étage : </label>
             <select
               id="geologyStage"
               onChange={(e) => handleFilterChange('geologyStage', e.target.value)}
@@ -171,7 +171,7 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
         </section>
       )}
       <button onClick={resetFilters} type="button">
-        Réinitialiser les filtres
+        Réinitialiser
       </button>
     </section>
   );
