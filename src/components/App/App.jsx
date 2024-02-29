@@ -11,6 +11,7 @@ import EtymoPage from '../EtymoPage/EtymoPage';
 import Documentation from '../Documentation/Documentation';
 import documentationData from '../Documentation/documentationData';
 import MentionsLegales from '../Footer/MentionsLegales/MentionsLegales';
+import NousContacter from '../Footer/NousContacter/NousContacter';
 
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import data from '../../data/data';
@@ -35,6 +36,7 @@ function App() {
             <Route path="/liste-etymologique" element={<EtymoPage />} />
             <Route path="/documentation" element={<Documentation documentationData={documentationData} />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/nous-contacter" element={<NousContacter />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

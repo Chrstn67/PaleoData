@@ -1,0 +1,63 @@
+.contact-section {
+  background-color: #c7c1c18a;
+  border-radius: 1em;
+  border: 1px solid #ccc;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  a {
+    margin: 0.5em;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: #75553f;
+    font-style: italic;
+
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    box-shadow:
+      inset 3px -3px 30px #9c7154,
+      inset -4px 4px 4px #ffffff,
+      0 10px 20px #4e392ac0;
+
+    &:hover {
+      box-shadow:
+        inset 3px -3px 10px #9c7154,
+        inset -2px 2px 2px #ffffff,
+        0 5px 10px #4e392ac0;
+      color: #d2b48c;
+    }
+  }
+
+  span {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #463838;
+
+    b {
+      text-decoration: underline;
+    }
+  }
+}

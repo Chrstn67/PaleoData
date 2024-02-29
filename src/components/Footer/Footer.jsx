@@ -10,7 +10,8 @@ const Footer = () => {
       <div className="footer-content">
         <p>
           &copy; {currentYear} PaleoData. Tous droits réservés. <br />{' '}
-          <Link to="/mentions-legales">Mentions légales</Link>
+          <Link to="/mentions-legales">Mentions légales</Link> <br />
+          <Link to="/nous-contacter">Nous contacter</Link>
         </p>
         <img src="Logo.jpg" alt="Logo développeur" />
       </div>
