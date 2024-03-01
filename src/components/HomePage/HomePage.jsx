@@ -1,52 +1,45 @@
-import { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import data from '../../data/data';
 import './HomePage.scss';
 
 const HomePage = () => {
-  const getRandomAnimal = (animalData) => {
-    const randomIndex = Math.floor(Math.random() * animalData.length);
-    return animalData[randomIndex];
-  };
-
-  const randomAnimal = getRandomAnimal(data);
-  const cardRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const { left, top, width, height } = cardRef.current.getBoundingClientRect();
-
-    const x = (clientX - left) / width - 0.5;
-    const y = (clientY - top) / height - 0.5;
-
-    cardRef.current.style.transform = `perspective(500px) rotateX(${y * 10}deg) rotateY(${x * 10}deg)`;
-  };
-
-  const resetCardTransform = () => {
-    cardRef.current.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+    });
   };
 
   return (
     <div className="home-page">
-      <section className="about-section">
-        <p>
-          PaleoData est votre source ultime d&apos;informations sur la paléontologie, offrant des données sur les
-          créatures étonnantes du Paléozoïque jusqu&apos;à nos jours.
-        </p>
-        <br />
+      <section className="hero-section">
+        <div className="hero-content">
+          <h2>PaleoData</h2>
+          <p>Découvrez le monde fascinant des créatures anciennes.</p>
+          <Link to="/animaux" className="explore-btn" onClick={scrollToTop}>
+            Voir les animaux
+          </Link>
+        </div>
+        <img src="/images/dino-fossil.jpg" alt="Fossile de dinosaure" className="hero-image" />
+      </section>
 
-        {randomAnimal && (
-          <div className="random-animal-section">
-            <ul>
-              <li key={randomAnimal.nom} ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={resetCardTransform}>
-                <Link to={`/animal/${encodeURIComponent(randomAnimal.nom)}`}>
-                  <img src={randomAnimal.image_url} alt={randomAnimal.nom} />
-                  <h3>{randomAnimal.nom}</h3>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
+      <section className="about-section">
+        <h2>À Propos du site</h2>
+        <p>
+          Vous avez la possibilité d'obtenir des informations sur les animaux ayant peuplés notre belle planète. Voyagez
+          dans le temps, et recherchez toutes les informations dont vous avez besoin pour satisfaire votre curiosité !
+        </p>
+        <Link to="/documentation" className="learn-more-btn" onClick={scrollToTop}>
+          En savoir plus
+        </Link>
+      </section>
+
+      <section className="contact-section">
+        <h2>Contactez-nous</h2>
+        <p>Pour toutes questions ou remarques, contactez-nous !</p>
+        <Link to="/nous-contacter" className="contact-btn" onClick={scrollToTop}>
+          Nous contacter
+        </Link>
       </section>
     </div>
   );
