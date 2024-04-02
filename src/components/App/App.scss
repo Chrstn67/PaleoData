@@ -1,5 +1,8 @@
 .App {
   margin: 0.9em;
+  &.mobile {
+    padding-bottom: 4rem; // Ajuster en fonction de la hauteur de la navbar
+  }
   font-family:
     system-ui,
     -apple-system,
