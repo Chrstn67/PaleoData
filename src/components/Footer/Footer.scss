@@ -13,15 +13,10 @@
 
   &-section {
     flex-basis: 25%;
-    margin-bottom: 2rem;
+    margin-inline: 1rem;
 
     @media (max-width: 768px) {
-      flex-basis: 50%;
-    }
-
-    @media (max-width: 480px) {
       flex-basis: 100%;
-      margin-bottom: 1rem;
     }
   }
 
@@ -83,5 +78,12 @@
     @media (max-width: 480px) {
       font-size: 2rem;
     }
+  }
+
+  &-contact-title {
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
   }
 }
