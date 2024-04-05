@@ -1,64 +1,76 @@
 .timeline-container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-
-  .timeline {
-    font-size: 1.2rem;
-
-    .era,
-    .period,
-    .epoch,
-    .stage {
-      &-label {
-        cursor: pointer;
-        user-select: none;
-      }
-
-      &-start,
-      &-end {
-        font-size: 1rem;
-      }
-    }
-
-    .info {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-
-      .see-more {
-        cursor: pointer;
-        color: blue;
-        text-decoration: underline;
-      }
-    }
-  }
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-// Pour les écrans de taille inférieure ou égale à 768px
+.timeline {
+  text-align: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #777; /* Couleur de la ligne de la timeline */
+}
+
+.era,
+.period,
+.epoch,
+.stage {
+  position: relative;
+  margin: 0;
+  padding: 1em;
+  border-radius: 0.25em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #fff; /* Couleur de fond des éléments de la timeline */
+}
+
+.era-label,
+.period-label,
+.epoch-label,
+.stage-label {
+  font-weight: bold;
+  font-size: 1.2em;
+  padding-top: 0.5em;
+}
+
+.era-start,
+.era-end,
+.period-start,
+.period-end,
+.epoch-start,
+.epoch-end,
+.stage-start,
+.stage-end {
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  color: #666; /* Couleur du texte pour les dates */
+}
+
+.info {
+  font-size: 0.9em;
+  color: #333; /* Couleur du texte pour les informations */
+  margin-top: 1em;
+}
+
+.see-more {
+  color: #007bff; /* Couleur du lien "Voir +" */
+  cursor: pointer;
+}
+
+.open {
+  background: #f0f0f0; /* Couleur de fond des éléments ouverts */
+}
+
 @media (max-width: 768px) {
-  .timeline-container {
-    padding: 1rem;
-
-    .timeline {
-      font-size: 1rem;
-
-      .era,
-      .period,
-      .epoch,
-      .stage {
-        &-label {
-          font-size: 1.2rem;
-        }
-
-        &-start,
-        &-end {
-          font-size: 0.8rem;
-        }
-      }
-
-      .info {
-        font-size: 0.8rem;
-      }
-    }
+  .timeline::before {
+    left: 20px;
   }
 }

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import 'react-vertical-timeline-component/style.min.css';
+// import 'react-vertical-timeline-component/style.min.css';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { isMobile } from 'react-device-detect';
-import Modal from 'react-modal';
+import ModalTimeline from './ModalTimeline/ModalTimeline';
 
 import './Timeline.scss';
 
@@ -12,16 +12,17 @@ const Timeline = ({ timelineData }) => {
   const [openPeriod, setOpenPeriod] = useState(null);
   const [openEpoch, setOpenEpoch] = useState(null);
   const [showMore, setShowMore] = useState({});
-  const [activeInfo, setActiveInfo] = useState(null);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleShowMore = (key) => {
-    setShowMore({ ...showMore, [key]: !showMore[key] });
+  const handleInfoClick = (content) => {
+    setModalContent(content);
+    setIsModalOpen(true);
   };
 
-  const handleInfoClick = (info) => {
-    setActiveInfo(activeInfo === info ? null : info);
+  const closeModal = () => {
+    setModalContent(null);
+    setIsModalOpen(false);
   };
 
   const formatValue = (value) => {
@@ -54,8 +55,8 @@ const Timeline = ({ timelineData }) => {
 
     if (isMobile) {
       return (
-        <button className="info" onClick={() => openModal(infoText)}>
-          Voir +
+        <button className="info" onClick={() => handleInfoClick(infoText)}>
+          Infos
         </button>
       );
     }
@@ -77,11 +78,6 @@ const Timeline = ({ timelineData }) => {
   const openModal = (content) => {
     setModalContent(content);
     setModalIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalContent(null);
-    setModalIsOpen(false);
   };
 
   return (
@@ -146,9 +142,7 @@ const Timeline = ({ timelineData }) => {
           ))}
         </VerticalTimeline>
       </div>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-        {modalContent}
-      </Modal>
+      <ModalTimeline isOpen={isModalOpen} closeModal={closeModal} content={modalContent} />
     </div>
   );
 };
