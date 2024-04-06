@@ -1,6 +1,27 @@
+$background-color-light: #ead6ca;
+$primary-color-light: #75553f;
+$secondary-color-light: #75613f;
+$third-color-light: #2b4a44;
+$fourth-color-light: #2d394d;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin fadeInAnimation($duration: 1s, $delay: 0s) {
+  animation: $duration $delay ease-out 1 both fadeIn;
+}
+
 .timeline-container {
-  font-family: Arial, sans-serif;
   padding: 20px;
+  background-color: $background-color-light;
 }
 
 .timeline {
@@ -17,7 +38,7 @@
   left: 50%;
   width: 2px;
   height: 100%;
-  background: #777; /* Couleur de la ligne de la timeline */
+  background: $secondary-color-light;
 }
 
 .era,
@@ -29,7 +50,9 @@
   padding: 1em;
   border-radius: 0.25em;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  background: #fff; /* Couleur de fond des éléments de la timeline */
+  background: #fff;
+
+  @include fadeInAnimation;
 }
 
 .era-label,
@@ -39,6 +62,7 @@
   font-weight: bold;
   font-size: 1.2em;
   padding-top: 0.5em;
+  color: $primary-color-light;
 }
 
 .era-start,
@@ -51,26 +75,58 @@
 .stage-end {
   font-size: 0.9em;
   margin-top: 0.5em;
-  color: #666; /* Couleur du texte pour les dates */
+  color: $secondary-color-light;
 }
 
 .info {
   font-size: 0.9em;
-  color: #333; /* Couleur du texte pour les informations */
+  color: $primary-color-light;
   margin-top: 1em;
-}
-
-.see-more {
-  color: #007bff; /* Couleur du lien "Voir +" */
-  cursor: pointer;
+  button {
+    background-color: $primary-color-light;
+    color: #fff;
+    cursor: pointer;
+  }
 }
 
 .open {
-  background: #f0f0f0; /* Couleur de fond des éléments ouverts */
+  background: #f0f0f0;
+}
+
+.era {
+  background: lighten($primary-color-light, 40%);
+}
+
+.period {
+  background: lighten($secondary-color-light, 30%);
+}
+
+.epoch {
+  background: lighten($third-color-light, 40%);
+}
+
+.stage {
+  background: lighten($fourth-color-light, 40%);
 }
 
 @media (max-width: 768px) {
   .timeline::before {
     left: 20px;
+  }
+
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate {
+    animation: bounce-in 0.5s ease-out both;
   }
 }

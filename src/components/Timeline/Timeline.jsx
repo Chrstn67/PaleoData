@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // import 'react-vertical-timeline-component/style.min.css';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import { isMobile } from 'react-device-detect';
+
 import ModalTimeline from './ModalTimeline/ModalTimeline';
 
 import './Timeline.scss';
@@ -11,7 +11,6 @@ const Timeline = ({ timelineData }) => {
   const [openEra, setOpenEra] = useState(null);
   const [openPeriod, setOpenPeriod] = useState(null);
   const [openEpoch, setOpenEpoch] = useState(null);
-  const [showMore, setShowMore] = useState({});
   const [modalContent, setModalContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -58,7 +57,9 @@ const Timeline = ({ timelineData }) => {
                 <div className="era-end">{formatValue(era.eraEnd)}</div>
 
                 <div className="info">
-                  <button onClick={() => handleInfoClick(era.eraInfo)}>Info</button>
+                  <button type="button" onClick={() => handleInfoClick(era.eraInfo)}>
+                    Info
+                  </button>
                 </div>
               </div>
 
@@ -73,7 +74,9 @@ const Timeline = ({ timelineData }) => {
                       <div className="period-start">{formatValue(period.periodStart)}</div>
                       <div className="period-end">{formatValue(period.periodEnd)}</div>
                       <div className="info">
-                        <button onClick={() => handleInfoClick(period.periodInfo)}>Info</button>
+                        <button type="button" onClick={() => handleInfoClick(period.periodInfo)}>
+                          Info
+                        </button>
                       </div>
                     </div>
 
@@ -88,7 +91,9 @@ const Timeline = ({ timelineData }) => {
                             <div className="epoch-start">{formatValue(epoch.epochStart)}</div>
                             <div className="epoch-end">{formatValue(epoch.epochEnd)}</div>
                             <div className="info">
-                              <button onClick={() => handleInfoClick(epoch.epochInfo)}>Info</button>
+                              <button type="button" onClick={() => handleInfoClick(epoch.epochInfo)}>
+                                Info
+                              </button>
                             </div>
                           </div>
 
@@ -100,7 +105,9 @@ const Timeline = ({ timelineData }) => {
                                 <div className="stage-start">{formatValue(stage.stageStart)}</div>
                                 <div className="stage-end">{formatValue(stage.stageEnd)}</div>
                                 <div className="info">
-                                  <button onClick={() => handleInfoClick(stage.stageInfo)}>Info</button>
+                                  <button type="button" onClick={() => handleInfoClick(stage.stageInfo)}>
+                                    Info
+                                  </button>
                                 </div>
                               </VerticalTimelineElement>
                             ))}
