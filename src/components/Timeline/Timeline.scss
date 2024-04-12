@@ -1,132 +1,130 @@
-$background-color-light: #ead6ca;
-$primary-color-light: #75553f;
-$secondary-color-light: #75613f;
-$third-color-light: #2b4a44;
-$fourth-color-light: #2d394d;
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@mixin fadeInAnimation($duration: 1s, $delay: 0s) {
-  animation: $duration $delay ease-out 1 both fadeIn;
-}
+$first-color: #75553fff;
+$second-color: #85674dff;
+$third-color: #95795aff;
+$fourth-color: #a58b68ff;
+$fifth-color: #b49d75ff;
+$sixth-color: #c4af83ff;
+$seventh-color: #d4c190ff;
+$eighth-color: #e4d39eff;
+$ninth-color: #f3e5abff;
 
 .timeline-container {
+  background-color: $first-color;
   padding: 20px;
-  background-color: $background-color-light;
+  border-radius: 10px;
+  color: white;
 }
 
 .timeline {
-  text-align: center;
-  position: relative;
-  padding: 0;
-  margin: 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 2px;
-  height: 100%;
-  background: $secondary-color-light;
-}
-
-.era,
-.period,
-.epoch,
-.stage {
-  position: relative;
-  margin: 0;
-  padding: 1em;
-  border-radius: 0.25em;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  background: #fff;
-
-  @include fadeInAnimation;
-}
-
-.era-label,
-.period-label,
-.epoch-label,
-.stage-label {
-  font-weight: bold;
-  font-size: 1.2em;
-  padding-top: 0.5em;
-  color: $primary-color-light;
-}
-
-.era-start,
-.era-end,
-.period-start,
-.period-end,
-.epoch-start,
-.epoch-end,
-.stage-start,
-.stage-end {
-  font-size: 0.9em;
-  margin-top: 0.5em;
-  color: $secondary-color-light;
-}
-
-.info {
-  font-size: 0.9em;
-  color: $primary-color-light;
-  margin-top: 1em;
-  button {
-    background-color: $primary-color-light;
-    color: #fff;
-    cursor: pointer;
-  }
-}
-
-.open {
-  background: #f0f0f0;
+  background-color: $second-color;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .era {
-  background: lighten($primary-color-light, 40%);
+  background-color: $third-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  &.open {
+    background-color: $fourth-color;
+    margin-bottom: 2em;
+  }
+
+  &-label {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: $ninth-color;
+  }
+
+  &-start,
+  &-end {
+    font-size: 0.8em;
+    margin: 1em;
+  }
 }
 
 .period {
-  background: lighten($secondary-color-light, 30%);
+  background-color: $fifth-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  &.open {
+    background-color: $sixth-color;
+  }
+
+  &-label {
+    cursor: pointer;
+    font-weight: bold;
+    color: $first-color;
+  }
+
+  &-start,
+  &-end {
+    font-size: 0.8em;
+    margin: 1em;
+  }
 }
 
 .epoch {
-  background: lighten($third-color-light, 40%);
+  background-color: $seventh-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  &.open {
+    background-color: $eighth-color;
+  }
+
+  &-label {
+    cursor: pointer;
+    font-weight: bold;
+    color: $second-color;
+  }
+
+  &-start,
+  &-end {
+    font-size: 0.8em;
+    margin: 1em;
+  }
 }
 
 .stage {
-  background: lighten($fourth-color-light, 40%);
+  background-color: $ninth-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  &-label {
+    font-weight: bold;
+    color: $first-color;
+  }
+
+  &-start,
+  &-end {
+    font-size: 0.8em;
+    margin: 1em;
+    font-weight: bold;
+    color: $first-color;
+  }
 }
 
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 20px;
-  }
+.info {
+  margin-top: 10px;
 
-  @keyframes bounce-in {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
+  button {
+    background-color: $third-color;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 
-  .animate {
-    animation: bounce-in 0.5s ease-out both;
+    &:hover {
+      background-color: $fourth-color;
+    }
   }
 }
