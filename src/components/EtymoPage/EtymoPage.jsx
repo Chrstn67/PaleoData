@@ -54,6 +54,8 @@ function EtymoPage() {
     { root: 'spino-', meaning: 'épine', origin: 'Latin : spīna' },
   ];
 
+  etymologyData.sort((a, b) => a.root.replace('-', '').localeCompare(b.root.replace('-', '')));
+
   function getRandomRotation() {
     return Math.floor(Math.random() * 20) - 10;
   }
