@@ -22,7 +22,7 @@ function EtymoPage() {
     { root: '-avis', meaning: 'oiseau', origin: 'Latin : avis' },
     { root: '-cheirus', meaning: 'main', origin: 'Grec ancien : χείρ (kheír)' },
     { root: '-archus', meaning: 'maître', origin: 'Grec ancien : ἄρχω (árkhō)' },
-    { root: '-long', meaning: 'dragon', origin: 'Latin : lōngus' },
+    { root: '-long', meaning: 'dragon', origin: 'Chinois : 龙 (lóng)' },
     { root: '-cera-', meaning: 'corne', origin: 'Grec ancien : κέρας (kéras)' },
     { root: '-caris', meaning: 'crevette', origin: 'Grec ancien : καρίς (karís)' },
     { root: 'pro-', meaning: 'premier', origin: 'Grec ancien : πρό (pró)' },
