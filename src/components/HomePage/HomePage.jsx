@@ -3,14 +3,21 @@ import './HomePage.scss';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <section className="homePage">
       <section className="homePage__section homePage__section--gray">
         <div className="homePage__container">
           <div className="homePage__featured">
-            <h1 className="homePage__title">Welcome to PaleoData</h1>
+            <h1 className="homePage__title">PaleoData</h1>
             <p className="homePage__text">
-              Your source for paleontological data. Explore the ancient world and learn about prehistoric life.
+              Ta source de documentaion en matière de paléontologie ! Le lieu où tu peux partir faire un safari
+              préhistorique à la rencontre d'animaux insoupçonnés !
             </p>
           </div>
           <div className="homePage__image-wrapper">
@@ -21,18 +28,15 @@ const HomePage = () => {
       <section className="homePage__section">
         <div className="homePage__container homePage__container--reverse">
           <div className="homePage__featured">
-            <h2 className="homePage__title">Featured Animal</h2>
-            <p className="homePage__text">
-              Meet the featured animal of the day. Each time you visit, you'll discover a new creature from the ancient
-              world.
-            </p>
+            <h2 className="homePage__title">Des centaines d'animaux</h2>
+            <p className="homePage__text">Des centaines d'animaux t'attendent. Viens découvrir leur mode de vie !</p>
           </div>
           <div className="homePage__image-wrapper">
             <img src="/placeholder.svg" alt="Featured Animal" className="homePage__image" />
           </div>
           <div className="homePage__link-wrapper">
-            <Link to="/" className="homePage__link">
-              Read about this animal
+            <Link to="/animaux" onClick={handleClick} className="homePage__link">
+              Voir les animaux
             </Link>
           </div>
         </div>
@@ -41,14 +45,16 @@ const HomePage = () => {
       <section className="homePage__section homePage__section--gray">
         <div className="homePage__container">
           <div className="homePage__featured">
-            <h2 className="homePage__title">Echelle des temps</h2>
-            <p className="homePage__text">Lorem impsum etc</p>
+            <h2 className="homePage__title">Échelle des temps</h2>
+            <p className="homePage__text">
+              Voyage dans le temps et essaie d'imaginer le monde tel qu'il était aux temps de ces monstres disparus !
+            </p>
           </div>
           <div className="homePage__image-wrapper">
             <img src="/placeholder.svg" alt="Featured Animal" className="homePage__image" />
           </div>
           <div className="homePage__link-wrapper">
-            <Link to="/" className="homePage__link">
+            <Link to="/echelle-des-temps-geologiques" onClick={handleClick} className="homePage__link">
               Voir l'échelle du temps
             </Link>
           </div>
@@ -58,15 +64,17 @@ const HomePage = () => {
       <section className="homePage__section">
         <div className="homePage__container homePage__container--reverse">
           <div className="homePage__featured">
-            <h2 className="homePage__title">Etymologie</h2>
-            <p className="homePage__text">Lorem impsum etc</p>
+            <h2 className="homePage__title">Étymologie</h2>
+            <p className="homePage__text">
+              Les noms des animaux ne sont pas donnés au hasard... Découvre les racines qui ont données vie aux bêtes !
+            </p>
           </div>
           <div className="homePage__image-wrapper">
             <img src="/placeholder.svg" alt="Featured Animal" className="homePage__image" />
           </div>
           <div className="homePage__link-wrapper">
-            <Link to="/" className="homePage__link">
-              Voir Etymologie
+            <Link to="/liste-etymologique" onClick={handleClick} className="homePage__link">
+              Voir les étymologies
             </Link>
           </div>
         </div>
@@ -76,13 +84,16 @@ const HomePage = () => {
         <div className="homePage__container">
           <div className="homePage__featured">
             <h2 className="homePage__title">Documentation</h2>
-            <p className="homePage__text">Lorem impsum etc</p>
+            <p className="homePage__text">
+              Par à la conquête des dernières découvertes, de l'Histoire de la paléontologie et fais le plein de
+              connaissances !
+            </p>
           </div>
           <div className="homePage__image-wrapper">
             <img src="/placeholder.svg" alt="Featured Animal" className="homePage__image" />
           </div>
           <div className="homePage__link-wrapper">
-            <Link to="/" className="homePage__link">
+            <Link to="/documentation" onClick={handleClick} className="homePage__link">
               Voir la documentation
             </Link>
           </div>
