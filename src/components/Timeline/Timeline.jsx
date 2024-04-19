@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaInfo } from 'react-icons/fa';
+
 // import 'react-vertical-timeline-component/style.min.css';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
@@ -58,7 +60,7 @@ const Timeline = ({ timelineData }) => {
 
                 <div className="info">
                   <button type="button" onClick={() => handleInfoClick(era.eraInfo)}>
-                    Info
+                    <FaInfo size={20} />
                   </button>
                 </div>
               </div>
@@ -75,7 +77,7 @@ const Timeline = ({ timelineData }) => {
                       <div className="period-end">{formatValue(period.periodEnd)}</div>
                       <div className="info">
                         <button type="button" onClick={() => handleInfoClick(period.periodInfo)}>
-                          Info
+                          <FaInfo size={20} />
                         </button>
                       </div>
                     </div>
@@ -92,7 +94,7 @@ const Timeline = ({ timelineData }) => {
                             <div className="epoch-end">{formatValue(epoch.epochEnd)}</div>
                             <div className="info">
                               <button type="button" onClick={() => handleInfoClick(epoch.epochInfo)}>
-                                Info
+                                <FaInfo size={20} />
                               </button>
                             </div>
                           </div>
@@ -106,7 +108,7 @@ const Timeline = ({ timelineData }) => {
                                 <div className="stage-end">{formatValue(stage.stageEnd)}</div>
                                 <div className="info">
                                   <button type="button" onClick={() => handleInfoClick(stage.stageInfo)}>
-                                    Info
+                                    <FaInfo size={20} />
                                   </button>
                                 </div>
                               </VerticalTimelineElement>

@@ -13,6 +13,7 @@ $ninth-color: #f3e5abff;
   padding: 20px;
   border-radius: 10px;
   color: white;
+  text-align: center;
 }
 
 .timeline {
@@ -116,8 +117,6 @@ $ninth-color: #f3e5abff;
   margin-top: 10px;
 
   button {
-    background-color: $third-color;
-    color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
