@@ -1,5 +1,13 @@
+$first-color: #75553f;
+
+$fourth-color: #a58b68;
+
+$seventh-color: #d4c190;
+
 .footer {
-  background-color: #f5f5f5;
+  margin-top: 1em;
+  border-radius: 0.5em;
+  background-color: $first-color;
   padding: 4rem 0;
   font-family: 'Roboto', sans-serif;
 
@@ -21,6 +29,7 @@
   }
 
   &-title {
+    color: $seventh-color;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -36,7 +45,7 @@
   }
 
   &-link {
-    color: #333;
+    color: $seventh-color;
     text-decoration: none;
     font-size: 1.2rem;
     &:hover {
@@ -45,6 +54,7 @@
   }
 
   &-text {
+    color: $seventh-color;
     font-size: 1.2rem;
     line-height: 1.5;
 
@@ -64,6 +74,7 @@
   }
 
   &-copyright {
+    color: $seventh-color;
     font-size: 1.2rem;
 
     @media (max-width: 480px) {
@@ -73,6 +84,7 @@
 
   &-discord-icon,
   &-email-icon {
+    color: $seventh-color;
     font-size: 2.5rem;
 
     @media (max-width: 480px) {
@@ -81,7 +93,7 @@
   }
 
   &-contact-title {
-    color: #007bff;
+    color: $seventh-color;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
