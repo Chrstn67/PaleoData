@@ -52,9 +52,10 @@ $ninth-color: #f3e5abff;
         overflow: hidden;
 
         img {
-          width: 100%;
+          width: 90%;
           height: auto;
           object-fit: cover;
+          border-radius: 0.5em;
         }
 
         h3 {
