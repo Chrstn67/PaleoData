@@ -69,12 +69,7 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
       geologyEpoch: '',
       geologyStage: '',
     });
-  };
-
-  const [showMoreFilters, setShowMoreFilters] = useState(false);
-
-  const toggleMoreFilters = () => {
-    setShowMoreFilters(!showMoreFilters);
+    setSearchQuery('');
   };
 
   return (
@@ -87,89 +82,84 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
         value={searchQuery}
         onChange={handleSearchChange}
       />
+      <section className="more-filter">
+        <div>
+          <label htmlFor="diet">Régime alimentaire :</label>
+          <select id="diet" onChange={(e) => handleFilterChange('diet', e.target.value)} value={filters.diet}>
+            <option value="">Tous</option>
+            {[...uniqueDiets].sort().map((diet) => (
+              <option key={diet} value={diet}>
+                {diet}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <button onClick={toggleMoreFilters} type="button">
-        {showMoreFilters ? 'Masquer les filtres avancés' : 'Filtres avancés'}
-      </button>
-      {showMoreFilters && (
-        <section className="more-filter">
-          <div>
-            <label htmlFor="diet">Filtrer par régime alimentaire :</label>
-            <select id="diet" onChange={(e) => handleFilterChange('diet', e.target.value)} value={filters.diet}>
-              <option value="">Tous</option>
-              {[...uniqueDiets].sort().map((diet) => (
-                <option key={diet} value={diet}>
-                  {diet}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div>
+          <label htmlFor="geologyEra">Ère :</label>
+          <select
+            id="geologyEra"
+            onChange={(e) => handleFilterChange('geologyEra', e.target.value)}
+            value={filters.geologyEra}
+          >
+            <option value="">Tous</option>
+            {[...uniqueGeologyEras].sort().map((era) => (
+              <option key={era} value={era}>
+                {era}
+              </option>
+            ))}
+          </select>
+        </div>
 
-          <div>
-            <label htmlFor="geologyEra">Filtrer par ère :</label>
-            <select
-              id="geologyEra"
-              onChange={(e) => handleFilterChange('geologyEra', e.target.value)}
-              value={filters.geologyEra}
-            >
-              <option value="">Tous</option>
-              {[...uniqueGeologyEras].sort().map((era) => (
-                <option key={era} value={era}>
-                  {era}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div>
+          <label htmlFor="geologyPeriod">Période : </label>
+          <select
+            id="geologyPeriod"
+            onChange={(e) => handleFilterChange('geologyPeriod', e.target.value)}
+            value={filters.geologyPeriod}
+          >
+            <option value="">Tous</option>
+            {[...uniqueGeologyPeriods].sort().map((period) => (
+              <option key={period} value={period}>
+                {period}
+              </option>
+            ))}
+          </select>
+        </div>
 
-          <div>
-            <label htmlFor="geologyPeriod">Filtrer par période : </label>
-            <select
-              id="geologyPeriod"
-              onChange={(e) => handleFilterChange('geologyPeriod', e.target.value)}
-              value={filters.geologyPeriod}
-            >
-              <option value="">Tous</option>
-              {[...uniqueGeologyPeriods].sort().map((period) => (
-                <option key={period} value={period}>
-                  {period}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div>
+          <label htmlFor="geologyEpoch">Époque : </label>
+          <select
+            id="geologyEpoch"
+            onChange={(e) => handleFilterChange('geologyEpoch', e.target.value)}
+            value={filters.geologyEpoch}
+          >
+            <option value="">Tous</option>
+            {[...uniqueGeologyEpochs].sort().map((epoch) => (
+              <option key={epoch} value={epoch}>
+                {epoch}
+              </option>
+            ))}
+          </select>
+        </div>
 
-          <div>
-            <label htmlFor="geologyEpoch">Filtrer par époque : </label>
-            <select
-              id="geologyEpoch"
-              onChange={(e) => handleFilterChange('geologyEpoch', e.target.value)}
-              value={filters.geologyEpoch}
-            >
-              <option value="">Tous</option>
-              {[...uniqueGeologyEpochs].sort().map((epoch) => (
-                <option key={epoch} value={epoch}>
-                  {epoch}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div>
+          <label htmlFor="geologyStage">Étage : </label>
+          <select
+            id="geologyStage"
+            onChange={(e) => handleFilterChange('geologyStage', e.target.value)}
+            value={filters.geologyStage}
+          >
+            <option value="">Tous</option>
+            {[...uniqueGeologyStages].sort().map((stage) => (
+              <option key={stage} value={stage}>
+                {stage}
+              </option>
+            ))}
+          </select>
+        </div>
+      </section>
 
-          <div>
-            <label htmlFor="geologyStage">Filtrer par étage : </label>
-            <select
-              id="geologyStage"
-              onChange={(e) => handleFilterChange('geologyStage', e.target.value)}
-              value={filters.geologyStage}
-            >
-              <option value="">Tous</option>
-              {[...uniqueGeologyStages].sort().map((stage) => (
-                <option key={stage} value={stage}>
-                  {stage}
-                </option>
-              ))}
-            </select>
-          </div>
-        </section>
-      )}
       <button onClick={resetFilters} type="button">
         Réinitialiser
       </button>
