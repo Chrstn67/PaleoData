@@ -10,39 +10,13 @@
     text-align: center;
     color: #443022;
     font-size: 1.2em;
-    box-shadow:
-      inset 1px -1px 10px #9c7154,
-      inset -1px 1px 1px #ffffff,
-      0 10px 10px #4e392ac0;
-  }
-
-  button {
-    background-color: #75553f;
-    color: #fff;
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 0.2em;
-    cursor: pointer;
-    margin-bottom: 0.5em;
-    font-size: 1.1em;
-
-    box-shadow:
-      inset 3px -3px 30px #9c7154,
-      inset -4px 4px 4px #ffffff,
-      0 10px 20px #4e392ac0;
-
-    &:hover {
-      box-shadow:
-        inset 3px -3px 10px #9c7154,
-        inset -2px 2px 2px #ffffff,
-        0 5px 10px #4e392ac0;
-    }
+    box-shadow: 5px 5px 50px #9c7154;
   }
 
   .more-filter {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     div {
       width: 100%;
@@ -65,10 +39,33 @@
       }
     }
 
-    @media screen and (min-width: 769px) {
+    @media screen and (min-width: 600px) {
       div {
         width: calc(50% - 0.5em);
       }
+    }
+  }
+  button {
+    align-self: center;
+    background-color: #75553f;
+    color: #fff;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+
+    box-shadow:
+      inset 3px -3px 30px #9c7154,
+      inset -4px 4px 4px #ffffff,
+      0 10px 20px #4e392ac0;
+
+    &:hover {
+      box-shadow:
+        inset 3px -3px 10px #9c7154,
+        inset -2px 2px 2px #ffffff,
+        0 5px 10px #4e392ac0;
     }
   }
 }

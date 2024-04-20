@@ -94,7 +94,6 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
             ))}
           </select>
         </div>
-
         <div>
           <label htmlFor="geologyEra">Ère :</label>
           <select
@@ -110,7 +109,6 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
             ))}
           </select>
         </div>
-
         <div>
           <label htmlFor="geologyPeriod">Période : </label>
           <select
@@ -126,7 +124,6 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
             ))}
           </select>
         </div>
-
         <div>
           <label htmlFor="geologyEpoch">Époque : </label>
           <select
@@ -142,7 +139,6 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
             ))}
           </select>
         </div>
-
         <div>
           <label htmlFor="geologyStage">Étage : </label>
           <select
@@ -157,12 +153,11 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
               </option>
             ))}
           </select>
-        </div>
+        </div>{' '}
+        <button onClick={resetFilters} type="button">
+          Réinitialiser
+        </button>
       </section>
-
-      <button onClick={resetFilters} type="button">
-        Réinitialiser
-      </button>
     </section>
   );
 };
