@@ -21,6 +21,7 @@ $ninth-color: #f3e5abff;
     list-style: none;
     width: 100%;
     padding: 0;
+    // filter: drop-shadow(10px 10px 10px #75553fff);
 
     li {
       perspective: 500px;
@@ -37,6 +38,8 @@ $ninth-color: #f3e5abff;
       position: relative;
 
       outline: $ninth-color 2px solid;
+
+      filter: drop-shadow(15px 20px 15px #75553fff);
 
       a {
         color: inherit;
