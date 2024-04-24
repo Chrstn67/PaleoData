@@ -22,11 +22,8 @@
     "react-router-dom": "^6.16.0",
     "react-vertical-timeline-component": "^3.6.0",
     "sass": "^1.68.0",
-
-    "typewriter-effect": "^2.21.0",
-
     "tailwind-merge": "^2.2.1",
-
+    "typewriter-effect": "^2.21.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

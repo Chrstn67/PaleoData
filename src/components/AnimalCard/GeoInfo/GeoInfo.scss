@@ -33,17 +33,13 @@
       font-size: 2em;
     }
 
-    @media (min-width: 1024px) {
-      font-size: 3em;
-    }
-  }
-
-  @keyframes animate {
-    0% {
-      background-position: -500%;
-    }
-    100% {
-      background-position: 500%;
+    @keyframes animate {
+      0% {
+        background-position: -500%;
+      }
+      100% {
+        background-position: 500%;
+      }
     }
   }
 }
