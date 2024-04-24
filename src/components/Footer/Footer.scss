@@ -52,12 +52,17 @@ $seventh-color: #d4c190;
 
   &-text {
     color: $seventh-color;
-
     line-height: 1.5;
 
     @media (max-width: 480px) {
       font-size: 1rem;
     }
+  }
+
+  i {
+    color: $seventh-color;
+    line-height: 1.5;
+    font-size: 0.8em;
   }
 
   &-logo {

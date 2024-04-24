@@ -35,13 +35,6 @@ const HomePage = () => {
           créatures étonnantes du Paléozoïque jusqu&apos;à nos jours.
         </p>
         <br />
-        <p>
-          <i>
-            Nous nous engageons résolument à observer rigoureusement les dispositions du RGPD en matière de protection
-            des données, et nous nous assurons ainsi de n&apos;utiliser votre adresse électronique que dans le cadre des
-            échanges liés au sujet principal du site.
-          </i>
-        </p>
 
         {randomAnimal && (
           <div className="random-animal-section">

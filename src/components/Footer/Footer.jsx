@@ -17,7 +17,13 @@ const Footer = () => {
             </Link>{' '}
             <Link href="mailto:paleodata@outlook.com" target="_blank" rel="noopener noreferrer" title="Mail">
               <FaEnvelope className="footer-email-icon" />
-            </Link>
+            </Link>{' '}
+            <br />
+            <i>
+              Nous nous engageons résolument à observer rigoureusement les dispositions du RGPD en matière de protection
+              des données, et nous nous assurons ainsi de n&apos;utiliser tes coordonnées que dans le cadre des échanges
+              liés au sujet principal du site.
+            </i>
           </div>
         </section>
         <section className="footer-section">
