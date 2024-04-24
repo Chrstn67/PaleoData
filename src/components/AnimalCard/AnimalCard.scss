@@ -1,226 +1,180 @@
 .animal-card {
-  padding: 2rem;
-  background-color: #ffffff;
-  box-shadow:
-    inset 3px -3px 100px #9c7154,
-    inset -4px 4px 4px #58402f,
-    0 10px 20px #4e392ac0;
-  border-radius: 10px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
 
-  @media (min-width: 630px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  h2 {
+    display: flex;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: #f3e5ab;
+    color: #75553f;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-    .left-section,
-    .right-section {
-      display: flex;
-      flex-direction: column;
+    @media (min-width: 630px) {
+      font-size: 2em;
     }
   }
 
-  .left-section {
-    align-items: center;
+  h3 {
+    text-align: center;
+    margin-top: 1rem;
+    background-color: #75553f;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    box-shadow:
+      inset 3px -3px 30px #9c7154,
+      inset -4px 4px 4px #ffffff,
+      0 10px 20px rgba(78, 57, 42, 0.7529411765);
+  }
 
-    button {
-      margin-top: 0.5rem;
-      background-color: #75553f;
-      color: #fff;
-      outline: none;
-      border: none;
-      border-radius: 0.5rem;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition:
-        background-color 0.2s,
-        color 0.2s;
+  button {
+    background-color: #75553f;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+    box-shadow:
+      inset 3px -3px 30px #9c7154,
+      inset -4px 4px 4px #fff,
+      0 10px 20px #4e392ac0;
+    &:hover {
       box-shadow:
-        inset 3px -3px 30px #9c7154,
-        inset -4px 4px 4px #ffffff,
-        0 10px 20px rgba(78, 57, 42, 0.7529411765);
+        inset 3px -3px 10px #9c7154,
+        inset -2px 2px 2px #ffffff,
+        0 5px 10px #4e392ac0;
     }
+  }
+}
+
+.top-part {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 0.5em;
+    filter: drop-shadow(15px 20px 15px #75553f);
+  }
+
+  .animal-generalites {
+    p {
+      font-size: 1.2em;
+      color: #75553f;
+      font-style: italic;
+    }
+  }
+
+  .animal-geologie-container {
+    flex: 1 0 30%;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
 
     .animal-generalites {
-      button {
-        margin-top: 0.5rem;
-        background-color: #75553f;
-        color: #fff;
-        outline: none;
-        border: none;
-        border-radius: 0.5rem;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition:
-          background-color 0.2s,
-          color 0.2s;
-        box-shadow:
-          inset 3px -3px 30px #9c7154,
-          inset -4px 4px 4px #ffffff,
-          0 10px 20px #4e392ac0;
-
-        &:hover {
-          box-shadow:
-            inset 3px -3px 10px #9c7154,
-            inset -2px 2px 2px #ffffff,
-            0 5px 10px #4e392ac0;
-          color: #d2b48c;
-        }
-      }
-
-      h2 {
-        margin-bottom: 1em;
-        font-size: 2rem;
-
-        @media (max-width: 768px) {
-          font-size: 1.5rem;
-        }
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 1em;
-        border-radius: 0.5em;
-        box-shadow:
-          inset 30px -3px 30px #75553f,
-          inset -4px 4px 20px #75553f,
-          10px 10px 20px #75553f;
-      }
-
-      div {
-        h3 {
-          font-size: 1.5rem;
-          margin-top: 1rem;
-          background-color: #75553f;
-          color: #fff;
-          padding: 0.5rem;
-          border-radius: 1rem;
-          box-shadow:
-            inset 3px -3px 30px #9c7154,
-            inset -4px 4px 4px #ffffff,
-            0 10px 20px #4e392ac0;
-        }
-
-        p {
-          font-size: 1.2rem;
-          margin-bottom: 1rem;
-        }
-
-        span {
-          font-weight: bold;
-        }
-      }
-    }
-
-    .animal-geologie {
-      div {
-        h3 {
-          font-size: 1.5rem;
-          margin-top: 1rem;
-          background-color: #75553f;
-          color: #fff;
-          padding: 0.5rem;
-          border-radius: 1rem;
-          box-shadow:
-            inset 3px -3px 30px #9c7154,
-            inset -4px 4px 4px #ffffff,
-            0 10px 20px #4e392ac0;
-        }
-
-        p {
-          text-align: left;
-          @media (max-width: 630px) {
-            text-align: center;
-          }
-          span {
-            font-weight: bold;
-          }
-        }
-      }
+      flex: 1;
+      margin-right: 2em;
     }
   }
+}
 
-  .right-section {
-    .animal-description,
-    .animal-autresInfos {
-      h3 {
-        font-size: 1.5rem;
-        margin-top: 1rem;
-        background-color: #75553f;
-        color: #fff;
-        padding: 0.5rem;
-        border-radius: 1rem;
-        box-shadow:
-          inset 3px -3px 30px #9c7154,
-          inset -4px 4px 4px #ffffff,
-          0 10px 20px #4e392ac0;
-      }
+.middle-top-part {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-      div {
-        p {
-          span {
-            font-weight: bold;
-          }
-        }
-      }
-      .description {
-        p {
-          height: 20em;
-          overflow-y: auto;
-          box-shadow:
-            inset 3px -3px 100px #9c7154,
-            inset -1px 1px 1px #58402f,
-            0 10px 20px #4e392ac0;
-          padding: 1em;
-          border-radius: 0.5em;
-        }
-      }
+  .description {
+    box-shadow:
+      inset 3px -3px 100px #9c7154,
+      inset -1px 1px 1px #58402f,
+      0 10px 20px #4e392ac0;
+    padding: 1em;
+
+    @media (max-width: 768px) {
+      height: 15em;
+      overflow-y: auto;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 1.1em;
     }
   }
+}
 
-  .bottom-section {
-    grid-column: span 2;
-    grid-row: 3;
+.middle-bottom-part {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: #75553f;
 
-    .taxonomy {
-      h3 {
-        font-size: 1.5rem;
-        margin-top: 1rem;
-        background-color: #75553f;
-        color: #fff;
-        padding: 0.5rem;
-        border-radius: 1rem;
-        box-shadow:
-          inset 3px -3px 30px #9c7154,
-          inset -4px 4px 4px #ffffff,
-          0 10px 20px #4e392ac0;
+  p {
+    font-weight: 600;
+  }
+
+  section {
+    margin: 1em 0;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    section {
+      flex: 1 0 45%;
+      margin: 1em;
+    }
+  }
+}
+
+.bottom-section {
+  grid-column: span 2;
+  grid-row: 3;
+
+  table {
+    width: 100%;
+  }
+
+  .taxonomy {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+
+      td {
+        padding: 1rem;
+        border-bottom: 1px solid #ccc;
       }
 
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: center;
+      span {
+        font-weight: 800;
+        color: #75553f;
+      }
 
+      @media (max-width: 768px) {
         td {
-          padding: 1rem;
-          border-bottom: 1px solid #ccc;
-        }
-
-        span {
-          font-weight: bold;
-        }
-      }
-
-      @media (max-width: 550px) {
-        table {
-          td {
-            display: block;
-            padding: 0.5rem;
-            text-align: left;
-          }
+          display: block;
+          padding: 0.5rem;
+          text-align: left;
         }
       }
     }
