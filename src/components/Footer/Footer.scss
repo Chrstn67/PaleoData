@@ -8,7 +8,7 @@ $seventh-color: #d4c190;
   margin-top: 1em;
   border-radius: 0.5em;
   background-color: $first-color;
-  padding: 4rem 0;
+  padding: 1em;
   font-family: 'Roboto', sans-serif;
 
   &-content {
@@ -33,10 +33,6 @@ $seventh-color: #d4c190;
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-
-    @media (max-width: 480px) {
-      font-size: 1.2rem;
-    }
   }
 
   &-links {
@@ -47,7 +43,8 @@ $seventh-color: #d4c190;
   &-link {
     color: $seventh-color;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.2em;
+
     &:hover {
       text-decoration: underline;
     }
@@ -55,7 +52,7 @@ $seventh-color: #d4c190;
 
   &-text {
     color: $seventh-color;
-    font-size: 1.2rem;
+
     line-height: 1.5;
 
     @media (max-width: 480px) {
@@ -64,18 +61,11 @@ $seventh-color: #d4c190;
   }
 
   &-logo {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 1rem;
-
-    @media (max-width: 480px) {
-      max-width: 150px;
-    }
+    width: 50%;
   }
 
   &-copyright {
     color: $seventh-color;
-    font-size: 1.2rem;
 
     @media (max-width: 480px) {
       font-size: 1rem;
