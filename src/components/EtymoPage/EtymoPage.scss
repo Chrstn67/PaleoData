@@ -1,45 +1,43 @@
-/* EtymoPage.scss */
+$first-color: #75553fff;
+$second-color: #85674dff;
+$third-color: #95795aff;
+$fourth-color: #a58b68ff;
+$fifth-color: #b49d75ff;
+$sixth-color: #c4af83ff;
+$seven-color: #d4c190ff;
+$eighth-color: #e4d39eff;
+$ninth-color: #f3e5abff;
 
-.etymology-table {
-  margin: 2rem;
-  font-family: Arial, sans-serif;
+.etymology-garden {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: $second-color;
+}
+
+.etymo-plant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow:
-    inset 3px -3px 500px #9c7154,
-    // inset -2px 2px 2px #58402f,
-    0 10px 20px #4e392ac0;
+  background: $ninth-color;
+  box-shadow: 0 8px 32px 0 $third-color;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  outline: 1px solid#ffffff2e;
+  margin: 10px;
+}
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    thead {
-      position: sticky;
-      top: 0;
-      z-index: 3;
+.plant-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: $first-color;
+}
 
-      box-shadow:
-        inset 3px -3px 500px #9c7154,
-        0 10px 20px #4e392ac0;
-    }
-    th,
-    td {
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #75553f;
-      color: #fff;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    tr:hover {
-      background-color: #75553f9f;
-      color: #ffffff;
-    }
-  }
+.plant-description,
+.plant-type {
+  font-size: 16px;
+  color: $third-color;
 }

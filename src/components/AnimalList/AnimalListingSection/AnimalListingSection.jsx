@@ -14,49 +14,43 @@ const AnimalCard = ({ animal }) => {
     const x = (clientX - left) / width - 0.5;
     const y = (clientY - top) / height - 0.5;
 
-    cardRef.current.style.transform = `perspective(500px) rotateX(${y * 20}deg) rotateY(${x * 20}deg)`;
+    cardRef.current.style.transform = `perspective(500px) rotateX(${y * -20}deg) rotateY(${x * 20}deg)`;
   };
 
   const resetCardTransform = () => {
     cardRef.current.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
   };
 
-  const shareLink = async (animal) => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: `Découvre des informations sur ${animal.nom}.`,
-          text: `Découvre des informations sur ${animal.nom}.`,
-          url: `${window.location.origin}/PaleoData/#/animal/${encodeURIComponent(animal.nom)}`,
-        });
-      } catch (error) {
-        console.error('Erreur lors du partage :', error);
-      }
-    }
-  };
+  // const shareLink = async (animal) => {
+  //   if (navigator.share) {
+  //     try {
+  //       await navigator.share({
+  //         title: `Découvre des informations sur ${animal.nom}.`,
+  //         text: `Découvre des informations sur ${animal.nom}.`,
+  //         url: `${window.location.origin}/PaleoData/#/animal/${encodeURIComponent(animal.nom)}`,
+  //       });
+  //     } catch (error) {
+  //       console.error('Erreur lors du partage :', error);
+  //     }
+  //   }
+  // };
 
   return (
     <li ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={resetCardTransform}>
-      <Link to={`/animal/${encodeURIComponent(animal.nom)}`}>
-        <div
-          style={{
-            background: `center / contain no-repeat url(${animal.image_url})`,
-            height: '17em',
-            width: '17em',
-            borderRadius: '0.5rem',
-            maxWidth: '80%',
-          }}
-        />
-        <h3>{animal.nom}</h3>
-      </Link>
-      <button
+      <div className="image-container">
+        <Link to={`/animal/${encodeURIComponent(animal.nom)}`}>
+          <img src={animal.image_url} alt={animal.nom} />
+          <h3>{animal.nom}</h3>
+        </Link>
+      </div>
+      {/* <button
         type="button"
         onClick={() => {
           shareLink(animal);
         }}
       >
         <BiShareAlt size={20} />
-      </button>
+      </button> */}
     </li>
   );
 };

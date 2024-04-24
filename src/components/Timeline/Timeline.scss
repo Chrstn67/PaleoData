@@ -1,124 +1,129 @@
+$first-color: #75553fff;
+$second-color: #85674dff;
+$third-color: #95795aff;
+$fourth-color: #a58b68ff;
+$fifth-color: #b49d75ff;
+$sixth-color: #c4af83ff;
+$seventh-color: #d4c190ff;
+$eighth-color: #e4d39eff;
+$ninth-color: #f3e5abff;
+
 .timeline-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: $first-color;
   padding: 20px;
+  border-radius: 10px;
+  color: white;
   text-align: center;
+}
 
-  h3 {
-    background: linear-gradient(to top, #75553f, #75553f36);
-    padding: 0.3em;
-    border-radius: 0.5em;
-    outline: 2px solid #583253;
-    box-shadow:
-      inset 3px -3px 10px #9c7154,
-      inset -2px 20px 20px #ffffff,
-      0 5px 10px #4e392ac0;
+.timeline {
+  background-color: $second-color;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.era {
+  background-color: $third-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  &.open {
+    background-color: $fourth-color;
+    margin-bottom: 2em;
   }
 
-  .era {
-    background: linear-gradient(to top, #75553f, #dfc8de);
-    padding: 20px;
-    margin: 20px;
+  &-label {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: $ninth-color;
+  }
 
-    box-shadow:
-      inset 3px -3px 10px #9c7154,
-      inset -2px 20px 20px #ffffff,
-      0 5px 10px #4e392ac0;
+  &-start,
+  &-end {
+    font-size: 0.8em;
+    margin: 1em;
+  }
+}
+
+.period {
+  background-color: $fifth-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  &.open {
+    background-color: $sixth-color;
+  }
+
+  &-label {
+    cursor: pointer;
+    font-weight: bold;
+    color: $first-color;
+  }
+
+  &-start,
+  &-end {
+    font-size: 0.8em;
+    margin: 1em;
+  }
+}
+
+.epoch {
+  background-color: $seventh-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  &.open {
+    background-color: $eighth-color;
+  }
+
+  &-label {
+    cursor: pointer;
+    font-weight: bold;
+    color: $second-color;
+  }
+
+  &-start,
+  &-end {
+    font-size: 0.8em;
+    margin: 1em;
+  }
+}
+
+.stage {
+  background-color: $ninth-color;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+
+  &-label {
+    font-weight: bold;
+    color: $first-color;
+  }
+
+  &-start,
+  &-end {
+    font-size: 0.8em;
+    margin: 1em;
+    font-weight: bold;
+    color: $first-color;
+  }
+}
+
+.info {
+  margin-top: 10px;
+
+  button {
+    border: none;
+    padding: 5px 10px;
     border-radius: 5px;
-    width: 80%;
+    cursor: pointer;
+
     &:hover {
-      background: linear-gradient(to top, #dfc8de, #75553f);
-      box-shadow:
-        inset 3px -3px 10px #4e392ac0,
-        inset -2px 20px 20px #ffffff,
-        0 5px 10px #9c7154;
-    }
-
-    .period {
-      background: linear-gradient(to top, #886249, #bdb6a0);
-      margin-top: 20px;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow:
-        inset 3px 10px 10px #573f2e,
-        inset -2px 20px 20px #e65858,
-        10px 5px 100px #4e392ac0;
-
-      &:hover {
-        background: linear-gradient(to top, #bdb6a0, #886249);
-        box-shadow:
-          inset 3px 10px 10px #4e392ac0,
-          inset -2px 20px 20px #e65858,
-          10px 5px 100px #573f2e;
-      }
-
-      .epoch {
-        background: linear-gradient(to top, #996f53, #a0885d);
-        margin-top: 20px;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow:
-          inset 3px 10px 10px #573f2e,
-          inset -2px 20px 20px #ff6600,
-          10px 5px 100px #4e392ac0;
-
-        &:hover {
-          background: linear-gradient(to top, #a0885d, #996f53);
-          box-shadow:
-            inset 3px 10px 10px #4e392ac0,
-            inset -2px 20px 20px #ff6600,
-            10px 5px 100px #573f2e;
-        }
-
-        .stage {
-          background: linear-gradient(to top, #d19974, #814e36);
-          margin-top: 20px;
-          padding: 20px;
-          border-radius: 5px;
-          box-shadow:
-            inset 3px 10px 10px #573f2e,
-            inset -2px 20px 20px #fc9700,
-            10px 5px 100px #4e392ac0;
-
-          &:hover {
-            background: linear-gradient(to top, #814e36, #d19974);
-            box-shadow:
-              inset 3px 10px 10px #4e392ac0,
-              inset -2px 20px 20px #fc9700,
-              10px 5px 100px #573f2e;
-          }
-        }
-      }
-    }
-
-    .info-btn {
-      background: linear-gradient(to top, #75553f, #75553f88);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      font-size: 18px;
-      cursor: pointer;
-      margin-top: 10px;
-      box-shadow:
-        inset 3px -3px 30px #9c7154,
-        inset -4px 4px 4px #ffffff,
-        0 10px 20px #4e392ac0;
-
-      &:hover {
-        box-shadow:
-          inset 3px -3px 10px #9c7154,
-          inset -2px 2px 2px #ffffff,
-          0 5px 10px #4e392ac0;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .era {
-      width: 95%;
+      background-color: $fourth-color;
     }
   }
 }
