@@ -1,14 +1,12 @@
 .navbar {
-  background-color: #d8ac6586;
+  background-color: #75553fd2;
   border-radius: 0.5em;
 
   @media screen and (max-width: 768px) {
     position: fixed;
-
-    margin-top: 4px;
-    margin-bottom: 4px;
-    top: 10px;
+    bottom: 0;
     left: 1.4em;
+    width: 50%;
     z-index: 10;
   }
 
@@ -16,6 +14,7 @@
     cursor: pointer;
     display: none;
     font-size: 1.5em;
+
     @media screen and (max-width: 768px) {
       display: block;
       margin: 0.25em;
@@ -31,7 +30,8 @@
     align-items: center;
 
     @media screen and (max-width: 768px) {
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-around;
       background-color: #88624ab7;
       z-index: 1;
       display: none;
@@ -51,6 +51,16 @@
         color: white;
         text-decoration: none;
         transition: color 0.3s;
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-left: 0.5rem;
+
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+        }
 
         &:not(.active):hover {
           color: #f8c471;
