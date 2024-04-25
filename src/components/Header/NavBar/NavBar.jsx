@@ -36,7 +36,7 @@ const NavBar = () => {
         </li>
         <li className="navbar-item">
           <NavLink to="/liste-etymologique" onClick={toggleMenu}>
-            Etymologie
+            Étymologie
           </NavLink>
         </li>
         <li className="navbar-item">

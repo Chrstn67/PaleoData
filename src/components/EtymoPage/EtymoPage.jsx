@@ -46,7 +46,7 @@ function EtymoPage() {
     { root: 'neo-', meaning: 'nouveau', origin: 'Grec ancien : νέος (néos)' },
 
     { root: '-onyx', meaning: 'griffe', origin: 'Grec ancien : ὄνυξ (ónux)' },
-    { root: 'cerato-', meaning: 'corne', origin: 'Grec ancien : κέρας (kéras)' },
+
     { root: 'eu-', meaning: 'bien, vrai', origin: 'Grec ancien : εὖ (eû)' },
     { root: '-phag-', meaning: 'mangeur', origin: 'Grec ancien : φαγεῖν (phageîn)' },
 
