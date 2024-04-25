@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from 'react';
 import './EtymoPage.scss';
 
 function EtymoPage() {
@@ -57,13 +58,50 @@ function EtymoPage() {
   etymologyData.sort((a, b) => a.root.replace('-', '').localeCompare(b.root.replace('-', '')));
 
   function getRandomRotation() {
-    return Math.floor(Math.random() * 20) - 10;
+    return {
+      x: Math.floor(Math.random() * 20) - 10,
+      y: Math.floor(Math.random() * 20) - 10,
+      z: Math.floor(Math.random() * 20) - 10,
+    };
   }
+
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    cardRefs.current.forEach((cardRef) => {
+      animateCard(cardRef);
+    });
+  }, []);
+
+  const animateCard = (cardRef) => {
+    const duration = Math.random() * 1 + 5;
+    const rotations = getRandomRotation();
+
+    cardRef.animate(
+      [
+        { transform: `perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)` },
+        {
+          transform: `perspective(500px) rotateX(${rotations.x}deg) rotateY(${rotations.y}deg) rotateZ(${rotations.z}deg)`,
+        },
+      ],
+      {
+        duration: duration * 500,
+        easing: 'linear',
+        iterations: Infinity,
+        direction: 'alternate',
+      },
+    );
+  };
 
   return (
     <section className="etymology-garden">
       {etymologyData.map((item, index) => (
-        <div className="etymo-plant" key={index} style={{ transform: `rotate(${getRandomRotation()}deg)` }}>
+        <div
+          className="etymo-plant"
+          key={index}
+          ref={(el) => (cardRefs.current[index] = el)}
+          style={{ transform: `rotate(${getRandomRotation().x}deg)` }}
+        >
           <div className="plant-label">{item.root}</div>
           <div className="plant-description">{item.meaning}</div>
           <div className="plant-type">{item.origin}</div>

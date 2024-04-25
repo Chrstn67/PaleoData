@@ -1617,7 +1617,7 @@ const data = [
   {
     nom: 'Haikouichthys',
     etymologie: 'Poisson de Haikou',
-    image_url: './assets/images/Haikouichthys.jpg',
+    image_url: './assets/images/Haikouichthys.png',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: 'Eumetazoa',

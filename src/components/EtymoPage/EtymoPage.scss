@@ -28,6 +28,7 @@ $ninth-color: #f3e5abff;
   -webkit-backdrop-filter: blur(4px);
   outline: 1px solid#ffffff2e;
   margin: 10px;
+  filter: drop-shadow(5px 15px 5px $sixth-color);
 }
 
 .plant-label {
