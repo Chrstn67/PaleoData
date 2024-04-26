@@ -3,11 +3,15 @@
   border-radius: 0.5em;
 
   @media screen and (max-width: 768px) {
+    border-radius: 0.5em;
     position: fixed;
     bottom: 0;
-    left: 1.4em;
-    width: 50%;
+    left: 0;
+    width: 100%;
     z-index: 10;
+    padding: 0 1.5em;
+    box-sizing: border-box;
+    background-color: transparent;
   }
 
   .navbar-burger {
@@ -16,8 +20,7 @@
     font-size: 1.5em;
 
     @media screen and (max-width: 768px) {
-      display: block;
-      margin: 0.25em;
+      display: none;
     }
   }
 
@@ -31,14 +34,14 @@
 
     @media screen and (max-width: 768px) {
       flex-direction: row;
-      justify-content: space-around;
-      background-color: #88624ab7;
+      justify-content: space-between;
+      background-color: #d4c190;
       z-index: 1;
-      display: none;
+      display: flex;
 
-      &.show {
-        display: flex;
-      }
+      // &.show {
+      //   display: flex;
+      // }
     }
 
     li {
@@ -48,11 +51,14 @@
       box-sizing: border-box;
 
       a {
-        color: white;
+        color: #d4c190;
         text-decoration: none;
         transition: color 0.3s;
         display: flex;
         align-items: center;
+        @media screen and (max-width: 768px) {
+          color: #75553f;
+        }
 
         span {
           margin-left: 0.5rem;
@@ -68,12 +74,16 @@
       }
 
       .active {
-        box-shadow:
-          inset 0 0 10px 5px #f8c471,
-          0 0 5px 10px #f8c471;
+        outline: 2px solid #d4c190;
+        font-size: 1.2em;
         width: 100%;
         display: block;
-        padding: 0;
+        padding: 0.2em;
+
+        @media screen and (max-width: 768px) {
+          outline: 2px solid #75553f;
+          padding: 0.1em;
+        }
       }
     }
 

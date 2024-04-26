@@ -1,4 +1,4 @@
-import { FaHome, FaHistory, FaBook, FaQuestionCircle } from 'react-icons/fa';
+import { FaHome, FaHistory, FaBook, FaInfoCircle } from 'react-icons/fa';
 import { GiDinosaurBones } from 'react-icons/gi';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -13,37 +13,34 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-burger" onClick={toggleMenu}>
-        ☰
-      </div>
       <ul className={`navbar-list ${isMenuOpen ? 'show' : ''}`}>
         <li className="navbar-item">
           <NavLink exact to="/" onClick={toggleMenu}>
-            <FaHome />
+            <FaHome size={20} />
             <span>Accueil</span>
           </NavLink>
         </li>
         <li className="navbar-item">
           <NavLink to="/animaux" onClick={toggleMenu}>
-            <GiDinosaurBones />
+            <GiDinosaurBones size={20} />
             <span>Animaux</span>
           </NavLink>
         </li>
         <li className="navbar-item">
           <NavLink to="/echelle-des-temps-geologiques" onClick={toggleMenu}>
-            <FaHistory />
+            <FaHistory size={20} />
             <span>Échelle des temps</span>
           </NavLink>
         </li>
         <li className="navbar-item">
           <NavLink to="/liste-etymologique" onClick={toggleMenu}>
-            <FaBook />
+            <FaBook size={20} />
             <span>Étymologie</span>
           </NavLink>
         </li>
         <li className="navbar-item">
           <NavLink to="/documentation" onClick={toggleMenu}>
-            <FaQuestionCircle />
+            <FaInfoCircle size={20} />
             <span>Documentation</span>
           </NavLink>
         </li>
