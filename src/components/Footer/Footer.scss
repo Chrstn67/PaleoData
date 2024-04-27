@@ -6,6 +6,7 @@ $seventh-color: #d4c190;
 
 .footer {
   margin-top: 1em;
+
   border-radius: 0.5em;
   background-color: $first-color;
   padding: 1em;
@@ -96,5 +97,9 @@ $seventh-color: #d4c190;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 2em;
   }
 }

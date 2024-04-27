@@ -38,10 +38,6 @@
       background-color: #d4c190;
       z-index: 1;
       display: flex;
-
-      // &.show {
-      //   display: flex;
-      // }
     }
 
     li {
@@ -85,6 +81,36 @@
           padding: 0.1em;
         }
       }
+
+      // Styles pour le sous-menu
+      &:hover > .navbar-sublist {
+        display: block;
+      }
+
+      .navbar-sublist {
+        display: none;
+        position: absolute;
+        background-color: #75553fd2;
+        top: 100%;
+        left: 0;
+        width: 85%;
+        z-index: 999;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      .navbar-subitem {
+        padding: 0.5rem;
+
+        a {
+          color: #d4c190;
+          &:not(.active):hover {
+            color: #f8c471;
+          }
+        }
+      }
     }
 
     /* Responsive styles */
@@ -98,6 +124,9 @@
         a {
           padding: 0.3rem;
         }
+      }
+      .navbar-subitem {
+        display: none;
       }
     }
   }

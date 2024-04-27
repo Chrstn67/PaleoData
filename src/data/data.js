@@ -4282,7 +4282,7 @@ const data = [
   {
     nom: 'Tapejara',
     etymologie: "'Vieil être', en langue tupi",
-    image_url: './assets/images/Tapejara.jpeg',
+    image_url: './assets/images/Tapejara.jpg',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -7312,7 +7312,7 @@ const data = [
       extinction: -475,
     },
     description:
-      "Aegirocassis possède un tête en forme de d'épée pointant vers l'avant, ce qui devait faire de lui un animal rapide à la anage. Les pièces buccales comportaient deux appendices pourvus de longues soies permettant de filtrer de grandes quantités d'eau de mer pour en récupérer le plancton. Derrière la bouche, une sorte de poche permettait de stocker la nourriture pour l'ingérer plus tard. Aegirocassis possède aussi des yeux composés.",
+      "Aegirocassis possède une tête en forme d'épée pointant vers l'avant, ce qui devait faire de lui un animal rapide à la nage. Les pièces buccales comportaient deux appendices pourvus de longues soies permettant de filtrer de grandes quantités d'eau de mer pour en récupérer le plancton. Derrière la bouche, une sorte de poche permettait de stocker la nourriture pour l'ingérer plus tard. Aegirocassis possède aussi des yeux composés.",
     autres_infos: {
       taille: {
         longueur: '2 mètres',
