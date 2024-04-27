@@ -7,10 +7,11 @@ import { FaQuestion } from 'react-icons/fa';
 import { RiCompassDiscoverFill } from 'react-icons/ri';
 
 const Documentation = () => {
-  const ref = useRef(null);
-
   const scrollToTop = () => {
-    ref.current.scrollIntoView({ behavior: 'auto' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   };
 
   return (
