@@ -167,7 +167,7 @@ const data = [
   },
   {
     nom: 'Acleistorhinus',
-    etymologie: '--',
+    etymologie: 'Nez non-fermé',
     image_url: './assets/images/Acleistorhinus.jpg',
     taxonomie: {
       règne: 'Animalia',

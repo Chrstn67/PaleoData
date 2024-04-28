@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaDiscord, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import './Footer.scss';
 
 const Footer = () => {
+  const ref = useRef(null);
+
+  const scrollToTop = () => {
+    ref.current.scrollIntoView({ behavior: 'auto' });
+  };
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -46,7 +52,7 @@ const Footer = () => {
           <img src="Logo.jpg" alt="Logo développeur" className="footer-logo" />
           <p className="footer-copyright">
             &copy; {currentYear} PaleoData. Tous droits réservés. <br />{' '}
-            <Link className="footer-link" to="/mentions-legales">
+            <Link className="footer-link" to="/mentions-legales" onClick={scrollToTop}>
               Mentions légales
             </Link>
           </p>
