@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.scss';
-import { FaHistory, FaBook, FaQuestionCircle } from 'react-icons/fa';
-import { GiDinosaurBones } from 'react-icons/gi';
+import { FaHistory, FaBook, FaInfoCircle } from 'react-icons/fa';
+import { GiDinosaurRex } from 'react-icons/gi';
 
 const HomePage = () => {
   const ref = useRef(null);
@@ -25,7 +25,7 @@ const HomePage = () => {
       </div>
       <div className="sections">
         <div className="section">
-          <GiDinosaurBones size={50} />
+          <GiDinosaurRex size={50} />
           <h2>Animaux</h2>
           <p>Découvre les dernières informations sur tes animaux favoris</p>
           <Link to="/animaux" onClick={scrollToTop}>
@@ -41,7 +41,7 @@ const HomePage = () => {
           </Link>
         </div>
         <div className="section">
-          <FaQuestionCircle size={50} />
+          <FaBook size={50} />
           <h2>Étymologie</h2>
           <p>Apprend l'origine des noms des animaux</p>
           <Link to="/liste-etymologique" onClick={scrollToTop}>
@@ -49,7 +49,7 @@ const HomePage = () => {
           </Link>
         </div>
         <div className="section">
-          <FaBook size={50} />
+          <FaInfoCircle size={50} />
           <h2>Documentation</h2>
           <p>
             Les dernières découvertes paléontologiques, les paléontologues célèbres, et bien d'autres infos n'attendent

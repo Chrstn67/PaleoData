@@ -12,12 +12,12 @@ const AnimalList = ({ data }) => {
 
   return (
     <>
-      <div className="AnimalFiltrer-Component">
+      <section className="AnimalFiltrer-Component">
         <AnimalFiltrer data={data} onFilterChange={handleFilterChange} />
-      </div>
-      <div className="AnimalListingSection-Component">
+      </section>
+      <section className="AnimalListingSection-Component">
         <AnimalListingSection animals={filteredAnimals} />{' '}
-      </div>
+      </section>
     </>
   );
 };

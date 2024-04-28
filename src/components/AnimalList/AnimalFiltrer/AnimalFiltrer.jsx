@@ -17,7 +17,7 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
   const uniqueGeologyEras = new Set(data.map((animal) => animal.geologie.ere));
   const uniqueGeologyPeriods = new Set(data.map((animal) => animal.geologie.periode));
   const uniqueGeologyEpochs = new Set(data.map((animal) => animal.geologie.epoque));
-  const uniqueGeologyStages = new Set(data.map((animal) => animal.geologie.etage));
+  const uniqueGeologyStages = new Set(data.map((animal) => animal.geologie.stage));
 
   useEffect(() => {
     let filteredAnimals = data.filter((animal) => {
@@ -40,8 +40,8 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
             animal.geologie.epoque.toLowerCase() === filters.geologyEpoch.toLowerCase())) &&
         (filters.geologyStage === '' ||
           (animal.geologie &&
-            animal.geologie.etage &&
-            animal.geologie.etage.toLowerCase() === filters.geologyStage.toLowerCase()))
+            animal.geologie.stage &&
+            animal.geologie.stage.toLowerCase() === filters.geologyStage.toLowerCase()))
       );
     });
 

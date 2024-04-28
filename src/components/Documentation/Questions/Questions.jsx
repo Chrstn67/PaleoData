@@ -6,12 +6,12 @@ const sortedQuestionsData = [...questionsData].sort((a, b) => a.notion.localeCom
 
 const Questions = () => {
   return (
-    <div className="questions-container">
+    <section className="questions-container">
       {sortedQuestionsData.map((question, index) => (
         <div className="question-comic" key={index}>
-          <div className="question-header">
+          <header className="question-header">
             <h2>{question.notion}</h2>
-          </div>
+          </header>
           <div className="question-content">
             <div className="question-illustrations">
               {question.illustrations?.map((illustration, index) => (
@@ -26,7 +26,7 @@ const Questions = () => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

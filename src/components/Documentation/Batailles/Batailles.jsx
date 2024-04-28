@@ -6,12 +6,12 @@ const sortedBataillesData = [...bataillesData].sort((a, b) => a.notion.localeCom
 
 const Batailles = () => {
   return (
-    <div className="bataille-container">
+    <section className="bataille-container">
       {sortedBataillesData.map((bataille, index) => (
         <div className="bataille-comic" key={index}>
-          <div className="bataille-header">
+          <header className="bataille-header">
             <h2>{bataille.notion}</h2>
-          </div>
+          </header>
           <div className="bataille-content">
             <div className="bataille-illustrations">
               {bataille.illustrations.map((illustration, index) => (
@@ -26,7 +26,7 @@ const Batailles = () => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

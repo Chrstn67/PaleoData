@@ -15,7 +15,7 @@ const Documentation = () => {
   };
 
   return (
-    <div className="sections">
+    <section className="sections">
       <div className="section">
         <GiSwordClash size={50} />
         <h2>Batailles</h2>
@@ -72,7 +72,7 @@ const Documentation = () => {
           Questions
         </NavLink>
       </div>
-    </div>
+    </section>
   );
 };
 

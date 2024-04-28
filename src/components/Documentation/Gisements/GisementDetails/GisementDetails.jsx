@@ -5,10 +5,10 @@ const GisementDetails = ({ gisement }) => {
   if (!gisement) return null;
 
   return (
-    <div className="gisement-details-comic">
-      <div className="gisement-details-header">
+    <section className="gisement-details-comic">
+      <header className="gisement-details-header">
         <h3>{gisement.notion}</h3>
-      </div>
+      </header>
       <div className="gisement-details-content">
         <div className="gisement-details-illustrations">
           {gisement.illustration.map((img, index) => (
@@ -21,7 +21,7 @@ const GisementDetails = ({ gisement }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

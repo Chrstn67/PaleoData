@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaDiscord, FaEnvelope } from 'react-icons/fa';
+import { FaDiscord, FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import './Footer.scss';
 
 const Footer = () => {
@@ -14,10 +14,18 @@ const Footer = () => {
           <div>
             <Link to="https://discord.gg/fT97dr49Tv" target="_blank" rel="noopener noreferrer" title="Discord">
               <FaDiscord className="footer-discord-icon" />
-            </Link>{' '}
+            </Link>
             <Link href="mailto:paleodata@outlook.com" target="_blank" rel="noopener noreferrer" title="Mail">
               <FaEnvelope className="footer-email-icon" />
-            </Link>{' '}
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/christian-humbert-developpeur-web/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+            >
+              <FaLinkedin className="footer-linkedin-icon" />
+            </Link>
             <br />
             <i>
               Nous nous engageons résolument à observer rigoureusement les dispositions du RGPD en matière de protection

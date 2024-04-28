@@ -6,12 +6,12 @@ const sortedDefinitionsData = [...definitionsData].sort((a, b) => a.notion.local
 
 const Definitions = () => {
   return (
-    <div className="definitions-container">
+    <section className="definitions-container">
       {sortedDefinitionsData.map((definition, index) => (
         <div className="definition-comic" key={index}>
-          <div className="definition-header">
+          <header className="definition-header">
             <h2>{definition.notion}</h2>
-          </div>
+          </header>
           <div className="definition-content">
             <div className="definition-illustrations">
               {definition.illustrations?.map((illustration, index) => (
@@ -26,7 +26,7 @@ const Definitions = () => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

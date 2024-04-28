@@ -6,12 +6,12 @@ const sortedFossilesData = [...fossilesData].sort((a, b) => a.notion.localeCompa
 
 const FossilesCelebres = () => {
   return (
-    <div className="fossiles-container">
+    <section className="fossiles-container">
       {sortedFossilesData.map((fossile, index) => (
         <div className="fossile-comic" key={index}>
-          <div className="fossile-header">
+          <header className="fossile-header">
             <h2>{fossile.notion}</h2>
-          </div>
+          </header>
           <div className="fossile-content">
             <div className="fossile-illustrations">
               {fossile.illustrations?.map((illustration, index) => (
@@ -31,7 +31,7 @@ const FossilesCelebres = () => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

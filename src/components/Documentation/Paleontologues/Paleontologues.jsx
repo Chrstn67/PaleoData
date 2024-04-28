@@ -6,12 +6,12 @@ const sortedPaleontologuesData = [...paleontologuesData].sort((a, b) => a.notion
 
 const Paleontologues = () => {
   return (
-    <div className="paleontologues-container">
+    <section className="paleontologues-container">
       {sortedPaleontologuesData.map((paleontologue, index) => (
         <div className="paleontologue-comic" key={index}>
-          <div className="paleontologue-header">
+          <header className="paleontologue-header">
             <h2>{paleontologue.notion}</h2>
-          </div>
+          </header>
           <div className="paleontologue-content">
             <div className="paleontologue-illustrations">
               {paleontologue.illustrations?.map((illustration, index) => (
@@ -26,7 +26,7 @@ const Paleontologues = () => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 

@@ -6,12 +6,12 @@ const sortedDecouvertesRecentesData = [...decouvertesRecentesData].sort((a, b) =
 
 const DecouvertesRecentes = () => {
   return (
-    <div className="decouvertes-container">
+    <section className="decouvertes-container">
       {sortedDecouvertesRecentesData.map((decouverte, index) => (
         <div className="decouverte-comic" key={index}>
-          <div className="decouverte-header">
+          <header className="decouverte-header">
             <h2>{decouverte.notion}</h2>
-          </div>
+          </header>
           <div className="decouverte-content">
             <div className="decouverte-illustrations">
               {decouverte.illustrations?.map((illustration, index) => (
@@ -26,7 +26,7 @@ const DecouvertesRecentes = () => {
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 
