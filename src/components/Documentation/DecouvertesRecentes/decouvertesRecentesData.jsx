@@ -1,5 +1,7 @@
 import empreintesBotucatu from '../../../../public/assets/images_doc/decouvertes/empreintes_botucatu.jpg';
 import YaguarasaurusRegiomontanus from '../../../../public/assets/images_doc/decouvertes/Yaguarasaurus_regiomontanus.jpg';
+import BabyYingliang from '../../../../public/assets/images_doc/decouvertes/BabyYingliang.jpeg';
+import BabyYingliang3D from '../../../../public/assets/images_doc/decouvertes/BabyYingliang3D.jpeg';
 
 const decouvertesRecentesData = [
   {
@@ -19,6 +21,12 @@ const decouvertesRecentesData = [
     explications:
       "En 2021, la découverte exceptionnelle d'un fossile de mosasaure au Mexique, datant de 90 millions d'années, ouvre une nouvelle perspective sur la compréhension des écosystèmes marins du Crétacé. Baptisé Yaguarasaurus regiomontanus, ce mosasaure, découvert dans l'état de Nuevo Leon, se distingue par sa taille imposante, atteignant 5,2 mètres, ce qui en fait l'un des plus grands de son temps. Cette découverte, publiée dans le Journal of South American Earth Sciences, enrichit notre compréhension des schémas évolutifs et de la répartition géographique de ces reptiles marins.<br /><br /> Yaguarasaurus regiomontanus se positionne comme un acteur majeur parmi les mosasaures, groupe de reptiles marins, et sa taille lui conférait un avantage significatif dans son habitat, lui permettant de dominer les chaînes alimentaires marines. L'analyse du fossile, centrée autour d'un crâne presque complet, révèle des caractéristiques anatomiques uniques, notamment une langue fourchue, une adaptation rare chez les mosasaures et plus courante chez les serpents et lézards modernes. Cette langue suggère des adaptations spécifiques pour la chasse ou la perception sensorielle, améliorant la détection des proies dans les environnements marins complexes du Crétacé.<br /><br /> L'analyse du palais et des dents de Yaguarasaurus regiomontanus indique un régime alimentaire varié adapté à ses capacités de prédateur des océans. Ses dents coniques, similaires à celles d'un requin, étaient efficaces pour saisir et retenir des proies glissantes telles que les poissons. Ces caractéristiques, associées à sa langue fourchue, dessinent le portrait d'un prédateur complexe adapté à son environnement.<br /><br /> Yaguarasaurus regiomontanus, en tant que l'un des premiers grands mosasaures, représente un maillon essentiel dans l'évolution de ces reptiles marins. Sa découverte offre des indices sur les adaptations physiques et comportementales de ces créatures et contribue à la compréhension de leur diversification et expansion rapide au cours du Turonien, une époque marquée par des changements environnementaux et biologiques significatifs. Cette découverte souligne l'importance des facteurs environnementaux et climatiques dans la dispersion et l'évolution des mosasaures, offrant des perspectives précieuses sur les dynamiques écologiques du Crétacé.",
     illustrations: [YaguarasaurusRegiomontanus],
+  },
+  {
+    notion: 'Baby Yingliang',
+    explications:
+      "Oublié depuis plus de dix ans dans un musée chinois, ce fossile d'embryon de dinosaure est l’un des plus complets jamais découverts, offrant aux chercheurs une rare opportunité d’observer un bébé théropode dans une posture inhabituelle, similaire à celle des embryons d’oiseaux actuels peu avant l’éclosion. <br /> L’embryon appartient à un groupe de théropodes à plumes appelés oviraptorosaures et mesure environ 27 centimètres de long.<br /><br /> La posture observée chez Baby Yingliang est inédite chez les dinosaures non aviaires mais rappelle celle des embryons d’oiseaux contemporains. Cette posture, appelée “repliage”, implique de courber le corps et d’abaisser la tête sous l’aile, un comportement vital pour les oiseaux modernes lors de l’éclosion. Il s’agit actuellement du seul spécimen de ce type. Un spécimen unique vieux de 66 à 72 millions d’années",
+    illustrations: [BabyYingliang, BabyYingliang3D],
   },
 ];
 

@@ -107,7 +107,7 @@ const AnimalCard = ({ data }) => {
               <h3>Morphologie</h3>
               {animal.autres_infos.taille && (
                 <>
-                  <p>{animal.autres_infos.taille.longueur} de long</p>
+                  {animal.autres_infos.taille.long && <p>{animal.autres_infos.taille.long}</p>}
                   {animal.autres_infos.taille.hauteur && <p>{animal.autres_infos.taille.hauteur} de haut</p>}
                   {animal.autres_infos.taille.envergure && <p>{animal.autres_infos.taille.envergure} d'envergure</p>}
                 </>

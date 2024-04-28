@@ -46,21 +46,38 @@
       transition: background-color 0.3s;
       box-sizing: border-box;
 
+      @media screen and (max-width: 768px) {
+        padding: 0;
+        position: relative;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
       a {
         color: #d4c190;
         text-decoration: none;
         transition: color 0.3s;
         display: flex;
         align-items: center;
+
         @media screen and (max-width: 768px) {
+          padding: 0.3rem;
           color: #75553f;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
 
         span {
           margin-left: 0.5rem;
 
           @media screen and (max-width: 768px) {
-            display: none;
+            display: block;
+            margin-top: 0.2rem;
+            font-size: 0.3em;
           }
         }
 
@@ -71,14 +88,15 @@
 
       .active {
         outline: 2px solid #d4c190;
-        font-size: 1.2em;
+
         width: 100%;
         display: block;
-        padding: 0.2em;
+        padding: 0.5em;
 
         @media screen and (max-width: 768px) {
-          outline: 2px solid #75553f;
+          outline: 1px solid #75553f;
           padding: 0.1em;
+          font-size: 0.4em;
         }
       }
 
@@ -110,23 +128,10 @@
             color: #f8c471;
           }
         }
-      }
-    }
 
-    /* Responsive styles */
-    @media screen and (max-width: 768px) {
-      li {
-        padding: 0;
-        position: relative;
-        width: 100%;
-        margin: 0.5rem;
-
-        a {
-          padding: 0.3rem;
+        @media screen and (max-width: 768px) {
+          display: none;
         }
-      }
-      .navbar-subitem {
-        display: none;
       }
     }
   }
