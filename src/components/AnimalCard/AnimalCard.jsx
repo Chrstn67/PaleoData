@@ -77,7 +77,7 @@ const AnimalCard = ({ data }) => {
           <h3>Description</h3>
           {animal.description && (
             <div className="description">
-              <p>{animal.description}</p>
+              <p dangerouslySetInnerHTML={{ __html: animal.description }}></p>
             </div>
           )}
         </section>
