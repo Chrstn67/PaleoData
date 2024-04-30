@@ -1,12 +1,9 @@
 $first-color: #75553f;
-
 $fourth-color: #a58b68;
-
 $seventh-color: #d4c190;
 
 .footer {
   margin-top: 1em;
-
   border-radius: 0.5em;
   background-color: $first-color;
   padding: 1em;
@@ -98,6 +95,16 @@ $seventh-color: #d4c190;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
+  }
+
+  .reseaux-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    a {
+      margin: 0 5px;
+    }
   }
 
   @media (max-width: 768px) {

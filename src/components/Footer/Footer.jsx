@@ -17,7 +17,7 @@ const Footer = () => {
       <section className="footer-content">
         <section className="footer-section">
           <h3 className="footer-title">Viens discuter !</h3>
-          <div>
+          <section className="reseaux-links">
             <Link to="https://discord.gg/fT97dr49Tv" target="_blank" rel="noopener noreferrer" title="Discord">
               <FaDiscord className="footer-discord-icon" />
             </Link>
@@ -39,7 +39,7 @@ const Footer = () => {
               des données, et nous nous assurons ainsi de n&apos;utiliser tes coordonnées que dans le cadre des échanges
               liés au sujet principal du site.
             </i>
-          </div>
+          </section>
         </section>
         <section className="footer-section">
           <h3 className="footer-title">À propos</h3>
