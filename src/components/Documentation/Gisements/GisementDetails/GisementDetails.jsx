@@ -17,7 +17,7 @@ const GisementDetails = ({ gisement }) => {
         </div>
         <div className="gisement-details-speech-bubble">
           <div className="gisement-details-speech-bubble-content">
-            <p>{gisement.explications}</p>
+            <p dangerouslySetInnerHTML={{ __html: gisement.explications }}></p>
           </div>
         </div>
       </div>

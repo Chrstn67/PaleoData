@@ -4,6 +4,56 @@ export const gisementsData = [
     coordinates: [45.26682515344433, -77.69997258069543],
     type: 'Gisement',
   },
+  {
+    name: 'Site de Cabrières',
+    coordinates: [43.57530131658562, 3.3761822800079875],
+    type: 'Gisement',
+  },
+  {
+    name: 'Site de Cherves-de-Cognac',
+    coordinates: [45.76659448803703, -0.31601934397914505],
+    type: 'Gisement',
+  },
+  {
+    name: 'Mine de Guimarota',
+    coordinates: [39.73369928863378, -8.801750238504063],
+    type: 'Gisement',
+  },
+  {
+    name: 'Site de Chengjiang',
+    coordinates: [24.63143453531368, 102.96871646929866],
+    type: 'Gisement',
+  },
+  // {
+  //   name: '',
+  //   coordinates: [],
+  //   type: 'Gisement',
+  // },
+  // {
+  //   name: '',
+  //   coordinates: [],
+  //   type: 'Gisement',
+  // },
+  // {
+  //   name: '',
+  //   coordinates: [],
+  //   type: 'Gisement',
+  // },
+  // {
+  //   name: '',
+  //   coordinates: [],
+  //   type: 'Gisement',
+  // },
+  // {
+  //   name: '',
+  //   coordinates: [],
+  //   type: 'Gisement',
+  // },
+  // {
+  //   name: '',
+  //   coordinates: [],
+  //   type: 'Gisement',
+  // },
 ];
 
 export const iconMappings = {

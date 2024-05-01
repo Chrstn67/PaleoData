@@ -39,7 +39,7 @@ function EtymoPage() {
     { root: 'hadro-', meaning: 'épais, robuste', origin: 'Grec ancien : ἁδρός (hadrós)' },
     { root: 'stego-', meaning: 'toit', origin: 'Grec ancien : στέγος (stégos)' },
 
-    { root: 'ankylo-', meaning: 'courbé', origin: 'Grec ancien : ἀγκύλος (ankúlos)' },
+    { root: 'ankylo-', meaning: 'rigide', origin: 'Grec ancien : ἀγκύλος (ankúlos)' },
     { root: '-therium', meaning: 'animal', origin: 'Grec ancien : θηρίον (thēríon)' },
     { root: 'pachy-', meaning: 'épais', origin: 'Grec ancien : παχύς (pakhús)' },
     { root: 'eo-', meaning: 'aube', origin: 'Grec ancien : ἠώς (ēṓs)' },

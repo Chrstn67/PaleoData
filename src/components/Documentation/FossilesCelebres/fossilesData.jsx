@@ -2,6 +2,7 @@ import FossileCoelophysis from '../../../../public/assets/images_doc/fossiles/Co
 import BigAl from '../../../../public/assets/images_doc/fossiles/BigAl.jpg';
 import Megalosaurus from '../../../../public/assets/images_doc/fossiles/premiere_representation_megalosaurus.jpeg';
 import RepenomamusVSPsittacosaurus from '../../../../public/assets/images_doc/fossiles/Repenomamus_vs_Psittacosaurus.jpeg';
+import EmpreintesDinoplagne from '../../../../public/assets/images_doc/fossiles/EmpreintesDinoplagne.jpg';
 
 const fossilesData = [
   {
@@ -33,12 +34,13 @@ const fossilesData = [
     illustrations: [RepenomamusVSPsittacosaurus],
     alt: 'Fossile de la bataille entre Repenomamus robustus et Psittacosaurus lujiatunensis',
   },
-  // {
-  //   notion: '',
-  //   explications: '',
-  //   illustrations: '',
-  //   alt: '',
-  // },
+  {
+    notion: "La plus grande piste d'empreintes de dinosaures sauropodes du monde",
+    explications:
+      "La piste d'empreintes d'un sauropode surnommée 'Odysseus' est la plus longue au monde, s'étendant sur 155 mètres avec 115 pas gigantesques. Ces empreintes datent d'environ 145 millions d'années, et certaines de ces traces dépassent les 1.50 mètre de diamètre. <br /><br /> En plus de la piste d' 'Odysseus', les scientifiques ont également découvert une deuxième piste laissée par un théropode (dinosaure carnivore) surnommé 'Maxime'.",
+    illustrations: [EmpreintesDinoplagne],
+    alt: 'Empreintes de sauropode de Dinoplagne',
+  },
   // {
   //   notion: '',
   //   explications: '',

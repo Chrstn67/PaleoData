@@ -77,7 +77,7 @@ const AnimalCard = ({ data }) => {
           <h3>Description</h3>
           {animal.description && (
             <div className="description">
-              <p dangerouslySetInnerHTML={{ __html: animal.description }}></p>
+              <p dangerouslySetInnerHTML={{ __html: animal.description }} />
             </div>
           )}
         </section>
@@ -107,7 +107,7 @@ const AnimalCard = ({ data }) => {
               <h3>Morphologie</h3>
               {animal.autres_infos.taille && (
                 <>
-                  {animal.autres_infos.taille.long && <p>{animal.autres_infos.taille.long}</p>}
+                  {animal.autres_infos.taille.longueur && <p>{animal.autres_infos.taille.longueur} de long</p>}
                   {animal.autres_infos.taille.hauteur && <p>{animal.autres_infos.taille.hauteur} de haut</p>}
                   {animal.autres_infos.taille.envergure && <p>{animal.autres_infos.taille.envergure} d'envergure</p>}
                 </>

@@ -86,13 +86,12 @@
       .active {
         outline: 2px solid #d4c190;
 
-        width: 100%;
         display: block;
         padding: 0.5em;
 
         @media screen and (max-width: 768px) {
           outline: 1px solid #75553f;
-          padding: 0.1em;
+
           font-size: 0.4em;
         }
       }
