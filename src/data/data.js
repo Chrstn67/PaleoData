@@ -7748,7 +7748,7 @@ const data = [
     habitat: 'Mers',
     geologie: {
       ere: 'Mésozoïque',
-      periode: 'Créatcé',
+      periode: 'Crétacé',
       epoque: 'Supérieur',
       stage: 'Turonien',
       apparition: -93.9,
