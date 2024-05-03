@@ -6836,8 +6836,8 @@ const data = [
       rameau: '',
       infra_règne: '',
       super_embranchement: '',
-      embranchement: 'Chordata',
-      sous_embranchement: 'Vertebrata',
+      embranchement: '',
+      sous_embranchement: '',
       infra_embranchement: '',
       micro_embranchement: '',
       super_classe: '',
@@ -6858,7 +6858,7 @@ const data = [
       espèces: 'Tullimonstrum gregarium',
     },
     regime_alimentaire: 'Carnivore',
-    habitat: 'Eaux peu profondes',
+    habitat: 'Eaux très peu profondes',
     geologie: {
       ere: 'Paléozoïque',
       periode: 'Carbonifère',
@@ -6868,7 +6868,7 @@ const data = [
       extinction: -306,
     },
     description:
-      "Tullimonstrum possédait une paire de nageoires ressemblant un peu à celle des seiches, peut-être également des nageoires verticales. <br /> Il possédait un long proboscis (plus simplement 'une trompe') pourvu de huit petites dents, avec lequel il cherchait probablement activement de petits animaux et des détritus comestibles dans les fonds vaseux.",
+      "Tullimonstrum possédait une paire de nageoires ressemblant un peu à celle des seiches, peut-être également des nageoires verticales. <br /> Il possédait un long proboscis (plus simplement 'une trompe') pourvu de huit petites dents, avec lequel il cherchait probablement activement de petits animaux et des détritus comestibles dans les fonds vaseux. <br/><br/> En 2023, des scientifiques japonais ont réussi à prouver que Tullimonstrum était un animal invertébré. La classification taxonomique reste donc inconnue pour le moment.",
     autres_infos: {
       taille: {
         longueur: '10-35 centimètres',

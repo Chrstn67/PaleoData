@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './GeoInfo.scss';
 
 const GeoInfo = ({ geologie }) => {
@@ -15,19 +15,17 @@ const GeoInfo = ({ geologie }) => {
       const formattedNumber = absNumber * million;
       const numberString = formattedNumber.toString();
       const lastIndex = numberString.length - 6;
-      const formattedString =
-        numberString.slice(0, lastIndex) +
-        ' ' +
-        numberString.slice(lastIndex, lastIndex + 3) +
-        ' ' +
-        numberString.slice(lastIndex + 3);
+      const formattedString = `${numberString.slice(0, lastIndex)} ${numberString.slice(
+        lastIndex,
+        lastIndex + 3,
+      )} ${numberString.slice(lastIndex + 3)}`;
       return `${formattedString} d'années`;
     }
 
     const formattedNumber = absNumber * million;
     const formattedString = Math.floor(formattedNumber).toString();
     const lastIndex = formattedString.length - 3;
-    const finalFormattedString = formattedString.slice(0, lastIndex) + ' ' + formattedString.slice(lastIndex);
+    const finalFormattedString = `${formattedString.slice(0, lastIndex)} ${formattedString.slice(lastIndex)}`;
     return `${finalFormattedString} ans`;
   };
 
@@ -64,7 +62,7 @@ const GeoInfo = ({ geologie }) => {
       <h3>Géologie</h3>
       <div className="geo-info-container">
         <p className="geo-info-type">{geoInfoTypes[currentIndex]}</p>
-        <p className="time-info" dangerouslySetInnerHTML={{ __html: geoInfoArray[currentIndex] }}></p>
+        <p className="time-info" dangerouslySetInnerHTML={{ __html: geoInfoArray[currentIndex] }} />
       </div>
     </section>
   );

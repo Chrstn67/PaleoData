@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { BiShareAlt } from 'react-icons/bi';
