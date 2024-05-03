@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaDiscord, FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { FaDiscord, FaEnvelope, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import './Footer.scss';
 
 const Footer = () => {
@@ -31,6 +31,14 @@ const Footer = () => {
               title="LinkedIn"
             >
               <FaLinkedin className="footer-linkedin-icon" />
+            </a>
+            <a
+              href="https://whatsapp.com/channel/0029VaZGxMGAYlUSTOaYGn2T"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="WhatsApp"
+            >
+              <FaWhatsapp className="footer-whatsapp-icon" />
             </a>
 
             <br />

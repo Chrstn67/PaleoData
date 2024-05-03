@@ -1869,7 +1869,7 @@ const data = [
       espèces: 'Marrella splendens',
     },
     regime_alimentaire: 'Filtreur',
-    habitat: '',
+    habitat: 'Mers et océans',
     geologie: {
       ere: 'Paléozoïque',
       periode: 'Cambrien',
