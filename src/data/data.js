@@ -563,7 +563,7 @@ const data = [
   },
   {
     nom: 'Aysheaia',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Aysheaia.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -1338,7 +1338,7 @@ const data = [
   },
   {
     nom: 'Dipterus',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Dipterus.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -1560,7 +1560,7 @@ const data = [
   },
   {
     nom: 'Edaphosaurus',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Edaphosaurus.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -1784,7 +1784,7 @@ const data = [
   },
   {
     nom: 'Hyolitha',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Hyolitha.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -3002,7 +3002,7 @@ const data = [
   },
   {
     nom: 'Anancus',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Anancus.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -3946,7 +3946,7 @@ const data = [
   },
   {
     nom: 'Ours des cavernes',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/UrsusSpelaeus.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -4893,7 +4893,7 @@ const data = [
   },
   {
     nom: 'Procoptodon',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Procoptodon.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -5836,7 +5836,7 @@ const data = [
   },
   {
     nom: 'Dollocaris',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Dollocaris.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -5946,7 +5946,7 @@ const data = [
   },
   {
     nom: 'Kunpengopterus',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Kunpengopterus.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -6003,7 +6003,7 @@ const data = [
   },
   {
     nom: 'Dracopristis',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Dracopristis.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -6168,7 +6168,7 @@ const data = [
   },
   {
     nom: 'Aquilolamna',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Aquilolamna.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -7272,7 +7272,7 @@ const data = [
   },
   {
     nom: 'Aegirocassis',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Aegirocassis.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -7383,7 +7383,7 @@ const data = [
   },
   {
     nom: 'Mégantereon',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Megantereon.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -7439,7 +7439,7 @@ const data = [
   },
   {
     nom: 'Haboroteuthis',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Haboroteuthis.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -7494,7 +7494,7 @@ const data = [
   },
   {
     nom: 'Nanaimoteuthis',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Nanaimoteuthis.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -7770,7 +7770,7 @@ const data = [
   },
   {
     nom: "Lion de l'Atlas",
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Lion_Atlas.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -7881,7 +7881,7 @@ const data = [
   },
   {
     nom: 'Synthetoceras',
-    etymologie: '',
+    etymologie: '--',
     image_url: './assets/images/Synthetoceras.jpg',
     taxonomie: {
       règne: 'Animalia',
