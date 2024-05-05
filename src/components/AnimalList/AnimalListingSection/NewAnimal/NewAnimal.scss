@@ -8,7 +8,7 @@ $seven-color: #d4c190ff;
 $eighth-color: #e4d39eff;
 $ninth-color: #f3e5abff;
 
-.animal-listing {
+.new-animal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +28,6 @@ $ninth-color: #f3e5abff;
     list-style: none;
     width: 100%;
     padding: 0;
-    // filter: drop-shadow(10px 10px 10px #75553fff);
 
     li {
       perspective: 500px;
@@ -53,53 +52,30 @@ $ninth-color: #f3e5abff;
         text-decoration: none;
       }
 
-      .image-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        overflow: hidden;
-
-        img {
-          width: 90%;
-          height: auto;
-          object-fit: cover;
-          border-radius: 0.5em;
-        }
-
-        h3 {
-          transition: opacity 0.3s ease;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background-color: $first-color;
-          color: white;
-          padding: 0.5rem;
-          margin: 0;
-        }
+      img {
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 0.5em;
       }
 
-      button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: $second-color;
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: $first-color;
-        }
+      h3 {
+        transition: opacity 0.3s ease;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: $first-color;
+        color: white;
+        padding: 0.5rem;
+        margin: 0;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .animal-listing {
+  .new-animal {
     padding: 1rem;
 
     ul {
