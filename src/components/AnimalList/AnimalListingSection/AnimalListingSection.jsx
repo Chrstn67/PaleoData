@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { BiShareAlt } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import NewAnimal from './NewAnimal/NewAnimal';
 import './AnimalListingSection.scss';
 
 const AnimalCard = ({ animal }) => {
@@ -64,13 +65,16 @@ AnimalCard.propTypes = {
 
 const AnimalListingSection = ({ animals }) => {
   return (
-    <section className="animal-listing">
-      <ul>
-        {animals.map((animal) => (
-          <AnimalCard key={animal.nom} animal={animal} />
-        ))}
-      </ul>
-    </section>
+    <>
+      <NewAnimal animals={animals} /> {/* Ajouter le composant NewAnimal */}
+      <section className="animal-listing">
+        <ul>
+          {animals.map((animal) => (
+            <AnimalCard key={animal.nom} animal={animal} />
+          ))}
+        </ul>
+      </section>
+    </>
   );
 };
 
