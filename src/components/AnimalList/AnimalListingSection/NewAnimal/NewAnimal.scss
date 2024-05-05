@@ -15,7 +15,8 @@ $ninth-color: #f3e5abff;
   padding: 2rem;
 
   h3 {
-    background-color: #d4c190;
+    background-color: #f3e5ab;
+    color: #75553f;
     border-radius: 10px 10px 0 0;
     padding: 10px;
     text-align: center;
@@ -42,10 +43,21 @@ $ninth-color: #f3e5abff;
       cursor: pointer;
       min-height: 300px;
       position: relative;
-
       outline: $ninth-color 2px solid;
-
       filter: drop-shadow(15px 20px 15px #75553fff);
+      animation: blink 1s infinite;
+
+      @keyframes blink {
+        0% {
+          outline: $ninth-color 2px solid;
+        }
+        50% {
+          outline: $ninth-color 3px solid;
+        }
+        100% {
+          outline: $ninth-color 2px solid;
+        }
+      }
 
       a {
         color: inherit;
