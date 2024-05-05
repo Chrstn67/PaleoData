@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { BiShareAlt } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import './NewAnimal.scss';
 
