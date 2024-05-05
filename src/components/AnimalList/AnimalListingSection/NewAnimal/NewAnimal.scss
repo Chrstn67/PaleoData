@@ -45,14 +45,14 @@ $ninth-color: #f3e5abff;
       position: relative;
       outline: $ninth-color 2px solid;
       filter: drop-shadow(15px 20px 15px #75553fff);
-      animation: blink 1s infinite;
+      animation: blink 2s infinite;
 
       @keyframes blink {
         0% {
           outline: $ninth-color 2px solid;
         }
         50% {
-          outline: $ninth-color 3px solid;
+          outline: $fifth-color 3px solid;
         }
         100% {
           outline: $ninth-color 2px solid;
