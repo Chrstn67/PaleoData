@@ -6,7 +6,7 @@ const NewAnimal = ({ animals }) => {
   const newAnimals = animals.filter((animal) => {
     const dateAjoutee = new Date(animal.date_ajout);
     const dateActuelle = new Date();
-    const uneSemaine = 7 * 24 * 60 * 60 * 1000; // 7 jours en millisecondes
+    const uneSemaine = 4 * 24 * 60 * 60 * 1000; // 4 jours en millisecondes
 
     return dateActuelle - dateAjoutee <= uneSemaine;
   });
