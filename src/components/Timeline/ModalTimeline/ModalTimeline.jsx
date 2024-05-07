@@ -1,6 +1,5 @@
 // ModalTimeline.jsx
 
-import React from 'react';
 import PropTypes from 'prop-types';
 import './ModalTimeline.scss';
 
@@ -10,7 +9,7 @@ const ModalTimeline = ({ isOpen, closeModal, content }) => {
   }
 
   return (
-    <div className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={closeModal}>
+    <dialog className={`modal-overlay ${isOpen ? 'open' : ''}`} onClick={closeModal}>
       <button type="button" onClick={closeModal} className="close-btn">
         X
       </button>
@@ -19,7 +18,7 @@ const ModalTimeline = ({ isOpen, closeModal, content }) => {
           {content}
         </div>
       </div>
-    </div>
+    </dialog>
   );
 };
 

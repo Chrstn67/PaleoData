@@ -15,16 +15,6 @@
     background-color: transparent;
   }
 
-  .navbar-burger {
-    cursor: pointer;
-    display: none;
-    font-size: 1.5em;
-
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  }
-
   .navbar-list {
     list-style: none;
     padding: 0;
