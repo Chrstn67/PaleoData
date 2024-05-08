@@ -71,6 +71,7 @@ $ninth-color: #f3e5abff;
     align-items: center;
     text-align: center;
     background: linear-gradient(to right, $second-color, $eighth-color);
+    filter: drop-shadow(10px 10px 10px #75553f);
     padding: 20px;
     border-radius: 0.5em;
     transition: all 0.3s ease-in-out;

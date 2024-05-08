@@ -18,7 +18,7 @@ const Footer = () => {
         <section className="footer-section">
           <h3 className="footer-title">Viens discuter !</h3>
           <section className="reseaux-links">
-            <Link to="https://discord.gg/fT97dr49Tv" target="_blank" rel="noopener noreferrer" title="Discord">
+            <Link to="https://discord.gg/EeWKWF3cf5" target="_blank" rel="noopener noreferrer" title="Discord">
               <FaDiscord className="footer-discord-icon" />
             </Link>
             <a href="mailto:paleodata@outlook.com" target="_blank" rel="noopener noreferrer" title="Mail">

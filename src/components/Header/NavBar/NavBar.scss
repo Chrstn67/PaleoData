@@ -51,11 +51,14 @@
         color: #d4c190;
         text-decoration: none;
         transition: color 0.3s;
+        display: flex;
+        align-items: center;
 
         @media screen and (max-width: 768px) {
           padding: 0.3rem;
           color: #75553f;
           flex-direction: column;
+          align-items: center;
         }
 
         span {
