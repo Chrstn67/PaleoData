@@ -15,6 +15,22 @@ const NewAnimal = ({ animals }) => {
     return <p>De nouveaux animaux seront bientôt mis en ligne</p>;
   }
 
+  // Vérifiez si le navigateur prend en charge les notifications
+  if ('Notification' in window) {
+    // Demandez la permission de l'utilisateur pour afficher les notifications
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        newAnimals.forEach((animal) => {
+          // Créez une nouvelle notification pour chaque nouvel animal
+          new Notification(`Nouvel animal : ${animal.nom}`, {
+            body: `Clique pour voir ${animal.nom}`,
+            icon: animal.image_url,
+          });
+        });
+      }
+    });
+  }
+
   return (
     <section className="new-animal">
       <h3>Nouveaux animaux</h3>
