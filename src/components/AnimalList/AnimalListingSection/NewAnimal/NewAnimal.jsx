@@ -17,7 +17,7 @@ const NewAnimal = ({ animals }) => {
 
   return (
     <section className="new-animal">
-      <h3>Nouveaux animaux</h3>
+      <h3 className="h3-title">Nouveaux animaux</h3>
       <ul>
         {newAnimals.map((animal) => (
           <li key={animal.nom}>

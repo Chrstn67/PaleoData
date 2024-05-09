@@ -68,7 +68,7 @@ const AnimalListingSection = ({ animals }) => {
     <>
       <NewAnimal animals={animals} /> {/* Ajouter le composant NewAnimal */}
       <section className="animal-listing">
-        <h3>Liste</h3>
+        <h3 className="h3-title">Liste</h3>
         <ul>
           {animals.map((animal) => (
             <AnimalCard key={animal.nom} animal={animal} />

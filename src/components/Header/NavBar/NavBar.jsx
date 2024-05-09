@@ -132,13 +132,13 @@ const NavBar = () => {
             </li>
             <li className="navbar-subitem">
               <NavLink
-                to="/documentation/gisements-de-fossiles"
+                to="/documentation/gisements-fossiliferes"
                 onClick={() => {
                   toggleSubMenu();
                   scrollToTop();
                 }}
               >
-                Gisements de fossiles
+                Gisements fossilifères
               </NavLink>
             </li>
             <li className="navbar-subitem">

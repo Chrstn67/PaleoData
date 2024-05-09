@@ -40,7 +40,7 @@ function App() {
             <Route path="/documentation/decouvertes-recentes" element={<DecouvertesRecentes />} />
             <Route path="/documentation/definitions" element={<Definitions />} />
             <Route path="/documentation/fossiles-celebres" element={<FossilesCelebres />} />
-            <Route path="/documentation/gisements-de-fossiles" element={<Gisements />} />
+            <Route path="/documentation/gisements-fossiliferes" element={<Gisements />} />
             <Route path="/documentation/paleontologues" element={<Paleontologues />} />
             <Route path="/documentation/questions" element={<Questions />} />
             <Route path="/mentions-legales" element={<MentionsLegales />} />

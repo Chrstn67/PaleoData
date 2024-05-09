@@ -50,9 +50,9 @@ const Documentation = () => {
       </div>
       <div className="section">
         <GiDinosaurEgg size={50} />
-        <h2>Gisements de fossiles</h2>
+        <h2>Gisements fossilifères</h2>
         <p>Situe les plus gros gisements de fossiles à travers la planète</p>
-        <NavLink to="/documentation/gisements-de-fossiles" activeClassName="active" onClick={scrollToTop}>
+        <NavLink to="/documentation/gisements-fossiliferes" activeClassName="active" onClick={scrollToTop}>
           Gisements de fossiles
         </NavLink>
       </div>

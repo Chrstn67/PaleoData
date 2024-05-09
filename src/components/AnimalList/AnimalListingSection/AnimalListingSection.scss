@@ -21,7 +21,16 @@ $ninth-color: #f3e5abff;
     padding: 10px;
     text-align: center;
   }
-
+  .h3-title {
+    box-shadow:
+      0px -2px 0px #75553f,
+      0px -2px 5px #75553f,
+      0px -2px 10px #75553f,
+      0px -2px 15px #75553f,
+      0px -2px 20px #75553f,
+      0px -2px 30px #75553f,
+      0px -2px 40px #75553f;
+  }
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
