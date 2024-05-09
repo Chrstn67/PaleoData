@@ -43,7 +43,7 @@ function MentionsLegales() {
       </p>
 
       <p>
-        5 - Liens hypertextes et cookies : Le site https://chrstn67.github.io/PaleoData/#// contient des liens
+        5 - Liens hypertextes et cookies : Le site https://chrstn67.github.io/PaleoData/#/ contient des liens
         hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés
         par d’autres sites vers https://chrstn67.github.io/PaleoData/#/.
       </p>

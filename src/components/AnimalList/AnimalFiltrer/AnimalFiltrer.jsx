@@ -6,6 +6,7 @@ import './AnimalFiltrer.scss';
 const AnimalFiltrer = ({ data, onFilterChange }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState({
+    firstLetter: '',
     diet: '',
     geologyEra: '',
     geologyPeriod: '',
@@ -19,11 +20,17 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
   const uniqueGeologyEpochs = new Set(data.map((animal) => animal.geologie.epoque));
   const uniqueGeologyStages = new Set(data.map((animal) => animal.geologie.stage));
 
+  const firstLetters = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ', (letter) => {
+    const animalWithLetter = data.find((animal) => animal.nom[0].toUpperCase() === letter);
+    return animalWithLetter ? letter : null;
+  }).filter(Boolean);
+
   useEffect(() => {
     let filteredAnimals = data.filter((animal) => {
       return (
         animal.nom &&
         animal.nom.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        (filters.firstLetter === '' || (animal.nom && animal.nom[0].toUpperCase() === filters.firstLetter)) &&
         (filters.diet === '' ||
           (animal.regime_alimentaire && animal.regime_alimentaire.toLowerCase() === filters.diet.toLowerCase())) &&
         (filters.geologyEra === '' ||
@@ -63,6 +70,7 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
 
   const resetFilters = () => {
     setFilters({
+      firstLetter: '',
       diet: '',
       geologyEra: '',
       geologyPeriod: '',
@@ -83,6 +91,21 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
         onChange={handleSearchChange}
       />
       <section className="more-filter">
+        <div>
+          <label htmlFor="firstLetter">Première lettre :</label>
+          <select
+            id="firstLetter"
+            onChange={(e) => handleFilterChange('firstLetter', e.target.value)}
+            value={filters.firstLetter}
+          >
+            <option value="">Tous</option>
+            {firstLetters.map((letter) => (
+              <option key={letter} value={letter}>
+                {letter}
+              </option>
+            ))}
+          </select>
+        </div>
         <div>
           <label htmlFor="diet">Régime alimentaire :</label>
           <select id="diet" onChange={(e) => handleFilterChange('diet', e.target.value)} value={filters.diet}>
