@@ -58,10 +58,14 @@
         width: 100%;
         padding: 0.5em;
         outline: 1px solid #75553f;
-        border-radius: 0.2em;
+        border-radius: 0.5em;
         margin-bottom: 1em;
         text-align: center;
-        color: #443022;
+        color: #75553f;
+        font-weight: 700;
+        option {
+          font-weight: 700;
+        }
       }
     }
 

@@ -1,6 +1,6 @@
 import { FaHome, FaHistory, FaBook, FaInfoCircle } from 'react-icons/fa';
 import { GiDinosaurRex } from 'react-icons/gi';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.scss';
 

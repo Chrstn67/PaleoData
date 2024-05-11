@@ -1037,7 +1037,7 @@ const data = [
       espèces: '',
     },
     regime_alimentaire: 'Filtreur',
-    habitat: '',
+    habitat: 'Océans',
     geologie: {
       ere: 'Paléozoïque',
       periode: 'Cambrien',
@@ -5756,7 +5756,7 @@ const data = [
       espèces: 'Ceratomyrmex ellenbergeri',
     },
     regime_alimentaire: 'Carnivore',
-    habitat: '',
+    habitat: 'Forêts',
     geologie: {
       ere: 'Mésozoïque',
       periode: 'Crétacé',
@@ -6428,7 +6428,7 @@ const data = [
       extinction: -201.3,
     },
     description:
-      "Bien qu'il manque de fragment de tête et de cou, Drepanosaurus passait probablement son temps dans les arbres, utilisant ses mains et ses pieds griffus pour grimper de branche en branche, ainsi que sa queue préhensile, à la manière d'un caméléon. <br /> La griffe située à l'extrémité de la queue pouvait également servir à agripper les branches.",
+      "Bien que les spécialistes ne connaissent que des fragments de tête et de cou, Drepanosaurus passait probablement son temps dans les arbres, utilisant ses quatre pattes griffues pour grimper de branche en branche, ainsi que sa queue préhensile, à la manière d'un caméléon. <br /> La griffe située à l'extrémité de la queue pouvait également servir à agripper les branches.",
     autres_infos: {
       taille: {
         longueur: '45-50 centimètres',

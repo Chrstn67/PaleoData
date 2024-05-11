@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { BiShareAlt } from 'react-icons/bi';
 import GeoInfo from './GeoInfo/GeoInfo';
@@ -36,6 +36,10 @@ const AnimalCard = ({ data }) => {
     }
   };
 
+  const sortedData = [...data].sort((a, b) => a.nom.localeCompare(b.nom));
+  const currentAnimalIndex = sortedData.findIndex((animal) => animal.nom === decodeURIComponent(nom));
+  const previousAnimal = currentAnimalIndex > 0 ? sortedData[currentAnimalIndex - 1] : null;
+  const nextAnimal = currentAnimalIndex < sortedData.length - 1 ? sortedData[currentAnimalIndex + 1] : null;
   return (
     <div className="animal-card">
       <h2>
@@ -120,6 +124,28 @@ const AnimalCard = ({ data }) => {
       </div>
       <section className="bottom-section">
         {Object.entries(animal.taxonomie).length > 0 && <Taxonomie taxonomie={animal.taxonomie} />}
+      </section>
+
+      <section className="navigation-links">
+        {previousAnimal && (
+          <Link
+            to={`/animal/${encodeURIComponent(previousAnimal.nom)}`}
+            className="navigation-link"
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            {previousAnimal.nom}
+          </Link>
+        )}
+
+        {nextAnimal && (
+          <Link
+            to={`/animal/${encodeURIComponent(nextAnimal.nom)}`}
+            className="navigation-link"
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            {nextAnimal.nom}
+          </Link>
+        )}
       </section>
     </div>
   );

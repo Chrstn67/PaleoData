@@ -12,7 +12,7 @@ const NewAnimal = ({ animals }) => {
   });
 
   if (newAnimals.length === 0) {
-    return <p>De nouveaux animaux seront bientôt mis en ligne</p>;
+    return <h5>De nouveaux animaux seront bientôt mis en ligne. Contacte-nous pour proposer tes idées !</h5>;
   }
 
   return (

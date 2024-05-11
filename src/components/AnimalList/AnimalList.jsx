@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AnimalFiltrer from './AnimalFiltrer/AnimalFiltrer';
 import AnimalListingSection from './AnimalListingSection/AnimalListingSection';
 import './AnimalList.scss';

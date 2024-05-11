@@ -47,9 +47,11 @@ const AnimalListingSection = ({ animals }) => {
       <section className="animal-listing">
         <h3 className="h3-title">Liste</h3>
         <ul>
-          {animals.map((animal) => (
-            <AnimalCard key={animal.nom} animal={animal} />
-          ))}
+          {animals.length > 0 ? (
+            animals.map((animal) => <AnimalCard key={animal.nom} animal={animal} />)
+          ) : (
+            <h5>Aucun animal ne correspond aux critères choisis.</h5>
+          )}
         </ul>
       </section>
     </>
