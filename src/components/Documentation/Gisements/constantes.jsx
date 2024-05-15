@@ -24,11 +24,11 @@ export const gisementsData = [
     coordinates: [24.63143453531368, 102.96871646929866],
     type: 'Gisement',
   },
-  // {
-  //   name: '',
-  //   coordinates: [],
-  //   type: 'Gisement',
-  // },
+  {
+    name: 'Île de Hațeg',
+    coordinates: [45.61041061415524, 22.946869764178906],
+    type: 'Gisement',
+  },
   // {
   //   name: '',
   //   coordinates: [],

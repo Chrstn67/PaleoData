@@ -7,7 +7,7 @@ const GisementDetails = ({ gisement }) => {
   return (
     <section className="gisement-details-comic">
       <header className="gisement-details-header">
-        <h3>{gisement.notion}</h3>
+        <h2>{gisement.notion}</h2>
       </header>
       <div className="gisement-details-content">
         <div className="gisement-details-illustrations">

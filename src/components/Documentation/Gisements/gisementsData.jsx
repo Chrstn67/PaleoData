@@ -54,14 +54,14 @@ const gisementsData = [
     illustration: [Dinoplagne],
     alt: 'Empreintes de sauropodes de DinoPlagne',
   },
-  // {
-  //   notion: '',
-  //   coordinates: [],
-  //   explications:
-  //     "",
-  //   illustration: [],
-  //   alt: '',
-  // },
+  {
+    notion: 'Île de Hațeg',
+    coordinates: [45.61041061415524, 22.946869764178906],
+    explications:
+      "L'Île de Hațeg désigne une île de la mer Téthysienne alpine pendant le Crétacé supérieur, probablement entre les étages géologiques allant du Cénomanien au Maastrichtien. Les terrains qui la composaient se retrouvent autour de la ville actuelle d'Hateg, en Roumanie. <br/><br/> Cette île est connue pour avoir abrité des dinosaures de taille inférieure à la normale dont les fossiles ont été retrouvés dans des couches du Maastrichtien. <br/><br/> Le paléontologue hongrois Franz Nopcsa (1877-1933) donne comme explication que les « ressources limitées » disponibles sur l'île auraient conduit à une diminution de la taille des animaux au fil des générations. La théorie de Nopcsa sur le nanisme insulaire est actuellement totalement acceptée et connue sous le nom de loi de Foster, principe scientifique admettant que la quantité de ressources disponibles dans l'environnement d'une espèce donnée a une influence sur la taille de celle-ci. Cette théorie est souvent appliquée dans des cas d'isolement insulaire. <br/><br/> Neuf espèces de dinosaures et une de ptérosaure semblent avoir constitué la faune indigène de l'île. La plupart de ces animaux présentent une taille inférieure à celle des animaux équivalents découverts ailleurs. Cette caractéristique est attribuée au nanisme insulaire. Mais il faut noter que ce n'est pas le cas pour Hatzegopteryx, l'un des plus grands ptérosaures découverts, cas de gigantisme insulaire.",
+    illustration: [],
+    alt: '',
+  },
   // {
   //   notion: '',
   //   coordinates: [],

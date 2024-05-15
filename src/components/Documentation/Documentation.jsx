@@ -51,7 +51,7 @@ const Documentation = () => {
       <div className="section">
         <GiDinosaurEgg size={50} />
         <h2>Gisements fossilifères</h2>
-        <p>Situe les plus gros gisements de fossiles à travers la planète</p>
+        <p>Situe les gisements de fossiles à travers la planète</p>
         <NavLink to="/documentation/gisements-fossiliferes" activeClassName="active" onClick={scrollToTop}>
           Gisements de fossiles
         </NavLink>
