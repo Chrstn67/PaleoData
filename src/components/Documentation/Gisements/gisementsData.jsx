@@ -19,7 +19,7 @@ const gisementsData = [
     notion: 'Site de Cabrières',
     coordinates: [43.57530131658562, 3.3761822800079875],
     explications:
-      "Sylvie et Eric Monceret, un couple de naturalistes amateurs qui sillonne la région depuis près de 30 ans, ont mis au jour le site de Cabrières, à l’ouest de Montpellier. <br /> Ce site concentre plus de 400 fossiles datant de 470 millions d'années et certains fossiles sont typiques des faunes antérieures du Cambrien. <br /> Il est l’un des gisements les plus riches et diversifiés du monde. Le site de Cabrières témoigne de l'environnement le plus proche du pôle Sud à cette époque jamais observé. Il s'agit d'un gisement les plus riches et diversifiés du monde pour la période ordovicienne (d'environ -485.4 à -443.4 millions d'années). <br /> On y retrouve des restes de tous les groupes d'invertébrés marins ainsi que beaucoup d'algues.",
+      "Sylvie et Eric Monceret, un couple de naturalistes amateurs qui sillonne la région depuis près de 30 ans, ont mis au jour le site de Cabrières, à l’ouest de Montpellier (France). <br /> Ce site concentre plus de 400 fossiles datant de 470 millions d'années et certains fossiles sont typiques des faunes antérieures du Cambrien. <br /> Il est l’un des gisements les plus riches et diversifiés du monde. Le site de Cabrières témoigne de l'environnement le plus proche du pôle Sud à cette époque jamais observé. Il s'agit d'un gisement les plus riches et diversifiés du monde pour la période ordovicienne (d'environ -485.4 à -443.4 millions d'années). <br /> On y retrouve des restes de tous les groupes d'invertébrés marins ainsi que beaucoup d'algues.",
     illustration: [Cabrieres],
     alt: 'Quelques-uns des fossiles mis au jour sur le site des Cabrières',
   },
@@ -27,7 +27,7 @@ const gisementsData = [
     notion: 'Gisement de Cherves-de-Cognac',
     coordinates: [45.76659448803703, -0.31601934397914505],
     explications:
-      "Exploité pour le gypse depuis l'Antiquité, c'est seulement au milieu du XIXè siècle que Henri Coquand annoncera le premier la découverte de fossiles dans la carrière. Mais il faudra attendre les années 1980 pour que les amateurs et collectionneurs commenceront des fouilles plus poussées. <br /> Les restes trouvés sont principalement des requins, des poissons, des reptiles, et des amphibiens. Quelques mammifères ont également été trouvés. De plus, une dizaines de restes de dinosaures et de ptérosaures ont aussi été mis au jour. <br /> La découverte la plus significative est celle d'un Camarasauridae, car si la bête est bien connue en Amérique du nord, sa présence en Europe est confirmée par la découverte d'un fragment de vertèbre d'un jeune Camarasauridé provenant de cette carrière, déjà publiée 5 ans auparavant. <br /> Pratiquement tous les fossiles du site sont datés du Crétacé",
+      "Cette mine française était exploitée pour le gypse depuis l'Antiquité, mais c'est seulement au milieu du XIXè siècle que Henri Coquand annoncera le premier la découverte de fossiles dans la carrière. Mais il faudra attendre les années 1980 pour que les amateurs et collectionneurs commenceront des fouilles plus poussées. <br /> Les restes trouvés sont principalement des requins, des poissons, des reptiles, et des amphibiens. Quelques mammifères ont également été trouvés. De plus, une dizaines de restes de dinosaures et de ptérosaures ont aussi été mis au jour. <br /> La découverte la plus significative est celle d'un Camarasauridae, car si la bête est bien connue en Amérique du nord, sa présence en Europe est confirmée par la découverte d'un fragment de vertèbre d'un jeune Camarasauridé provenant de cette carrière, déjà publiée 5 ans auparavant. <br /> Pratiquement tous les fossiles du site sont datés du Crétacé",
     illustration: [Cherves],
     alt: 'Gisement de Cherves-de-Cognac',
   },
@@ -35,7 +35,7 @@ const gisementsData = [
     notion: 'Mine de Guimarota',
     coordinates: [39.73369928863378, -8.801750238504063],
     explications:
-      "Guimarota est une mine de charbon désaffectée qui contient un large éventail d'animaux et de plantes fossiles datant du kimméridgien, au Jurassique supérieur. Les spécialistes ont retrouvés des restes d'une majorité de mammifères. Mais des fossiles d'ambibiens, de dinosaures, de tortues, de crocodiliens et de petits lézards ont aussi été découverts. ",
+      "Guimarota (Portugal) est une mine de charbon désaffectée qui contient un large éventail d'animaux et de plantes fossiles datant du kimméridgien, au Jurassique supérieur. Les spécialistes ont retrouvés des restes d'une majorité de mammifères. Mais des fossiles d'ambibiens, de dinosaures, de tortues, de crocodiliens et de petits lézards ont aussi été découverts. ",
     illustration: [Guimarota],
     alt: 'Mine de Guimarota',
   },

@@ -8,6 +8,34 @@ $seventh-color: #d4c190ff;
 $eighth-color: #e4d39eff;
 $ninth-color: #f3e5abff;
 
+.options-sites {
+  margin: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  select {
+    background-color: $ninth-color;
+    border: 2px solid $eighth-color;
+    border-radius: 10px;
+    color: #000;
+    font-size: 16px;
+    padding: 8px 16px;
+    text-align: center;
+
+    &:focus {
+      border-color: $seventh-color;
+      outline: none;
+    }
+
+    option {
+      background-color: $ninth-color;
+      color: #000;
+      text-align: center;
+    }
+  }
+}
+
 .gisement-details-comic {
   background: linear-gradient(to bottom, #85674d, #e4d39e);
   border-radius: 10px;
