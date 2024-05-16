@@ -53,6 +53,48 @@ const fossilesData = [
   //   illustrations: '',
   //   alt: '',
   // },
+  // {
+  //   notion: '',
+  //   explications: '',
+  //   illustrations: '',
+  //   alt: '',
+  // },
+  // {
+  //   notion: '',
+  //   explications: '',
+  //   illustrations: '',
+  //   alt: '',
+  // },
+  // {
+  //   notion: '',
+  //   explications: '',
+  //   illustrations: '',
+  //   alt: '',
+  // },
+  // {
+  //   notion: '',
+  //   explications: '',
+  //   illustrations: '',
+  //   alt: '',
+  // },
+  // {
+  //   notion: '',
+  //   explications: '',
+  //   illustrations: '',
+  //   alt: '',
+  // },
+  // {
+  //   notion: '',
+  //   explications: '',
+  //   illustrations: '',
+  //   alt: '',
+  // },
+  // {
+  //   notion: '',
+  //   explications: '',
+  //   illustrations: '',
+  //   alt: '',
+  // },
 ];
 
 export default fossilesData;

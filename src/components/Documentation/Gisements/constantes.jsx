@@ -29,11 +29,11 @@ export const gisementsData = [
     coordinates: [45.61041061415524, 22.946869764178906],
     type: 'Gisement',
   },
-  // {
-  //   name: '',
-  //   coordinates: [],
-  //   type: 'Gisement',
-  // },
+  {
+    name: 'Calcaires de Solnhofen',
+    coordinates: [48.88368611380445, 10.989415794211915],
+    type: 'Gisement',
+  },
   // {
   //   name: '',
   //   coordinates: [],

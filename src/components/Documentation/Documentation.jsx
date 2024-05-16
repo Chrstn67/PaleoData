@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 // import { GiDinoEgg, GiDinoBones, GiDinoFootprint, GiDinoHead, GiDinoTail, GiDinoTorso } from 'react-icons/gi';
 import { GiDinosaurBones, GiSwordClash, GiDinosaurEgg, GiChampions } from 'react-icons/gi';
 import { RiListIndefinite } from 'react-icons/ri';
-import { FaQuestion } from 'react-icons/fa';
+import { FaQuestion, FaFilm } from 'react-icons/fa';
 import { RiCompassDiscoverFill } from 'react-icons/ri';
 
 const Documentation = () => {
@@ -38,6 +38,15 @@ const Documentation = () => {
         <p>La paléontologie est langage riche...</p>
         <NavLink to="/documentation/definitions" activeClassName="active" onClick={scrollToTop}>
           Définitions
+        </NavLink>
+      </div>
+
+      <div className="section">
+        <FaFilm size={50} />
+        <h2>Les monstres du passé dans la fiction</h2>
+        <p>Pour les amoureux de fictions...</p>
+        <NavLink to="/documentation/fiction" activeClassName="active" onClick={scrollToTop}>
+          Dans la fiction
         </NavLink>
       </div>
       <div className="section">

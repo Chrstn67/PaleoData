@@ -4,6 +4,7 @@ import Cherves from '../../../../public/assets/images_doc/gisements/Cherves-de-C
 import Guimarota from '../../../../public/assets/images_doc/gisements/Guimarota.jpeg';
 import Chengjiang from '../../../../public/assets/images_doc/gisements/Chengjiang.jpeg';
 import Dinoplagne from '../../../../public/assets/images_doc/gisements/Dinoplagne.jpeg';
+import Solnhofen from '../../../../public/assets/images_doc/gisements/Solnhofen.jpg';
 
 const gisementsData = [
   {
@@ -62,14 +63,14 @@ const gisementsData = [
     illustration: [],
     alt: '',
   },
-  // {
-  //   notion: '',
-  //   coordinates: [],
-  //   explications:
-  //     "",
-  //   illustration: [],
-  //   alt: '',
-  // },
+  {
+    notion: 'Calcaires de Solnhofen',
+    coordinates: [48.88368611380445, 10.989415794211915],
+    explications:
+      "Les calcaires de Solnhofen sont des roches sédimentaires calcaires datant du Jurassique supérieur (environ 150 millions d'années), provenant de la région de Solnhofen en Bavière, Allemagne. Ces calcaires lithographiques sont célèbres pour leur finesse de grain et leur capacité à préserver avec une qualité exceptionnelle les fossiles d'organismes marins et terrestres de cette époque.<br/><br/> Ces calcaires se sont formés dans un environnement de lagon peu profond, à l'abri des courants et des vagues, permettant le dépôt de boues calcaires extrêmement fines. Leur couleur varie du beige clair au gris foncé en fonction de la quantité de matière organique présente. Ils contiennent parfois de minces lits d'argile ou de marne intercalés.<br/><br/>  Les calcaires de Solnhofen sont particulièrement connus pour avoir livré des fossiles remarquables d'organismes terrestres comme l'Archaeopteryx, considéré comme l'un des premiers oiseaux primitifs. On y trouve également des fossiles de ptérosaures, de dinosaures, de poissons, de crustacés, d'insectes, de plantes et même des empreintes de peau de dinosaures.[1][4] Cette exceptionnelle préservation est due aux conditions anoxiques (sans oxygène) qui régnaient dans le lagon lors du dépôt des sédiments.<br/><br/> Grâce à leur finesse de grain et leur capacité à enregistrer les plus infimes détails, les calcaires de Solnhofen ont une grande valeur scientifique pour l'étude de la vie au Jurassique. Ils sont également exploités comme pierre ornementale de grande qualité, notamment pour la lithographie au 19ème siècle.",
+    illustration: [Solnhofen],
+    alt: 'Calcaires de Solnhofen',
+  },
   // {
   //   notion: '',
   //   coordinates: [],

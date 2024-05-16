@@ -119,6 +119,19 @@ const NavBar = () => {
                 Définitions
               </NavLink>
             </li>
+
+            <li className="navbar-subitem">
+              <NavLink
+                to="/documentation/fiction"
+                onClick={() => {
+                  toggleSubMenu();
+                  scrollToTop();
+                }}
+              >
+                Dans la fiction
+              </NavLink>
+            </li>
+
             <li className="navbar-subitem">
               <NavLink
                 to="/documentation/fossiles-celebres"

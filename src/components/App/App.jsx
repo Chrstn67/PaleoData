@@ -13,6 +13,7 @@ import MentionsLegales from '../Footer/MentionsLegales/MentionsLegales';
 import Batailles from '../Documentation/Batailles/Batailles';
 import DecouvertesRecentes from '../Documentation/DecouvertesRecentes/DecouvertesRecentes';
 import Definitions from '../Documentation/Definitions/Definitions';
+import Fiction from '../Documentation/Fiction/Fiction';
 import FossilesCelebres from '../Documentation/FossilesCelebres/FossilesCelebres';
 import Gisements from '../Documentation/Gisements/Gisements';
 import Paleontologues from '../Documentation/Paleontologues/Paleontologues';
@@ -39,6 +40,7 @@ function App() {
             <Route path="/documentation/batailles" element={<Batailles />} />
             <Route path="/documentation/decouvertes-recentes" element={<DecouvertesRecentes />} />
             <Route path="/documentation/definitions" element={<Definitions />} />
+            <Route path="/documentation/fiction" element={<Fiction />} />
             <Route path="/documentation/fossiles-celebres" element={<FossilesCelebres />} />
             <Route path="/documentation/gisements-fossiliferes" element={<Gisements />} />
             <Route path="/documentation/paleontologues" element={<Paleontologues />} />
