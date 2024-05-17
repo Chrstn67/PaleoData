@@ -1,18 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FaInfo } from 'react-icons/fa';
-
-// import 'react-vertical-timeline-component/style.min.css';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-
 import ModalTimeline from './ModalTimeline/ModalTimeline';
-
 import './Timeline.scss';
 
 const Timeline = ({ timelineData }) => {
-  const [openEra, setOpenEra] = useState(null);
-  const [openPeriod, setOpenPeriod] = useState(null);
-  const [openEpoch, setOpenEpoch] = useState(null);
   const [modalContent, setModalContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -44,82 +36,65 @@ const Timeline = ({ timelineData }) => {
   };
 
   return (
-    <div>
-      <div className="timeline-container">
-        <VerticalTimeline className="timeline">
-          {timelineData.map((era) => (
-            <VerticalTimelineElement key={era.era} className="era">
-              <div
-                className={`era-label ${openEra === era.era ? 'open' : ''}`}
-                onClick={() => setOpenEra(openEra === era.era ? null : era.era)}
-              >
-                {era.era}
-
-                <div className="era-start">{formatValue(era.eraStart)}</div>
-                <div className="era-end">{formatValue(era.eraEnd)}</div>
-
-                <div className="info">
-                  <button type="button" onClick={() => handleInfoClick(era.eraInfo)}>
+    <div className="timeline-container">
+      <div className="timeline">
+        {timelineData.map((era) => (
+          <div key={era.era} className="timeline-item era">
+            <div className="timeline-label">
+              {era.era}
+              <div className="timeline-range">
+                <span className="timeline-start">{formatValue(era.eraStart)}</span>
+                <span className="timeline-end">{formatValue(era.eraEnd)}</span>
+              </div>
+              <button className="info-button" onClick={() => handleInfoClick(era.eraInfo)}>
+                <FaInfo size={20} />
+              </button>
+            </div>
+            {era.periods.map((period) => (
+              <div key={period.name} className="timeline-item period">
+                <div className="timeline-label">
+                  {period.name}
+                  <div className="timeline-range">
+                    <span className="timeline-start">{formatValue(period.periodStart)}</span>
+                    <span className="timeline-end">{formatValue(period.periodEnd)}</span>
+                  </div>
+                  <button className="info-button" onClick={() => handleInfoClick(period.periodInfo)}>
                     <FaInfo size={20} />
                   </button>
                 </div>
-              </div>
-
-              {openEra === era.era &&
-                era.periods.map((period) => (
-                  <VerticalTimelineElement key={period.name} className="period">
-                    <div
-                      className={`period-label ${openPeriod === period.name ? 'open' : ''}`}
-                      onClick={() => setOpenPeriod(openPeriod === period.name ? null : period.name)}
-                    >
-                      {period.name}
-                      <div className="period-start">{formatValue(period.periodStart)}</div>
-                      <div className="period-end">{formatValue(period.periodEnd)}</div>
-                      <div className="info">
-                        <button type="button" onClick={() => handleInfoClick(period.periodInfo)}>
-                          <FaInfo size={20} />
-                        </button>
+                {period.epochs.map((epoch) => (
+                  <div key={epoch.name} className="timeline-item epoch">
+                    <div className="timeline-label">
+                      {epoch.name}
+                      <div className="timeline-range">
+                        <span className="timeline-start">{formatValue(epoch.epochStart)}</span>
+                        <span className="timeline-end">{formatValue(epoch.epochEnd)}</span>
                       </div>
+                      <button className="info-button" onClick={() => handleInfoClick(epoch.epochInfo)}>
+                        <FaInfo size={20} />
+                      </button>
                     </div>
-
-                    {openPeriod === period.name &&
-                      period.epochs.map((epoch) => (
-                        <VerticalTimelineElement key={epoch.name} className="epoch">
-                          <div
-                            className={`epoch-label ${openEpoch === epoch.name ? 'open' : ''}`}
-                            onClick={() => setOpenEpoch(openEpoch === epoch.name ? null : epoch.name)}
-                          >
-                            {epoch.name}
-                            <div className="epoch-start">{formatValue(epoch.epochStart)}</div>
-                            <div className="epoch-end">{formatValue(epoch.epochEnd)}</div>
-                            <div className="info">
-                              <button type="button" onClick={() => handleInfoClick(epoch.epochInfo)}>
-                                <FaInfo size={20} />
-                              </button>
+                    {epoch.stage &&
+                      epoch.stage.map((stage) => (
+                        <div key={stage.name} className="timeline-item stage">
+                          <div className="timeline-label">
+                            {stage.name}
+                            <div className="timeline-range">
+                              <span className="timeline-start">{formatValue(stage.stageStart)}</span>
+                              <span className="timeline-end">{formatValue(stage.stageEnd)}</span>
                             </div>
+                            <button className="info-button" onClick={() => handleInfoClick(stage.stageInfo)}>
+                              <FaInfo size={20} />
+                            </button>
                           </div>
-
-                          {openEpoch === epoch.name &&
-                            epoch.stage &&
-                            epoch.stage.map((stage) => (
-                              <VerticalTimelineElement key={stage.name} className="stage">
-                                <div className="stage-label">{stage.name}</div>
-                                <div className="stage-start">{formatValue(stage.stageStart)}</div>
-                                <div className="stage-end">{formatValue(stage.stageEnd)}</div>
-                                <div className="info">
-                                  <button type="button" onClick={() => handleInfoClick(stage.stageInfo)}>
-                                    <FaInfo size={20} />
-                                  </button>
-                                </div>
-                              </VerticalTimelineElement>
-                            ))}
-                        </VerticalTimelineElement>
+                        </div>
                       ))}
-                  </VerticalTimelineElement>
+                  </div>
                 ))}
-            </VerticalTimelineElement>
-          ))}
-        </VerticalTimeline>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
       <ModalTimeline isOpen={isModalOpen} closeModal={closeModal} content={modalContent} />
     </div>
@@ -130,23 +105,23 @@ Timeline.propTypes = {
   timelineData: PropTypes.arrayOf(
     PropTypes.shape({
       era: PropTypes.string.isRequired,
-      start: PropTypes.number,
-      end: PropTypes.number,
+      eraStart: PropTypes.number,
+      eraEnd: PropTypes.number,
       periods: PropTypes.arrayOf(
         PropTypes.shape({
           name: PropTypes.string.isRequired,
-          start: PropTypes.number,
-          end: PropTypes.number,
+          periodStart: PropTypes.number,
+          periodEnd: PropTypes.number,
           epochs: PropTypes.arrayOf(
             PropTypes.shape({
               name: PropTypes.string.isRequired,
-              start: PropTypes.number,
-              end: PropTypes.number,
+              epochStart: PropTypes.number,
+              epochEnd: PropTypes.number,
               stage: PropTypes.arrayOf(
                 PropTypes.shape({
                   name: PropTypes.string.isRequired,
-                  start: PropTypes.number,
-                  end: PropTypes.number,
+                  stageStart: PropTypes.number,
+                  stageEnd: PropTypes.number,
                   stageInfo: PropTypes.string,
                 }),
               ),

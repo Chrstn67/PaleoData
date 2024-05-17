@@ -1,129 +1,149 @@
-$first-color: #75553fff;
-$second-color: #85674dff;
-$third-color: #95795aff;
-$fourth-color: #a58b68ff;
-$fifth-color: #b49d75ff;
-$sixth-color: #c4af83ff;
-$seventh-color: #d4c190ff;
-$eighth-color: #e4d39eff;
-$ninth-color: #f3e5abff;
+$first-color: #75553f;
+$second-color: #85674d;
+$third-color: #95795a;
+$fourth-color: #a58b68;
+$fifth-color: #b49d75;
+$sixth-color: #c4af83;
+$seventh-color: #d4c190;
+$eighth-color: #e4d39e;
+$ninth-color: #f3e5ab;
 
 .timeline-container {
   background-color: $first-color;
   padding: 20px;
   border-radius: 10px;
-  color: white;
   text-align: center;
-}
 
-.timeline {
-  background-color: $second-color;
-  border-radius: 10px;
-  padding: 10px;
-}
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 
-.era {
-  background-color: $third-color;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 90%;
+      max-width: 600px;
+      font-size: 1em;
+    }
 
-  &.open {
-    background-color: $fourth-color;
-    margin-bottom: 2em;
+    ul.search-results {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      width: 90%;
+      max-width: 600px;
+
+      li {
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #fff;
+        }
+      }
+    }
   }
 
-  &-label {
-    cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 1em;
+  .timeline-item.active {
+    background-color: $first-color;
     color: $ninth-color;
   }
 
-  &-start,
-  &-end {
-    font-size: 0.8em;
-    margin: 1em;
-  }
-}
-
-.period {
-  background-color: $fifth-color;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-
-  &.open {
-    background-color: $sixth-color;
+  .timeline-label .info-button:hover {
+    background-color: $first-color;
+    color: $ninth-color;
   }
 
-  &-label {
-    cursor: pointer;
-    font-weight: bold;
-    color: $first-color;
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  &-start,
-  &-end {
-    font-size: 0.8em;
-    margin: 1em;
-  }
-}
-
-.epoch {
-  background-color: $seventh-color;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-
-  &.open {
-    background-color: $eighth-color;
-  }
-
-  &-label {
-    cursor: pointer;
-    font-weight: bold;
-    color: $second-color;
-  }
-
-  &-start,
-  &-end {
-    font-size: 0.8em;
-    margin: 1em;
-  }
-}
-
-.stage {
-  background-color: $ninth-color;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-
-  &-label {
-    font-weight: bold;
-    color: $first-color;
-  }
-
-  &-start,
-  &-end {
-    font-size: 0.8em;
-    margin: 1em;
-    font-weight: bold;
-    color: $first-color;
-  }
-}
-
-.info {
-  margin-top: 10px;
-
-  button {
-    border: none;
-    padding: 5px 10px;
+  .timeline-item {
+    background-color: $second-color;
     border-radius: 5px;
-    cursor: pointer;
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+    max-width: 600px;
 
-    &:hover {
-      background-color: $fourth-color;
+    &.era {
+      background-color: $third-color;
+    }
+
+    &.period {
+      background-color: $fifth-color;
+    }
+
+    &.epoch {
+      background-color: $seventh-color;
+    }
+
+    &.stage {
+      background-color: $ninth-color;
+    }
+  }
+
+  .timeline-label {
+    font-weight: bold;
+    color: $first-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .timeline-range {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 0.8em;
+      margin-left: 10px;
+
+      .timeline-start,
+      .timeline-end {
+        margin: 2px 0;
+      }
+    }
+
+    .info-button {
+      border: none;
+      background: none;
+      color: #000000;
+      margin-left: 10px;
+      cursor: pointer;
+      outline: 1px solid #000000;
+      padding: 0.5em;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+
+  @media (max-width: 430px) {
+    .timeline-container {
+      padding: 10px;
+    }
+
+    .timeline-label {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .timeline-range {
+        margin-left: 0;
+        margin-top: 10px;
+        align-items: flex-start;
+      }
+
+      .info-button {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
   }
 }
