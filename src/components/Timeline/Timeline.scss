@@ -40,22 +40,13 @@ $ninth-color: #f3e5ab;
         padding: 5px 10px;
         border-radius: 5px;
         cursor: pointer;
+        transition: background-color 0.3s;
 
         &:hover {
-          background-color: #fff;
+          background-color: lighten($first-color, 20%);
         }
       }
     }
-  }
-
-  .timeline-item.active {
-    background-color: $first-color;
-    color: $ninth-color;
-  }
-
-  .timeline-label .info-button:hover {
-    background-color: $first-color;
-    color: $ninth-color;
   }
 
   .timeline {
@@ -71,6 +62,9 @@ $ninth-color: #f3e5ab;
     margin: 10px 0;
     width: 90%;
     max-width: 600px;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
 
     &.era {
       background-color: $third-color;
@@ -86,6 +80,11 @@ $ninth-color: #f3e5ab;
 
     &.stage {
       background-color: $ninth-color;
+    }
+
+    &.active {
+      background-color: darken($second-color, 20%);
+      color: #fff;
     }
   }
 
@@ -117,9 +116,13 @@ $ninth-color: #f3e5ab;
       cursor: pointer;
       outline: 1px solid #000000;
       padding: 0.5em;
+      transition:
+        background-color 0.3s,
+        color 0.3s;
 
       &:hover {
-        background-color: #fff;
+        background-color: lighten($first-color, 20%);
+        color: #fff;
       }
     }
   }

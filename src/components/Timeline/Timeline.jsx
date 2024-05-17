@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FaInfo } from 'react-icons/fa';
 import ModalTimeline from './ModalTimeline/ModalTimeline';
@@ -7,6 +7,9 @@ import './Timeline.scss';
 const Timeline = ({ timelineData }) => {
   const [modalContent, setModalContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchText, setSearchText] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [activeElement, setActiveElement] = useState(null);
 
   const handleInfoClick = (content) => {
     setModalContent(content);
@@ -39,7 +42,7 @@ const Timeline = ({ timelineData }) => {
     <div className="timeline-container">
       <div className="timeline">
         {timelineData.map((era) => (
-          <div key={era.era} className="timeline-item era">
+          <div key={era.era} className={`timeline-item era ${era.era === activeElement?.era ? 'active' : ''}`}>
             <div className="timeline-label">
               {era.era}
               <div className="timeline-range">
@@ -51,7 +54,12 @@ const Timeline = ({ timelineData }) => {
               </button>
             </div>
             {era.periods.map((period) => (
-              <div key={period.name} className="timeline-item period">
+              <div
+                key={period.name}
+                className={`timeline-item period ${
+                  period.name === activeElement?.name && period.parentEra === activeElement?.parentEra ? 'active' : ''
+                }`}
+              >
                 <div className="timeline-label">
                   {period.name}
                   <div className="timeline-range">
@@ -63,7 +71,16 @@ const Timeline = ({ timelineData }) => {
                   </button>
                 </div>
                 {period.epochs.map((epoch) => (
-                  <div key={epoch.name} className="timeline-item epoch">
+                  <div
+                    key={epoch.name}
+                    className={`timeline-item epoch ${
+                      epoch.name === activeElement?.name &&
+                      epoch.parentPeriod === activeElement?.parentPeriod &&
+                      epoch.parentEra === activeElement?.parentEra
+                        ? 'active'
+                        : ''
+                    }`}
+                  >
                     <div className="timeline-label">
                       {epoch.name}
                       <div className="timeline-range">
@@ -76,7 +93,17 @@ const Timeline = ({ timelineData }) => {
                     </div>
                     {epoch.stage &&
                       epoch.stage.map((stage) => (
-                        <div key={stage.name} className="timeline-item stage">
+                        <div
+                          key={stage.name}
+                          className={`timeline-item stage ${
+                            stage.name === activeElement?.name &&
+                            stage.parentEpoch === activeElement?.parentEpoch &&
+                            stage.parentPeriod === activeElement?.parentPeriod &&
+                            stage.parentEra === activeElement?.parentEra
+                              ? 'active'
+                              : ''
+                          }`}
+                        >
                           <div className="timeline-label">
                             {stage.name}
                             <div className="timeline-range">
