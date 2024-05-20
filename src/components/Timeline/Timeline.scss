@@ -7,47 +7,10 @@ $sixth-color: #c4af83;
 $seventh-color: #d4c190;
 $eighth-color: #e4d39e;
 $ninth-color: #f3e5ab;
-
 .timeline-container {
-  background-color: $first-color;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-
-  .search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-
-    input {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      width: 90%;
-      max-width: 600px;
-      font-size: 1em;
-    }
-
-    ul.search-results {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0;
-      width: 90%;
-      max-width: 600px;
-
-      li {
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: lighten($first-color, 20%);
-        }
-      }
-    }
-  }
 
   .timeline {
     display: flex;
@@ -57,6 +20,7 @@ $ninth-color: #f3e5ab;
 
   .timeline-item {
     background-color: $second-color;
+    filter: drop-shadow(10px 20px 10px #75553f);
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
@@ -86,6 +50,9 @@ $ninth-color: #f3e5ab;
       background-color: darken($second-color, 20%);
       color: #fff;
     }
+  }
+  .highlighted {
+    background-color: red;
   }
 
   .timeline-label {
@@ -124,6 +91,24 @@ $ninth-color: #f3e5ab;
         background-color: lighten($first-color, 20%);
         color: #fff;
       }
+    }
+  }
+
+  .search-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0.5em;
+    filter: drop-shadow(5px 5px 5px #75553f);
+
+    input {
+      background-color: #f3e5ab;
+      outline: 2px solid #e4d39e;
+      border-radius: 10px;
+      color: #000;
+      font-size: 16px;
+      padding: 8px 16px;
+      text-align: center;
     }
   }
 

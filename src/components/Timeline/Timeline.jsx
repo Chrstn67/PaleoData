@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { FaInfo } from 'react-icons/fa';
 import ModalTimeline from './ModalTimeline/ModalTimeline';
@@ -7,9 +7,9 @@ import './Timeline.scss';
 const Timeline = ({ timelineData }) => {
   const [modalContent, setModalContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [searchText, setSearchText] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
   const [activeElement, setActiveElement] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const timelineRef = useRef(null);
 
   const handleInfoClick = (content) => {
     setModalContent(content);
@@ -38,11 +38,43 @@ const Timeline = ({ timelineData }) => {
     return formattedValue;
   };
 
+  const highlightMatches = (name) => {
+    return name.toLowerCase().includes(searchQuery.toLowerCase());
+  };
+
+  useEffect(() => {
+    if (searchQuery) {
+      const highlightedElement = document.querySelector('.highlighted');
+      if (highlightedElement) {
+        const offset = 100;
+        const elementPosition = highlightedElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }
+  }, [searchQuery]);
+
   return (
     <div className="timeline-container">
-      <div className="timeline">
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Rechercher..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+      <div className="timeline" ref={timelineRef}>
         {timelineData.map((era) => (
-          <div key={era.era} className={`timeline-item era ${era.era === activeElement?.era ? 'active' : ''}`}>
+          <div
+            key={era.era}
+            className={`timeline-item era ${
+              era.era === activeElement?.era ? 'active' : ''
+            } ${highlightMatches(era.era) ? 'highlighted' : ''}`}
+          >
             <div className="timeline-label">
               {era.era}
               <div className="timeline-range">
@@ -58,7 +90,7 @@ const Timeline = ({ timelineData }) => {
                 key={period.name}
                 className={`timeline-item period ${
                   period.name === activeElement?.name && period.parentEra === activeElement?.parentEra ? 'active' : ''
-                }`}
+                } ${highlightMatches(period.name) ? 'highlighted' : ''}`}
               >
                 <div className="timeline-label">
                   {period.name}
@@ -79,7 +111,7 @@ const Timeline = ({ timelineData }) => {
                       epoch.parentEra === activeElement?.parentEra
                         ? 'active'
                         : ''
-                    }`}
+                    } ${highlightMatches(epoch.name) ? 'highlighted' : ''}`}
                   >
                     <div className="timeline-label">
                       {epoch.name}
@@ -102,7 +134,7 @@ const Timeline = ({ timelineData }) => {
                             stage.parentEra === activeElement?.parentEra
                               ? 'active'
                               : ''
-                          }`}
+                          } ${highlightMatches(stage.name) ? 'highlighted' : ''}`}
                         >
                           <div className="timeline-label">
                             {stage.name}
