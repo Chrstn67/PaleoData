@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import NewAnimal from './NewAnimal/NewAnimal';
@@ -6,21 +6,16 @@ import './AnimalListingSection.scss';
 
 const AnimalCard = ({ animal }) => {
   const cardRef = useRef(null);
-
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
     const { left, top, width, height } = cardRef.current.getBoundingClientRect();
-
     const x = (clientX - left) / width - 0.5;
     const y = (clientY - top) / height - 0.5;
-
     cardRef.current.style.transform = `perspective(500px) rotateX(${y * -20}deg) rotateY(${x * 20}deg)`;
   };
-
   const resetCardTransform = () => {
     cardRef.current.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
   };
-
   return (
     <li ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={resetCardTransform}>
       <div className="image-container">
@@ -32,7 +27,6 @@ const AnimalCard = ({ animal }) => {
     </li>
   );
 };
-
 AnimalCard.propTypes = {
   animal: PropTypes.shape({
     nom: PropTypes.string.isRequired,
@@ -40,13 +34,18 @@ AnimalCard.propTypes = {
   }).isRequired,
 };
 
-const AnimalListingSection = ({ animals }) => {
+const AnimalListingSection = ({ animals, onAnimalCount }) => {
+  const animalCount = animals.length;
+
+  useEffect(() => {
+    onAnimalCount(animalCount);
+  }, [animalCount, onAnimalCount]);
+
   return (
     <>
       <NewAnimal animals={animals} />
       <section className="animal-listing">
-        <h3 className="h3-title">Liste : {animals.length} animaux</h3>
-
+        <h3 className="h3-title">Liste</h3>
         <ul>
           {animals.length > 0 ? (
             animals.map((animal) => <AnimalCard key={animal.nom} animal={animal} />)
@@ -58,7 +57,6 @@ const AnimalListingSection = ({ animals }) => {
     </>
   );
 };
-
 AnimalListingSection.propTypes = {
   animals: PropTypes.arrayOf(
     PropTypes.shape({
@@ -66,6 +64,7 @@ AnimalListingSection.propTypes = {
       image_url: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  onAnimalCount: PropTypes.func.isRequired,
 };
 
 export default AnimalListingSection;
