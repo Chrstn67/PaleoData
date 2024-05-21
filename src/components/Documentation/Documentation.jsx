@@ -66,7 +66,7 @@ const Documentation = () => {
       <div className="section">
         <GiChampions size={50} />
         <h2>Paléontologues</h2>
-        <p>Découvre les plus grands paléontologues de l'histoire et leurs découvertes</p>
+        <p>Découvre les plus grands paléontologues de l&#39;histoire et leurs découvertes</p>
         <NavLink to="/documentation/paleontologues" activeClassName="active" onClick={scrollToTop}>
           Paléontologues
         </NavLink>

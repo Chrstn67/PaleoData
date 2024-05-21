@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import NewAnimal from './NewAnimal/NewAnimal';
@@ -40,18 +40,13 @@ AnimalCard.propTypes = {
   }).isRequired,
 };
 
-const AnimalListingSection = ({ animals, onAnimalCount }) => {
-  const animalCount = animals.length;
-
-  useEffect(() => {
-    onAnimalCount(animalCount);
-  }, [animalCount, onAnimalCount]);
-
+const AnimalListingSection = ({ animals }) => {
   return (
     <>
       <NewAnimal animals={animals} />
       <section className="animal-listing">
-        <h3 className="h3-title">Liste</h3>
+        <h3 className="h3-title">Liste : {animals.length} animaux</h3>
+
         <ul>
           {animals.length > 0 ? (
             animals.map((animal) => <AnimalCard key={animal.nom} animal={animal} />)
@@ -71,7 +66,6 @@ AnimalListingSection.propTypes = {
       image_url: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  onAnimalCount: PropTypes.func.isRequired,
 };
 
 export default AnimalListingSection;
