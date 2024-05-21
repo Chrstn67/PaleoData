@@ -40,7 +40,12 @@ AnimalCard.propTypes = {
   }).isRequired,
 };
 
-const AnimalListingSection = ({ animals }) => {
+const AnimalListingSection = ({ animals, onAnimalCount }) => {
+  // Ajout d'une props pour récupérer la fonction de mise à jour du nombre d'animaux
+  const animalCount = animals.length;
+
+  onAnimalCount(animalCount);
+
   return (
     <>
       <NewAnimal animals={animals} />
@@ -65,6 +70,7 @@ AnimalListingSection.propTypes = {
       image_url: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  onAnimalCount: PropTypes.func.isRequired,
 };
 
 export default AnimalListingSection;

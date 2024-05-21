@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import './HomePage.scss';
 import { FaHistory, FaBook, FaInfoCircle } from 'react-icons/fa';
 import { GiDinosaurRex } from 'react-icons/gi';
+import PropTypes from 'prop-types';
+import './HomePage.scss';
 
-const HomePage = () => {
+const HomePage = ({ animals }) => {
   const ref = useRef(null);
 
   const scrollToTop = () => {
@@ -27,7 +28,10 @@ const HomePage = () => {
         <div className="section">
           <GiDinosaurRex size={50} />
           <h2>Animaux</h2>
-          <p>Découvre les dernières informations sur tes animaux favoris</p>
+          <p>
+            Découvre les dernières informations sur tes animaux favoris. Il y a actuellement <b>{animals.length} </b>
+            animaux disponibles.
+          </p>
           <Link to="/animaux" onClick={scrollToTop}>
             Animaux
           </Link>
@@ -62,6 +66,15 @@ const HomePage = () => {
       </div>
     </div>
   );
+};
+
+HomePage.propTypes = {
+  animals: PropTypes.arrayOf(
+    PropTypes.shape({
+      nom: PropTypes.string.isRequired,
+      image_url: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default HomePage;
