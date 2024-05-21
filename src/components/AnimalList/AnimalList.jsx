@@ -10,13 +10,18 @@ const AnimalList = ({ data }) => {
     setFilteredAnimals(filteredData);
   };
 
+  const handleAnimalCount = (count) => {
+    // Vous pouvez utiliser cette fonction pour faire quelque chose avec le nombre d'animaux, par exemple, l'afficher dans la console
+    console.log(`Nombre d'animaux : ${count}`);
+  };
+
   return (
     <>
       <section className="AnimalFiltrer-Component">
         <AnimalFiltrer data={data} onFilterChange={handleFilterChange} />
       </section>
       <section className="AnimalListingSection-Component">
-        <AnimalListingSection animals={filteredAnimals} />{' '}
+        <AnimalListingSection animals={filteredAnimals} onAnimalCount={handleAnimalCount} />
       </section>
     </>
   );

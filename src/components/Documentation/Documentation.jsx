@@ -1,10 +1,8 @@
-import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-// import { GiDinoEgg, GiDinoBones, GiDinoFootprint, GiDinoHead, GiDinoTail, GiDinoTorso } from 'react-icons/gi';
+
 import { GiDinosaurBones, GiSwordClash, GiDinosaurEgg, GiChampions } from 'react-icons/gi';
-import { RiListIndefinite } from 'react-icons/ri';
+import { RiListIndefinite, RiCompassDiscoverFill } from 'react-icons/ri';
 import { FaQuestion, FaFilm } from 'react-icons/fa';
-import { RiCompassDiscoverFill } from 'react-icons/ri';
 
 const Documentation = () => {
   const scrollToTop = () => {
@@ -52,7 +50,7 @@ const Documentation = () => {
       <div className="section">
         <GiDinosaurBones size={50} />
         <h2>Fossiles célèbres</h2>
-        <p>Il existe des fossiles qui sont une mine d'or d'informations. Viens les examiner !</p>
+        <p>Il existe des fossiles qui sont une mine d&#39;or d&#39;informations. Viens les examiner !</p>
         <NavLink to="/documentation/fossiles-celebres" activeClassName="active" onClick={scrollToTop}>
           Fossiles célèbres
         </NavLink>

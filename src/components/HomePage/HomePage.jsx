@@ -18,9 +18,9 @@ const HomePage = ({ animals }) => {
         <h1>Bienvenue sur PaleoData</h1>
         <div className="introduction">
           <p>
-            Viens explorer la fascinante histoire de la vie sur Terre. Découvre des centaines d'animaux préhistoriques,
-            imagine leur mode de vie et leur environnement en voyageant dans le temps, dans cet univers passé qui
-            émerveille petits et grands.
+            Viens explorer la fascinante histoire de la vie sur Terre. Découvre des centaines d&#39;animaux
+            préhistoriques, imagine leur mode de vie et leur environnement en voyageant dans le temps, dans cet univers
+            passé qui émerveille petits et grands.
           </p>
         </div>
       </div>
@@ -47,7 +47,7 @@ const HomePage = ({ animals }) => {
         <div className="section">
           <FaBook size={50} />
           <h2>Étymologie</h2>
-          <p>Apprend l'origine des noms des animaux</p>
+          <p>Apprend l&#39;origine des noms des animaux</p>
           <Link to="/liste-etymologique" onClick={scrollToTop}>
             Étymologie
           </Link>
@@ -56,8 +56,8 @@ const HomePage = ({ animals }) => {
           <FaInfoCircle size={50} />
           <h2>Documentation</h2>
           <p>
-            Les dernières découvertes paléontologiques, les paléontologues célèbres, et bien d'autres infos n'attendent
-            qu'à être lues !
+            Les dernières découvertes paléontologiques, les paléontologues célèbres, et bien d&#39;autres infos
+            n&#39;attendent qu&#39;à être lues !
           </p>
           <Link to="/documentation" onClick={scrollToTop}>
             Documentation

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import NewAnimal from './NewAnimal/NewAnimal';
@@ -41,10 +41,11 @@ AnimalCard.propTypes = {
 };
 
 const AnimalListingSection = ({ animals, onAnimalCount }) => {
-  // Ajout d'une props pour récupérer la fonction de mise à jour du nombre d'animaux
   const animalCount = animals.length;
 
-  onAnimalCount(animalCount);
+  useEffect(() => {
+    onAnimalCount(animalCount);
+  }, [animalCount, onAnimalCount]);
 
   return (
     <>
