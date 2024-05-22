@@ -51,9 +51,6 @@ $ninth-color: #f3e5ab;
       color: #fff;
     }
   }
-  .highlighted {
-    background-color: red;
-  }
 
   .timeline-label {
     font-weight: bold;
@@ -85,11 +82,18 @@ $ninth-color: #f3e5ab;
       padding: 0.5em;
       transition:
         background-color 0.3s,
-        color 0.3s;
+        color 0.3s,
+        box-shadow 0.3s;
+      box-shadow:
+        inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.5);
 
       &:hover {
         background-color: lighten($first-color, 20%);
         color: #fff;
+        box-shadow:
+          inset 3px 3px 7px rgba(0, 0, 0, 0.3),
+          inset -3px -3px 7px rgba(255, 255, 255, 0.5);
       }
     }
   }

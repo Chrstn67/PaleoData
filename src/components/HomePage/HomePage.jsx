@@ -28,7 +28,8 @@ const HomePage = ({ animals }) => {
           <GiDinosaurRex size={50} />
           <h2>Animaux</h2>
           <p>
-            Découvre les dernières informations sur tes animaux favoris. Il y a actuellement <b>{animals.length} </b>
+            Découvre les dernières informations sur tes animaux favoris. <br /> Il y a actuellement
+            <b> {animals.length} </b>
             animaux disponibles.
           </p>
           <Link to="/animaux" onClick={scrollToTop}>
