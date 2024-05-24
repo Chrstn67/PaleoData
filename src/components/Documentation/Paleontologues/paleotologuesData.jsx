@@ -12,7 +12,7 @@ import Buckland from '../../../../public/assets/images_doc/paleontologues/Willia
 import GideonMantell from '../../../../public/assets/images_doc/paleontologues/Gideon_Mantell.jpg';
 import RichardOwen from '../../../../public/assets/images_doc/paleontologues/Richard_Owen.jpeg';
 import Stenon from '../../../../public/assets/images_doc/paleontologues/Stenon.jpg';
-// import Walker from '../../../../public/assets/images_doc/paleontologues/Gideon_Mantell.jpg';
+import Cope from '../../../../public/assets/images_doc/paleontologues/Edward_Cope.jpg';
 
 const paleontologuesData = [
   {
@@ -111,14 +111,15 @@ const paleontologuesData = [
     explications:
       "On ne peut pas vraiment qualifier ce prêtre catholique danois comme un 'paléontologue'. Cependant, cet amoureux des sciences a formulé les principes fondamentaux de la géologie moderne, comme le principe de l'horizontalité primaire des couches et le principe de superposition des strates. <br /><br /> Sténon a été l'un des premiers à étudier les fossiles et les cristaux, établissant que les fossiles ont été pétrifiés avant la formation de la roche qui les entoure. <br /><br /> Il a développé l'hypothèse que les roches peuvent être soulevées par des forces souterraines, une idée révolutionnaire à l'époque. <br /><br /> Enfin, ses observations sur les dents de requin fossiles (certainement Mégalodon) l'ont conduit à déduire que la mer avait dû recouvrir autrefois la région où elles ont été retrouvées",
     illustrations: [Stenon],
-    alt: 'Portrait de ',
+    alt: 'Portrait de Nicolas Sténon',
   },
-  // {
-  //   notion: '',
-  //   explications: '',
-  //   illustrations: './assets/images_doc/paleontologues/.jpg',
-  //   alt: 'Portrait de ',
-  // },
+  {
+    notion: 'Edward Drinker Cope (1840-1897)',
+    explications:
+      "Né à Philadelphie dans une famille quaker aisée, Cope développa très tôt un intérêt pour les sciences naturelles, encouragé par son père. Dès l'âge de 6 ans, il tenait un journal illustré de ses observations.<br/> Il étudia à l'Université de Pennsylvanie et devint professeur de zoologie comparée et de botanique à Haverford College en 1864. Il se consacra ensuite pendant 22 ans à l'exploration et la recherche, découvrant et décrivant environ 1000 espèces vertébrées fossiles dans l'Ouest américain.<br/><br/> Il entretint une féroce rivalité avec le paléontologue Othniel Marsh dans la 'Guerre des Os', une course effrénée à la découverte de nouveaux dinosaures qui nuisit à leur réputation respective.",
+    illustrations: [Cope],
+    alt: 'Portrait de Edward Drinker Cope',
+  },
   // {
   //   notion: '',
   //   explications: '',
