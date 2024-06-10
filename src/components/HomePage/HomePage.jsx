@@ -11,6 +11,7 @@ const HomePage = ({ animals }) => {
   const scrollToTop = () => {
     ref.current.scrollIntoView({ behavior: 'auto' });
   };
+
   return (
     <div className="home-page" ref={ref}>
       <div className="banner">
