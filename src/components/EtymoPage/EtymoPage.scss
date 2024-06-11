@@ -4,41 +4,81 @@ $third-color: #95795aff;
 $fourth-color: #a58b68ff;
 $fifth-color: #b49d75ff;
 $sixth-color: #c4af83ff;
-$seven-color: #d4c190ff;
+$seventh-color: #d4c190ff;
 $eighth-color: #e4d39eff;
 $ninth-color: #f3e5abff;
 
-.etymology-garden {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px;
-  background-color: $second-color;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.etymo-plant {
+.etymo-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  border-radius: 10px;
-  background: $ninth-color;
-  box-shadow: 0 8px 32px 0 $third-color;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  outline: 1px solid#ffffff2e;
-  margin: 10px;
-  filter: drop-shadow(5px 15px 5px $sixth-color);
-}
+  border-radius: 0.5em;
+  background: $fourth-color;
+  min-height: 100vh;
 
-.plant-label {
-  font-size: 20px;
-  font-weight: bold;
-  color: $first-color;
-}
+  .title {
+    font-size: 2.5rem;
+    color: $first-color;
 
-.plant-description,
-.plant-type {
-  font-size: 16px;
-  color: $third-color;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+
+    .grid-item {
+      background: linear-gradient(175deg, #75553f, #f3e5ab);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s;
+      animation: fadeInUp 0.6s ease-in-out;
+      text-align: center;
+      filter: drop-shadow(5px 15px 10px $ninth-color);
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .root {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: $seventh-color;
+      }
+
+      .meaning {
+        font-size: 1.2rem;
+        color: darken($second-color, 10%);
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .origin {
+        font-size: 1rem;
+        color: darken($fourth-color, 20%);
+        font-weight: 600;
+      }
+    }
+  }
 }

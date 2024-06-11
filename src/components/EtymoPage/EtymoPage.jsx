@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './EtymoPage.scss';
 
 function EtymoPage() {
@@ -33,23 +33,18 @@ function EtymoPage() {
     { root: 'nano-', meaning: 'nain', origin: 'Grec ancien : νάνος (nános)' },
     { root: 'ovo-', meaning: 'œuf', origin: 'Latin : ōvum' },
     { root: 'plate-', meaning: 'large, plat', origin: 'Grec ancien : πλατύς (platús)' },
-
     { root: 'ichthyo-', meaning: 'poisson', origin: 'Grec ancien : ἰχθύς (ikhthús)' },
     { root: '-cephal-', meaning: 'tête', origin: 'Grec ancien : κεφαλή (kephalḗ)' },
     { root: 'hadro-', meaning: 'épais, robuste', origin: 'Grec ancien : ἁδρός (hadrós)' },
     { root: 'stego-', meaning: 'toit', origin: 'Grec ancien : στέγος (stégos)' },
-
     { root: 'ankylo-', meaning: 'rigide', origin: 'Grec ancien : ἀγκύλος (ankúlos)' },
     { root: '-therium', meaning: 'animal', origin: 'Grec ancien : θηρίον (thēríon)' },
     { root: 'pachy-', meaning: 'épais', origin: 'Grec ancien : παχύς (pakhús)' },
     { root: 'eo-', meaning: 'aube', origin: 'Grec ancien : ἠώς (ēṓs)' },
     { root: 'neo-', meaning: 'nouveau', origin: 'Grec ancien : νέος (néos)' },
-
     { root: '-onyx', meaning: 'griffe', origin: 'Grec ancien : ὄνυξ (ónux)' },
-
     { root: 'eu-', meaning: 'bien, vrai', origin: 'Grec ancien : εὖ (eû)' },
     { root: '-phag-', meaning: 'mangeur', origin: 'Grec ancien : φαγεῖν (phageîn)' },
-
     { root: 'parasauro-', meaning: 'proche du lézard', origin: 'Grec ancien : παρά (pará) et σαῦρος (saûros)' },
     { root: 'giganoto-', meaning: 'géant', origin: 'Grec ancien : γίγας (gígas)' },
     { root: 'spino-', meaning: 'épine', origin: 'Latin : spīna' },
@@ -57,57 +52,24 @@ function EtymoPage() {
 
   etymologyData.sort((a, b) => a.root.replace('-', '').localeCompare(b.root.replace('-', '')));
 
-  function getRandomRotation() {
-    return {
-      x: Math.floor(Math.random() * 20) - 10,
-      y: Math.floor(Math.random() * 20) - 10,
-      z: Math.floor(Math.random() * 20) - 10,
-    };
-  }
-
-  const cardRefs = useRef([]);
-
-  useEffect(() => {
-    cardRefs.current.forEach((cardRef) => {
-      animateCard(cardRef);
-    });
-  }, []);
-
-  const animateCard = (cardRef) => {
-    const duration = Math.random() * 1 + 5;
-    const rotations = getRandomRotation();
-
-    cardRef.animate(
-      [
-        { transform: `perspective(500px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)` },
-        {
-          transform: `perspective(500px) rotateX(${rotations.x}deg) rotateY(${rotations.y}deg) rotateZ(${rotations.z}deg)`,
-        },
-      ],
-      {
-        duration: duration * 500,
-        easing: 'linear',
-        iterations: Infinity,
-        direction: 'alternate',
-      },
-    );
-  };
-
   return (
-    <section className="etymology-garden">
-      {etymologyData.map((item, index) => (
-        <div
-          className="etymo-plant"
-          key={index}
-          ref={(el) => (cardRefs.current[index] = el)}
-          style={{ transform: `rotate(${getRandomRotation().x}deg)` }}
-        >
-          <div className="plant-label">{item.root}</div>
-          <div className="plant-description">{item.meaning}</div>
-          <div className="plant-type">{item.origin}</div>
-        </div>
-      ))}
-    </section>
+    <div className="etymo-page">
+      <div className="grid-container">
+        {etymologyData.map((item, index) => {
+          const [language, word] = item.origin.split(': ');
+          return (
+            <div key={index} className="grid-item">
+              <div className="root">{item.root}</div>
+              <div className="meaning">{item.meaning}</div>
+              <div className="origin">
+                {language} :<br />
+                {word}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
