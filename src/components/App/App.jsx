@@ -33,6 +33,7 @@ function App() {
             <Route path="/" element={<HomePage animals={data} />} />
             <Route path="/animaux" element={<AnimalList data={data} />} />
             <Route path="/animal/:nom" element={<AnimalCard data={data} />} />
+
             <Route path="/echelle-des-temps-geologiques" element={<Timeline timelineData={timelineData} />} />
             <Route path="/liste-etymologique" element={<EtymoPage />} />
             <Route path="/documentation" element={<Documentation />} />

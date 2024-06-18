@@ -29,6 +29,7 @@ $ninth-color: #f3e5ab;
     transition:
       background-color 0.3s,
       color 0.3s;
+    outline: #000 2px solid;
 
     &.era {
       background-color: $third-color;

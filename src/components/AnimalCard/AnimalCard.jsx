@@ -5,6 +5,7 @@ import { BiShareAlt } from 'react-icons/bi';
 import GeoInfo from './GeoInfo/GeoInfo';
 import Taxonomie from './Taxonomie/Taxonomie';
 import './AnimalCard.scss';
+import AnimalHabitat from './AnimalHabitat/AnimalHabitat';
 
 const AnimalCard = ({ data }) => {
   useEffect(() => {
@@ -40,6 +41,7 @@ const AnimalCard = ({ data }) => {
   const currentAnimalIndex = sortedData.findIndex((animal) => animal.nom === decodeURIComponent(nom));
   const previousAnimal = currentAnimalIndex > 0 ? sortedData[currentAnimalIndex - 1] : null;
   const nextAnimal = currentAnimalIndex < sortedData.length - 1 ? sortedData[currentAnimalIndex + 1] : null;
+
   return (
     <div className="animal-card">
       <h2>
@@ -87,15 +89,6 @@ const AnimalCard = ({ data }) => {
           )}
         </section>
 
-        <section className="animal-habitat">
-          {animal.habitat && (
-            <div>
-              <h3>Habitat</h3>
-              <p>{animal.habitat}</p>
-            </div>
-          )}
-        </section>
-
         <section className="animal-autresInfos">
           {animal.autres_infos && (
             <div>
@@ -120,6 +113,7 @@ const AnimalCard = ({ data }) => {
               {animal.decouverte.lieu && <p>{animal.decouverte.lieu}</p>}
             </div>
           )}
+          <AnimalHabitat animal={animal} />
         </section>
       </div>
       <section className="bottom-section">
