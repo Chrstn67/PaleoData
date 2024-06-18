@@ -9,14 +9,14 @@ const AnimalHabitat = ({ animal }) => {
   const { nom = 'Inconnu', decouverte = {}, habitatCoords = [] } = animal;
 
   const defaultPosition = [51.505, -0.09];
-  const discoveryPosition = decouverte.coords || defaultPosition;
+  const discoveryPosition = decouverte.coords || null; // Utilisez null si les coordonnées de découverte ne sont pas définies
 
   if (habitatCoords.length === 0) {
     return (
       <div>
-        <h2>Habitat de {nom}</h2>
-        <p>Aucune information d'habitat disponible pour cet animal.</p>
-        <MapContainer center={discoveryPosition} zoom={5} style={{ height: '500px', width: '100%' }}>
+        <h2>Zone d'habitat de {nom}</h2>
+        <p>Un peu de patience... Des informations arriveront bientôt !!</p>
+        <MapContainer center={defaultPosition} zoom={5} style={{ height: '500px', width: '100%' }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -33,10 +33,9 @@ const AnimalHabitat = ({ animal }) => {
 
   return (
     <div>
-      <h2>
-        Habitat de {nom} : {animal.habitat}
-      </h2>
-      <MapContainer center={discoveryPosition} zoom={5} style={{ height: '500px', width: '100%' }}>
+      <h2>Habitat de {nom}</h2>
+      <p> {animal.habitat}</p>
+      <MapContainer center={discoveryPosition || defaultPosition} zoom={5} style={{ height: '500px', width: '100%' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
