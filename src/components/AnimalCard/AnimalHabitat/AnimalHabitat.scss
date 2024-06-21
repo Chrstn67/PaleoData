@@ -1,0 +1,25 @@
+.link-terre {
+  background-color: #75553f;
+
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  text-decoration: none;
+  box-shadow:
+    inset 3px -3px 30px #9c7154,
+    inset -4px 4px 4px #fff,
+    0 10px 20px rgba(78, 57, 42, 0.7529411765);
+  &:hover {
+    box-shadow:
+      inset 3px -3px 10px #9c7154,
+      inset -2px 2px 2px #ffffff,
+      0 5px 10px rgba(78, 57, 42, 0.7529411765);
+  }
+}

@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
+
+import './AnimalHabitat.scss';
 
 const AnimalHabitat = ({ animal }) => {
   if (!animal) {
@@ -26,13 +29,13 @@ const AnimalHabitat = ({ animal }) => {
     if (isMultiPolygon) {
       return habitatCoords.map((coords, index) => (
         <Polygon key={index} positions={coords}>
-          <Popup>Zone d'habitat de {nom}</Popup>
+          <Popup>Zone d&#39;habitat de {nom}</Popup>
         </Polygon>
       ));
     }
     return (
       <Polygon positions={habitatCoords}>
-        <Popup>Zone d'habitat de {nom}</Popup>
+        <Popup>Zone d&#39;habitat de {nom}</Popup>
       </Polygon>
     );
   };
@@ -40,7 +43,7 @@ const AnimalHabitat = ({ animal }) => {
   if (habitatCoords.length === 0) {
     return (
       <div>
-        <h2>Zone d'habitat de {nom}</h2>
+        <h2>Zone d&#39;habitat de {nom}</h2>
         <p>Un peu de patience... Des informations arriveront bientôt !!</p>
 
         <MapContainer
@@ -59,13 +62,17 @@ const AnimalHabitat = ({ animal }) => {
   }
 
   return (
-    <div>
+    <section>
       <h2>Habitat de {nom}</h2>
+      <Link to="https://dinosaurpictures.org/ancient-earth#260" target="blank" className="link-terre">
+        Découvre la Terre d&#39;autrefois
+      </Link>
       <p>{animal.habitat}</p>
       <h5>
         Il est important de noter que durant la période {geologie.periode}, notre planète ne ressemblait pas à ce que
         nous connaissons aujourd&#39;hui...
       </h5>
+
       <MapContainer
         key={JSON.stringify(mapCenter)}
         center={mapCenter}
@@ -83,7 +90,7 @@ const AnimalHabitat = ({ animal }) => {
         )}
         {renderPolygons()}
       </MapContainer>
-    </div>
+    </section>
   );
 };
 
