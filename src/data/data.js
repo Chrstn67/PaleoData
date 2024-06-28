@@ -798,16 +798,16 @@ const data = [
     decouverte: {
       date: '1912',
       lieu: 'Birkenes, Norvège',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [58.43659251364639, 8.216757886410155],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      [58.795627195938266, 2.447601335527627],
+      [60.39658045308818, 18.66342132731078],
+      [56.467447247263706, 16.026702629459862],
+      [56.027962075661364, 4.073577865869029],
+
+      [58.795627195938266, 2.447601335527627],
+    ],
   },
   {
     nom: 'Boreaspis',
@@ -863,20 +863,20 @@ const data = [
     decouverte: {
       date: '1859',
       lieu: 'Spitzberg, Norvège',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [78.89977647922062, 13.483287664118855],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      [82.6233375233845, -55.29175920586351],
+      [84.17238226392365, 100.09886348914709],
+      [71.6163532642278, 112.75511323883153],
+      [58.23049856085207, -54.58863345144016],
+
+      [82.6233375233845, -55.29175920586351],
+    ],
   },
   {
     nom: 'Bothriolepis',
-    etymologie: 'Ecailles en forme de fosse',
+    etymologie: 'Balancier pointu',
     image_url: './assets/images/Bothriolepis.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -904,7 +904,7 @@ const data = [
       sous_tribu: '',
       genre: 'Bothriolepis',
       espèces:
-        'Bothriolepis ornata Eichwald, Bothriolepis africana Long et al., Bothriolepis alexi Young, Bothriolepis alvesiensis Stensio, Bothriolepis amankonyrica Malinovskaja, Bothriolepis antarctica Woodward, Bothriolepis askinae Young, Bothriolepis babichevi Malinovskaja, Bothriolepis barretti Young, Bothriolepis bindareii Long, Bothriolepis canadensis Whiteaves, Bothriolepis cellulosa Pander, Bothriolepis ciecere Lyarskaja, Bothriolepis coloradensis Eastman, Bothriolepis cristata Traquair, Bothriolepis cullodenensis Long, Bothriolepis dairbhrensis Dupret et al., Bothriolepis darbiensis Denison, Bothriolepis dorakarasugensis Moloshnikov, Bothriolepis evaldi Lyarskaja, Bothriolepis favosa Agassiz, Bothriolepis fergusoni Long, Bothriolepis gigantea Traquair, Bothriolepis gippslandiensis Hills, Bothriolepis grenfellensis Johanson, Bothriolepis groenlandica Heintz, Bothriolepis hayi Miles, Bothriolepis heckeri Luksevics, Bothriolepis hicklingi Miles, Bothriolepis hydrophila Agassiz, Bothriolepis jani Luksevics, Bothriolepis jarviki Stensio, Bothriolepis jazwicensis Szrek, Bothriolepis jeremijevi, Bothriolepis karawaka Young, Bothriolepis kassini Malinovskaja, Bothriolepis kohni Young, Bothriolepis kwangtungensis Pan, Bothriolepis laverocklochensis Miles, Bothriolepis leptocheira Traquair, Bothriolepis lochangensis Pan, Bothriolepis lohesti Leriche, Bothriolepis macphersoni Young, Bothriolepis macrocephala Egerton, Bothriolepis maeandrina, Bothriolepis markovskii Moloshnikov, Bothriolepis mawsoni Young, Bothriolepis maxima Gross, Bothriolepis meandrina Horrmann, Bothriolepis minor Newberry, Bothriolepis nielseni Stensio, Bothriolepis nikitinae Malinovskaja, Bothriolepis nitida Leidy, Bothriolepis niushoushanensis Pan & Wang,Bothriolepis obesa Traquair, Bothriolepis obrutschewi Gross, Bothriolepis ornata Andrews, Bothriolepis panderi Lahusen, Bothriolepis paradoxa Agassiz, Bothriolepis pavariensis Lyarskaja, Bothriolepis perija Young & Moody, Bothriolepis portalensis Young, Bothriolepis prima Gross, Bothriolepis rex Downs et al., Bothriolepis sanzarensis Moloshnikov, Bothriolepis shaokuanensis Liu, Bothriolepis sibrica Obruchev, Bothriolepis sinensis Chi, Bothriolepis sosnensis Moloshnikov, Bothriolepis stevensoni Miles, Bothriolepis tastenica Malinovskaja, Bothriolepis tatongensis Long & Werdelin, Bothriolepis taylori Miles, Bothriolepis traquairi Bryant, Bothriolepis trautscholdi Jaekel, Bothriolepis tungseni Chang, Bothriolepis turanica Obruchev, Bothriolepis verrucosa Young & Gorter, Bothriolepis virginiensis Weems et al., Bothriolepis volongensis Lyarskaja & Luksevics, Bothriolepis vuwae Young, Bothriolepis warreni Long, Bothriolepis wilsoni Miles, Bothriolepis yeungae Johanson, Bothriolepis yunnanensis Liu, Bothriolepis zadonica Obrucheva',
+        'Bothriolepis ornata, Bothriolepis africana, Bothriolepis alexi, Bothriolepis alvesiensis, Bothriolepis amankonyrica, Bothriolepis antarctica, Bothriolepis askinae, Bothriolepis babichevi, Bothriolepis barretti, Bothriolepis bindareii, Bothriolepis canadensis, Bothriolepis cellulosa, Bothriolepis ciecere, Bothriolepis coloradensis, Bothriolepis cristata, Bothriolepis cullodenensis, Bothriolepis dairbhrensis, Bothriolepis darbiensis, Bothriolepis dorakarasugensis, Bothriolepis evaldi, Bothriolepis favosa, Bothriolepis fergusoni, Bothriolepis gigantea, Bothriolepis gippslandiensis, Bothriolepis grenfellensis, Bothriolepis groenlandica, Bothriolepis hayi, Bothriolepis heckeri, Bothriolepis hicklingi, Bothriolepis hydrophila, Bothriolepis jani, Bothriolepis jarviki, Bothriolepis jazwicensis, Bothriolepis jeremijevi, Bothriolepis karawaka, Bothriolepis kassini, Bothriolepis kohni, Bothriolepis kwangtungensis, Bothriolepis laverocklochensis, Bothriolepis leptocheira, Bothriolepis lochangensis, Bothriolepis lohesti, Bothriolepis macphersoni, Bothriolepis macrocephala, Bothriolepis maeandrina, Bothriolepis markovskii, Bothriolepis mawsoni, Bothriolepis maxima, Bothriolepis meandrina, Bothriolepis minor, Bothriolepis nielseni, Bothriolepis nikitinae, Bothriolepis nitida, Bothriolepis niushoushanensis,Bothriolepis obesa, Bothriolepis obrutschewi, Bothriolepis ornata, Bothriolepis panderi, Bothriolepis paradoxa, Bothriolepis pavariensis, Bothriolepis perija, Bothriolepis portalensis, Bothriolepis prima, Bothriolepis rex, Bothriolepis sanzarensis, Bothriolepis shaokuanensis, Bothriolepis sibrica, Bothriolepis sinensis, Bothriolepis sosnensis, Bothriolepis stevensoni, Bothriolepis tastenica, Bothriolepis tatongensis, Bothriolepis, Bothriolepis trautscholdi, Bothriolepis tungseni, Bothriolepis turanica, Bothriolepis verrucosa, Bothriolepis virginiensis, Bothriolepis volongensis, Bothriolepis vuwae, Bothriolepis warreni, Bothriolepis wilsoni, Bothriolepis yeungae, Bothriolepis yunnanensis, Bothriolepis zadonica',
     },
     regime_alimentaire: 'Détritivore',
     habitat: 'Fond des océans',
@@ -928,16 +928,18 @@ const data = [
     decouverte: {
       date: '1840',
       lieu: 'Canada',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [48.127303293806264, -66.50036435773328],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      [-47.25792896052541, 134.1993914932893],
+      [8.438218733882852, -32.089669094577616],
+      [58.555972742053456, -98.00763705886476],
+      [56.38263204596326, -54.413887921062916],
+      [10.6914534722379, 20.644705665536616],
+      [-13.013035234177723, 110.17259440183261],
+      [-11.639237773798788, 160.44603090752346],
+      [-47.25792896052541, 134.1993914932893],
+    ],
   },
   {
     nom: 'Canadaspis',
@@ -1161,7 +1163,7 @@ const data = [
       sous_tribu: '',
       genre: 'Cladoselache',
       espèces:
-        'Cladoselache acanthopterygius Dean, Cladoselache brachypterygius Dean, Cladoselache clarki, Cladoselache desmopterygius Dean, Cladoselache fyleri, Cladoselache kepleri, Cladoselache magnificus Claypole, Cladoselache newmani',
+        'Cladoselache acanthopterygius, Cladoselache brachypterygius, Cladoselache clarki, Cladoselache desmopterygius, Cladoselache fyleri, Cladoselache kepleri, Cladoselache magnificus, Cladoselache newmani',
     },
     regime_alimentaire: 'Carnivore',
     habitat: 'Océans',
@@ -1611,7 +1613,7 @@ const data = [
       sous_tribu: '',
       genre: 'Dipterus',
       espèces:
-        ' Dipterus calvini Eastman, Dipterus contraversus Hay, Dipterus costatus Eastman, Dipterus crassus Gross, Dipterus flabelliformis Newberry, Dipterus fleisheri Williams, Dipterus johnsoni Bryant & Johnson, Dipterus macropterus Traquair, Dipterus microsoma Hills, Dipterus minutus Newberry, Dipterus mordax Eastman, Dipterus nelsoni Newberry, Dipterus oervigi Gross, Dipterus serratus Eichwald, Dipterus sherwoodi Newberry, Dipterus uddeni Eastman, Dipterus valenciennesi',
+        ' Dipterus calvini, Dipterus contraversus, Dipterus costatus, Dipterus crassus, Dipterus flabelliformis, Dipterus fleisheri, Dipterus johnsoni, Dipterus macropterus, Dipterus microsoma, Dipterus minutus Newberry, Dipterus mordax, Dipterus nelsoni, Dipterus oervigi, Dipterus serratus, Dipterus sherwoodi, Dipterus uddeni, Dipterus valenciennesi',
     },
     regime_alimentaire: 'Carnivore',
     habitat: '',
@@ -2925,16 +2927,35 @@ const data = [
     decouverte: {
       date: 'XiXè siècle',
       lieu: 'Alabama',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [32.94754464645109, -86.45546641997687],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      // USA
+      [
+        [35.257453096136565, -91.22246211724573],
+        [29.181916168773395, -91.81371739752713],
+        [29.375312341754153, -84.81103767169422],
+        [34.75804029713275, -85.1805722218701],
+        [35.257453096136565, -91.22246211724573],
+      ],
+      // Afrique
+      [
+        [36.07614790392784, -13.63868354289421],
+        [22.5637570447979, -15.660167877913242],
+        [22.72598702741087, 36.81053470125966],
+        [31.025124334764612, 74.77928395031287],
+        [36.57182690112258, 64.58397165195599],
+        [37.692911510349596, -10.474621110688014],
+        [36.07614790392784, -13.63868354289421],
+      ],
+      // Pérou
+      [
+        [-4.782553903148616, -81.46404062166205],
+        [-13.788819199600486, -70.46383476080474],
+        [-1.618351230255055, -71.83109198644802],
+        [-4.782553903148616, -81.46404062166205],
+      ],
+    ],
   },
   {
     nom: 'Postosuchus',
@@ -3894,16 +3915,16 @@ const data = [
     decouverte: {
       date: '1975',
       lieu: 'Mongolie',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [43.675532376309924, 100.92532372746099],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      [50.47166923950119, 86.43269737700523],
+      [42.521773505399565, 90.65466010919846],
+      [43.92014158873234, 115.85849823774595],
+      [51.39883278773065, 115.66659084082806],
+
+      [50.47166923950119, 86.43269737700523],
+    ],
   },
   {
     nom: 'Deinocheirus',
@@ -6938,16 +6959,16 @@ const data = [
     decouverte: {
       date: '2008',
       lieu: 'Madagascar',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [-14.5387703832583, 48.4892340610642],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      [-11.945350818780755, 46.38037854676648],
+      [-12.36603265094679, 51.03333586148345],
+      [-17.45813998401361, 50.68369167020414],
+      [-15.757146866616166, 45.97694294144421],
+
+      [-11.945350818780755, 46.38037854676648],
+    ],
   },
   {
     nom: 'Kunpengopterus',
@@ -7326,16 +7347,16 @@ const data = [
     decouverte: {
       date: '2011',
       lieu: 'Alberta, États-Unis',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [56.79434536225916, -111.45973824540036],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      [68.87557655614563, -140.92982062810148],
+      [46.07472896156967, -120.38369963832257],
+      [49.83416741220028, -65.84040003236268],
+      [68.76877724905336, -89.78623888375968],
+
+      [68.87557655614563, -140.92982062810148],
+    ],
   },
   {
     nom: 'Callichimaaera',
@@ -10123,16 +10144,16 @@ const data = [
     decouverte: {
       date: '1993',
       lieu: 'Montana, États-Unis',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [48.751288921339516, -113.80594488668581],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      [53.9697670828594, -119.45277183077907],
+      [43.57735842849576, -112.92722598111797],
+      [49.792043454351166, -102.17561234310487],
+      [57.500827229171634, -109.81982319556505],
+
+      [53.9697670828594, -119.45277183077907],
+    ],
   },
   {
     nom: 'Sinornithosaurus',
