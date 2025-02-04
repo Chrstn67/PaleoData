@@ -63,10 +63,13 @@ const AnimalHabitat = ({ animal }) => {
 
   return (
     <section>
-      <h2>Habitat de {nom}</h2>
-      <Link to="https://dinosaurpictures.org/ancient-earth#260" target="blank" className="link-terre">
-        Découvre la Terre d&#39;autrefois
-      </Link>
+      <h2>
+        Habitat de {nom}{' '}
+        <Link to="https://dinosaurpictures.org/ancient-earth#260" target="blank" className="link-terre">
+          Découvre la Terre d&#39;autrefois
+        </Link>
+      </h2>
+
       <p>{animal.habitat}</p>
       <h5>
         Il est important de noter que durant la période {geologie.periode}, notre planète ne ressemblait pas à ce que
