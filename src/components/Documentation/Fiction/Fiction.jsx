@@ -11,12 +11,12 @@ const Fiction = () => {
           <header className="fiction-header">
             <h2>{fiction.notion}</h2>
           </header>
+          <div className="fiction-illustrations">
+            {fiction.illustrations.map((illustration, index) => (
+              <img src={illustration} alt={illustration.alt} key={index} />
+            ))}
+          </div>
           <div className="fiction-content">
-            <div className="fiction-illustrations">
-              {fiction.illustrations.map((illustration, index) => (
-                <img src={illustration} alt={illustration.alt} key={index} />
-              ))}
-            </div>
             <div className="fiction-speech-bubble">
               <div className="fiction-speech-bubble-content">
                 <p dangerouslySetInnerHTML={{ __html: fiction.explications }}></p>

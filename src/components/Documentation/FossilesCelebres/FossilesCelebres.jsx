@@ -6,18 +6,18 @@ const sortedFossilesData = [...fossilesData].sort((a, b) => a.notion.localeCompa
 
 const FossilesCelebres = () => {
   return (
-    <section className="fossiles-container">
+    <section className="fossile-container">
       {sortedFossilesData.map((fossile, index) => (
         <div className="fossile-comic" key={index}>
           <header className="fossile-header">
             <h2>{fossile.notion}</h2>
           </header>
+          <div className="fossile-illustrations">
+            {fossile.illustrations?.map((illustration, index) => (
+              <img src={illustration} alt={fossile.alt} key={index} />
+            ))}
+          </div>
           <div className="fossile-content">
-            <div className="fossile-illustrations">
-              {fossile.illustrations?.map((illustration, index) => (
-                <img src={illustration} alt={fossile.alt} key={index} />
-              ))}
-            </div>
             <div className="fossile-speech-bubble">
               <div className="fossile-speech-bubble-content">
                 <p dangerouslySetInnerHTML={{ __html: fossile.explications }}></p>

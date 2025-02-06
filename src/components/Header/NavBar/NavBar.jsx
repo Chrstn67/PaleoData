@@ -59,7 +59,7 @@ const NavBar = () => {
             }}
           >
             <FaHistory size={20} />
-            <span>Échelle des temps</span>
+            <span>Chronologie</span>
           </NavLink>
         </li>
         <li className="navbar-item">

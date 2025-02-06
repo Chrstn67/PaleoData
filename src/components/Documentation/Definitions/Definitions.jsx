@@ -6,18 +6,18 @@ const sortedDefinitionsData = [...definitionsData].sort((a, b) => a.notion.local
 
 const Definitions = () => {
   return (
-    <section className="definitions-container">
+    <section className="definition-container">
       {sortedDefinitionsData.map((definition, index) => (
         <div className="definition-comic" key={index}>
           <header className="definition-header">
             <h2>{definition.notion}</h2>
           </header>
+          <div className="definition-illustrations">
+            {definition.illustrations?.map((illustration, index) => (
+              <img src={illustration} alt={`Illustration ${index}`} key={index} />
+            ))}
+          </div>
           <div className="definition-content">
-            <div className="definition-illustrations">
-              {definition.illustrations?.map((illustration, index) => (
-                <img src={illustration} alt={`Illustration ${index}`} key={index} />
-              ))}
-            </div>
             <div className="definition-speech-bubble">
               <div className="definition-speech-bubble-content">
                 <p dangerouslySetInnerHTML={{ __html: definition.explications }}></p>

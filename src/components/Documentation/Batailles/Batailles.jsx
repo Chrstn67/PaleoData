@@ -12,12 +12,12 @@ const Batailles = () => {
           <header className="bataille-header">
             <h2>{bataille.notion}</h2>
           </header>
+          <div className="bataille-illustrations">
+            <img src={bataille.illustrations[0]} alt={bataille.illustrations[0].alt} />
+            <span className="vs-text">VS</span>
+            <img src={bataille.illustrations[1]} alt={bataille.illustrations[1].alt} />
+          </div>
           <div className="bataille-content">
-            <div className="bataille-illustrations">
-              {bataille.illustrations.map((illustration, index) => (
-                <img src={illustration} alt={illustration.alt} key={index} />
-              ))}
-            </div>
             <div className="bataille-speech-bubble">
               <div className="bataille-speech-bubble-content">
                 <p dangerouslySetInnerHTML={{ __html: bataille.explications }}></p>

@@ -78,31 +78,34 @@
       }
 
       .active {
+        padding: 6px 17px;
         border-bottom: 2px solid transparent;
         box-shadow:
-          0px -2px 0px #d4c190,
-          0px -2px 5px #d4c190,
-          0px -2px 10px #d4c190,
-          0px -2px 15px #d4c190,
-          0px -2px 20px #d4c190,
-          0px -2px 30px #d4c190,
-          0px -2px 40px #d4c190;
+          0 -2px #d4c190,
+          0 -2px 5px #d4c190,
+          0 -2px 10px #d4c190,
+          0 -2px 15px #d4c190,
+          0 -2px 20px #d4c190,
+          0 -2px 30px #d4c190,
+          0 -2px 40px #d4c190;
         display: flex;
         align-items: center;
-        transition: box-shadow 0.3s ease;
-        border-radius: 0.1em;
+        transition: box-shadow 1s ease;
+        border-radius: 1.1em;
 
         @media screen and (max-width: 768px) {
           border-bottom: 2px solid transparent;
           box-shadow:
-            0px -2px 0px #75553f,
-            0px -2px 5px #75553f,
-            0px -2px 10px #75553f,
-            0px -2px 15px #75553f,
-            0px -2px 20px #75553f,
-            0px -2px 30px #75553f,
-            0px -2px 40px #75553f;
-          font-size: 0.4em;
+            0 -2px #a58b68ff,
+            0 -2px 5px #a58b68ff,
+            0 -2px 10px #a58b68ff,
+            0 -2px 15px #a58b68ff,
+            0 -2px 20px #a58b68ff,
+            0 -2px 30px #a58b68ff,
+            0 -2px 40px #a58b68ff;
+          display: flex;
+          align-items: center;
+          transition: box-shadow 1s ease;
         }
       }
 
