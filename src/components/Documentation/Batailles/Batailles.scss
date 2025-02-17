@@ -87,11 +87,26 @@ $border-radius: 15px;
   box-shadow:
     inset 3px -3px 100px #9c7154,
     inset -1px 1px 1px #58402f,
-    0 10px 20px rgba(78, 57, 42, 0.7529411765);
+    0 10px 20px #4e392ac0;
   padding: 15px;
   position: relative;
   height: 250px;
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.8em;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10%;
+    background: linear-gradient(to bottom, #75553f, #f3e5ab);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10%;
+    background-color: $fourth-color;
+    background: linear-gradient(to top, #75553f, #f3e5ab);
+  }
 }
 
 .bataille-speech-bubble-content {

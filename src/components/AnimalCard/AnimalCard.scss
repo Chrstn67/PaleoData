@@ -117,6 +117,21 @@
     @media (min-width: 600px) {
       font-size: 1.1em;
     }
+
+    &::-webkit-scrollbar {
+      width: 0.8em;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10%;
+      background: linear-gradient(to bottom, #75553f, #f3e5ab);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10%;
+      background-color: #a58b68ff;
+      background: linear-gradient(to top, #75553f, #f3e5ab);
+    }
   }
 }
 

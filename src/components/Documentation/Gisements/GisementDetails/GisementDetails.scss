@@ -102,6 +102,20 @@ $ninth-color: #f3e5abff;
   @media (min-width: 768px) {
     width: 55%;
   }
+  &::-webkit-scrollbar {
+    width: 0.8em;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10%;
+    background: linear-gradient(to bottom, #75553f, #f3e5ab);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10%;
+    background-color: $fourth-color;
+    background: linear-gradient(to top, #75553f, #f3e5ab);
+  }
 }
 
 .gisement-details-speech-bubble-content {
