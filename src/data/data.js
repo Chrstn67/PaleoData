@@ -5933,7 +5933,7 @@ const data = [
   {
     nom: 'Dilophosaurus',
     etymologie: 'Lézard à deux crêtes',
-    image_url: './assets/images/Dilophosaurus.jpg',
+    image_url: './assets/images/Dilophosaurus.jpeg',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -5972,7 +5972,7 @@ const data = [
       extinction: -181,
     },
     description:
-      " C'est l'un des plus anciens grands dinosaures prédateurs. La caractéristique principale de Dilophosaurus était son crâne qui possédait des articulations lui permettant de plisser le nez et une paire de crêtes osseuses sur la tête (d’où son nom). <br /> Les crêtes de Dilophosaurus, pouvaient peut-être servir d’accessoires visuels de parade. Dilophosaurus présentait un dysmorphisme sexuel avec cette crête, plus grande chez les mâles.<br /> Sa gueule était particulièrement étroite et souple, ses dents fragiles laissent penser que c'était un animal charognard. Mais il est très vraisemblable qu'il chassait et tuait sa victime à l'aide des griffes qu'il portait aux pattes avant et arrière. Sa morphologie permettait au dilophosaure de chasser autant des proies imposantes comme Plateosaurus que des proies beaucoup plus petites comme des petits mammifères et des lézards qu’il allait chercher dans les broussailles ou les crevasses des rochers. <br /> Souvent représenté dans de célèbres films, Dilophosaurus ne possédait pas de colerette.",
+      "C'est l'un des plus anciens grands dinosaures prédateurs. La caractéristique principale de Dilophosaurus était son crâne qui possédait des articulations lui permettant de plisser le nez et une paire de crêtes osseuses sur la tête (d’où son nom). <br /> Les crêtes de Dilophosaurus, pouvaient peut-être servir d’accessoires visuels de parade. Dilophosaurus présentait un dysmorphisme sexuel avec cette crête, plus grande chez les mâles.<br /> Sa gueule était particulièrement étroite et souple et ses dents fragiles laissent penser que c'était un animal charognard. Mais il est très vraisemblable qu'il chassait et tuait sa victime à l'aide des griffes qu'il portait aux pattes avant et arrière. Sa morphologie permettait au Dilophosaurus de chasser autant des proies imposantes comme Plateosaurus que des proies beaucoup plus petites comme des petits mammifères et des lézards qu’il allait chercher dans les broussailles ou les crevasses des rochers. <br /> Représenté dans le film Jrassic Park (1993), Dilophosaurus ne possédait pas de colerette et ne crachait pas de venin.",
     autres_infos: {
       taille: {
         longueur: '6 mètres',
