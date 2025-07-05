@@ -1,15 +1,15 @@
-$first-color: #75553fff;
-$second-color: #85674dff;
-$third-color: #95795aff;
-$fourth-color: #a58b68ff;
-$fifth-color: #b49d75ff;
-$sixth-color: #c4af83ff;
-$seventh-color: #d4c190ff;
-$eighth-color: #e4d39eff;
-$ninth-color: #f3e5abff;
+#75553fff: #75553fff;
+#85674dff: #85674dff;
+#95795aff: #95795aff;
+#a58b68ff: #a58b68ff;
+#b49d75ff: #b49d75ff;
+#c4af83ff: #c4af83ff;
+#d4c190: #d4c190ff;
+#e4d39eff: #e4d39eff;
+#f3e5abff: #f3e5abff;
 $border-radius: 15px;
 
-.bataille-container {
+.definition-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 20px;
@@ -20,15 +20,15 @@ $border-radius: 15px;
   }
 }
 
-.bataille-comic {
+.definition-comic {
   background: linear-gradient(to bottom, #85674d, #e4d39e);
   border-radius: $border-radius;
   padding: 20px; /* Réduit le padding */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.bataille-header {
-  background-color: $seventh-color;
+.definition-header {
+  background-color: #d4c190;
   border-radius: $border-radius $border-radius 0 0;
   padding: 10px;
   text-align: center;
@@ -44,7 +44,7 @@ $border-radius: 15px;
   }
 }
 
-.bataille-content {
+.definition-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,15 +57,15 @@ $border-radius: 15px;
   }
 }
 
-.bataille-illustrations {
+.definition-illustrations {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
 
   img {
-    outline: $ninth-color 2px solid;
-    border-radius: 10%;
+    outline: #f3e5abff 2px solid;
+    border-radius: 50%;
     object-fit: cover;
     max-width: 150px;
     height: 150px;
@@ -74,25 +74,18 @@ $border-radius: 15px;
       height: 120px;
     }
   }
-
-  .vs-text {
-    font-size: 2em;
-    font-weight: bold;
-    color: $ninth-color;
-  }
 }
 
-.bataille-speech-bubble {
+.definition-speech-bubble {
   background-color: #e4d39e;
   box-shadow:
     inset 3px -3px 100px #9c7154,
     inset -1px 1px 1px #58402f,
-    0 10px 20px #4e392ac0;
+    0 10px 20px rgba(78, 57, 42, 0.7529411765);
   padding: 15px;
   position: relative;
   height: 250px;
   overflow-y: auto;
-
   &::-webkit-scrollbar {
     width: 0.8em;
   }
@@ -104,12 +97,12 @@ $border-radius: 15px;
 
   &::-webkit-scrollbar-thumb {
     border-radius: 10%;
-    background-color: $fourth-color;
+    background-color: #a58b68ff;
     background: linear-gradient(to top, #75553f, #f3e5ab);
   }
 }
 
-.bataille-speech-bubble-content {
+.definition-speech-bubble-content {
   line-height: 1.5;
   font-size: 1em;
   color: #3a2a1e;

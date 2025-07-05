@@ -1,0 +1,154 @@
+.animal-geologie {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(117, 85, 63, 0.1);
+  border: 1px solid rgba(117, 85, 63, 0.15);
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(117, 85, 63, 0.03) 50%, transparent 100%);
+    pointer-events: none;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #75553f;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(117, 85, 63, 0.2);
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.geo-display {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  .geo-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .geo-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #a08c64;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .geo-value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #75553f;
+      line-height: 1.2;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.geo-progress {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+
+  .progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(117, 85, 63, 0.3);
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &.active {
+      background: #75553f;
+      transform: scale(1.3);
+    }
+
+    &:hover {
+      background: rgba(117, 85, 63, 0.6);
+      transform: scale(1.1);
+    }
+  }
+}
+
+.geo-timeline-bar {
+  height: 4px;
+  background: rgba(117, 85, 63, 0.2);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+
+  .timeline-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #75553f 0%, #a08c64 100%);
+    border-radius: 2px;
+    transition: width 0.8s ease;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 100%);
+      animation: shimmer 2s infinite;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .animal-geologie {
+    padding: 1.5rem;
+  }
+
+  .geo-display {
+    height: 100px;
+
+    .geo-item {
+      .geo-value {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

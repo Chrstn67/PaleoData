@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { FaInfo } from 'react-icons/fa';
 import ModalTimeline from './ModalTimeline/ModalTimeline';
-import './Timeline.scss';
+import './Timeline.css';
 
 const Timeline = ({ timelineData }) => {
   const [modalContent, setModalContent] = useState(null);

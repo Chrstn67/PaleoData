@@ -1,6 +1,6 @@
 import React from 'react';
 import definitionsData from './definitionsData';
-import './Definitions.scss';
+import './Definitions.css';
 
 const sortedDefinitionsData = [...definitionsData].sort((a, b) => a.notion.localeCompare(b.notion));
 

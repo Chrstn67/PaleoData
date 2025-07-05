@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import './AnimalFiltrer.scss';
+import './AnimalFiltrer.css';
 
 const AnimalFiltrer = ({ data, onFilterChange }) => {
   const [searchQuery, setSearchQuery] = useState('');

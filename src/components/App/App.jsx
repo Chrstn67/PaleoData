@@ -20,7 +20,7 @@ import Questions from '../Documentation/Questions/Questions';
 import ScrollToTopButton from '../ScrollToTopButton/ScrollToTopButton';
 import data from '../../data/data';
 import NotFound from '../NotFound/NotFound';
-import './App.scss';
+import './App.css';
 
 function App() {
   return (

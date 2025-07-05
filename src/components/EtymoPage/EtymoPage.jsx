@@ -1,5 +1,5 @@
 import React from 'react';
-import './EtymoPage.scss';
+import './EtymoPage.css';
 
 function EtymoPage() {
   const etymologyData = [

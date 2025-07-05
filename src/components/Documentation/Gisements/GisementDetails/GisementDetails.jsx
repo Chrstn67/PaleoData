@@ -1,5 +1,5 @@
 import React from 'react';
-import './GisementDetails.scss';
+import './GisementDetails.css';
 
 const GisementDetails = ({ gisement }) => {
   if (!gisement) return null;

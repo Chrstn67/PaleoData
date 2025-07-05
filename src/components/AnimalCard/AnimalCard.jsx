@@ -1,16 +1,21 @@
-import { useEffect } from 'react';
+'use client';
+
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { BiShareAlt } from 'react-icons/bi';
+import { BiShareAlt, BiX } from 'react-icons/bi';
 import GeoInfo from './GeoInfo/GeoInfo';
 import Taxonomie from './Taxonomie/Taxonomie';
-import './AnimalCard.scss';
+import './AnimalCard.css';
 import AnimalHabitat from './AnimalHabitat/AnimalHabitat';
 
 const AnimalCard = ({ data }) => {
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const { nom } = useParams();
 
   PropTypes.checkPropTypes({ data: PropTypes.array.isRequired }, { data }, 'prop', 'AnimalCard');
@@ -37,6 +42,22 @@ const AnimalCard = ({ data }) => {
     }
   };
 
+  const openImageModal = () => {
+    setIsImageModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeImageModal = () => {
+    setIsImageModalOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  const handleModalClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeImageModal();
+    }
+  };
+
   const sortedData = [...data].sort((a, b) => a.nom.localeCompare(b.nom));
   const currentAnimalIndex = sortedData.findIndex((animal) => animal.nom === decodeURIComponent(nom));
   const previousAnimal = currentAnimalIndex > 0 ? sortedData[currentAnimalIndex - 1] : null;
@@ -44,103 +65,139 @@ const AnimalCard = ({ data }) => {
 
   return (
     <div className="animal-card">
-      <h2>
-        {animal.nom}
-        <button
-          type="button"
-          onClick={() => {
-            shareLink(animal);
-          }}
-        >
-          <BiShareAlt size={20} />
-        </button>
-      </h2>
-
-      <div className="top-part">
-        <section className="animal-generalites">
-          {' '}
-          <img src={imageUrl} alt={animal.nom} />
-          <div>
-            <h3>Etymologie</h3>
-            {animal.etymologie && <p>{animal.etymologie}</p>}
+      <div className="hero-section">
+        <div className="hero-content">
+          <div className="title-image-section">
+            <h1>{animal.nom}</h1>
+            <img
+              src={imageUrl || '/placeholder.svg'}
+              alt={animal.nom}
+              className="hero-image"
+              onClick={openImageModal}
+              style={{ cursor: 'pointer' }}
+              title="Cliquer pour agrandir"
+            />
           </div>
-        </section>
-        <div className="animal-geologie-container">
-          <GeoInfo geologie={animal.geologie} />
+          <button
+            type="button"
+            className="share-btn"
+            onClick={() => {
+              shareLink(animal);
+            }}
+          >
+            <BiShareAlt size={20} />
+          </button>
         </div>
       </div>
-      <div className="middle-top-part">
-        <section className="animal-description">
-          <h3>Description</h3>
-          {animal.description && (
-            <div className="description">
-              <p dangerouslySetInnerHTML={{ __html: animal.description }} />
-            </div>
-          )}
-        </section>
-      </div>
-      <div className="middle-bottom-part">
-        <section className="animal-regime">
-          {animal.regime_alimentaire && (
-            <div>
-              <h3>Régime alimentaire</h3>
-              <p>{animal.regime_alimentaire}</p>
-            </div>
-          )}
-        </section>
 
-        <section className="animal-autresInfos">
-          {animal.autres_infos && (
-            <div>
+      {/* Modal pour l'image agrandie */}
+      {isImageModalOpen && (
+        <div className="image-modal-overlay" onClick={handleModalClick}>
+          <div className="image-modal-content">
+            <button className="image-modal-close" onClick={closeImageModal}>
+              <BiX size={24} />
+            </button>
+            <img src={imageUrl || '/placeholder.svg'} alt={animal.nom} className="image-modal-img" />
+            <div className="image-modal-caption">
+              <h3>{animal.nom}</h3>
+              {animal.etymologie && <p>{animal.etymologie}</p>}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="main-container">
+        <div className="etymology-section">
+          <div className="etymology-content">
+            <h3 className="etymology-title">Étymologie</h3>
+            <p className="etymology-text">
+              {animal.etymologie || 'Les origines du nom de cette créature fascinante restent à découvrir...'}
+            </p>
+          </div>
+        </div>
+
+        <div className="geology-section">
+          <GeoInfo geologie={animal.geologie} />
+        </div>
+
+        <div className="content-section">
+          <div className="content-card description-card">
+            <h3>Description</h3>
+            <div className="description-content">
+              {animal.description ? (
+                <div dangerouslySetInnerHTML={{ __html: animal.description }} />
+              ) : (
+                <p>Description détaillée à venir...</p>
+              )}
+            </div>
+          </div>
+
+          <div className="info-grid">
+            <div className="content-card">
+              <h3>Régime alimentaire</h3>
+              <p>{animal.regime_alimentaire || 'Informations à venir...'}</p>
+            </div>
+
+            <div className="content-card">
               <h3>Morphologie</h3>
-              {animal.autres_infos.taille && (
+              {animal.autres_infos && animal.autres_infos.taille ? (
                 <>
                   {animal.autres_infos.taille.longueur && <p>{animal.autres_infos.taille.longueur} de long</p>}
                   {animal.autres_infos.taille.hauteur && <p>{animal.autres_infos.taille.hauteur} de haut</p>}
                   {animal.autres_infos.taille.envergure && <p>{animal.autres_infos.taille.envergure} d'envergure</p>}
+                  {animal.autres_infos.poids && <p>{animal.autres_infos.poids}</p>}
                 </>
+              ) : (
+                <p>Informations morphologiques à venir...</p>
               )}
-              {animal.autres_infos.poids && <p>{animal.autres_infos.poids}</p>}
             </div>
-          )}
-        </section>
 
-        <section className="animal-decouverte">
-          {animal.decouverte && (
-            <div>
+            <div className="content-card">
               <h3>Découverte</h3>
-              {animal.decouverte.date && <p>{animal.decouverte.date}</p>}
-              {animal.decouverte.lieu && <p>{animal.decouverte.lieu}</p>}
+              {animal.decouverte ? (
+                <>
+                  {animal.decouverte.date && <p>Date : {animal.decouverte.date}</p>}
+                  {animal.decouverte.lieu && <p>Lieu : {animal.decouverte.lieu}</p>}
+                </>
+              ) : (
+                <p>Informations sur la découverte à venir...</p>
+              )}
             </div>
-          )}
+          </div>
+        </div>
+
+        <div className="habitat-section-wrapper">
           <AnimalHabitat animal={animal} />
-        </section>
+        </div>
+
+        <div className="taxonomy-section-wrapper">
+          {Object.entries(animal.taxonomie).length > 0 && <Taxonomie taxonomie={animal.taxonomie} />}
+        </div>
       </div>
-      <section className="bottom-section">
-        {Object.entries(animal.taxonomie).length > 0 && <Taxonomie taxonomie={animal.taxonomie} />}
-      </section>
 
-      <section className="navigation-links">
-        {previousAnimal && (
-          <Link
-            to={`/animal/${encodeURIComponent(previousAnimal.nom)}`}
-            className="navigation-link"
-            onClick={() => window.scrollTo(0, 0)}
-          >
-            {previousAnimal.nom}
-          </Link>
-        )}
+      <div className="navigation-section">
+        <div className="navigation-links">
+          {previousAnimal && (
+            <Link
+              to={`/animal/${encodeURIComponent(previousAnimal.nom)}`}
+              className="navigation-link"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              ← {previousAnimal.nom}
+            </Link>
+          )}
 
-        {nextAnimal && (
-          <Link
-            to={`/animal/${encodeURIComponent(nextAnimal.nom)}`}
-            className="navigation-link"
-            onClick={() => window.scrollTo(0, 0)}
-          >
-            {nextAnimal.nom}
-          </Link>
-        )}
-      </section>
+          {nextAnimal && (
+            <Link
+              to={`/animal/${encodeURIComponent(nextAnimal.nom)}`}
+              className="navigation-link"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              {nextAnimal.nom} →
+            </Link>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import fossilesData from './fossilesData';
-import './FossilesCelebres.scss';
+import './FossilesCelebres.css';
 
 const sortedFossilesData = [...fossilesData].sort((a, b) => a.notion.localeCompare(b.notion));
 

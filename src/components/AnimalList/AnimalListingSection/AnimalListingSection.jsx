@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import NewAnimal from './NewAnimal/NewAnimal';
-import './AnimalListingSection.scss';
+import './AnimalListingSection.css';
 
 const AnimalCard = ({ animal }) => {
   const cardRef = useRef(null);

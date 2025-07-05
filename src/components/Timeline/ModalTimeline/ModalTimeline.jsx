@@ -1,7 +1,7 @@
 // ModalTimeline.jsx
 
 import PropTypes from 'prop-types';
-import './ModalTimeline.scss';
+import './ModalTimeline.css';
 
 const ModalTimeline = ({ isOpen, closeModal, content }) => {
   if (!isOpen || !content) {

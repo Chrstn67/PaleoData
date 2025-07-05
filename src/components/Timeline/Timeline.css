@@ -1,12 +1,3 @@
-$first-color: #75553f;
-$second-color: #85674d;
-$third-color: #95795a;
-$fourth-color: #a58b68;
-$fifth-color: #b49d75;
-$sixth-color: #c4af83;
-$seventh-color: #d4c190;
-$eighth-color: #e4d39e;
-$ninth-color: #f3e5ab;
 .timeline-container {
   padding: 20px;
   border-radius: 10px;
@@ -19,7 +10,7 @@ $ninth-color: #f3e5ab;
   }
 
   .timeline-item {
-    background-color: $second-color;
+    background-color: #85674dff;
     filter: drop-shadow(10px 20px 10px #75553f);
     border-radius: 5px;
     padding: 10px;
@@ -32,30 +23,30 @@ $ninth-color: #f3e5ab;
     outline: #000 2px solid;
 
     &.era {
-      background-color: $third-color;
+      background-color: #95795aff;
     }
 
     &.period {
-      background-color: $fifth-color;
+      background-color: #b49d75ff;
     }
 
     &.epoch {
-      background-color: $seventh-color;
+      background-color: #d4c190;
     }
 
     &.stage {
-      background-color: $ninth-color;
+      background-color: #f3e5abff;
     }
 
     &.active {
-      background-color: darken($second-color, 20%);
+      background-color: darken(#85674dff, 20%);
       color: #fff;
     }
   }
 
   .timeline-label {
     font-weight: bold;
-    color: $first-color;
+    color: #75553fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,7 +81,7 @@ $ninth-color: #f3e5ab;
         inset -2px -2px 5px #ffffff80;
 
       &:hover {
-        background-color: lighten($first-color, 20%);
+        background-color: lighten(#75553fff, 20%);
         color: #fff;
         box-shadow:
           inset 3px 3px 7px #0000004d,

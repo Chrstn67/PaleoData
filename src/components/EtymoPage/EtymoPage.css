@@ -1,12 +1,12 @@
-$first-color: #75553fff;
-$second-color: #85674dff;
-$third-color: #95795aff;
-$fourth-color: #a58b68ff;
-$fifth-color: #b49d75ff;
-$sixth-color: #c4af83ff;
-$seventh-color: #d4c190ff;
-$eighth-color: #e4d39eff;
-$ninth-color: #f3e5abff;
+#75553fff: #75553fff;
+#85674dff: #85674dff;
+#95795aff: #95795aff;
+#a58b68ff: #a58b68ff;
+#b49d75ff: #b49d75ff;
+#c4af83ff: #c4af83ff;
+#d4c190: #d4c190ff;
+#e4d39eff: #e4d39eff;
+#f3e5abff: #f3e5abff;
 
 @keyframes fadeInUp {
   from {
@@ -25,12 +25,12 @@ $ninth-color: #f3e5abff;
   align-items: center;
   padding: 20px;
   border-radius: 0.5em;
-  background: $fourth-color;
+  background: #a58b68ff;
   min-height: 100vh;
 
   .title {
     font-size: 2.5rem;
-    color: $first-color;
+    color: #75553fff;
 
     margin-bottom: 20px;
     animation: fadeInUp 1s ease-in-out;
@@ -53,7 +53,7 @@ $ninth-color: #f3e5abff;
         box-shadow 0.3s;
       animation: fadeInUp 0.6s ease-in-out;
       text-align: center;
-      filter: drop-shadow(5px 15px 10px $ninth-color);
+      filter: drop-shadow(5px 15px 10px #f3e5abff);
 
       &:hover {
         transform: translateY(-10px);
@@ -64,19 +64,19 @@ $ninth-color: #f3e5abff;
         font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 5px;
-        color: $seventh-color;
+        color: #d4c190;
       }
 
       .meaning {
         font-size: 1.2rem;
-        color: darken($second-color, 10%);
+        color: darken(#85674dff, 10%);
         font-weight: 700;
         margin-bottom: 10px;
       }
 
       .origin {
         font-size: 1rem;
-        color: darken($fourth-color, 20%);
+        color: darken(#a58b68ff, 20%);
         font-weight: 600;
       }
     }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import AnimalFiltrer from './AnimalFiltrer/AnimalFiltrer';
 import AnimalListingSection from './AnimalListingSection/AnimalListingSection';
-import './AnimalList.scss';
+import './AnimalList.css';
 
 const AnimalList = ({ data }) => {
   const [filteredAnimals, setFilteredAnimals] = useState(data);

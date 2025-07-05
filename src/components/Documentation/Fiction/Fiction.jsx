@@ -1,5 +1,5 @@
 import FictionData from './fictionsData';
-import './Fiction.scss';
+import './Fiction.css';
 
 const sortedFictionData = [...FictionData].sort((a, b) => a.notion.localeCompare(b.notion));
 

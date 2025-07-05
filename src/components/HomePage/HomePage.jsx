@@ -1,9 +1,11 @@
+'use client';
+
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHistory, FaBook, FaInfoCircle } from 'react-icons/fa';
 import { GiDinosaurRex } from 'react-icons/gi';
 import PropTypes from 'prop-types';
-import './HomePage.scss';
+import './HomePage.css';
 
 const HomePage = ({ animals }) => {
   const ref = useRef(null);
@@ -14,57 +16,102 @@ const HomePage = ({ animals }) => {
 
   return (
     <div className="home-page" ref={ref}>
-      <div className="banner">
-        <h1>Bienvenue sur PaleoData</h1>
-        <div className="introduction">
-          <p>
-            Viens explorer la fascinante histoire de la vie sur Terre. Découvre des centaines d&#39;animaux
-            préhistoriques, imagine leur mode de vie et leur environnement en voyageant dans le temps, dans cet univers
-            passé qui émerveille petits et grands.
-          </p>
+      <section className="hero-section">
+        <div className="hero-content">
+          <div className="hero-icon">
+            <GiDinosaurRex />
+          </div>
+          <h1 className="hero-title">PaleoData</h1>
+          <p className="hero-subtitle">Explorez la fascinante histoire de la vie sur Terre</p>
+          <div className="hero-description">
+            <p>
+              Découvrez des centaines d'animaux préhistoriques, imaginez leur mode de vie et leur environnement en
+              voyageant dans le temps, dans cet univers passé qui émerveille petits et grands.
+            </p>
+          </div>
+          <div className="stats-badge">
+            <span className="stats-number">{animals.length}</span>
+            <span className="stats-label">animaux disponibles</span>
+          </div>
         </div>
-      </div>
-      <div className="sections">
-        <div className="section">
-          <GiDinosaurRex size={50} />
-          <h2>Animaux</h2>
-          <p>
-            Découvre les dernières informations sur tes animaux favoris. <br /> Il y a actuellement
-            <b> {animals.length} </b>
-            animaux disponibles.
-          </p>
-          <Link to="/animaux" onClick={scrollToTop}>
-            Animaux
-          </Link>
+        <div className="hero-background">
+          <div className="floating-element element-1"></div>
+          <div className="floating-element element-2"></div>
+          <div className="floating-element element-3"></div>
         </div>
-        <div className="section">
-          <FaHistory size={50} />
-          <h2>Échelle des temps géologique</h2>
-          <p>Voyage dans le temps</p>
-          <Link to="/echelle-des-temps-geologiques" onClick={scrollToTop}>
-            Échelle des temps
-          </Link>
+      </section>
+
+      <section className="features-section">
+        <div className="section-header">
+          <h2>Explorez nos collections</h2>
+          <p>Plongez dans l'univers fascinant de la paléontologie</p>
         </div>
-        <div className="section">
-          <FaBook size={50} />
-          <h2>Étymologie</h2>
-          <p>Apprend l&#39;origine des noms des animaux</p>
-          <Link to="/liste-etymologique" onClick={scrollToTop}>
-            Étymologie
-          </Link>
+
+        <div className="features-grid">
+          <article className="feature-card primary">
+            <div className="card-icon">
+              <GiDinosaurRex />
+            </div>
+            <div className="card-content">
+              <h3>Animaux Préhistoriques</h3>
+              <p>
+                Découvrez les dernières informations sur vos animaux favoris. Une collection complète avec{' '}
+                <strong>{animals.length} espèces</strong>
+                documentées.
+              </p>
+              <Link to="/animaux" onClick={scrollToTop} className="card-link">
+                Explorer les animaux
+                <span className="link-arrow">→</span>
+              </Link>
+            </div>
+          </article>
+
+          <article className="feature-card">
+            <div className="card-icon">
+              <FaHistory />
+            </div>
+            <div className="card-content">
+              <h3>Échelle Géologique</h3>
+              <p>Voyagez à travers les ères géologiques et découvrez l'évolution de la vie sur notre planète.</p>
+              <Link to="/echelle-des-temps-geologiques" onClick={scrollToTop} className="card-link">
+                Voyager dans le temps
+                <span className="link-arrow">→</span>
+              </Link>
+            </div>
+          </article>
+
+          <article className="feature-card">
+            <div className="card-icon">
+              <FaBook />
+            </div>
+            <div className="card-content">
+              <h3>Étymologie</h3>
+              <p>Apprenez l'origine fascinante des noms des animaux préhistoriques et leur signification.</p>
+              <Link to="/liste-etymologique" onClick={scrollToTop} className="card-link">
+                Découvrir les origines
+                <span className="link-arrow">→</span>
+              </Link>
+            </div>
+          </article>
+
+          <article className="feature-card">
+            <div className="card-icon">
+              <FaInfoCircle />
+            </div>
+            <div className="card-content">
+              <h3>Documentation</h3>
+              <p>
+                Les dernières découvertes paléontologiques, les paléontologues célèbres, et bien d'autres informations
+                passionnantes.
+              </p>
+              <Link to="/documentation" onClick={scrollToTop} className="card-link">
+                Lire la documentation
+                <span className="link-arrow">→</span>
+              </Link>
+            </div>
+          </article>
         </div>
-        <div className="section">
-          <FaInfoCircle size={50} />
-          <h2>Documentation</h2>
-          <p>
-            Les dernières découvertes paléontologiques, les paléontologues célèbres, et bien d&#39;autres infos
-            n&#39;attendent qu&#39;à être lues !
-          </p>
-          <Link to="/documentation" onClick={scrollToTop}>
-            Documentation
-          </Link>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };

@@ -1,0 +1,149 @@
+.taxonomy {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(117, 85, 63, 0.1);
+  border: 1px solid rgba(117, 85, 63, 0.15);
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #75553f;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid rgba(117, 85, 63, 0.2);
+  }
+
+  .taxonomy-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(117, 85, 63, 0.1);
+
+    thead {
+      background: linear-gradient(135deg, #75553f 0%, #a08c64 100%);
+
+      th {
+        padding: 1rem;
+        text-align: left;
+        font-weight: 700;
+        color: #f8f5e8;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.9rem;
+
+        &:first-child {
+          width: 40%;
+        }
+
+        &:last-child {
+          width: 60%;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid rgba(117, 85, 63, 0.1);
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(248, 245, 232, 0.5);
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        td {
+          padding: 1rem;
+          vertical-align: middle;
+
+          &.rank-cell {
+            background: rgba(248, 245, 232, 0.3);
+            font-weight: 600;
+            color: #75553f;
+            text-transform: capitalize;
+            border-right: 1px solid rgba(117, 85, 63, 0.1);
+          }
+
+          &.value-cell {
+            color: #5d4a37;
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .taxonomy {
+    padding: 1.5rem;
+  }
+
+  .taxonomy-table {
+    font-size: 0.9rem;
+
+    thead th {
+      padding: 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    tbody td {
+      padding: 0.75rem;
+
+      &.value-cell {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .taxonomy-table {
+    thead {
+      display: none;
+    }
+
+    tbody {
+      tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(117, 85, 63, 0.2);
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(117, 85, 63, 0.1);
+
+        td {
+          display: block;
+          padding: 0.75rem 1rem;
+          border: none;
+          text-align: left;
+
+          &.rank-cell {
+            background: rgba(117, 85, 63, 0.1);
+            border-bottom: 1px solid rgba(117, 85, 63, 0.2);
+            font-weight: 700;
+            color: #75553f;
+            border-radius: 8px 8px 0 0;
+          }
+
+          &.value-cell {
+            background: white;
+            font-size: 1rem;
+            padding-top: 0.5rem;
+            border-radius: 0 0 8px 8px;
+          }
+        }
+      }
+    }
+  }
+}

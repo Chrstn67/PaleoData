@@ -1,12 +1,12 @@
-$first-color: #75553fff;
-$second-color: #85674dff;
-$third-color: #95795aff;
-$fourth-color: #a58b68ff;
-$fifth-color: #b49d75ff;
-$sixth-color: #c4af83ff;
-$seventh-color: #d4c190ff;
-$eighth-color: #e4d39eff;
-$ninth-color: #f3e5abff;
+#75553fff: #75553fff;
+#85674dff: #85674dff;
+#95795aff: #95795aff;
+#a58b68ff: #a58b68ff;
+#b49d75ff: #b49d75ff;
+#c4af83ff: #c4af83ff;
+#d4c190: #d4c190ff;
+#e4d39eff: #e4d39eff;
+#f3e5abff: #f3e5abff;
 
 .options-sites {
   margin: 1.2em;
@@ -15,8 +15,8 @@ $ninth-color: #f3e5abff;
   justify-content: center;
 
   select {
-    background-color: $ninth-color;
-    border: 2px solid $eighth-color;
+    background-color: #f3e5abff;
+    border: 2px solid #e4d39eff;
     border-radius: 10px;
     color: #000;
     font-size: 16px;
@@ -24,12 +24,12 @@ $ninth-color: #f3e5abff;
     text-align: center;
 
     &:focus {
-      border-color: $seventh-color;
+      border-color: #d4c190;
       outline: none;
     }
 
     option {
-      background-color: $ninth-color;
+      background-color: #f3e5abff;
       color: #000;
       text-align: center;
     }
@@ -45,7 +45,7 @@ $ninth-color: #f3e5abff;
 }
 
 .gisement-details-header {
-  background-color: $seventh-color;
+  background-color: #d4c190;
   border-radius: 10px 10px 0 0;
   padding: 10px;
   text-align: center;
@@ -79,7 +79,7 @@ $ninth-color: #f3e5abff;
 }
 
 .gisement-details-illustrations img {
-  outline: $ninth-color 2px solid;
+  outline: #f3e5abff 2px solid;
   border-radius: 70%;
   margin-bottom: 10px;
   object-fit: cover;
@@ -89,7 +89,7 @@ $ninth-color: #f3e5abff;
 }
 
 .gisement-details-speech-bubble {
-  background-color: $eighth-color;
+  background-color: #e4d39eff;
   box-shadow:
     inset 3px -3px 100px #9c7154,
     inset -1px 1px 1px #58402f,
@@ -113,7 +113,7 @@ $ninth-color: #f3e5abff;
 
   &::-webkit-scrollbar-thumb {
     border-radius: 10%;
-    background-color: $fourth-color;
+    background-color: #a58b68ff;
     background: linear-gradient(to top, #75553f, #f3e5ab);
   }
 }

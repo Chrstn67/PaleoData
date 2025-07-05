@@ -1,6 +1,6 @@
 import React from 'react';
 import questionsData from './questionsData';
-import './Questions.scss';
+import './Questions.css';
 
 const sortedQuestionsData = [...questionsData].sort((a, b) => a.notion.localeCompare(b.notion));
 

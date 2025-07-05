@@ -1,6 +1,8 @@
+'use client';
+
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
-import './GeoInfo.scss';
+import './GeoInfo.css';
 
 const GeoInfo = ({ geologie }) => {
   const formatMillionsYears = (number) => {
@@ -29,41 +31,72 @@ const GeoInfo = ({ geologie }) => {
     return `${finalFormattedString} ans`;
   };
 
-  const geoInfoArray = [
-    geologie.apparition && `${formatMillionsYears(geologie.apparition)}<br />`,
-    geologie.ere && `${geologie.ere}`,
-    geologie.periode && `${geologie.periode}`,
-    geologie.epoque && `${geologie.epoque}`,
-    geologie.stage && `${geologie.stage}`,
-    geologie.extinction && `${formatMillionsYears(geologie.extinction)}<br />`,
-  ].filter(Boolean);
-
-  const geoInfoTypes = [
-    geologie.apparition && 'Apparition',
-    geologie.ere && 'Ère',
-    geologie.periode && 'Période',
-    geologie.epoque && 'Époque',
-    geologie.stage && 'Étage',
-    geologie.extinction && 'Disparition',
-  ].filter(Boolean);
+  const geoData = [
+    { label: 'Apparition', value: geologie.apparition ? formatMillionsYears(geologie.apparition) : null },
+    { label: 'Ère', value: geologie.ere },
+    { label: 'Période', value: geologie.periode },
+    { label: 'Époque', value: geologie.epoque },
+    { label: 'Étage', value: geologie.stage },
+    { label: 'Disparition', value: geologie.extinction ? formatMillionsYears(geologie.extinction) : null },
+  ].filter((item) => item.value);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (geoData.length <= 1) return;
+
     const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % geoInfoArray.length);
-    }, 5000);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % geoData.length);
+    }, 3000);
 
     return () => clearInterval(intervalId);
-  }, [geoInfoArray]);
+  }, [geoData.length]);
+
+  if (geoData.length === 0) {
+    return (
+      <section className="animal-geologie">
+        <h3>Géologie</h3>
+        <div className="geo-display">
+          <div className="geo-item active">
+            <div className="geo-label">Information</div>
+            <div className="geo-value">À venir...</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="animal-geologie">
       <h3>Géologie</h3>
-      <div className="geo-info-container">
-        <p className="geo-info-type">{geoInfoTypes[currentIndex]}</p>
-        <p className="time-info" dangerouslySetInnerHTML={{ __html: geoInfoArray[currentIndex] }} />
+
+      <div className="geo-display">
+        {geoData.map((item, index) => (
+          <div key={index} className={`geo-item ${index === currentIndex ? 'active' : ''}`}>
+            <div className="geo-label">{item.label}</div>
+            <div className="geo-value">{item.value}</div>
+          </div>
+        ))}
       </div>
+
+      {geoData.length > 1 && (
+        <>
+          <div className="geo-progress">
+            {geoData.map((_, index) => (
+              <button
+                key={index}
+                className={`progress-dot ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => setCurrentIndex(index)}
+                aria-label={`Voir ${geoData[index].label}`}
+              />
+            ))}
+          </div>
+
+          <div className="geo-timeline-bar">
+            <div className="timeline-progress" style={{ width: `${((currentIndex + 1) / geoData.length) * 100}%` }} />
+          </div>
+        </>
+      )}
     </section>
   );
 };

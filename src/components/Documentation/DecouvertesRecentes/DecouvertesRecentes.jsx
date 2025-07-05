@@ -1,6 +1,6 @@
 import React from 'react';
 import decouvertesRecentesData from './decouvertesRecentesData';
-import './DecouvertesRecentes.scss';
+import './DecouvertesRecentes.css';
 
 const sortedDecouvertesRecentesData = [...decouvertesRecentesData].sort((a, b) => a.notion.localeCompare(b.notion));
 

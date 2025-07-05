@@ -1,15 +1,15 @@
-$first-color: #75553fff;
-$second-color: #85674dff;
-$third-color: #95795aff;
-$fourth-color: #a58b68ff;
-$fifth-color: #b49d75ff;
-$sixth-color: #c4af83ff;
-$seventh-color: #d4c190ff;
-$eighth-color: #e4d39eff;
-$ninth-color: #f3e5abff;
+#75553fff: #75553fff;
+#85674dff: #85674dff;
+#95795aff: #95795aff;
+#a58b68ff: #a58b68ff;
+#b49d75ff: #b49d75ff;
+#c4af83ff: #c4af83ff;
+#d4c190: #d4c190ff;
+#e4d39eff: #e4d39eff;
+#f3e5abff: #f3e5abff;
 $border-radius: 15px;
 
-.fossile-container {
+.fiction-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 20px;
@@ -20,15 +20,15 @@ $border-radius: 15px;
   }
 }
 
-.fossile-comic {
+.fiction-comic {
   background: linear-gradient(to bottom, #85674d, #e4d39e);
   border-radius: $border-radius;
   padding: 20px; /* Réduit le padding */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.fossile-header {
-  background-color: $seventh-color;
+.fiction-header {
+  background-color: #d4c190;
   border-radius: $border-radius $border-radius 0 0;
   padding: 10px;
   text-align: center;
@@ -44,7 +44,7 @@ $border-radius: 15px;
   }
 }
 
-.fossile-content {
+.fiction-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,14 +57,14 @@ $border-radius: 15px;
   }
 }
 
-.fossile-illustrations {
+.fiction-illustrations {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
 
   img {
-    outline: $ninth-color 2px solid;
+    outline: #f3e5abff 2px solid;
     border-radius: 10%;
     object-fit: cover;
     max-width: 200px;
@@ -76,7 +76,7 @@ $border-radius: 15px;
   }
 }
 
-.fossile-speech-bubble {
+.fiction-speech-bubble {
   background-color: #e4d39e;
   box-shadow:
     inset 3px -3px 100px #9c7154,
@@ -97,12 +97,12 @@ $border-radius: 15px;
 
   &::-webkit-scrollbar-thumb {
     border-radius: 10%;
-    background-color: $fourth-color;
+    background-color: #a58b68ff;
     background: linear-gradient(to top, #75553f, #f3e5ab);
   }
 }
 
-.fossile-speech-bubble-content {
+.fiction-speech-bubble-content {
   line-height: 1.5;
   font-size: 1em;
   color: #3a2a1e;

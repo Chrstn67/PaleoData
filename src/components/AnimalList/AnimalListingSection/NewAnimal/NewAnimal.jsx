@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './NewAnimal.scss';
+import './NewAnimal.css';
 
 const NewAnimal = ({ animals }) => {
   const newAnimals = animals.filter((animal) => {

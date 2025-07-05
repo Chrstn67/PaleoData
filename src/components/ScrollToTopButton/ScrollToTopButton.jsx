@@ -1,6 +1,6 @@
 // ScrollToTopButton.jsx
 import { useState, useEffect } from 'react';
-import './ScrollToTopButton.scss';
+import './ScrollToTopButton.css';
 
 const ScrollToTopButton = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
