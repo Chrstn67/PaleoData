@@ -1,0 +1,243 @@
+.search-option {
+  background: linear-gradient(135deg, #f3e5ab 0%, #e6d89a 100%);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(117, 85, 63, 0.2);
+  border: 2px solid rgba(117, 85, 63, 0.3);
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.search-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search-main {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-option input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: 2px solid rgba(117, 85, 63, 0.3);
+  border-radius: 50px;
+  font-size: 1.1rem;
+  color: #75553f;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-option input:focus {
+  border-color: #75553f;
+  box-shadow: 0 0 20px rgba(117, 85, 63, 0.3);
+  transform: scale(1.02);
+}
+
+.search-option input::placeholder {
+  color: rgba(117, 85, 63, 0.6);
+}
+
+.filter-toggle {
+  background: linear-gradient(135deg, #75553f 0%, #5a4230 100%);
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px rgba(117, 85, 63, 0.3);
+}
+
+.filter-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(117, 85, 63, 0.4);
+}
+
+.filter-toggle .arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.filter-toggle .arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.active-indicator {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 12px;
+  height: 12px;
+  background: #ff4444;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.reset-button {
+  background: linear-gradient(135deg, #d4a574 0%, #b49d75 100%);
+  color: #75553f;
+  border: 2px solid rgba(117, 85, 63, 0.3);
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.reset-button:hover {
+  background: linear-gradient(135deg, #b49d75 0%, #9c8660 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(117, 85, 63, 0.2);
+}
+
+.filters-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.filters-container.expanded {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  border: 1px solid rgba(117, 85, 63, 0.2);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #75553f;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.filter-icon {
+  font-size: 1rem;
+}
+
+.filter-group select {
+  padding: 0.8rem;
+  border: 2px solid rgba(117, 85, 63, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #75553f;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.filter-group select:focus {
+  border-color: #75553f;
+  box-shadow: 0 0 10px rgba(117, 85, 63, 0.2);
+}
+
+.filter-group select:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.filter-group option {
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-option {
+    padding: 1rem;
+    position: relative;
+    top: auto;
+  }
+
+  .search-main {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .search-option input {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .filter-toggle {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .filters-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .reset-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-option {
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .filter-group label {
+    font-size: 0.8rem;
+  }
+
+  .filter-group select {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
