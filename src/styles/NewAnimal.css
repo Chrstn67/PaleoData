@@ -531,8 +531,6 @@
   }
 
   .new-animal-modal-content {
-    width: 98vw;
-    max-height: 98vh;
     margin: 1vh auto;
     border-radius: 15px;
   }
