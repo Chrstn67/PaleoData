@@ -11394,7 +11394,7 @@ const data = [
   },
 
   {
-    nom: 'Quetzalcoaltus',
+    nom: 'Quetzalcoatlus',
     etymologie:
       'Fait référence au dieu serpent à plumes Quetzalcóatl de la mythologie aztèque, symbolisant le ciel et le vent.',
     image_url: './assets/images/Quetzalcoaltus.jpg',
