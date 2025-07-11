@@ -2,7 +2,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 9999; /* Augmenter le z-index pour qu'il soit toujours au-dessus */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -121,9 +121,27 @@
   width: 700px;
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
   border: 3px solid #75553f;
-  overflow-y: auto; /* Permettre le scroll */
+  overflow-y: auto;
   position: relative;
   animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.new-animal-modal-content::after {
+  content: 'NOUVEAU';
+  position: absolute;
+  top: 95px;
+  right: 15px;
+  background: linear-gradient(135deg, #ff4444 0%, #ff6666 100%);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4);
+  animation: newBadgePulse 2s ease-in-out infinite;
+  z-index: 10;
 }
 
 @keyframes slideIn {
@@ -195,7 +213,8 @@
 .modal-body {
   padding: 2rem;
   position: relative;
-  overflow-y: visible; /* Permettre le contenu de déborder naturellement */
+  overflow-y: visible;
+  text-align: center; /* Centrer tout le contenu */
 }
 
 .slide-counter {
@@ -214,18 +233,22 @@
 
 .animal-showcase {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .animal-image-container {
-  flex: 1;
-  margin: auto;
+  width: 100%;
+  max-width: 400px; /* Limiter la largeur */
+  position: relative;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(117, 85, 63, 0.3);
   transition: transform 0.3s ease;
+  margin: 0 auto; /* Centrer */
 }
 
 .animal-image-container:hover {
@@ -248,41 +271,17 @@
 }
 
 .image-overlay {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-.new-badge {
-  background: linear-gradient(135deg, #ff4444 0%, #ff6666 100%);
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4);
-  animation: newBadgePulse 2s ease-in-out infinite;
-}
-
-@keyframes newBadgePulse {
-  0%,
-  100% {
-    transform: scale(1);
-    box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 68, 68, 0.6);
-  }
+  display: none; /* Supprimer complètement */
 }
 
 .animal-info {
-  flex: 1;
+  width: 100%;
+  max-width: 500px; /* Limiter la largeur */
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: center; /* Centrer les éléments */
+  text-align: center;
 }
 
 .animal-name {
@@ -295,6 +294,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-align: center;
 }
 
 .animal-details {
@@ -303,15 +303,18 @@
   border-radius: 15px;
   border: 2px solid rgba(117, 85, 63, 0.2);
   backdrop-filter: blur(10px);
+  width: 100%;
 }
 
 .detail-item {
   display: flex;
   align-items: center;
+  text-align: center;
   gap: 0.8rem;
   margin-bottom: 1rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(117, 85, 63, 0.1);
+  justify-content: center;
 }
 
 .detail-item:last-child {
@@ -392,7 +395,7 @@
 
 /* Navigation */
 .slide-navigation {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 0;
   right: 0;
@@ -457,9 +460,10 @@
 /* Responsive */
 @media (max-width: 768px) {
   .new-animal-notification {
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     padding: 0.6rem 1rem;
+    z-index: 9999; /* Maintenir le z-index élevé */
   }
 
   .notification-text {
@@ -473,11 +477,16 @@
     overflow-y: auto; /* S'assurer que le scroll fonctionne */
   }
 
+  .new-animal-modal-content::after {
+    top: 90px;
+    right: 10px;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
   .modal-body {
     padding: 1rem;
-    max-height: none;
-    display: flex;
-    justify-content: center;
+    max-height: none; /* Retirer la limitation de hauteur */
   }
 
   .animal-showcase {
@@ -503,16 +512,32 @@
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
+
+  .animal-showcase {
+    gap: 1.5rem;
+  }
+
+  .animal-info {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
   .new-animal-notification {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 1rem auto;
-    display: flex;
-    justify-content: center;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 0.8rem;
+    z-index: 9999; /* Maintenir le z-index élevé */
+  }
+
+  .notification-icon .icon {
+    font-size: 1.5rem;
+  }
+
+  .notification-icon .badge {
+    width: 18px;
+    height: 18px;
+    font-size: 0.6rem;
   }
 
   .animal-image {
@@ -522,7 +547,7 @@
 
   .detail-item {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.3rem;
   }
 
@@ -531,8 +556,17 @@
   }
 
   .new-animal-modal-content {
+    width: 98vw;
+    max-height: 98vh;
     margin: 1vh auto;
     border-radius: 15px;
+  }
+
+  .new-animal-modal-content::after {
+    top: 100px;
+    right: 8px;
+
+    padding: 0.25rem 0.5rem;
   }
 
   .modal-image {

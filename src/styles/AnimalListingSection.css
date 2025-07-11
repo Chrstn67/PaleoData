@@ -1,111 +1,295 @@
- 
-
 .animal-listing {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1em;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #573f35 0%, #3d2817 50%, #4a3121 100%);
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
 
-  h3 {
-    background-color: #f3e5ab;
-    color: #75553f;
-    border-radius: 10px 10px 0 0;
-    padding: 10px;
-    text-align: center;
+.animal-listing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(101, 67, 33, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.animal-listing h3 {
+  background: linear-gradient(45deg, #f3e5ab, #e6d084);
+  color: #75553f;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+  box-shadow:
+    0 8px 32px rgba(117, 85, 63, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.animal-listing ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 2rem;
+  list-style: none;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.animal-listing ul li {
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #1a0f08, #2d1b12);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 1px 8px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.animal-listing ul li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #f3e5ab, #e6d084);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: 18px;
+}
+
+.animal-listing ul li:hover::before {
+  opacity: 0.1;
+}
+
+.animal-listing ul li:hover {
+  transform: translateY(-15px) scale(1.05);
+  border-color: #f3e5ab;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 10px 20px rgba(243, 229, 171, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.animal-listing ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.animal-listing ul li .image-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #3a2817, #4a3121);
+  border-radius: 15px 15px 0 0;
+}
+
+.animal-listing ul li .image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(160, 82, 45, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.animal-listing ul li .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: all 0.4s ease;
+  filter: contrast(1.1) brightness(1.05);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.animal-listing ul li:hover .image-container img {
+  transform: scale(1.1);
+  filter: contrast(1.2) brightness(1.1);
+}
+
+.animal-listing ul li .image-container h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(45, 24, 16, 0.95), rgba(45, 24, 16, 0.8), transparent);
+  color: #f3e5ab;
+  padding: 20px 15px 15px;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  border-radius: 0;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+.animal-listing ul li .image-container h3::before,
+.animal-listing ul li .image-container h3::after {
+  display: none;
+}
+
+.animal-listing ul li:hover .image-container h3 {
+  background: linear-gradient(to top, rgba(243, 229, 171, 0.95), rgba(243, 229, 171, 0.8), transparent);
+  color: #75553f;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Animation d'apparition */
+.animal-listing ul li {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.animal-listing ul li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.animal-listing ul li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animal-listing ul li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.animal-listing ul li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.animal-listing ul li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.animal-listing ul li:nth-child(n + 6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .h3-title {
-    box-shadow:
-      0px -2px 0px #75553f,
-      0px -2px 5px #75553f,
-      0px -2px 10px #75553f,
-      0px -2px 15px #75553f,
-      0px -2px 20px #75553f,
-      0px -2px 30px #75553f,
-      0px -2px 40px #75553f;
-  }
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 1rem;
-    list-style: none;
-    width: 100%;
-    padding: 0;
-    // filter: drop-shadow(10px 10px 10px #75553fff);
+}
 
-    li {
-      perspective: 500px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-      min-height: 300px;
-      position: relative;
+/* Message "Aucun animal" */
+.animal-listing h5 {
+  color: #f3e5ab;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(45deg, rgba(117, 85, 63, 0.1), rgba(139, 69, 19, 0.1));
+  border-radius: 20px;
+  border: 2px dashed #75553f;
+  margin: 2rem 0;
+  font-style: italic;
+  position: relative;
+}
 
-      outline: #f3e5abff 2px solid;
+.animal-listing h5::before {
+  content: '🦕💀';
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0.3);
+}
 
-      filter: drop-shadow(15px 20px 15px #75553fff);
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .image-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        overflow: hidden;
-
-        img {
-          width: 90%;
-          height: auto;
-          object-fit: cover;
-          border-radius: 0.5em;
-        }
-
-        h3 {
-          transition: opacity 0.3s ease;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background-color: #75553fff;
-          color: white;
-          padding: 0.5rem;
-          margin: 0;
-        }
-      }
-
-      button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: #85674dff;
-        font-size: 1.2rem;
-        margin-top: 0.5rem;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: #75553fff;
-        }
-      }
-    }
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .animal-listing ul {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .animal-listing {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+  }
 
-    ul {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
+  .animal-listing h3 {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    margin-bottom: 2rem;
+  }
+
+  .animal-listing h3::before,
+  .animal-listing h3::after {
+    font-size: 2rem;
+  }
+
+  .animal-listing h3::before {
+    left: -35px;
+  }
+
+  .animal-listing h3::after {
+    right: -35px;
+  }
+
+  .animal-listing ul {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+  }
+
+  .animal-listing ul li .image-container {
+    height: 200px;
+  }
+
+  .animal-listing ul li .image-container h3 {
+    font-size: 1rem;
+    padding: 15px 10px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .animal-listing h3::before,
+  .animal-listing h3::after {
+    display: none;
+  }
+
+  .animal-listing ul {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .animal-listing ul li .image-container {
+    height: 180px;
   }
 }

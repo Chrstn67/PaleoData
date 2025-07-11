@@ -539,7 +539,7 @@ const Timeline = ({ timelineData }) => {
   return (
     <div className="geological-timeline" ref={timelineRef}>
       <div className="timeline-header">
-        <h1>Voyage dans le Temps Géologique</h1>
+        <h1>Chronologie</h1>
 
         <div className="breadcrumb">
           <span className="breadcrumb-item" onClick={() => handleBreadcrumbClick(-1)}>

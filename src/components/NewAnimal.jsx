@@ -99,9 +99,7 @@ const NewAnimal = ({ animals }) => {
                       e.target.src = '/placeholder.svg?height=300&width=400';
                     }}
                   />
-                  <div className="image-overlay">
-                    <span className="new-badge">NOUVEAU</span>
-                  </div>
+                  <div className="image-overlay"></div>
                 </div>
 
                 {/* Informations */}

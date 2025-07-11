@@ -140,11 +140,11 @@
       border: 2px solid rgba(248, 245, 232, 0.3);
 
       @media (max-width: 768px) {
-        height: 400px;
+        height: 450px; /* Augmenter la hauteur sur tablette */
       }
 
       @media (max-width: 480px) {
-        height: 300px;
+        height: 400px; /* Augmenter la hauteur sur mobile */
       }
     }
   }
@@ -171,6 +171,49 @@
       @media (max-width: 768px) {
         font-size: 1rem;
       }
+    }
+  }
+
+  /* Ajouter styles pour le message d'information sur les coordonnées */
+  .coordinates-info {
+    background: rgba(255, 193, 7, 0.2);
+    border: 2px solid rgba(255, 193, 7, 0.4);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .coordinates-info h4 {
+    color: #f8f5e8;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .coordinates-info p {
+    color: #e8dcc0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .coordinates-info {
+      padding: 1rem;
+    }
+
+    .coordinates-info h4 {
+      font-size: 1rem;
+    }
+
+    .coordinates-info p {
+      font-size: 0.9rem;
     }
   }
 }

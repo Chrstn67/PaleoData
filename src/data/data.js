@@ -11372,7 +11372,7 @@ const data = [
       extinction: -70,
     },
     description:
-      "Par rapport à bien de ses contemporains carnivores, Pyroraptor était bien plus petit. <br/>Il possédait une griffe en forme de faucille sur le deuxième orteil de chaque patte arrière, caractéristique des dromaeosauridés. Ses restes fossiles ont été découverts en France, ce qui en fait l'un des rares dromaeosauridés connus en Europe. <br/> <br/> Son vient du fait qu'il ait été découvert après un incendie de forêt datant de 1989.",
+      "Par rapport à bien de ses contemporains carnivores, Pyroraptor était bien plus petit. <br/>Il possédait une griffe en forme de faucille sur le deuxième orteil de chaque patte arrière, caractéristique des dromaeosauridés. Ses restes fossiles ont été découverts en France, ce qui en fait l'un des rares dromaeosauridés connus en Europe. <br/> <br/> Son nom vient du fait qu'il ait été découvert après un incendie de forêt datant de 1989.",
     autres_infos: {
       taille: {
         longueur: '2.5 mètres',

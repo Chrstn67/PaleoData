@@ -26,10 +26,10 @@ const HomePage = ({ animals }) => {
             <GiDinosaurRex />
           </div>
           <h1 className="hero-title">PaleoData</h1>
-          <p className="hero-subtitle">Explorez la fascinante histoire de la vie sur Terre</p>
+          <p className="hero-subtitle">Explore la fascinante histoire de la vie sur Terre</p>
           <div className="hero-description">
             <p>
-              Découvrez des centaines d'animaux préhistoriques, imaginez leur mode de vie et leur environnement en
+              Découvre des centaines d'animaux préhistoriques, imagine leur mode de vie et leur environnement en
               voyageant dans le temps, dans cet univers passé qui émerveille petits et grands.
             </p>
           </div>
@@ -47,8 +47,8 @@ const HomePage = ({ animals }) => {
 
       <section className="features-section">
         <div className="section-header">
-          <h2>Explorez nos collections</h2>
-          <p>Plongez dans l'univers fascinant de la paléontologie</p>
+          <h2>Explore nos collections</h2>
+          <p>Plonge dans l'univers fascinant de la paléontologie</p>
         </div>
         <div className="features-grid">
           <article className="feature-card primary">
@@ -56,10 +56,10 @@ const HomePage = ({ animals }) => {
               <GiDinosaurRex />
             </div>
             <div className="card-content">
-              <h3>Animaux Préhistoriques</h3>
+              <h3>Animaux</h3>
               <p>
-                Découvrez les dernières informations sur vos animaux favoris. Une collection complète avec{' '}
-                <strong>{animals.length} espèces</strong>
+                Découvre les dernières informations sur tes animaux favoris. Une collection avec{' '}
+                <strong>{animals.length} espèces </strong>
                 documentées.
               </p>
               <Link to="/animaux" onClick={scrollToTop} className="card-link">
@@ -75,7 +75,10 @@ const HomePage = ({ animals }) => {
             </div>
             <div className="card-content">
               <h3>Échelle Géologique</h3>
-              <p>Voyagez à travers les ères géologiques et découvrez l'évolution de la vie sur notre planète.</p>
+              <p>
+                Voyage dans le temps et imagine-toi le monde tel qu'il était bien avant celui que tu connais
+                aujourd'hui.
+              </p>
               <Link to="/echelle-des-temps-geologiques" onClick={scrollToTop} className="card-link">
                 Voyager dans le temps
                 <span className="link-arrow">→</span>
@@ -89,7 +92,7 @@ const HomePage = ({ animals }) => {
             </div>
             <div className="card-content">
               <h3>Étymologie</h3>
-              <p>Apprenez l'origine fascinante des noms des animaux préhistoriques et leur signification.</p>
+              <p>Apprends l'origine des noms des animaux et leur signification.</p>
               <Link to="/liste-etymologique" onClick={scrollToTop} className="card-link">
                 Découvrir les origines
                 <span className="link-arrow">→</span>
@@ -104,8 +107,7 @@ const HomePage = ({ animals }) => {
             <div className="card-content">
               <h3>Documentation</h3>
               <p>
-                Les dernières découvertes paléontologiques, les paléontologues célèbres, et bien d'autres informations
-                passionnantes.
+                Les dernières découvertes paléontologiques, les paléontologues célèbres, et bien d'autres informations.
               </p>
               <Link to="/documentation" onClick={scrollToTop} className="card-link">
                 Lire la documentation

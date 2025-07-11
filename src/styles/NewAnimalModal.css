@@ -94,7 +94,7 @@
 }
 
 .slide-navigation {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 0;
   right: 0;
@@ -155,7 +155,8 @@
 @media (max-width: 768px) {
   .modal-content {
     width: 95vw;
-    margin: 1rem;
+    max-height: 85vh; /* Réduire la hauteur max pour éviter d'être rongée */
+    margin: 2.5vh auto; /* Centrer avec des marges */
   }
 
   .modal-header {
@@ -168,5 +169,20 @@
 
   .slides-container {
     padding: 1rem;
+    max-height: calc(85vh - 120px); /* Ajuster la hauteur du contenu */
+    overflow-y: auto; /* Permettre le scroll si nécessaire */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 98vw;
+    max-height: 90vh;
+    margin: 1vh auto;
+  }
+
+  .slides-container {
+    padding: 0.8rem;
+    max-height: calc(90vh - 100px);
   }
 }

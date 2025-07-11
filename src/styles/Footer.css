@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
+  padding-bottom: 80px;
 }
 
 .footer::before {
@@ -247,6 +248,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .footer {
+    padding-bottom: 100px; /* Plus d'espace sur mobile */
+  }
+
   .footer-container {
     padding: 2rem 1rem 1rem;
   }

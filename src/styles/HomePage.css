@@ -209,7 +209,6 @@
         }
 
         &.primary {
-          background: linear-gradient(135deg, rgba(117, 85, 63, 0.9), rgba(133, 103, 77, 0.9));
           transform: scale(1.05);
 
           .card-icon svg {
@@ -366,7 +365,6 @@
 @media (max-width: 768px) {
   .home-page {
     .hero-section {
-      min-height: 80vh;
       padding: 1rem;
 
       .hero-content {
