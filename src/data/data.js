@@ -43,7 +43,7 @@ const data = [
       extinction: -505,
     },
     description:
-      "Acadagnostus est un animal avec une tête ronde et lisse, sans épines. Le devant de sa tête est étroit, tandis que le dos de sa tête présente des rainures qui ressemblent à des fosses ou à un sillon peu profond, droit ou légèrement courbé vers l'arrière. Il a une bosse au milieu de sa tête ou légèrement en arrière. Sa queue est presque carrée, avec un bord plat qui peut parfois s'élargir vers l'arrière, et elle a une légère encoche. Deux petites épines se trouvent à l'arrière dans les coins extérieurs. Son dos présente un large sillon frontal. Sa colonne vertébrale a des côtés droits ou coniques, mais le deuxième segment n'est pas plus étroit que les autres. Les rainures qui traversent la colonne vertébrale sont soit absentes, soit peu marquées. Les segments sont marqués par des différences dans la hauteur de la colonne vertébrale. Il y a une grosse bosse au milieu, et il y a un sillon court à l'arrière.",
+      "<i>Acadagnostus</i> est un animal caractérisé par une tête ronde et lisse, dépourvue d'épines.<br /> L'avant de sa tête est étroit, tandis que sa partie postérieure présente des rainures ressemblant à des fosses ou à un sillon peu profond, droit ou légèrement incurvé vers l'arrière.<br /> Une bosse est présente au milieu ou légèrement en arrière de sa tête.<br /> Sa queue, presque carrée, possède un bord plat qui peut parfois s'élargir vers l'arrière, et elle est dotée d'une légère encoche.<br /> Deux petites épines sont situées aux coins extérieurs arrière.<br /> Son dos arbore un large sillon frontal.<br /> Sa colonne vertébrale présente des côtés droits ou coniques, le deuxième segment n'étant pas plus étroit que les autres.<br /> Les rainures qui traversent la colonne vertébrale sont absentes ou peu marquées.<br /> Les segments sont distincts par des différences de hauteur de la colonne vertébrale.<br /> Enfin, une grosse bosse est visible au milieu, complétée par un court sillon à l'arrière.",
     autres_infos: {
       taille: {
         longueur: '2 centimètres',
@@ -107,7 +107,7 @@ const data = [
       extinction: -372,
     },
     description:
-      "Acanthostega possédait à la fois des caractéristiques de poissons et d'amphibiens. Il avait des membres osseux ressemblant à des nageoires, mais aussi des doigts et des orteils avec des os individuels. Cependant, il était encore bien adapté à la vie aquatique et ne pouvait pas se déplacer efficacement sur la terre ferme.",
+      "<i>Acanthostega</i> possédait à la fois des caractéristiques de poissons et d'amphibiens. Il avait des membres osseux ressemblant à des nageoires, mais aussi des doigts et des orteils avec des os individuels. Cependant, il était encore bien adapté à la vie aquatique et ne pouvait pas se déplacer efficacement sur la terre ferme.",
     autres_infos: {
       taille: {
         longueur: '50-60 centimètres',
@@ -161,7 +161,7 @@ const data = [
       espèces: 'Acherontiscus caledoniae',
     },
     regime_alimentaire: 'Carnivore',
-    habitat: 'Zones humides',
+    habitat: 'Zones humides et marécageuses',
     geologie: {
       ere: 'Paléozoïque',
       periode: 'Carbonifère',
@@ -171,7 +171,7 @@ const data = [
       extinction: -315,
     },
     description:
-      'Acherontiscus avait un corps allongé avec des nageoires et des écailles ressemblant à celles des poissons modernes',
+      "<i>Acherontiscus</i> avait un corps allongé et serpentiforme avec des nageoires et des écailles ressemblant à celles des poissons modernes.<br/> Aucun membre n'a été préservé chez le spécimen connu, ce qui suggère soit une absence totale de membres, soit des membres extrêmement réduits, hypothèse renforcée par la présence d’une ceinture scapulaire bien développée. <br/><br/><i>Acherontiscus</i> est particulièrement remarquable pour sa dentition : il est le plus ancien tétrapode connu à présenter des dents de formes et de tailles variées (hétérodontie), adaptées à un régime alimentaire durophage, c’est-à-dire capable de broyer des proies à carapace dure comme des petits crustacés ou mollusques. Sa mâchoire profonde et robuste lui permettait d’exercer une morsure puissante, idéale pour écraser ses proies aquatiques. <br/><br/> Son squelette montre aussi une combinaison unique de caractéristiques, avec des vertèbres composées de plusieurs os, rappelant certains groupes primitifs, et un crâne proche de celui des lépospondyles, ce qui tend les scientifiques à conclure qu'il ne s'agissait pas d'un amphibien.",
     autres_infos: {
       taille: {
         longueur: '15-20 cm',
@@ -234,7 +234,7 @@ const data = [
       extinction: -271.6,
     },
     description:
-      "Acleistorhinus était caractérisé par son crâne court et large, son corps massif et ses membres robustes. Il possédait une carapace osseuse qui lui offrait une protection contre les prédateurs. Il se nourrissait probablement d'insectes et d'autres petits animaux. Acleistorhinus fait partie des nombreux reptiles qui ont vécu avant l'apparition des dinosaures.",
+      "<i>Acleistorhinus</i> était caractérisé par son crâne court et large, son corps massif et ses membres robustes. Il possédait une carapace osseuse qui lui offrait une protection contre les prédateurs. Il se nourrissait probablement d'insectes et d'autres petits animaux. <i>Acleistorhinus</i> fait partie des nombreux reptiles qui ont vécu avant l'apparition des dinosaures.",
     autres_infos: {
       taille: {
         longueur: '1,5 mètre',
@@ -298,7 +298,7 @@ const data = [
       extinction: -323,
     },
     description:
-      'Akmonistion est un animal aquatique ressemblant à un requin mais faisait partie de la famille des poissons cartilagineux. Son aileron dorsal ressemble à une enclume.',
+      '<i>Akmonistion</i> est un animal aquatique ressemblant à un requin mais faisait partie de la famille des poissons cartilagineux. <br/><br>Son corps était adapté à une nage plutôt lente, ce qui suggère un mode de vie de prédateur ou de charognard benthique, se nourrissant de petits arthropodes et de poissons, comme l’indiquent des fragments retrouvés dans son estomac.<br/><br/> Son aileron dorsal ressemble à une enclume. Cette structure complexe, composée d’une épine, d’une plaque basale et d’un ensemble de tiges cartilagineuses recouvertes d’écailles proéminentes, était probablement utilisée à des fins de défense, de parade sexuelle ou de comportement social, bien que sa fonction exacte reste incertaine.',
     autres_infos: {
       taille: {
         longueur: '2 mètres',
@@ -362,7 +362,7 @@ const data = [
       extinction: -509,
     },
     description:
-      "Amiskwia est un animal invertébré considéré comme un membre énigmatique du règne animal, car sa classification précise reste incertaine. <br /> Amiskwia avait une forme allongée et ressemblait à un ver ou à un lombric, avec un corps segmenté et des appendices. Il possédait également des structures en forme de couronne à l'extrémité antérieure, suggérant peut-être une fonction alimentaire spécifique. Bien que son mode de vie exact soit inconnu, Amiskwia était probablement vivant au fond des océans ou des mers peu profondes.",
+      "<i>Amiskwia</i> est un animal invertébré considéré comme un membre énigmatique du règne animal, car sa classification précise reste incertaine. <br /><br /> <i>Amiskwia</i> avait une forme allongée et ressemblait à un ver ou à un lombric, avec un corps segmenté et des appendices. Il possédait également des structures en forme de couronne à l'extrémité antérieure, suggérant peut-être une fonction alimentaire spécifique.<br /><br /> Bien que son mode de vie exact soit inconnu, <i>Amiskwia</i> était probablement vivant au fond des océans ou des mers peu profondes.",
     autres_infos: {
       taille: {
         longueur: '10 à 20 cm',
@@ -425,7 +425,7 @@ const data = [
       extinction: -415,
     },
     description:
-      "Anglaspis est un genre de poissons fossiles appartenant à la classe des placodermes. Il se distinguait par son corps recouvert d'une armure osseuse et sa tête munie de plaques protectrices. Anglaspis était un prédateur marin , doté de mâchoires puissantes pour saisir et broyer leur proie. Il était largement répandu dans les océans de l'époque.",
+      "<i>Anglaspis</i> est un genre de poissons fossiles appartenant à la classe des placodermes. Il se distinguait par son corps recouvert d'une armure osseuse et sa tête munie de plaques protectrices. <br /><i>Anglaspis</i> était un prédateur marin, doté de mâchoires puissantes pour saisir et broyer leur proie. <br /><br />Il était largement répandu dans les océans de l'époque.",
     autres_infos: {
       taille: {
         longueur: "jusqu'à 1 mètre",
@@ -491,7 +491,7 @@ const data = [
       extinction: -500,
     },
     description:
-      "Anomalocaris possédait un corps allongé avec une paire d'yeux composés, une bouche munie de nombreuses pointes et des appendices en forme de nageoires. <br /> Cet animal est considéré comme l'un des premiers prédateurs de grande taille de l'histoire de la vie sur Terre.",
+      "Considéré comme l'un des premiers prédateurs de grande taille de l'histoire de la vie sur Terre, 'emblématique <i>Anomalocaris</i> possédait un corps allongé avec une paire d'yeux composés, une bouche munie de nombreuses pointes et des appendices en forme de nageoires. <br /> Son nom vient du fait que ses premiers fossiles découverts étaient mal interprétés et pris pour des parties d’animaux différents.<br /> <br />Son corps était allongé et segmenté, doté de nageoires latérales lui permettant de se déplacer avec agilité dans l’eau. À l’avant, il possédait une paire de longs appendices articulés, hérissés de pointes, qu’il utilisait pour saisir ses proies. Sa bouche circulaire, munie de plaques dentées disposées en forme d’ananas, était capable de broyer des carapaces, ce qui en faisait un prédateur redoutable des trilobites et autres arthropodes marins. <br /><i>Anomalocaris</i> avait également de grands yeux composés, offrant une excellente vision pour repérer ses proies.",
     autres_infos: {
       taille: {
         longueur: '2-4 mètres',
@@ -573,7 +573,7 @@ const data = [
       extinction: -470,
     },
     description:
-      "Arandaspis est un genre éteint de poissons agnathes (sans mâchoires). <br /> Arandaspis possédait un corps allongé et dépourvu de mâchoires, avec une peau couverte de plaques osseuses, ce qui en fait l'un des premiers poissons à posséder une armure. Il se déplaçait dans les océans anciens en filtrant les particules alimentaires de l'eau.",
+      "<i>Arandaspis</i> est un genre éteint de poissons agnathes (sans mâchoires). <br /><br /> <i>Arandaspis</i> possédait un corps allongé et dépourvu de mâchoires, avec une peau couverte de plaques osseuses, ce qui en fait l'un des premiers poissons à posséder une armure. Son corps allongé était recouvert à l’avant d’un bouclier osseux formé de plaques épaisses. L’arrière du corps était protégé par de petites écailles.<br /> Il ne possédait ni mâchoires ni nageoires paires, mais seulement une nageoire caudale simple et quelques replis cutanés latéraux. Sa bouche, très primitive, était une simple ouverture entourée de plaques osseuses, adaptée à l’aspiration de particules alimentaires ou de petits organismes sur le fond marin. <br/><i>Arandaspis</i> se distinguait aussi par la disposition de ses fentes branchiales, visibles sur les côtés de sa tête, qui lui permettaient de respirer en filtrant l’eau.",
     autres_infos: {
       taille: {
         longueur: '15 centimètres',
@@ -647,7 +647,7 @@ const data = [
       extinction: 290,
     },
     description:
-      "Arthropleura était un animal ressemblant à un mille-pattes. Arthropleura possédait un corps segmenté avec de nombreuses pattes, une carapace externe protectrice et des mandibules pour se nourrir. C'était l'un des plus grands arthropodes terrestres connus de l'histoire de la Terre. <br /> Bien qu'impressionnant, il devait se nourrir uniquement de végétaux.",
+      "<i>Arthropleura</i> était un arthropode géant ressemblant à un mille-pattes géant, considéré comme l'un des plus grands invertébrés terrestres connus de l'histoire de la Terre.<br/><br/>Son corps était composé de nombreux segments articulés, chacun portant une paire de pattes, ce qui lui permettait de se déplacer rapidement sur le sol forestier dense de l'époque.<br/>Contrairement à ce que l'on pourrait penser, <i>Arthropleura</i> n'était pas un prédateur féroce mais plutôt un herbivore ou détritivore, se nourrissant probablement de feuilles mortes et de végétaux en décomposition.<br/><br/>Sa taille impressionnante était rendue possible par la forte concentration d'oxygène dans l'atmosphère du Carbonifère.<br/> Malgré son apparence impressionnante, il n'avait pas de mâchoires puissantes et n'était donc pas dangereux pour les autres grands animaux de son époque.",
     autres_infos: {
       taille: {
         longueur: '2.50-3 mètres',
@@ -722,7 +722,7 @@ const data = [
       extinction: -505,
     },
     description:
-      "Aysheaia était caractérisé par son corps segmenté et allongé, avec des appendices en forme de pattes sur chaque segment. Ces créatures étaient dépourvues de membres articulés et possédaient une bouche située à l'extrémité antérieure de leur corps. ",
+      "<i>Aysheaia</i> est un genre éteint d'onychophores marins au corps mou et segmenté, ressemblant à une chenille gonflée.<br/>Ce petit animal possédait un corps cylindrique divisé en 10 segments, chacun portant une paire de pattes trapues, annelées et épineuses, terminées par un groupe de griffes incurvées.<br/>Sa tête, peu distincte du reste du corps, portait une paire d'appendices préhensiles et une bouche terminale entourée d'une couronne de six à sept papilles.<br/><br/>Il n'avait pas de mâchoires ni d'antennes visibles, et ses yeux étaient probablement absents ou très rudimentaires.<br/>Les pattes épineuses lui permettaient de s'accrocher aux éponges, avec lesquelles il est souvent retrouvé fossilement associé, suggérant un mode de vie probablement parasitaire ou commensal.<br/><br/><i>Aysheaia</i> est considéré comme un lobopodien, un groupe d'animaux marins primitifs apparentés aux onychophores modernes (vers velus terrestres) et aux tardigrades.<br/>Sa cuticule était molle et flexible, ce qui le rendait vulnérable aux prédateurs, mais il se protégeait vraisemblablement en vivant au sein des colonies d'éponges.",
     autres_infos: {
       taille: {
         longueur: '1-6 centimètres',
@@ -787,7 +787,7 @@ const data = [
       extinction: -411,
     },
     description:
-      "Birkenia se caractérise par son corps allongé, en forme de poisson, avec une structure externe constituée d'une série de pièces dentaires minuscules appelées 'conodontes'. Ces conodontes étaient disposés dans une bouche qui leur permettait de se nourrir de proies plus petites dans leur environnement marin.",
+      "<i>Birkenia</i> était un poisson sans mâchoires (agnathe).<br/>Ce poisson possédait un corps fuselé et élancé, adapté à la nage active dans des environnements marins peu profonds.<br/><br/>Son corps était recouvert de petites plaques sur la tête et d'écailles en forme de chevrons sur le tronc, mais contrairement à certains de ses contemporains, il ne possédait pas d'armure osseuse lourde.<br/><i>Birkenia</i> se distinguait par une queue hypocercale, où la partie inférieure est plus développée que la supérieure, ce qui lui conférait une grande maniabilité dans l'eau.<br/><br/>Il se nourrissait probablement en filtrant de petites particules et microorganismes dans l'eau, utilisant sa bouche terminale, positionnée à l'avant du corps, contrairement à d'autres poissons sans mâchoires qui ont une bouche ventrale.<br/>Les fossiles bien conservés, ont permis de mieux comprendre sa morphologie et son mode de vie.<br/><br/>",
     autres_infos: {
       taille: {
         longueur: '30-60 centimètres',
@@ -841,7 +841,7 @@ const data = [
       espèces:
         'Boreaspis batoides, Boreaspis macrorhynchus, Boreaspis puella, Boreaspis rostrata, Boreaspis spinicornis, Boreaspis triangularis',
     },
-    regime_alimentaire: 'Carnivore',
+    regime_alimentaire: 'Filtreur',
     habitat: 'Eaux douces',
     geologie: {
       ere: 'Paléozoïque',
@@ -852,7 +852,7 @@ const data = [
       extinction: 394,
     },
     description:
-      "Boreaspis possédait un corps massif et allongé, recouvert d'écailles osseuses ou de plaques, qui offraient une protection contre les prédateurs. Sa tête était dotée d'une sorte de bouclier épais, qui était également osseux et qui lui permettait de mieux se défendre contre les attaques. Ces caractéristiques faisaient de lui un prédateur puissant et bien adapté à son environnement aquatique.",
+      "<i>Boreaspis</i> est un genre éteint de poissons sans mâchoires (agnathes).<br/>Ces poissons étaient de petite taille, avec un bouclier céphalique d'environ 2 centimètres de long, recouvrant la tête et offrant une protection solide.<br/><br/>Une caractéristique distinctive de <i>Boreaspis</i> est la présence d'un long rostre en forme de spatule, dérivé de l'extrémité antérieure du bouclier céphalique. Ce rostre améliorait l'hydrodynamisme de l'animal et lui permettait probablement de fouiller le substrat à la recherche de nourriture.<br/>En plus du bouclier, certains spécimens présentaient des épines protectrices au niveau des joues.<br/><br/>Cet animal était un nageur adapté aux fonds marins peu profonds.",
     autres_infos: {
       taille: {
         longueur: '1-2 mètres',
@@ -917,7 +917,7 @@ const data = [
       extinction: -359,
     },
     description:
-      "Bothriolepis possédait une carapace épaisse et plate, dotée de rangées d'écailles articulées qui lui offraient une protection solide. Son corps était recouvert de plaques osseuses, et il était muni de nageoires pectorales et pelviennes qui lui permettaient de se déplacer dans l'eau. Cet animal avait une tête caractéristique avec de grands yeux sur le dessus, une bouche infère, et de petits appendices en forme de cornes devant ses yeux, qui étaient probablement utilisés pour fouiller le fond de l'océan à la recherche de nourriture. On le retrouve pratiquement partout autour du globe.",
+      "Ce poisson cuirassé présente une anatomie singulière, avec une carapace rigide qui protège la tête et le tronc, tandis que la partie postérieure du corps est dépourvue de plaques osseuses.<br/>Ses nageoires pectorales sont articulées et incluses dans la carapace, ce qui leur donne l'apparence de pattes de crustacés. Ces appendices lui permettaient de se déplacer en « marchant » sur le fond des milieux aquatiques, probablement en eaux douces ou saumâtres.<br/><br/>Les yeux de <i>Bothriolepis</i> sont positionnés sur la face dorsale de la tête, regroupés avec les narines et l'ouverture pinéale dans une unique fenêtre orbito-nasale. Cette disposition inhabituelle suggère que l'animal pouvait s'enfouir partiellement dans les sédiments, ne laissant dépasser que ses yeux pour surveiller son environnement.<br/><br/>La bouche est située sur la face ventrale de la tête, adaptée à une alimentation de type fouisseur : <i>Bothriolepis</i> ingérait la vase ou les sédiments du fond pour en extraire de petits organismes, des algues, ou de la matière organique en décomposition. Son système digestif est simple mais spécialisé, comprenant un intestin à valves spiralées, comparable à celui des requins actuels, qui facilite l'absorption des nutriments issus des sédiments avalés.<br/><br/>Son mode de vie était essentiellement benthique, évoluant lentement sur le fond, où il pouvait s'enfouir pour se protéger ou se nourrir. Il utilisait ses longues nageoires pectorales pour se déplacer et fouiller le substrat à la recherche de nourriture.",
     autres_infos: {
       taille: {
         longueur: '30-100 centimètres',
@@ -983,7 +983,7 @@ const data = [
       extinction: -505,
     },
     description:
-      "Canadaspis possédait un corps allongé et aplati, recouvert d'un bouclier externe en forme de bouclier. Ce bouclier était composé de segments articulés, ce qui lui permettait une certaine souplesse. L'animal avait également des antennes pour détecter son environnement et de nombreuses pattes pour se déplacer dans l'eau. On pense que Canadaspis se nourrissait de particules en suspension dans l'eau et qu'il était une proie pour d'autres animaux marins de cette époque.",
+      '<i>Canadaspis</i> est un arthropode vivant principalement sur le fond marin.<br/>Son corps est presque entièrement protégé par une large carapace en forme de bouclier avec des épines sur le dessus qui servaient à protéger ses yeux vulnérables.<br/><br/>Il se déplaçait en marchant sur le fond grâce à ses appendices biramés, qui possédaient une branche interne segmentée terminée par une griffe et une branche externe en forme de lobe avec des rayons, servant aussi à la respiration.<br/>Ces appendices lui permettaient de remuer les sédiments, filtrant la matière organique grâce aux épines présentes sur leurs surfaces internes, pour ensuite diriger la nourriture vers sa bouche équipée de mandibules robustes adaptées à broyer les particules.<br/><br/>Ses antennes, dont une paire courte non segmentée et une paire plus longue et segmentée munie de petites épines, jouaient un rôle sensoriel, probablement olfactif.<br/><br/><i>Canadaspis</i> vivait en groupe et pratiquait un mue synchronisée, ce qui témoigne d’un comportement social complexe pour un arthropode primitif.<br/>Son mode de vie benthique et ses adaptations montrent qu’il fouillait le substrat pour se nourrir, utilisant ses membres pour à la fois locomotion, respiration et alimentation.',
     autres_infos: {
       taille: {
         longueur: '10 à 15 cm',
@@ -1036,7 +1036,7 @@ const data = [
       genre: 'Cephalaspis',
       espèces: 'Cephalaspis lyelli',
     },
-    regime_alimentaire: 'Détritivore',
+    regime_alimentaire: ['Détritivore', 'Filtreur'],
     habitat: 'Océans',
     geologie: {
       ere: 'Paléozoïque',
@@ -1047,7 +1047,7 @@ const data = [
       extinction: -398,
     },
     description:
-      "Cephalaspis était caractérisé par sa tête en forme de bouclier, couverte d'une grande plaque osseuse. Son corps était allongé et recouvert d'écailles. En raison de son corps cartilagineux et de sa faible capacité à se déplacer rapidement, Cephalaspis était probablement une proie facile pour les prédateurs marins de l'époque. Pour se protéger, il pouvait se réfugier dans les fonds marins ou se cacher sous les sédiments.",
+      '<i>Cephalaspis</i> est un poisson sans mâchoires au corps allongé, caractérisé par une large tête aplatie protégée par un solide bouclier osseux occupant environ un tiers de la longueur totale de l’animal.<br/>Ses yeux étaient rapprochés et situés sur la partie supérieure du crâne, tandis que la bouche se trouvait en position ventrale, ce qui indique un mode de vie de fouisseur et de filtreur sur le fond des rivières ou lacs.<br/><br/>Il se déplaçait lentement au-dessus du substrat, utilisant sa tête en forme de soc pour remuer la vase et déloger des proies comme des vers, des petits crustacés ou de la matière organique enfouie dans les sédiments.<br/>Des organes sensoriels étaient présents sur le pourtour et le centre du bouclier céphalique, probablement utilisés pour détecter les vibrations ou les signaux électriques émis par des organismes enfouis.<br/><br/>Son corps, dépourvu d’armure importante à l’exception de la tête, était équipé de nageoires pectorales lui assurant une certaine stabilité sur le fond.<br/>La lourde armure crânienne servait à la fois de protection contre les prédateurs et de soutien dans des eaux douces pauvres en calcium, bien que cela devait le ralentir dans sa nage.<br/><br/>Ce mode de vie benthique, combiné à une alimentation par aspiration et filtration, rapproche <i>Cephalaspis</i> des poissons-chats ou des esturgeons actuels quant à leur comportement alimentaire et leur adaptation au fond des milieux aquatiques.',
     autres_infos: {
       taille: {
         longueur: '30-60 centimètres',
@@ -1111,7 +1111,7 @@ const data = [
       extinction: 254.1,
     },
     description:
-      "Cistecephalus avait un crâne large, avec des ouvertures temporales orientées latéralement et son museau était pointu, similaires à celui d'autres fossiles. Il avait néanmoins des orbites relativement grandes, orientés vers l'avant, ce qui suggère une vision binoculaire. Il avait un cou court et les articulations de l'épaule orientées latéralement. Ses membres antérieurs étaient courts et puissants, et ses doigts larges, avec des phalanges fusionnées. Ses membres postérieurs étaient flexibles et servaient probablement à évacuer les débris.",
+      "<i>Cistecephalus</i> était un animal fouisseur, comparable à une taupe moderne par son mode de vie.<br/>Son corps était court, trapu et très robuste, avec des membres courts qui s'étendaient latéralement, parfaits pour creuser et s'agripper aux parois des tunnels.<br/><br/>La tête était large, aplatie et en forme de coin, idéale pour s'enfoncer dans le sol. Les ouvertures temporales du crâne étaient orientées vers les côtés, et les orbites, relativement grandes et tournées vers l'avant, suggèrent une vision binoculaire utile dans les galeries.<br/>Les membres antérieurs étaient très puissants, dotés de doigts larges et de phalanges fusionnées, adaptés au creusement intensif.<br/>Les membres postérieurs, plus flexibles, servaient probablement à repousser la terre vers l'arrière pour dégager le tunnel.<br/><br/>Ce mode de vie souterrain lui permettait de se nourrir d'invertébrés comme des vers trouvés dans ses galeries, mais il pouvait aussi sortir temporairement à la surface, peut-être la nuit, pour chercher d'autres proies.<br/>En restant dans son terrier, <i>Cistecephalus</i> bénéficiait d'une protection accrue contre les prédateurs.",
     autres_infos: {
       taille: {
         longueur: '60 centimètres',
@@ -1176,7 +1176,7 @@ const data = [
       extinction: -358,
     },
     description:
-      "Cladoselache est considéré comme l'un des premiers requins de l'histoire de la Terre. <br /> Ce poisson avait une apparence similaire à celle des requins modernes, avec un corps fusiforme, des nageoires pectorales et pelviennes, ainsi qu'une nageoire caudale hétérocerque (avec une lobe supérieure plus grande que la lobe inférieure). Sa principale caractéristique distinctive était la présence de denticules, des petites écailles dentelées, sur sa peau, similaires à celles des requins d'aujourd'hui. Il se nourrissait probablement de petits poissons et d'autres créatures marines, utilisant sa vitesse et son agilité pour chasser ses proies.",
+      '<i>Cladoselache</i> était un poisson cartilagineux marin, proche des premiers requins, doté d’un corps très élancé et hydrodynamique qui lui permettait de nager rapidement et avec agilité.<br/>Son squelette était constitué de cartilage renforcé de petites plaques calcifiées, ce qui offrait à la fois flexibilité et soutien.<br/><br/>La tête présentait de grands yeux situés vers l’avant, adaptés à la chasse visuelle, et une bouche en position terminale, à l’avant du crâne, plutôt que sous la tête comme chez les requins modernes.<br/>Il possédait cinq à sept fentes branchiales bien séparées de chaque côté, permettant une respiration efficace.<br/><br/>Ses nageoires pectorales étaient larges et allongées, jouant un rôle essentiel pour la stabilité et la portance lors de la nage, tandis que deux nageoires dorsales, la première plus grande et précédée d’une épine robuste, assuraient la stabilité du corps.<br/>La nageoire caudale, en forme de croissant, était presque symétrique entre le lobe supérieur et inférieur, ce qui favorisait la propulsion rapide.<br/><br/>La peau était dépourvue d’écailles sur la majeure partie du corps, sauf autour des yeux, de la bouche et des bords des nageoires.<br/>Les dents étaient lisses, à plusieurs pointes, conçues pour saisir et avaler des proies entières plutôt que pour trancher.<br/><br/>Son mode de vie était celui d’un prédateur actif, chassant des poissons, des conodontes et des arthropodes, qu’il avalait généralement entiers après une poursuite rapide.<br/>Il n’avait pas de claspers, ce qui suggère une reproduction différente de celle des requins actuels.',
     autres_infos: {
       taille: {
         longueur: '60 centimètres-2.40 mètres',
@@ -1240,7 +1240,7 @@ const data = [
       extinction: -200,
     },
     description:
-      "Les conodontes sont des microfossiles marins éteints qui ressemblaient à de petites dents ou à des éléments dentaires. De la taille d'un grain de riz pour les plus gros spécimens, ils se sont éteints au Trias mais sont aujourd'hui considérés comme des indices stratigraphiques précieux pour la datation des roches sédimentaires. Les conodontes étaient des animaux primitifs, sans mâchoires, qui jouaient probablement un rôle dans la capture de proies et la digestion.",
+      '<i>Conodonta</i> regroupe des animaux marins au corps allongé, évoquant une anguille, avec une musculature souple et de grands yeux adaptés à une vie active en pleine eau ou près du fond.<br/>Leur anatomie se distingue par la présence d’un appareil buccal complexe composé de minuscules éléments durs, semblables à des dents, organisés en séries pour saisir, broyer ou filtrer la nourriture.<br/><br/>Ces animaux pouvaient occuper des milieux très variés, des eaux peu profondes jusqu’aux profondeurs marines, et leur mode de vie allait du nageur pélagique, évoluant librement dans la colonne d’eau, au nektobenthique, se déplaçant juste au-dessus du fond.<br/>Ils se nourrissaient principalement de zooplancton ou de petites particules organiques, certains étant capables de filtrer l’eau, d’autres de capturer de petites proies.<br/><br/>La diversité de formes de leur appareil buccal reflète une grande variété de stratégies alimentaires et d’adaptations écologiques.<br/>Leur corps dépourvu d’armure et leur taille modeste leur conféraient une grande agilité, mais aussi une certaine vulnérabilité face aux prédateurs.',
     autres_infos: {
       taille: {
         longueur: "jusqu'à 2 centimètres",
@@ -1264,7 +1264,7 @@ const data = [
   },
   {
     nom: 'Crassigyrinus',
-    etymologie: '--',
+    etymologie: 'Gros tétard',
     image_url: './assets/images/Crassigyrinus.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -1304,7 +1304,7 @@ const data = [
       extinction: -329,
     },
     description:
-      "Crassigyrinus était un des premiers amphibiens préhistoriques. Il ressemblait à une sorte de croisement entre un poisson et une salamandre du fait de son corps allongé et serpentiforme. Ses membres étaient courts et robustes, ce qui indique qu'il était mieux adapté à la vie dans l'eau que sur terre. Cet amphibien était équipé de nageoires, ce qui lui permettait de se déplacer avec aisance dans les milieux aquatiques. On pense qu'il passait une partie de sa vie dans l'eau, où il chassait probablement des poissons et d'autres proies aquatiques.",
+      '<i>Crassigyrinus</i> était un prédateur aquatique au corps allongé et fuselé, parfaitement adapté à la vie dans l’eau.<br/>Sa tête large et aplatie était équipée de très grandes mâchoires capables de s’ouvrir à près de 60 degrés, garnies de deux rangées de dents acérées, dont une rangée interne de longues canines, idéales pour saisir et maintenir des proies glissantes.<br/>Ses yeux étaient particulièrement grands, ce qui lui permettait de chasser dans des eaux troubles ou peu éclairées, et il possédait un système sensoriel développé, incluant une ligne latérale pour détecter les vibrations dans l’eau.<br/><br/>Les membres antérieurs étaient extrêmement réduits, presque vestigiaux, tandis que les membres postérieurs étaient plus développés mais peu adaptés à la marche terrestre ; le bassin n’était pas solidement attaché à la colonne vertébrale.<br/>Cette morphologie indique un mode de vie exclusivement aquatique, l’animal se propulsant principalement grâce à son corps et sa longue queue latéralement comprimée, probablement capable de mouvements rapides pour surprendre ses proies.<br/><br/>Il évoluait probablement dans des eaux douces ou marécageuses, adoptant un comportement de prédateur embusqué, semblable à celui des crocodiles actuels : il restait dissimulé, prêt à bondir sur tout animal passant à sa portée.<br/>Ses adaptations crâniennes, comme les crêtes osseuses, renforçaient le crâne pour résister aux contraintes d’une morsure puissante.',
     autres_infos: {
       taille: {
         longueur: '2 mètres',
@@ -1368,7 +1368,7 @@ const data = [
       extinction: -3.6,
     },
     description:
-      "Deinotherium était un genre d'éléphant préhistorique caractérisé par ses défenses inférieures courbées vers l'avant, contrairement aux éléphants modernes dont les défenses sont incurvées vers le bas. Le Deinotherium avait une trompe allongée et une taille impressionnante. Les plus gros spécimens devaient peser entre 12 et 15 tonnes. C'était l'un des plus grands mammifères terrestres de son époque.",
+      '<i>Deinotherium</i> était un grand mammifère ressemblant à un éléphant, mais s’en distinguait par plusieurs traits anatomiques uniques.<br/>Son corps massif reposait sur des membres longs et robustes, adaptés à supporter un poids considérable tout en lui permettant de se déplacer avec une certaine agilité sur de longues distances.<br/><br/>La tête était large, basse et aplatie, avec une ouverture nasale reculée indiquant la présence d’une trompe, probablement plus courte et plus musclée que celle des éléphants actuels.<br/>La caractéristique la plus frappante de <i>Deinotherium</i> résidait dans ses deux grandes défenses courbées vers le bas, implantées à l’extrémité de la mâchoire inférieure, alors que la mâchoire supérieure était dépourvue de défenses.<br/>Ces défenses, de forme semi-circulaire ou presque verticale selon les individus, étaient utilisées pour attraper ou écarter des branches afin d’accéder au feuillage, aidées par une langue puissante et une trompe pour manipuler la nourriture.<br/><br/>Sa dentition était spécialisée, avec des molaires adaptées au cisaillement et au broyage des feuilles, ce qui en faisait un brouteur de feuillage dans des forêts ouvertes ou des zones boisées.<br/>Le crâne présentait également un long rostre et une symphyse mandibulaire très développée et recourbée vers le bas.<br/><br/>Sa stature imposante, sa trompe et ses défenses particulières faisaient de <i>Deinotherium</i> un animal parfaitement adapté à la vie dans les forêts claires, capable de parcourir de vastes territoires à la recherche de nourriture.',
     autres_infos: {
       taille: {
         longueur: '4 mètres',
@@ -1432,7 +1432,7 @@ const data = [
       extinction: -262,
     },
     description:
-      "Diictodon possédait un corps trapu, de courtes pattes et une tête relativement large protégeant un cerveau fort développé, celle-ci se terminant par une sorte de bec corné. Sa caractéristique la plus distinctive était la double rangée de dents dans sa mâchoire inférieure. Ces dents étaient adaptées pour mâcher des plantes. <br /> Diictodon était probablement actif à la fois pendant la journée et la nuit. Il creusait des galeries dans le sol, allant jusqu'à 1.5 mètres de profondeur, ce qui lui permettait de se protéger des prédateurs. Comme beaucoup d'animaux de l'époque, il a finalement disparu à la fin du Permien, peut-être en raison d'événements cataclysmiques comme les éruptions volcaniques massives ou les changements climatiques.",
+      "<i>Diictodon</i> était un petit synapside fouisseur au corps trapu, doté d'une tête terminée par un bec corné.<br/>Certains individus présentaient deux longues défenses recourbées vers le bas, implantées à l'avant de la mâchoire supérieure, probablement liées au sexe de l'animal.<br/><br/>Son corps cylindrique, ses membres courts et puissants, ainsi que ses larges mains munies de griffes acérées, étaient parfaitement adaptés au creusement de galeries dans le sol.<br/>Il creusait des terriers en spirale qui se terminaient par une chambre où il pouvait dormir, se protéger de la chaleur ou élever ses petits.<br/>Sa démarche rappelait celle des crocodiles, avec un déplacement en « high walk ».<br/><br/>Pour se nourrir, <i>Diictodon</i> utilisait son bec pour couper les tiges des rares plantes du désert, et ses défenses pouvaient servir à déterrer des tubercules.<br/>Son système digestif était très efficace pour extraire les nutriments des végétaux pauvres des milieux arides.<br/><br/>Il vivait en groupes denses, chaque individu occupant son propre terrier, mais les terriers étaient souvent regroupés sur de petites surfaces.<br/>Des indices fossiles suggèrent un comportement parental, avec la présence de jeunes dans les nids.<br/><br/>Ses sens de l’odorat et de la vue étaient développés, utiles pour repérer la nourriture ou détecter les prédateurs à la surface.<br/>Son mode de vie souterrain le protégeait des conditions extrêmes et des prédateurs, faisant de <i>Diictodon</i> l’un des animaux les plus abondants de son époque.",
     autres_infos: {
       taille: {
         longueur: '50 centimètres',
@@ -1497,7 +1497,7 @@ const data = [
       extinction: -270,
     },
     description:
-      "Cet animal n'est pas un dinosaure, mais un reptile mammalien. Contrairement à son étymologie, ses dents ne mesuraient pas deux mètres, mais étaient de tailles variées, avec de grandes canines pointues et des dents plus petites et tranchantes. <br /> L'une des caractéristiques les plus distinctives du Dimétrodon était la crête osseuse qu'il portait sur son dos. Cette crête, en réalité une série d'extensions vertébrales, pouvait atteindre jusqu'à 1,5 mètre de long. Elle servait probablement à réguler la température corporelle de l'animal, agissant comme un collecteur de chaleur solaire. <br /> C'est l'un des reptiles préhistoriques les plus connus et reconnaissables. Sa crête distinctive et ses dents spécialisées en font une créature fascinante pour les chercheurs et les passionnés de la préhistoire.",
+      '<i>Dimétrodon</i> était un reptile mammalien, un prédateur quadrupède doté d’un corps allongé et d’une longue queue, caractérisé par une immense voile dorsale soutenue par de hautes épines osseuses issues des vertèbres.<br/>Son crâne était haut, comprimé latéralement, avec des orbites placées en hauteur et en arrière, et une mâchoire puissante garnie de grandes dents de tailles variées, dont des canines proéminentes et des dents en forme de larme, adaptées à la capture et à la déchirure de proies.<br/><br/>La posture de <i>Dimétrodon</i> était principalement semi-érigée ou étalée, avec des membres robustes orientés sur les côtés du corps, ce qui lui permettait de se déplacer lentement mais sûrement sur la terre ferme.<br/>La queue, très développée, représentait une grande partie de la longueur totale de l’animal et contribuait à l’équilibre lors de ses déplacements.<br/><br/>La voile dorsale, formée par des épines neurales allongées et vascularisées, était couverte de peau et pouvait servir à la communication visuelle ou à la régulation thermique.<br/>Le corps était massif, soutenu par des membres puissants, et la tête présentait une mâchoire inférieure solide, avec une crête osseuse particulière à l’arrière.<br/><br/>Son mode de vie était celui d’un superprédateur terrestre, chassant d’autres vertébrés grâce à sa mâchoire équipée de dents tranchantes et à sa capacité à infliger des morsures puissantes.<br/>Sa morphologie robuste et ses adaptations crâniennes en faisaient un animal parfaitement adapté à la prédation dans les écosystèmes du Permien.',
     autres_infos: {
       taille: {
         longueur: '1.70-4.60 mètres',
@@ -1561,7 +1561,7 @@ const data = [
       extinction: -255,
     },
     description:
-      "Diplocaulus était un amphibien préhistorique qui vivait de la fin du Carbonifère jusqu'à la fin du Permien. Il se distinguait principalement par sa tête unique en forme de fer à cheval, qui ressemblait à deux crânes fusionnés ensemble. Cette tête inhabituelle était en réalité une adaptation pour la natation dans les eaux peu profondes. Ses courbes latérales lui permettaient de glisser efficacement dans l'eau tout en minimisant la résistance. <br /> Malgré son apparence étrange, il était un prédateur efficace et un maillon important de l'écosystème aquatique du Permien.",
+      "<i>Diplocaulus</i> était un amphibien aquatique reconnaissable à sa tête en forme de boomerang, formée par deux longues cornes osseuses à l'arrière du crâne.<br/>Son corps était aplati, avec une longue queue serpentiforme, des membres courts et des pieds probablement palmés, adaptés à la nage et à la vie sur le fond des lacs et rivières.<br/><br/>Il passait la majeure partie de son temps enfoui ou posé sur le substrat, se déplaçant en ondulant la queue et en utilisant ses pattes pour se stabiliser ou ramper occasionnellement sur la terre ferme.<br/>La forme particulière de sa tête lui permettait de générer une portance hydrodynamique : en relevant la tête et en battant la queue, il pouvait s'élever rapidement dans la colonne d'eau pour capturer des proies.<br/><br/>Son alimentation était composée de poissons, de petits amphibiens, de têtards, d'insectes et d'autres invertébrés aquatiques. Il chassait à l'affût, restant immobile avant de fondre sur ses proies.<br/>Les cornes pouvaient aussi servir à se défendre contre les prédateurs, à se stabiliser dans le courant ou à s'enfouir partiellement dans la vase.<br/><br/>Il était capable de survivre à des périodes de sécheresse en s'enterrant dans la boue. <i>Diplocaulus</i> pondait probablement ses œufs dans l'eau, les jeunes étant dotés de petites cornes dès le plus jeune âge.",
     autres_infos: {
       taille: {
         longueur: '0.3-1 mètre',
@@ -1585,7 +1585,7 @@ const data = [
   },
   {
     nom: 'Dipterus',
-    etymologie: '--',
+    etymologie: 'Ailes doublées',
     image_url: './assets/images/Dipterus.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -1626,7 +1626,7 @@ const data = [
       extinction: -382,
     },
     description:
-      'Dipterus était un poisson prédateur de taille moyenne pour son temps. Il avait un corps allongé et fusiforme, bien adapté à la vie aquatique. Ses nageoires pectorales, ressemblant à des ailes, étaient probablement utilisées pour la propulsion et la stabilisation lors de la nage.',
+      "<i>Dipterus</i> était un poisson d'eau douce au corps élancé, proche des dipneustes actuels (poissons pulmonés), mais conservant des caractéristiques archaïques.<br/>Son squelette était ossifié, avec un crâne composé d'un assemblage de petits os, et son corps recouvert d'écailles épaisses protégées par une couche de cosmine, une substance dure et brillante.<br/><br/>Il possédait deux nageoires dorsales bien séparées, une queue à lobes inégaux et des nageoires paires disposées vers l'arrière du corps, ce qui lui permettait des accélérations rapides et une bonne manœuvrabilité dans les eaux peu profondes.<br/>Contrairement aux dipneustes modernes, ses nageoires dorsale, caudale et anale n'étaient pas fusionnées.<br/><br/>Sa bouche était équipée de plaques dentaires robustes, en forme de dents, utilisées pour broyer des proies dures comme des petits invertébrés aquatiques ou des fragments végétaux.<br/>Il respirait grâce à des branchies, mais possédait aussi des poumons fonctionnels, lui permettant de survivre dans des eaux pauvres en oxygène ou lors de périodes de sécheresse.<br/><br/>Son mode de vie était principalement benthique : il fouillait le fond à la recherche de nourriture, capable de tolérer des conditions hostiles dans les lacs et rivières qui s'asséchaient périodiquement.<br/>Sa capacité à respirer l'air lui donnait un avantage sur d'autres poissons strictement branchiaux.",
     autres_infos: {
       taille: {
         longueur: '30-60 centimètres',
@@ -1690,7 +1690,7 @@ const data = [
       extinction: -410,
     },
     description:
-      "Doryaspis appartenait au groupe des ostracodermes, qui étaient des poissons sans mâchoires et dotés de plaques osseuses qui protégeaient leur corps. Mesurant généralement quelques dizaines de centimètres de long. Sa caractéristique la plus distinctive était sa tête en forme de lance avec une grande plaque osseuse en forme de bouclier qui couvrait la partie avant de son corps. Cette plaque offrait une certaine protection contre les prédateurs et les dangers de l'environnement marin. Son absence de mâchoires limitait probablement son régime alimentaire aux particules relativement petites.",
+      "<i>Doryaspis</i> était un poisson sans mâchoires au corps protégé par une armure en forme de gourde, caractérisée par un bouclier céphalique large et arrondi.<br/>Il possédait un long rostre pointu à l'avant de la tête, ainsi que deux projections fines et pointues sur les côtés arrière du corps, formant des épines légèrement courbées vers l'avant.<br/><br/>Ces épines latérales pouvaient agir comme des hydroplanes, aidant à stabiliser le poisson lors de la nage, tandis que le rostre servait probablement à remuer les sédiments pour débusquer de petites proies ou particules organiques à aspirer.<br/>Son corps était complété par une longue queue flexible, lui permettant une nage efficace.<br/><br/>Le mode de vie de <i>Doryaspis</i> est débattu : il aurait pu être un nageur actif en pleine eau, utilisant ses épines pour maintenir son équilibre, ou un animal fouisseur vivant partiellement enfoui dans les sédiments, filtrant la nourriture.<br/>Cependant, la position des ouvertures branchiales sur la face inférieure du corps rend la théorie du fouissage plus difficile, ce qui favorise l’hypothèse d’un nageur pelagique.<br/><br/>Certaines espèces présentaient des épines serrées, tandis que d’autres avaient des épines lisses, ce qui pourrait refléter des différences de comportement ou de reconnaissance entre espèces.",
     autres_infos: {
       taille: {
         longueur: '10-20 centimètres',
@@ -1755,7 +1755,7 @@ const data = [
       extinction: -392,
     },
     description:
-      "Drepanaspis possédait un corps allongé et mince, ressemblant à une faucille, d'où son nom. Son corps était recouvert de petites écailles osseuses. <br /> L'une de ses caractéristiques les plus distinctives était sa grande plaque osseuse en forme de bouclier qui couvrait la majeure partie de sa tête, offrant une protection à cette zone vulnérable. Drepanaspis n'était pas un nageur rapide et se nourrissait principalement de petits organismes planctoniques.",
+      "<i>Drepanaspis</i> était un poisson sans mâchoires au corps très aplati, évoquant une raie, et recouvert d'une armure épaisse formée de plaques osseuses.<br/>Sa tête et son tronc étaient protégés par un large bouclier arrondi, composé de plaques ventrales et dorsales qui se superposaient, avec des tubercules disposés en motifs en V sur la surface.<br/><br/>Ses yeux étaient petits et très écartés, placés sur la partie supérieure de la tête, lui offrant un large champ de vision pour surveiller les alentours tout en restant près du fond marin.<br/>Contrairement à la plupart des autres poissons similaires, sa bouche était orientée vers le haut, située sur la face dorsale du crâne, ce qui lui permettait de capturer des particules ou de petits organismes tombant sur le fond ou flottant juste au-dessus de lui.<br/><br/>Dépourvu de mâchoires et de nageoires paires, <i>Drepanaspis</i> se déplaçait principalement en ondulant sa queue, restant collé au substrat où il fouillait la vase à la recherche de nourriture.<br/>Son système sensoriel était développé, avec des canaux latéraux intégrés à l’armure, capables de détecter les vibrations et mouvements dans l’eau, utiles pour repérer des proies ou éviter les prédateurs.<br/><br/>Ce mode de vie benthique, combiné à une morphologie très aplatie et une armure protectrice, faisait de <i>Drepanaspis</i> un animal bien adapté à la vie sur les fonds marins peu profonds.",
     autres_infos: {
       taille: {
         longueur: '10-30 centimètres',
@@ -1819,7 +1819,7 @@ const data = [
       extinction: -358,
     },
     description:
-      "Dunkleosteus était un gigantesque poisson, prédateur redoutable des mers anciennes. Il avait un corps massif et aplati, recouvert d'une armure osseuse épaisse plutôt que d'écailles. Son crâne était impressionnant, avec des mâchoires larges et puissantes remplies de dents acérées, qui pouvaient broyer les coquilles et les os de ses proies; a force de morsure était de 6 000 N à la pointe et de 7 400 N sur les bords. <br /> Dunkleosteus a prospéré dans les eaux chaudes et peu profondes des océans de la fin du Dévonien, et bien que plus petit que d'autres, il est considéré comme l'un des plus grands prédateurs marins de tous les temps de par sa dangerosité.",
+      "<i>Dunkleosteus</i> était un poisson prédateur massif, doté d'une tête et d'un thorax recouverts d'une épaisse armure osseuse, tandis que le reste du corps était dépourvu de protection, ce qui lui donnait un aspect à la fois robuste et hydrodynamique.<br/>Sa silhouette était puissante et profilée, évoquant celle d’un requin, avec un corps allongé et une nageoire caudale adaptée à la nage rapide.<br/><br/>La tête était équipée de deux paires de lames osseuses acérées à la place des dents, capables de s’ouvrir et de se refermer en une fraction de seconde pour trancher ou broyer presque n’importe quelle proie.<br/>Son système de mâchoire unique, articulé grâce à une charnière spécialisée entre la tête et le thorax, lui permettait d’ouvrir la bouche très rapidement et de générer une puissante succion pour aspirer ses proies.<br/>Les muscles de la mâchoire étaient si puissants que la force de morsure était de 6 000 N à la pointe et de 7 400 N sur les bords, suffisant pour briser les carapaces ou les os des animaux marins contemporains.<br/><br/>Son régime alimentaire était très varié : il consommait poissons, requins, ammonoïdes et même d’autres individus de son espèce, comme en témoignent les marques de morsures sur certains fossiles et la présence de restes semi-digérés retrouvés à proximité de ses ossements.<br/>Il ne digérait pas les os et régurgitait fréquemment des amas de fragments osseux.<br/><br/>Sa coloration était probablement sombre sur le dos et plus claire sur le ventre, un camouflage courant chez les grands prédateurs marins.<br/>Ce mode de vie de superprédateur, combiné à une anatomie spécialisée pour la chasse et la protection, faisait de <i>Dunkleosteus</i> l’un des animaux les plus redoutés de son environnementet de son temps.",
     autres_infos: {
       taille: {
         longueur: '4 mètres',
@@ -1884,7 +1884,7 @@ const data = [
       extinction: -272,
     },
     description:
-      "Tout comme Dimetrodon, Édaphosaurus était doté d'une « voile » dorsale cutanée et vascularisée lui servant sans doute à réguler sa température. Il ne possédait pas de système digestif efficace. En effet, il faut pour cela que la température interne du corps soit relativement élevée: la voile devait permettre de pallier cet inconvénient en élevant artificiellement la température corporelle de l'animal.",
+      "<i>Edaphosaurus</i> était un grand animal quadrupède au corps massif et trapu, adapté à un mode de vie strictement herbivore.<br/>Son squelette robuste présentait un tronc large et profond, des côtes formant une cage thoracique volumineuse, et des membres courts mais puissants, capables de soutenir son poids lors de ses déplacements lents sur la terre ferme.<br/><br/>La tête, minuscule par rapport au corps, était courte, large et triangulaire, dotée d'une mâchoire inférieure très musclée. Les dents à l'avant et sur les côtés étaient dentelées, idéales pour couper des morceaux de plantes coriaces, tandis que des batteries de dents en forme de pavés, disposées sur le palais et la mâchoire inférieure, formaient de larges surfaces de broyage pour écraser et fragmenter la matière végétale.<br/>Ses mâchoires effectuaient un mouvement d'avant en arrière pour faciliter le broyage, mais <i>Edaphosaurus</i> ne mastiquait pas aussi finement que certains autres herbivores primitifs.<br/><br/>La caractéristique la plus remarquable était une grande voile dorsale, composée de longues épines osseuses issues des vertèbres, ornées de petites barres transversales, et recouverte de peau.<br/>Cette voile pouvait servir à la reconnaissance entre individus, à la communication visuelle, ou à la défense contre les prédateurs en donnant à l'animal une apparence plus imposante.<br/>Sa fonction exacte reste débattue, mais elle ne semble pas liée à la thermorégulation.<br/><br/>Le mode de vie de <i>Edaphosaurus</i> était celui d’un brouteur lent, se nourrissant de végétaux durs grâce à un système digestif volumineux, probablement aidé par des bactéries symbiotiques pour dégrader la cellulose.<br/>Sa morphologie robuste et sa dentition spécialisée témoignent d’une adaptation poussée à la consommation de plantes dans des environnements terrestres variés.",
     autres_infos: {
       taille: {
         longueur: '0.5-3.50 mètres',
@@ -1949,7 +1949,7 @@ const data = [
       extinction: -518,
     },
     description:
-      "Haikouichthys était caractérisé par un corps allongé et mince, dépourvu de mâchoires et d'écailles. Haikouichthys possédait une fente branchiale unique de chaque côté de son corps, ce qui suggère qu'il respirait principalement par branchies. Il est considéré comme l'un des premiers vertébrés connus. <br /> Les fossiles d'Haikouichthys sont si bien conservés qu'il est possible de distinguer certains de ses organes internes.",
+      '<i>Haikouichthys</i> était un petit animal marin considéré comme l’un des plus anciens vertébrés connus et un représentant précoce des crâniates.<br/>Son corps allongé, transparent et souple était dépourvu d’os véritables mais doté d’un squelette cartilagineux.<br/><br/>Sa tête distincte comportait une bouche, deux yeux, un crâne cartilagineux, et probablement des organes sensoriels primitifs comme des sacs nasaux et des capsules auditives.<br/>Il possédait entre six et neuf paires de fentes branchiales pour la respiration, ainsi qu’un notochorde (précurseur de la colonne vertébrale) et des muscles segmentés en forme de W (myomères), caractéristiques des chordés.<br/><br/>Son corps était équipé d’une longue nageoire dorsale continue, se prolongeant autour de la queue, mais il ne possédait ni nageoires latérales ni mâchoires.<br/>Sa bouche était probablement adaptée à l’aspiration, comme chez les lamproies actuelles.<br/><br/><i>Haikouichthys</i> vivait dans des eaux peu profondes et chaudes, nageant probablement en bancs pour se protéger des rares prédateurs de l’époque.<br/>Il se nourrissait de matière organique ou de petits organismes, jouant le rôle de charognard ou de microphage.',
     autres_infos: {
       taille: {
         longueur: '2-3 centimètres',
@@ -2014,7 +2014,7 @@ const data = [
       extinction: -505,
     },
     description:
-      "Halkieria appartenait au groupe des animaux à corps mou et possédait une coquille en forme de bouclier. Halkieria avait une symétrie bilatérale et se déplaçait en utilisant un pied musclé. Il possédait également une bouche, des organes digestifs et un système nerveux primitif. Bien que petit, Halkieria occupait un rôle important dans les écosystèmes marins de l'époque.",
+      "<i>Halkieria</i> possédait un corps allongé, en forme de limace, protégé sur toute sa surface par des centaines de petites plaques minéralisées imbriquées, appelées sclérites, qui formaient une sorte de cotte de mailles flexible.<br/>À chaque extrémité du corps se trouvait une coquille rigide, l'une à l'avant et l'autre à l'arrière, jouant un rôle de protection supplémentaire.<br/><br/>La face ventrale était molle et dépourvue de sclérites, permettant à l'animal de ramper sur le substrat marin grâce à un pied musculeux semblable à celui des mollusques.<br/>La bouche était située à l'avant, orientée vers le bas, et l'animal se nourrissait probablement en raclant ou en aspirant la matière organique déposée sur le fond marin.<br/>La surface du corps était parcourue de cils, facilitant les déplacements et le transport de particules alimentaires vers la bouche.<br/><br/>Son mode de vie était celui d'un animal benthique, rampant lentement sur le fond marin, utilisant sa carapace segmentée pour se protéger des prédateurs tout en restant souple et mobile.",
     autres_infos: {
       taille: {
         longueur: '10-15 centimètres',
@@ -2079,7 +2079,7 @@ const data = [
       extinction: -497,
     },
     description:
-      "Cet animal marin à la silouhette atypique avait un corps allongé, sept paires de tentacules se terminant par des « pinces », alignées d'un côté et sept paires d'épines jointes de l'autre. Six tentacules plus petits peuvent être configurés en trois paires derrière les sept plus gros. Il y a enfin une extension tubulaire molle du corps derrière les tentacules.. Ses caractéristiques étranges et inhabituelles en ont fait un fossile fascinant pour les scientifiques.",
+      '<i>Hallucigenia</i> possédait un corps allongé et segmenté, pourvu de sept à huit paires de longues pattes fines terminées par de petites griffes, qui lui permettaient de marcher lentement sur le fond marin.<br/>Le long de son dos, il portait une rangée de grandes épines rigides et pointues, disposées en paires, servant de protection contre les prédateurs.<br/><br/>Sa tête, difficile à distinguer, était munie d’une bouche entourée d’un anneau de dents et d’un pharynx tapissé de dents en forme d’aiguilles, permettant de générer une succion pour aspirer la nourriture et empêcher qu’elle ne ressorte.<br/>Des yeux simples étaient présents au sommet de la tête.<br/>La surface de son corps était recouverte d’une cuticule, et les griffes à l’extrémité des pattes présentaient une structure interne en couches concentriques.<br/><br/>Son mode de vie était celui d’un animal benthique, se déplaçant lentement sur le substrat, probablement en s’accrochant à des éponges ou en se nourrissant de particules organiques à la surface du fond marin.<br/>Les longues épines dorsales assuraient une défense passive, tandis que ses pattes griffues lui offraient stabilité et adhérence sur des surfaces irrégulières.',
     autres_infos: {
       taille: {
         longueur: '0.5-5 centimètres',
@@ -2103,7 +2103,7 @@ const data = [
   },
   {
     nom: 'Hyolitha',
-    etymologie: '--',
+    etymologie: 'Comme du verre',
     image_url: './assets/images/Hyolitha.jpg',
     taxonomie: {
       règne: 'Animalia',
@@ -2143,7 +2143,7 @@ const data = [
       extinction: -252,
     },
     description:
-      "Les Hyolitha sont un groupe éteint d'animaux marins qui ressemblaient à des coquillages en forme de cônes avec une coquille en forme de tube. On pense qu'ils étaient fixés au fond de l'océan par une partie de leur coquille, tandis que leur corps se trouvait à l'intérieur du tube. Les Hyolitha étaient de petites créatures et leur mode de vie exact reste encore en grande partie mystérieux.",
+      'Le groupe des <i>Hyolitha</i> possédaientt une coquille externe conique, allongée et souvent symétrique, fermée à l’extrémité large par un opercule rigide qui pouvait se refermer hermétiquement.<br/>De chaque côté de l’ouverture, deux appendices courbés appelés « helens » pouvaient sortir, probablement utilisés pour stabiliser l’animal sur le fond marin ou pour l’aider à se déplacer.<br/><br/>À l’intérieur de la coquille, le corps mou était fixé à l’opercule par un système musculaire complexe, permettant d’ouvrir et de fermer la coquille, de rétracter ou d’avancer la tête, et de manipuler les helens.<br/>La bouche, située sous l’opercule, était entourée d’un organe tentaculaire (lophophore) muni de tentacules, servant à capturer les particules alimentaires en suspension dans l’eau.<br/>Le tube digestif formait une boucle simple ou sinueuse, avec l’anus proche de la bouche.<br/><br/>Le mode de vie de <i>Hyolitha</i> était celui d’un animal benthique, vivant posé sur le substrat marin, filtrant la nourriture grâce à ses tentacules et se protégeant des prédateurs en refermant rapidement son opercule.<br/>La coquille, composée de microstructures minéralisées, offrait à la fois rigidité et protection tout en permettant une certaine croissance grâce à un manteau sécrétant.',
     autres_infos: {
       taille: {
         longueur: '3 centimètres',
@@ -2207,7 +2207,7 @@ const data = [
       extinction: -470,
     },
     description:
-      "Cette petite créature marine possédait un corps allongé et divisé en segments, avec de multiples paires de pattes fines et ramifiées. Sa tête était munie d'antennes et de mandibules. On pense que Marrella était un animal filtreur se nourrissant de particules alimentaires présentes dans l'eau. Ses fossiles fournissent des informations précieuses sur la biodiversité au cours de cette période ancienne de l'histoire de la Terre.",
+      "<i>Marrella</i> possédait un corps divisé en deux parties principales : un bouclier céphalique en forme de fer à cheval et un corps allongé composé de 17 à plus de 26 segments, chacun portant une paire d'appendices biramés.<br/>Le bouclier céphalique portait deux paires de longues épines courbées vers l'arrière, dont la paire postérieure avait une crête dentelée.<br/><br/>Sous la tête, une paire d'antennes longues et flexibles, composées d'environ 30 segments, servait probablement de capteurs sensoriels, tandis qu'une seconde paire d'appendices plus courts et robustes, munis de soies, jouait un rôle dans la propulsion en natation.<br/>Les appendices thoraciques étaient biramés : la branche inférieure, segmentée et terminée par des griffes, servait à la marche sur le fond, tandis que la branche supérieure, plumeuse, fonctionnait comme des branchies pour la respiration.<br/><br/>Le corps étroit de <i>Marrella</i> lui permettait d'onduler verticalement ou horizontalement pour se déplacer, et les longues soies sur certains appendices formaient une sorte de filet, utilisé pour capturer des particules alimentaires en suspension dans l'eau.<br/>Ce mode de vie faisait de <i>Marrella</i> un animal benthique actif, capable de nager et de fouiller le fond marin à la recherche de nourriture.",
     autres_infos: {
       taille: {
         longueur: '5 centimètres',
@@ -2271,7 +2271,7 @@ const data = [
       extinction: -299,
     },
     description:
-      "Cet insecte est l'un des plus énigmatique du Carbonifère. Il s'agit d'une libellule géante caractérisée par l'envergure exceptionnelle de ses ailes. Il y a fort à parier que l'on pouvait l'entendre venir de loin. Chassant dans les endroits forestiers et à proximité de plans d'eau, il se nourissait de petit lézards existants à cette époque. C'est la deuxième plus grande libellule de tous les temps.",
+      '<i>Méganeura</i> possédait un corps allongé et léger, quatre grandes ailes membraneuses aux nervures denses et complexes, et une tête globuleuse munie de très grands yeux jointifs offrant une vision presque panoramique.<br/>Ses pattes longues, robustes et hérissées d’épines étaient adaptées pour saisir et immobiliser des proies en plein vol.<br/><br/>Sa bouche était dotée de puissantes mandibules dentées, capables de découper et consommer d’autres insectes, ce qui en faisait un superprédateur aérien.<br/>Le thorax volumineux abritait une puissante musculature permettant un vol rapide et agile, comparable à celui des libellules actuelles.<br/>Les ailes antérieures étaient légèrement plus longues et plus minces que les postérieures, facilitant la manœuvrabilité.<br/><br/>Son mode de vie était celui d’un chasseur actif, patrouillant au-dessus des forêts et des zones humides pour capturer des insectes en vol.<br/>La combinaison d’une vision à 360°, de pattes épineuses et d’une grande agilité aérienne lui assurait une efficacité redoutable pour repérer, poursuivre et capturer ses proies.<br/><br/> La taille de cet animal, qui en fait le deuxième plus grand insecte de tous les temps, laisse à supposer que <i>Méganeura</i> devait se faire entendre de loin.',
     autres_infos: {
       taille: {
         longueur: '30 centimètres',
@@ -2336,7 +2336,7 @@ const data = [
       extinction: -505,
     },
     description:
-      "Cette créature de petite taille avec un corps allongé et divisé en segments, possédait de nombreux appendices, y compris des nageoires latérales et des tentacules sur sa tête, qui étaient probablement utilisés pour capturer sa nourriture. Nectocaris est considéré comme l'un des premiers exemples connus de céphalopodes, une famille d'animaux marins qui comprend les poulpes, les calmars et les seiches. Son fossile a été découvert dans des gisements en Australie et au Canada, fournissant des informations précieuses sur la diversité des formes de vie au cours du Cambrien.",
+      '<i>Nectocaris</i> possédait un corps aplati en forme de cerf-volant, bordé de larges nageoires charnues sur chaque côté, permettant des mouvements souples et une nage active.<br/>La tête, petite, portait deux grands yeux sur pédoncules et une unique paire de tentacules souples orientées vers l’avant, utilisées pour saisir ou manipuler de petites proies.<br/>Sous la tête s’ouvrait un large siphon flexible, en forme d’entonnoir, qui débouchait sur une grande cavité axiale contenant une paire de branchies internes.<br/><br/>Le siphon servait à expulser l’eau, permettant à l’animal de se propulser rapidement, tandis que les nageoires latérales assuraient la stabilité et la direction.<br/>Des blocs musculaires entouraient la cavité axiale, et les branchies étaient composées de lames disposées sur un axe en zigzag.<br/>La bouche était située à l’avant, entre les tentacules.<br/><br/>Son mode de vie était celui d’un nageur libre, prédateur ou charognard, capturant de petites proies grâce à ses tentacules et se déplaçant activement dans la colonne d’eau.<br/>La combinaison de nageoires développées, d’un siphon propulseur et de tentacules préhensiles faisait de <i>Nectocaris</i> un animal agile et efficace dans son environnement marin.',
     autres_infos: {
       taille: {
         longueur: '10 centimètres',
@@ -2361,7 +2361,7 @@ const data = [
   {
     nom: 'Odontogriphus',
     etymologie: 'Enigme dentée',
-    image_url: './assets/images/Odontogriphus.jpg',
+    image_url: './assets/images/Odontogriphus.webp',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -2400,7 +2400,7 @@ const data = [
       extinction: -504,
     },
     description:
-      "Odontogriphus avait un corps allongé en forme de ver, mesurant jusqu'à 12 centimètres de long. Il possédait une paire de « palpes » (probablement des organes sensoriels) figurant sur les bords de l'extrémité frontale. La bouche en forme de « U » est légèrement creuse et entourée de petites structures coniques pointues, il s'agirait de petits tentacules constituant un système de collecte de nourriture.",
+      '<i>Odontogriphus</i> possédait un corps mou, aplati et ovoïde, avec des extrémités antérieure et postérieure semi-circulaires de dimensions similaires.<br/>Sa face ventrale était occupée par un large pied musculaire en forme de U, entouré de structures interprétées comme des branchies, sauf à l’avant.<br/>La surface dorsale était lisse, dépourvue d’écailles, d’épines ou de plaques, mais pouvait présenter des plis transversaux.<br/><br/>La bouche, située sur la face inférieure, était circulaire et équipée d’un appareil buccal comportant deux à trois rangées de dents disposées sur une radula, permettant de racler ou d’aspirer la matière organique déposée sur le fond marin.<br/>Autour de la bouche se trouvaient de petits tentacules ou palpes, probablement utilisés pour détecter ou collecter la nourriture.<br/>Le tube digestif comprenait un court estomac suivi d’un intestin droit se terminant par un anus subterminal.<br/><br/>Son mode de vie était celui d’un animal benthique, rampant lentement sur le substrat grâce à son pied musculeux, se nourrissant de débris organiques ou de particules présentes dans la vase.<br/>La disposition de son appareil buccal et de ses structures sensorielles suggère une alimentation par raclage ou aspiration du sédiment superficiel.',
     autres_infos: {
       taille: {
         longueur: '6-12 centimètres',
@@ -2464,7 +2464,7 @@ const data = [
       extinction: -509,
     },
     description:
-      "Opabinia avait un corps allongé avec une tête en forme de trompe qui possédait deux grands yeux composés et une bouche dirigée vers le bas. Sur sa tête, il y avait également cinq yeux plus petits. Il possédait de nombreux membres minces et articulés, dont un pair de pinces à l'avant. Opabinia était dotée d'un appendice en forme de queue qui ressemblait à une plume et qui était probablement utilisé pour se propulser dans l'eau. Cette créature énigmatique est considérée comme l'un des premiers exemples connus de formes de vie complexe de l'ère cambrienne.",
+      '<i>Opabinia</i> possédait un corps mou, segmenté et allongé, doté de 15 segments latéraux portant chacun une paire de lobes souples, orientés vers le bas et l’extérieur, qui se chevauchaient et servaient à ramper sur le fond marin ou à nager lentement par ondulation.<br/>Sa tête était remarquable par la présence de cinq yeux pédonculés, disposés en hauteur et sur les côtés, offrant un large champ de vision pour détecter proies et dangers.<br/>À l’avant, une longue trompe flexible, striée comme un tuyau, se terminait par une pince munie de cinq petites épines, utilisée pour saisir de petites proies ou fouiller le sédiment et porter la nourriture jusqu’à la bouche.<br/><br/>La bouche, située sous la tête et orientée vers l’arrière, ouvrait sur un tube digestif recourbé ; elle ne comportait ni mâchoires ni dents, ce qui suggère une alimentation à base de petits animaux mous ou de particules organiques.<br/>Le corps se terminait par une queue conique ornée de trois paires de lames en éventail, formant une structure en V qui facilitait la stabilité et la nage.<br/>Des branchies, sous forme de lames ou de filaments, étaient attachées à la base des lobes latéraux, assurant la respiration.<br/><br/>Son mode de vie était celui d’un animal benthique, rampant ou nageant lentement sur le fond marin, utilisant sa trompe pour explorer, capturer ou manipuler la nourriture.<br/>L’ensemble de ses adaptations anatomiques – vision panoramique, trompe préhensile, lobes locomoteurs et queue en éventail – faisaient de <i>Opabinia</i> un prédateur ou charognard spécialisé des fonds marins du Cambrien.',
     autres_infos: {
       taille: {
         longueur: '4-7 centimètres',
@@ -2528,7 +2528,7 @@ const data = [
       extinction: -505,
     },
     description:
-      "Pikaia était un animal segmenté en forme de ver possédant un corps allongé avec une symétrie bilatérale et était pourvu d'une queue en forme de nageoire. Il n'avait pas de véritable colonne vertébrale, mais possédait une structure semblable à une tige appelée 'notochorde', qui est considérée comme un précurseur de la colonne vertébrale. Pikaia se nourrissait probablement de particules organiques en suspension dans l'eau.",
+      "<i>Pikaia</i> possédait un corps fusiforme et aplati latéralement, avec une série d'environ 100 segments musculaires en forme de V appelés myomères, qui s'étendaient sur toute la longueur du corps.<br/>Sa tête, petite et bilobée, portait deux tentacules étroits semblables à des antennes, probablement utilisés comme organes sensoriels.<br/><br/>Le corps était recouvert d'une cuticule fine, et il possédait une structure nerveuse dorsale identifiable comme un cordon nerveux, caractéristique des chordés.<br/>Un canal digestif traversait le corps, avec une bouche circulaire située sous la tête.<br/>Des fentes pharyngées avec de petits filaments étaient présentes, probablement utilisées pour la respiration.<br/><br/>Son mode de vie était celui d'un nageur actif dans la colonne d'eau, utilisant ses muscles segmentés pour onduler et se propulser, rappelant la nage des lancettes modernes.<br/>Les tentacules sensoriels lui permettaient de détecter son environnement, tandis que sa bouche lui servait à aspirer de petites particules alimentaires.<br/>Cette combinaison d'adaptations faisait de <i>Pikaia</i> un animal marin agile, capable de se déplacer efficacement et de capter sa nourriture dans son habitat.",
     autres_infos: {
       taille: {
         longueur: '5-10 centimètres',
@@ -2593,7 +2593,7 @@ const data = [
       extinction: -372,
     },
     description:
-      "Pterygotus est le plus gros scorpion de tous les temps. Les plus gros specimens mesuraient près de 3 mètres de long. Du fait de sa carapce solide, de ces pinces tranchantes et de son corps puissant, il était un prédateur efficace. Il possédait une paire d'yeux composés gigantesques, et également une autre paire d'yeux plus petits au centre de sa tête et quatre paires de pattes pour se déplacer, une cinquième paire, modifiée en sortes de palmes, ainsi qu'une paire de grandes pinces, lui permettant de capturer des proies. Six tergites principaux, ou sections de queue, contenaient les branchies et les organes reproducteurs de l'animal. <br /> La très grande paire d'yeux de Pterygotus suggère fortement que c'était un prédateur qui s'orientait grâce à sa vue. Il utilisait ses palmes pour nager et pouvait probablement accélérer en utilisant sa queue comme une troisième palme.",
+      '<i>Pterygotus</i> était un grand arthropode aquatique, souvent surnommé « scorpion de mer », doté d’un corps segmenté recouvert d’une carapace écailleuse.<br/>Sa tête, de forme trapézoïdale arrondie, portait quatre yeux composés, dont deux plus petits sur le dessus et deux plus grands à l’avant, lui offrant une excellente vision panoramique.<br/><br/>Il possédait de puissantes pinces (chélicères) robustes et dentelées, adaptées pour saisir, percer et broyer ses proies, notamment des poissons, trilobites et autres arthropodes.<br/>Ses pattes locomotrices étaient fines et sans épines, tandis que ses appendices natatoires en forme de pagaies lui permettaient une nage efficace.<br/>La queue (télson) était aplatie et élargie, avec une crête centrale, jouant un rôle de gouvernail pour la direction lors de la nage.<br/><br/>Son mode de vie était celui d’un prédateur actif en milieu aquatique, capable de nager rapidement pour chasser ses proies.<br/>La combinaison de sa vision avancée, de ses pinces puissantes et de sa grande agilité aquatique faisait de <i>Pterygotus</i> un redoutable chasseur dans les écosystèmes marins et d’eau douce où il évoluait.',
     autres_infos: {
       taille: {
         longueur: '1.75-3 mètres',
@@ -2658,7 +2658,7 @@ const data = [
       extinction: -509,
     },
     description:
-      "Sidneyia possède un corps allongé et segmenté, recouvert d'une carapace dure, et il est considéré comme l'un des premiers prédateurs connus. Le contenu de l’intestin indique que le régime de Sidneyia se composait principalement de petits trilobites et hyolithes (mollusques). Sidneyia avait une paire d'antennes à l'avant de sa tête, suivie de plusieurs paires de pattes.",
+      "<i>Sidneyia</i> était un arthropode marin benthique doté d'un corps segmenté comprenant une tête avec des yeux pédonculés et des antennes, un thorax avec plusieurs segments articulés portant des pattes préhensiles robustes, et un abdomen cylindrique terminé par un telson avec des uropodes en éventail.<br/>Ses pattes, biramées, comportaient des segments munis de griffes et des lamelles servant de branchies, tandis que les segments basaux (gnathobases) étaient armés d'épines pour broyer la nourriture.<br/><br/>Cet animal carnivore se nourrissait principalement d'organismes à carapace dure comme les trilobites, les hyolithes et les ostracodes, utilisant ses gnathobases pour écraser ses proies.<br/>Il fouillait le fond marin à la recherche de nourriture, détectant ses proies grâce à ses antennes sensibles.<br/>La combinaison de ses appendices puissants et de sa carapace segmentée lui permettait de se déplacer efficacement sur le substrat tout en se protégeant des prédateurs.",
     autres_infos: {
       taille: {
         longueur: '5-13 centimètres',
@@ -2722,7 +2722,7 @@ const data = [
       extinction: -505,
     },
     description:
-      "Wiwaxia a de longues épines qui se projettent en deux rangées le long du dos, apportant à la créature une protection contre ses prédateurs. Le reste de la partie supérieure du dos est couvert de petites plaques dures qui se chevauchent nommées 'sclérites'. Chaque sclérite est rattachée au corps par une base similaire à une racine et il est supposé que l'animal grossissait avec des mues de ces plaques de temps à autre. ",
+      '<i>Wiwaxia</i> avait un corps mou recouvert de rangées de petites écailles dures et de longues épines dorsales, qui servaient de protection contre les prédateurs.<br/>Son corps était aplati et arrondi, avec une surface dorsale hérissée de ces spines rigides, tandis que la face ventrale était plus souple et dépourvue d’armure, lui permettant de ramper sur le fond marin.<br/><br/>Sous le corps, il possédait un appareil buccal avec deux ou trois rangées de dents coniques orientées vers l’arrière, semblable à une radula, utilisé pour racler les bactéries et autres microorganismes présents sur les tapis microbiens du fond océanique.<br/>Son mode de vie était celui d’un animal benthique lent, se déplaçant sur le substrat en fouillant la surface pour se nourrir de matière organique microscopique.<br/>Les épines dorsales, parfois retrouvées cassées, témoignent d’une défense passive contre les rares prédateurs de son environnement.',
     autres_infos: {
       taille: {
         longueur: '5 centimètres',
@@ -5972,7 +5972,7 @@ const data = [
       extinction: -181,
     },
     description:
-      "C'est l'un des plus anciens grands dinosaures prédateurs. La caractéristique principale de Dilophosaurus était son crâne qui possédait des articulations lui permettant de plisser le nez et une paire de crêtes osseuses sur la tête (d’où son nom). <br /> Les crêtes de Dilophosaurus, pouvaient peut-être servir d’accessoires visuels de parade. Dilophosaurus présentait un dysmorphisme sexuel avec cette crête, plus grande chez les mâles.<br /> Sa gueule était particulièrement étroite et souple et ses dents fragiles laissent penser que c'était un animal charognard. Mais il est très vraisemblable qu'il chassait et tuait sa victime à l'aide des griffes qu'il portait aux pattes avant et arrière. Sa morphologie permettait au Dilophosaurus de chasser autant des proies imposantes comme Plateosaurus que des proies beaucoup plus petites comme des petits mammifères et des lézards qu’il allait chercher dans les broussailles ou les crevasses des rochers. <br /> Représenté dans le film Jrassic Park (1993), Dilophosaurus ne possédait pas de colerette et ne crachait pas de venin.",
+      "C'est l'un des plus anciens grands dinosaures prédateurs. La caractéristique principale de Dilophosaurus était son crâne qui possédait des articulations lui permettant de plisser le nez et une paire de crêtes osseuses sur la tête (d’où son nom). <br /> Les crêtes de Dilophosaurus, pouvaient peut-être servir d’accessoires visuels de parade. Dilophosaurus présentait un dysmorphisme sexuel avec cette crête, plus grande chez les mâles.<br /> Sa gueule était particulièrement étroite et souple et ses dents fragiles laissent penser que c'était un animal charognard. Mais il est très vraisemblable qu'il chassait et tuait sa victime à l'aide des griffes qu'il portait aux pattes avant et arrière. Sa morphologie permettait au Dilophosaurus de chasser autant des proies imposantes comme <i>Plateosaurus</i> que des proies beaucoup plus petites comme des petits mammifères et des lézards qu’il allait chercher dans les broussailles ou les crevasses des rochers. <br /> Représenté dans le film Jrassic Park (1993), Dilophosaurus ne possédait pas de colerette et ne crachait pas de venin.",
     autres_infos: {
       taille: {
         longueur: '6 mètres',
@@ -9694,7 +9694,7 @@ const data = [
     nom: 'Gastornis',
     etymologie: 'Oiseau de Gaston',
     image_url: './assets/images/Gastornis.jpg',
-    date_ajout: '2024-05-05',
+
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -11393,272 +11393,263 @@ const data = [
     ],
   },
 
-  // {
-  //   nom: '',
-  //   etymologie: '',
-  //   image_url: './assets/images/.jpg',
-  //   date_ajout: '2024-06-11',
-  //   taxonomie: {
-  //     règne: 'Animalia',
-  //     sous_règne: '',
-  //     rameau: '',
-  //     infra_règne: '',
-  //     super_embranchement: '',
-  //     embranchement: 'Chordata',
-  //     sous_embranchement: 'Vertebrata',
-  //     infra_embranchement: '',
-  //     micro_embranchement: '',
-  //     super_classe: '',
-  //     classe: '',
-  //     sous_classe: '',
-  //     division: '',
-  //     super_ordre: '',
-  //     ordre: '',
-  //     sous_ordre: '',
-  //     infra_ordre: '',
-  //     micro_ordre: '',
-  //     super_famille: '',
-  //     famille: '',
-  //     sous_famille: '',
-  //     tribu: '',
-  //     sous_tribu: '',
-  //     genre: 'Pterodactylus',
-  //     espèces: '',
-  //   },
-  //   regime_alimentaire: '',
-  //   habitat: '',
-  //   geologie: {
-  //     ere: '',
-  //     periode: '',
-  //     epoque: '',
-  //     stage: '',
-  //     apparition: ,
-  //     extinction: ,
-  //   },
-  //   description:
-  //     "",
-  //   autres_infos: {
-  //     taille: {
-  //       longueur: '',
-  //       hauteur: '',
+  {
+    nom: 'Quetzalcoaltus',
+    etymologie:
+      'Fait référence au dieu serpent à plumes Quetzalcóatl de la mythologie aztèque, symbolisant le ciel et le vent.',
+    image_url: './assets/images/Quetzalcoaltus.jpg',
+    date_ajout: '2025-07-11',
+    taxonomie: {
+      règne: 'Animalia',
+      sous_règne: '',
+      rameau: '',
+      infra_règne: '',
+      super_embranchement: '',
+      embranchement: 'Chordata',
+      sous_embranchement: 'Vertebrata',
+      infra_embranchement: '',
+      micro_embranchement: '',
+      super_classe: '',
+      classe: 'Reptilia',
+      sous_classe: 'Diapsida',
+      division: '',
+      super_ordre: '',
+      ordre: 'Pterosauria',
+      sous_ordre: 'Pterodactyloidea',
+      infra_ordre: '',
+      micro_ordre: '',
+      super_famille: '',
+      famille: 'Azhdarchidae',
+      sous_famille: 'Quetzalcoatlinae',
+      tribu: '',
+      sous_tribu: '',
+      genre: 'Quetzalcoatlus',
+      espèces: 'Quetzalcoatlus northropi, Quetzalcoatlus lawsoni',
+    },
+    regime_alimentaire: ['Carnivore', 'Charognard', 'Omnivore', 'Piscivore'],
+    habitat: '',
+    geologie: {
+      ere: 'Mésozoïque',
+      periode: 'Crétacé',
+      epoque: 'Supérieur',
+      stage: 'Maastrichtien',
+      apparition: -68,
+      extinction: -66,
+    },
+    description:
+      "Considéré comme le plus grand ptérosaure de tous les temps, <i>Quetzalcoatlus</i> avait un cou long et rigide, doté d'un bec long, fin et dépourvu de dents, adapté à un mode de vie prédatoire.<br/>Son corps léger était soutenu par des os creux renforcés par des structures internes, et ses membres antérieurs portaient de grandes ailes membraneuses attachées au quatrième doigt, lui permettant de voler.<br/><br/>Il marchait à quatre pattes sur la terre ferme, avec des membres robustes et une posture quadrupède, ce qui suggère qu'il passait beaucoup de temps au sol, se déplaçant avec agilité.<br/>Son cou, bien que rigide verticalement, avait une bonne amplitude de mouvement latérale, facilitant la capture de proies.<br/><br/>Son mode de vie combinait le vol en soaring au-dessus des étendues ouvertes et la chasse au sol, où il pouvait saisir des petits animaux ou poissons près des berges.<br/>La structure de ses ailes et de ses membres indiquent qu'il était adapté pour planer sur de longues distances plutôt que pour un vol battu intense.<br/>Sa grande taille et sa puissance faisaient de lui un prédateur efficace dans son environnement.",
+    autres_infos: {
+      taille: {
+        longueur: '8-10 mètres',
+        hauteur: '5 mètres',
+        envergure: '12 mètres',
+      },
+      poids: '100-250 kilogrammes',
+    },
+    decouverte: {
+      date: '1971',
+      lieu: 'Texas, États-Unis',
+      coords: [29.237585926829137, -103.23974976638225],
+    },
+    habitatCoords: [
+      [30.696220891472215, -125.35945196647411],
+      [39.65789675719802, -73.6797654885961],
+      [12.920731122037653, -68.93367183246444],
+      [10.5976608936184, -110.59382725850897],
+    ],
+  },
 
-  //     },
-  //     poids: '',
-  //   },
-  //   decouverte: {
-  //     date: '',
-  //     lieu: '',
-  //     coords: [],
-  //   },
-  //   habitatCoords: [
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //   ],
-  // },
+  {
+    nom: 'Onychodictyon',
+    etymologie: 'Réseau de griffes',
+    image_url: './assets/images/Onychodictyon.webp',
+    date_ajout: '2025-07-11',
+    taxonomie: {
+      règne: 'Animalia',
+      sous_règne: '',
+      rameau: '',
+      infra_règne: '',
+      super_embranchement: '',
+      embranchement: 'Lobopodia',
+      sous_embranchement: '',
+      infra_embranchement: '',
+      micro_embranchement: '',
+      super_classe: '',
+      classe: 'Xenusia',
+      sous_classe: '',
+      division: '',
+      super_ordre: '',
+      ordre: 'Paronychophora',
+      sous_ordre: '',
+      infra_ordre: '',
+      micro_ordre: '',
+      super_famille: '',
+      famille: 'Onychodictyidae',
+      sous_famille: '',
+      tribu: '',
+      sous_tribu: '',
+      genre: 'Onychodictyon',
+      espèces: 'Onychodictyon ferox, Onychodictyon gracilis',
+    },
+    regime_alimentaire: 'Filtreur',
+    habitat: 'Mers',
+    geologie: {
+      ere: 'Paléozoïque',
+      periode: 'Cambrien',
+      epoque: 'Série 2',
+      stage: 'Étage 3',
+      apparition: -521,
+      extinction: -514,
+    },
+    description:
+      '<i>Onychodictyon</i> possédait un corps allongé, subcylindrique et segmenté, protégé sur le dos par dix paires de plaques rigides, chacune surmontée d’une courte épine.<br/>La tête, arrondie et petite, portait une paire d’appendices sensoriels ressemblant à des antennes, mais ne présentait ni yeux ni bouclier céphalique distinct.<br/><br/>Le corps était muni de onze paires de pattes charnues non segmentées (lobopodes), chaque patte se terminant par deux griffes courbées, adaptées pour s’accrocher au substrat ou à d’autres organismes.<br/>La dernière paire de pattes était souvent orientée vers l’avant, probablement pour l’ancrage.<br/>De longues papilles étaient réparties sur le corps et les membres.<br/><br/>La face ventrale comportait un tube digestif simple et rectiligne, sans anus apparent.<br/>Son mode de vie était celui d’un animal benthique, rampant lentement sur le fond marin, utilisant ses griffes pour s’accrocher et ses plaques dorsales pour se protéger des prédateurs.',
+    autres_infos: {
+      taille: {
+        longueur: '7 centimètres',
+        hauteur: '',
+      },
+      poids: '',
+    },
+    decouverte: {
+      date: '1991',
+      lieu: 'Chine',
+      coords: [24.658612336124047, 102.97168398280215],
+    },
+    habitatCoords: [
+      [25.965355322267254, 102.07461560105438],
+      [25.965355322267254, 104.29385383841223],
+      [23.571440130852462, 104.5355530523819],
+      [23.853086812660305, 101.92080701034642],
+    ],
+  },
 
-  // {
-  //   nom: '',
-  //   etymologie: '',
-  //   image_url: './assets/images/.jpg',
-  //   date_ajout: '2024-06-11',
-  //   taxonomie: {
-  //     règne: 'Animalia',
-  //     sous_règne: '',
-  //     rameau: '',
-  //     infra_règne: '',
-  //     super_embranchement: '',
-  //     embranchement: 'Chordata',
-  //     sous_embranchement: 'Vertebrata',
-  //     infra_embranchement: '',
-  //     micro_embranchement: '',
-  //     super_classe: '',
-  //     classe: '',
-  //     sous_classe: '',
-  //     division: '',
-  //     super_ordre: '',
-  //     ordre: '',
-  //     sous_ordre: '',
-  //     infra_ordre: '',
-  //     micro_ordre: '',
-  //     super_famille: '',
-  //     famille: '',
-  //     sous_famille: '',
-  //     tribu: '',
-  //     sous_tribu: '',
-  //     genre: 'Pterodactylus',
-  //     espèces: '',
-  //   },
-  //   regime_alimentaire: '',
-  //   habitat: '',
-  //   geologie: {
-  //     ere: '',
-  //     periode: '',
-  //     epoque: '',
-  //     stage: '',
-  //     apparition: ,
-  //     extinction: ,
-  //   },
-  //   description:
-  //     "",
-  //   autres_infos: {
-  //     taille: {
-  //       longueur: '',
-  //       hauteur: '',
-  //     },
-  //     poids: '',
-  //   },
-  //   decouverte: {
-  //     date: '',
-  //     lieu: '',
-  //     coords: [],
-  //   },
-  //   habitatCoords: [
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //   ],
-  // },
+  {
+    nom: 'Eoraptor',
+    etymologie: "Voleur de l'aube",
+    image_url: './assets/images/Eoraptor.jpg',
+    date_ajout: '2025-07-11',
+    taxonomie: {
+      règne: 'Animalia',
+      sous_règne: '',
+      rameau: '',
+      infra_règne: '',
+      super_embranchement: '',
+      embranchement: 'Chordata',
+      sous_embranchement: 'Vertebrata',
+      infra_embranchement: '',
+      micro_embranchement: '',
+      super_classe: '',
+      classe: 'Sauropsida',
+      sous_classe: '',
+      division: '',
+      super_ordre: 'Dinosauria',
+      ordre: 'Saurischia',
+      sous_ordre: 'Theropoda',
+      infra_ordre: 'Sauropodomorpha',
+      micro_ordre: '',
+      super_famille: '',
+      famille: '',
+      sous_famille: '',
+      tribu: '',
+      sous_tribu: '',
+      genre: 'Eoraptor',
+      espèces: 'Eoraptor lunensis',
+    },
+    regime_alimentaire: 'Omnivore',
+    habitat: 'Terre ferme',
+    geologie: {
+      ere: 'Mésozoïque',
+      periode: 'Trias',
+      epoque: 'Supérieur',
+      stage: 'Carnien',
+      apparition: -231,
+      extinction: -228,
+    },
+    description:
+      "Considéré comme comme l'un des plus ancien dinosaures, <i>Eoraptor</i> était un petit dinosaure bipède au corps gracile, doté de longues pattes arrière puissantes adaptées à la course rapide, et de membres antérieurs plus courts terminés par des mains à cinq doigts, dont trois griffus, probablement utilisées pour saisir des proies.<br/>Sa tête légère et étroite possédait une mâchoire allongée avec une dentition hétérodonte : les dents supérieures étaient recourbées et dentelées, adaptées à la découpe, tandis que les dents inférieures avaient une forme plus large et feuille, suggérant une alimentation omnivore.<br/><br/>Le cou était long et flexible, facilitant la capture de petites proies, tandis que le corps était élancé avec une cage thoracique étroite, permettant une grande agilité.<br/>Ses yeux orientés vers l’avant offraient une bonne vision binoculaire, utile pour la chasse.<br/><br/><i>Eoraptor</i> se déplaçait principalement sur ses deux pattes arrière, utilisant sa vitesse et son agilité pour chasser de petits reptiles, amphibiens et insectes, mais sa dentition indique qu’il pouvait aussi consommer des végétaux, ce qui en faisait un omnivore opportuniste.<br/>Sa morphologie légère et ses membres adaptés à la course faisaient de lui un prédateur rapide et agile dans son environnement terrestre.",
+    autres_infos: {
+      taille: {
+        longueur: '1 mètre',
+        hauteur: '40 centimètres',
+      },
+      poids: '10 kilogrammes',
+    },
+    decouverte: {
+      date: '1991',
+      lieu: 'Argentine',
+      coords: [-30.167085816829935, -67.84104342523473],
+    },
+    habitatCoords: [
+      [-28.34132110826879, -69.89937174951523],
+      [-32.862384313130754, -69.59473774157203],
+      [-33.24538014547285, -64.16209793325146],
+      [-27.331153228194047, -64.21287026790866],
+    ],
+  },
 
-  // {
-  //   nom: '',
-  //   etymologie: '',
-  //   image_url: './assets/images/.jpg',
-  //   date_ajout: '2024-06-11',
-  //   taxonomie: {
-  //     règne: 'Animalia',
-  //     sous_règne: '',
-  //     rameau: '',
-  //     infra_règne: '',
-  //     super_embranchement: '',
-  //     embranchement: 'Chordata',
-  //     sous_embranchement: 'Vertebrata',
-  //     infra_embranchement: '',
-  //     micro_embranchement: '',
-  //     super_classe: '',
-  //     classe: '',
-  //     sous_classe: '',
-  //     division: '',
-  //     super_ordre: '',
-  //     ordre: '',
-  //     sous_ordre: '',
-  //     infra_ordre: '',
-  //     micro_ordre: '',
-  //     super_famille: '',
-  //     famille: '',
-  //     sous_famille: '',
-  //     tribu: '',
-  //     sous_tribu: '',
-  //     genre: 'Pterodactylus',
-  //     espèces: '',
-  //   },
-  //   regime_alimentaire: '',
-  //   habitat: '',
-  //   geologie: {
-  //     ere: '',
-  //     periode: '',
-  //     epoque: '',
-  //     stage: '',
-  //     apparition: ,
-  //     extinction: ,
-  //   },
-  //   description:
-  //     "",
-  //   autres_infos: {
-  //     taille: {
-  //       longueur: '',
-  //       hauteur: '',
-
-  //     },
-  //     poids: '',
-  //   },
-  //   decouverte: {
-  //     date: '',
-  //     lieu: '',
-  //     coords: [],
-  //   },
-  //   habitatCoords: [
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //   ],
-  // },
-
-  // {
-  //   nom: '',
-  //   etymologie: '',
-  //   image_url: './assets/images/.jpg',
-  //   date_ajout: '2024-06-11',
-  //   taxonomie: {
-  //     règne: 'Animalia',
-  //     sous_règne: '',
-  //     rameau: '',
-  //     infra_règne: '',
-  //     super_embranchement: '',
-  //     embranchement: 'Chordata',
-  //     sous_embranchement: 'Vertebrata',
-  //     infra_embranchement: '',
-  //     micro_embranchement: '',
-  //     super_classe: '',
-  //     classe: '',
-  //     sous_classe: '',
-  //     division: '',
-  //     super_ordre: '',
-  //     ordre: '',
-  //     sous_ordre: '',
-  //     infra_ordre: '',
-  //     micro_ordre: '',
-  //     super_famille: '',
-  //     famille: '',
-  //     sous_famille: '',
-  //     tribu: '',
-  //     sous_tribu: '',
-  //     genre: 'Pterodactylus',
-  //     espèces: '',
-  //   },
-  //   regime_alimentaire: '',
-  //   habitat: '',
-  //   geologie: {
-  //     ere: '',
-  //     periode: '',
-  //     epoque: '',
-  //     stage: '',
-  //     apparition: ,
-  //     extinction: ,
-  //   },
-  //   description:
-  //     "",
-  //   autres_infos: {
-  //     taille: {
-  //       longueur: '',
-  //       hauteur: '',
-
-  //     },
-  //     poids: '',
-  //   },
-  //   decouverte: {
-  //     date: '',
-  //     lieu: '',
-  //     coords: [],
-  //   },
-  //   habitatCoords: [
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //   ],
-  // },
+  {
+    nom: 'Plateosaurus',
+    etymologie: 'Lézard large',
+    image_url: './assets/images/Plateosaurus.jpg',
+    date_ajout: '2025-07-11',
+    taxonomie: {
+      règne: 'Animalia',
+      sous_règne: '',
+      rameau: '',
+      infra_règne: '',
+      super_embranchement: '',
+      embranchement: 'Chordata',
+      sous_embranchement: 'Vertebrata',
+      infra_embranchement: '',
+      micro_embranchement: '',
+      super_classe: '',
+      classe: '',
+      sous_classe: '',
+      division: '',
+      super_ordre: 'Dinosauria',
+      ordre: 'Saurischia',
+      sous_ordre: '',
+      infra_ordre: 'Sauropodomorpha',
+      micro_ordre: '',
+      super_famille: '',
+      famille: 'Plateosauridae',
+      sous_famille: '',
+      tribu: '',
+      sous_tribu: '',
+      genre: 'Plateosaurus',
+      espèces: 'Plateosaurus engelhardti, Plateosaurus gracilis, Plateosaurus longiceps, Plateosaurus trossingensis',
+    },
+    regime_alimentaire: 'Végétarien',
+    habitat: 'Terre ferme',
+    geologie: {
+      ere: 'Mésozoïque',
+      periode: 'Trias',
+      epoque: 'Supérieur',
+      stage: 'Norien',
+      apparition: -227,
+      extinction: -204,
+    },
+    description:
+      "Considéré comme l'un des premiers dinosaures massifs, <i>Plateosaurus</i> était un dinosaure herbivore pouvant se déplacer à la fois sur deux ou quatre pattes, avec un corps massif et robuste.<br/>Il possédait un long cou flexible lui permettant d'atteindre la végétation haute, et une tête relativement petite dotée de dents larges et épaisses, adaptées pour broyer les plantes.<br/>Ses membres antérieurs étaient courts mais puissants, avec des mains à cinq doigts et un gros ongle sur le pouce, probablement utilisé pour la défense ou pour manipuler la nourriture.<br/><br/>Les membres postérieurs étaient longs et musclés, adaptés à la course rapide, avec une posture digitigrade (marchant sur les doigts). Sa queue longue et mobile aidait à l'équilibre.<br/>Son mode de vie était celui d'un herbivore terrestre vivant dans des environnements semi-arides proches de rivières et de forêts, se nourrissant de fougères, cycadales et conifères.<br/>Il pouvait se dresser sur ses pattes arrière pour atteindre des feuilles plus hautes.<br/>Ce dinosaure combinait puissance et agilité, lui permettant d'échapper à certains prédateurs tout en exploitant efficacement la végétation disponible.",
+    autres_infos: {
+      taille: {
+        longueur: '8 mètres',
+        hauteur: '4 mètres',
+      },
+      poids: '4 tonnes',
+    },
+    decouverte: {
+      date: '1834',
+      lieu: 'Allemagne',
+      coords: [49.53391367217153, 11.197994857346348],
+    },
+    habitatCoords: [
+      [54.98955327964229, 25.552335181626297],
+      [55.626242627151974, -9.747760462254812],
+      [37.79859637766032, -6.888949899546125],
+      [41.202198231247394, 38.78987104808171],
+    ],
+  },
 
   // {
   //   nom: '',

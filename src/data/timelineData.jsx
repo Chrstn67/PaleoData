@@ -47,7 +47,7 @@ const timelineData = [
             stage: [
               {
                 name: 'Étage 3',
-                stageStart: -511,
+                stageStart: -521,
                 stageEnd: -514,
                 stageInfo:
                   "Durant 6 Ma, la vie dans les océans commence à exister. Les premières espèces de trilobites existent. Cet étage n'a pas encore de nom définit, mais les géologues travaillant en Sibérie, où les strates de cet étage sont bien présents, lui donnent le nom de Adtabanien.",

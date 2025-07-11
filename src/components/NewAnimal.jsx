@@ -12,7 +12,7 @@ const NewAnimal = ({ animals }) => {
   const newAnimals = animals.filter((animal) => {
     const dateAjoutee = new Date(animal.date_ajout);
     const dateActuelle = new Date();
-    const uneSemaine = 4 * 24 * 60 * 60 * 1000; // 4 jours en millisecondes
+    const uneSemaine = 7 * 24 * 60 * 60 * 1000; // 4 jours en millisecondes
 
     return dateActuelle - dateAjoutee <= uneSemaine;
   });
@@ -74,7 +74,12 @@ const NewAnimal = ({ animals }) => {
           <div className="new-animal-modal-content" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
             <div className="modal-header">
-              <h2>🎉 Nouveaux animaux </h2>
+              <h2>🎉 Nouveaux animaux</h2>
+              {newAnimals.length > 1 && (
+                <div className="slide-counter">
+                  {currentSlide + 1} / {newAnimals.length}
+                </div>
+              )}
               <button className="close-button" onClick={handleClose} type="button">
                 ✕
               </button>
@@ -82,14 +87,9 @@ const NewAnimal = ({ animals }) => {
 
             {/* Contenu principal */}
             <div className="modal-body">
-              {newAnimals.length > 1 && (
-                <div className="slide-counter">
-                  {currentSlide + 1} / {newAnimals.length}
-                </div>
-              )}
-
               <div className="animal-showcase">
                 {/* Image */}
+                <h3 className="animal-name">{currentAnimal.nom}</h3>
                 <div className="animal-image-container">
                   <img
                     src={currentAnimal.image_url || '/placeholder.svg?height=300&width=400'}
@@ -104,34 +104,6 @@ const NewAnimal = ({ animals }) => {
 
                 {/* Informations */}
                 <div className="animal-info">
-                  <h3 className="animal-name">{currentAnimal.nom}</h3>
-
-                  <div className="animal-details">
-                    {currentAnimal.regime_alimentaire && (
-                      <div className="detail-item">
-                        <span className="detail-icon">🍽️</span>
-                        <span className="detail-label">Régime :</span>
-                        <span className="detail-value">{currentAnimal.regime_alimentaire}</span>
-                      </div>
-                    )}
-
-                    {currentAnimal.geologie?.periode && (
-                      <div className="detail-item">
-                        <span className="detail-icon">⏰</span>
-                        <span className="detail-label">Période :</span>
-                        <span className="detail-value">{currentAnimal.geologie.periode}</span>
-                      </div>
-                    )}
-
-                    {currentAnimal.taille && (
-                      <div className="detail-item">
-                        <span className="detail-icon">📏</span>
-                        <span className="detail-label">Taille :</span>
-                        <span className="detail-value">{currentAnimal.taille}</span>
-                      </div>
-                    )}
-                  </div>
-
                   {/* Bouton vers la page de l'animal */}
                   <Link
                     to={`/animal/${encodeURIComponent(currentAnimal.nom)}`}
