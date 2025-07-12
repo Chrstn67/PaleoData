@@ -321,26 +321,100 @@ const Timeline = ({ timelineData }) => {
     return icons[item.type] || '🌍⭐🔥';
   };
 
-  // Handle navigation
+  // Fonction pour naviguer vers un élément spécifique (corrigée)
+  const navigateToItem = (item) => {
+    // Effacer la recherche d'abord
+    setSearchQuery('');
+    setGlobalSearchResults([]);
+    setSearchSuggestions([]);
+    setShowSuggestions(false);
+
+    // Construire le chemin de navigation basé sur le breadcrumbPath de l'élément
+    const newBreadcrumb = [];
+
+    if (item.breadcrumbPath && item.breadcrumbPath.length > 0) {
+      // Ajouter chaque élément du breadcrumbPath
+      item.breadcrumbPath.forEach((pathItem, index) => {
+        if (index === 0) {
+          // Premier élément = ère
+          newBreadcrumb.push({ name: pathItem, level: 'era' });
+        } else if (index === 1) {
+          // Deuxième élément = période
+          newBreadcrumb.push({ name: pathItem, level: 'period' });
+        } else if (index === 2) {
+          // Troisième élément = époque
+          newBreadcrumb.push({ name: pathItem, level: 'epoch' });
+        }
+      });
+    }
+
+    // Déterminer le niveau et le parent appropriés
+    if (item.type === 'era') {
+      // Navigation vers une ère -> afficher ses périodes
+      setBreadcrumb([{ name: item.name, level: 'era' }]);
+      setCurrentLevel('period');
+      setCurrentParent({
+        name: item.name,
+        children: item.children,
+        breadcrumbPath: [],
+      });
+    } else if (item.type === 'period') {
+      // Navigation vers une période -> afficher ses époques
+      setBreadcrumb(newBreadcrumb.concat([{ name: item.name, level: 'period' }]));
+      setCurrentLevel('epoch');
+      setCurrentParent({
+        name: item.name,
+        children: item.children,
+        breadcrumbPath: item.breadcrumbPath,
+      });
+    } else if (item.type === 'epoch') {
+      // Navigation vers une époque -> afficher ses étages
+      setBreadcrumb(newBreadcrumb.concat([{ name: item.name, level: 'epoch' }]));
+      setCurrentLevel('stage');
+      setCurrentParent({
+        name: item.name,
+        children: item.children,
+        breadcrumbPath: item.breadcrumbPath,
+      });
+    }
+
+    // Scroll vers le haut du composant
+    setTimeout(() => {
+      if (timelineRef.current) {
+        timelineRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }, 100);
+  };
+
+  // Handle navigation (fonction simplifiée)
   const handleExplore = (item) => {
     if (item.children && item.children.length > 0) {
-      const newBreadcrumb = [...breadcrumb, { name: item.name, level: currentLevel }];
-      setBreadcrumb(newBreadcrumb);
-      setCurrentParent(item);
+      // Si nous sommes dans les résultats de recherche, utiliser la navigation spéciale
+      if (searchQuery.trim()) {
+        navigateToItem(item);
+      } else {
+        // Navigation normale
+        const newBreadcrumb = [...breadcrumb, { name: item.name, level: currentLevel }];
+        setBreadcrumb(newBreadcrumb);
+        setCurrentParent(item);
 
-      if (currentLevel === 'era') setCurrentLevel('period');
-      else if (currentLevel === 'period') setCurrentLevel('epoch');
-      else if (currentLevel === 'epoch') setCurrentLevel('stage');
+        if (currentLevel === 'era') setCurrentLevel('period');
+        else if (currentLevel === 'period') setCurrentLevel('epoch');
+        else if (currentLevel === 'epoch') setCurrentLevel('stage');
 
-      // Scroll vers le haut du composant
-      setTimeout(() => {
-        if (timelineRef.current) {
-          timelineRef.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          });
-        }
-      }, 100);
+        // Scroll vers le haut du composant
+        setTimeout(() => {
+          if (timelineRef.current) {
+            timelineRef.current.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+        }, 100);
+      }
     }
   };
 
@@ -755,7 +829,7 @@ Timeline.propTypes = {
         }),
       ),
     }),
-  ).isRequired,
+  ),
 };
 
 export default Timeline;

@@ -9,13 +9,15 @@ const NewAnimal = ({ animals }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const newAnimals = animals.filter((animal) => {
-    const dateAjoutee = new Date(animal.date_ajout);
-    const dateActuelle = new Date();
-    const uneSemaine = 7 * 24 * 60 * 60 * 1000; // 4 jours en millisecondes
+  const newAnimals = animals
+    .filter((animal) => {
+      const dateAjoutee = new Date(animal.date_ajout);
+      const dateActuelle = new Date();
+      const uneSemaine = 7 * 24 * 60 * 60 * 1000; // 4 jours en millisecondes
 
-    return dateActuelle - dateAjoutee <= uneSemaine;
-  });
+      return dateActuelle - dateAjoutee <= uneSemaine;
+    })
+    .sort((a, b) => a.nom.localeCompare(b.nom)); // Tri alphabétique par nom
 
   if (newAnimals.length === 0) {
     return null;

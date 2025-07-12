@@ -74,7 +74,7 @@ const HomePage = ({ animals }) => {
               <FaHistory />
             </div>
             <div className="card-content">
-              <h3>Échelle Géologique</h3>
+              <h3>Échelle géologique</h3>
               <p>
                 Voyage dans le temps et imagine-toi le monde tel qu'il était bien avant celui que tu connais
                 aujourd'hui.

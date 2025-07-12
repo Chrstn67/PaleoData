@@ -8,6 +8,9 @@ import '../styles/NewAnimalModal.css';
 const NewAnimalModal = ({ isOpen, onClose, animals }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Trier les animaux par ordre alphabétique
+  const sortedAnimals = animals ? [...animals].sort((a, b) => a.nom.localeCompare(b.nom)) : [];
+
   useEffect(() => {
     if (isOpen) {
       setCurrentSlide(0);
@@ -37,16 +40,16 @@ const NewAnimalModal = ({ isOpen, onClose, animals }) => {
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen || !animals || animals.length === 0) {
+  if (!isOpen || !sortedAnimals || sortedAnimals.length === 0) {
     return null;
   }
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % animals.length);
+    setCurrentSlide((prev) => (prev + 1) % sortedAnimals.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + animals.length) % animals.length);
+    setCurrentSlide((prev) => (prev - 1 + sortedAnimals.length) % sortedAnimals.length);
   };
 
   const goToSlide = (index) => {
@@ -71,12 +74,12 @@ const NewAnimalModal = ({ isOpen, onClose, animals }) => {
 
         <div className="slides-container">
           <div className="slide-counter">
-            {currentSlide + 1} / {animals.length}
+            {currentSlide + 1} / {sortedAnimals.length}
           </div>
 
-          <AnimalSlide animal={animals[currentSlide]} onClose={onClose} />
+          <AnimalSlide animal={sortedAnimals[currentSlide]} onClose={onClose} />
 
-          {animals.length > 1 && (
+          {sortedAnimals.length > 1 && (
             <>
               <div className="slide-navigation">
                 <button className="nav-button prev" onClick={prevSlide} type="button">
@@ -88,7 +91,7 @@ const NewAnimalModal = ({ isOpen, onClose, animals }) => {
               </div>
 
               <div className="slide-indicators">
-                {animals.map((_, index) => (
+                {sortedAnimals.map((_, index) => (
                   <button
                     key={index}
                     className={`indicator ${index === currentSlide ? 'active' : ''}`}

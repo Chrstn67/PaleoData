@@ -2787,7 +2787,7 @@ const data = [
       extinction: -216,
     },
     description:
-      "Placerias figure parmi l'un des plus grands herbivores du Trias supérieur. Son crâne mesurait 68 centimètres de long et disposait d'un cou puissant, des jambes robustes et un corps en forme de tonneau. Il devait passer une grande partie de son temps durant les saisons des pluies à se tremper dans les fleuves et à mâcher la végétation des berges. Rester dans l'eau aurait également donné à Placerias une certaine protection contre les prédateurs terrestres tels que Postosuchus. <br /> Placerias aurait utilisé son bec pour couper à travers des branches et des racines épaisses avec deux défenses courtes qui pourraient être utilisées pour se protéger des prédateurs",
+      '<i>Placerias</i> possédait un corps massif en forme de tonneau, soutenu par des membres courts et puissants, adaptés à la marche sur quatre pattes.<br/>Sa tête large était munie d’un bec osseux robuste, utilisé pour trancher branches, racines et végétaux coriaces, ainsi que de deux courtes défenses qui servaient à la défense ou aux affrontements entre individus.<br/>Son cou était épais et musclé, tandis que la mâchoire inférieure était puissante, permettant de broyer efficacement la végétation.<br/><br/>La peau était probablement épaisse et résistante, et l’animal pouvait s’immerger partiellement dans l’eau pour se protéger des prédateurs terrestres ou pour se rafraîchir.<br/>Son mode de vie était celui d’un grand herbivore semi-aquatique, évoluant en troupeaux dans les plaines inondables et le long des berges, broutant abondamment la végétation riveraine et fouillant le sol à la recherche de racines et de tubercules.<br/>Les jeunes étaient protégés au centre du groupe lors des déplacements.<br/>Ses défenses courtes étaient également utilisées pour intimider ou repousser les prédateurs et rivaliser avec d’autres membres du troupeau.',
     autres_infos: {
       taille: {
         longueur: '2 mètres',
@@ -2852,7 +2852,7 @@ const data = [
       extinction: -298.9,
     },
     description:
-      "Le mâle du genre Stethacanthus était doté d'une nageoire dorsale en forme d'enclume; la femelle n'en possédait certainement pas. Stethacanthus possédait de nombreux denticules dermiques au sommet du crâne, les scientifiques pensent qu'ils servaient à repousser d'éventuels prédateurs. Stethacanthus a, à la base des nageoires pectorales, des fouets pectoraux. <br/><br/> Bien qu'il resemblait à un requin, c'était en réalité un poisson cartilagineux.",
+      '<i>Stethacanthus</i> possédait un corps allongé rappelant celui d’un requin, mais se distinguait par une première nageoire dorsale unique en forme d’enclume ou de planche à repasser, surmontée de petites épines pointues (denticules cutanés) également présentes sur le sommet de la tête.<br/>Cette structure, appelée complexe « spine-brush », n’était développée que chez les mâles et servait probablement à la parade sexuelle ou à la dissuasion des prédateurs, en simulant une gueule hérissée de dents lorsqu’elle était dressée.<br/><br/>Les nageoires pectorales étaient dotées d’un long « fouet » cartilagineux, et les nageoires étaient plus petites que chez d’autres requins de taille similaire, ce qui limitait la vitesse de nage.<br/>La bouche était garnie de dents cladodontes à cinq pointes, adaptées pour saisir de petites proies, tandis que l’intérieur de la gorge était tapissé de denticules supplémentaires.<br/>Le corps était recouvert d’écailles simples, non croissantes, et la queue variait de forme selon les espèces, allant d’une queue hétérocerque basse à une queue presque symétrique.<br/><br/>Son mode de vie était celui d’un carnivore benthique, se déplaçant lentement près du fond marin et se nourrissant principalement de petits poissons, brachiopodes et autres invertébrés.<br/>La structure imposante de la nageoire dorsale augmentait la traînée, ce qui suggère que <i>Stethacanthus</i> n’était pas un nageur rapide mais privilégiait l’exploration du substrat à la recherche de nourriture.',
     autres_infos: {
       taille: {
         longueur: '0.70-2 mètres',
@@ -2916,7 +2916,7 @@ const data = [
       extinction: -33.9,
     },
     description:
-      "Cette baleine carnivore préhistorique était le plus grand prédateur marin de son temps. Sa denture était taillée pour chasser des poissons et des dauphins préhistoriques. L'animal possédait deux petites nageoires postérieures qui devaient participer principalement à l'accouplement.",
+      '<i>Basilosaurus</i> possédait un corps extrêmement long, mince et serpentiforme, avec une tête allongée munie d’un museau étroit et de dents différenciées (canines et molaires), adaptées à la prédation.<br/>Sa mâchoire puissante et ses dents robustes lui permettaient de saisir, mâcher et déchiqueter de grandes proies telles que poissons, requins et autres mammifères marins.<br/>Les membres antérieurs étaient réduits à de petites nageoires, tandis que les membres postérieurs, également très petits et sans connexion osseuse au bassin, n’étaient pas fonctionnels pour la nage mais pouvaient servir lors de l’accouplement.<br/><br/>Le corps était doté d’une colonne vertébrale très souple, composée d’un grand nombre de vertèbres allongées, permettant des ondulations verticales lors de la nage, à la manière d’une anguille.<br/>La queue se terminait par de petites nageoires caudales (flukes), facilitant la propulsion verticale.<br/>Son mode de vie était celui d’un prédateur marin actif, chassant près de la surface dans les mers peu profondes, où il utilisait sa vision et sa puissance pour capturer et démembrer ses proies.<br/>Ses dents usées témoignent d’une alimentation basée sur la mastication, contrairement aux cétacés modernes qui avalent leur nourriture entière.<br/>Son squelette allégé par des os creux et sa flottabilité positive l’incitaient à évoluer principalement en surface, sans effectuer de plongées profondes.<br/><br/> Cet animal est considéré comme une des premières baleines.',
     autres_infos: {
       taille: {
         longueur: '15-20 mètres',
@@ -2999,7 +2999,7 @@ const data = [
       extinction: -208.5,
     },
     description:
-      "Postosuchus était le plus grand prédateur de son temps. Contrairement à son apparence, il ne s'agit pas d'un dinosaure. Il appartient à un groupe de reptil plus ancien. Cela dit, Postosuchus était contemporains des premiers dinosaures. <br /> Son crâne mesurait 55 cm de long et 21 cm de large et profond. Ses dents étaient en forme de dague et pouvaient mesurer près de 7 centimètres. Son cou était long, son torse court et sa queue longue. Outre les restes du squelette, les paléontologues identifient également les ostéodermes, qui sont des plaques épaisses formant des écailles. Celles-ci étaient sur le dos, le cou et éventuellement au-dessus ou sous la queue. <br /> Il devait se déplacer à quatre pattes, mais à l'examen des os de son bassin, les paléontologues trouvent raisonnable de penser que Postosuchus pouvait également choisir la posture bipède.",
+      '<i>Postosuchus</i> était le plus grand prédateur terrestre de son temps. Il avait corps massif et allongé, doté d’un long cou, d’une queue puissante et d’une peau recouverte de plaques osseuses épaisses (ostéodermes) disposées en rangées sur le dos, le cou et parfois la queue.<br/>Sa tête volumineuse, étroite à l’avant et élargie à l’arrière, portait de grandes orbites pour des yeux développés, un museau profond et des narines allongées, ainsi qu’une mâchoire puissante garnie de dents longues, tranchantes et dentelées, adaptées à la prédation.<br/><br/>Les membres postérieurs étaient longs, droits et robustes, placés sous le corps, tandis que les membres antérieurs étaient nettement plus courts, mais également solides, avec des mains à cinq doigts et des pieds à quatre doigts griffus.<br/>Cette morphologie permettait à <i>Postosuchus</i> de se déplacer principalement sur ses pattes arrière, adoptant une posture droite, mais il pouvait aussi marcher à quatre pattes lors de déplacements lents ou pour se reposer.<br/>La structure de son squelette, notamment le bassin et la colonne vertébrale, lui assurait une grande stabilité et une locomotion efficace.<br/><br/>Son mode de vie était celui d’un prédateur solitaire, chassant par embuscade et s’attaquant à de grands animaux contemporains.<br/>Sa vue perçante, son odorat développé et sa mâchoire puissante lui permettaient de repérer, poursuivre et neutraliser ses proies avec efficacité.',
     autres_infos: {
       taille: {
         longueur: '5 mètres',
@@ -3063,7 +3063,7 @@ const data = [
       extinction: -265,
     },
     description:
-      "Ce carnivore impitoyable chassait dans ce qui est aujourd'hui l'Amérique du Sud. Son crâne mesurait 32 centimètres et ses canines mesuraient 7 centimètres. <br /> C’est le plus grand animal prédateur connu jusqu’à ce jour en Amérique du Sud.",
+      "Connu pour être le plus grand prédateur d'Amérique du Sud, <i>Pampaphoneus</i> possédait un corps massif et allongé, soutenu par des membres robustes adaptés à la marche sur la terre ferme.<br/>Sa tête était large et volumineuse, munie d’un crâne épais et de très grandes canines recourbées en forme de crochets, ainsi que de dents postcanines basses et dentelées, conçues pour saisir, percer et broyer les tissus et les os.<br/>Sa mâchoire puissante lui permettait d’exercer une morsure capable de briser les os de ses proies.<br/><br/>Son mode de vie était celui d’un prédateur dominant, comparable aux grands félins ou aux hyènes modernes, traquant et attaquant de grands animaux grâce à sa force et à son arsenal dentaire.<br/>Son anatomie robuste et son crâne renforcé lui assuraient une efficacité redoutable pour capturer, tuer et consommer des proies variées, y compris des animaux à carapace ou à os épais.",
     autres_infos: {
       taille: {
         longueur: '3 mètres',
@@ -3127,7 +3127,7 @@ const data = [
       extinction: -252.1,
     },
     description:
-      "L'une des caractéristiques les plus reconnaissables d'Inostrancevia, et des autres gorgonopsiens en général, est la présence de longues canines ressemblant à des sabres sur la mâchoire supérieure et inférieure. C'était le plus gros prédateur de son temps. Les récentes études montrent qu'il possédait une force de morsure exceptionnelle, mais assez forte pour casser les os. Son crâne pouvant mesurer jusqu'à 50 centimètres permettait une ouverture massive, permettant à ce dernier de délivrer une morsure fatale à sa proie.",
+      "<i>Inostrancevia</i> possédait un corps robuste et allongé, soutenu par des membres puissants et relativement courts, adaptés à la marche quadrupède avec une posture semi-redressée.<br/>Sa tête large et allongée était munie d’un museau élevé, de grandes fosses temporales ovales et d’une mâchoire très développée, capable d’une large ouverture.<br/>Les dents étaient différenciées : de grands incisives robustes, des canines sabre recourbées et dentelées pouvant atteindre 15 cm, et quelques dents postcanines sur la mâchoire supérieure, toutes comprimées latéralement et finement crénelées.<br/>Les canines supérieures s’inséraient dans des encoches de la mâchoire inférieure lorsque la bouche était fermée.<br/><br/>Son mode de vie était celui d’un prédateur dominant, utilisant ses puissantes mâchoires et ses longues canines pour saisir, transpercer et trancher la chair de grandes proies, y compris des animaux à cuirasse épaisse.<br/>Sa constitution robuste, sa mâchoire mobile et ses membres solides lui permettaient de capturer, immobiliser et déchiqueter efficacement ses victimes.<br/><br/> Il s'agit du plus grand prédateur de la période permienne.",
     autres_infos: {
       taille: {
         longueur: '3 mètres',
@@ -3191,7 +3191,7 @@ const data = [
       extinction: -100,
     },
     description:
-      "Cet animal préhistorique avait de petits membres postérieurs qui se terminaient par des pattes recouvertes d'une peau épaisse et squameuse, avec de longs doigts et des griffes acérées et incurvées. <br /> Il avait probablement l'habitude de se tenir debout avec ses pieds dans des eaux peu profondes et de filtrer de très petites créatures aquatiques avec son bec. <br /> L'élément particulier le plus intéressant de cette créature était le bec recourbé vers le haut, qui avait un rôle filtrant et qui impressionnait par son unicité, par sa construction spéciale. <br /> La partie inférieure du bec était bordée à l'intérieur d'environ 500 poils acérés ressemblant à des dents symétriques et arrondies, à l'aide desquels l'animal a soudainement attrapé et a réussi à retenir de petits animaux aquatiques de l'eau de mer. La partie supérieure du bec était munie de nombreuses petites dents acérées qui aidaient au déchiqustage ultérieur de la proie.",
+      '<i>Pterodaustro</i> possédait un crâne long, mince et fortement incurvé vers le haut, avec une mâchoire inférieure garnie d’environ un millier de dents très fines, longues et flexibles, formant une sorte de peigne ou de filtre.<br/>Ces dents, implantées dans deux longues rainures parallèles, étaient utilisées pour filtrer de minuscules organismes aquatiques, tels que des crustacés et des algues, lors de la prise d’eau avec le bec.<br/>La mâchoire supérieure portait de petites dents globuleuses, servant à broyer les particules alimentaires après filtration.<br/>Son cou était allongé, le torse long, et ses membres postérieurs robustes et très allongés, avec de grands pieds adaptés à la nage et à la marche dans la vase, facilitant un mode de vie semi-aquatique.<br/><br/>Ses ailes membraneuses, soutenues par un long quatrième doigt, lui permettaient de voler, tandis que sa queue était exceptionnellement longue pour un ptérosaure du groupe, contribuant à la stabilité en vol.<br/>Son mode de vie était celui d’un filtreur aquatique, passant beaucoup de temps à nager ou à marcher dans les eaux peu profondes, capturant sa nourriture à la manière des flamants roses actuels.<br/>Il ingérait aussi des petits cailloux pour broyer les aliments dans son estomac.',
     autres_infos: {
       taille: {
         longueur: '',
@@ -3256,7 +3256,7 @@ const data = [
       extinction: -152,
     },
     description:
-      "Ce dinosaure bipède possédait une tête proportionnellement plus petite que celle de la plupart des autres dinosaures prédateurs, mais le crâne était fortement construit, avec un museau court et une mâchoire inférieure robuste. Les orbites (orbites oculaires) étaient assez grandes, mesurant plus de 25 % de la longueur du crâne. <br /> Il n'y a aucune indication d'un anneau oculaire osseux. Son cou était court avec une légère forme de S. Sa queue ressemblait à un fouet. Son squelette était constitué d'os très légers.",
+      '<i>Ornitholestes</i> possédait un corps léger et élancé, adapté à l’agilité et à la rapidité.<br/>Sa tête était proportionnellement petite mais robuste, avec un museau court, une mâchoire solide et de grands yeux, offrant une bonne vision pour repérer les proies.<br/>Ses dents étaient différenciées : les dents antérieures étaient coniques et peu dentelées, idéales pour saisir, tandis que les dents postérieures étaient recourbées et finement dentelées, efficaces pour trancher la chair.<br/>Le cou, relativement court et en forme de S, conférait une bonne mobilité à la tête.<br/>Le tronc était compact, tandis que la longue queue flexible servait de balancier pour l’équilibre lors des déplacements rapides.<br/><br/>Les membres antérieurs étaient longs et puissants, munis de trois doigts griffus adaptés à la préhension et à la capture de proies rapides ou agiles.<br/>Les membres postérieurs, également robustes, étaient adaptés à la course, bien que les os des jambes fussent plutôt courts pour un prédateur coureur.<br/>Les pieds étaient tridactyles, munis de griffes acérées.<br/><br/>Son mode de vie était celui d’un prédateur actif, chassant de petits animaux, lézards ou mammifères, probablement en embuscade ou par poursuite rapide.<br/>Son agilité, ses membres préhensiles et sa vision développée lui permettaient de capturer des proies vives dans des environnements variés, comme les forêts ou les lisières de rivières.',
     autres_infos: {
       taille: {
         longueur: '2-3 mètres',
@@ -3321,7 +3321,7 @@ const data = [
       extinction: -15.97,
     },
     description:
-      "Ce monstre de cauchemar est l'un des prédateurs les plus impitoyables que la Terre ait portée. Cet animal, ressemblant à un phacochère, portait des excroissances sur la tête. Celle-ci était proportionnellement plus courte, plus lourde, plus robuste et plus puissante que chez les autres entélodontes. Ses pattes lui permettaient de courir vite (60 km/h) mais sur de courtes distances : chaque sabot avait 2 doigts. <br /> Il n’est pas exclu que Daeodon ait pu faire fuir des prédateurs comme Hyaenodon ou certaines espèces de tigres aux dents de sabre pour s’emparer de leurs proies. <br /> Daeodon pouvait aussi piller des nids de reptiles ou d’oiseaux de grande taille, ou encore broyer des racines, des tubercules, des noix de coco, des plantes grâce à sa robuste dentition.",
+      "L'impitoyable <i>Daeodon</i> possédait un corps massif, musclé et légèrement voûté, rappelant celui d’un phacochère géant, avec des membres antérieurs robustes et adaptés à la course sur de courtes distances.<br/>Sa tête était très grande, courte, lourde et puissante, ornée d’excroissances osseuses sur les joues et le museau, et soutenue par de puissants muscles attachés à un crâne doté d’une crête sagittale proéminente, favorisant une morsure extrêmement puissante.<br/>Son museau allongé était proche du sol et portait de larges narines, tandis que ses mâchoires étaient garnies de dents variées, capables de trancher la viande, broyer des os, des racines, des tubercules ou des noix.<br/>Ses pattes, terminées par deux doigts à chaque sabot, lui permettaient de courir rapidement (jusqu’à 60 km/h) mais sur de courtes distances.<br/><br/>Son mode de vie était celui d’un omnivore opportuniste et agressif, combinant chasse, charognage, pillage de nids, et consommation de végétaux selon la disponibilité des ressources dans les prairies et les plaines.<br/>Il pouvait intimider ou chasser d’autres prédateurs, comme <i>Hyaenodon</i> ou des tigres à dents de sabre, pour s’approprier leurs proies.<br/>Les mâles étaient probablement très compétitifs et pouvaient se battre violemment pour la dominance, comme l’attestent les marques de morsures sur certains crânes.<br/>Daeodon vivait le plus souvent seul ou en petits groupes, explorant de vastes territoires à la recherche de nourriture, et utilisait sa force et sa dentition puissante pour dominer son environnement.",
     autres_infos: {
       taille: {
         longueur: '4 mètres',
@@ -3385,7 +3385,7 @@ const data = [
       extinction: -14,
     },
     description:
-      "Cet oiseau non-volant était l'un des plus grands que la Terre ait porté. <br /> Sa tête faisait plus de 70 centimètres de long, bec compris. Il mangeait des rongeurs, des reptiles et de petits mammifères. Son crâne très rigide et raide indique qu'il pouvait avaler de petites proies entières ou cibler des proies plus grosses en leur donnant des coups de bec répétitifs de manière à les assommer et/ou à sectionner la moelle épinière. <br /> L'analyse de son crâne permet de comprendre qu'il était incapable d'arracher les morceaux de viande de ces proies en bougeant sa tête de gauche à droite.",
+      "Non-volant, <i>Kelenken</i> possédait un corps massif et robuste, soutenu par de longues pattes élancées, adaptées à la course rapide sur de longues distances.<br/>Sa tête était particulièrement impressionnante, avec un crâne allongé et un bec puissant (70cem le tout), large et incurvé, capable de donner des coups de bec répétitifs de manière à assommer et/ou à sectionner la moelle épinière de ses proies, puis d'en saisir et de déchirer leur chair.<br/>Le bec, dépourvu de dents, était renforcé et tranchant, permettant de perforer les tissus et d’extraire la moelle des os.<br/><br/>Son cou long et musclé offrait une grande amplitude de mouvement, facilitant la capture de proies et la manipulation des carcasses.<br /> L'analyse de son crâne permet de comprendre qu'il était incapable d'arracher les morceaux de viande de ces proies en bougeant sa tête de gauche à droite.<br/><br/>Les membres postérieurs étaient puissants et adaptés à la course, tandis que les membres antérieurs, plus courts, portaient des griffes acérées utilisées pour saisir ou creuser.<br/><br/>Son mode de vie était celui d’un prédateur terrestre actif, chassant principalement des animaux de taille moyenne, mais aussi charognard opportuniste, capable de dépecer rapidement des carcasses.<br/>Grâce à sa vitesse, sa puissance et son bec redoutable, <i>Kelenken</i> dominait son environnement en tant que superprédateur, l'un des plus grands oiseau prédateur que la Terre ait porté.",
     autres_infos: {
       taille: {
         longueur: '',
@@ -3449,7 +3449,7 @@ const data = [
       extinction: -201.3,
     },
     description:
-      "Ce dinosaure devait être rapide et agile. Sa gueule étroite et son cou souple lui permettait de saisir de petites proies rapides. Les dents sont incurvées vers l'arrière et la mâchoire était faite de manière que les deux parties puissent glisser l'une sur l'autre. Cœlophysis chassait très probablement en meute. Il pouvait être cannibale.",
+      '<i>Coelophysis</i> possédait un corps élancé et léger, avec des os creux qui facilitaient la rapidité et l’agilité.<br/>Sa tête était étroite et allongée, munie d’un museau fin et de nombreuses dents acérées et dentelées, parfaitement adaptées pour saisir et trancher la chair de petites proies.<br/>Ses yeux étaient grands, offrant une bonne vision pour repérer ses proies et ses prédateurs.<br/>Le cou était long et flexible, permettant d’atteindre facilement sa nourriture.<br/><br/>Ses membres postérieurs étaient longs et puissants, adaptés à la course rapide et à la poursuite, tandis que ses membres antérieurs, plus courts, portaient trois doigts griffus robustes, utilisés pour saisir et immobiliser les proies.<br/>La queue longue et fine servait de balancier pour l’équilibre lors des déplacements rapides.<br/>Il possédait également des crêtes osseuses sur le crâne, probablement utilisées pour la reconnaissance ou la communication au sein du groupe.<br/><br/>Son mode de vie était celui d’un prédateur agile, chassant principalement de petits animaux, lézards ou insectes, mais pouvant aussi se nourrir de charognes.<br/>Il vivait souvent en groupe, ce qui facilitait la chasse collective ou la protection contre les prédateurs.<br/>Son agilité, ses griffes acérées et sa vitesse faisaient de <i>Coelophysis</i> un chasseur efficace dans son environnement.',
     autres_infos: {
       taille: {
         longueur: '3 mètres',
@@ -3513,7 +3513,7 @@ const data = [
       extinction: -6.8,
     },
     description:
-      "Cet oiseau ressemblait à un condor gigantesque, se déplaçant comme ce dernier essentiellement en planant car incapable de battre des ailes durant une longue période du fait d'une musculature de poitrine relativement peu développée, choisissant des points élevés pour faciliter son envol. Il devait pondre un ou deux œufs d'une masse d'un peu plus d'un kilo chacun (plus petit qu'un œuf d'autruche) tous les deux ans. <br /> Les considérations climatiques rendent possible l'incubation des œufs pendant l'hiver, les parents partageant les tâches de couvade et d'approvisionnement en nourriture tous les quelques jours. Il est aussi probable que les jeunes aient été indépendants après seize mois bien que pas complètement mûrs, n'arrivant à maturité qu'à douze ans environ. La mortalité devait aussi être très faible. En effet, pour maintenir une population viable, il faut que moins de 2 % des oiseaux meurent chaque année. <br /> Argentavis n'a subi pratiquement aucune prédation, et les oiseaux mourait principalement de vieillesse, ou à cause d'accident ou de maladie.",
+      '<i>Argentavis</i> ressemblait à un condor gigantesque, avec un corps massif, des ailes très longues et des os creux et légers facilitant le vol.<br/>Sa musculature pectorale était relativement peu développée, ce qui l’empêchait de battre des ailes sur de longues distances : il se déplaçait donc principalement en planant, utilisant les courants ascendants et choisissant des points élevés pour faciliter son envol.<br/>Ses jambes robustes lui permettaient de courir ou de sauter pour prendre de l’élan, mais il devait s’aider du vent ou de pentes pour décoller efficacement.<br/>Son bec était grand, large et crochu, adapté à saisir, avaler ou déchirer des proies de taille moyenne, et il pouvait consommer ses proies entières sans forcément les découper.<br/><br/>Son mode de vie était celui d’un charognard ou d’un prédateur opportuniste, planant sur de vastes territoires à la recherche de carcasses ou de proies, et pouvant parfois dérober la nourriture à d’autres carnivores.<br/>Il pondait un ou deux œufs tous les deux ans, les parents partageant la couvaison et l’alimentation des jeunes, qui devenaient indépendants après seize mois mais n’atteignaient leur maturité qu’à douze ans environ.<br/>La mortalité était très faible, la plupart des individus mourant de vieillesse, d’accident ou de maladie, car <i>Argentavis</i> n’avait pratiquement pas de prédateurs naturels.<br/>',
     autres_infos: {
       taille: {
         longueur: '3.5 mètres',
@@ -3580,7 +3580,7 @@ const data = [
       extinction: -1,
     },
     description:
-      "Cet animal ressemblait beaucoup aux éléphants d'aujourd'hui, à ceci près que ses défense pouvaient mesurer jusqu'à 4 mètres de long. <br /> Anancus utilisait certainement ses défenses comme armes. Ses molaires ressemblaient plus à celles du porc et du tapir qu’à celles des éléphants actuels, n’étant pas composées de lames. Anancus avait en outre une dentition différente et de plus petites pattes que l’éléphant actuel. Il se nourrissait d’arbres, d’arbustes, de tubercules ou de racines.",
+      '<i>Anancus</i> possédait un corps massif et trapu, avec des membres relativement courts et robustes, adaptés au port d’un poids important.<br/>Sa tête était proportionnellement haute et courte, dotée d’un crâne bombé et d’une large bulla tympanique, tandis que la mandibule était raccourcie et dépourvue de défenses inférieures.<br/>Ses deux défenses supérieures, longues, peu incurvées et très développées, étaient droites ou légèrement divergentes, et servaient à creuser le sol pour extraire tubercules et racines, ou comme armes lors des affrontements.<br/>La trompe était probablement longue et souple, similaire à celle des éléphants actuels, permettant de saisir la nourriture et de manipuler des objets.<br/>Sa dentition était caractérisée par des molaires à crêtes transversales (tetralophodontes ou pentalophodontes selon les espèces), adaptées à broyer des végétaux coriaces, tandis que les prémolaires étaient absentes chez la plupart des espèces.<br/><br/>Son mode de vie était celui d’un grand herbivore fouisseur, se nourrissant principalement de végétaux durs, de racines et de tubercules, qu’il déterrait grâce à ses défenses puissantes.<br/>Il évoluait en groupes familiaux, se déplaçant lentement dans des milieux ouverts ou boisés, et utilisait sa trompe et ses défenses pour se nourrir, se défendre ou interagir avec ses congénères.',
     autres_infos: {
       taille: {
         longueur: '4 mètres (défenses non-comprises)',
@@ -3647,7 +3647,7 @@ const data = [
       extinction: -105,
     },
     description:
-      "Muttaburrasaurus était aussi bien capable de se déplacer à deux ou à quatre pattes. Les trois doigts du milieu de ses pattes avant étaient joints et formaient un support en forme de crochet pour marcher. Sa mâchoire puissante pouvait certainement l'aider à mâcher. <br /> Du fait de sa cavité nasale particulière, il est possible que Muttaburrasaurus pouvait produire des sons puissants, mais les paléontologues n'ont pas retrouvé de tissu nasal fossillisé.",
+      '<i>Muttaburrasaurus</i> possédait un corps robuste, avec de longues pattes postérieures puissantes et des membres antérieurs plus courts, terminés par des mains à trois doigts dotées de griffes émoussées adaptées à la marche.<br/>Son squelette présentait un bassin similaire à celui des oiseaux, et ses pieds étaient larges, munis de quatre orteils, sans pouce épineux.<br/>La queue, longue et rigide, servait de contrepoids pour l’équilibre.<br/>Le cou flexible soutenait une grande tête plate et triangulaire vue de dessus, avec des yeux latéraux offrant un large champ de vision.<br/>Le museau était particulièrement développé, formant une bosse creuse et bombée appelée bulla nasalis, probablement utilisée pour produire des sons puissants ou pour la communication visuelle.<br/>L’extrémité du museau était transformée en un bec corné dépourvu de dents, tandis que les dents postérieures étaient tranchantes et adaptées à la découpe de végétaux coriaces.<br/><br/>Son mode de vie était celui d’un grand herbivore, se nourrissant de plantes du sous-bois, de fougères, de cycadales et de conifères, qu’il coupait avec son bec et mastiquait avec ses dents spécialisées.<br/>Il se déplaçait la plupart du temps sur quatre pattes pour brouter, mais pouvait se dresser sur ses pattes arrière pour courir ou atteindre la végétation plus haute.<br/>Des indices suggèrent qu’il vivait en groupes, ce qui favorisait la protection contre les prédateurs et la recherche de nourriture.<br/>La structure de son museau laisse penser qu’il communiquait par des sons ou des signaux visuels distinctifs.',
     autres_infos: {
       taille: {
         longueur: '9 mètres',
@@ -3658,16 +3658,15 @@ const data = [
     decouverte: {
       date: '1963',
       lieu: 'Australie',
-      // coords: [48.89190355498377, 10.962754081029617],
+      coords: [-22.47048090382421, 144.21807433380764],
     },
-    // habitatCoords: [
-    //   [51.39605718628291, -2.3016399815911526],
-    //   [44.75235675558312, -5.554740809895534],
-    //   [34.947274387474636, -1.3528189066690437],
-    //   [38.37134825846561, 18.640196600618296],
-    //   [51.43832343986783, 19.72456354338642],
-    //   [51.39605718628291, -2.3016399815911526],
-    // ],
+    habitatCoords: [
+      [-12.325008800649938, 108.07546406855411],
+      [-12.647788468789201, 169.75135360388487],
+      [-64.81480602049831, 176.60682221829725],
+      [-63.03850070653707, 94.86854258491887],
+      [-12.325008800649938, 108.07546406855411],
+    ],
   },
   {
     nom: 'Mégalodon',
@@ -3711,7 +3710,7 @@ const data = [
       extinction: -3.6,
     },
     description:
-      "Le requin Mégalodon est connu pour être l'un des animaux carnivores les plus célèbres de l'Histoire. <br /> Bien que considéré comme l'un des prédateurs les plus grands et les plus puissants à avoir jamais vécu, le mégalodon n'est connu que par des restes fragmentaires, et son apparence et sa taille maximale demeurent incertaines. Mais des calculs permettent de se faire une idée de la taille de l'animal qui reste toutefois impressionnante. Ses dents de 15 centimètres épaisses et robustes étaient conçues pour attrapper ses proies et de leur infliger des blessures mortelles. La mâchoire de Mégalodon est suffisement puissante pour broyer les os. <br /> Les premières descriptions de Mégalodon remontent à la Renaissance, où, sur la base de dents, les gens croyaient qu'il s'agissait de dents de dragon ou de serpent, mais c'est en 1667 que le naturaliste danois Nicolas Sténon a compris qu'il s'agissait de dents de requin.",
+      "Le requin <i>Mégalodon</i> est connu pour être l'un des animaux carnivores les plus célèbres et redoutés de l'Histoire.<br/>Son apparence exacte reste incertaine, car il n'est connu que par des restes fragmentaires, principalement des dents fossiles massives et robustes, atteignant 15 à 18 centimètres de long, conçues pour attraper ses proies et leur infliger des blessures mortelles.<br/>Sa mâchoire, extrêmement puissante, pouvait broyer les os et exercer une force de morsure estimée à plus de dix tonnes, bien supérieure à celle de tous les requins actuels.<br/>Son crâne était massif, son museau court, ses nageoires pectorales larges et développées, et son corps probablement plus musclé et trapu que celui du grand requin blanc.<br/>Les nageoires dorsales et caudales, très grandes, lui permettaient de se déplacer rapidement et d’effectuer de brusques accélérations, même si sa taille imposante limitait son endurance.<br/><br/>Son mode de vie était celui d’un superprédateur des mers, chassant de grandes proies comme les cétacés, les pinnipèdes et les tortues marines, mais pouvant aussi s’attaquer à des carcasses.<br/>Les juvéniles fréquentaient les eaux côtières chaudes, se nourrissant de poissons et de petites baleines.<br/>Le <i>Mégalodon</i> pouvait briser la cage thoracique de ses proies pour atteindre les organes vitaux, et sa réputation de prédateur dominant est attestée par l’impact qu’il a eu sur la structure des communautés marines.<br/>Des dents de <i>Mégalodon</i> ont été retrouvées dans le monde entier, témoignant de sa répartition cosmopolite.<br/><br/>Les premières descriptions de ses dents remontent à la Renaissance, où elles étaient prises pour des dents de dragon ou de serpent, avant que Nicolas Sténon ne comprenne en 1667 qu’il s’agissait de dents de requin.",
     autres_infos: {
       taille: {
         longueur: '10-20 mètres',
@@ -11262,6 +11261,7 @@ const data = [
       [35.737663809702674, -5.734940420619835],
       [44.82432515562247, 31.35612551631332],
       [56.09735922850177, 22.761854140682466],
+      [50.99897082002878, -2.478163899328145],
     ],
   },
 
@@ -11326,6 +11326,7 @@ const data = [
       [20.194431294976223, 42.78858279046118],
       [33.84693541997845, 32.505379868842596],
       [34.86273371847556, -12.758291110931504],
+      [27.190408590373412, -12.23094737136132],
     ],
   },
 
@@ -11390,6 +11391,7 @@ const data = [
       [42.932086075729494, 5.196182317816961],
       [43.18467307875111, 6.940212131208533],
       [43.89981377539225, 6.676082894436535],
+      [44.07029650683687, 5.402047752359841],
     ],
   },
 
@@ -11456,6 +11458,7 @@ const data = [
       [39.65789675719802, -73.6797654885961],
       [12.920731122037653, -68.93367183246444],
       [10.5976608936184, -110.59382725850897],
+      [30.696220891472215, -125.35945196647411],
     ],
   },
 
@@ -11520,6 +11523,7 @@ const data = [
       [25.965355322267254, 104.29385383841223],
       [23.571440130852462, 104.5355530523819],
       [23.853086812660305, 101.92080701034642],
+      [25.965355322267254, 102.07461560105438],
     ],
   },
 
@@ -11584,6 +11588,7 @@ const data = [
       [-32.862384313130754, -69.59473774157203],
       [-33.24538014547285, -64.16209793325146],
       [-27.331153228194047, -64.21287026790866],
+      [-28.34132110826879, -69.89937174951523],
     ],
   },
 
@@ -11648,6 +11653,7 @@ const data = [
       [55.626242627151974, -9.747760462254812],
       [37.79859637766032, -6.888949899546125],
       [41.202198231247394, 38.78987104808171],
+      [54.98955327964229, 25.552335181626297],
     ],
   },
 
