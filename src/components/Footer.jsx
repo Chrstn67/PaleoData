@@ -93,6 +93,9 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="copyright-info">
             <p>&copy; {currentYear} PaleoData. Tous droits réservés.</p>
+            <Link to="/parametres-notifications" onClick={scrollToTop} className="settings-button">
+              ⚙️ Paramètres
+            </Link>
             <Link to="/mentions-legales" onClick={scrollToTop} className="legal-link">
               Mentions légales
             </Link>

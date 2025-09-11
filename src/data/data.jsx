@@ -11661,7 +11661,7 @@ const data = [
   //   nom: '',
   //   etymologie: '',
   //   image_url: './assets/images/.jpg',
-  //   date_ajout: '2024-06-11',
+  //   date_ajout: '2025-09-11',
   //   taxonomie: {
   //     règne: 'Animalia',
   //     sous_règne: '',
@@ -11696,16 +11696,14 @@ const data = [
   //     periode: '',
   //     epoque: '',
   //     stage: '',
-  //     apparition: ,
-  //     extinction: ,
+  //     apparition: '',
+  //     extinction: '',
   //   },
-  //   description:
-  //     "",
+  //   description: '',
   //   autres_infos: {
   //     taille: {
   //       longueur: '',
   //       hauteur: '',
-
   //     },
   //     poids: '',
   //   },
@@ -11714,21 +11712,14 @@ const data = [
   //     lieu: '',
   //     coords: [],
   //   },
-  //   habitatCoords: [
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //   ],
+  //   habitatCoords: [[], [], [], [], [], []],
   // },
 
   // {
-  //   nom: '',
+  //   nom: 'Test2',
   //   etymologie: '',
   //   image_url: './assets/images/.jpg',
-  //   date_ajout: '2024-06-11',
+  //   date_ajout: '2025-09-11',
   //   taxonomie: {
   //     règne: 'Animalia',
   //     sous_règne: '',
@@ -11763,16 +11754,14 @@ const data = [
   //     periode: '',
   //     epoque: '',
   //     stage: '',
-  //     apparition: ,
-  //     extinction: ,
+  //     apparition: '',
+  //     extinction: '',
   //   },
-  //   description:
-  //     "",
+  //   description: '',
   //   autres_infos: {
   //     taille: {
   //       longueur: '',
   //       hauteur: '',
-
   //     },
   //     poids: '',
   //   },
@@ -11781,14 +11770,7 @@ const data = [
   //     lieu: '',
   //     coords: [],
   //   },
-  //   habitatCoords: [
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //     [],
-  //   ],
+  //   habitatCoords: [[], [], [], [], [], []],
   // },
 
   // {

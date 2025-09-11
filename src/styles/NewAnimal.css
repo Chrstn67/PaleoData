@@ -4,11 +4,9 @@
   right: 20px;
   z-index: 9999; /* Augmenter le z-index pour qu'il soit toujours au-dessus */
   cursor: pointer;
-  display: flex;
-  align-items: center;
   gap: 0.5rem;
   background: linear-gradient(135deg, #f3e5ab 0%, #e6d89a 100%);
-  padding: 0.8rem 1.2rem;
+  padding: 20px;
   border-radius: 50px;
   box-shadow: 0 8px 25px rgba(117, 85, 63, 0.3);
   border: 2px solid #75553f;
@@ -31,13 +29,6 @@
     transform: scale(1.05);
     box-shadow: 0 12px 35px rgba(117, 85, 63, 0.5);
   }
-}
-
-.notification-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .notification-icon .icon {
@@ -80,12 +71,6 @@
   50% {
     opacity: 0.5;
   }
-}
-
-.notification-text {
-  color: #75553f;
-  font-weight: bold;
-  font-size: 0.9rem;
 }
 
 /* Modale */
@@ -463,10 +448,6 @@
     right: 15px;
     padding: 0.6rem 1rem;
     z-index: 9999; /* Maintenir le z-index élevé */
-  }
-
-  .notification-text {
-    display: none;
   }
 
   .new-animal-modal-content {

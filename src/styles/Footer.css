@@ -232,7 +232,8 @@
   opacity: 0.8;
 }
 
-.legal-link {
+.legal-link,
+.settings-button {
   color: #d4c190;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -241,7 +242,8 @@
   transition: all 0.3s ease;
 }
 
-.legal-link:hover {
+.legal-link:hover,
+.settings-button:hover {
   background: rgba(212, 193, 144, 0.1);
   transform: translateY(-2px);
 }

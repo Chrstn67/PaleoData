@@ -1,0 +1,237 @@
+/* styles/NotificationSettings.css */
+.notification-settings {
+  background: linear-gradient(135deg, #f3e5ab 0%, #e6d89a 100%);
+  border: 3px solid #75553f;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 2rem auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+
+  .settings-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #75553f;
+    }
+
+    p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      color: #4a3727;
+    }
+  }
+
+  .setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #75553f;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    .setting-info {
+      flex: 1;
+
+      .setting-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .setting-icon {
+          font-size: 1.5rem;
+        }
+
+        h3 {
+          margin: 0;
+          font-size: 1.3rem;
+          color: #75553f;
+        }
+      }
+
+      .setting-description {
+        margin: 0.5rem 0;
+        font-size: 0.95rem;
+        color: #4a3727;
+      }
+
+      .setting-status {
+        font-size: 0.9rem;
+
+        .status-badge {
+          display: inline-block;
+          margin-left: 0.3rem;
+          padding: 0.2rem 0.6rem;
+          border-radius: 12px;
+          font-weight: bold;
+          font-size: 0.85rem;
+          background: rgba(117, 85, 63, 0.2);
+          color: #75553f;
+
+          &.enabled {
+            background: #75553f;
+            color: #fff;
+          }
+
+          &.disabled {
+            background: rgba(117, 85, 63, 0.15);
+            color: #4a3727;
+          }
+        }
+      }
+    }
+
+    .setting-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 80px;
+
+      .toggle-btn {
+        width: 60px;
+        height: 34px;
+        border-radius: 20px;
+        border: 2px solid #75553f;
+        background: rgba(255, 255, 255, 0.5);
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        .toggle-slider {
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          width: 28px;
+          height: 28px;
+          background: #75553f;
+          border-radius: 50%;
+          transition: transform 0.3s ease;
+        }
+
+        &.enabled .toggle-slider {
+          transform: translateX(26px);
+          background: #f3e5ab;
+          border: 2px solid #75553f;
+        }
+
+        &:hover {
+          box-shadow: 0 0 8px rgba(117, 85, 63, 0.4);
+        }
+
+        &.loading {
+          opacity: 0.6;
+          cursor: wait;
+        }
+
+        .loading-spinner {
+          position: absolute;
+          inset: 0;
+          margin: auto;
+          width: 20px;
+          height: 20px;
+          border: 3px solid rgba(255, 255, 255, 0.6);
+          border-top: 3px solid #75553f;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+      }
+
+      .setting-blocked {
+        .blocked-text {
+          font-size: 0.85rem;
+          color: #75553f;
+
+          .link-btn {
+            background: none;
+            border: none;
+            color: #4a3727;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: 0.3rem;
+
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .permission-help {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px dashed #75553f;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+
+    h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      color: #75553f;
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+
+      li {
+        margin: 0.3rem 0;
+        color: #4a3727;
+      }
+    }
+  }
+
+  .settings-footer {
+    text-align: center;
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+
+      &.btn-primary {
+        background: #75553f;
+        color: #fff;
+
+        &:hover {
+          background: #4a3727;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

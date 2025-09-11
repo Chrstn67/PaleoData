@@ -67,7 +67,6 @@ const NewAnimal = ({ animals }) => {
           <span className="icon">🦕</span>
           <span className="badge">{newAnimals.length}</span>
         </div>
-        <span className="notification-text">Nouveaux animaux !</span>
       </div>
 
       {/* Belle modale */}
