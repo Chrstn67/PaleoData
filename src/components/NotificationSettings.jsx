@@ -8,38 +8,59 @@ const NotificationSettings = () => {
   const [isSupported, setIsSupported] = useState(false);
   const [permissionStatus, setPermissionStatus] = useState('default');
   const [isLoading, setIsLoading] = useState(false);
+  const [stats, setStats] = useState(null);
+  const [testResult, setTestResult] = useState(null);
 
   useEffect(() => {
+    loadSettings();
+  }, []);
+
+  const loadSettings = () => {
     setIsSupported(NotificationService.isSupported());
     setNotificationsEnabled(NotificationService.areNotificationsEnabled());
     setPermissionStatus(NotificationService.getPermissionStatus());
-  }, []);
+    setStats(NotificationService.getStats());
+  };
 
   const handleToggle = async () => {
     setIsLoading(true);
+    setTestResult(null);
 
     try {
       if (notificationsEnabled) {
         // Désactiver les notifications
-        NotificationService.disableNotifications();
+        await NotificationService.disableNotifications();
         setNotificationsEnabled(false);
       } else {
         // Activer les notifications
         const success = await NotificationService.enableNotifications();
         setNotificationsEnabled(success);
         setPermissionStatus(NotificationService.getPermissionStatus());
-
-        if (success) {
-          // Envoyer une notification de test
-          NotificationService.sendNotification(
-            'Notifications activées !',
-            'Vous recevrez désormais des notifications pour les nouveaux animaux.',
-            { tag: 'paleodata-test' },
-          );
-        }
       }
+
+      // Recharger les stats
+      setStats(NotificationService.getStats());
     } catch (error) {
       console.error('Erreur lors du changement des paramètres de notification:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleTestNotification = async () => {
+    setIsLoading(true);
+
+    try {
+      const success = await NotificationService.testNotification();
+      setTestResult(success ? 'success' : 'error');
+
+      if (success) {
+        setTimeout(() => setTestResult(null), 3000);
+      }
+    } catch (error) {
+      console.error('Erreur lors du test:', error);
+      setTestResult('error');
+      setTimeout(() => setTestResult(null), 3000);
     } finally {
       setIsLoading(false);
     }
@@ -66,7 +87,7 @@ const NotificationSettings = () => {
     <div className="notification-settings">
       <div className="settings-header">
         <h2>🔧 Paramètres des notifications</h2>
-        <p>Gére tes préférences de notifications pour les nouveaux animaux</p>
+        <p>Gérer les notifications pour les nouveaux animaux</p>
       </div>
 
       <div className="setting-item">
@@ -76,25 +97,31 @@ const NotificationSettings = () => {
             <h3>Notifications des nouveaux animaux</h3>
           </div>
           <p className="setting-description">
-            Reçois une notification lorsque de nouveaux animaux préhistoriques sont ajoutés à PaleoData.
+            Recevoir une notification lorsque de nouveaux animaux préhistoriques sont ajoutés à PaleoData.
+            <br />
+            <small>
+              ⚠️ <strong>Limitation :</strong> Fonctionne uniquement quand le navigateur est ouvert
+            </small>
           </p>
           <div className="setting-status">
-            Status:{' '}
+            Statut:{' '}
             <span className={`status-badge ${notificationsEnabled ? 'enabled' : 'disabled'}`}>{getStatusText()}</span>
           </div>
         </div>
 
         <div className="setting-control">
           {canToggle() ? (
-            <button
-              className={`toggle-btn ${notificationsEnabled ? 'enabled' : 'disabled'} ${isLoading ? 'loading' : ''}`}
-              onClick={handleToggle}
-              disabled={isLoading}
-              type="button"
-            >
-              <span className="toggle-slider"></span>
-              {isLoading && <div className="loading-spinner"></div>}
-            </button>
+            <div className="control-group">
+              <button
+                className={`toggle-btn ${notificationsEnabled ? 'enabled' : 'disabled'} ${isLoading ? 'loading' : ''}`}
+                onClick={handleToggle}
+                disabled={isLoading}
+                type="button"
+              >
+                <span className="toggle-slider"></span>
+                {isLoading && <div className="loading-spinner"></div>}
+              </button>
+            </div>
           ) : (
             <div className="setting-blocked">
               {!isSupported ? (
@@ -112,9 +139,10 @@ const NotificationSettings = () => {
         </div>
       </div>
 
+      {/* Guide d'aide */}
       {permissionStatus === 'denied' && (
         <div className="permission-help">
-          <h4>📋 Comment réactiver les notifications :</h4>
+          <h4>🔓 Comment réactiver les notifications :</h4>
           <ol>
             <li>Clique sur l'icône de cadenas ou d'information dans la barre d'adresse</li>
             <li>Change le paramètre des notifications de "Bloqué" à "Autoriser"</li>
