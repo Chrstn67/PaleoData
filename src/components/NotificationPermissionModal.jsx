@@ -39,7 +39,7 @@ const NotificationPermissionModal = ({ isOpen, onAccept, onDecline, onClose }) =
         </div>
 
         <div className="modal-body">
-          <p>Veux-tu recevoir des notifications lorsque de nouveaux animau sont ajoutés ?</p>
+          <p>Veux-tu recevoir des notifications lorsque de nouveaux animaux sont ajoutés ?</p>
 
           <div className="benefits-list">
             <div className="benefit-item">
@@ -48,7 +48,7 @@ const NotificationPermissionModal = ({ isOpen, onAccept, onDecline, onClose }) =
             </div>
             <div className="benefit-item">
               <span className="benefit-icon">⚡</span>
-              <span>Reste à jour avec le contenu frais</span>
+              <span>Reste à jour avec du contenu frais et révisé</span>
             </div>
           </div>
 
