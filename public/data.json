@@ -11227,5 +11227,86 @@
         -5.560759401388983
       ]
     ]
+  },
+  {
+    "nom": "Tricératops",
+    "etymologie": "Tête à trois cornes",
+    "image_url": "./assets/images/Triceratops.webp",
+    "date_ajout": "2025-09-11",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Sauropsida",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "Dinosauria",
+      "ordre": "Ornithischia",
+      "sous_ordre": "Marginocephalia",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "Ceratopsia",
+      "famille": "Ceratopsidae",
+      "sous_famille": "Chasmosaurinae",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Triceratops",
+      "espèces": "Triceratops albertensis, Triceratops alticornis, Triceratops brevicornus, Triceratops calicornis, Triceratops elatus, Triceratops eurycephalus, Triceratops flabellatus, Triceratops galeus, Triceratops horridus, Triceratops ingens, Triceratops maximus, Triceratops obtusus, Triceratops prorsus, Triceratops serratus, Triceratops sulcatus"
+    },
+    "regime_alimentaire": "Végétarien",
+    "habitat": "",
+    "geologie": {
+      "ere": "Mésozoïque",
+      "periode": "Crétacé",
+      "epoque": "Supérieur",
+      "stage": "Maastrichtien",
+      "apparition": -68,
+      "extinction": -65
+    },
+    "description": "<i>Tricératops</i> possédait un corps massif et puissant, reposant sur quatre membres courts et robustes, les antérieurs légèrement plus courts que les postérieurs, adaptés à soutenir un poids considérable et à porter une tête exceptionnelle.<br/>Sa tête était gigantesque (le plus grans spécimen mesurant 2.62 mètres), formée d’une collerette osseuse solide et épaisse à l’arrière du crâne, parfois hérissée de petites épines périphériques, et pourvue de trois cornes principales : deux longues cornes frontales (mesurant environ 1.20 mètre) placées au-dessus des yeux et une corne nasale plus courte (30 centimètres) et épaisse sur le museau.<br/>Son museau se terminait par un large bec corné, tranchant comme une pince, permettant de couper et d’arracher la végétation, tandis que l’arrière des mâchoires était tapissé de batteries de dents spécialisées dans le cisaillement des plantes dures.<br/>Sa queue était relativement courte, et la majorité du poids corporel était portée sur les membres postérieurs, plus épais et droits, tandis que les antérieurs, courts mais musclés, servaient de soutien et de stabilité.<br/><br/>Sa posture quadrupède et la rigidification spéciale de ses premières vertèbres cervicales permettaient de soutenir la tête volumineuse, de l’abaisser pour brouter ou de la projeter lors des combats.<br/><i>Tricératops</i> évoluait dans des milieux ouverts, et utilisait ses cornes et sa collerette à la fois pour la défense contre les prédateurs, lors de joutes entre congénères ou pour l’intimidation.<br/>Son épaisse peau pouvait être couverte de structures kératinisées, potentiellement très colorées, servant de protection et de signal lors des interactions sociales.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "8-9 mètres",
+        "hauteur": "3.60 mètres"
+      },
+      "poids": "8-10 tonnes"
+    },
+    "decouverte": {
+      "date": "1889",
+      "lieu": "Montana, États-Unis",
+      "coords": [
+        47.613992931003004,
+        -106.84629663631695
+      ]
+    },
+    "habitatCoords": [
+      [
+        58.799387775738126,
+        -132.13329634708583
+      ],
+      [
+        27.503179715872804,
+        -111.56689050384865
+      ],
+      [
+        34.5742256606047,
+        -69.55517258475737
+      ],
+      [
+        55.859760285179554,
+        -72.89501626870185
+      ],
+      [
+        58.799387775738126,
+        -132.13329634708583
+      ]
+    ]
   }
 ]
