@@ -30,27 +30,26 @@ function App() {
   const [showPermissionModal, setShowPermissionModal] = useState(false);
 
   useEffect(() => {
-    // Vérifier si on doit demander la permission au chargement de l'app
-    const checkNotificationPermission = () => {
-      if (NotificationService.shouldAskPermission()) {
-        // Attendre un peu avant d'afficher la modal pour une meilleure UX
-        setTimeout(() => {
-          setShowPermissionModal(true);
-        }, 2000);
-      } else {
-        // Si les notifications sont déjà activées, vérifier les nouveaux animaux
-        if (NotificationService.areNotificationsEnabled()) {
-          setTimeout(() => {
-            NotificationService.checkAndNotifyNewAnimals(data);
-          }, 1000);
-        }
-      }
+    const initializeNotifications = async () => {
+      if (NotificationService.isSupported()) {
+        // Initialiser le Service Worker
+        const swInitialized = await NotificationService.init();
 
-      // Nettoyer les anciennes données
-      NotificationService.cleanup();
+        if (swInitialized) {
+          console.log('Service Worker initialisé avec succès');
+        }
+
+        if (NotificationService.shouldAskPermission()) {
+          setTimeout(() => setShowPermissionModal(true), 2000);
+        } else if (NotificationService.areNotificationsEnabled()) {
+          setTimeout(() => NotificationService.checkAndNotifyNewAnimals(data), 1000);
+        }
+
+        NotificationService.cleanup();
+      }
     };
 
-    checkNotificationPermission();
+    initializeNotifications();
   }, []);
 
   const handlePermissionAccept = async () => {

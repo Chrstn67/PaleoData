@@ -5,28 +5,60 @@ class NotificationService {
     this.PERMISSION_KEY = 'paleodata_notification_permission';
     this.LAST_ASK_KEY = 'paleodata_last_permission_ask';
     this.ANIMALS_NOTIFIED_KEY = 'paleodata_notified_animals';
+    this.SUBSCRIPTION_KEY = 'paleodata_push_subscription';
+
+    // REMPLACEZ CETTE CLÉ PAR LA VOTRE GÉNÉRÉE AVEC web-push
+    this.VAPID_PUBLIC_KEY = 'BBwh4QXyawyozRC9vyApjrNnKuSeCY9OAYpB55xSCFwIgDQmjbjvtugKMFNn8N5uhDXKvx3DGQYDUDhdJF0UNt0';
+
+    this.swRegistration = null;
   }
 
-  // Vérifier si les notifications sont supportées
+  // Initialiser le Service Worker
+  async init() {
+    if (!this.isSupported()) return false;
+
+    try {
+      this.swRegistration = await navigator.serviceWorker.register('/sw.js');
+
+      // Vérifier d'abord si la clé VAPID est valide
+      if (!this.isValidVapidKey(this.VAPID_PUBLIC_KEY)) {
+        console.error('Clé VAPID invalide. Veuillez générer une vraie clé avec web-push.');
+        return false;
+      }
+
+      await this.subscribeToPush();
+      return true;
+    } catch (error) {
+      console.error("Erreur lors de l'initialisation du Service Worker:", error);
+      return false;
+    }
+  }
+
+  // Vérifier si la clé VAPID est valide
+  isValidVapidKey(key) {
+    try {
+      this.urlBase64ToUint8Array(key);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
   isSupported() {
-    return 'Notification' in window && 'serviceWorker' in navigator;
+    return 'Notification' in window && 'serviceWorker' in navigator && 'PushManager' in window;
   }
 
-  // Obtenir le statut des permissions
   getPermissionStatus() {
     if (!this.isSupported()) return 'unsupported';
     return Notification.permission;
   }
 
-  // Vérifier si on doit demander la permission
   shouldAskPermission() {
     const lastAsk = localStorage.getItem(this.LAST_ASK_KEY);
     const userChoice = localStorage.getItem(this.PERMISSION_KEY);
 
-    // Si l'utilisateur n'a jamais été demandé
     if (!lastAsk && !userChoice) return true;
 
-    // Si l'utilisateur a refusé, vérifier si 30 jours sont passés
     if (userChoice === 'denied') {
       const lastAskDate = new Date(parseInt(lastAsk));
       const now = new Date();
@@ -37,10 +69,9 @@ class NotificationService {
     return false;
   }
 
-  // Demander la permission
   async requestPermission() {
     if (!this.isSupported()) {
-      throw new Error('Les notifications ne sont pas supportées sur ce navigateur');
+      throw new Error('Les notifications ne sont pas supportées');
     }
 
     const permission = await Notification.requestPermission();
@@ -49,116 +80,128 @@ class NotificationService {
     localStorage.setItem(this.PERMISSION_KEY, permission);
     localStorage.setItem(this.LAST_ASK_KEY, now);
 
+    if (permission === 'granted') {
+      await this.init();
+    }
+
     return permission;
   }
 
-  // Obtenir les préférences utilisateur
-  getUserPreferences() {
-    const stored = localStorage.getItem(this.STORAGE_KEY);
-    return stored
-      ? JSON.parse(stored)
-      : {
-          enabled: false,
-          permission: 'default',
-        };
+  // S'abonner aux notifications push
+  async subscribeToPush() {
+    if (!this.swRegistration) return null;
+
+    try {
+      const subscription = await this.swRegistration.pushManager.getSubscription();
+
+      if (subscription) {
+        localStorage.setItem(this.SUBSCRIPTION_KEY, JSON.stringify(subscription));
+        return subscription;
+      }
+
+      const newSubscription = await this.swRegistration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: this.urlBase64ToUint8Array(this.VAPID_PUBLIC_KEY),
+      });
+
+      localStorage.setItem(this.SUBSCRIPTION_KEY, JSON.stringify(newSubscription));
+      return newSubscription;
+    } catch (error) {
+      console.error("Erreur lors de l'abonnement push:", error);
+      return null;
+    }
   }
 
-  // Sauvegarder les préférences utilisateur
+  urlBase64ToUint8Array(base64String) {
+    // Nettoyer la chaîne base64
+    const cleanBase64 = base64String.trim().replace(/\s/g, '').replace(/-/g, '+').replace(/_/g, '/');
+
+    const padding = '='.repeat((4 - (cleanBase64.length % 4)) % 4);
+    const base64 = cleanBase64 + padding;
+
+    try {
+      const rawData = window.atob(base64);
+      const outputArray = new Uint8Array(rawData.length);
+
+      for (let i = 0; i < rawData.length; ++i) {
+        outputArray[i] = rawData.charCodeAt(i);
+      }
+      return outputArray;
+    } catch (error) {
+      throw new Error('Clé base64 invalide: ' + error.message);
+    }
+  }
+
+  getUserPreferences() {
+    const stored = localStorage.getItem(this.STORAGE_KEY);
+    return stored ? JSON.parse(stored) : { enabled: false, permission: 'default' };
+  }
+
   saveUserPreferences(preferences) {
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(preferences));
   }
 
-  // Activer les notifications
   async enableNotifications() {
     try {
       const permission = await this.requestPermission();
 
       if (permission === 'granted') {
-        this.saveUserPreferences({
-          enabled: true,
-          permission: 'granted',
-        });
+        this.saveUserPreferences({ enabled: true, permission: 'granted' });
         return true;
       } else {
-        this.saveUserPreferences({
-          enabled: false,
-          permission: permission,
-        });
+        this.saveUserPreferences({ enabled: false, permission });
         return false;
       }
     } catch (error) {
-      console.error("Erreur lors de l'activation des notifications:", error);
+      console.error("Erreur lors de l'activation:", error);
       return false;
     }
   }
 
-  // Désactiver les notifications
   disableNotifications() {
     const preferences = this.getUserPreferences();
     preferences.enabled = false;
     this.saveUserPreferences(preferences);
   }
 
-  // Vérifier si les notifications sont activées
   areNotificationsEnabled() {
     const preferences = this.getUserPreferences();
     return preferences.enabled && this.getPermissionStatus() === 'granted';
   }
 
-  // Obtenir les animaux déjà notifiés
   getNotifiedAnimals() {
     const stored = localStorage.getItem(this.ANIMALS_NOTIFIED_KEY);
     return stored ? JSON.parse(stored) : [];
   }
 
-  // Sauvegarder les animaux notifiés
   saveNotifiedAnimals(animalNames) {
     localStorage.setItem(this.ANIMALS_NOTIFIED_KEY, JSON.stringify(animalNames));
   }
 
-  // Envoyer une notification
-  sendNotification(title, body, options = {}) {
-    if (!this.areNotificationsEnabled()) return null;
+  // Envoyer une notification via le Service Worker
+  async sendNotification(title, body, data = {}) {
+    if (!this.areNotificationsEnabled() || !this.swRegistration) return null;
 
-    // Créer les options de base sans les actions si on n'utilise pas de Service Worker
-    const notificationOptions = {
-      body,
-      icon: '/favicon.ico',
-      badge: '/favicon.ico',
-      tag: 'paleodata-new-animals',
-      requireInteraction: false,
-      ...options,
-    };
-
-    // Supprimer les actions si on n'utilise pas de Service Worker
-    if (notificationOptions.actions) {
-      delete notificationOptions.actions;
+    try {
+      await this.swRegistration.showNotification(title, {
+        body,
+        icon: '/favicon.ico',
+        badge: '/favicon.ico',
+        tag: 'paleodata-new-animals',
+        data,
+      });
+      return true;
+    } catch (error) {
+      console.error("Erreur lors de l'envoi de notification:", error);
+      return false;
     }
-
-    const notification = new Notification(title, notificationOptions);
-
-    // Auto-fermer après 10 secondes
-    setTimeout(() => {
-      notification.close();
-    }, 10000);
-
-    // Gérer les clics sur la notification - REDIRECTION VERS LE SITE
-    notification.onclick = () => {
-      window.focus();
-      notification.close();
-      // Redirection vers le site PaleoData
-      window.location.href = 'https://chrstn67.github.io/PaleoData/#/';
-    };
-
-    return notification;
   }
 
-  // Vérifier et notifier les nouveaux animaux
-  checkAndNotifyNewAnimals(animals) {
+  // Vérifier les nouveaux animaux
+  async checkAndNotifyNewAnimals(animals) {
     if (!this.areNotificationsEnabled()) return;
 
     const newAnimals = animals.filter((animal) => {
-      // Vérifier si l'animal a une date d'ajout
       if (!animal.date_ajout) return false;
 
       const dateAjoutee = new Date(animal.date_ajout);
@@ -171,8 +214,6 @@ class NotificationService {
 
     const notifiedAnimals = this.getNotifiedAnimals();
     const newAnimalNames = newAnimals.map((animal) => animal.nom);
-
-    // Filtrer seulement les animaux qui n'ont PAS encore été notifiés
     const reallyNewAnimals = newAnimalNames.filter((name) => !notifiedAnimals.includes(name));
 
     if (reallyNewAnimals.length > 0) {
@@ -180,28 +221,18 @@ class NotificationService {
       const title = 'PaleoData - Nouveaux animaux !';
       const body = `PaleoData accueille ${count} nouveau${count > 1 ? 'x' : ''} animal${count > 1 ? 's' : ''}. Viens les découvrir !`;
 
-      const notification = this.sendNotification(title, body, {
-        data: { newAnimals: reallyNewAnimals },
-      });
+      await this.sendNotification(title, body, { newAnimals: reallyNewAnimals });
 
-      if (notification) {
-        // Marquer ces animaux comme notifiés
-        const updatedNotified = [...notifiedAnimals, ...reallyNewAnimals];
-        this.saveNotifiedAnimals(updatedNotified);
-      }
+      // Marquer comme notifiés
+      const updatedNotified = [...notifiedAnimals, ...reallyNewAnimals];
+      this.saveNotifiedAnimals(updatedNotified);
     }
   }
 
-  // Nettoyer les anciennes données
   cleanup() {
     const notifiedAnimals = this.getNotifiedAnimals();
-    const oneMonthAgo = new Date();
-    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-
-    // Pour l'instant, on nettoie si on a plus de 100 animaux notifiés
     if (notifiedAnimals.length > 100) {
-      const recentAnimals = notifiedAnimals.slice(-50); // Garder les 50 derniers
-      this.saveNotifiedAnimals(recentAnimals);
+      this.saveNotifiedAnimals(notifiedAnimals.slice(-50));
     }
   }
 }
