@@ -19,56 +19,12 @@ import Gisements from './Documentation/Gisements/Gisements';
 import Paleontologues from './Documentation/Paleontologues/Paleontologues';
 import Questions from './Documentation/Questions/Questions';
 import ScrollToTopButton from './ScrollToTopButton';
-import NotificationPermissionModal from './NotificationPermissionModal';
-import NotificationService from '../services/NotificationService';
-import NotificationSettings from './NotificationSettings';
+
 import data from '../data/data';
 import NotFound from './NotFound';
 import '../styles/App.css';
 
 function App() {
-  const [showPermissionModal, setShowPermissionModal] = useState(false);
-
-  useEffect(() => {
-    const initializeNotifications = async () => {
-      if (NotificationService.isSupported()) {
-        // Initialiser le Service Worker
-        const swInitialized = await NotificationService.init();
-
-        if (swInitialized) {
-          console.log('Service Worker initialisé avec succès');
-        }
-
-        if (NotificationService.shouldAskPermission()) {
-          setTimeout(() => setShowPermissionModal(true), 2000);
-        } else if (NotificationService.areNotificationsEnabled()) {
-          setTimeout(() => NotificationService.checkAndNotifyNewAnimals(data), 1000);
-        }
-
-        NotificationService.cleanup();
-      }
-    };
-
-    initializeNotifications();
-  }, []);
-
-  const handlePermissionAccept = async () => {
-    setShowPermissionModal(false);
-    const success = await NotificationService.enableNotifications();
-
-    if (success) {
-      // Vérifier immédiatement s'il y a de nouveaux animaux à notifier
-      setTimeout(() => {
-        NotificationService.checkAndNotifyNewAnimals(data);
-      }, 1000);
-    }
-  };
-
-  const handlePermissionDecline = () => {
-    setShowPermissionModal(false);
-    // La logique de "ne pas redemander avant 30 jours" est gérée dans le service
-  };
-
   return (
     <div className="App">
       <HashRouter>
@@ -77,7 +33,6 @@ function App() {
 
           <Routes>
             <Route path="/" element={<HomePage animals={data} />} />
-            <Route path="/parametres-notifications" element={<NotificationSettings />} />
             <Route path="/animaux" element={<AnimalList data={data} />} />
             <Route path="/animal/:nom" element={<AnimalCard data={data} />} />
             <Route path="/echelle-des-temps-geologiques" element={<Timeline timelineData={timelineData} />} />
@@ -98,13 +53,6 @@ function App() {
         </div>
       </HashRouter>
       <ScrollToTopButton />
-
-      {/* Modal de demande de permission pour les notifications */}
-      <NotificationPermissionModal
-        isOpen={showPermissionModal}
-        onAccept={handlePermissionAccept}
-        onDecline={handlePermissionDecline}
-      />
     </div>
   );
 }
