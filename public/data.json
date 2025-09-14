@@ -4113,7 +4113,7 @@
       "apparition": -163,
       "extinction": -154
     },
-    "description": "Sur la base d'un seul fossile d'Eustreptospondylus connu à ce jour, les paléontologues savent que ce dinosaure avait un crâne présentant museau plutôt pointu en vue latérale, avec une grande narine orientée horizontalement. Des rainures obliques dans les articulations des mâchoires permettaient d'élargir l'ouverture de la gueule lorsque les mâchoires inférieures étaient ouvertes. <br /> Même si aucune dent n'a été découverte, nous savons que c'était un animal carnivore. <br /> Certains avancent qu'Eustreptospondylus pouvait nager en eaux peu profondes, pour chasser sur des îles voisines.",
+    "description": "<i>Eustreptospondylus</i> possédait un corps élancé et musculeux, reposant sur deux longues pattes postérieures adaptées à la course rapide et à la chasse.<br/>Son dos était parcouru de vertèbres robustes et bien courbées, lui conférant une grande flexibilité et une excellente agilité.<br/>La queue, longue et souple, lui servait de balancier pour l’équilibre, permettant des mouvements rapides et précis.<br/>La tête, relativement grande et de forme allongée, était dotée d’un museau pointu, d’ouvertures nasales larges et de mâchoires puissantes pourvues de dents tranchantes adaptées à lacérer la chair.<br/>Le crâne présentait une épaisseur marquée sur son sommet, et ses yeux bien placés lui offraient un bon champ de vision.<br/>Les bras étaient courts et robustes, munis de griffes puissantes capables de saisir ou de retenir les proies.<br/><br/>Son mode de vie était celui d’un prédateur agile et opportuniste, chassant principalement de petits dinosaures, poissons, reptiles ou charognes, et évoluant probablement en solitaire dans des milieux variés, allant des forêts aux rives de lacs.<br/>Son agilité, sa vitesse et sa mâchoire puissante faisaient de <i>Eustreptospondylus</i> un chasseur efficace capable d’exploiter divers types de proies dans son environnement.",
     "autres_infos": {
       "taille": {
         "longueur": "7 mètres",
@@ -4167,7 +4167,7 @@
       "apparition": -120,
       "extinction": -119
     },
-    "description": "Microraptor avait un corps recouvert de plumes y compris sur les pattes avant et arrière, avec un éventail de plumes en forme de losange au bout de la longue queue qui contribuait sans doute à assurer une stabilité en vol. Microraptor possédait deux paires d'ailes: En réalité, ses pattes étaient des ailes. Nous ne savons pas exactement si Microraptor pouvait voler ou seulement planer, mais aucune hypothèse n'est à exclure car l'analyse de ses plumes indique que l'animal savait planer mais aurait été capable de voler.",
+    "description": "<i>Microraptor</i> possédait un corps très petit et léger, à peine plus grand qu’un corbeau, avec une tête fine et un museau court garni de petites dents tranchantes, adaptées à saisir des proies comme des poissons, des lézards ou de petits mammifères.<br/>Son squelette était allongé et souple : le tronc accueillait de longs bras et des jambes puissantes, chacune équipée d’ailes couvertes de longues plumes et de griffes acérées.<br/>Ce dinosaure unique arborait quatre véritables ailes : les plumes de vol recouvraient ses bras et ses jambes, tandis que sa longue queue ornée d’un éventail de plumes facilitait la stabilité et la direction en vol.<br/><br/>Le mode de vie de <i>Microraptor</i> était celui d’un animal arboricole et carnivore, évoluant dans les forêts pourchassant de petites proies par surprise.<br/>Il se déplaçait d’arbre en arbre en planant ou en volant sur de courtes distances, utilisant ses quatre ailes pour contrôler direction et vitesse, ce qui en faisait un excellent planeur mais un coureur maladroit.<br/>Son agilité, sa capacité à grimper et à planer lui permettaient de dominer cet environnement forestier, où il rivalisait avec oiseaux et autres dinosaures pour chasser ou éviter les prédateurs.",
     "autres_infos": {
       "taille": {
         "longueur": "80 centimètres",
@@ -4222,7 +4222,7 @@
       "apparition": -15,
       "extinction": -8
     },
-    "description": "Chalicotherium était un animal unique, combinant des caractéristiques de plusieurs espèces: Il se déplaçait à la manière d'un gorille en utilisant ses articulations, ses bras lui permettant d'atteindre les branches des grands arbres pour se nourrir, à la manière d'un panda. <br /> Ses griffes étaient exceptionnellement longues, qu'il utilisait pour dénuder les feuilles des branches. Les callosités sur son ischion indiquent qu'il passait de longues périodes assis sur ses hanches, probablement en train de se nourrir. Pour éviter l'usure de ses griffes, il marchait sur ses articulations, ce qui lui permettait de les préserver pour une utilisation ultérieure, soit pour collecter de la nourriture, soit comme des armes défensives redoutables, ou même les deux en même temps.",
+    "description": "<i>Chalicotherium</i> possédait un corps massif et musclé, avec une posture caractéristique : le dos était arqué, porté par de longs membres antérieurs terminés par de grandes griffes recourbées, et des membres postérieurs plus courts et robustes spécialisés dans la station assise.<br/>Sa tête, allongée et étroite, rappelait celle d’un cheval, mais la bouche n’avait que des molaires usées pour broyer la végétation, les incisives et canines ayant disparu à l’âge adulte.<br/>En marchant, l’animal se déplaçait sur ses articulations, repliant ses griffes vers l’arrière pour les préserver.<br/>Sa silhouette évoquait un mélange entre un cheval, un gorille et un paresseux terrestre.<br/><br/>Le mode de vie de <i>Chalicotherium</i> était celui d’un grand herbivore arboricole et terrestre : installé parfois en position assise sur ses hanches, il utilisait ses longs bras pour attraper et tirer les branches des arbres puis les ramenait vers sa bouche pour brouter fruits, feuilles, jeunes pousses et tiges tendres.<br/>Ses griffes servaient également d’instrument défensif contre les prédateurs, mais son comportement était globalement paisible, solitaire ou en petits groupes.<br/>Sa mobilité lente était compensée par sa taille imposante et une réelle capacité à atteindre la nourriture en hauteur dans les forêts claires ou en lisière des savanes.",
     "autres_infos": {
       "taille": {
         "longueur": "2 mètres",
@@ -4276,7 +4276,7 @@
       "apparition": -5,
       "extinction": -0.01
     },
-    "description": "Mégatherium n'est ni plus ni moins qu'un paresseux géant. <br /> Principalement quadrupède, il pouvait de dresser sur deux pattes et sa queue lui servait peut-être d'appui quand il se dressait en position verticale, pour mieux attraper les feuilles hautes. S'élevant sur ses puissantes pattes postérieures et utilisant donc sa queue, Mégatherium pouvait supporter le poids massif de son corps tout en utilisant les griffes incurvées de ses longues pattes antérieures pour arracher les branches contenant les feuilles les plus recherchées. La mâchoire ce cet animal lui permettait également de mâcher les fruits. Il est aussi possible qu'il lui arrivait de manger de la viande, certainement des charognes fraîches. <br /> Mégatherium marchait sur les côtés de ses pieds car ses griffes l'empêchaient de les poser à plat sur le sol. <br /> Une étude a proposé que Mégatherium était principalement dépourvu de poils, parce que sa grande taille et son faible rapport surface/volume l'auraient rendu vulnérable à la surchauffe de son corps, mais cela reste à prouver.",
+    "description": "<i>Mégatherium</i> possédait un corps massif comparable à celui d'un éléphant, avec de puissantes pattes plantigrades, terminées par de grosses griffes recourbées, utilisées pour creuser ou attraper la nourriture.<br/>Sa tête était allongée, le museau court et émoussé portait de petites oreilles, tandis que les mâchoires solides étaient armées de dents adaptées à broyer feuilles, branches et fruits.<br/>Sa longue queue épaisse lui servait d'appui, notamment pour se dresser en posture bipède afin d'atteindre la végétation haute.<br/>La peau était probablement couverte de poils denses assurant une protection contre le climat et les prédateurs.<br/><br/>Son mode de vie était celui d'un grand herbivore paisible, évoluant lentement dans les prairies et forêts sud-américaines, mais il lui arrivait de compléter ses repas avec un peu de viande.<br/>Il utilisait ses puissantes griffes pour se nourrir, se défendre, et parfois creuser pour dénicher des racines.<br/>Capable de se dresser sur ses pattes arrière grâce à sa queue, <i>Mégatherium</i> exploitait la végétation inaccessible aux autres grands mammifères et occupait une niche écologique originale parmi la mégafaune du Pléistocène.",
     "autres_infos": {
       "taille": {
         "longueur": "6 mètres",
@@ -4330,7 +4330,7 @@
       "apparition": -2,
       "extinction": 1720
     },
-    "description": "Il s'agit d'une vache XXL. <br /> Auroch menait le même mode de vie que nos vaches actuelles.",
+    "description": "<i>Aurochs</i> était un grand bovidé sauvage au corps athlétique, avec des pattes longues et élancées, portées par une musculature puissante au niveau des épaules et du cou, créant une silhouette trapue mais agile.<br/>Son crâne allongé supportait une paire de grandes cornes massives, incurvées en spirale caractéristique, partant de la base vers le haut et l’intérieur, avec une gaine cornée de couleur claire et un bout pointu plus sombre.<br/>La robe variait selon le sexe : les mâles étaient généralement noirs avec une bande dorsale claire, tandis que les femelles avaient souvent un pelage brun rougeâtre. Les jeunes naissaient de couleur rousse avant de changer.<br/>Les mâles possédaient une crinière crépue sur le front, parfois visible également chez les femelles.<br/><br/>Le mode de vie de l’aurochs était celui d’un herbivore broutant dans les forêts, prairies et zones ouvertes d’Europe et d’Asie.<br/>Il vivait en troupeaux structurés, avec des comportements sociaux complexes mêlant compétitions entre mâles lors des saisons de reproduction et cohésion au sein des groupes.<br/>La combativité et l’agressivité étaient élevées chez les mâles, défendant leur territoire et statut hiérarchique.<br/>Son agilité et sa force faisaient de lui un animal respecté dans son écosystème avant sa disparition spectaculaire au XVIe siècle.",
     "autres_infos": {
       "taille": {
         "longueur": "2.5-3 mètres",
@@ -4410,7 +4410,7 @@
       "apparition": -1.2,
       "extinction": -0.077
     },
-    "description": "Anciennement appelé 'Mégaceros', Mégalocéros arborait des bois gigantesques dont l'envegure pouvait atteindre 3.5 mètres et peser une quarantaine de kilogrmames. Les bois des femelles étaient 10 % plus petits.",
+    "description": "<i>Mégalocéros</i>, (aussi appelé Mégacéros) était un cervidé gigantesque du Pléistocène, mesurant environ 2 mètres au garrot et près de 3 mètres de longueur.<br/>Il possédait une ramure massive chez les mâles, avec des bois pouvant atteindre jusqu'à 3,7 mètres d'envergure, formant l'une des plus grandes armatures de cervidés jamais vues.<br/>Sa bosse dorsale, souvent représentée plus sombre que le reste du corps dans l'art pariétal, était bien développée et lui donnait un port altier.<br/>Adapté aux climats froids et aux milieux ouverts comme les steppes et les toundras, il vivait en Eurasie, s’étendant de l’Asie centrale à l’Europe, y compris l’Irlande et la péninsule ibérique.<br/><br/>Son mode de vie herbivore impliquait la consommation d’herbacées et de graminées, avec un comportement social probablement similaire à celui des cerfs modernes, incluant des combats pour le territoire ou la reproduction utilisant ses impressionnants bois.<br/>Il a disparu vers 8 000 ans avant notre ère, probablement à cause du réchauffement climatique et de la pression de la chasse humaine.",
     "autres_infos": {
       "taille": {
         "longueur": "2.5 mètres",
@@ -4419,9 +4419,51 @@
       "poids": "700 kilogrammes"
     },
     "decouverte": {
-      "date": "1828",
-      "lieu": "Eurasie"
-    }
+      "date": "1695",
+      "lieu": "Eurasie",
+      "coords": [
+        53.592547025234595,
+        -6.722433957779632
+      ]
+    },
+    "habitatCoords": [
+      [
+        54.049990708707995,
+        -10.152960747286306
+      ],
+      [
+        71.11380130080353,
+        24.77424656232844
+      ],
+      [
+        70.03938031058624,
+        33.226382139032374
+      ],
+      [
+        65.77381335038366,
+        85.75669994194249
+      ],
+      [
+        51.35512392011716,
+        111.59654318088144
+      ],
+      [
+        37.244076736832575,
+        33.19810723144756
+      ],
+      [
+        35.68917432726891,
+        12.807482634733814
+      ],
+      [
+        38.21722417403675,
+        -14.79017306943911
+      ],
+      [
+        54.049990708707995,
+        -10.152960747286306
+      ]
+    ]
   },
   {
     "nom": "Odobénocétops",
@@ -11306,6 +11348,87 @@
       [
         58.799387775738126,
         -132.13329634708583
+      ]
+    ]
+  },
+  {
+    "nom": "Baryonyx",
+    "etymologie": "Griffe pesante",
+    "image_url": "./assets/images/Baryonyx.jpg",
+    "date_ajout": "2025-09-14",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Sauropsida",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "Dinosauria",
+      "ordre": "Saurischia",
+      "sous_ordre": "Theropoda",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "Megalosauroidea",
+      "famille": "Spinosauridae",
+      "sous_famille": "Baryonychinae",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Baryonyx",
+      "espèces": "Baryonyx walkeri"
+    },
+    "regime_alimentaire": "Piscivore",
+    "habitat": "Marécages",
+    "geologie": {
+      "ere": "Mésozoïque",
+      "periode": "Crétacé",
+      "epoque": "Inférieur",
+      "stage": "Barrémien",
+      "apparition": -130,
+      "extinction": -125
+    },
+    "description": "<i>Baryonyx</i> possédait un corps allongé et robuste, marchant principalement sur ses longues pattes arrière puissantes, mais pouvait également se déplacer ponctuellement sur ses quatre membres.<br/>Ses bras étaient forts, armés d'une énorme griffe recourbée sur chaque pouce, mesurant jusqu'à trente centimètres, idéale pour attraper les proies et manipuler la nourriture.<br/>La tête, longue et étroite, ressemblait à celle d'un crocodile : le museau se terminait par une rosette et sa mâchoire était garnie d'une centaine de dents coniques, peu dentelées, parfaitement adaptées à la capture et la rétention de poissons.<br/>Les yeux, situés en hauteur sur le crâne, permettaient d'approcher discrètement les proies à la surface de l'eau.<br/>La queue, longue et massive, servait de balancier lors des déplacements et d'appui pour nager.<br/><br/>Son mode de vie était principalement semi-aquatique et piscivore : <i>Baryonyx</i> patrouillait dans les zones humides, les berges de rivières et les marais, plongeant son museau dans l'eau pour attraper les poissons à l'aide de ses griffes et de sa mâchoire spécialisée.<br/>Il pouvait aussi consommer des petits reptiles ou des carcasses trouvées sur la rive.<br/>Sa morphologie unique lui permettait d'occuper un rôle de prédateur spécialisé, mais il pouvait aussi faire preuve d'opportunisme alimentaire.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "7.50-10 mètres",
+        "hauteur": "2.50 mètres"
+      },
+      "poids": "2 tonnes"
+    },
+    "decouverte": {
+      "date": "1983",
+      "lieu": "Angleterre",
+      "coords": [
+        51.12575046475371,
+        -0.4127241695837124
+      ]
+    },
+    "habitatCoords": [
+      [
+        51.77332746293832,
+        -1.930585541284009
+      ],
+      [
+        51.76189309313271,
+        4.055874171565245
+      ],
+      [
+        49.17546218539447,
+        4.388455266723536
+      ],
+      [
+        48.37181577595328,
+        -2.558794276583006
+      ],
+      [
+        51.77332746293832,
+        -1.930585541284009
       ]
     ]
   }

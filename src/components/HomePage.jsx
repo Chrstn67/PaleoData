@@ -59,8 +59,8 @@ const HomePage = ({ animals }) => {
               <h3>Animaux</h3>
               <p>
                 Découvre les dernières informations sur tes animaux favoris. Une collection avec{' '}
-                <strong>{animals.length} espèces </strong>
-                documentées.
+                <strong>{animals.length} animaux </strong>
+                documentés.
               </p>
               <Link to="/animaux" onClick={scrollToTop} className="card-link">
                 Explorer les animaux
