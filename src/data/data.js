@@ -4151,7 +4151,7 @@ const data = [
       extinction: -0.01,
     },
     description:
-      "Très souvent appelé 'Tigre aux dents de sable', Smilodon tient son nom de ses longues canines supérieurs pouvant mesurer jusqu'à 30 centimètres. Il chassait comme les lions actuels, en plantant des canines dans la gorge de ses proies pour les saigner rapidement. <br /> Il s'agissait du prédateur le plus répendu et le plus redouté de son époque; il régnait en maître sur tout le continent américain. ",
+      '<i>Smilodon</i> possédait un corps massif et compact, avec des membres antérieurs exceptionnellement puissants, une poitrine large et une courte queue. Sa tête était robuste et munie d’un museau large, tandis que ses mâchoires étaient capables d’une très grande ouverture, permettant à ses célèbres canines supérieures, longues et fines en forme de sabre, de s’abaisser vers le bas. Ces dents fragiles étaient conçues pour porter des coups précis à la gorge de ses proies après les avoir immobilisées. <br>Ses pattes avant, munies de griffes acérées, servaient à saisir, plaquer et maintenir solidement des proies souvent plus grandes que lui.<br><br> Le mode de vie de <i>Smilodon</i> était celui d’un superprédateur spécialisé dans la chasse à l’affût : il privilégiait l’embuscade, profitant de sa force pour abattre de grands herbivores, qu’il immobilisait avec le poids de son corps et la puissance de ses membres antérieurs avant d’utiliser ses dents pour infliger des morsures fatales visant les parties tendres de la gorge. Il était peu adapté à la course sur de longues distances et devait donc approcher ses proies discrètement.<br><br>Son comportement social reste débattu, mais certaines études suggèrent qu’il pouvait vivre en groupes structurés, partageant les prises et protégeant les membres fragilisés, voire les jeunes.',
     autres_infos: {
       taille: {
         longueur: '1.80-2.30 mètres',
@@ -4196,7 +4196,7 @@ const data = [
       genre: 'Ursus',
       espèces: 'Ursus spelaeus',
     },
-    regime_alimentaire: 'Carnivore',
+    regime_alimentaire: 'Omnivore',
     habitat: 'Forêts mixtes',
     geologie: {
       ere: 'Cénozoïque',
@@ -4207,7 +4207,7 @@ const data = [
       extinction: -0.024,
     },
     description:
-      "L'Ours des cavernes est un animal robuste, puissant et féroce. <br /> Plus à l'aise au déplacement à quatre pattes, il n'hésitait pas à se dresser sur ses pattes arrières pour impressionner quiconque s'attaquait à lui. Les pattes avant sont plus longues et plus robustes que les pattes arrière, ce qui donne à l'animal un profil surbaissé à l'arrière-train. Son crâne était très large avec un front prononcé. <br /> Quant à sa mâchoire, il possédait des molaires allongées valant pour 3 molaires des ours actuels. L'Ours des cavernes avait le même mode de vie que les ours bruns actuels, à savoir des periodes d'activité et des périodes d'hibernation. ",
+      "L'<i>ours des cavernes</i> possédait un crâne très large et en dôme, avec un front prononcé et un museau court et peu développé.<br/>Son corps était trapu, caractérisé par de longues cuisses puissantes, des tibias massifs et des pieds tournés vers l’intérieur, ce qui donnait à l’arrière-train une posture basse et inclinée.<br/>Les pattes avant étaient plus longues et plus robustes que les pattes arrière, accentuant cette silhouette surbaissée.<br/>Ses molaires étaient puissantes et adaptées à broyer une grande quantité de végétaux, tandis que ses canines, bien que développées, restaient relativement petites.<br/><br/>Le mode de vie de <i>l’ours des cavernes</i> était principalement herbivore : il se nourrissait essentiellement de plantes qu'il pouvait extraire ou broyer grâce à ses mâchoires puissantes.<br/>Il utilisait les grottes comme abris pour l’hibernation, où il se regroupait parfois pour traverser les longues périodes hivernales.<br/>Sa grande robustesse physique et sa capacité à stocker d’importantes réserves de graisse lui permettaient de survivre à de longues périodes sans activité alimentaire.",
     autres_infos: {
       taille: {
         longueur: '3.50 mètres',
@@ -4262,7 +4262,7 @@ const data = [
       extinction: -152,
     },
     description:
-      "Malgré sa taille gigantesque, Leedsichthys était un poisson inoffensif. <br /> Sa grande taille, qui fait de lui l'un des plus gros poissons ayant existé, le protégeait des prédateurs. Il devait avoir un métabolisme permettant une excellente cicatrisation. <br /> Sa nageaoire caudale dégageait suffisament de puissance pour assomer les prédateurs qui s'approchaient trop près de lui.",
+      "Considéré comme l'un des plus gros poissons de tous les temps, <i>Leedsichthys</i> possédait une tête relativement large et allongée, avec un crâne robuste parsemé de bosses osseuses, bien que le museau reste inconnu.<br/>Ses mâchoires étaient dépourvues de dents et supportaient un système spécialisé de branchiospines pour filtrer le plancton de l'eau de mer.<br/>Le corps présentait de grandes nageoires pectorales allongées et fines, presque en forme de faucille, qui lui permettaient une nage efficace.<br/>Une grande nageoire dorsale, ainsi qu'une nageoire caudale verticale et symétrique bipartite, complétaient son système de propulsion.<br/><br/>Son mode de vie était celui d'un doux poisson marin filtrant, utilisant sa bouche et ses branchiospines pour aspirer et retenir le plancton en suspension dans l'eau.<br/>Il évoluait dans les mers, nageant lentement tout en filtrant de grandes quantités d'eau pour se nourrir, sans chasser activement d'autres animaux.",
     autres_infos: {
       taille: {
         longueur: '9-27 mètres',
@@ -4318,7 +4318,7 @@ const data = [
       extinction: -0.039,
     },
     description:
-      "Elasmotherium avait des pattes plus longues que celles des rhinocéros actuels. Elle étaient faites pour le galop, ce qui donnait à l'animal une allure de cheval. D'ailleurs, il est raisonnable de penser que cet animal pouvait courir à plus de 55 km/h, soit plus que nos rhinocéros actuels. <br /> On représente bien souvent Elasmotherium avec une corne géante, de près de 2 mètres. Cependant, en 2021, une équipe de paléotologues a réétudié la morphologie de son crâne: ils ont exclu la présence de cette corne gigantesque en raison du dôme osseux relativement fragile qui ne pouvait probablement pas supporter le poids d’une corne de 2 mètres. Ils envisagent également la présence d’une petite zone kératinisée en position nasale, ce qui conférerait à Elasmotherium non pas une mais deux « pseudo-cornes » sur le crâne. <br /> Ses dents indiquent probablement un régime à base d'herbes coriaces. <br /> C'est animal présentait également une fourrure à poils longs.",
+      "<i>Elasmotherium</i> avait un corps massif, robuste et puissant, soutenu par de longues pattes plus allongées que celles des rhinocéros modernes, ce qui lui donnait une allure plus élancée.<br/>Sa tête était large et surmontée d'un grand dôme osseux frontal, support probable d'une corne kératinisée, bien que cette corne ait pu être plus petite que les représentations classiques et peut-être même absente.<br/>Ses mâchoires étaient équipées de molaires hypsodontes à croissance continue, adaptées pour broyer efficacement des herbes coriaces.<br/><br/>Son mode de vie était celui d’un herbivore brouteur, qui se nourrissait principalement d’herbes basses dans des environnements de type steppes et prairies ouvertes.<br/>Ses pattes longues lui permettaient de se déplacer sur de vastes territoires, et il pouvait sans doute galoper lentement sur de grandes distances.<br/>Le large dôme crânien aurait pu aussi jouer un rôle dans la communication ou les combats entre individus, par exemple lors de parades ou d’affrontements.",
     autres_infos: {
       taille: {
         longueur: '5 mètres',
@@ -4374,7 +4374,7 @@ const data = [
       extinction: -0.04,
     },
     description:
-      "Diprotodon est le plus grand marsupial connu. <br /> Très peu agile, il ne devait pas se déplacer très vite. Du fait de sa taille massive, il n'avait que très peu de prédation. <br /> Il possédait deux dents incisives de 30 centimètres à l'avant de la mâchoire ce qui lui permettait de manger des herbes plus coriaces. <br /> Il y a de fortes probabilités que Diprotodon ait été un animal migrateur.",
+      "Plus grand marsupial connu, <i>Diprotodon</i> possédait un corps massif et trapu, avec des membres robustes et des pieds en pigeon, semblables à ceux des wombats, ce qui favorisait la stabilité au sol.<br/>Sa tête était longue et étroite, avec un crâne léger contenant de vastes sinus qui allégeaient le poids total tout en offrant de grandes surfaces pour l'attache des muscles masticateurs.<br/>Ses dents incisives, grandes et en forme de ciseau, poussaient continuellement, tandis que ses molaires bilophodontes permettaient de broyer efficacement la végétation dure.<br/><br/>Le mode de vie de <i>Diprotodon</i> était celui d’un herbivore quadrupède qui broutait les plantes, les branches et les feuilles en grande quantité.<br/>Il se déplaçait lentement mais sûrement sur de longues distances, s’appuyant sur sa puissante musculature et son squelette robuste.<br/>Bien que de grande taille, il était adapté à des mouvements stables plutôt qu’à la vitesse, privilégiant la force pour survivre dans son environnement.",
     autres_infos: {
       taille: {
         longueur: '3 mètres',
@@ -4430,7 +4430,7 @@ const data = [
       extinction: -0.007,
     },
     description:
-      "Cet animal est d'apparence un mélange entre un tatou et une tortue. Sa carapace épaisse est un excellemnt bouclier contre les prédateurs. Le sommet de sa tête était aussi doté d'un petit bouclier. <br /> La carapace du Glyptotherium était constituée de centaines de petites écailles hexagonales. <br /> Son squelette axial présente une fusion étendue de la colonne vertébrale et le bassin est fusionné à la carapace, ce qui rend le bassin entièrement immobile <br />. Sa grande queue servait probablement de contrepoids au reste du corps et cette armure dorsale se terminait par un tube émoussé composé de 2 ou 3 tubes fusionnés.",
+      "Ressemblant à un mélange de tatou et de tortue, <i>Glyptotherium</i> possédait un corps trapu, couvert d'une carapace épaisse composée de centaines d'ostéodermes hexagonaux soudés entre eux, formant une protection solide sur le dos et la tête.<br/>La colonne vertébrale et le bassin étaient fusionnés à la carapace, rendant la structure très rigide, tandis que ses pattes étaient courtes, robustes, adaptées pour supporter un poids conséquent.<br/>Sa queue était protégée par une armure robuste, terminée par un massif tube osseux, qui pouvait servir de contrepoids.<br/><br/>Le mode de vie de <i>Glyptotherium</i> était celui d’un herbivore principalement spécialiste de la pâture dans les zones riveraines, consommant surtout des herbes humides mais aussi des fruits.<br/>Son régime alimentaire était adapté à des plantes coriaces grâce à des dents hypsodontes à couronnes hautes, capables de broyer efficacement les matières fibreuses.<br/>Il pouvait également être semi-aquatique, fréquentant des milieux humides proches de l’eau, et se nourrissant de végétation aquatique comme les plantes des rives.",
     autres_infos: {
       taille: {
         longueur: '2 mètres',
@@ -4486,7 +4486,7 @@ const data = [
       extinction: -0.007,
     },
     description:
-      "Doedicurus était un animal rond, doté d'une lourde armure et d'une carapace. Il portait notamment une massue à pointes sur la queue, qui pouvait peser 40 ou 65 kg, qu'il pouvait brandir pour se défendre contre les prédateurs ou lors de combats avec d'autres Doedicurus à une vitesse d'environ 11 m/s (40 km/h). <br /> Le champ de vision de l’animal étant très limité, il aurait été contraint à balancer sa queue au hasard. <br /> La carapace était solidement attachée au bassin, mais moins étroitement aux épaules. Cet emplacement portait un bouclier additionnel plus petit et les paléontologues en ont déduit l’existence d’une bosse graisseuse, semblable à la bosse d'un dromadaire, qui aurait servi à l’animal à stocker de l’énergie en vue de la saison sèche tout en amortissant les chocs lors d’affrontements avec un rival.",
+      "<i>Doedicurus</i> possédait un corps massif et arrondi, recouvert d'une armure épaisse composée d'ostéodermes soudés formant une carapace rigide. <br/>Sa queue était longue et munie d’un énorme massue osseuse spiculée à son extrémité, utilisée probablement comme arme de défense ou dans des luttes entre individus.<br/>Les pattes étaient courtes et très robustes, adaptées pour supporter son poids considérable et permettre un déplacement lent et stable.<br/><br/>Le mode de vie de <i>Doedicurus</i> était celui d’un herbivore brouteur, qui se nourrissait principalement de végétation coriace.<br/>Son énorme carapace le protégeait efficacement des prédateurs, tandis que la massue caudale servait à repousser les attaques ou à rivaliser avec ses congénères.<br/>Son allure lourde et son déplacement lent indiquent un animal s’appuyant sur sa défense passive plus que sur la fuite.",
     autres_infos: {
       taille: {
         longueur: '4 mètres',
@@ -4541,7 +4541,7 @@ const data = [
       extinction: -110,
     },
     description:
-      "Ce petit ptérosaure est caractérisé par sa crête ronde en forme d’œuf penché qui mesurait 30 centimètres de haut. <br /> Pour voler, il portait une membrane de peau renfermant une fine couche de muscle aussi fine qu'une feuille de papier et ses os étaient creux, ce qui explique son poids léger. <br /> Son bec puissant lui permettait de dévorer des graines, des poissons, des insectes et des coquillages.",
+      '<i>Tapejara</i> possédait un corps léger et élancé, adapté au vol, avec des os creux qui réduisaient son poids.<br/>Sa tête était surmontée d’une grande crête osseuse (30 centimètres) en forme d’œuf penché, probablement recouverte de kératine, qui pouvait servir à la communication ou à l’attraction sexuelle.<br/>Son bec était puissant et dépourvu de dents, adapté pour saisir des graines, des insectes, des poissons, et des coquillages.<br/><br/>Le mode de vie de <i>Tapejara</i> était celui d’un animal volant agile, capable de déplacements rapides et précis en trois dimensions.<br/>Il chassait ou récoltait des petites proies, complétant son alimentation variée, et vivait souvent en groupes importants près des falaises ou dans les forêts.<br/>Ses capacités de vol lui permettaient également d’éviter facilement les prédateurs.',
     autres_infos: {
       taille: {
         longueur: '80 centimètres',
@@ -4597,7 +4597,7 @@ const data = [
       extinction: -100,
     },
     description:
-      "Ornithocheirus n'est connu que par des fragments de mâchoire. <br /> Au bout de son bec se trouvait une crête de forme bi-convexe, comme des demi-lunes. On a longtemps pensé que ce ptérosaure était le plus grand n'ayant jamais existé. En réalité, il entre la catégorie des ptérosaures de taille moyenne, son envergure ayant été exagérément calculée entre 12 et 14 mètres.",
+      "<i>Ornithocheirus</i> possédait un corps léger et aérodynamique, avec de longues ailes puissantes similaires à celles d'un aigle ou d'un albatros, adaptées pour le vol en milieu marin.<br/>Ses mâchoires longues et étroites étaient garnies de nombreuses dents coniques, surtout disposées verticalement, permettant de saisir fermement les poissons.<br/>Une crête osseuse distinctive en forme de 'quille' surmontait le museau, sans doute utilisée pour l'affichage ou l'équilibre en vol.<br/><br/>Le mode de vie de <i>Ornithocheirus</i> était celui d’un excellent pêcheur et planeur, qui chassait en survolant les mers peu profondes, saisissant ses proies à la surface de l'eau.<br/>Il pouvait aussi plonger brièvement pour attraper du poisson, puis reprenait son vol pour parcourir de longues distances au-dessus de l’eau.<br/>Cette espèce possédait une grande agilité en vol, lui permettant d’éviter les prédateurs et d’exploiter efficacement son environnement marin. <br/><br/>On a longtemps pensé que ce ptérosaure était le plus grand n'ayant jamais existé. En réalité, il entre la catégorie des ptérosaures de taille moyenne, son envergure ayant été exagérément calculée entre 12 et 14 mètres.",
     autres_infos: {
       taille: {
         longueur: '2 mètres',
@@ -4653,7 +4653,7 @@ const data = [
       extinction: -228.9,
     },
     description:
-      "Herrerasaurus était l'un des tous premiers dinosaures. <br /> Il avait un crâne unique, semblable à celui des archosauriformes primitifs, avec cinq paires de fenêtres, y compris des fenêtres antéorbitaires et des fenêtres promaxillaires. Sa mâchoire inférieure avait une articulation souple pour saisir les proies. <br /> Les mâchoires étaient munies de dents en forme de scie pour déchiqueter la chair. <br /> Son cou était mince et flexible. <br /> Les pattes avant d'Herrerasaurus étaient courtes, avec des doigts munis de griffes pour saisir, tandis que les pattes postérieures étaient fortes et adaptées à la course. Il avait cinq orteils, mais seuls les trois du milieu portaient son poids. Les orteils extérieurs étaient petits, avec un petit griffon sur le premier orteil. <br /> Sa queue, partiellement raide, servait à l'équilibre et à la vitesse. ",
+      '<i>Herrerasaurus</i> possédait un corps élancé et musclé, adapté à la course rapide et à la chasse active. Ses pattes postérieures longues et puissantes lui assuraient une grande agilité, tandis que sa queue fine et longue lui servait de balancier pour maintenir son équilibre lors des déplacements rapides.<br/>Sa tête allongée présentait un crâne étroit avec un museau fin, équipé de dents tranchantes et légèrement recourbées, parfaitement adaptées à trancher la chair de ses proies.<br/>Ses membres antérieurs étaient courts mais robustes, dotés de trois doigts munis de griffes acérées utilisés pour saisir ses proies.<br/><br/>Le mode de vie de <i>Herrerasaurus</i> était celui d’un prédateur agile et rapide, qui chassait principalement des petits et moyens animaux, comme de jeunes dinosaures, reptiles ou amphibiens.<br/>Il évoluait dans des environnements variés entre zones boisées et plaines ouvertes, utilisant sa vitesse et sa ruse pour surprendre et capturer ses victimes.<br/>Son comportement social est peu connu, mais il était probablement un chasseur solitaire ou en petits groupes discrets.',
     autres_infos: {
       taille: {
         longueur: '3-5 mètres',
