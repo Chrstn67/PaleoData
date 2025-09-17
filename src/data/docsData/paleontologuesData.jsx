@@ -1,18 +1,18 @@
-import Cuvier from '../../../../public/assets/images_doc/paleontologues/Georges_Cuvier.jpg';
-import Schmerling from '../../../../public/assets/images_doc/paleontologues/Philippe-Charles_Schmerling.jpg';
-import Anning from '../../../../public/assets/images_doc/paleontologues/Mary_Anning.jpg';
-import DessalinesDOrbigny from '../../../../public/assets/images_doc/paleontologues/Alcide_Dessalines_dOrbigny.jpg';
+import Cuvier from '../../../public/assets/images_doc/paleontologues/Georges_Cuvier.jpg';
+import Schmerling from '../../../public/assets/images_doc/paleontologues/Philippe-Charles_Schmerling.jpg';
+import Anning from '../../../public/assets/images_doc/paleontologues/Mary_Anning.jpg';
+import DessalinesDOrbigny from '../../../public/assets/images_doc/paleontologues/Alcide_Dessalines_dOrbigny.jpg';
 
-import GourdanDeFromentel from '../../../../public/assets/images_doc/paleontologues/Edouard_Gourdan_de_Fromentel.jpg';
-import TestotFerry from '../../../../public/assets/images_doc/paleontologues/Henry_Testot-Ferry.jpg';
-import Marsh from '../../../../public/assets/images_doc/paleontologues/Othniel_Charles_Marsh.jpg';
-import Nopcsa from '../../../../public/assets/images_doc/paleontologues/Franz_Nopcsa.jpeg';
-import Walcott from '../../../../public/assets/images_doc/paleontologues/Charles_Walcott.jpg';
-import Buckland from '../../../../public/assets/images_doc/paleontologues/William_Buckland.jpg';
-import GideonMantell from '../../../../public/assets/images_doc/paleontologues/Gideon_Mantell.jpg';
-import RichardOwen from '../../../../public/assets/images_doc/paleontologues/Richard_Owen.jpeg';
-import Stenon from '../../../../public/assets/images_doc/paleontologues/Stenon.jpg';
-import Cope from '../../../../public/assets/images_doc/paleontologues/Edward_Cope.jpg';
+import GourdanDeFromentel from '../../../public/assets/images_doc/paleontologues/Edouard_Gourdan_de_Fromentel.jpg';
+import TestotFerry from '../../../public/assets/images_doc/paleontologues/Henry_Testot-Ferry.jpg';
+import Marsh from '../../../public/assets/images_doc/paleontologues/Othniel_Charles_Marsh.jpg';
+import Nopcsa from '../../../public/assets/images_doc/paleontologues/Franz_Nopcsa.jpeg';
+import Walcott from '../../../public/assets/images_doc/paleontologues/Charles_Walcott.jpg';
+import Buckland from '../../../public/assets/images_doc/paleontologues/William_Buckland.jpg';
+import GideonMantell from '../../../public/assets/images_doc/paleontologues/Gideon_Mantell.jpg';
+import RichardOwen from '../../../public/assets/images_doc/paleontologues/Richard_Owen.jpeg';
+import Stenon from '../../../public/assets/images_doc/paleontologues/Stenon.jpg';
+import Cope from '../../../public/assets/images_doc/paleontologues/Edward_Cope.jpg';
 
 const paleontologuesData = [
   {

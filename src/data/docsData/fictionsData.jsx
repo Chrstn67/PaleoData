@@ -1,5 +1,5 @@
-import Primeval from '../../../../public/assets/images_doc/fictions/Primeval.webp';
-import JurassicPark from '../../../../public/assets/images_doc/fictions/JurassicPark.jpeg';
+import Primeval from '../../../public/assets/images_doc/fictions/Primeval.webp';
+import JurassicPark from '../../../public/assets/images_doc/fictions/JurassicPark.jpeg';
 
 const fictionsData = [
   {

@@ -9,16 +9,26 @@ import Timeline from './Timeline';
 import timelineData from '../data/timelineData';
 import EtymoPage from './EtymoPage';
 import Documentation from './Documentation/Documentation';
-import MentionsLegales from './MentionsLegales';
-import Batailles from './Documentation/Batailles/Batailles';
-import DecouvertesRecentes from './Documentation/DecouvertesRecentes/DecouvertesRecentes';
-import Definitions from './Documentation/Definitions/Definitions';
-import Fiction from './Documentation/Fiction/Fiction';
-import FossilesCelebres from './Documentation/FossilesCelebres/FossilesCelebres';
+import BataillesList from './Documentation/BataillesList';
+import BatailleDetail from './Documentation/BatailleDetail';
+import QuestionsList from './Documentation/QuestionsList';
+import QuestionDetail from './Documentation/QuestionDetail';
+import DefinitionsList from './Documentation/DefinitionsList';
+import DefinitionDetail from './Documentation/DefinitionDetail';
+import FossilesList from './Documentation/FossilesList';
+import FossileDetail from './Documentation/FossileDetail';
+import DecouvertesList from './Documentation/DecouvertesList';
+import DecouverteDetail from './Documentation/DecouverteDetail';
+import PaleontologuesList from './Documentation/PaleontologuesList';
+import PaleontologueDetail from './Documentation/PaleontologueDetail';
+import FictionsList from './Documentation/FictionsList';
+import FictionDetail from './Documentation/FictionDetail';
+
 import Gisements from './Documentation/Gisements/Gisements';
-import Paleontologues from './Documentation/Paleontologues/Paleontologues';
-import Questions from './Documentation/Questions/Questions';
+
 import ScrollToTopButton from './ScrollToTopButton';
+
+import MentionsLegales from './MentionsLegales';
 
 import data from '../data/data';
 import NotFound from './NotFound';
@@ -37,15 +47,32 @@ function App() {
             <Route path="/animal/:nom" element={<AnimalCard data={data} />} />
             <Route path="/echelle-des-temps-geologiques" element={<Timeline timelineData={timelineData} />} />
             <Route path="/liste-etymologique" element={<EtymoPage />} />
+            <Route path="/" element={<Documentation />} />
             <Route path="/documentation" element={<Documentation />} />
-            <Route path="/documentation/batailles" element={<Batailles />} />
-            <Route path="/documentation/decouvertes-recentes" element={<DecouvertesRecentes />} />
-            <Route path="/documentation/definitions" element={<Definitions />} />
-            <Route path="/documentation/fiction" element={<Fiction />} />
-            <Route path="/documentation/fossiles-celebres" element={<FossilesCelebres />} />
+
+            <Route path="/documentation/batailles" element={<BataillesList />} />
+            <Route path="/documentation/batailles/:slug" element={<BatailleDetail />} />
+
+            <Route path="/documentation/questions" element={<QuestionsList />} />
+            <Route path="/documentation/questions/:slug" element={<QuestionDetail />} />
+
+            <Route path="/documentation/definitions" element={<DefinitionsList />} />
+            <Route path="/documentation/definitions/:slug" element={<DefinitionDetail />} />
+
+            <Route path="/documentation/fossiles-celebres" element={<FossilesList />} />
+            <Route path="/documentation/fossiles-celebres/:slug" element={<FossileDetail />} />
+
+            <Route path="/documentation/decouvertes-recentes" element={<DecouvertesList />} />
+            <Route path="/documentation/decouvertes-recentes/:slug" element={<DecouverteDetail />} />
+
+            <Route path="/documentation/paleontologues" element={<PaleontologuesList />} />
+            <Route path="/documentation/paleontologues/:slug" element={<PaleontologueDetail />} />
+
+            <Route path="/documentation/fiction" element={<FictionsList />} />
+            <Route path="/documentation/fiction/:slug" element={<FictionDetail />} />
+
             <Route path="/documentation/gisements-fossiliferes" element={<Gisements />} />
-            <Route path="/documentation/paleontologues" element={<Paleontologues />} />
-            <Route path="/documentation/questions" element={<Questions />} />
+
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

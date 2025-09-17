@@ -1,4 +1,4 @@
-import fossilisation from '../../../../public/assets/images_doc/documentation/fossilisation.png';
+import fossilisation from '../../../public/assets/images_doc/documentation/fossilisation.png';
 
 const questionsData = [
   {

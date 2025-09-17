@@ -1,7 +1,7 @@
-import GideonMantell from '../../../../public/assets/images_doc/paleontologues/Gideon_Mantell.jpg';
-import RichardOwen from '../../../../public/assets/images_doc/paleontologues/Richard_Owen.jpeg';
-import Marsh from '../../../../public/assets/images_doc/paleontologues/Othniel_Charles_Marsh.jpg';
-import Cope from '../../../../public/assets/images_doc/paleontologues/Edward_Cope.jpg';
+import GideonMantell from '../../../public/assets/images_doc/paleontologues/Gideon_Mantell.jpg';
+import RichardOwen from '../../../public/assets/images_doc/paleontologues/Richard_Owen.jpeg';
+import Marsh from '../../../public/assets/images_doc/paleontologues/Othniel_Charles_Marsh.jpg';
+import Cope from '../../../public/assets/images_doc/paleontologues/Edward_Cope.jpg';
 
 const bataillesData = [
   {

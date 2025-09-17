@@ -1,7 +1,7 @@
-import empreintesBotucatu from '../../../../public/assets/images_doc/decouvertes/empreintes_botucatu.jpg';
-import YaguarasaurusRegiomontanus from '../../../../public/assets/images_doc/decouvertes/Yaguarasaurus_regiomontanus.jpg';
-import BabyYingliang from '../../../../public/assets/images_doc/decouvertes/BabyYingliang.jpeg';
-import BabyYingliang3D from '../../../../public/assets/images_doc/decouvertes/BabyYingliang3D.jpeg';
+import empreintesBotucatu from '../../../public/assets/images_doc/decouvertes/empreintes_botucatu.jpg';
+import YaguarasaurusRegiomontanus from '../../../public/assets/images_doc/decouvertes/Yaguarasaurus_regiomontanus.jpg';
+import BabyYingliang from '../../../public/assets/images_doc/decouvertes/BabyYingliang.jpeg';
+import BabyYingliang3D from '../../../public/assets/images_doc/decouvertes/BabyYingliang3D.jpeg';
 
 const decouvertesRecentesData = [
   {

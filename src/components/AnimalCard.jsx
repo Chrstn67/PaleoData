@@ -96,7 +96,7 @@ const AnimalCard = ({ data }) => {
           <div className="title-image-section">
             <h1>{animal.nom}</h1>
             <img
-              src={imageUrl || '/placeholder.svg'}
+              src={imageUrl}
               alt={animal.nom}
               className="hero-image"
               onClick={openImageModal}
@@ -123,7 +123,7 @@ const AnimalCard = ({ data }) => {
             <button className="image-modal-close" onClick={closeImageModal}>
               <BiX size={24} />
             </button>
-            <img src={imageUrl || '/placeholder.svg'} alt={animal.nom} className="image-modal-img" />
+            <img src={imageUrl} alt={animal.nom} className="image-modal-img" />
             <div className="image-modal-caption">
               <h3>{animal.nom}</h3>
               {animal.etymologie && <p>{animal.etymologie}</p>}

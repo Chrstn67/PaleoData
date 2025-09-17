@@ -1,8 +1,8 @@
-import FossileCoelophysis from '../../../../public/assets/images_doc/fossiles/Coelophysis_fossile.jpg';
-import BigAl from '../../../../public/assets/images_doc/fossiles/BigAl.jpg';
-import Megalosaurus from '../../../../public/assets/images_doc/fossiles/premiere_representation_megalosaurus.jpeg';
-import RepenomamusVSPsittacosaurus from '../../../../public/assets/images_doc/fossiles/Repenomamus_vs_Psittacosaurus.jpeg';
-import EmpreintesDinoplagne from '../../../../public/assets/images_doc/fossiles/EmpreintesDinoplagne.jpg';
+import FossileCoelophysis from '../../../public/assets/images_doc/fossiles/Coelophysis_fossile.jpg';
+import BigAl from '../../../public/assets/images_doc/fossiles/BigAl.jpg';
+import Megalosaurus from '../../../public/assets/images_doc/fossiles/premiere_representation_megalosaurus.jpeg';
+import RepenomamusVSPsittacosaurus from '../../../public/assets/images_doc/fossiles/Repenomamus_vs_Psittacosaurus.jpeg';
+import EmpreintesDinoplagne from '../../../public/assets/images_doc/fossiles/EmpreintesDinoplagne.jpg';
 
 const fossilesData = [
   {
