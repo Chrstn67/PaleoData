@@ -1,27 +1,45 @@
-import React from 'react';
+import { BiShareAlt } from 'react-icons/bi';
 import './GisementDetails.css';
 
-const GisementDetails = ({ gisement }) => {
+const GisementDetails = ({ gisement, onShare }) => {
   if (!gisement) return null;
 
   return (
-    <section className="gisement-details-comic">
-      <header className="gisement-details-header">
-        <h2>{gisement.notion}</h2>
-      </header>
-      <div className="gisement-details-content">
-        <div className="gisement-details-illustrations">
-          {gisement.illustration.map((img, index) => (
-            <img key={index} src={img} alt={gisement.alt} />
-          ))}
+    <article className="gisement-details">
+      <div className="share-section">
+        <button type="button" className="share-btn" onClick={onShare}>
+          <BiShareAlt size={20} className="share-icon" />
+        </button>
+      </div>
+      <div className="hero-content">
+        <div className="title-image-section">
+          <div className="text-content">
+            <h2 className="gisement-title">{gisement.notion}</h2>
+          </div>
+
+          {gisement.illustration && gisement.illustration.length > 0 && (
+            <div className="image-gallery">
+              {gisement.illustration.map((img, index) => (
+                <div key={index} className="illustration-item">
+                  <div className="image-container">
+                    <img src={img || '/placeholder.svg'} alt={gisement.alt} className="gisement-image" />
+                  </div>
+                  {gisement.alt && <p className="illustration-caption">{gisement.alt}</p>}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-        <div className="gisement-details-speech-bubble">
-          <div className="gisement-details-speech-bubble-content">
-            <p dangerouslySetInnerHTML={{ __html: gisement.explications }}></p>
+
+        <div className="content-section">
+          <div className="description-bubble">
+            <div className="bubble-content">
+              <p dangerouslySetInnerHTML={{ __html: gisement.explications }}></p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 

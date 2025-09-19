@@ -1,123 +1,214 @@
-#75553fff: #75553fff;
-#85674dff: #85674dff;
-#95795aff: #95795aff;
-#a58b68ff: #a58b68ff;
-#b49d75ff: #b49d75ff;
-#c4af83ff: #c4af83ff;
-#d4c190: #d4c190ff;
-#e4d39eff: #e4d39eff;
-#f3e5abff: #f3e5abff;
-
-.options-sites {
-  margin: 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  select {
-    background-color: #f3e5abff;
-    border: 2px solid #e4d39eff;
-    border-radius: 10px;
-    color: #000;
-    font-size: 16px;
-    padding: 8px 16px;
-    text-align: center;
-
-    &:focus {
-      border-color: #d4c190;
-      outline: none;
-    }
-
-    option {
-      background-color: #f3e5abff;
-      color: #000;
-      text-align: center;
-    }
-  }
-}
-
-.gisement-details-comic {
-  background: linear-gradient(to bottom, #85674d, #e4d39e);
-  border-radius: 10px;
-  margin: 20px 0;
-  padding: 20px;
+.gisement-details {
+  max-width: min(1400px, calc(100vw - 2rem));
+  margin: 2rem auto;
+  padding: 0 clamp(0.5rem, 2vw, 2rem);
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(117, 85, 63, 0.1);
+  border: 1px solid rgba(117, 85, 63, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   position: relative;
 }
 
-.gisement-details-header {
-  background-color: #d4c190;
-  border-radius: 10px 10px 0 0;
-  padding: 10px;
+.gisement-details .hero-content {
+  max-width: min(1400px, calc(100vw - 2rem));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.gisement-details .title-image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.gisement-details .text-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.gisement-details .gisement-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #75553f;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 1.1;
   text-align: center;
 }
 
-.gisement-details-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-@media (min-width: 768px) {
-  .gisement-details-content {
-    flex-direction: row;
-  }
-}
-
-.gisement-details-illustrations {
+.gisement-details .image-gallery {
   display: flex;
   justify-content: center;
-  margin-right: 10px;
-  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.gisement-details .illustration-item {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
-  .gisement-details-illustrations {
-    width: 40%;
-  }
+.gisement-details .image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(117, 85, 63, 0.3);
+  transition: transform 0.3s ease;
+  background: white;
+  padding: 0.5rem;
 }
 
-.gisement-details-illustrations img {
-  outline: #f3e5abff 2px solid;
-  border-radius: 70%;
-  margin-bottom: 10px;
+.gisement-details .image-container:hover {
+  transform: scale(1.03);
+}
+
+.gisement-details .gisement-image {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
   object-fit: cover;
-  max-width: 80%;
-  height: auto;
-  border-radius: 0.5em;
+  display: block;
+  border-radius: 8px;
 }
 
-.gisement-details-speech-bubble {
-  background-color: #e4d39eff;
-  box-shadow:
-    inset 3px -3px 100px #9c7154,
-    inset -1px 1px 1px #58402f,
-    0 10px 20px #4e392ac0;
-  border-radius: 10px;
-  padding: 1em;
+.gisement-details .illustration-caption {
+  font-size: 0.9rem;
+  color: #75553f;
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+.gisement-details .content-section {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.gisement-details .description-bubble {
+  background: linear-gradient(135deg, #f8f5e8 0%, #e8dcc0 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(117, 85, 63, 0.1);
+  border: 1px solid rgba(117, 85, 63, 0.15);
   position: relative;
-  height: 18em;
-  overflow-y: auto;
-  @media (min-width: 768px) {
-    width: 55%;
-  }
-  &::-webkit-scrollbar {
-    width: 0.8em;
-  }
+}
 
-  &::-webkit-scrollbar-track {
-    border-radius: 10%;
-    background: linear-gradient(to bottom, #75553f, #f3e5ab);
-  }
+.gisement-details .bubble-content p {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.7;
+  color: #5d4a37;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
 
-  &::-webkit-scrollbar-thumb {
-    border-radius: 10%;
-    background-color: #a58b68ff;
-    background: linear-gradient(to top, #75553f, #f3e5ab);
+.gisement-details .bubble-content p:last-child {
+  margin-bottom: 0;
+}
+
+.gisement-details .share-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.gisement-details .share-btn {
+  background: linear-gradient(135deg, #f8f5e8 0%, #e8dcc0 100%);
+  color: #75553f;
+  border: 2px solid rgba(117, 85, 63, 0.3);
+  border-radius: 50%;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.gisement-details .share-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation pour l'apparition */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.gisement-details-speech-bubble-content {
-  line-height: 1.5;
+.gisement-details {
+  animation: slideInFromBottom 0.6s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gisement-details {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .gisement-details .hero-content .title-image-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .gisement-details .image-gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .gisement-details .gisement-image {
+    max-width: 250px;
+    height: 180px;
+  }
+
+  .gisement-details .description-bubble {
+    padding: 1.5rem;
+  }
+
+  .gisement-details .share-btn {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gisement-details .share-btn {
+    width: 45px;
+    height: 45px;
+    padding: 0.6rem;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+
+  .gisement-details {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
 }
