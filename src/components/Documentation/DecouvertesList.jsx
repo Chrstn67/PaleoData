@@ -12,8 +12,8 @@ const DecouvertesList = () => {
         <Link to="/documentation" className="back-link">
           ← Retour
         </Link>
-        <h1>Découvertes récentes</h1>
-        <p>Reste informé des dernières découvertes paléontologiques</p>
+        <h1>Découvertes</h1>
+        <p>Des découvertes fascinantes qui ont modifiées certaines idées reçues</p>
       </header>
 
       <section className="article-list-container">

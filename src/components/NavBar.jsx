@@ -105,7 +105,7 @@ const NavBar = () => {
                   scrollToTop();
                 }}
               >
-                Découvertes récentes
+                Découvertes
               </NavLink>
             </li>
             <li className="navbar-subitem">
