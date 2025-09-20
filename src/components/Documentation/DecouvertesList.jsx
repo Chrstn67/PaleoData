@@ -13,7 +13,7 @@ const DecouvertesList = () => {
           ← Retour
         </Link>
         <h1>Découvertes récentes</h1>
-        <p>Restez informé des dernières découvertes paléontologiques</p>
+        <p>Reste informé des dernières découvertes paléontologiques</p>
       </header>
 
       <section className="article-list-container">

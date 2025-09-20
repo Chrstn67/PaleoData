@@ -1,6 +1,5 @@
 'use client';
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { BiShareAlt } from 'react-icons/bi';
@@ -17,16 +16,16 @@ const Gisements = () => {
   const zoomLevel = 2;
   const [selectedGisement, setSelectedGisement] = useState(null);
   const [selectedNotion, setSelectedNotion] = useState('');
-
   const navigate = useNavigate();
+  const detailsRef = useRef(null);
 
-  // Function to share the entire page
+  // Fonction pour partager la page entière
   const sharePage = async () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Découvrez les sites fossilifères remarquables',
-          text: 'Explorez les gisements paléontologiques les plus importants du monde',
+          title: 'Découvre les sites fossilifères remarquables',
+          text: 'Explore les gisements paléontologiques les plus importants du monde',
           url: window.location.href,
         });
       } catch (error) {
@@ -35,7 +34,7 @@ const Gisements = () => {
     }
   };
 
-  // Function to share specific gisement
+  // Fonction pour partager un gisement spécifique
   const shareGisement = async (gisement) => {
     if (navigator.share) {
       try {
@@ -51,13 +50,11 @@ const Gisements = () => {
     }
   };
 
-  // Handle URL parameters on component mount
+  // Gestion des paramètres d'URL au chargement du composant
   useEffect(() => {
-    // Récupérer la partie hash après #
     const hash = window.location.hash;
     const queryString = hash.includes('?') ? hash.split('?')[1] : '';
     const searchParams = new URLSearchParams(queryString);
-
     const siteSlug = searchParams.get('site');
     if (siteSlug) {
       const gisement = gisementsData.find((g) => g.slug === siteSlug);
@@ -69,17 +66,24 @@ const Gisements = () => {
     }
   }, []);
 
+  // Fonction pour obtenir une icône personnalisée
   const getCustomIcon = (type) => {
     return new Icon(iconMappings[type] || iconMappings.Gisement);
   };
 
+  // Gestion du clic sur un marqueur
   const handleMarkerClick = (gisement) => {
     setSelectedGisement(gisement);
     setSelectedNotion(gisement.notion);
-    // Update URL with site slug (correct route with hash)
     navigate(`/documentation/gisements-fossiliferes?site=${gisement.slug}`);
+    setTimeout(() => {
+      if (detailsRef.current) {
+        detailsRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
+  // Gestion du changement de notion
   const handleNotionChange = (event) => {
     const notion = event.target.value;
     setSelectedNotion(notion);
@@ -87,14 +91,18 @@ const Gisements = () => {
     setSelectedGisement(selectedGisement);
     if (selectedGisement) {
       setMapCenter(selectedGisement.coordinates);
-      // Update URL with site slug (correct route with hash)
       navigate(`/documentation/gisements-fossiliferes?site=${selectedGisement.slug}`);
+      setTimeout(() => {
+        if (detailsRef.current) {
+          detailsRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     } else {
-      // Clear URL if no selection
-      navigate(window.location.pathname);
+      navigate('/documentation/gisements-fossiliferes');
     }
   };
 
+  // Tri des notions
   const sortedNotions = gisementsData
     .map((city) => city.notion)
     .filter((value, index, self) => self.indexOf(value) === index)
@@ -106,9 +114,8 @@ const Gisements = () => {
         <div className="hero-content">
           <div className="title-section">
             <h1 className="main-title">Sites Fossilifères</h1>
-            <p className="subtitle">Découvrez les gisements paléontologiques les plus remarquables du monde</p>
+            <p className="subtitle">Découvre les gisements paléontologiques les plus remarquables du monde</p>
           </div>
-
           <div className="selection-section">
             <div className="selector-wrapper">
               <select value={selectedNotion} onChange={handleNotionChange} className="site-selector">
@@ -123,7 +130,6 @@ const Gisements = () => {
           </div>
         </div>
       </div>
-
       <div className="map-section">
         <div className="map-container">
           <MapContainer
@@ -155,9 +161,8 @@ const Gisements = () => {
           </MapContainer>
         </div>
       </div>
-
       {selectedGisement && (
-        <div className="details-section">
+        <div className="details-section" ref={detailsRef}>
           <GisementDetails gisement={selectedGisement} onShare={() => shareGisement(selectedGisement)} />
         </div>
       )}

@@ -1,8 +1,27 @@
-import { BiShareAlt } from 'react-icons/bi';
+import { useState } from 'react';
+import { BiShareAlt, BiX } from 'react-icons/bi';
 import './GisementDetails.css';
 
 const GisementDetails = ({ gisement, onShare }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   if (!gisement) return null;
+
+  const openImageModal = (img) => {
+    setSelectedImage(img);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  const handleModalClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeImageModal();
+    }
+  };
 
   return (
     <article className="gisement-details">
@@ -11,6 +30,7 @@ const GisementDetails = ({ gisement, onShare }) => {
           <BiShareAlt size={20} className="share-icon" />
         </button>
       </div>
+
       <div className="hero-content">
         <div className="title-image-section">
           <div className="text-content">
@@ -21,8 +41,17 @@ const GisementDetails = ({ gisement, onShare }) => {
             <div className="image-gallery">
               {gisement.illustration.map((img, index) => (
                 <div key={index} className="illustration-item">
-                  <div className="image-container">
-                    <img src={img || '/placeholder.svg'} alt={gisement.alt} className="gisement-image" />
+                  <div
+                    className="image-container"
+                    onClick={() => openImageModal(img)}
+                    style={{ cursor: 'pointer' }}
+                    title="Cliquer pour agrandir"
+                  >
+                    <img
+                      src={img || '/placeholder.svg'}
+                      alt={gisement.alt || `Illustration ${index + 1}`}
+                      className="gisement-image"
+                    />
                   </div>
                   {gisement.alt && <p className="illustration-caption">{gisement.alt}</p>}
                 </div>
@@ -39,6 +68,23 @@ const GisementDetails = ({ gisement, onShare }) => {
           </div>
         </div>
       </div>
+
+      {/* Modal image */}
+      {selectedImage && (
+        <div className="image-modal-overlay" onClick={handleModalClick}>
+          <div className="image-modal-content">
+            <button className="image-modal-close" onClick={closeImageModal}>
+              <BiX size={24} />
+            </button>
+            <img src={selectedImage} alt={gisement.alt || 'Illustration agrandie'} className="image-modal-img" />
+            {gisement.alt && (
+              <div className="image-modal-caption">
+                <p>{gisement.alt}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </article>
   );
 };

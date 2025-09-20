@@ -126,7 +126,7 @@ HomePage.propTypes = {
     PropTypes.shape({
       nom: PropTypes.string.isRequired,
       image_url: PropTypes.string.isRequired,
-      // Changez cette ligne pour accepter string OU array
+      // Change cette ligne pour accepter string OU array
       regime_alimentaire: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
       geologie: PropTypes.shape({
         ere: PropTypes.string,
@@ -134,7 +134,7 @@ HomePage.propTypes = {
         epoque: PropTypes.string,
         stage: PropTypes.string,
       }),
-      date_ajout: PropTypes.string, // Retirez .isRequired si ce champ est optionnel
+      date_ajout: PropTypes.string,
     }),
   ).isRequired,
 };

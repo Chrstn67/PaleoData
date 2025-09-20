@@ -764,8 +764,7 @@ const Timeline = ({ timelineData }) => {
             <div className="empty-state-icon">🔍</div>
             <h3 className="empty-state-title">Aucun résultat trouvé</h3>
             <p className="empty-state-description">
-              Essayez de modifier votre recherche ou explorez d'autres sections de cette fascinante histoire de la
-              Terre.
+              Essaie de modifier votre recherche ou Explore d'autres sections de cette fascinante histoire de la Terre.
             </p>
             <div className="search-tips">
               <h4>💡 Conseils de recherche :</h4>

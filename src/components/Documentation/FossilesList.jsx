@@ -13,7 +13,7 @@ const FossilesList = () => {
           ← Retour
         </Link>
         <h1>Fossiles célèbres</h1>
-        <p>Il existe des fossiles qui sont une mine d'or d'informations. Venez les examiner !</p>
+        <p>Il existe des fossiles qui sont une mine d'or d'informations. Viens les examiner !</p>
       </header>
 
       <section className="article-list-container">

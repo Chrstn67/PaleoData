@@ -13,7 +13,7 @@ const BataillesList = () => {
           ← Retour
         </Link>
         <h1>Batailles</h1>
-        <p>Découvrez les débats les plus épiques entre scientifiques renommés</p>
+        <p>Découvre les débats les plus épiques entre scientifiques renommés</p>
       </header>
 
       <section className="article-list-container">

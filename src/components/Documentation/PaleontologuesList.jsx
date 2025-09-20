@@ -13,7 +13,7 @@ const PaleontologuesList = () => {
           ← Retour
         </Link>
         <h1>Paléontologues</h1>
-        <p>Découvrez les plus grands paléontologues de l'histoire et leurs découvertes</p>
+        <p>Découvre les plus grands paléontologues de l'histoire et leurs découvertes</p>
       </header>
 
       <section className="article-list-container">

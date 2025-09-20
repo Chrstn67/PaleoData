@@ -13,7 +13,7 @@ const QuestionsList = () => {
           ← Retour
         </Link>
         <h1>Questions</h1>
-        <p>Trouvez les réponses aux questions les plus fréquemment posées sur la paléontologie</p>
+        <p>Trouve les réponses aux questions les plus fréquemment posées sur la paléontologie</p>
       </header>
 
       <section className="article-list-container">

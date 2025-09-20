@@ -38,7 +38,7 @@ function MentionsLegales() {
       <p>
         4 - CNIL et gestion des données personnelles : Conformément aux dispositions de la loi 78-17 du 6 janvier 1978
         modifiée, l’utilisateur du site https://chrstn67.github.io/PaleoData/#/ dispose d’un droit d’accès, de
-        modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre
+        modification et de suppression des informations collectées. Pour exercer ce droit, envoie un message à notre
         Délégué à la Protection des Données : Christian HUMBERT - chrstn.hmbrt67@outlook.com.
       </p>
 
