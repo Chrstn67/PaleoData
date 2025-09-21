@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useRef, useMemo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaHistory, FaBook, FaInfoCircle } from 'react-icons/fa';
 import { GiDinosaurRex } from 'react-icons/gi';
 import PropTypes from 'prop-types';
@@ -10,14 +10,30 @@ import '../styles/HomePage.css';
 
 const HomePage = ({ animals }) => {
   const ref = useRef(null);
+  const navigate = useNavigate();
 
   const scrollToTop = () => {
     ref.current.scrollIntoView({ behavior: 'auto' });
   };
 
+  const handleAnimalClick = (animalName) => {
+    scrollToTop();
+    navigate(`/animal/${encodeURIComponent(animalName)}`);
+  };
+
+  // Mélange aléatoire des animaux avec plus d'éléments pour un défilement plus fluide
+  const shuffledAnimals = useMemo(() => {
+    const copy = [...animals];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+
+    return [...copy, ...copy];
+  }, [animals]);
+
   return (
     <div className="home-page" ref={ref}>
-      {/* Passer la prop animals au composant NewAnimal */}
       <NewAnimal animals={animals} />
 
       <section className="hero-section">
@@ -37,7 +53,24 @@ const HomePage = ({ animals }) => {
             <span className="stats-number">{animals.length}</span>
             <span className="stats-label">animaux disponibles</span>
           </div>
+
+          {/* Bandeau infini cliquable amélioré */}
+          <div className="marquee-container">
+            <div className="marquee">
+              {shuffledAnimals.map((animal, index) => (
+                <button
+                  key={`${animal.nom}-${index}`}
+                  className="marquee-item"
+                  onClick={() => handleAnimalClick(animal.nom)}
+                  type="button"
+                >
+                  {animal.nom}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
+
         <div className="hero-background">
           <div className="floating-element element-1"></div>
           <div className="floating-element element-2"></div>
@@ -126,7 +159,6 @@ HomePage.propTypes = {
     PropTypes.shape({
       nom: PropTypes.string.isRequired,
       image_url: PropTypes.string.isRequired,
-      // Change cette ligne pour accepter string OU array
       regime_alimentaire: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
       geologie: PropTypes.shape({
         ere: PropTypes.string,
@@ -138,4 +170,5 @@ HomePage.propTypes = {
     }),
   ).isRequired,
 };
+
 export default HomePage;
