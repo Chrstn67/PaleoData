@@ -375,7 +375,7 @@
   },
   {
     "nom": "Amiskwia",
-    "etymologie": "--",
+    "etymologie": "P-ê : Petit castor. De la langue crie, Amiskw signifiant 'castor'",
     "image_url": "./assets/images/Amiskwia.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -859,7 +859,7 @@
   },
   {
     "nom": "Aysheaia",
-    "etymologie": "--",
+    "etymologie": "En l'honneur d'Aysheaia Barlow, une amie de Charles Doolittle Walcott",
     "image_url": "./assets/images/Aysheaia.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -1954,7 +1954,7 @@
   },
   {
     "nom": "Edaphosaurus",
-    "etymologie": "--",
+    "etymologie": "Lézard terrestre",
     "image_url": "./assets/images/Edaphosaurus.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -3276,7 +3276,7 @@
   {
     "nom": "Kelenken",
     "etymologie": "D'un démon de la mythologie du peuple Tehuelche",
-    "image_url": "./assets/images/Kelenken.jpg",
+    "image_url": "./assets/images/Kelenken.webp",
     "taxonomie": {
       "règne": "Animalia",
       "sous_règne": "",
@@ -3467,7 +3467,7 @@
   },
   {
     "nom": "Anancus",
-    "etymologie": "--",
+    "etymologie": "Contraint par la force",
     "image_url": "./assets/images/Anancus.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -5110,7 +5110,7 @@
       "apparition": -235,
       "extinction": -220
     },
-    "description": "Longisquama est un petit reptile bien reconnaissable à ses écailles extrêmement allongées qui forment une sorte de voile dorsale. <br /> Il devait pouvoir la redresser pour effrayer ses prédateurs ou attirer ses partenaires. Mais certains paléontologues positionnent autrement ces longues écailles, et supposent qu'elles lui servaient plutôt à voler. <br /> Il avait de longs doigts crochus surmontés de petites griffes.",
+    "description": "<i>Longisquama</i> possédait un corps fin et allongé, évoquant celui d’un petit lézard, avec une tête étroite et courte dotée de minuscules dents pointues.<br/>Ses membres paraissaient écartés sur le côté, permettant des déplacements souples et rapides entre les branches.<br/>Le trait le plus remarquable était la présence d’une rangée unique d’appendices plats et longs, en forme de hockey, disposés verticalement sur le dos. Ces structures, rigides mais probablement colorées ou iridescentes, étaient probablement attachées solidement par des follicules et parcourues de crêtes et de rainures tout le long.<br/><br/>Le mode de vie de <i>Longisquama</i> était celui d’un petit insectivore arboricole, passant la plupart de son temps dans les arbres pour chasser des insectes grâce à ses dents pointues.<br/>Ses grands appendices dorsaux servaient principalement de dispositifs de parade ou de signalisation, possiblement pour impressionner ses congénères ou intimider ses prédateurs.<br/>Son anatomie et son mode de vie étaient adaptés à la vie dans des forêts riches et humides.",
     "autres_infos": {
       "taille": {
         "longueur": "15-20 centimètres",
@@ -5164,7 +5164,7 @@
       "apparition": -240,
       "extinction": -220
     },
-    "description": "Le cou de cet animal est sans conteste sa particularité anatomique la plus surprenante : il pouvait atteindre jusqu’à 3 mètres de long, soit la moitié de la longueur de son corps, sachant qu'il possédait aussi une longue queue ! Ce cou possède 13 vertèbres. Une étude, conduite en 2015 par le paléontologue britannique Mark Witton, renforce l'hypothèse d'une vie à dominante terrestre: Tanystropheus ne présente pas d'adaptation significative à la vie aquatique. <br /> De plus, il estime que le poids du cou, malgré sa longueur démesurée, ne représente que 20 % de la masse totale de l'animal et parait donc facilement manœuvrable. Il conclut que Tanystropheus aurait pêché à la manière d'un héron.",
+    "description": "<i>Tanystropheus</i> possédait un corps allongé avec un torse bas et robuste, porté par des pattes relativement courtes. Son trait le plus spectaculaire était un cou extrêmement long, composé de treize vertèbres cervicales très étirées, ce qui donnait à cet animal l’apparence d’un petit reptile avec une « canne à pêche » collée au tronc. La tête était petite, étroite et munie de dents acérées et repliées vers l’arrière, adaptées à saisir des proies glissantes.<br>Les membres antérieurs, plus courts que les postérieurs, accentuaient la posture inclinée du corps ; la longue queue musclée dessinait un profil bien équilibré.<br><br>Le mode de vie de <i>Tanystropheus</i> combinait des habitudes semi-aquatiques et terrestres : il attendait en embuscade au bord de l’eau ou dans les eaux peu profondes, en gardant sa tête cachée grâce à son long cou pour surprendre poissons et céphalopodes.<br>Son anatomie unique lui permettait de se maintenir stable sur la terre ferme mais aussi de nager lentement, capturant ses proies par un mouvement rapide du cou.<br>Il était probablement solitaire ou peu grégaire, et occupait des milieux marécageux, lacustres ou côtiers riches en proies aquatiques.",
     "autres_infos": {
       "taille": {
         "longueur": "6 mètres",
@@ -5218,7 +5218,7 @@
       "apparition": -164,
       "extinction": -163
     },
-    "description": "Ce petit dinosaure possédait un crâne où les dents sont uniquement implantées à l'avant de la mâchoire, et celles de devant sont longues et inclinées vers l'avant. <br /> La queue d’Epidexipteryx possède des vertèbres inhabituelles vers la pointe qui ressemble au pygostyle (un os du croupion) des oiseaux modernes et des oviraptorosaures.  <br /> Quant aux plumes, eslles sont uniques par le fait qu'elles semblent surgir d'une « structure membraneuse » située à leur base.",
+    "description": "<i>Epidexipteryx</i> possédait un corps petit et effilé, couvert de plumes courtes et simples sur tout le tronc et la tête. Sa queue était ornée de quatre longues plumes rubanées, plates et lisses, disposées en éventail, qui ne servaient ni au vol ni au parachutage mais étaient sans doute utilisées pour l’affichage.<br>Sa tête courte et arrondie portait des dents longues et inclinées vers l’avant uniquement à l’avant des mâchoires, tandis que ses doigts, extrêmement fins et allongés, permettaient de grimper, de sonder des crevasses ou d’attraper des proies.<br><br>Le mode de vie de <i>Epidexipteryx</i> était arboricole : il se déplaçait dans les arbres, utilisant ses doigts fins pour chercher et capturer insectes, larves et petits invertébrés.<br>Ses plumes spectaculaires servaient principalement à la parade visuelle pour séduire ses congénères ou intimider d’autres individus.<br>Son attitude discrète et agile faisait de lui un animal adapté à la vie en forêt, se cachant et progressant lentement de branche en branche.",
     "autres_infos": {
       "taille": {
         "longueur": "30 centimètres",
@@ -5272,7 +5272,7 @@
       "apparition": -189,
       "extinction": -183
     },
-    "description": "Cryolophosaurus se caractérise par la présence d'une crête sur le crâne, recourbée vers l'arrière. <br /> Découvert dans l'actuel Pôle Sud, cela ne signifie pas qu'il vivait dans la neige. A cette époque, l'Antarctique se situait au niveau de l'Équateur, donc le climat était plus clément. <br /> Il s'agissait du plus grand prédateur de son temps.",
+    "description": "<i>Cryolophosaurus</i> possédait un corps élancé et puissant avec de longues pattes postérieures musclées, adaptées à la course et à la chasse.<br>Sa tête était proportionnellement grande, surmontée d'une crête osseuse transversale unique en forme d'éventail (souvent comparée à la célèbre mèche d'Elvis Presley), située juste au-dessus des yeux. Cette crête était trop fragile pour servir au combat et servait principalement à l'affichage ou à la reconnaissance entre individus.<br>Sa mâchoire était garnie de dents tranchantes et recourbées, conçues pour déchiqueter les chairs, tandis que ses bras courts mais puissants étaient terminés par des doigts munis de griffes.<br>La queue longue et solide servait de balancier pour stabiliser le déplacement rapide.<br><br>Le mode de vie de <i>Cryolophosaurus</i> était celui d'un superprédateur qui chassait activement de grandes proies dans des paysages boisés ou ouverts.<br>Son agilité et son physique de coureur lui permettaient de poursuivre et capturer des animaux variés, tandis que sa crête spectaculaire jouait un rôle social dans l'attraction ou l'intimidation.<br>Il évoluait dans des zones tempérées ou fraîches, exploitant la rapidité et la force pour s'imposer au sommet de la chaîne alimentaire.",
     "autres_infos": {
       "taille": {
         "longueur": "7 mètres",
@@ -5327,7 +5327,7 @@
       "apparition": -112,
       "extinction": -113
     },
-    "description": "Tupandactylus se distingue par sa grande crête crânienne, composée en partie d'os et en partie de tissus mous. Les crêtes des Tupandactylus sont constituées d'une crête semi-circulaire au-dessus du bec. Cette crête devait probablement servir de signe de reconnaissance entre individus.",
+    "description": "<i>Tupandactylus</i> possédait un corps léger et musclé, adapté au vol, avec des membres antérieurs allongés formant des ailes et une poitrine solide capable de supporter les efforts du battement d’ailes.<br>Sa tête était surmontée d’une gigantesque crête composée à la fois d’os et de tissu kératinisé, prenant la forme d’un voile vertical ou d’un éventail étendu vers le haut et l’arrière – la marque distinctive de ce genre.<br>Son bec était long, étroit et dépourvu de dents, mais pourvu d’un léger \"encoche\" à la pointe, adapté pour saisir fruits, grains, insectes ou autres petites proies.<br><br>Le mode de vie de <i>Tupandactylus</i> était principalement celui d’un animal terrestre, passant beaucoup de temps à marcher ou à courir au sol, bien qu’il ait également la capacité de voler pour fuir des prédateurs ou se déplacer sur de longues distances.<br>Sa crête spectaculaire était utilisée essentiellement pour communiquer, afficher sa maturité ou séduire lors des parades nuptiales.<br>Son alimentation était probablement variée mais orientée vers les fruits ou la végétation tendre, qu’il récoltait avec son bec spécialisé.",
     "autres_infos": {
       "taille": {
         "longueur": "",
@@ -5382,7 +5382,7 @@
       "apparition": -7,
       "extinction": -0.01
     },
-    "description": "Les fossiles de Macrauchenia montrent des narines situées sur le haut du crâne, entre les yeux. Il est alors possible qu’il possédait une trompe semblable à celle d'un tapir ou un museau gonflé comme celui de l'antilope saïga, peut-être pour empêcher la poussière d'entrer dans les narines. La trompe leur servait comme une lèvre préhensile pour attraper, déplacer des objets et comme outil d'usage général. <br /> Selon les études réalisées sur la structure des articulations des pattes, Macrauchenia était habile pour esquiver ses ennemis, et devait courrir vite.",
+    "description": "<i>Macrauchenia</i> possédait un corps rappelant celui d’un chameau, avec un long cou souple et des membres puissants adaptés à la course rapide.<br>Ses pattes avant, plus robustes que les postérieures, lui permettaient un support et une poussée efficaces lors du déplacement, tandis que ses pieds étaient terminés par trois doigts, avec une posture digitigrade adaptée à la stabilité sur terrain varié.<br>Sa tête étroite présentait des narines haut placées sur le crâne, suggérant la présence d'une lèvre préhensile ou d'une courte trompe, utilisée pour saisir la végétation.<br><br>Le mode de vie de <i>Macrauchenia</i> était celui d’un herbivore mixte, combinant le broutage de feuilles et d’herbes tendres avec un broutage plus élevé grâce à son long cou.<br>Il vivait probablement en troupeaux, se déplaçant sur de vastes territoires, capable de courir rapidement pour échapper aux prédateurs.<br>Sa robustesse et son agilité lui permettaient d’exploiter une grande variété d’habitats, du bocage aux plaines ouvertes.",
     "autres_infos": {
       "taille": {
         "longueur": "3 mètres",
@@ -5437,7 +5437,7 @@
       "apparition": -41,
       "extinction": -35
     },
-    "description": "Seul son crâne de 90 centimètres de long peut nous faire immaginer l'impitoyable carnassier qu'était Andrewsarchus. <br /> Il devait s'agit d'un des plus grand carnivore terrestre de tous les temps. Il y a fort à parier que les pieds d'Andrewsarchus n'étaient pas terminés par des griffes mais par des sabots.",
+    "description": "<i>Andrewsarchus</i> possédait un immense crâne allongé, large et robuste, avec un museau très long formant environ 60 % de la longueur totale du crâne. Sa mâchoire était équipée de dents variées, incluant des incisives en forme de demi-cercle, des canines longues et pointues, ainsi que des molaires avec des couronnes ridées adaptées pour broyer.<br>Son corps, bien que resté en grande partie inconnu, était probablement massif, soutenu par des pattes dotées d'ongles et probablement deux doigts porteurs, adaptées pour supporter son poids important.<br><br>Le mode de vie de <i>Andrewsarchus</i> était celui d’un carnivore opportuniste, combinant la chasse, la charognage, et peut-être une alimentation omnivore incluant fruits et coquillages.<br>Il évoluait principalement dans des environnements côtiers et semi-arides, s’alimentant probablement de tortues, carcasses et autres proies variées.<br>Sa taille et sa puissance physique faisaient de lui un prédateur apex de son écosystème, avec peu de concurrents naturels.",
     "autres_infos": {
       "taille": {
         "longueur": "4 mètres",
@@ -5521,7 +5521,7 @@
       "apparition": -19,
       "extinction": -14
     },
-    "description": "Le crâne de cet animal, qui était le plus grand mammifère carnivore de son temps, mesurait entre 65 et 70 centimètres. <br /> Les dents de carnassier du Megisotherium étaient des molaires supérieures, formant des ciseaux avec les molaires inférieures qui coïncidaient entres elles pour former une formidable et puissante action de cisaillement. On a retrouvé des os de mastodonte qui portaient des traces de morsures causées par Megistotherium, ce qui montre que cet animal n'avait peur de rien. <br /> Il y a fort à parier que les pieds de Megistotherium n'étaient pas terminés par des griffes mais par des sabots.",
+    "description": "<i>Megistotherium</i> possédait un crâne très large et massif, avec une mâchoire puissante équipée de grandes canines adaptées à broyer et lacérer la chair. Sa crête sagittale, très développée, témoignait de muscles temporaux extrêmement puissants pour une fermeture de mâchoire efficace.<br>Son corps, bien que peu connu, était imposant, avec une silhouette robuste adaptée à la chasse et au déplacement sur de longues distances. Il eassez facile de conclure qu'il était l'un des des plus grands prédateurs de son temps. <br/><br>Le mode de vie de <i>Megistotherium</i> était celui d'un grand carnivore dominant, capable de chasser de grands herbivores et d'explorer divers milieux, notamment les prairies et zones boisées fertiles.<br>Il pouvait aussi agir en charognard, sur des carcasses d'animaux comme les mastodontes, profitant de toutes les sources de nourriture disponibles.<br>Sa puissance physique et son imposante taille faisaient de lui un prédateur au sommet de la chaîne alimentaire de son époque.",
     "autres_infos": {
       "taille": {
         "longueur": "3-4 mètres",
@@ -5536,7 +5536,7 @@
   },
   {
     "nom": "Procoptodon",
-    "etymologie": "--",
+    "etymologie": "Dents qui mordent en avant",
     "image_url": "./assets/images/Procoptodon.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -5576,7 +5576,7 @@
       "apparition": -2,
       "extinction": -0.045
     },
-    "description": "Ce kangourou géant avait une face courte et des yeux orientés vers l'avant. <br /> Chaque pied avait un seul doigt, à la façon du cheval actuel. Ils pouvaient ainsi se déplacer rapidement dans les forêts et les prairies où ils trouvaient herbes et feuilles pour se nourrir. Leurs pattes avant étaient aussi originales : elles portaient deux très longs doigts qui se terminaient par de longues griffes. On pense qu'elles servaient à attraper les branches situées à grande hauteur pour pouvoir les porter à la bouche.",
+    "description": "<i>Procoptodon</i> possédait un corps massif et trapu, avec une tête courte et plate, des yeux orientés vers l'avant, ce qui lui donnait un aspect d'un kangourou géan. Ses membres postérieurs étaient puissants, avec une unique griffe large et solide sur chaque pied, ressemblant à un sabot, adaptée à la course rapide sur terrain ouvert.<br/>Ses membres antérieurs étaient longs et mobiles, munis de deux doigts très longs terminés par de grandes griffes recourbées, utilisées pour saisir les branches et attraper la végétation.<br/><br/>Le mode de vie de <i>Procoptodon</i> était celui d’un herbivore spécialisé dans la consommation de feuilles et d’herbes coriaces, s’appuyant sur ses dents robustes et ses mâchoires puissantes pour broyer sa nourriture.<br/>Il vivait dans des environnements ouverts tels que savanes et forêts clairsemées, se déplaçant rapidement pour échapper aux prédateurs comme le lion marsupial.<br>Son corps robuste et ses adaptations lui permettaient également de se défendre efficacement, notamment grâce à la puissance de ses pattes arrière.",
     "autres_infos": {
       "taille": {
         "longueur": "",
@@ -5630,7 +5630,7 @@
       "apparition": -99.6,
       "extinction": -95
     },
-    "description": "Giganotosaurus est le plus grand carnivore que notre planète ait porté ! Il a supplanté le célébre Tyranosaurus Rex sous tous les rapports anatomiques. <br /> Giganotosaurus chassait seul ou en groupe, mais dans tous les cas, ce dinosaure n'avait pas peur de s'en prendre à des proies nettement plus massives que lui. <br /> Ses dents acérées mesuraient jusqu'à 20 centimètres. <br /> Sa vision binoculaire était plutôt réduite mais sa vue était plutôt développée. Il se pourrait donc que ce prédateur ait eu une vision plutôt adaptée à la chasse en embuscade et intensive. <br /> Sa gueule et ses pattes puissantes lui permettaient d'infliger des blessures mortelles à ses proies.",
+    "description": "<i>Giganotosaurus</i> était un immense théropode carnivore à la musculature puissante.<br/><br/>Son crâne massif et allongé, garni de dents tranchantes de 15 à 20 centimètres semblables à des lames dentelées, lui permettait de saisir et de découper de grandes proies. Son museau était étroit vers l’avant mais s’élargissait à l’arrière, offrant de la place pour de puissants muscles de la mâchoire.<br/><br/>Son corps était solidement bâti, avec un thorax volumineux et des pattes postérieures longues et robustes adaptées à la course sur de courtes distances. Ses bras, bien que courts, étaient terminés par trois doigts armés de griffes recourbées. Sa longue queue servait de contrepoids et stabilisait sa démarche.<br/><br/>C’était un prédateur actif, capable de s’attaquer à d’importants herbivores grâce à sa taille et sa force, probablement en chassant seul ou parfois en profitant des opportunités offertes par des proies affaiblies ou isolées.",
     "autres_infos": {
       "taille": {
         "longueur": "13-15 mètres",
@@ -5684,7 +5684,7 @@
       "apparition": -96.2,
       "extinction": -92.19
     },
-    "description": "Argentinosaurus est à ce jour le plus massif de tous les dinosaures. Extrêmement lourd il ne déplaçait qu'à 7km/h, soit la vitesse d'un humain en marche rapide. <br /> La plus grande de ces vertèbres mesuraient 1.60 mètre de haut et 1.30 mètre de large, ce qui nous donne une idée de sa colonne vertébrale gigantesque. <br /> Il devait se délacer en troupeau d'une dizaines d'individus pour accroitre les chances de survie de chacun. Il est fort probable que dès qu'un troupeau d'Argentinosaurus approchait, la terre devait trembler.",
+    "description": "<i>Argentinosaurus</i> était un énorme dinosaure sauropode doté d’un corps massif soutenu par quatre pattes puissantes. <br/><br/>Il possédait un long cou lui permettant d'atteindre la végétation élevée, avec une petite tête proportionnellement à la taille de son corps. <br/><br/>La colonne vertébrale comportait de grandes vertèbres dorsales robustes, renforcées par une structure interne complexe d'os creux avec des lamelles entrelacées, optimisée pour supporter sa masse colossale. Ses côtes étaient cylindriques et légèrement incurvées.<br/><br/>Ses membres postérieurs solides comportaient des os très épais, notamment un fémur massif pour porter son poids immense. Le squelette témoignait d’adaptations spécifiques pour soutenir un animal géant, avec des articulations résistantes et un agencement osseux renforcé pour disperser les contraintes mécaniques.<br/><br/>En mode de vie, c'était un herbivore pacifique, utilisant son long cou pour brouter la végétation haut perchée. Sa grande taille lui servait à dissuader les prédateurs, et sa démarche était stable, adaptée à un déplacement lent mais efficace pour couvrir de vastes espaces.<br/><br/> La carrure exceptionnelle d'<i>Argentinosaurus</i> fait de lui le plus gros animal de tous les temps !",
     "autres_infos": {
       "taille": {
         "longueur": "30-40 mètres",
@@ -5767,7 +5767,7 @@
       "apparition": -183.7,
       "extinction": -181
     },
-    "description": "C'est l'un des plus anciens grands dinosaures prédateurs. La caractéristique principale de Dilophosaurus était son crâne qui possédait des articulations lui permettant de plisser le nez et une paire de crêtes osseuses sur la tête (d’où son nom). <br /> Les crêtes de Dilophosaurus, pouvaient peut-être servir d’accessoires visuels de parade. Dilophosaurus présentait un dysmorphisme sexuel avec cette crête, plus grande chez les mâles.<br /> Sa gueule était particulièrement étroite et souple et ses dents fragiles laissent penser que c'était un animal charognard. Mais il est très vraisemblable qu'il chassait et tuait sa victime à l'aide des griffes qu'il portait aux pattes avant et arrière. Sa morphologie permettait au Dilophosaurus de chasser autant des proies imposantes comme <i>Plateosaurus</i> que des proies beaucoup plus petites comme des petits mammifères et des lézards qu’il allait chercher dans les broussailles ou les crevasses des rochers. <br /> Représenté dans le film Jrassic Park (1993), Dilophosaurus ne possédait pas de colerette et ne crachait pas de venin.",
+    "description": "<i>Dilophosaurus</i> était un dinosaure carnivore bipède au museau allongé et aux deux crêtes parallèles distinctives sur le sommet de son crâne. <br/><br/>Ces crêtes minces, composées d’os recouverts probablement de kératine, jouaient un rôle dans la communication visuelle, notamment pour l’intimidation ou la parade sexuelle, sans être utilisées comme armes.<br/><br/>Cet animal possédait une mâchoire robuste capable de mordre fortement, soutenue par de puissants muscles attachés à des crêtes osseuses saillantes. Ses dents tranchantes étaient adaptées à déchiqueter la chair de ses proies.<br/><br/>Ses membres postérieurs étaient élancés et musclés, optimisés pour la vitesse et la chasse active, tandis que ses bras étaient forts et munis de griffes acérées pour immobiliser sa proie.<br/><br/><i>Dilophosaurus</i> évoluait dans des environnements forestiers et humides, alternant entre la chasse active de divers petits et moyens animaux et l’opportunisme en consommant parfois des carcasses. Son comportement pouvait inclure une forme de vie en groupe, notamment pour la chasse ou la protection. <br/><br/>Représenté dans le film <i><u>Jurassic Park</u> (1993)</i>, Dilophosaurus ne possédait pas de colerette et ne crachait pas de venin.",
     "autres_infos": {
       "taille": {
         "longueur": "6 mètres",
@@ -6537,7 +6537,7 @@
   },
   {
     "nom": "Dollocaris",
-    "etymologie": "--",
+    "etymologie": "Crevette de Dollo (du paléontologue Louis Dollo)",
     "image_url": "./assets/images/Dollocaris.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -6671,7 +6671,7 @@
   },
   {
     "nom": "Kunpengopterus",
-    "etymologie": "--",
+    "etymologie": "Aile du Kunpeng",
     "image_url": "./assets/images/Kunpengopterus.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -6727,7 +6727,7 @@
   },
   {
     "nom": "Dracopristis",
-    "etymologie": "--",
+    "etymologie": "Dragon-scie",
     "image_url": "./assets/images/Dracopristis.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -6889,7 +6889,7 @@
   },
   {
     "nom": "Aquilolamna",
-    "etymologie": "--",
+    "etymologie": "Requin-aigle ",
     "image_url": "./assets/images/Aquilolamna.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -8024,7 +8024,7 @@
   },
   {
     "nom": "Aegirocassis",
-    "etymologie": "--",
+    "etymologie": "Casque d'Ægir (mythologie nordique)",
     "image_url": "./assets/images/Aegirocassis.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -8154,7 +8154,7 @@
   },
   {
     "nom": "Mégantereon",
-    "etymologie": "--",
+    "etymologie": "Grande défense",
     "image_url": "./assets/images/Megantereon.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -8208,7 +8208,7 @@
   },
   {
     "nom": "Haboroteuthis",
-    "etymologie": "--",
+    "etymologie": "Calmar de Haboro (ville japonaise)",
     "image_url": "./assets/images/Haboroteuthis.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -8262,7 +8262,7 @@
   },
   {
     "nom": "Nanaimoteuthis",
-    "etymologie": "--",
+    "etymologie": "Calmar de Nanaimo (ville sur l'île de Vancouver)",
     "image_url": "./assets/images/Nanaimoteuthis.jpg",
     "taxonomie": {
       "règne": "Animalia",
@@ -8641,7 +8641,7 @@
   },
   {
     "nom": "Synthetoceras",
-    "etymologie": "--",
+    "etymologie": "Corne composite",
     "image_url": "./assets/images/Synthetoceras.jpg",
     "taxonomie": {
       "règne": "Animalia",
