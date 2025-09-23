@@ -5391,7 +5391,7 @@ const data = [
       extinction: -88,
     },
     description:
-      'Encore très peu connu des paléontologues, ce dinosaure se distingue par sa griffe de 30 centimètres de long au premier doigt de chaque main.',
+      '<i>Mégaraptor</i> était un dinosaure carnivore bipède, caractérisé par une anatomie unique centrée sur ses bras puissants et ses griffes impressionnantes.<br/><br/>Son crâne, relativement allongé et légèrement aplati, comportait des dents acérées adaptées à la prédation et à la découpe de viande. Cependant, le crâne était plus léger et moins robuste que celui d’autres grands prédateurs, laissant à penser que <i>Mégaraptor</i> s’appuyait davantage sur ses membres antérieurs dans la chasse.<br/><br/>Ses bras étaient longs et exceptionnellement musclés, dotés de griffes recourbées atteignant jusqu’à 35 cm sur le premier doigt. Ces griffes massives étaient des outils efficaces pour capturer et maintenir la proie, l’attirant vers la poitrine où la bouche pouvait intervenir.<br/><br/>La structure de ses mains présentait trois doigts ; le troisième étant plus court et moins courbé, tandis que les deux autres étaient allongés et terminés par des griffes impressionnantes. Les membres postérieurs étaient adaptés à une démarche rapide et agile, tandis que la colonne vertébrale possédait des vertèbres abdominales robustes et un torse large.<br/><br/>Son mode de vie était celui d’un prédateur actif des environnements forestiers ou proches des rivières, habile pour la chasse et potentiellement pour l’ouverture de carcasses grâce à ses griffes spécifiques. L’ensemble de sa posture et de son squelette révèle une spécialisation vers la capture rapide de proies, exploitant la puissance de ses bras et la mobilité de ses doigts griffus.',
     autres_infos: {
       taille: {
         longueur: '8 mètres',
@@ -5446,7 +5446,7 @@ const data = [
       extinction: -166,
     },
     description:
-      "Les spécialistes ne savent rien de ce dinosaure. Seul un fragment de mâchoire a été retrouvé. Il est même probable que ce dinosaure n'ait jamais existé, et donc, qu'il s'agit d'un autre dinosaure, voire même d'une autre espèce animale. Les mesures anatomiques ne sont donc que des estimations.",
+      '<i>Protognathosaurus</i> est un dinosaure sauropode herbivore à l’anatomie massive typique de ce groupe.<br/><br/>Son corps possédait des membres épais, adaptés au support d’une grande quantité de poids, et une longue queue vraisemblablement employée pour l’équilibre lors de ses déplacements.<br/><br/>Sa tête était proportionnellement petite comparée à la taille de son corps et sa mâchoire inférieure, bien que seul un fragment fossile soit connu, contenait de nombreuses dents acérées, lui permettant de déchiqueter les végétaux coriaces pour se nourrir.<br/><br/>Ce dinosaure menait une vie de navigateur paisible dans les environnements semi-ouverts où il se déplaçait lentement, étendant probablement son long cou pour accéder à la végétation haute. Sa masse corporelle imposante lui servait de protection contre les prédateurs du Jurassique, et son mode de vie était centré sur une alimentation de feuillages et de plantes locales.',
     autres_infos: {
       taille: {
         longueur: '15 mètres',
@@ -5501,7 +5501,7 @@ const data = [
       extinction: -75.5,
     },
     description:
-      "Troodon est très connu médiatiquement pour son intelligence supposée en raison de la taille de sa cavité cérébrale par rapport à la taille de son corps, exceptionnellement grande pour un dinosaure, et de ses mains préhensiles à trois doigts avec des « pouces » partiellement opposables. <br /> Cependant, en 2017, il a été établi que cet animal ne serait connu qu'au travers d'une seule dent acérée et dentelée: les fossiles que l'on pensait être ceux de Troodon sont finalement ceux de deux autres dinosaures bien distincts. Cela dit, les débats sur l'existence de Troodon ne sont pas clos.",
+      '<i>Troodon</i> était un petit dinosaure à la démarche agile et à l’anatomie adaptée à l’intelligence et à la chasse.<br/><br/>Son corps léger et élancé reposait sur deux longues pattes, lui permettant de courir rapidement et d’effectuer des manœuvres précises au sein de forêts ou de plaines denses. Sa tête proportionnée était dotée de grands yeux orientés vers l’avant, favorisant la vision nocturne et le repérage de proies dans les environnements faiblement éclairés. Son cerveau volumineux par rapport à sa taille témoignait d’une capacité avancée d’apprentissage, de mémoire et de coordination.<br/><br/>Ses mâchoires étroites portaient des dents acérées et dentelées adaptées à un régime omnivore, lui permettant de consommer aussi bien de petits animaux que des végétaux. Les mains griffues et souples de <i>Troodon</i> lui servaient à saisir ses proies, à creuser pour trouver de la nourriture ou à prendre soin de ses œufs.<br/><br/>Son mode de vie combinait la chasse active à l’opportunisme, profitant de la diversité des ressources disponibles. On suppose qu’il pouvait vivre en petits groupes organisés pour coordonner la chasse ou veiller sur les nids. Des comportements de soins parentaux, comme l’incubation des œufs et la protection des jeunes, sont aussi avancés pour cette espèce à la vie sociale développée.',
     autres_infos: {
       taille: {
         longueur: '',
@@ -5556,7 +5556,7 @@ const data = [
       extinction: -130,
     },
     description:
-      "Utahraptor avait de grandes griffes recourbées sur leurs deuxièmes orteils. L'une de ces griffes retrouvées a une longueur de 22 centimètres. <br /> Il devait être agile et plutôt rapide. Il est possible qu'il devait avoir une carrure robuste, trapue et plus puissante que ces cousins Dromaeosauridae.",
+      '<i>Utahraptor</i> était un dinosaure carnivore bipède de grande taille, doté d’une puissante musculature et d’une anatomie adaptée à la chasse active dans des environnements boisés.<br/><br/>Son crâne allongé comportait de nombreuses dents tranchantes et serrées, conçues pour saisir et déchiqueter ses proies. Une caractéristique marquante résidait dans sa grande griffe en forme de faucille sur le deuxième orteil de chaque pied, mesurant jusqu’à 24 centimètres, qu’il utilisait pour immobiliser et lacérer ses victimes.<br/><br/>Son corps robuste et trapu montrait une adaptation à la puissance physique, tandis que ses bras étaient relativement longs et forts, munis de mains griffues efficaces pour attraper ou manipuler la nourriture.<br/><br/>Sa queue, bien que moins longue et flexible que celle des autres raptors, servait de contrepoids pour stabiliser ses mouvements lorsqu’il bondissait sur ses proies.<br/><br/>Le <i>Utahraptor</i> évoluait principalement dans des groupes sociaux, montrant des comportements de chasse coopérative et se spécialisant dans l’embuscade, permettant d’attaquer des animaux de grande taille grâce à la coordination et à la force collective.',
     autres_infos: {
       taille: {
         longueur: '5-7 mètres',
@@ -5612,7 +5612,7 @@ const data = [
       extinction: -116,
     },
     description:
-      "Les paléontologues sont en mesure de dire que Qijianglong possédait un crâne dont sa partie inférieure avait une plaque en forme de bosse. <br /> Les vertèbres du cou ont des prolongements qui raidissent le cou horizontalement mais permettent à l'animal tout de même un mouvement vertical.",
+      '<i>Qijianglong</i> était un sauropode herbivore remarquable par son cou extrêmement allongé, qui représentait près de la moitié de la longueur totale de son corps.<br/><br/>Son cou était constitué de vertèbres particulièrement longues, remplies d’air, ce qui le rendait léger malgré sa taille imposante. Ces vertèbres présentaient aussi des épines neurales larges et des articulations imbriquées, lui permettant de soulever ou d’abaisser son cou presque comme un bras de grue, mais réduisant les mouvements latéraux.<br/><br/>Son corps était porté par quatre robustes membres en forme de piliers, typiques des grands sauropodes, et il possédait probablement une longue queue assurant l’équilibre du corps.<br/><br/><i>Qijianglong</i> se nourrissait de végétaux situés à différentes hauteurs, profitant de la portée offerte par son long cou pour accéder à des feuillages hors d’atteinte d’autres animaux. Ce mode de vie paisible impliquait des déplacements lents à la recherche de nourriture dans les forêts du Jurassique.<br/><br/>Grâce à ses multiples adaptations — légèreté du cou, portée d’alimentation, robustesse du squelette — il occupait une niche écologique très spécialisée parmi les dinosaures à long cou de son environnement.',
     autres_infos: {
       taille: {
         longueur: '15 mètres',
@@ -5668,7 +5668,7 @@ const data = [
       extinction: -15.97,
     },
     description:
-      "C'était l'un des plus grands mammifères terrestres de tous les temps. Il avait un corps massif, des jambes solides, un long cou et une tête semblable à celle d'un rhinocéros, mais sans corne. Il se nourrissait principalement de plantes. <br /> Paraceratherium est souvent considéré comme l'un des exemples les plus impressionnants de méga-faune préhistorique.",
+      "<i>Paraceratherium</i> était l'un des mammifères terrestres les plus gigantesque de tous les temps. Il appartenait au groupe des rhinocéros sans cornes.<br/><br/>Il possédait un corps massif avec des membres longs et robustes en forme de piliers pour supporter son poids immense. Sa tête, soutenue par un cou long et puissant, était caractérisée par un museau allongé et une lèvre ou une trompe préhensile, indiquée par la forme particulière de ses os nasaux.<br/><br/>Il avait de grandes incisives ressemblant à des défenses, tandis que l’arrière de son crâne était relativement bas et étroit, sans crêtes osseuses saillantes, ce qui suggère qu’il ne poussait pas ou ne se battait pas en utilisant sa tête.<br/><br/>Le <i>Paraceratherium</i> menait une vie d’herbivore paisible, se nourrissant principalement de feuilles, branches tendres et arbustes dans des habitats allant des forêts subtropicales aux déserts clairsemés d’arbres. Sa grande taille lui servait de protection contre les prédateurs, et son mode de déplacement était lent mais stable grâce à sa structure osseuse puissante.",
     autres_infos: {
       taille: {
         longueur: '7-8 mètres',
@@ -5724,7 +5724,7 @@ const data = [
       extinction: -72,
     },
     description:
-      "Cet animal ressemble à un oiseau. <br /> Son bec long est équipé de petites dents tranchantes simples, rangées dans une rainure longitudinale. <br /> Ses ailes très atrophiées ne lui permettaient pas de voler. <br /> Hesperornis était un excellent et puissant nageur et plongeur bien que rien n'indique que ses pattes étaient palmées. <br /> À cause de la morphologie de ses jambes, il devait être maladroit à terre où il passait peu de temps, sauf pour pondre et couver.",
+      "<i>Hesperornis</i> était un oiseau marin incapable de voler, avec un corps profilé et des membres postérieurs puissants adaptés à la nage.<br/><br/>Ses ailes étaient réduites à de petits moignons peu fonctionnels, utilisés probablement pour la stabilisation en nageant plutôt que pour le vol. Les jambes étaient placées vers l’arrière du corps, favorisant une propulsion efficace dans l'eau par ses pieds palmés.<br/><br/>Sa tête comportait un long bec muni de dents acérées disposées dans des rainures, ce qui est rare chez les oiseaux modernes. Ces dents lui servaient à saisir des poissons et autres organismes marins dont il se nourrissait.<br/><br/>En milieu terrestre, il se déplaçait maladroitement en se traînant sur son ventre, car ses pattes ne pouvaient supporter son poids, ce qui le rendait vulnérable hors de l’eau.<br/><br/> <i>Hesperornis</i> vivait principalement dans des mers chaudes peu profondes, chassant avec agilité en plongeant sous l'eau pour capturer ses proies marines. Ce mode de vie spécialisé le rapprochait davantage des plongeurs modernes comme les plongeons et les grèbes que des oiseaux nageurs classiques.",
     autres_infos: {
       taille: {
         longueur: '1.80',
@@ -5779,7 +5779,7 @@ const data = [
       extinction: -507,
     },
     description:
-      "Yawunik est un ancien animal marin doté de pattes articulées et d'un exosquelette fait de morceaux de carapaces en chitine. <br /> Son corps est divisé en douze segments, chacun ayant une patte biramée. <br /> Ces pattes lui servaient à nager et à transporter de la nourriture jusqu'à sa bouche. Sans organe masticateur, il broyait sa nourriture avec ses pattes postérieures, puis les pattes du tronc créaient un courant d'eau pour que les pattes céphaliques puissent la réceptionner et la digérer. <br /> À l'avant, Yawunik avait un bouclier céphalique avec des appendices frontaux très spécialisés, semblables à ceux des coléoptères. Ces appendices étaient munis de trois longues pinces, dont la troisième avait une griffe. <br /> Le long des deux autres pinces, il y avait des rangées de dents suivies de très longues tiges, qui avaient à la fois une fonction alimentaire et sensorielle, ce qui est unique. Ces appendices étaient bien adaptés pour capturer des proies, indiquant que le Yawunik était un prédateur actif. <br />Après avoir capturé sa proie, il devait probablement replier ces structures sous son corps pour la broyer. En tant que prédateur abondant, il jouait un rôle clé dans son écosystème en impactant la chaîne alimentaire.",
+      "<i>Yawunik</i> était un arthropode marin doté d'un exosquelette segmenté et de plusieurs paires d'appendices articulés, vivant il y a environ 508 millions d'années.<br/><br/>Il possédait quatre yeux, dont deux pairs positionnés à l'avant de la tête, offrant probablement une vision très développée orientée vers l'avant. Ses appendices frontaux étaient longs et multifonctionnels, se terminant par trois grandes griffes équipées de rangées de dents opposées, adaptées à la capture efficace de ses proies.<br/><br/>Ces appendices pouvaient se déplacer de manière versatile, s'étendre pour attraper la nourriture et se replier sous le corps lors de la nage. De plus, de longues flagelles fines en forme de fouet s'étendaient depuis le bout de ces griffes, servant d'organes sensoriels très sensibles.<br/><br/><i>Yawunik</i> était un prédateur actif dans son écosystème marin, combinant habileté à saisir ses proies et sensibilité à l'environnement grâce à ses appendices spécialisés, occupant une position clé dans la chaîne alimentaire du Cambrien.",
     autres_infos: {
       taille: {
         longueur: '12 centimètres',
@@ -5834,7 +5834,7 @@ const data = [
       extinction: -145,
     },
     description:
-      "Allosaurus est l'un des dinosaures les plus connus car il est l'un des plus médiatisés. <br /> Il s'agissait d'un des plus grands prédateurs du Jurassique. Chassant possiblement en meute pour s'attaquer à des proies bien plus grosses que lui, il devait courir à environ 40km/h. <br /> Allosaurus avait un crâne relativement léger par rapport à sa taille corporelle. Son crâne était allongé et étroit, avec des orbites oculaires de forme ovale. <br /> Les narines étaient grandes, suggérant un bon odorat, tandis que les yeux étaient bien adaptés à la chasse. <br /> Ses dents étaient coniques, pointues, et légèrement recourbées vers l'arrière. Elles étaient aiguisées tranchantes et adaptées pour déchirer la chair de ses proies. <br /> Ses bras étaient relativement courts par rapport à sa taille et se terminaient par des mains à trois doigts, chacun doté de griffes acérées. Ces bras étaient peut-être utilisés pour saisir et tenir la proie.",
+      'Le célèbre <i>Allosaurus</i> était un grand dinosaure carnivore bipède, caractérisé par un crâne robuste équipé de nombreuses dents acérées et dentelées, parfaites pour saisir et découper ses proies.<br/><br/>Son corps puissant, muni de membres postérieurs musclés, lui permettait de courir avec agilité pour chasser efficacement. Ses bras, relativement courts mais forts, terminaient en mains griffues capables de maintenir fermement sa prise.<br/><br/>Des épines osseuses sur le dessus de son crâne et de petites excroissances sur son cou et son dos pouvaient servir à la communication ou à l’intimidation au sein de son espèce.<br/><br/>Il chassait souvent en groupe, coordonnant ses attaques pour abattre de grandes proies de l’époque. Sa vitesse et sa précision en faisaient un prédateur redoutable dans les écosystèmes du Jurassique supérieur.',
     autres_infos: {
       taille: {
         longueur: '8-12 mètres',
@@ -5906,7 +5906,7 @@ const data = [
       extinction: -93.5,
     },
     description:
-      "On estime que ce crocodile atteignait sa taille adulte à l'âge de 50 ou 60 ans. <br /> Son museau est très allongé, et sa mâchoire comptait plus d'une centaine de dents. L'extrémité de son museau comprend une excroissance osseuse, qui n'a rien à voir avec la protubérance spongieuse des gavials mâles actuels. Il était couvert d'une carapace d'écussons osseux, qui portaient chacun des anneaux de croissance annuelle. <br /> Il devait chasser de la même manière que nos crocodiles actuels.",
+      '<i>Sarcosuchus</i> était un reptile crocodyliforme géant, proche parent des crocodiles modernes mais présentant plusieurs caractéristiques uniques.<br/><br/>Il possédait un museau très long et large, représentant environ 75 % de la longueur de son crâne, avec une mâchoire supérieure plus longue que la mâchoire inférieure, créant un surplomb.<br/><br/>Ses dents nombreuses, coniques et robustes, étaient adaptées à une alimentation carnivore diversifiée, incluant des proies aquatiques comme les gros poissons, et probablement des animaux terrestres vulnérables.<br/><br/>Sa peau était recouverte d’ostéodermes formant une armure solide sur le dos, et son corps massif reposait sur quatre membres puissants.<br/><br/>Il vivait principalement dans les rivières et milieux aquatiques d’Afrique au Crétacé inférieur et usait de sa puissance pour chasser ou opportunément se nourrir de charognes, adoptant un mode de vie similaire à celui des crocodiles actuels, mais avec un gabarit bien plus impressionnant.',
     autres_infos: {
       taille: {
         longueur: '9-10 mètres',
@@ -5963,7 +5963,7 @@ const data = [
       extinction: -35,
     },
     description:
-      "Leptictidium est un animal avec une anatomie unique, mélangeant des caractéristiques primitives et des adaptations spécialisées. <br /> Il avait probablement un museau long et mobile. Sa dentition était petite par rapport à sa taille. <br /> On ne sait pas si Leptictidium se déplaçait en courant ou en sautant, mais il avait des pieds adaptés au saut.  Il avait de petites pattes avant avec des doigts courts et fragiles, et de grandes pattes arrière. Ses chevilles et articulations étaient assez flexibles. <br /> Des omparaisons avec d'autres espèces similaires suggèrent des modes de déplacement différents, mais des différences dans leurs squelettes rendent difficile de déterminer son mode de déplacement avec certitude.",
+      '<i>Leptictidium</i> était un petit mammifère bipède possédant des pattes postérieures puissantes, adaptées au saut, et une longue queue qui servait de balancier.<br/><br/>Ses membres antérieurs étaient beaucoup plus petits et semblaient adaptés à la préhension ou à la manipulation d’objets ou de nourriture. Son crâne laissait supposer un long museau mobile, semblable à celui des musaraignes éléphants actuelles, aidant à détecter et capter des insectes et petits animaux.<br/><br/>Il présentait une dentition fine, adaptée à un régime omnivore comprenant des insectes, des petits reptiles, des amphibiens et parfois des végétaux. Son corps élancé et sa musculature faisaient de lui un animal agile, capable de courir rapidement sur deux jambes ou éventuellement de sauter.<br/><br/>Il vivait dans des forêts denses et humides de l’Éocène en Europe, où il partageait son habitat avec divers autres petits mammifères et devait se méfier de nombreux prédateurs.',
     autres_infos: {
       taille: {
         longueur: '60-90 centimètres',
@@ -6019,7 +6019,7 @@ const data = [
       extinction: -93.9,
     },
     description:
-      "Découverte dans l'ambre de Birmanie, cette fourmi possède 'corne' entre ses deux antennes et est recouverte de longues soies sur toute sa partie antérieure, auxquelles s'ajoute une brosse d'épines sur la partie terminale spatulée. <br /> Les soies sur la corne fournissaient un coussin mou pour déplacer les nymphes et les larves dans un nid. Il est possible que les mâchoires aient été utilisées comme mécanisme de défense, pour éloigner les prédateurs ou étourdir les proies par une ouverture rapide des mandibules. <br /> La corne et les mandibules pouvaient être utilisées pour piéger des grosses proies, les soies fournissant des informations sensorielles sur la position de la proie et créant un frottement pour l'empêcher de bouger.",
+      '<i>Ceratomyrmex</i> était une fourmi fossile remarquable par la présence d’une corne en forme de spatule courbée, située sur la tête entre les antennes.<br/><br/>Cette corne était recouverte de longues soies sur sa face avant, ainsi que d’une rangée d’épines à son extrémité, formant un dispositif préhensile unique chez les fourmis.<br/><br/>Ses mandibules, longues et en forme de faux, se refermaient verticalement, créant une sorte de piège avec la corne, probablement utilisé pour capturer et immobiliser des proies plus grosses.<br/><br/>Ce système permettait à <i>Ceratomyrmex</i> de chasser en solitaire des proies difficiles à maîtriser, avec une grande précision et rapidité.<br/><br/>Cette fourmi au comportement sophistiqué vivait pendant le Crétacé supérieur, il y a environ 99 millions d’années, et son anatomie particulière reflète une spécialisation évolutive très avancée dans la capture de proies parmi les insectes et petits arthropodes.',
     autres_infos: {
       taille: {
         longueur: '4-6 centimètres',
@@ -6074,7 +6074,7 @@ const data = [
       extinction: -70.6,
     },
     description:
-      "Ce dinosaure est le plus grand jamais découvert au Japon, bien qu'il existe des hadrosaures bien plus grands, ce qui suggère fortement que l'espèce était soumise au nanisme insulaire, fréquent sur les îles. <br /> Ce dinosaure était capable de se déplacer aussi bien à deux qu'à quatre pattes.",
+      'Plus grand dinosaure jamais découvert au Japon, <i>Kamuysaurus</i> était un dinosaure herbivore de la famille des hadrosauridés, doté d’un corps robuste et d’un mode de déplacement capable d’être à la fois bipède et quadrupède.<br/><br/>Son crâne présentait une petite crête sagittale, plutôt discrète par rapport à d’autres hadrosauridés, et des particularités osseuses singulières comme une encoche craniale basse et une rangée de petites épines dorsales inclinées vers l’avant.<br/><br/>Ses membres postérieurs puissants lui permettaient de se déplacer avec aisance, tandis que ses membres antérieurs lui servaient à la fois de soutien et de mobilité dans ses déplacements.<br/><br/>Adapté à la vie dans des environnements côtiers et marins peu profond, il parcourait les zones végétalisées à la recherche de plantes, utilisant son bec en forme de canard pour brouter efficacement.<br/><br/>Cet animal était l’un des plus grands dinosaures découverts au Japon, avec une taille moyenne d’environ huit mètres, occupant une niche écologique importante parmi les herbivores du Crétacé supérieur.',
     autres_infos: {
       taille: {
         longueur: '8 mètres',
@@ -6129,7 +6129,7 @@ const data = [
       extinction: -163,
     },
     description:
-      "Le corps de Dollocaris est recouvert d'une carapace, de laquelle sortent trois paires d'appendices préhensiles qui lui permettaient d'attraper ses proies, dont des crevettes (retrouvées dans son estomac). <br /> Les yeux hypertrophiés de Dollocaris ingens, en particulier, ont montré un nombre exceptionnel de 18 000 facettes par œil, nombre record pour un fossile. Cette caractéristique exceptionnelle indique que Dollocaris était un prédateur avec une vision probablement adaptée à un environnement marin faiblement éclairé.",
+      "<i>Dollocaris</i> était un arthropode marin du Jurassique connu pour ses énormes yeux composés, chacun comportant environ 18 000 lentilles individuelles, ce qui lui conférait une vision mosaïque panoramique exceptionnelle.<br/><br/>Son corps était protégé par une carapace sclérotisée en forme de coquille bivalve, avec trois paires d’appendices griffus à la tête, utilisés pour capturer ses proies mobiles dans l’eau.<br/><br/>Il nageait grâce à huit paires de petits appendices semblables à des nageoires attachés à son abdomen, bien que sa morphologie suggère qu'il n'était pas un nageur rapide, préférant probablement chasser par embuscade.<br/><br/>Son système respiratoire et circulatoire complexe, combiné à son exosquelette aérodynamique, indiquent une activité élevée adaptée à une vie de prédateur visuel dans les eaux éclairées où il détectait et attrapait des crustacés et autres petits invertébrés.<br/><br/>Ces yeux très développés et ses appendices spécialisés faisaient de <i>Dollocaris</i> un chasseur redoutable dans son écosystème marin.",
     autres_infos: {
       taille: {
         longueur: '5-20 centimètres',
@@ -6184,7 +6184,7 @@ const data = [
       extinction: -66,
     },
     description:
-      "La gueule de Beelzebufo était très grande et les os du sommet de son crâne portaient une surface externe rugueuse indiquant qu'une partie de sa tête était couverte de d'écailles osseuses appelées scutelles. <br /> Il n’est pas exclu que Beelzebufo ait pu se nourrir de lézards, de petits mammifères et de plus petites grenouilles, et même, vu sa taille, de dinosaures juvéniles. ",
+      '<i>Beelzebufo</i> était une grenouille préhistorique imposante, réputée pour sa large tête massive et sa bouche capable d’avaler des proies relativement grandes, y compris des petits lézards et des mammifères.<br/><br/>Son crâne montrait des zones rugueuses suggérant la présence de plaques osseuses épaisses appelées scutelles, renforçant sa protection.<br/><br/>Il chassait principalement sur la terre ferme, adoptant un mode de vie d’embuscade, se camouflant grâce à sa coloration et attendant que ses proies passent à portée.<br/><br/>Sa puissance de morsure était très élevée, comparable à celle de certains gros carnivores, lui permettant de saisir et d’écraser efficacement sa nourriture.<br/><br/>Grâce à ses pattes arrière puissantes, il pouvait réaliser des sauts importants pour attraper ou fuir, et il vivait dans les forêts humides de Madagascar durant le Crétacé supérieur, partageant son habitat avec de nombreux autres animaux préhistoriques.',
     autres_infos: {
       taille: {
         longueur: '30-40 centimètes',
@@ -6248,7 +6248,7 @@ const data = [
       extinction: -145,
     },
     description:
-      "Ce ptérosaure possédait des vertèbres cervicales allongées. <br /> Une crête osseuse basse est présente sur le crâne, juste derrière les yeux. Il n'y a cependant aucun signe de crête sur le museau ou de quille sous la mandibule. L'arrière du crâne est arrondi. Kunpengopterus a une longue queue raide. Le cinquième orteil est également long et fortement incurvé. <br /> L'espèce Kunpengopterus antipollicatus possède un doigt opposable ce qui est rarissime chez les animaux non-mammifères.",
+      "<i>Kunpengopterus</i> était un ptérosaure du Jurassique moyen à supérieur, caractérisé par un crâne allongé d'environ 10,7 centimètres.<br/><br/>Son museau possédait une large ouverture nasale fusionnée à la fenêtre antorbitaire, partiellement séparée par un processus osseux. Un petit crête osseuse basse était présente juste derrière les yeux, appuyée par un prolongement cartilagineux et probablement agrandie par une membrane cutanée.<br/><br/>Il avait un long cou avec des vertèbres cervicales étirées et une queue rigide. Ses membres postérieurs et ailes lui permettaient de voler, tandis que ses griffes spécialisées, notamment un pouce opposable chez l’espèce <i>Kunpengopterus antipollicatus</i>, indiquaient une adaptation à la locomotion arboricole.<br/><br/>Cette particularité rare chez les vertébrés non-mammifères suggère qu’il pouvait grimper et se déplacer dans les arbres, exploitant son environnement forestier pour chasser probablement des petits animaux ou du poisson.<br/><br/>Son mode de reproduction proche des reptiles modernes, avec des œufs à coquille souple, indiquait une stratégie de vie adaptée à son environnement et à sa morphologie légère et agile.",
     autres_infos: {
       taille: {
         longueur: '10 centimètres',
@@ -6304,7 +6304,7 @@ const data = [
       extinction: -303.7,
     },
     description:
-      "Ce requin avait 12 rangées de dents courtes et épaisses qui suggèrent qu'il était adapté pour saisir et écraser ses proies. <br /> Il possédait une série d'épines de près de 60 centimètres sur ses nageoires dorsales. <br /> La forme particulière des nageoires suggère que Dracopristis se cachait au fond de l'eau et qu'il utilisait ses épines pour se protéger des prédateurs. ",
+      "<i>Dracopristis</i> était un poisson cartilagineux de la famille des ctenacanthiformes, ressemblant à un requin, qui vivait il y a environ 307 millions d'années.<br/><br/>Son corps allongé et aplati dorsoventralement était surmonté de deux grandes épines dorsales mesurant jusqu'à 57 cm, probablement utilisées pour la défense contre les prédateurs.<br/><br/>Son crâne large et court était armé de mâchoires robustes équipées de dents multicuspidées adaptées à saisir et écraser des proies comme des petits poissons et crustacés, dans les eaux peu profondes des estuaires et lagunes.<br/><br/>Les nageoires pectorales triangulaires et les deux dorsales lui permettaient une bonne manœuvrabilité au fond de l'eau, suggérant un mode de vie benthique, se cachant et guettant ses proies.<br/><br/>Malgré son apparence massive, ses structures osseuses fines et ses dents variées reflétaient un prédateur habile et un chasseur opportuniste dans son écosystème marin complexe.",
     autres_infos: {
       taille: {
         longueur: '2 mètres',
@@ -6359,7 +6359,7 @@ const data = [
       extinction: -69,
     },
     description:
-      "Son nom provient de ses cornes de sa tête semblables à celles d'un taureau. <br /> Les yeux de Carnotaure étaient placés à l'avant de son crâne, ce qui est inhabituel pour un dinosaure et pourrait indiquer une vision binoculaire et une perception de profondeur. Cela étant un avantage non négligeable pour un prédateur. Ses bras sont minuscules (encore plus petits que ceux du Tyrannosaurus Rex). Ils ne devaient donc pas lui servir à agripper ses proies. <br /> Son crâne assez épais et solide contrastait avec sa mâchoire inférieure fine. Sa technique de chasse devait donc consister à repérer une proie (probablement de petite taille) à sa portée et se jeter la gueule ouverte sur celle-ci, en se servant de sa mâchoire supérieure pour les frapper comme une hache, sa vitesse servant à les rattraper.",
+      '<i>Carnotaurus</i> était un dinosaure carnivore bipède de taille moyenne.<br/><br/>Il se distinguait par ses deux épaisses cornes au-dessus des yeux, une caractéristique unique dans le groupe des abelisauridés, ainsi que par ses petits bras réduits, encore plus courts que ceux du Tyrannosaurus rex, mais musclés.<br/><br/>Son crâne profond associé à un cou musclé indiquait une puissante mâchoire capable de riposter efficacement lors de combats ou de captures de proies.<br/><br/>Vivait durant le Crétacé supérieur en Amérique du Sud, dans des environnements variés allant des forêts aux plaines ouvertes, il utilisait sa vitesse et son agilité pour chasser et capturer une variété de proies, parfaitement adapté à la chasse active.<br/><br/>Son corps était recouvert d’une peau présentant un motif de petites écailles non superposées interrompues par des bosses plus grandes, et il pouvait se déplacer rapidement, grâce à ses longues pattes arrière et sa queue flexible servant de contrepoids..',
     autres_infos: {
       taille: {
         longueur: '7.5-9 mètres',
