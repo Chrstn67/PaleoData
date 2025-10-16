@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FaDiscord, FaEnvelope, FaLinkedin, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+
+import EmailModal from './EmailModal';
+
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -43,16 +46,10 @@ const Footer = () => {
                 <FaDiscord className="social-icon" />
                 <span>Discord</span>
               </a>
-              <a
-                href="mailto:paleodata@outlook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link email"
-                title="Email"
-              >
-                <FaEnvelope className="social-icon" />
-                <span>Email</span>
-              </a>
+
+              {/* Utilisation correcte du composant EmailModal */}
+              <EmailModal />
+
               <a
                 href="https://www.linkedin.com/in/christian-humbert-developpeur-web/"
                 target="_blank"

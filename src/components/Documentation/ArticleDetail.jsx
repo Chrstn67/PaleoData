@@ -1,10 +1,27 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import { BiShareAlt } from 'react-icons/bi';
+import { useEffect, useState } from 'react';
+import { BiShareAlt, BiX } from 'react-icons/bi';
 import '../../styles/docsStyles/ArticleDetail.css';
 
 const ArticleDetail = ({ data, category, categoryTitle }) => {
   const { slug } = useParams();
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openImageModal = (img) => {
+    setSelectedImage(img);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = 'unset';
+  };
+
+  const handleModalClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closeImageModal();
+    }
+  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -109,7 +126,17 @@ const ArticleDetail = ({ data, category, categoryTitle }) => {
               <div className="article-detail-illustrations">
                 {article.illustrations.map((image, index) => (
                   <div key={index} className="illustration-item">
-                    <img src={image || '/placeholder.svg'} alt={article.alt?.[index] || `Illustration ${index + 1}`} />
+                    <div
+                      className="image-container"
+                      onClick={() => openImageModal(image)}
+                      style={{ cursor: 'pointer' }}
+                      title="Cliquer pour agrandir"
+                    >
+                      <img
+                        src={image || '/placeholder.svg'}
+                        alt={article.alt?.[index] || `Illustration ${index + 1}`}
+                      />
+                    </div>
                     {article.alt?.[index] && <p className="illustration-caption">{article.alt[index]}</p>}
                   </div>
                 ))}
@@ -143,6 +170,18 @@ const ArticleDetail = ({ data, category, categoryTitle }) => {
           )}
         </div>
       </div>
+
+      {/* Modal image */}
+      {selectedImage && (
+        <div className="image-modal-overlay" onClick={handleModalClick}>
+          <div className="image-modal-content">
+            <button className="image-modal-close" onClick={closeImageModal}>
+              <BiX size={24} />
+            </button>
+            <img src={selectedImage} alt="Illustration agrandie" className="image-modal-img" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
