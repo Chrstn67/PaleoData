@@ -63,34 +63,34 @@ const NewAnimalModal = ({ isOpen, onClose, animals }) => {
   };
 
   return (
-    <div className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-content">
-        <div className="modal-header">
+    <dialog className="modal-overlay" onClick={handleOverlayClick}>
+      <section className="modal-content">
+        <section className="modal-header">
           <h2>🎉 Nouveaux animaux</h2>
           <button className="close-button" onClick={onClose} type="button">
             ✕
           </button>
-        </div>
+        </section>
 
         <div className="slides-container">
-          <div className="slide-counter">
+          <section className="slide-counter">
             {currentSlide + 1} / {sortedAnimals.length}
-          </div>
+          </section>
 
           <AnimalSlide animal={sortedAnimals[currentSlide]} onClose={onClose} />
 
           {sortedAnimals.length > 1 && (
             <>
-              <div className="slide-navigation">
+              <section className="slide-navigation">
                 <button className="nav-button prev" onClick={prevSlide} type="button">
                   ‹
                 </button>
                 <button className="nav-button next" onClick={nextSlide} type="button">
                   ›
                 </button>
-              </div>
+              </section>
 
-              <div className="slide-indicators">
+              <section className="slide-indicators">
                 {sortedAnimals.map((_, index) => (
                   <button
                     key={index}
@@ -99,12 +99,12 @@ const NewAnimalModal = ({ isOpen, onClose, animals }) => {
                     type="button"
                   />
                 ))}
-              </div>
+              </section>
             </>
           )}
         </div>
-      </div>
-    </div>
+      </section>
+    </dialog>
   );
 };
 

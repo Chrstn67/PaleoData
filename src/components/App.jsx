@@ -36,9 +36,9 @@ import '../styles/App.css';
 
 function App() {
   return (
-    <div className="App">
+    <main className="App">
       <HashRouter>
-        <div>
+        <section>
           <Header />
 
           <Routes>
@@ -77,10 +77,10 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
-        </div>
+        </section>
       </HashRouter>
       <ScrollToTopButton />
-    </div>
+    </main>
   );
 }
 

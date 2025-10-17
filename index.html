@@ -5,70 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="French" />
-
+    
+    <!-- Title optimisé (50-60 caractères) -->
+    <title>PaleoData - Safari Préhistorique & Paléontologie</title>
+    
+    <!-- Meta description optimisée (150-160 caractères) -->
     <meta
       name="description"
-      content="Safari préhistorique à la rencontre d'animaux ayant peuplé notre Terre ! Découvre des données paléontologiques, des fossiles, et l'échelle des temps géologiques."
+      content="Explorez PaleoData : un safari préhistorique interactif avec animaux disparus, fossiles, données paléontologiques et l'échelle des temps géologiques. Découvrez la paléontologie!"
     />
+    
+    <!-- Keywords optimisés (termes pertinents, pas de surcharge) -->
     <meta
       name="keywords"
-      content="PaleoData, paléontologie, animaux préhistoriques, animaux disparus, fossiles, paléontologues, échelle des temps géologique, géologie, étymologie, dinosaures, animaux du passé, données paléontologiques"
+      content="paléontologie, animaux préhistoriques, dinosaures, fossiles, échelle des temps géologiques, animaux disparus, étymologie"
     />
+    
     <meta name="author" content="Christian HUMBERT" />
-
-    <meta property="og:title" content="PaleoData" />
+    <meta name="subject" content="Paléontologie et animaux préhistoriques" />
+    <meta name="theme-color" content="#a58b68" />
+    
+    <!-- Open Graph pour réseaux sociaux -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PaleoData - Safari Préhistorique & Paléontologie" />
     <meta
       property="og:description"
-      content="Safari préhistorique à la rencontre d'animaux ayant peuplé notre Terre ! Découvre des données paléontologiques, des fossiles, et l'échelle des temps géologiques."
+      content="Explore PaleoData : un safari préhistorique interactif avec animaux disparus, fossiles, données paléontologiques et l'échelle des temps géologiques."
     />
-    <meta property="og:image" content="/public/PaleoData.png" />
-    <meta property="og:url" content="https://chrstn67.github.io/PaleoData/#" />
-    <meta property="og:type" content="website" />
-
+    <meta property="og:url" content="https://chrstn67.github.io/PaleoData/" />
+    <meta property="og:image" content="https://chrstn67.github.io/public/PaleoData.png" />
+    <meta property="og:image:alt" content="PaleoData - Safari Préhistorique" />
+    <meta property="og:site_name" content="PaleoData" />
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PaleoData" />
+    <meta name="twitter:title" content="PaleoData - Safari Préhistorique & Paléontologie" />
     <meta
       name="twitter:description"
-      content="Safari préhistorique à la rencontre d'animaux ayant peuplé notre Terre ! Découvre des données paléontologiques, des fossiles, et l'échelle des temps géologiques."
+      content="Explore PaleoData : un safari préhistorique interactif avec animaux disparus, fossiles et paléontologie."
     />
-    <meta name="twitter:image" content="/public/PaleoData.png" />
-
+    <meta name="twitter:image" content="https://chrstn67.github.io/public/PaleoData.png" />
+    <meta name="twitter:image:alt" content="PaleoData - Safari Préhistorique" />
+    
+    <!-- Favicon et alternates -->
     <link rel="icon" href="/PaleoData.ico" type="image/x-icon" />
-    <title>PaleoData</title>
-
+    <link rel="canonical" href="https://chrstn67.github.io/PaleoData/" />
+    
+    <!-- Schema.org JSON-LD structuré -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://chrstn67.github.io/PaleoData/",
-        "name": "PaleoData",
-        "description": "Safari préhistorique à la rencontre d'animaux ayant peuplé notre Terre ! Découvre des données paléontologiques, des fossiles, et l'échelle des temps géologiques.",
-        "author": {
-          "@type": "Person",
-          "name": "Christian HUMBERT"
-        }
-      }
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://chrstn67.github.io/PaleoData/",
+      "name": "PaleoData",
+      "alternateName": "PaleoData - Safari Préhistorique",
+      "description": "Explore PaleoData : un safari préhistorique interactif avec animaux disparus, fossiles, données paléontologiques et l'échelle des temps géologiques.",
+      "author": {
+        "@type": "Person",
+        "name": "Christian HUMBERT"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Christian HUMBERT"
+      },
+      "inLanguage": "fr",
+      "image": "https://chrstn67.github.io/public/PaleoData.png"
+    }
     </script>
+    
+    <!-- Preload pour optimisation performance (optionnel) -->
+    <link rel="preload" as="script" href="/src/main.jsx" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <style>
+      body::-webkit-scrollbar {
+        width: 1em;
+      }
+      body::-webkit-scrollbar-track {
+        border-radius: 10%;
+        background: linear-gradient(to bottom, #75553f, #f3e5ab);
+      }
+      body::-webkit-scrollbar-thumb {
+        border-radius: 10%;
+        background-color: #a58b68ff;
+        background: linear-gradient(to top, #75553f, #f3e5ab);
+      }
+    </style>
   </body>
-
-  <style>
-    body::-webkit-scrollbar {
-    width: 1em;
-  }
-
-  body::-webkit-scrollbar-track {
-    border-radius: 10%;
-    background: linear-gradient(to bottom, #75553f, #f3e5ab);
-  }
-
-  body::-webkit-scrollbar-thumb {
-    border-radius: 10%;
-    background-color: #a58b68ff;
-    background: linear-gradient(to top, #75553f, #f3e5ab);
-  }
-  </style>
 </html>

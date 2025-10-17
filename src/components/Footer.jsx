@@ -17,11 +17,11 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="footer-container">
+      <section className="footer-container">
         {/* Section principale */}
-        <div className="footer-main">
+        <section className="footer-main">
           {/* Logo et description */}
-          <div className="footer-brand">
+          <section className="footer-brand">
             <div className="brand-logo">
               <img src="Logo.jpg" alt="Logo PaleoData" className="logo-image" />
               <h2 className="brand-name">PaleoData</h2>
@@ -30,10 +30,10 @@ const Footer = () => {
               Ta porte d'entrée dans le monde de la vie ancienne. Notre mission est de fournir un accès aux données et
               aux informations paléontologiques de manière ouverte et conviviale.
             </p>
-          </div>
+          </section>
 
           {/* Section Contact */}
-          <div className="footer-contact">
+          <section className="footer-contact">
             <h3 className="section-title">Viens discuter !</h3>
             <div className="social-grid">
               <a
@@ -71,11 +71,11 @@ const Footer = () => {
                 <span>WhatsApp</span>
               </a>
             </div>
-          </div>
-        </div>
+          </section>
+        </section>
 
         {/* Section RGPD */}
-        <div className="footer-privacy">
+        <section className="footer-privacy">
           <div className="privacy-card">
             <h4 className="privacy-title">Protection des données</h4>
             <p className="privacy-text">
@@ -84,10 +84,10 @@ const Footer = () => {
               au sujet principal du site.
             </p>
           </div>
-        </div>
+        </section>
 
         {/* Section Copyright */}
-        <div className="footer-bottom">
+        <section className="footer-bottom">
           <div className="copyright-info">
             <p>&copy; {currentYear} PaleoData. Tous droits réservés.</p>
 
@@ -95,8 +95,8 @@ const Footer = () => {
               Mentions légales
             </Link>
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
     </footer>
   );
 };

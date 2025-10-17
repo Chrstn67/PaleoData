@@ -62,7 +62,7 @@ const NewAnimal = ({ animals }) => {
   return (
     <>
       {/* Notification améliorée */}
-      <div className="new-animal-notification" onClick={handleClick}>
+      <aside className="new-animal-notification" onClick={handleClick}>
         <div className="notification-icon">
           <span className="icon">🦕</span>
           <span className="badge">{newAnimals.length}</span>
@@ -73,11 +73,11 @@ const NewAnimal = ({ animals }) => {
             ? '1 nouvel animal découvert !'
             : `${newAnimals.length} nouveaux animaux découverts !`}
         </div>
-      </div>
+      </aside>
 
       {/* Modale améliorée */}
       {isModalOpen && (
-        <div className="new-animal-modal-overlay" onClick={handleOverlayClick}>
+        <dialog className="new-animal-modal-overlay" onClick={handleOverlayClick}>
           <div className="new-animal-modal-content" onClick={(e) => e.stopPropagation()}>
             {/* Header amélioré */}
             <div className="modal-header">
@@ -93,11 +93,11 @@ const NewAnimal = ({ animals }) => {
                 </div>
               </div>
               {newAnimals.length > 1 && (
-                <div className="slide-counter">
+                <section className="slide-counter">
                   <span className="counter-current">{currentSlide + 1}</span>
                   <span className="counter-separator">/</span>
                   <span className="counter-total">{newAnimals.length}</span>
-                </div>
+                </section>
               )}
               <button className="close-button" onClick={handleClose} type="button" aria-label="Fermer">
                 <span className="close-icon">✕</span>
@@ -105,7 +105,7 @@ const NewAnimal = ({ animals }) => {
             </div>
 
             {/* Contenu principal amélioré */}
-            <div className="modal-body">
+            <section className="modal-body">
               <div className="animal-showcase">
                 {/* Nom avec badge "NOUVEAU" intégré */}
                 <div className="animal-name-container">
@@ -114,7 +114,7 @@ const NewAnimal = ({ animals }) => {
                 </div>
 
                 {/* Image améliorée */}
-                <div className="animal-image-container">
+                <section className="animal-image-container">
                   <img
                     src={currentAnimal.image_url || '/placeholder.svg?height=300&width=400'}
                     alt={currentAnimal.nom}
@@ -124,10 +124,10 @@ const NewAnimal = ({ animals }) => {
                     }}
                   />
                   <div className="image-frame"></div>
-                </div>
+                </section>
 
                 {/* Informations améliorées */}
-                <div className="animal-info">
+                <section className="animal-info">
                   <Link
                     to={`/animal/${encodeURIComponent(currentAnimal.nom)}`}
                     className="view-animal-button"
@@ -137,13 +137,13 @@ const NewAnimal = ({ animals }) => {
                     <span className="button-text">Découvrir cet animal</span>
                     <span className="button-arrow">→</span>
                   </Link>
-                </div>
+                </section>
               </div>
 
               {/* Navigation améliorée pour plusieurs animaux */}
               {newAnimals.length > 1 && (
                 <>
-                  <div className="slide-navigation">
+                  <section className="slide-navigation">
                     <button
                       className="nav-button prev"
                       onClick={prevSlide}
@@ -162,10 +162,10 @@ const NewAnimal = ({ animals }) => {
                     >
                       <span className="nav-icon">›</span>
                     </button>
-                  </div>
+                  </section>
 
                   {/* Indicateurs améliorés */}
-                  <div className="slide-indicators">
+                  <section className="slide-indicators">
                     {newAnimals.map((animal, index) => (
                       <button
                         key={index}
@@ -178,10 +178,10 @@ const NewAnimal = ({ animals }) => {
                         <span className="indicator-dot"></span>
                       </button>
                     ))}
-                  </div>
+                  </section>
 
                   {/* Aperçu des autres animaux */}
-                  <div className="other-animals-preview">
+                  <section className="other-animals-preview">
                     <p className="preview-title">Autres nouveaux animaux :</p>
                     <div className="preview-list">
                       {newAnimals.map(
@@ -201,12 +201,12 @@ const NewAnimal = ({ animals }) => {
                           ),
                       )}
                     </div>
-                  </div>
+                  </section>
                 </>
               )}
-            </div>
+            </section>
           </div>
-        </div>
+        </dialog>
       )}
     </>
   );

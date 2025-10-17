@@ -90,37 +90,36 @@ const AnimalCard = ({ data }) => {
   const nextAnimal = currentAnimalIndex < sortedData.length - 1 ? sortedData[currentAnimalIndex + 1] : null;
 
   return (
-    <div className="animal-card">
-      <div className="hero-section">
-        <div className="hero-content">
-          <div className="title-image-section">
-            <h1>{animal.nom}</h1>
-            <img
-              src={imageUrl}
-              alt={animal.nom}
-              className="hero-image"
-              onClick={openImageModal}
-              style={{ cursor: 'pointer' }}
-              title="Cliquer pour agrandir"
-            />
-          </div>
-          <button
-            type="button"
-            className="share-btn"
-            onClick={() => {
-              shareLink(animal);
-            }}
-          >
-            <BiShareAlt size={20} />
-          </button>
-        </div>
-      </div>
+    <main className="animal-card">
+      <header className="hero-section">
+        <section className="title-image-section">
+          <h2>{animal.nom}</h2>
+          <img
+            src={imageUrl}
+            alt={animal.nom}
+            className="hero-image"
+            onClick={openImageModal}
+            style={{ cursor: 'pointer' }}
+            title="Cliquer pour agrandir"
+          />
+        </section>
+        <button
+          label="Partager"
+          type="button"
+          className="share-btn"
+          onClick={() => {
+            shareLink(animal);
+          }}
+        >
+          <BiShareAlt size={20} />
+        </button>
+      </header>
 
       {/* Modal pour l'image agrandie */}
       {isImageModalOpen && (
-        <div className="image-modal-overlay" onClick={handleModalClick}>
+        <section className="image-modal-overlay" onClick={handleModalClick}>
           <div className="image-modal-content">
-            <button className="image-modal-close" onClick={closeImageModal}>
+            <button className="image-modal-close" onClick={closeImageModal} label="Fermer">
               <BiX size={24} />
             </button>
             <img src={imageUrl} alt={animal.nom} className="image-modal-img" />
@@ -129,25 +128,21 @@ const AnimalCard = ({ data }) => {
               {animal.etymologie && <p>{animal.etymologie}</p>}
             </div>
           </div>
-        </div>
+        </section>
       )}
 
-      <div className="main-container">
-        <div className="etymology-section">
-          <div className="etymology-content">
-            <h3 className="etymology-title">Étymologie</h3>
-            <p className="etymology-text">
-              {animal.etymologie || 'Les origines du nom de cette créature fascinante restent à découvrir...'}
-            </p>
-          </div>
-        </div>
+      <section className="main-container">
+        <section className="etymology-content">
+          <h3 className="etymology-title">Étymologie</h3>
+          <p className="etymology-text">
+            {animal.etymologie || 'Les origines du nom de cette créature fascinante restent à découvrir...'}
+          </p>
+        </section>
 
-        <div className="geology-section">
-          <GeoInfo geologie={animal.geologie} />
-        </div>
+        <GeoInfo geologie={animal.geologie} />
 
-        <div className="content-section">
-          <div className="content-card description-card">
+        <section className="content-section">
+          <section className="content-card description-card">
             <h3>Description</h3>
             <div className="description-content">
               {animal.description ? (
@@ -156,15 +151,15 @@ const AnimalCard = ({ data }) => {
                 <p>Description détaillée à venir...</p>
               )}
             </div>
-          </div>
+          </section>
 
-          <div className="info-grid">
-            <div className="content-card">
+          <section className="info-grid">
+            <section className="content-card">
               <h3>Régime alimentaire</h3>
               <p>{formatDiets(animal.regime_alimentaire)}</p>
-            </div>
+            </section>
 
-            <div className="content-card">
+            <section className="content-card">
               <h3>Morphologie</h3>
               {animal.autres_infos && animal.autres_infos.taille ? (
                 <>
@@ -176,9 +171,9 @@ const AnimalCard = ({ data }) => {
               ) : (
                 <p>Informations morphologiques à venir...</p>
               )}
-            </div>
+            </section>
 
-            <div className="content-card">
+            <section className="content-card">
               <h3>Découverte</h3>
               {animal.decouverte ? (
                 <>
@@ -188,21 +183,21 @@ const AnimalCard = ({ data }) => {
               ) : (
                 <p>Informations sur la découverte à venir...</p>
               )}
-            </div>
-          </div>
-        </div>
+            </section>
+          </section>
+        </section>
 
-        <div className="habitat-section-wrapper">
+        <section className="habitat-section-wrapper">
           <AnimalHabitat animal={animal} />
-        </div>
+        </section>
 
-        <div className="taxonomy-section-wrapper">
+        <section className="taxonomy-section-wrapper">
           {Object.entries(animal.taxonomie).length > 0 && <Taxonomie taxonomie={animal.taxonomie} />}
-        </div>
-      </div>
+        </section>
+      </section>
 
-      <div className="navigation-section">
-        <div className="navigation-links">
+      <section className="navigation-section">
+        <section className="navigation-links">
           {previousAnimal && (
             <Link
               to={`/animal/${encodeURIComponent(previousAnimal.nom)}`}
@@ -222,9 +217,9 @@ const AnimalCard = ({ data }) => {
               {nextAnimal.nom} →
             </Link>
           )}
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </main>
   );
 };
 

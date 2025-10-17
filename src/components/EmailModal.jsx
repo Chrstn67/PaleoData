@@ -337,20 +337,20 @@ Cordialement,
 
       {/* Modale */}
       {isModalOpen && (
-        <div className="email-modal-overlay" onClick={closeModal}>
-          <div className="email-modal-content" onClick={(e) => e.stopPropagation()}>
+        <dialog className="email-modal-overlay" onClick={closeModal}>
+          <body className="email-modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="email-modal-close" onClick={closeModal}>
               <FaTimes />
             </button>
 
-            <div className="email-modal-header">
+            <section className="email-modal-header">
               <FaEnvelope className="email-modal-icon" />
               <h2 className="email-modal-title">{getModalTitle()}</h2>
               <p className="email-modal-subtitle">{getModalSubtitle()}</p>
-            </div>
+            </section>
 
             {/* Sélecteur d'options */}
-            <div className="email-options-selector">
+            <section className="email-options-selector">
               <button
                 className={`email-option ${selectedOption === 'animal' ? 'active' : ''}`}
                 onClick={() => setSelectedOption('animal')}
@@ -372,17 +372,17 @@ Cordialement,
                 <FaBug />
                 <span>Signaler un bug</span>
               </button>
-            </div>
+            </section>
 
-            <div className="email-modal-body">
+            <section className="email-modal-body">
               <div className="email-info-section">{getRequiredInfo()}</div>
 
               <div className="email-info-note">
                 <p>{getNote()}</p>
               </div>
-            </div>
+            </section>
 
-            <div className="email-modal-footer">
+            <section className="email-modal-footer">
               <button className="email-btn-secondary" onClick={closeModal}>
                 Annuler
               </button>
@@ -397,9 +397,9 @@ Cordialement,
                   'Écrire mon mail'
                 )}
               </button>
-            </div>
-          </div>
-        </div>
+            </section>
+          </body>
+        </dialog>
       )}
     </>
   );

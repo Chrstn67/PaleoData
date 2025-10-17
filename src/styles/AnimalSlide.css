@@ -5,12 +5,9 @@
   min-height: 300px;
 }
 
-.animal-image {
+.animal-image img {
   flex: 1;
   text-align: center;
-}
-
-.animal-image img {
   max-width: 100%;
   max-height: 250px;
   object-fit: cover;

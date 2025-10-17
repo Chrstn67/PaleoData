@@ -141,33 +141,31 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
   const hasActiveFilters = Object.values(filters).some((filter) => filter !== '') || searchQuery !== '';
 
   return (
-    <section className="search-option">
-      <div className="search-header">
-        <div className="search-main">
-          <input
-            htmlFor="searchQuery"
-            id="searchQuery"
-            type="text"
-            placeholder="🔍 Rechercher un animal..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-          <button className="filter-toggle" onClick={() => setIsExpanded(!isExpanded)} type="button">
-            <span className="filter-icon">⚙️</span>
-            Filtres avancés
-            <span className={`arrow ${isExpanded ? 'expanded' : ''}`}>▼</span>
-            {hasActiveFilters && <span className="active-indicator">●</span>}
-          </button>
-        </div>
-        {hasActiveFilters && (
-          <button onClick={resetFilters} type="button" className="reset-button">
-            🗑️ Réinitialiser
-          </button>
-        )}
-      </div>
+    <main className="search-option">
+      <section className="search-main">
+        <input
+          htmlFor="searchQuery"
+          id="searchQuery"
+          type="text"
+          placeholder="🔍 Rechercher un animal..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+        <button className="filter-toggle" onClick={() => setIsExpanded(!isExpanded)} type="button">
+          <span className="filter-icon">⚙️</span>
+          Filtres avancés
+          <span className={`arrow ${isExpanded ? 'expanded' : ''}`}>▼</span>
+          {hasActiveFilters && <span className="active-indicator">●</span>}
+        </button>
+      </section>
+      {hasActiveFilters && (
+        <button onClick={resetFilters} type="button" className="reset-button">
+          🗑️ Réinitialiser
+        </button>
+      )}
 
-      <div className={`filters-container ${isExpanded ? 'expanded' : ''}`}>
-        <div className="filters-grid">
+      <section className={`filters-container ${isExpanded ? 'expanded' : ''}`}>
+        <section className="filters-grid">
           <div className="filter-group">
             <label htmlFor="firstLetter">
               <span className="filter-icon">🔤</span>
@@ -277,9 +275,9 @@ const AnimalFiltrer = ({ data, onFilterChange }) => {
               ))}
             </select>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      </section>
+    </main>
   );
 };
 

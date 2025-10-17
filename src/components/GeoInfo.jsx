@@ -72,16 +72,16 @@ const GeoInfo = ({ geologie }) => {
 
       <div className="geo-display">
         {geoData.map((item, index) => (
-          <div key={index} className={`geo-item ${index === currentIndex ? 'active' : ''}`}>
+          <section key={index} className={`geo-item ${index === currentIndex ? 'active' : ''}`}>
             <div className="geo-label">{item.label}</div>
             <div className="geo-value">{item.value}</div>
-          </div>
+          </section>
         ))}
       </div>
 
       {geoData.length > 1 && (
         <>
-          <div className="geo-progress">
+          <section className="geo-progress">
             {geoData.map((_, index) => (
               <button
                 key={index}
@@ -90,7 +90,7 @@ const GeoInfo = ({ geologie }) => {
                 aria-label={`Voir ${geoData[index].label}`}
               />
             ))}
-          </div>
+          </section>
 
           <div className="geo-timeline-bar">
             <div className="timeline-progress" style={{ width: `${((currentIndex + 1) / geoData.length) * 100}%` }} />

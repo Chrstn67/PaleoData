@@ -53,23 +53,23 @@ function EtymoPage() {
   etymologyData.sort((a, b) => a.root.replace('-', '').localeCompare(b.root.replace('-', '')));
 
   return (
-    <div className="etymo-page">
-      <div className="grid-container">
+    <main className="etymo-page">
+      <section className="grid-container">
         {etymologyData.map((item, index) => {
           const [language, word] = item.origin.split(': ');
           return (
-            <div key={index} className="grid-item">
+            <section key={index} className="grid-item">
               <div className="root">{item.root}</div>
               <div className="meaning">{item.meaning}</div>
               <div className="origin">
                 {language} :<br />
                 {word}
               </div>
-            </div>
+            </section>
           );
         })}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

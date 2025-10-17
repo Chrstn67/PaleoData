@@ -89,18 +89,18 @@ const ModalTimeline = ({ isOpen, closeModal, content, title }) => {
   if (!isOpen) return null;
 
   return (
-    <div className={`modal-overlay ${isOpen ? 'open' : ''}`}>
-      <div className={`modal-container ${isOpen ? 'open' : ''}`} ref={modalRef}>
+    <dialog className={`modal-overlay ${isOpen ? 'open' : ''}`}>
+      <section className={`modal-container ${isOpen ? 'open' : ''}`} ref={modalRef}>
         <div className="modal-decoration"></div>
 
-        <div className="modal-header">
+        <section className="modal-header">
           <h2>{title || 'Information'}</h2>
           <button className="close-button" onClick={closeModal} aria-label="Fermer la modale">
             <FaTimes />
           </button>
-        </div>
+        </section>
 
-        <div className="modal-content">
+        <section className="modal-content">
           <div className="content-text">
             {content ? (
               <div dangerouslySetInnerHTML={{ __html: formatContent(content) }} />
@@ -108,9 +108,9 @@ const ModalTimeline = ({ isOpen, closeModal, content, title }) => {
               <p>Aucune information disponible pour cet élément.</p>
             )}
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </dialog>
   );
 };
 

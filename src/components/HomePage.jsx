@@ -33,7 +33,7 @@ const HomePage = ({ animals }) => {
   }, [animals]);
 
   return (
-    <div className="home-page" ref={ref}>
+    <main className="home-page" ref={ref}>
       <NewAnimal animals={animals} />
 
       <section className="hero-section">
@@ -150,7 +150,7 @@ const HomePage = ({ animals }) => {
           </article>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 

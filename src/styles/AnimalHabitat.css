@@ -6,23 +6,20 @@
   border-top: 3px solid rgba(248, 245, 232, 0.3);
   border-bottom: 3px solid rgba(248, 245, 232, 0.3);
   margin: 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 
-  .habitat-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-
-    @media (max-width: 768px) {
-      padding: 0 1rem;
-    }
+  @media (max-width: 768px) {
+    padding: 0 1rem;
   }
 
   .habitat-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 1rem;
+    margin-bottom: 1em;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -34,7 +31,7 @@
       font-size: clamp(1.8rem, 4vw, 3rem);
       font-weight: 800;
       color: #f8f5e8;
-      margin: 0;
+      margin-inline: 1em;
       text-transform: uppercase;
       letter-spacing: -0.02em;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

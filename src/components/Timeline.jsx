@@ -537,7 +537,7 @@ const Timeline = ({ timelineData }) => {
       const childType = item.type === 'era' ? 'périodes' : item.type === 'period' ? 'époques' : 'étages';
       stats.push({
         icon: '📊',
-        label: 'Subdivisions',
+        label: 'Subsectionisions',
         value: `${item.children.length} ${childType}`,
       });
     }
@@ -611,11 +611,11 @@ const Timeline = ({ timelineData }) => {
   }, []);
 
   return (
-    <div className="geological-timeline" ref={timelineRef}>
-      <div className="timeline-header">
+    <main className="geological-timeline" ref={timelineRef}>
+      <section className="timeline-header">
         <h1>Chronologie</h1>
 
-        <div className="breadcrumb">
+        <section className="breadcrumb">
           <span className="breadcrumb-item" onClick={() => handleBreadcrumbClick(-1)}>
             🏠 Accueil
           </span>
@@ -627,13 +627,13 @@ const Timeline = ({ timelineData }) => {
               </span>
             </span>
           ))}
-        </div>
-      </div>
+        </section>
+      </section>
 
-      <div className="navigation-controls">
-        <div className="controls-row">
-          <div className="search-container">
-            <div className="search-input-wrapper">
+      <section className="navigation-controls">
+        <section className="controls-row">
+          <section className="search-container">
+            <section className="search-input-wrapper">
               <input
                 type="text"
                 className="search-input"
@@ -658,13 +658,13 @@ const Timeline = ({ timelineData }) => {
                   ✕
                 </button>
               )}
-            </div>
+            </section>
 
             {showSuggestions && searchSuggestions.length > 0 && (
-              <div className="search-suggestions">
+              <section className="search-suggestions">
                 {searchSuggestions.map((suggestion, index) => (
-                  <div key={index} className="suggestion-item" onClick={() => handleSuggestionClick(suggestion)}>
-                    <div className="suggestion-main">
+                  <section key={index} className="suggestion-item" onClick={() => handleSuggestionClick(suggestion)}>
+                    <section className="suggestion-main">
                       <span className="suggestion-name">{suggestion.name}</span>
                       <span className={`suggestion-type type-${suggestion.type}`}>
                         {suggestion.type === 'era'
@@ -675,26 +675,26 @@ const Timeline = ({ timelineData }) => {
                               ? 'Époque'
                               : 'Étage'}
                       </span>
-                    </div>
+                    </section>
                     {suggestion.breadcrumbPath.length > 0 && (
-                      <div className="suggestion-path">{suggestion.breadcrumbPath.join(' › ')}</div>
+                      <section className="suggestion-path">{suggestion.breadcrumbPath.join(' › ')}</section>
                     )}
-                    <div className="suggestion-match">
+                    <section className="suggestion-match">
                       {suggestion.matchType === 'name' && '📝 Nom'}
                       {suggestion.matchType === 'description' && '📄 Description'}
                       {suggestion.matchType === 'year' &&
                         `📅 Période: ${formatYear(suggestion.start)} - ${formatYear(suggestion.end)}`}
-                    </div>
-                  </div>
+                    </section>
+                  </section>
                 ))}
                 {globalSearchResults.length > 5 && (
-                  <div className="suggestion-more">+{globalSearchResults.length - 5} autres résultats...</div>
+                  <section className="suggestion-more">+{globalSearchResults.length - 5} autres résultats...</section>
                 )}
-              </div>
+              </section>
             )}
-          </div>
+          </section>
 
-          <div className="view-controls">
+          <section className="view-controls">
             {breadcrumb.length > 0 && (
               <button className="view-button" onClick={handleBack}>
                 <FaArrowLeft /> Retour
@@ -703,44 +703,44 @@ const Timeline = ({ timelineData }) => {
             <span className="view-button active">
               {getLevelTitle()} ({filteredData.length})
             </span>
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
 
-      <div className="timeline-container">
+      <section className="timeline-container">
         {filteredData.length > 0 ? (
-          <div className="timeline-grid">
+          <section className="timeline-grid">
             {filteredData.map((item, index) => (
-              <div key={`${item.type}-${item.name}-${index}`} className={getCardClass(item)}>
-                <div className="card-content">
-                  <div className="card-visual">
-                    <div className="era-visual">{getVisualIcon(item)}</div>
-                  </div>
+              <section key={`${item.type}-${item.name}-${index}`} className={getCardClass(item)}>
+                <section className="card-content">
+                  <section className="card-visual">
+                    <section className="era-visual">{getVisualIcon(item)}</section>
+                  </section>
 
-                  <div className="card-header">
+                  <section className="card-header">
                     <h3 className="card-title">{item.name}</h3>
                     {item.breadcrumbPath && item.breadcrumbPath.length > 0 && (
-                      <div className="card-breadcrumb">{item.breadcrumbPath.join(' › ')}</div>
+                      <section className="card-breadcrumb">{item.breadcrumbPath.join(' › ')}</section>
                     )}
-                  </div>
+                  </section>
 
-                  <div className="card-dates">
+                  <section className="card-dates">
                     <span className="date-range">{formatYear(item.start)}</span>
                     <span className="date-range">à</span>
                     <span className="date-range">{formatYear(item.end)}</span>
-                    <div className="duration">{calculateDuration(item.start, item.end)}</div>
-                  </div>
+                    <section className="duration">{calculateDuration(item.start, item.end)}</section>
+                  </section>
 
-                  <div className="card-stats">
+                  <section className="card-stats">
                     {getItemStats(item).map((stat, statIndex) => (
-                      <div key={statIndex} className="stat-item">
+                      <section key={statIndex} className="stat-item">
                         <span className="stat-icon">{stat.icon}</span>
                         <span className="stat-value">{stat.value}</span>
-                      </div>
+                      </section>
                     ))}
-                  </div>
+                  </section>
 
-                  <div className="card-actions">
+                  <section className="card-actions">
                     {item.children && item.children.length > 0 && (
                       <button className="explore-button" onClick={() => handleExplore(item)}>
                         Explorer <FaArrowRight />
@@ -754,19 +754,19 @@ const Timeline = ({ timelineData }) => {
                     >
                       <FaInfo />
                     </button>
-                  </div>
-                </div>
-              </div>
+                  </section>
+                </section>
+              </section>
             ))}
-          </div>
+          </section>
         ) : (
-          <div className="empty-state">
-            <div className="empty-state-icon">🔍</div>
+          <section className="empty-state">
+            <section className="empty-state-icon">🔍</section>
             <h3 className="empty-state-title">Aucun résultat trouvé</h3>
             <p className="empty-state-description">
               Essaie de modifier votre recherche ou Explore d'autres sections de cette fascinante histoire de la Terre.
             </p>
-            <div className="search-tips">
+            <section className="search-tips">
               <h4>💡 Conseils de recherche :</h4>
               <ul>
                 <li>
@@ -779,10 +779,10 @@ const Timeline = ({ timelineData }) => {
                   <strong>Combiné :</strong> "Jurassique 150", "Crétacé extinction"
                 </li>
               </ul>
-            </div>
-          </div>
+            </section>
+          </section>
         )}
-      </div>
+      </section>
 
       {isModalOpen && selectedElement && (
         <ModalTimeline
@@ -792,7 +792,7 @@ const Timeline = ({ timelineData }) => {
           title={selectedElement.name}
         />
       )}
-    </div>
+    </main>
   );
 };
 
