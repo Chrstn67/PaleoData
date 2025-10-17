@@ -300,7 +300,6 @@
   }
 }
 
-// Styles responsives globaux
 @media (max-width: 768px) {
   .footer {
     padding-bottom: 100px;

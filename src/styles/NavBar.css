@@ -109,7 +109,6 @@
         }
       }
 
-      // Styles pour le sous-menu
       &:hover > .navbar-sublist {
         display: block;
       }
