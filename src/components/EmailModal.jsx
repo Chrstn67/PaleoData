@@ -215,7 +215,7 @@ Cordialement,
             </li>
             <li>
               <strong>🔬 Taxonomie la plus complète possible :</strong> Règne, Embranchement, Classe, Ordre, Famille,
-              Genre, Espèce(s), etc...
+              Genre, Espèce, etc...
             </li>
             <li>
               <strong>⏳ Données géologiques :</strong> Ère, Période, Époque, Étage, apparition, extinction
@@ -338,7 +338,7 @@ Cordialement,
       {/* Modale */}
       {isModalOpen && (
         <dialog className="email-modal-overlay" onClick={closeModal}>
-          <body className="email-modal-content" onClick={(e) => e.stopPropagation()}>
+          <div className="email-modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="email-modal-close" onClick={closeModal}>
               <FaTimes />
             </button>
@@ -349,14 +349,14 @@ Cordialement,
               <p className="email-modal-subtitle">{getModalSubtitle()}</p>
             </section>
 
-            {/* Sélecteur d'options */}
+            {/* Sélecteur d'options compact */}
             <section className="email-options-selector">
               <button
                 className={`email-option ${selectedOption === 'animal' ? 'active' : ''}`}
                 onClick={() => setSelectedOption('animal')}
               >
                 <FaPaw />
-                <span>Ajouter un animal</span>
+                <span>Animal</span>
               </button>
               <button
                 className={`email-option ${selectedOption === 'aventure' ? 'active' : ''}`}
@@ -370,7 +370,7 @@ Cordialement,
                 onClick={() => setSelectedOption('bug')}
               >
                 <FaBug />
-                <span>Signaler un bug</span>
+                <span>Bug</span>
               </button>
             </section>
 
@@ -386,11 +386,11 @@ Cordialement,
               <button className="email-btn-secondary" onClick={closeModal}>
                 Annuler
               </button>
-              <button className="email-btn-primary" onClick={handleSendEmail}>
+              <button className={`email-btn-primary ${isCopied ? 'copied' : ''}`} onClick={handleSendEmail}>
                 <FaEnvelope />
                 {isCopied ? (
                   <>
-                    <FaCopy style={{ marginRight: '8px' }} />
+                    <FaCopy style={{ marginRight: '6px' }} />
                     Adresse copiée !
                   </>
                 ) : (
@@ -398,7 +398,7 @@ Cordialement,
                 )}
               </button>
             </section>
-          </body>
+          </div>
         </dialog>
       )}
     </>
