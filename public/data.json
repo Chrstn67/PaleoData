@@ -11620,7 +11620,7 @@
   },
   {
     "nom": "Arambourgiania",
-    "etymologie": "En l'honneur de Camille Arambourg qui fut le premier à décrire un fossil de cet animal",
+    "etymologie": "En l'honneur de Camille Arambourg qui fut le premier à décrire un fossile de cet animal",
     "image_url": "./assets/images/Arambourgiania.png",
     "date_ajout": "2025-11-11",
     "taxonomie": {
@@ -11697,6 +11697,88 @@
       [
         49.77214355842442,
         -10.470914538274277
+      ]
+    ]
+  },
+  {
+    "nom": "Leaellynasaura",
+    "etymologie": "En l'honneur de Leaellyn Rich, fille des paléontologues Thomas et Patricia Rich qui ont découvert les fossiles de ce dinosaure",
+    "image_url": "./assets/images/Leaellynasaura.jpg",
+    "date_ajout": "2026-02-24",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Sauropsida",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "Dinosauria",
+      "ordre": "Ornithischia",
+      "sous_ordre": "Ornithopoda",
+      "infra_ordre": "Iguanodontia",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Hypsilophodontidae",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Leaellynasaura",
+      "espèces": "Leaellynasaura amicagraphica"
+    },
+    "regime_alimentaire": "Végétarien",
+    "habitat": "Forêts polaires",
+    "geologie": {
+      "ere": "Mésozoïque ",
+      "periode": "Crétacé",
+      "epoque": "Supérieur",
+      "stage": "Aptien",
+      "apparition": -118,
+      "extinction": -110.1
+    },
+    "description": "<i>Leaellynasaura</i> est un petit ornithopode à l’allure vive, doté d’un corps élancé et de longues pattes arrière adaptées à la course rapide. <br/>Ses membres postérieurs fins mais musclés lui permettaient de bondir et de se faufiler facilement entre les troncs et les sous-bois, tandis que ses membres antérieurs plus courts étaient surtout utilisés pour manipuler la nourriture ou se stabiliser. <br/><br/>Sa tête était légère, avec un museau étroit et des rangées de petites dents adaptées à la coupe de feuilles et de pousses, indiquant un mode de vie herbivore spécialisé sur les végétaux tendres. <br/>Les orbites, très grandes par rapport à la taille du crâne, suggèrent des yeux proportionnellement énormes, efficaces pour voir dans des conditions de faible luminosité. <br/><br/>Dans les environnements proches des régions polaires, <i>Leaellynasaura</i> devait faire face à de longues périodes de pénombre, ce qui impliquait un mode de vie actif même durant les saisons moins éclairées, probablement en fouillant la végétation basse pour y trouver des feuilles, des tiges et peut‑être des graines. <br/>Une queue exceptionnellement longue et souple lui servait de balancier pendant la course, améliorant l’équilibre lorsqu’il changeait brusquement de direction pour échapper aux prédateurs ou suivre les sentiers sinueux de la forêt.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "3 mètres",
+        "hauteur": "1-2 mètres",
+        "envergure": ""
+      },
+      "poids": "10 kilogrammes"
+    },
+    "decouverte": {
+      "date": "1989",
+      "lieu": "Australie",
+      "coords": [
+        -38.779725,
+        143.405167
+      ]
+    },
+    "habitatCoords": [
+      [
+        -37.30717367433295,
+        136.84961680385376
+      ],
+      [
+        -34.74873868921783,
+        176.75195976466432
+      ],
+      [
+        -78.42193376336606,
+        160.05274106333684
+      ],
+      [
+        -74.96164180841366,
+        99.58399225928905
+      ],
+      [
+        -37.30717367433295,
+        136.84961680385376
       ]
     ]
   }
