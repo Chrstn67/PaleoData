@@ -826,7 +826,7 @@ const data = [
       epoque: 'Inférieur',
       stage: 'Praguien',
       apparition: -410,
-      extinction: 394,
+      extinction: -394,
     },
     description:
       "<i>Boreaspis</i> est un genre éteint de poissons sans mâchoires (agnathes).<br/>Ces poissons étaient de petite taille, avec un bouclier céphalique d'environ 2 centimètres de long, recouvrant la tête et offrant une protection solide.<br/><br/>Une caractéristique distinctive de <i>Boreaspis</i> est la présence d'un long rostre en forme de spatule, dérivé de l'extrémité antérieure du bouclier céphalique. Ce rostre améliorait l'hydrodynamisme de l'animal et lui permettait probablement de fouiller le substrat à la recherche de nourriture.<br/>En plus du bouclier, certains spécimens présentaient des épines protectrices au niveau des joues.<br/><br/>Cet animal était un nageur adapté aux fonds marins peu profonds.",
@@ -8558,7 +8558,7 @@ const data = [
       periode: '',
       epoque: '',
       stage: '',
-      apparition: '',
+      apparition: 'Inconnue',
       extinction: 1662,
     },
     description:

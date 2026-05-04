@@ -26,18 +26,14 @@ const AnimalCard = ({ data }) => {
     return <div>Animal non trouvé</div>;
   }
 
-  // Fonction pour parser et formater les régimes alimentaires
   const formatDiets = (regimeAlimentaire) => {
     if (!regimeAlimentaire) return 'Informations à venir...';
 
-    // Si c'est déjà un tableau, le joindre
     if (Array.isArray(regimeAlimentaire)) {
       return regimeAlimentaire.join(', ');
     }
 
-    // Si c'est une chaîne qui ressemble à un tableau : '[Carnivore, insectivore, piscivore]'
     if (typeof regimeAlimentaire === 'string') {
-      // Nettoyer la chaîne et la diviser
       const cleaned = regimeAlimentaire.replace(/[\[\]]/g, '').trim();
       if (cleaned.includes(',')) {
         return cleaned
@@ -45,7 +41,6 @@ const AnimalCard = ({ data }) => {
           .map((diet) => diet.trim())
           .join(', ');
       }
-      // Si pas de virgule, c'est un seul régime
       return cleaned;
     }
 
@@ -92,34 +87,42 @@ const AnimalCard = ({ data }) => {
   return (
     <main className="animal-card">
       <header className="hero-section">
-        <section className="title-image-section">
-          <h2>{animal.nom}</h2>
-          <img
-            src={imageUrl}
-            alt={animal.nom}
-            className="hero-image"
-            onClick={openImageModal}
-            style={{ cursor: 'pointer' }}
-            title="Cliquer pour agrandir"
-          />
-        </section>
-        <button
-          label="Partager"
-          type="button"
-          className="share-btn"
-          onClick={() => {
-            shareLink(animal);
-          }}
-        >
-          <BiShareAlt size={20} />
-        </button>
+        <div className="hero-content-wrapper">
+          <section className="title-image-section">
+            <h2 className="animal-name">{animal.nom}</h2>
+            <div className="image-wrapper">
+              <img
+                src={imageUrl}
+                alt={animal.nom}
+                className="hero-image"
+                onClick={openImageModal}
+                style={{ cursor: 'pointer' }}
+                title="Cliquer pour agrandir"
+                loading="eager"
+              />
+              <div className="image-overlay">
+                <span className="zoom-hint">🔍 Agrandir</span>
+              </div>
+            </div>
+          </section>
+          <button
+            aria-label="Partager"
+            type="button"
+            className="share-btn"
+            onClick={() => {
+              shareLink(animal);
+            }}
+          >
+            <BiShareAlt size={20} />
+          </button>
+        </div>
       </header>
 
       {/* Modal pour l'image agrandie */}
       {isImageModalOpen && (
         <section className="image-modal-overlay" onClick={handleModalClick}>
           <div className="image-modal-content">
-            <button className="image-modal-close" onClick={closeImageModal} label="Fermer">
+            <button className="image-modal-close" onClick={closeImageModal} aria-label="Fermer">
               <BiX size={24} />
             </button>
             <img src={imageUrl} alt={animal.nom} className="image-modal-img" />
@@ -138,8 +141,6 @@ const AnimalCard = ({ data }) => {
             {animal.etymologie || 'Les origines du nom de cette créature fascinante restent à découvrir...'}
           </p>
         </section>
-
-        <GeoInfo geologie={animal.geologie} />
 
         <section className="content-section">
           <section className="content-card description-card">
@@ -185,6 +186,9 @@ const AnimalCard = ({ data }) => {
               )}
             </section>
           </section>
+
+          {/* GeoInfo placé ici, sous Régime / Morphologie / Découverte */}
+          <GeoInfo geologie={animal.geologie} />
         </section>
 
         <section className="habitat-section-wrapper">
