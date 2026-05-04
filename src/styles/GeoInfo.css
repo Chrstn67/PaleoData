@@ -514,33 +514,3 @@
     display: none;
   }
 }
-
-
-
-Ce serait intéressant d'ajouter tous les animaux dans timeline.jsx, visuellement comme sur GéoInfos, sauf qu'il faut trouver un système pour facilement trouver les animaux qui peuvent se chevaucher, tout en évitant de trop scoller pour avoir ce que l'on cherche. Les données ressemblent à ça et sont dans un fichier data :
-
-
-
-```
-
- geologie: {
-
-      ere: 'Cénozoïque',
-
-      periode: 'Néogène',
-
-      epoque: 'Pliocène',
-
-      stage: 'Zancléen',
-
-      apparition: -4.9,
-
-      extinction: -0.007,
-
-    },
-
-```
-
-
-
-Redonne donc timeline.jsx complet
