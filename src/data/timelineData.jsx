@@ -579,7 +579,7 @@ const timelineData = [
     eraInfo:
       "Le Mésozoïque (du grec 'mesos' moyen et 'zôê' vie, signifiant 'Vie moyenne') est la deuxième des trois divisions de l'éon 'Phanérozoïque' et est une ère géologique qui s'étend de −252,2 à −66,0 Ma, soit sur 186,2 Ma. Elle couvre 3 périodes (Trias, Jurassique, Crétacé). \n \n Cette ère a longtemps été appelée 'Ère Secondaire', ou 'Ère des Reptiles' du fait de la domination des dinosaures sur les continents, des ptérosaures dans les airs et des reptiles marins dans les océans. \n Le Mésozoïque commence après l'extinction massive du Permien-Trias et se termine avec l'extinction Crétacé-Paléogène qui voit la disparition des dinosaures non-aviens. \n \n Le climat du Mésozoïque est généralement plus chaud qu'aujourd'hui, avec peu de glace polaire et des niveaux de CO2 souvent élevés. La Pangée commence à se fragmenter au Jurassique, formant progressivement les continents modernes. \n \n La vie connaît une recovery remarquable après l'extinction du Permien-Trias. Les gymnospermes (conifères, cycas, ginkgos) dominent la flore terrestre jusqu'au Crétacé où les angiospermes (plantes à fleurs) apparaissent et se diversifient rapidement. Les mammifères apparaissent au Trias mais restent de petite taille et nocturnes pendant tout le Mésozoïque, vivant dans l'ombre des dinosaures.",
     eraStart: -252.17,
-    eraEnd: -66,
+    eraEnd: -65,
     periods: [
       {
         name: 'Trias',
@@ -784,7 +784,7 @@ const timelineData = [
         periodInfo:
           "Le Crétacé s'étend de −145,0 à −66,0 Ma, soit sur 79 Ma. Son nom vient du latin 'creta' qui signifie craie, en référence aux vastes dépôts de craie marine caractéristiques de cette période. \n \n Le Crétacé est la plus longue période du Mésozoïque. Le climat est généralement très chaud, avec des températures globales de 4-8°C plus élevées qu'aujourd'hui. Les niveaux de CO2 sont très élevés (4-10 fois les niveaux pré-industriels). Il n'y a pas de glace polaire et le niveau des mers est exceptionnellement haut, inondant jusqu'à un tiers des surfaces continentales actuelles. \n \n La fragmentation des continents se poursuit, avec l'ouverture de l'Atlantique Sud et la séparation de l'Amérique du Sud et de l'Afrique. L'Inde se détache de l'Antarctique et commence sa migration vers le nord. \n \n La vie connaît des innovations majeures: apparition et radiation des plantes à fleurs (angiospermes) qui deviennent dominantes, diversification des insectes pollinisateurs, apogée des dinosaures avec les plus grandes espèces terrestres de tous les temps, diversification des mammifères placentaires et marsupiaux. \n \n La fin du Crétacé est marquée par l'extinction Crétacé-Paléogène, causée par l'impact d'un astéroïde dans la péninsule du Yucatán et des éruptions volcaniques massives en Inde (trapps du Deccan). Cette extinction élimine les dinosaures non-aviens, les ptérosaures, les reptiles marins et de nombreux autres groupes.",
         periodStart: -145,
-        periodEnd: -66,
+        periodEnd: -65,
         epochs: [
           {
             name: 'Inférieur',
@@ -840,7 +840,7 @@ const timelineData = [
           {
             name: 'Supérieur',
             epochStart: -100.5,
-            epochEnd: -66,
+            epochEnd: -65,
             epochInfo:
               "Le Crétacé supérieur (34,5 Ma) représente l'apogée du monde mésozoïque. Le climat est extrêmement chaud, avec des températures globales parmi les plus élevées de l'histoire de la Terre. Les niveaux de CO2 sont très élevés. Les mers épicontinentales sont étendues, déposant d'immenses quantités de craie. Les dinosaures dominent tous les écosystèmes terrestres avec des formes gigantesques et spécialisées. Les angiospermes deviennent la flore dominante. La fin de cette période est marquée par l'extinction massive du Crétacé-Paléogène.",
             stage: [
@@ -882,7 +882,7 @@ const timelineData = [
               {
                 name: 'Maastrichtien',
                 stageStart: -72.1,
-                stageEnd: -66,
+                stageEnd: -65,
                 stageInfo:
                   "Le Maastrichtien (6,1 Ma) tire son nom de Maastricht aux Pays-Bas. La fin du Crétacé est marquée par un refroidissement climatique progressif et une baisse du niveau des mers. La diversité des dinosaures décline légèrement mais ils restent dominants. L'impact de l'astéroïde de Chicxulub à la fin du Maastrichtien, combiné aux éruptions volcaniques des trapps du Deccan, cause l'extinction massive du Crétacé-Paléogène, éliminant les dinosaures non-aviens et de nombreux autres groupes.",
               },
@@ -896,26 +896,26 @@ const timelineData = [
     era: 'Cénozoïque',
     eraInfo:
       "Le Cénozoïque (du grec 'kainos' nouveau et 'zôê' vie, signifiant 'Vie nouvelle') est la troisième et actuelle division de l'éon 'Phanérozoïque' et est une ère géologique qui s'étend de −66,0 Ma à nos jours, soit sur 66 Ma. Elle couvre 3 périodes (Paléogène, Néogène, Quaternaire). \n \n Cette ère a longtemps été appelée 'Ère Tertiaire', mais cette appellation est maintenant obsolète. Elle est également connue comme 'l'âge des Mammifères' car ces animaux ont connu une radiation évolutive spectaculaire après l'extinction des dinosaures. \n \n Le Cénozoïque est marqué par un refroidissement climatique progressif, passant d'un climat chaud et sans glace polaire au début de l'ère à l'actuelle période glaciaire avec des calottes polaires permanentes. Les continents continuent leur dérive vers leurs positions actuelles. \n \n La vie connaît des transformations majeures: radiation des mammifères qui occupent toutes les niches écologiques, diversification des oiseaux, apparition et expansion des herbes (graminées) qui transforment les paysages, et enfin apparition et évolution des hominidés menant à l'Homme moderne. \n \n Le Cénozoïque est également caractérisé par des événements tectoniques majeurs comme la collision de l'Inde avec l'Asie (formant l'Himalaya) et la fermeture de la Téthys (formant la Méditerranée).",
-    eraStart: -66,
+    eraStart: -65,
     eraEnd: currentYear,
     periods: [
       {
         name: 'Paléogène',
         periodInfo:
           "Le Paléogène s'étend de −66,0 à −23,03 Ma, soit sur 42,97 Ma. Il est divisé en trois époques: le Paléocène, l'Éocène et l'Oligocène. \n \n Le Paléogène commence après l'extinction du Crétacé-Paléogène qui a éliminé les dinosaures non-aviens et de nombreux autres groupes. Le climat est généralement chaud au début, avec un optimum thermique à l'Éocène, puis se refroidit progressivement pour aboutir aux conditions plus fraîches de l'Oligocène. \n \n Les continents continuent de se rapprocher de leurs positions actuelles. L'Atlantique Nord s'élargit, l'Inde entre en collision avec l'Asie, et la Téthys commence à se fermer. \n \n La vie connaît une remarkable recovery après l'extinction. Les mammifères radiationnent rapidement, occupant les niches laissées vacantes par les dinosaures. Les oiseaux se diversifient également. Les plantes à fleurs dominent la flore terrestre, avec l'apparition des premières graminées à la fin du Paléogène.",
-        periodStart: -66,
+        periodStart: -65,
         periodEnd: -23.03,
         epochs: [
           {
             name: 'Paléocène',
-            epochStart: -66,
+            epochStart: -65,
             epochEnd: -56,
             epochInfo:
               "Le Paléocène (10 Ma) est la première époque du Paléogène. Il représente la recovery de la vie après l'extinction du Crétacé-Paléogène. Le climat est chaud et humide, avec des températures globales élevées et peu de glace polaire. Les mammifères connaissent une radiation adaptive rapide, se diversifiant en de nombreuses formes qui occupent les niches écologiques vacantes. Les oiseaux deviennent les vertébrés terrestres dominants en termes de taille.",
             stage: [
               {
                 name: 'Danien',
-                stageStart: -66,
+                stageStart: -65,
                 stageEnd: -61.6,
                 stageInfo:
                   'Le Danien (4,4 Ma) doit son nom du Danemark où les couches de cette période sont bien exposées. Cette période immédiatement post-extinction est caractérisée par des écosystèmes appauvris mais en recovery rapide. Les mammifères restent petits mais se diversifient en de nouveaux groupes. Les forêts tropicales couvrent une grande partie du globe. La vie marine se rétablit lentement.',

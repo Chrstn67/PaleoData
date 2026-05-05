@@ -35,6 +35,7 @@
 .title-image-section {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 2rem;
   flex: 1;
   min-width: 0;
@@ -99,7 +100,7 @@
 }
 
 .hero-image {
-  max-height: min(150px, 18.75vw);
+  max-height: 250px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -121,12 +122,6 @@
 @media (max-width: 768px) {
   .hero-image {
     max-height: min(150px, 37.5vw);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-image {
-    max-height: min(120px, 30vw);
   }
 }
 
@@ -409,7 +404,7 @@
 }
 
 .etymology-content {
-  grid-area: etymology;
+  /* grid-area: etymology; */
   background: linear-gradient(100deg, #75553fcc 0%, #c2a9789f 100%);
   border-radius: 20px;
   padding: clamp(1rem, 3vw, 3rem) clamp(0.5rem, 2vw, 2rem);

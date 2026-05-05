@@ -163,52 +163,6 @@
   font-style: italic;
 }
 
-/* ── Légende des couches ────────────────────────────────────────── */
-.geo-tl-legend {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.5rem;
-  align-items: center;
-}
-
-.geo-legend-item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #4a3d2a;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.geo-legend-item::before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 10px;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-.geo-legend--era::before {
-  background: #1a6b6b;
-  opacity: 0.7;
-}
-.geo-legend--period::before {
-  background: #bf6000;
-  opacity: 0.7;
-}
-.geo-legend--epoch::before {
-  background: #2e7d32;
-  opacity: 0.7;
-}
-.geo-legend--bar::before {
-  background: #1a6b6b;
-  border-radius: 4px;
-}
-
 /* ── Zone Canvas ────────────────────────────────────────────────── */
 .geo-tl-track {
   position: relative;
@@ -239,6 +193,20 @@
   color: rgba(74, 46, 26, 0.45);
   pointer-events: none;
   white-space: nowrap;
+}
+
+.geo-tl-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+  transform: translate(-50%, -100%);
 }
 
 /* ── Minimap ────────────────────────────────────────────────────── */
@@ -286,8 +254,10 @@
   justify-content: space-between;
   gap: 0.5rem;
   margin-top: 0.6rem;
+}
 
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
+  .geo-tl-controls {
     flex-direction: column;
   }
 }
@@ -369,91 +339,209 @@
   color: #082828;
 }
 
-/* ── Carte d'information ────────────────────────────────────────── */
-.geo-tl-card {
-  display: flex;
-  gap: 0.85rem;
-  align-items: flex-start;
+/* ── Carte d'information (GeoCard) ────────────────────────────────────────── */
+.geo-card {
   background: #f5f1ec;
   border: 1px solid #d0baa0;
-  border-left: 4px solid #1a6b6b;
-  border-radius: 10px;
-  padding: 0.9rem 1rem;
+  border-radius: 12px;
   margin-top: 0.75rem;
+  overflow: hidden;
 }
 
-.geo-tl-card-dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #1a6b6b;
-  flex-shrink: 0;
-  margin-top: 3px;
+.geo-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  background: #ede5db;
+  border-bottom: 1px solid #d0baa0;
 }
 
-.geo-tl-card-body {
+.geo-card__identity {
   flex: 1;
   min-width: 0;
 }
 
-.geo-tl-card-name {
+.geo-card__name {
   font-size: 1rem;
   font-weight: 700;
   color: #2e1a0a;
   display: block;
-  margin-bottom: 0.5rem;
-  font-style: italic;
+  margin-bottom: 0.25rem;
 }
 
-/* Grille des 4 données (ère, période, époque, étage) */
-.geo-tl-card-rows {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 4px 16px;
-  margin-bottom: 0.6rem;
+.geo-card__dates {
+  font-size: 0.75rem;
+  color: #6b4e2a;
+  font-weight: 500;
 }
 
-.geo-tl-card-row {
+.geo-card__arrow {
+  margin: 0 4px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-badge--alive {
+  background: #e0f2e0;
+  color: #1b5e20;
+  border: 1px solid #a8d4a8;
+}
+
+.status-badge--extinct {
+  background: #fce4e4;
+  color: #8b2c2c;
+  border: 1px solid #e0b4b4;
+}
+
+.status-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.geo-card__metrics {
   display: flex;
-  flex-direction: column;
-  gap: 1px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  background: #faf8f5;
+  border-bottom: 1px solid #e8dfd4;
 }
 
-.geo-tl-card-row-label {
+.metric {
+  flex: 1;
+  min-width: 100px;
+}
+
+.metric__label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8b7355;
+  margin-bottom: 4px;
+}
+
+.metric__value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2e1a0a;
+}
+
+.metric__unit {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.ratio-bar {
+  margin-top: 6px;
+  height: 4px;
+  background: rgba(74, 46, 26, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ratio-fill {
+  height: 100%;
+  background: #1a6b6b;
+  border-radius: 2px;
+}
+
+.geo-card__strat {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #e8dfd4;
+}
+
+.geo-card__strat-title {
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: #6b4e2a;
+  letter-spacing: 0.08em;
+  color: #8b7355;
+  display: block;
+  margin-bottom: 12px;
 }
 
-.geo-tl-card-row-value {
-  font-size: 0.9rem;
-  color: #2e1a0a;
-  font-weight: 600;
-}
-
-/* Ligne apparition → extinction */
-.geo-tl-card-range {
-  font-size: 0.82rem;
-  color: #4a3010;
-  line-height: 1.6;
-  margin: 0;
+.strat-grid {
   display: flex;
   flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.strat-col {
+  flex: 1;
+  min-width: 160px;
+}
+
+.strat-col-head {
+  display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #d0baa0;
 }
 
-.geo-tl-card-range-label {
-  font-weight: 700;
-  color: #6b4e2a;
+.strat-col-head--app {
+  color: #1a6b6b;
 }
 
-.geo-tl-card-sep {
-  color: #6b4e2a;
-  font-weight: 700;
-  margin: 0 2px;
+.strat-col-head--ext {
+  color: #8b2c2c;
+}
+
+.strat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.strat-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.strat-item {
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.strat-rank {
+  width: 55px;
+  font-weight: 500;
+  color: #8b7355;
+}
+
+.strat-val {
+  flex: 1;
+  color: #2e1a0a;
+  font-weight: 500;
+}
+
+.strat-val--muted {
+  font-style: italic;
+  color: #8b7355;
+  font-weight: 400;
 }
 
 /* ── Responsive ─────────────────────────────────────────────────── */
@@ -461,6 +549,7 @@
   .animal-geologie {
     padding: 1.25rem 1rem;
   }
+
   .geo-timeline-mode {
     padding: 1rem 1rem 0.75rem;
   }
@@ -473,6 +562,7 @@
   .geo-tl-badges {
     justify-content: flex-start;
   }
+
   .geo-tl-hint {
     display: none;
   }
@@ -486,31 +576,27 @@
     font-size: 0.75rem;
   }
 
-  .geo-tl-card-rows {
-    grid-template-columns: 1fr 1fr;
+  .strat-grid {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .geo-tl-legend {
-    gap: 0.4rem;
-  }
-
-  .geo-legend-item {
-    font-size: 0.68rem;
-  }
-
-  .geo-tl-card-rows {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .geo-tl-card-range {
+  .geo-card__metrics {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
+    gap: 0.5rem;
   }
 
-  .geo-tl-card-sep {
-    display: none;
+  .metric {
+    min-width: auto;
+  }
+
+  .strat-col {
+    min-width: auto;
+  }
+
+  .geo-tl-controls {
+    flex-direction: column;
   }
 }

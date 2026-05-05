@@ -46,7 +46,7 @@ const AnimalListingSection = ({ animals, onAnimalCount }) => {
     <>
       <NewAnimal animals={animals} />
       <section className="animal-listing">
-        <h3 className="h3-title">Liste</h3>
+        <h3 className="h3-title">Animaux</h3>
         <ul>
           {animals.length > 0 ? (
             animals.map((animal) => <AnimalCard key={animal.nom} animal={animal} />)
