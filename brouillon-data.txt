@@ -27,7 +27,7 @@
        sous_famille: '',
        tribu: '',
        sous_tribu: '',
-       genre: 'Pterodactylus',
+       genre: '',
        espèces: '',
      },
      regime_alimentaire: '',
