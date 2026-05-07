@@ -94,8 +94,24 @@ function assignLanes(animals) {
 // ─────────────────────────────────────────────────────────────────────────────
 // UTILS
 // ─────────────────────────────────────────────────────────────────────────────
-function formatMa(ma) {
-  if (ma >= 0) return 'Auj.';
+
+/**
+ * Formate un tick de l'axe temporel (valeur en Ma interne).
+ * - ma < 0  : passé  → "X Ma" / "X ka" / "X ans"
+ * - ma = 0  : "Auj."
+ * - ma > 0  : futur  → "+X ka" / "+X ans"
+ */
+function formatTickMa(ma) {
+  if (ma === 0) return 'Auj.';
+
+  if (ma > 0) {
+    const ans = Math.round(ma * 1_000_000);
+    if (ans < 1000) return `+${ans} ans`;
+    if (ans < 1_000_000) return `+${Math.round(ans / 1000)} ka`;
+    return `+${ma.toFixed(1)} Ma`;
+  }
+
+  // Passé géologique
   const abs = Math.abs(ma);
   if (abs < 0.0001) return 'Auj.';
   if (abs < 0.001) return `${Math.round(abs * 1_000_000)} ans`;
@@ -568,22 +584,28 @@ export default function TimelineVertical() {
     ctx.lineTo(W, AXIS_Y);
     ctx.stroke();
 
-    // Ticks
-    const tickInterval = TICK_INTERVALS.find((t) => span / t <= 9) || 500;
+    // ── Ticks ──────────────────────────────────────────────────────
+    // Sélection de l'intervalle : le plus petit qui donne ≤9 ticks visibles.
+    const tickInterval = TICK_INTERVALS.find((t) => span / t <= 9) ?? 500;
     const startTick = Math.ceil(vs / tickInterval) * tickInterval;
+
     for (let ma = startTick; ma <= ve; ma += tickInterval) {
-      const x = maToX(ma);
+      // Arrondi pour éviter les flottants parasites
+      const maNorm = Math.round(ma / tickInterval) * tickInterval;
+      const x = maToX(maNorm);
       if (x < 2 || x > W - 2) continue;
+
       ctx.strokeStyle = 'rgba(30,30,30,0.12)';
       ctx.lineWidth = 0.75;
       ctx.beginPath();
       ctx.moveTo(x, AXIS_Y);
       ctx.lineTo(x, H);
       ctx.stroke();
+
       ctx.fillStyle = '#4A3D2A';
       ctx.font = `500 11px ${FONT_CANVAS}`;
       ctx.textAlign = 'center';
-      ctx.fillText(formatMa(ma), x, AXIS_Y + 14);
+      ctx.fillText(formatTickMa(maNorm), x, AXIS_Y + 14);
     }
 
     // Ligne "Aujourd'hui"
@@ -637,7 +659,7 @@ export default function TimelineVertical() {
       }
       if (my >= STA_Y && my < STA_Y + STA_H) {
         const found = STAGES.find((i) => ma >= i.start && ma < i.end);
-        return found ? { ...found, type: 'stage' } : null;
+        return found ? { ...found, type: 'stage', info: stageInfoMap.get(found.name) || '' } : null;
       }
       return null;
     },
@@ -733,7 +755,7 @@ export default function TimelineVertical() {
   const TOTAL = Math.abs(TIMELINE_MAX - TIMELINE_MIN);
   const thumbLeft = Math.max(0, Math.min(96, ((view.start - TIMELINE_MIN) / TOTAL) * 100));
   const thumbWidth = Math.max(2, Math.min(100 - thumbLeft, ((view.end - view.start) / TOTAL) * 100));
-  const spanLabel = formatMa(Math.abs(view.end - view.start));
+  const spanLabel = formatTickMa(Math.abs(view.end - view.start));
 
   const NAV_SHORTCUTS = [
     { label: '−541 Ma', ma: TIMELINE_MIN },

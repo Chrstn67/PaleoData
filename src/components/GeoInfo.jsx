@@ -6,6 +6,8 @@ import { TIMELINE_MIN, TIMELINE_MAX, ERAS, PERIODS, EPOCHS, STAGES, TICK_INTERVA
 
 import '../styles/GeoInfo.css';
 
+const TODAY = new Date().getFullYear();
+
 // Ajout de la méthode roundRect si non existante
 if (!CanvasRenderingContext2D.prototype.roundRect) {
   CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
@@ -37,16 +39,12 @@ function isPositiveYear(val) {
   return typeof val === 'number' && val > 0;
 }
 
-function formatMa(ma) {
-  if (ma === 0 || ma == null) return 'Auj.';
-  const abs = Math.abs(ma);
-  if (abs < 0.0001) return 'Auj.';
-  if (abs < 0.001) return `${Math.round(abs * 1_000_000)} ans`;
-  if (abs < 0.1) return `${Math.round(abs * 1000)} ka`;
-  if (abs < 1) return `${(abs * 1000).toFixed(0)} ka`;
-  return `${Number.isInteger(abs) ? abs : abs.toFixed(1)} Ma`;
-}
-
+/**
+ * Formate une valeur Ma pour l'affichage DANS LES CARDS / INFO (texte riche).
+ * ma < 0  → passé géologique
+ * ma = 0  → Aujourd'hui
+ * ma > 0  → futur / an AD (stocké en Ma depuis 0)
+ */
 function formatMaFull(ma) {
   if (isUnknown(ma)) return 'Inconnue';
   if (isPositiveYear(ma)) return `En ${Math.round(ma)} AP. J.-C.`;
@@ -66,10 +64,36 @@ function formatDuration(ma) {
   return `${abs % 1 === 0 ? abs : abs.toFixed(1)} Ma`;
 }
 
+/**
+ * Formate un tick de l'axe temporel (valeur en Ma interne).
+ * - ma < 0  : passé  → "−X Ma" / "−X ka" / "−X ans"
+ * - ma = 0  : "Auj."
+ * - ma > 0  : futur  → "+X ka" / "+X ans" (par pas de 50 ka min)
+ */
+function formatTickMa(ma) {
+  if (ma === 0) return TODAY;
+
+  if (ma > 0) {
+    // Zone positive : futur ou dates AD très récentes
+    const ans = Math.round(ma * 1_000_000); // conversion en années
+    if (ans < 1000) return `+${ans} ans`;
+    if (ans < 1_000_000) return `+${Math.round(ans / 1000)} ka`;
+    return `+${ma.toFixed(1)} Ma`;
+  }
+
+  // Zone négative : passé géologique
+  const abs = Math.abs(ma);
+  if (abs < 0.0001) return TODAY;
+  if (abs < 0.001) return `${Math.round(abs * 1_000_000)} ans`;
+  if (abs < 0.1) return `${Math.round(abs * 1000)} ka`;
+  if (abs < 1) return `${(abs * 1000).toFixed(0)} ka`;
+  return `${Number.isInteger(abs) ? abs : abs.toFixed(1)} Ma`;
+}
+
 function toMa(val) {
   if (isUnknown(val)) return null;
   if (isPositiveYear(val)) {
-    const yearsAgo = 2024 - val;
+    const yearsAgo = TODAY - val;
     return -(yearsAgo / 1_000_000);
   }
   return typeof val === 'number' ? val : null;
@@ -78,13 +102,30 @@ function toMa(val) {
 // ─────────────────────────────────────────────────────────────────────────────
 // STRATIGRAPHIC LOOKUP — depuis geoConstants (ERAS, PERIODS, EPOCHS, STAGES)
 // ─────────────────────────────────────────────────────────────────────────────
-function findContextAt(ma) {
+function findContextAt(ma, isExtinction = false) {
   if (ma == null) return { era: null, period: null, epoch: null, stage: null };
 
-  const era = ERAS.find((e) => ma >= e.start && ma < e.end)?.name ?? null;
-  const period = PERIODS.find((e) => ma >= e.start && ma < e.end)?.name ?? null;
-  const epoch = EPOCHS.find((e) => ma >= e.start && ma < e.end)?.name ?? null;
-  const stage = STAGES.find((e) => ma >= e.start && ma < e.end)?.name ?? null;
+  // Pour l'extinction, on veut le contexte au moment de la mort
+  // Si l'extinction est pile à la limite (ma = debut de l'intervalle suivant)
+  // On décale très légèrement la valeur vers le passé
+  let adjustedMa = ma;
+  if (isExtinction && ma < 0) {
+    // Cherche si ma correspond exactement au début d'un intervalle
+    const isStartOfEra = ERAS.some((e) => Math.abs(ma - e.start) < 0.000001);
+    const isStartOfPeriod = PERIODS.some((p) => Math.abs(ma - p.start) < 0.000001);
+    const isStartOfEpoch = EPOCHS.some((e) => Math.abs(ma - e.start) < 0.000001);
+    const isStartOfStage = STAGES.some((s) => Math.abs(ma - s.start) < 0.000001);
+
+    if (isStartOfEra || isStartOfPeriod || isStartOfEpoch || isStartOfStage) {
+      // On décale d'une epsilon pour tomber dans l'intervalle précédent
+      adjustedMa = ma - 0.000001;
+    }
+  }
+
+  const era = ERAS.find((e) => adjustedMa >= e.start && adjustedMa < e.end)?.name ?? null;
+  const period = PERIODS.find((e) => adjustedMa >= e.start && adjustedMa < e.end)?.name ?? null;
+  const epoch = EPOCHS.find((e) => adjustedMa >= e.start && adjustedMa < e.end)?.name ?? null;
+  const stage = STAGES.find((e) => adjustedMa >= e.start && adjustedMa < e.end)?.name ?? null;
 
   return { era, period, epoch, stage };
 }
@@ -205,20 +246,16 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
   const eraDur = getEraDuration(apparition ?? extinction);
   const ratio = duration != null && eraDur ? Math.min(100, (duration / eraDur) * 100) : null;
 
-  const appContext = findContextAt(apparition);
-  const extContext = findContextAt(extinction);
+  // Pour l'apparition : comportement normal
+  const appContext = findContextAt(apparition, false);
+  // Pour l'extinction : on signale qu'il faut prendre le précédent si c'est une limite
+  const extContext = findContextAt(extinction, true);
 
   const appText = isUnknown(apparitionRaw) ? 'Inconnue' : formatMaFull(apparitionRaw);
   const extText = isUnknown(extinctionRaw) ? 'Inconnue' : formatMaFull(extinctionRaw);
   const durStr = formatDuration(duration);
 
   const hasStrat = apparition != null || extinction != null;
-  const geoRows = [
-    { key: 'ere', cls: 'era' },
-    { key: 'periode', cls: 'period' },
-    { key: 'epoque', cls: 'epoch' },
-    { key: 'stage', cls: 'stage' },
-  ].filter((r) => geologie?.[r.key]);
 
   return (
     <div className="geo-card">
@@ -350,22 +387,31 @@ const GeoInfo = ({ geologie, animalNom }) => {
     ctx.lineTo(W, AXIS_Y);
     ctx.stroke();
 
-    // Ticks
-    const tickInterval = TICK_INTERVALS.find((t) => span / t <= 9) || 500;
+    // ── Ticks ──────────────────────────────────────────────────────
+    // On choisit l'intervalle le plus fin qui ne dépasse pas ~9 ticks visibles.
+    // Pour la zone positive (futur/très récent) on veut au min 0.05 Ma = 50 ka.
+    const tickInterval = TICK_INTERVALS.find((t) => span / t <= 9) ?? 500;
+
+    // On aligne le premier tick sur un multiple de tickInterval
     const startTick = Math.ceil(vs / tickInterval) * tickInterval;
+
     for (let ma = startTick; ma <= ve; ma += tickInterval) {
-      const x = maToX(ma);
+      // Arrondi pour éviter les flottants parasites (ex : 0.09999… au lieu de 0.1)
+      const maNorm = Math.round(ma / tickInterval) * tickInterval;
+      const x = maToX(maNorm);
       if (x < 2 || x > W - 2) continue;
+
       ctx.strokeStyle = 'rgba(30,30,30,0.1)';
       ctx.lineWidth = 0.75;
       ctx.beginPath();
       ctx.moveTo(x, AXIS_Y);
       ctx.lineTo(x, H);
       ctx.stroke();
+
       ctx.fillStyle = '#4A3D2A';
       ctx.font = `500 12px ${FONT}`;
       ctx.textAlign = 'center';
-      ctx.fillText(formatMa(ma), x, AXIS_Y + 14);
+      ctx.fillText(formatTickMa(maNorm), x, AXIS_Y + 14);
     }
 
     // Ligne "Aujourd'hui"
@@ -380,7 +426,7 @@ const GeoInfo = ({ geologie, animalNom }) => {
       ctx.fillStyle = '#C0392B';
       ctx.font = `700 11px ${FONT}`;
       ctx.textAlign = 'center';
-      ctx.fillText('Auj.', nowX, H - 3);
+      ctx.fillText(TODAY, nowX, H - 3);
     }
 
     // Barre de vie de l'animal
@@ -518,7 +564,7 @@ const GeoInfo = ({ geologie, animalNom }) => {
 
   // ── JSX ────────────────────────────────────────────────────────────
   const span = view.end - view.start;
-  const spanLabel = formatMa(Math.abs(span));
+  const spanLabel = formatTickMa(Math.abs(span));
   const TOTAL = Math.abs(TIMELINE_MIN - TIMELINE_MAX);
   const thumbLeft = Math.max(0, Math.min(96, ((view.start - TIMELINE_MIN) / TOTAL) * 100));
   const thumbWidth = Math.max(2, Math.min(100 - thumbLeft, (span / TOTAL) * 100));
