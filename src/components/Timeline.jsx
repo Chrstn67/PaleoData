@@ -22,10 +22,12 @@ import {
 // ANIMALS : préparation + assignation de lanes
 // ─────────────────────────────────────────────────────────────────────────────
 
+const TODAY = new Date().getFullYear();
+
 function toMa(val) {
   if (val == null) return null;
   if (typeof val === 'number' && val > 0) {
-    const yearsAgo = 2024 - val;
+    const yearsAgo = TODAY - val;
     return -(yearsAgo / 1_000_000);
   }
   return typeof val === 'number' ? val : null;
@@ -102,7 +104,7 @@ function assignLanes(animals) {
  * - ma > 0  : futur  → "+X ka" / "+X ans"
  */
 function formatTickMa(ma) {
-  if (ma === 0) return 'Auj.';
+  if (ma === 0) return TODAY;
 
   if (ma > 0) {
     const ans = Math.round(ma * 1_000_000);
@@ -113,7 +115,7 @@ function formatTickMa(ma) {
 
   // Passé géologique
   const abs = Math.abs(ma);
-  if (abs < 0.0001) return 'Auj.';
+  if (abs < 0.0001) return TODAY;
   if (abs < 0.001) return `${Math.round(abs * 1_000_000)} ans`;
   if (abs < 0.1) return `${Math.round(abs * 1000)} ka`;
   if (abs < 1) return `${(abs * 1000).toFixed(0)} ka`;
@@ -620,7 +622,7 @@ export default function TimelineVertical() {
       ctx.fillStyle = '#C0392B';
       ctx.font = `700 11px ${FONT_CANVAS}`;
       ctx.textAlign = 'center';
-      ctx.fillText('Auj.', nowX, AXIS_Y + 14);
+      ctx.fillText(TODAY, nowX, AXIS_Y + 14);
     }
 
     if (showAnimals && laneCount > 0) {
@@ -761,7 +763,7 @@ export default function TimelineVertical() {
     { label: '−541 Ma', ma: TIMELINE_MIN },
     { label: '−252 Ma', ma: -252 },
     { label: '−65 Ma', ma: -65 },
-    { label: "Aujourd'hui", ma: 0 },
+    { label: "Aujourd'hui", ma: TODAY },
   ];
 
   return (
@@ -870,7 +872,7 @@ export default function TimelineVertical() {
         <div className="tl-minimap__track">
           <div className="tl-minimap__thumb" style={{ left: `${thumbLeft}%`, width: `${thumbWidth}%` }} />
         </div>
-        <span className="tl-minimap__label">Auj.</span>
+        <span className="tl-minimap__label">{TODAY}</span>
       </div>
 
       <div className="tl-controls">

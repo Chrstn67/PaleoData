@@ -360,17 +360,19 @@
 }
 
 .animal-name {
-  color: #75553f;
-  font-size: 2.2rem;
-  font-weight: 900;
+  font-size: clamp(1.8rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #f8f5e8;
   margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(135deg, #75553f 0%, #5a4230 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center;
-  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  flex: 1;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.1;
 }
 
 .new-badge {
