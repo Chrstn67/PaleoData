@@ -440,7 +440,7 @@ function Modal({ item, onClose }) {
               <div className="tl-modal__image-container">
                 <Link to={`/animal/${encodeURIComponent(item.nom)}`} className="tl-modal__image-link">
                   <img src={item.image_url} alt={item.nom} className="tl-modal__image" />
-                  <div className="tl-modal__image-overlay">
+                  <div className="tl-modal__image-overlay tl-modal__image-overlay--always">
                     <span className="tl-modal__view-button">Voir +</span>
                   </div>
                 </Link>

@@ -1,197 +1,241 @@
+// geoConstants.js
 import timelineData from './timelineData';
 
 export const TIMELINE_MIN = -541;
 export const TIMELINE_MAX = 0.5;
 
-// ─── Palettes de couleurs par ère ────────────────────────────────────────────
-const ERA_COLORS = {
-  Paléozoïque: { fill: '#1A6B6B', text: '#0D4040' },
-  Mésozoïque: { fill: '#2E7D32', text: '#1B5E20' },
-  Cénozoïque: { fill: '#8B6914', text: '#5a4008' },
+// Fonction utilitaire pour créer des dégradés de couleurs métallisés
+function createMetalGradient(baseColor, isLight = false) {
+  // Retourne un objet avec fill et text pour chaque niveau hiérarchique
+  return {
+    fill: baseColor,
+    text: isLight ? '#1a1a1a' : '#1a1a1a',
+  };
+}
+
+// Palette de base pour chaque ère (couleurs principales métallisées)
+const ERA_BASE_COLORS = {
+  Paléozoïque: { main: '#1a6b8a', light: '#2a8aaa', dark: '#0d4a6a' }, // Bleu métallisé
+  Mésozoïque: { main: '#d4731a', light: '#e8933a', dark: '#a4530a' }, // Orangé métallisé
+  Cénozoïque: { main: '#4a8a3a', light: '#6aaa4a', dark: '#2a6a1a' }, // Vert métallisé
 };
 
-const PERIOD_COLORS = {
-  Cambrien: { fill: '#00695C', text: '#003D33' },
-  Ordovicien: { fill: '#00838F', text: '#004D57' },
-  Silurien: { fill: '#2E7D32', text: '#1B5E20' },
-  Dévonien: { fill: '#BF6000', text: '#7A3D00' },
-  Carbonifère: { fill: '#2E7D32', text: '#1B5E20' },
-  Permien: { fill: '#C62828', text: '#7B1010' },
-  Trias: { fill: '#A04000', text: '#5D2500' },
-  Jurassique: { fill: '#2E7D32', text: '#1B5E20' },
-  Crétacé: { fill: '#388E3C', text: '#1B5225' },
-  Paléogène: { fill: '#8B6914', text: '#5a4008' },
-  Néogène: { fill: '#9E7B00', text: '#5a4600' },
-  Quaternaire: { fill: '#7B8B00', text: '#485200' },
+// Dégradés pour les ères
+export const ERA_COLORS = {
+  Paléozoïque: { fill: ERA_BASE_COLORS.Paléozoïque.main, text: '#1a1a1a' },
+  Mésozoïque: { fill: ERA_BASE_COLORS.Mésozoïque.main, text: '#1a1a1a' },
+  Cénozoïque: { fill: ERA_BASE_COLORS.Cénozoïque.main, text: '#1a1a1a' },
 };
 
-// Couleurs des époques par période et nom d'époque
-const EPOCH_COLORS = {
-  // Cambrien
-  Terreneuvien: { fill: '#00796B', text: '#003D33' },
-  'Série 2': { fill: '#00897B', text: '#00463D' },
-  Miaolingien: { fill: '#00695C', text: '#003329' },
-  Furongien: { fill: '#00695C', text: '#003329' },
-  // Ordovicien
-  'Ordovicien::Inférieur': { fill: '#006978', text: '#003D47' },
-  'Ordovicien::Moyen': { fill: '#00838F', text: '#004D57' },
-  'Ordovicien::Supérieur': { fill: '#0097A7', text: '#005662' },
-  // Silurien
-  Llandovery: { fill: '#388E3C', text: '#1B5225' },
-  Wenlock: { fill: '#2E7D32', text: '#1B5E20' },
-  Ludlow: { fill: '#388E3C', text: '#1B5225' },
-  Pridoli: { fill: '#43A047', text: '#235928' },
-  // Dévonien
-  'Dévonien::Inférieur': { fill: '#E65100', text: '#7A2B00' },
-  'Dévonien::Moyen': { fill: '#BF6000', text: '#7A3D00' },
-  'Dévonien::Supérieur': { fill: '#A85400', text: '#5D2F00' },
-  // Carbonifère
-  Mississippien: { fill: '#388E3C', text: '#1B5225' },
-  Pennsylvanien: { fill: '#2E7D32', text: '#1B5E20' },
-  // Permien
-  Cisuralien: { fill: '#D32F2F', text: '#7B1010' },
-  Guadalupien: { fill: '#C62828', text: '#7B1010' },
-  Lopingien: { fill: '#B71C1C', text: '#7B1010' },
-  // Trias
-  'Trias::Inférieur': { fill: '#BF5A00', text: '#6B3000' },
-  'Trias::Moyen': { fill: '#A04000', text: '#5D2500' },
-  'Trias::Supérieur': { fill: '#883800', text: '#3D1D00' },
-  // Jurassique
-  'Jurassique::Inférieur': { fill: '#43A047', text: '#235928' },
-  'Jurassique::Moyen': { fill: '#2E7D32', text: '#1B5E20' },
-  'Jurassique::Supérieur': { fill: '#256427', text: '#133213' },
-  // Crétacé
-  'Crétacé::Inférieur': { fill: '#388E3C', text: '#1B5225' },
-  'Crétacé::Supérieur': { fill: '#2E7D32', text: '#1B5E20' },
-  // Paléogène
-  Paléocène: { fill: '#8B6914', text: '#5a4008' },
-  Éocène: { fill: '#9E7B00', text: '#5a4600' },
-  Oligocène: { fill: '#8B6914', text: '#5a4008' },
-  // Néogène
-  Miocène: { fill: '#9E7B00', text: '#5a4600' },
-  Pliocène: { fill: '#8B6914', text: '#5a4008' },
-  // Quaternaire
-  Pléistocène: { fill: '#7B8B00', text: '#485200' },
-  Holocène: { fill: '#6B7A00', text: '#3D4600' },
+// Dégradés pour les périodes (plus clair que l'ère mais dans le même ton)
+export const PERIOD_COLORS = {
+  // Paléozoïque (dégradé bleu)
+  Cambrien: { fill: '#2a7a9a', text: '#1a1a1a' },
+  Ordovicien: { fill: '#2a82a2', text: '#1a1a1a' },
+  Silurien: { fill: '#2a8aaa', text: '#1a1a1a' },
+  Dévonien: { fill: '#3292b2', text: '#1a1a1a' },
+  Carbonifère: { fill: '#329aba', text: '#1a1a1a' },
+  Permien: { fill: '#3aa2c2', text: '#1a1a1a' },
+
+  // Mésozoïque (dégradé orangé)
+  Trias: { fill: '#d47b2a', text: '#1a1a1a' },
+  Jurassique: { fill: '#dc833a', text: '#1a1a1a' },
+  Crétacé: { fill: '#e48b4a', text: '#1a1a1a' },
+
+  // Cénozoïque (dégradé vert)
+  Paléogène: { fill: '#5a9a4a', text: '#1a1a1a' },
+  Néogène: { fill: '#6aaa5a', text: '#1a1a1a' },
+  Quaternaire: { fill: '#7aba6a', text: '#1a1a1a' },
 };
 
-// Couleurs des étages par nom
-const STAGE_COLORS = {
-  // Cambrien - Terreneuvien
-  Fortunien: { fill: '#00796B', text: '#003D33' },
-  'Étage 2': { fill: '#00897B', text: '#00463D' },
-  'Étage 3': { fill: '#0097A7', text: '#005662' },
-  'Étage 4': { fill: '#00ACC1', text: '#006070' },
-  Wuliuen: { fill: '#00695C', text: '#003329' },
-  Drumien: { fill: '#00897B', text: '#00463D' },
-  Guzhangien: { fill: '#00796B', text: '#003D33' },
-  Paibien: { fill: '#00695C', text: '#003329' },
-  Jiangshanien: { fill: '#00897B', text: '#00463D' },
-  'Étage 10': { fill: '#00796B', text: '#003D33' },
-  // Ordovicien
-  Trémadocien: { fill: '#006978', text: '#003D47' },
-  Floien: { fill: '#00838F', text: '#004D57' },
-  Dapingien: { fill: '#0097A7', text: '#005662' },
-  Darriwilien: { fill: '#00ACC1', text: '#006070' },
-  Sandbien: { fill: '#0097A7', text: '#005662' },
-  Katien: { fill: '#00838F', text: '#004D57' },
-  Hirnantien: { fill: '#006978', text: '#003D47' },
-  // Silurien
-  Rhuddanien: { fill: '#388E3C', text: '#1B5225' },
-  Aéronien: { fill: '#2E7D32', text: '#1B5E20' },
-  Télychien: { fill: '#388E3C', text: '#1B5225' },
-  Sheinwoodien: { fill: '#43A047', text: '#235928' },
-  Homérien: { fill: '#388E3C', text: '#1B5225' },
-  Gorstien: { fill: '#2E7D32', text: '#1B5E20' },
-  Ludfordien: { fill: '#388E3C', text: '#1B5225' },
-  Pridolien: { fill: '#43A047', text: '#235928' },
-  // Dévonien
-  Lochkovien: { fill: '#E65100', text: '#7A2B00' },
-  Praguien: { fill: '#D4701A', text: '#7A3D00' },
-  Emsien: { fill: '#BF6000', text: '#7A3D00' },
-  Eifélien: { fill: '#C66200', text: '#7A3D00' },
-  Givétien: { fill: '#BF6000', text: '#7A3D00' },
-  Frasnien: { fill: '#A85400', text: '#5D2F00' },
-  Famennien: { fill: '#8D4600', text: '#4A2400' },
-  // Carbonifère
-  Tournaisien: { fill: '#388E3C', text: '#1B5225' },
-  Viséen: { fill: '#43A047', text: '#235928' },
-  Serpukhovien: { fill: '#388E3C', text: '#1B5225' },
-  Bachkirien: { fill: '#2E7D32', text: '#1B5E20' },
-  Moscovien: { fill: '#388E3C', text: '#1B5225' },
-  Kasimovien: { fill: '#2E7D32', text: '#1B5E20' },
-  Gzhélien: { fill: '#256427', text: '#133213' },
-  // Permien
-  Assélien: { fill: '#D32F2F', text: '#7B1010' },
-  Sakmarien: { fill: '#C62828', text: '#7B1010' },
-  Artinskien: { fill: '#D32F2F', text: '#7B1010' },
-  Kungurien: { fill: '#B71C1C', text: '#7B1010' },
-  Roadien: { fill: '#C62828', text: '#7B1010' },
-  Wordien: { fill: '#D32F2F', text: '#7B1010' },
-  Capitanien: { fill: '#B71C1C', text: '#7B1010' },
-  Wuchiapingien: { fill: '#C62828', text: '#7B1010' },
-  Changhsingien: { fill: '#B71C1C', text: '#7B1010' },
-  // Trias
-  Induen: { fill: '#BF5A00', text: '#6B3000' },
-  Olénékien: { fill: '#B05000', text: '#5D2B00' },
-  Anisien: { fill: '#A04000', text: '#5D2500' },
-  Ladinien: { fill: '#944500', text: '#4A2200' },
-  Carnien: { fill: '#883800', text: '#3D1D00' },
-  Norien: { fill: '#7A3200', text: '#3D1900' },
-  Rhétien: { fill: '#6B2C00', text: '#321500' },
-  // Jurassique
-  Hettangien: { fill: '#43A047', text: '#235928' },
-  Sinémurien: { fill: '#388E3C', text: '#1B5225' },
-  Pliensbachien: { fill: '#2E7D32', text: '#1B5E20' },
-  Toarcien: { fill: '#388E3C', text: '#1B5225' },
-  Aalénien: { fill: '#2E7D32', text: '#1B5E20' },
-  Bajocien: { fill: '#388E3C', text: '#1B5225' },
-  Bathonien: { fill: '#2E7D32', text: '#1B5E20' },
-  Callovien: { fill: '#256427', text: '#1B5E20' },
-  Oxfordien: { fill: '#1E5421', text: '#0D3311' },
-  Kimméridgien: { fill: '#256427', text: '#133213' },
-  Tithonien: { fill: '#2E7D32', text: '#1B5E20' },
-  // Crétacé
-  Berriasien: { fill: '#2E7D32', text: '#1B5225' },
-  Valanginien: { fill: '#388E3C', text: '#1B5225' },
-  Hauterivien: { fill: '#2E7D32', text: '#1B5E20' },
-  Barrémien: { fill: '#388E3C', text: '#1B5225' },
-  Aptien: { fill: '#43A047', text: '#235928' },
-  Albien: { fill: '#388E3C', text: '#1B5225' },
-  Cénomanien: { fill: '#2E7D32', text: '#1B5E20' },
-  Turonien: { fill: '#256427', text: '#133213' },
-  Coniacien: { fill: '#1E5421', text: '#0D3311' },
-  Santonien: { fill: '#256427', text: '#133213' },
-  Campanien: { fill: '#2E7D32', text: '#1B5E20' },
-  Maastrichtien: { fill: '#388E3C', text: '#1B5225' },
-  // Paléogène
-  Danien: { fill: '#8B6914', text: '#5a4008' },
-  Sélandien: { fill: '#9E7B00', text: '#5a4600' },
-  Thanétien: { fill: '#8B6914', text: '#5a4008' },
-  Yprésien: { fill: '#9E7B00', text: '#5a4600' },
-  Lutétien: { fill: '#8B6914', text: '#5a4008' },
-  Bartonien: { fill: '#9E7B00', text: '#5a4600' },
-  Priabonien: { fill: '#8B6914', text: '#5a4008' },
-  Rupélien: { fill: '#9E7B00', text: '#5a4600' },
-  Chattien: { fill: '#8B6914', text: '#5a4008' },
-  // Néogène
-  Aquitanien: { fill: '#9E7B00', text: '#5a4600' },
-  Burdigalien: { fill: '#8B6914', text: '#5a4008' },
-  Langhien: { fill: '#9E7B00', text: '#5a4600' },
-  Serravalien: { fill: '#8B6914', text: '#5a4008' },
-  Tortonien: { fill: '#9E7B00', text: '#5a4600' },
-  Messinien: { fill: '#8B6914', text: '#5a4008' },
-  Zancléen: { fill: '#9E7B00', text: '#5a4600' },
-  Plaisancien: { fill: '#8B6914', text: '#5a4008' },
-  // Quaternaire
-  Gélasien: { fill: '#7B8B00', text: '#485200' },
-  Calabrien: { fill: '#6B7A00', text: '#3D4600' },
-  'Pléistocène moyen': { fill: '#7B8B00', text: '#485200' },
-  'Pléistocène supérieur': { fill: '#6B7A00', text: '#3D4600' },
-  // Holocène (étages très courts)
-  Greenlandien: { fill: '#5A6A00', text: '#2D3500', tiny: true },
-  Northgrippien: { fill: '#4A5A00', text: '#2D3500', tiny: true },
-  Méghalayen: { fill: '#3A4A00', text: '#1A2500', tiny: true },
+// Dégradés pour les époques (encore plus clair)
+export const EPOCH_COLORS = {
+  // Paléozoïque - Cambrien
+  Terreneuvien: { fill: '#3a8aaa', text: '#1a1a1a' },
+  'Série 2': { fill: '#4292b2', text: '#1a1a1a' },
+  Miaolingien: { fill: '#4a9aba', text: '#1a1a1a' },
+  Furongien: { fill: '#4aa2c2', text: '#1a1a1a' },
+
+  // Paléozoïque - Ordovicien
+  'Ordovicien::Inférieur': { fill: '#3a92b2', text: '#1a1a1a' },
+  'Ordovicien::Moyen': { fill: '#429aba', text: '#1a1a1a' },
+  'Ordovicien::Supérieur': { fill: '#4aa2c2', text: '#1a1a1a' },
+
+  // Paléozoïque - Silurien
+  Llandovery: { fill: '#4a9aba', text: '#1a1a1a' },
+  Wenlock: { fill: '#52a2c2', text: '#1a1a1a' },
+  Ludlow: { fill: '#52aaca', text: '#1a1a1a' },
+  Pridoli: { fill: '#5ab2d2', text: '#1a1a1a' },
+
+  // Paléozoïque - Dévonien
+  'Dévonien::Inférieur': { fill: '#429aba', text: '#1a1a1a' },
+  'Dévonien::Moyen': { fill: '#4aa2c2', text: '#1a1a1a' },
+  'Dévonien::Supérieur': { fill: '#52aaca', text: '#1a1a1a' },
+
+  // Paléozoïque - Carbonifère
+  Mississippien: { fill: '#4aa2c2', text: '#1a1a1a' },
+  Pennsylvanien: { fill: '#52aaca', text: '#1a1a1a' },
+
+  // Paléozoïque - Permien
+  Cisuralien: { fill: '#4aaaca', text: '#1a1a1a' },
+  Guadalupien: { fill: '#52b2d2', text: '#1a1a1a' },
+  Lopingien: { fill: '#5abad2', text: '#1a1a1a' },
+
+  // Mésozoïque - Trias
+  'Trias::Inférieur': { fill: '#dc8342', text: '#1a1a1a' },
+  'Trias::Moyen': { fill: '#e48b4a', text: '#1a1a1a' },
+  'Trias::Supérieur': { fill: '#ec9352', text: '#1a1a1a' },
+
+  // Mésozoïque - Jurassique
+  'Jurassique::Inférieur': { fill: '#e48b4a', text: '#1a1a1a' },
+  'Jurassique::Moyen': { fill: '#ec9352', text: '#1a1a1a' },
+  'Jurassique::Supérieur': { fill: '#f49b5a', text: '#1a1a1a' },
+
+  // Mésozoïque - Crétacé
+  'Crétacé::Inférieur': { fill: '#ec9352', text: '#1a1a1a' },
+  'Crétacé::Supérieur': { fill: '#f49b5a', text: '#1a1a1a' },
+
+  // Cénozoïque - Paléogène
+  Paléocène: { fill: '#6aaa5a', text: '#1a1a1a' },
+  Éocène: { fill: '#7aba6a', text: '#1a1a1a' },
+  Oligocène: { fill: '#8aca7a', text: '#1a1a1a' },
+
+  // Cénozoïque - Néogène
+  Miocène: { fill: '#8aca7a', text: '#1a1a1a' },
+  Pliocène: { fill: '#9ada8a', text: '#1a1a1a' },
+
+  // Cénozoïque - Quaternaire
+  Pléistocène: { fill: '#9ada8a', text: '#1a1a1a' },
+  Holocène: { fill: '#aaea9a', text: '#1a1a1a' },
+};
+
+// Dégradés pour les étages (le plus clair de tous)
+export const STAGE_COLORS = {
+  // Paléozoïque - Cambrien (bleu très clair)
+  Fortunien: { fill: '#4a9aba', text: '#1a1a1a' },
+  'Étage 2': { fill: '#52a2c2', text: '#1a1a1a' },
+  'Étage 3': { fill: '#5aaaaa', text: '#1a1a1a' },
+  'Étage 4': { fill: '#62b2d2', text: '#1a1a1a' },
+  Wuliuen: { fill: '#5ab2d2', text: '#1a1a1a' },
+  Drumien: { fill: '#62bada', text: '#1a1a1a' },
+  Guzhangien: { fill: '#6ac2e2', text: '#1a1a1a' },
+  Paibien: { fill: '#6acaea', text: '#1a1a1a' },
+  Jiangshanien: { fill: '#72d2f2', text: '#1a1a1a' },
+  'Étage 10': { fill: '#7adafa', text: '#1a1a1a' },
+
+  // Paléozoïque - Ordovicien
+  Trémadocien: { fill: '#52a2c2', text: '#1a1a1a' },
+  Floien: { fill: '#5aaaaa', text: '#1a1a1a' },
+  Dapingien: { fill: '#62b2d2', text: '#1a1a1a' },
+  Darriwilien: { fill: '#6abada', text: '#1a1a1a' },
+  Sandbien: { fill: '#6ac2e2', text: '#1a1a1a' },
+  Katien: { fill: '#72caea', text: '#1a1a1a' },
+  Hirnantien: { fill: '#7ad2f2', text: '#1a1a1a' },
+
+  // Paléozoïque - Silurien
+  Rhuddanien: { fill: '#5ab2d2', text: '#1a1a1a' },
+  Aéronien: { fill: '#62bada', text: '#1a1a1a' },
+  Télychien: { fill: '#6ac2e2', text: '#1a1a1a' },
+  Sheinwoodien: { fill: '#6acaea', text: '#1a1a1a' },
+  Homérien: { fill: '#72d2f2', text: '#1a1a1a' },
+  Gorstien: { fill: '#7adafa', text: '#1a1a1a' },
+  Ludfordien: { fill: '#82e2ff', text: '#1a1a1a' },
+  Pridolien: { fill: '#8aeaff', text: '#1a1a1a' },
+
+  // Paléozoïque - Dévonien (suite dégradé bleu)
+  Lochkovien: { fill: '#5ab2d2', text: '#1a1a1a' },
+  Praguien: { fill: '#62bada', text: '#1a1a1a' },
+  Emsien: { fill: '#6ac2e2', text: '#1a1a1a' },
+  Eifélien: { fill: '#6acaea', text: '#1a1a1a' },
+  Givétien: { fill: '#72d2f2', text: '#1a1a1a' },
+  Frasnien: { fill: '#7adafa', text: '#1a1a1a' },
+  Famennien: { fill: '#82e2ff', text: '#1a1a1a' },
+
+  // Paléozoïque - Carbonifère
+  Tournaisien: { fill: '#6ac2e2', text: '#1a1a1a' },
+  Viséen: { fill: '#72caea', text: '#1a1a1a' },
+  Serpukhovien: { fill: '#7ad2f2', text: '#1a1a1a' },
+  Bachkirien: { fill: '#7adafa', text: '#1a1a1a' },
+  Moscovien: { fill: '#82e2ff', text: '#1a1a1a' },
+  Kasimovien: { fill: '#8aeaff', text: '#1a1a1a' },
+  Gzhélien: { fill: '#92f2ff', text: '#1a1a1a' },
+
+  // Paléozoïque - Permien
+  Assélien: { fill: '#7ad2f2', text: '#1a1a1a' },
+  Sakmarien: { fill: '#82dafa', text: '#1a1a1a' },
+  Artinskien: { fill: '#8ae2ff', text: '#1a1a1a' },
+  Kungurien: { fill: '#92eaff', text: '#1a1a1a' },
+  Roadien: { fill: '#8ae2ff', text: '#1a1a1a' },
+  Wordien: { fill: '#92eaff', text: '#1a1a1a' },
+  Capitanien: { fill: '#9af2ff', text: '#1a1a1a' },
+  Wuchiapingien: { fill: '#a2faff', text: '#1a1a1a' },
+  Changhsingien: { fill: '#aaffff', text: '#1a1a1a' },
+
+  // Mésozoïque - Trias (orangé clair)
+  Induen: { fill: '#e48b4a', text: '#1a1a1a' },
+  Olénékien: { fill: '#ec9352', text: '#1a1a1a' },
+  Anisien: { fill: '#f49b5a', text: '#1a1a1a' },
+  Ladinien: { fill: '#fca362', text: '#1a1a1a' },
+  Carnien: { fill: '#ffab6a', text: '#1a1a1a' },
+  Norien: { fill: '#ffb372', text: '#1a1a1a' },
+  Rhétien: { fill: '#ffbb7a', text: '#1a1a1a' },
+
+  // Mésozoïque - Jurassique
+  Hettangien: { fill: '#ec9352', text: '#1a1a1a' },
+  Sinémurien: { fill: '#f49b5a', text: '#1a1a1a' },
+  Pliensbachien: { fill: '#fca362', text: '#1a1a1a' },
+  Toarcien: { fill: '#ffab6a', text: '#1a1a1a' },
+  Aalénien: { fill: '#ffb372', text: '#1a1a1a' },
+  Bajocien: { fill: '#ffbb7a', text: '#1a1a1a' },
+  Bathonien: { fill: '#ffc382', text: '#1a1a1a' },
+  Callovien: { fill: '#ffcb8a', text: '#1a1a1a' },
+  Oxfordien: { fill: '#ffd392', text: '#1a1a1a' },
+  Kimméridgien: { fill: '#ffdb9a', text: '#1a1a1a' },
+  Tithonien: { fill: '#ffe3a2', text: '#1a1a1a' },
+
+  // Mésozoïque - Crétacé
+  Berriasien: { fill: '#f49b5a', text: '#1a1a1a' },
+  Valanginien: { fill: '#fca362', text: '#1a1a1a' },
+  Hauterivien: { fill: '#ffab6a', text: '#1a1a1a' },
+  Barrémien: { fill: '#ffb372', text: '#1a1a1a' },
+  Aptien: { fill: '#ffbb7a', text: '#1a1a1a' },
+  Albien: { fill: '#ffc382', text: '#1a1a1a' },
+  Cénomanien: { fill: '#ffcb8a', text: '#1a1a1a' },
+  Turonien: { fill: '#ffd392', text: '#1a1a1a' },
+  Coniacien: { fill: '#ffdb9a', text: '#1a1a1a' },
+  Santonien: { fill: '#ffe3a2', text: '#1a1a1a' },
+  Campanien: { fill: '#ffebaa', text: '#1a1a1a' },
+  Maastrichtien: { fill: '#fff3b2', text: '#1a1a1a' },
+
+  // Cénozoïque - Paléogène (vert clair)
+  Danien: { fill: '#7aba6a', text: '#1a1a1a' },
+  Sélandien: { fill: '#8aca7a', text: '#1a1a1a' },
+  Thanétien: { fill: '#9ada8a', text: '#1a1a1a' },
+  Yprésien: { fill: '#aaea9a', text: '#1a1a1a' },
+  Lutétien: { fill: '#bafaaa', text: '#1a1a1a' },
+  Bartonien: { fill: '#caffba', text: '#1a1a1a' },
+  Priabonien: { fill: '#daffca', text: '#1a1a1a' },
+  Rupélien: { fill: '#eaffda', text: '#1a1a1a' },
+  Chattien: { fill: '#faffea', text: '#1a1a1a' },
+
+  // Cénozoïque - Néogène
+  Aquitanien: { fill: '#8aca7a', text: '#1a1a1a' },
+  Burdigalien: { fill: '#9ada8a', text: '#1a1a1a' },
+  Langhien: { fill: '#aaea9a', text: '#1a1a1a' },
+  Serravalien: { fill: '#bafaaa', text: '#1a1a1a' },
+  Tortonien: { fill: '#caffba', text: '#1a1a1a' },
+  Messinien: { fill: '#daffca', text: '#1a1a1a' },
+  Zancléen: { fill: '#eaffda', text: '#1a1a1a' },
+  Plaisancien: { fill: '#faffea', text: '#1a1a1a' },
+
+  // Cénozoïque - Quaternaire
+  Gélasien: { fill: '#9ada8a', text: '#1a1a1a' },
+  Calabrien: { fill: '#aaea9a', text: '#1a1a1a' },
+  'Pléistocène moyen': { fill: '#bafaaa', text: '#1a1a1a' },
+  'Pléistocène supérieur': { fill: '#caffba', text: '#1a1a1a' },
+  Greenlandien: { fill: '#daffca', text: '#1a1a1a', tiny: true },
+  Northgrippien: { fill: '#eaffda', text: '#1a1a1a', tiny: true },
+  Méghalayen: { fill: '#faffea', text: '#1a1a1a', tiny: true },
 };
 
 // ─── Maps d'info depuis timelineData ─────────────────────────────────────────
@@ -235,16 +279,12 @@ export const PERIODS = timelineData.flatMap((era) =>
 export const EPOCHS = timelineData.flatMap((era) =>
   era.periods.flatMap((period) =>
     (period.epochs || []).map((epoch) => {
-      // Certaines époques ont un nom générique (Inférieur/Moyen/Supérieur)
-      // → clé disambiguée "Période::NomEpoque" pour la couleur
       const disambigKey = `${period.name}::${epoch.name}`;
       const colors = EPOCH_COLORS[disambigKey] || EPOCH_COLORS[epoch.name] || { fill: '#888', text: '#333' };
 
-      // Nom affiché sur la frise : préfixe si nom générique
       const genericNames = new Set(['Inférieur', 'Moyen', 'Supérieur']);
       const displayName = genericNames.has(epoch.name) ? `${period.name} ${epoch.name}` : epoch.name;
 
-      // Info : on cherche d'abord la clé disambiguée
       const info = epochInfoMap.get(disambigKey) || epochInfoMap.get(epoch.name) || '';
 
       return {
