@@ -1251,7 +1251,7 @@ const data = [
   {
     nom: 'Deinotherium',
     etymologie: 'Animal terrible',
-    image_url: './assets/images/Deinotherium.jpg',
+    image_url: './assets/images/Deinotherium.webp',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -2770,7 +2770,7 @@ const data = [
   {
     nom: 'Inostrancevia',
     etymologie: "Nommé en l'honneur du géologue Alexandre Inostrantsev",
-    image_url: './assets/images/Inostrancevia.jpg',
+    image_url: './assets/images/Inostrancevia.png',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -2936,7 +2936,7 @@ const data = [
   {
     nom: 'Daeodon',
     etymologie: 'Dent destructrice',
-    image_url: './assets/images/Daeodon.jpg',
+    image_url: './assets/images/Daeodon.png',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -3644,7 +3644,7 @@ const data = [
   {
     nom: 'Hyaenodon',
     etymologie: 'Dent de hyène',
-    image_url: './assets/images/Hyaenodon.jpg',
+    image_url: './assets/images/Hyaenodon.webp',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -5002,7 +5002,7 @@ const data = [
   {
     nom: 'Andrewsarchus',
     etymologie: 'Maître de Andrews',
-    image_url: './assets/images/Andrewsarchus.jpg',
+    image_url: './assets/images/Andrewsarchus.webp',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8167,7 +8167,7 @@ const data = [
   {
     nom: 'Synthetoceras',
     etymologie: 'Corne composite',
-    image_url: './assets/images/Synthetoceras.jpg',
+    image_url: './assets/images/Synthetoceras.webp',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8522,7 +8522,7 @@ const data = [
   {
     nom: 'Dodo',
     etymologie: "Du portugais 'doudo' qui signifie 'stupide' ou 'maladroit'",
-    image_url: './assets/images/Dodo.jpeg',
+    image_url: './assets/images/Dodo.jpg',
     date_ajout: '2024-05-05',
     taxonomie: {
       règne: 'Animalia',
@@ -8634,7 +8634,7 @@ const data = [
   {
     nom: 'Arctocyon',
     etymologie: 'Ours-Chien',
-    image_url: './assets/images/Arctocyon.jpg',
+    image_url: './assets/images/Arctocyon.webp',
     date_ajout: '2024-05-05',
     taxonomie: {
       règne: 'Animalia',
@@ -8763,7 +8763,7 @@ const data = [
   {
     nom: 'Hyneria',
     etymologie: 'En référence à la ville de Hyner',
-    image_url: './assets/images/Hyneria.jpeg',
+    image_url: './assets/images/Hyneria.webp',
     date_ajout: '2024-05-05',
     taxonomie: {
       règne: 'Animalia',

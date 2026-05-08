@@ -353,6 +353,7 @@
 .animal-name-container {
   position: relative;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -360,7 +361,7 @@
 }
 
 .animal-name {
-  font-size: clamp(1.8rem, 5vw, 4rem);
+  font-size: 2.5em;
   font-weight: 800;
   color: #f8f5e8;
   margin: 0;
