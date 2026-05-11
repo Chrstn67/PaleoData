@@ -39,12 +39,6 @@ function isPositiveYear(val) {
   return typeof val === 'number' && val > 0;
 }
 
-/**
- * Formate une valeur Ma pour l'affichage DANS LES CARDS / INFO (texte riche).
- * ma < 0  → passé géologique
- * ma = 0  → Aujourd'hui
- * ma > 0  → futur / an AD (stocké en Ma depuis 0)
- */
 function formatMaFull(ma) {
   if (isUnknown(ma)) return 'Inconnue';
   if (isPositiveYear(ma)) return `En ${Math.round(ma)} AP. J.-C.`;
@@ -64,24 +58,14 @@ function formatDuration(ma) {
   return `${abs % 1 === 0 ? abs : abs.toFixed(1)} Ma`;
 }
 
-/**
- * Formate un tick de l'axe temporel (valeur en Ma interne).
- * - ma < 0  : passé  → "−X Ma" / "−X ka" / "−X ans"
- * - ma = 0  : "Auj."
- * - ma > 0  : futur  → "+X ka" / "+X ans" (par pas de 50 ka min)
- */
 function formatTickMa(ma) {
   if (ma === 0) return TODAY;
-
   if (ma > 0) {
-    // Zone positive : futur ou dates AD très récentes
-    const ans = Math.round(ma * 1_000_000); // conversion en années
+    const ans = Math.round(ma * 1_000_000);
     if (ans < 1000) return `+${ans} ans`;
     if (ans < 1_000_000) return `+${Math.round(ans / 1000)} ka`;
     return `+${ma.toFixed(1)} Ma`;
   }
-
-  // Zone négative : passé géologique
   const abs = Math.abs(ma);
   if (abs < 0.0001) return TODAY;
   if (abs < 0.001) return `${Math.round(abs * 1_000_000)} ans`;
@@ -100,62 +84,31 @@ function toMa(val) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// STRATIGRAPHIC LOOKUP — depuis geoConstants (ERAS, PERIODS, EPOCHS, STAGES)
+// STRATIGRAPHIC LOOKUP
 // ─────────────────────────────────────────────────────────────────────────────
 function findContextAt(ma, isExtinction = false) {
   if (ma == null) return { era: null, period: null, epoch: null, stage: null };
-
-  // Pour l'extinction, on veut le contexte au moment de la mort
-  // Si l'extinction est pile à la limite (ma = debut de l'intervalle suivant)
-  // On décale très légèrement la valeur vers le passé
   let adjustedMa = ma;
   if (isExtinction && ma < 0) {
-    // Cherche si ma correspond exactement au début d'un intervalle
     const isStartOfEra = ERAS.some((e) => Math.abs(ma - e.start) < 0.000001);
     const isStartOfPeriod = PERIODS.some((p) => Math.abs(ma - p.start) < 0.000001);
     const isStartOfEpoch = EPOCHS.some((e) => Math.abs(ma - e.start) < 0.000001);
     const isStartOfStage = STAGES.some((s) => Math.abs(ma - s.start) < 0.000001);
-
     if (isStartOfEra || isStartOfPeriod || isStartOfEpoch || isStartOfStage) {
-      // On décale d'une epsilon pour tomber dans l'intervalle précédent
       adjustedMa = ma - 0.000001;
     }
   }
-
   const era = ERAS.find((e) => adjustedMa >= e.start && adjustedMa < e.end)?.name ?? null;
   const period = PERIODS.find((e) => adjustedMa >= e.start && adjustedMa < e.end)?.name ?? null;
   const epoch = EPOCHS.find((e) => adjustedMa >= e.start && adjustedMa < e.end)?.name ?? null;
   const stage = STAGES.find((e) => adjustedMa >= e.start && adjustedMa < e.end)?.name ?? null;
-
   return { era, period, epoch, stage };
-}
-
-function getEraDuration(ma) {
-  if (ma == null) return null;
-  const era = ERAS.find((e) => ma >= e.start && ma < e.end);
-  if (!era) return null;
-  return Math.abs(era.start - era.end);
-}
-
-function computeInitialView(apparition, extinction) {
-  const aMa = toMa(apparition);
-  const eMa = toMa(extinction);
-  const a = aMa ?? eMa ?? -300;
-  const e = eMa ?? 0;
-  const mid = (a + e) / 2;
-  const dur = Math.abs(a - e);
-  const margin = Math.max(dur * 3, 40);
-  return {
-    start: Math.max(TIMELINE_MIN, mid - margin),
-    end: Math.min(TIMELINE_MAX, mid + margin * 0.6),
-  };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CANVAS DRAWING
 // ─────────────────────────────────────────────────────────────────────────────
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
-
 const ERA_Y = 0,
   ERA_H = 40;
 const PER_Y = 40,
@@ -238,6 +191,13 @@ function StratColumn({ label, dotClass, dateLabel, context }) {
   );
 }
 
+function getEraDuration(ma) {
+  if (ma == null) return null;
+  const era = ERAS.find((e) => ma >= e.start && ma < e.end);
+  if (!era) return null;
+  return Math.abs(era.start - era.end);
+}
+
 function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition, extinction }) {
   const isAlive = extinctionRaw == null || extinctionRaw === 0;
 
@@ -246,9 +206,7 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
   const eraDur = getEraDuration(apparition ?? extinction);
   const ratio = duration != null && eraDur ? Math.min(100, (duration / eraDur) * 100) : null;
 
-  // Pour l'apparition : comportement normal
   const appContext = findContextAt(apparition, false);
-  // Pour l'extinction : on signale qu'il faut prendre le précédent si c'est une limite
   const extContext = findContextAt(extinction, true);
 
   const appText = isUnknown(apparitionRaw) ? 'Inconnue' : formatMaFull(apparitionRaw);
@@ -259,7 +217,6 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
 
   return (
     <div className="geo-card">
-      {/* ── En-tête ── */}
       <div className="geo-card__head">
         <div className="geo-card__identity">
           <strong className="geo-card__name">{animalNom}</strong>
@@ -277,7 +234,6 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
         </span>
       </div>
 
-      {/* ── Métriques ── */}
       {hasStrat && (
         <div className="geo-card__metrics">
           <div className="metric">
@@ -292,28 +248,9 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
             <span className="metric__label">Disparition</span>
             <span className="metric__value">{extinctionRaw != null ? extText : '—'}</span>
           </div>
-          <div className="metric">
-            <span className="metric__label">Ratio durée / ère</span>
-            <span className="metric__value">
-              {ratio != null ? (
-                <>
-                  {ratio.toFixed(1)}
-                  <span className="metric__unit">%</span>
-                </>
-              ) : (
-                '—'
-              )}
-            </span>
-            {ratio != null && (
-              <div className="ratio-bar">
-                <div className="ratio-fill" style={{ width: `${ratio.toFixed(1)}%` }} />
-              </div>
-            )}
-          </div>
         </div>
       )}
 
-      {/* ── Contexte stratigraphique ── */}
       {hasStrat && (
         <div className="geo-card__strat">
           <span className="geo-card__strat-title">Contexte stratigraphique</span>
@@ -329,6 +266,23 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
       )}
     </div>
   );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// VIEW HELPERS
+// ─────────────────────────────────────────────────────────────────────────────
+function computeInitialView(apparition, extinction) {
+  const aMa = toMa(apparition);
+  const eMa = toMa(extinction);
+  const a = aMa ?? eMa ?? -300;
+  const e = eMa ?? 0;
+  const mid = (a + e) / 2;
+  const dur = Math.abs(a - e);
+  const margin = Math.max(dur * 3, 40);
+  return {
+    start: Math.max(TIMELINE_MIN, mid - margin),
+    end: Math.min(TIMELINE_MAX, mid + margin * 0.6),
+  };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -349,10 +303,8 @@ const GeoInfo = ({ geologie, animalNom }) => {
 
   useEffect(() => {
     setView(computeInitialView(apparitionRaw, extinctionRaw));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [String(apparitionRaw), String(extinctionRaw)]);
 
-  // ── DESSIN ────────────────────────────────────────────────────────
   useEffect(() => {
     const canvas = canvasRef.current;
     const wrapper = wrapperRef.current;
@@ -379,7 +331,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     drawBands(ctx, EPOCHS, W, maToX, EPO_Y, EPO_H, 14, 10);
     drawBands(ctx, STAGES, W, maToX, STA_Y, STA_H, 12, 9);
 
-    // Axe
     ctx.strokeStyle = 'rgba(30,30,30,0.25)';
     ctx.lineWidth = 1;
     ctx.beginPath();
@@ -387,16 +338,9 @@ const GeoInfo = ({ geologie, animalNom }) => {
     ctx.lineTo(W, AXIS_Y);
     ctx.stroke();
 
-    // ── Ticks ──────────────────────────────────────────────────────
-    // On choisit l'intervalle le plus fin qui ne dépasse pas ~9 ticks visibles.
-    // Pour la zone positive (futur/très récent) on veut au min 0.05 Ma = 50 ka.
     const tickInterval = TICK_INTERVALS.find((t) => span / t <= 9) ?? 500;
-
-    // On aligne le premier tick sur un multiple de tickInterval
     const startTick = Math.ceil(vs / tickInterval) * tickInterval;
-
     for (let ma = startTick; ma <= ve; ma += tickInterval) {
-      // Arrondi pour éviter les flottants parasites (ex : 0.09999… au lieu de 0.1)
       const maNorm = Math.round(ma / tickInterval) * tickInterval;
       const x = maToX(maNorm);
       if (x < 2 || x > W - 2) continue;
@@ -414,7 +358,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
       ctx.fillText(formatTickMa(maNorm), x, AXIS_Y + 14);
     }
 
-    // Ligne "Aujourd'hui"
     const nowX = maToX(0);
     if (nowX >= 0 && nowX <= W) {
       ctx.strokeStyle = '#C0392B';
@@ -429,7 +372,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
       ctx.fillText(TODAY, nowX, H - 3);
     }
 
-    // Barre de vie de l'animal
     const BAR_Y = AXIS_Y + 18,
       BAR_H = 26;
     if (apparition != null || extinction != null) {
@@ -489,7 +431,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     }
   }, [view, apparition, extinction, animalNom]);
 
-  // ── TOOLTIP étages tiny ───────────────────────────────────────────
   const handleMouseMoveCanvas = useCallback(
     (e) => {
       if (dragRef.current.active) return;
@@ -514,7 +455,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     [view],
   );
 
-  // ── INTERACTIONS ──────────────────────────────────────────────────
   function clampView({ start, end }) {
     const span = end - start;
     if (start < TIMELINE_MIN) return { start: TIMELINE_MIN, end: TIMELINE_MIN + span };
@@ -544,7 +484,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
       const rect = wrapperRef.current.getBoundingClientRect();
       const ratio = (e.clientX - rect.left) / rect.width;
       zoom(e.deltaY > 0 ? 1.18 : 0.85, ratio);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
     [view],
   );
@@ -562,7 +501,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     return () => ro.disconnect();
   }, []);
 
-  // ── JSX ────────────────────────────────────────────────────────────
   const span = view.end - view.start;
   const spanLabel = formatTickMa(Math.abs(span));
   const TOTAL = Math.abs(TIMELINE_MIN - TIMELINE_MAX);
@@ -587,7 +525,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
 
   return (
     <section className="animal-geologie geo-timeline-mode">
-      {/* ── En-tête section ── */}
       <div className="geo-tl-header">
         <h3>Géologie</h3>
         <div className="geo-tl-badges">
@@ -598,7 +535,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
         </div>
       </div>
 
-      {/* ── Canvas frise ── */}
       <div
         ref={wrapperRef}
         className="geo-tl-track"
@@ -632,17 +568,14 @@ const GeoInfo = ({ geologie, animalNom }) => {
         }}
       >
         <canvas ref={canvasRef} />
-
         {tooltip && (
           <div className="geo-tl-tooltip" style={{ left: tooltip.x, top: tooltip.y }}>
             {tooltip.name}
           </div>
         )}
-
         <div className="geo-tl-hint">← Glisser · Molette pour zoomer →</div>
       </div>
 
-      {/* ── Minimap ── */}
       <div className="geo-tl-minimap">
         <span className="geo-tl-minimap-label">−591 Ma</span>
         <div className="geo-tl-minimap-bar">
@@ -651,7 +584,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
         <span className="geo-tl-minimap-label">+1000 ans</span>
       </div>
 
-      {/* ── Contrôles ── */}
       <div className="geo-tl-controls">
         <button className="geo-tl-btn" onClick={() => pan((wrapperRef.current?.offsetWidth || 300) * 0.4)}>
           ← Ancien
@@ -676,7 +608,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
         </button>
       </div>
 
-      {/* ── Nouvelle carte enrichie ── */}
       <GeoCard
         geologie={geologie}
         animalNom={animalNom}
