@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaDiscord, FaEnvelope, FaLinkedin, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+import { FaDiscord, FaEnvelope, FaLinkedin, FaWhatsapp, FaArrowUp, FaPaw } from 'react-icons/fa';
 
 import EmailModal from './EmailModal';
 
@@ -17,6 +17,10 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+      <button className="scroll-top-btn" onClick={scrollToTop} aria-label="Retour en haut">
+        <FaArrowUp />
+      </button>
+
       <section className="footer-container">
         {/* Section principale */}
         <section className="footer-main">
@@ -47,7 +51,6 @@ const Footer = () => {
                 <span>Discord</span>
               </a>
 
-              {/* Utilisation correcte du composant EmailModal */}
               <EmailModal />
 
               <a
@@ -60,6 +63,7 @@ const Footer = () => {
                 <FaLinkedin className="social-icon" />
                 <span>LinkedIn</span>
               </a>
+
               <a
                 href="https://whatsapp.com/channel/0029VaZGxMGAYlUSTOaYGn2T"
                 target="_blank"
@@ -72,6 +76,18 @@ const Footer = () => {
               </a>
             </div>
           </section>
+        </section>
+
+        {/* Section Proposer un animal */}
+        <section className="footer-suggest">
+          <a href="https://tally.so/r/ODdyV7" target="_blank" rel="noopener noreferrer" className="suggest-animal-btn">
+            <FaPaw className="suggest-icon" />
+            <div className="suggest-text">
+              <span className="suggest-title">Proposer un animal</span>
+              <span className="suggest-subtitle">Tes animaux préférés ne sont pas listés ? Alors propose-les !</span>
+            </div>
+            <span className="suggest-arrow">→</span>
+          </a>
         </section>
 
         {/* Section RGPD */}
@@ -90,7 +106,6 @@ const Footer = () => {
         <section className="footer-bottom">
           <div className="copyright-info">
             <p>&copy; {currentYear} PaleoData. Tous droits réservés.</p>
-
             <Link to="/mentions-legales" onClick={scrollToTop} className="legal-link">
               Mentions légales
             </Link>

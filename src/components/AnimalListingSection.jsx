@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FaPaw } from 'react-icons/fa';
 import NewAnimal from './NewAnimal';
 import '../styles/AnimalListingSection.css';
 
@@ -46,6 +47,16 @@ const AnimalListingSection = ({ animals, onAnimalCount }) => {
     <>
       <NewAnimal animals={animals} />
       <section className="animal-listing">
+        <section className="footer-suggest">
+          <a href="https://tally.so/r/ODdyV7" target="_blank" rel="noopener noreferrer" className="suggest-animal-btn">
+            <FaPaw className="suggest-icon" />
+            <div className="suggest-text">
+              <span className="suggest-title">Proposer un animal</span>
+              <span className="suggest-subtitle">Tes animaux préférés ne sont pas listés ? Alors propose-les !</span>
+            </div>
+            <span className="suggest-arrow">→</span>
+          </a>
+        </section>
         <h3 className="h3-title">Animaux</h3>
         <ul>
           {animals.length > 0 ? (
