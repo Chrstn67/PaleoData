@@ -97,12 +97,6 @@ function assignLanes(animals) {
 // UTILS
 // ─────────────────────────────────────────────────────────────────────────────
 
-/**
- * Formate un tick de l'axe temporel (valeur en Ma interne).
- * - ma < 0  : passé  → "X Ma" / "X ka" / "X ans"
- * - ma = 0  : "Auj."
- * - ma > 0  : futur  → "+X ka" / "+X ans"
- */
 function formatTickMa(ma) {
   if (ma === 0) return TODAY;
 
@@ -113,7 +107,6 @@ function formatTickMa(ma) {
     return `+${ma.toFixed(1)} Ma`;
   }
 
-  // Passé géologique
   const abs = Math.abs(ma);
   if (abs < 0.0001) return TODAY;
   if (abs < 0.001) return `${Math.round(abs * 1_000_000)} ans`;
@@ -169,7 +162,7 @@ function drawBands(ctx, list, W, maToX, yStart, rowH, minWidthForText, fontSize)
     const rx2 = Math.min(W, x2);
     const bw = rx2 - rx1;
 
-    ctx.fillStyle = item.fill + '66';
+    ctx.fillStyle = item.fill + '65';
     ctx.fillRect(rx1, yStart, bw, rowH);
     ctx.fillStyle = item.fill;
     ctx.fillRect(rx1, yStart + rowH - 2, bw, 2);
@@ -282,27 +275,44 @@ function SearchBar({ onSelect, animalItems }) {
       setOpen(false);
       return;
     }
+
     const sq = q
       .toLowerCase()
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '');
-    const nums = (q.match(/\d+(\.\d+)?/g) || []).map(Number);
+
+    // Extraire tous les nombres signés présents dans la saisie
+    // Exemples : "-56" → -56 | "-55.2" → -55.2 | "66" → 66
+    const numMatches = [...q.matchAll(/-?\d+(\.\d+)?/g)];
+    const nums = numMatches.map((m) => parseFloat(m[0]));
+
     const found = ALL_SEARCHABLE.filter((it) => {
+      // 1. Correspondance textuelle (nom de l'item)
       const n = it.name
         .toLowerCase()
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '');
-      return (
-        n.includes(sq) ||
-        nums.some((num) => {
-          const sA = Math.abs(it.start),
-            eA = Math.abs(it.end);
-          return (sA <= num && eA >= num) || Math.abs(sA - num) < 0.5;
-        })
-      );
+      if (n.includes(sq)) return true;
+
+      // 2. Correspondance par intervalle temporel
+      if (nums.length === 0) return false;
+
+      // Les items ont start ≤ end dans l'espace Ma interne
+      // (start plus négatif = plus ancien)
+      const lo = Math.min(it.start, it.end);
+      const hi = Math.max(it.start, it.end);
+
+      return nums.some((num) => {
+        // Test direct : la date tapée est-elle dans l'intervalle ?
+        if (num >= lo && num <= hi) return true;
+        // Test avec signe inversé : l'utilisateur a tapé "56" pour "-56 Ma"
+        const neg = -Math.abs(num);
+        return neg >= lo && neg <= hi;
+      });
     });
+
     setSuggestions(found.slice(0, 10));
-    setOpen(true);
+    setOpen(found.length > 0);
   }
 
   useEffect(() => {
@@ -587,12 +597,10 @@ export default function TimelineVertical() {
     ctx.stroke();
 
     // ── Ticks ──────────────────────────────────────────────────────
-    // Sélection de l'intervalle : le plus petit qui donne ≤9 ticks visibles.
     const tickInterval = TICK_INTERVALS.find((t) => span / t <= 9) ?? 500;
     const startTick = Math.ceil(vs / tickInterval) * tickInterval;
 
     for (let ma = startTick; ma <= ve; ma += tickInterval) {
-      // Arrondi pour éviter les flottants parasites
       const maNorm = Math.round(ma / tickInterval) * tickInterval;
       const x = maToX(maNorm);
       if (x < 2 || x > W - 2) continue;
@@ -794,21 +802,6 @@ export default function TimelineVertical() {
           </button>
         </div>
       )}
-
-      <div className="tl-legend">
-        {['era', 'period', 'epoch', 'stage'].map((t) => (
-          <span key={t} className="tl-legend__item">
-            <span className={`tl-legend__swatch tl-legend__swatch--${t}`} />
-            {TYPE_LABELS[t]}
-          </span>
-        ))}
-        {showAnimals && (
-          <span className="tl-legend__item">
-            <span className="tl-legend__swatch tl-legend__swatch--animal" />
-            Animaux
-          </span>
-        )}
-      </div>
 
       <div
         ref={wrapperRef}

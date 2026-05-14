@@ -221,55 +221,6 @@
   padding-left: 16px;
 }
 
-.tl-root .tl-legend {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 8px;
-  align-items: center;
-}
-
-.tl-root .tl-legend__item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--c-ink-mid);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.tl-root .tl-legend__swatch {
-  display: inline-block;
-  width: 18px;
-  height: 11px;
-  border-radius: 2px;
-  flex-shrink: 0;
-  opacity: 0.85;
-}
-
-.tl-root .tl-legend__swatch--era {
-  background: #1a6b6b;
-}
-
-.tl-root .tl-legend__swatch--period {
-  background: #bf6000;
-}
-
-.tl-root .tl-legend__swatch--epoch {
-  background: #2e7d32;
-}
-
-.tl-root .tl-legend__swatch--stage {
-  background: #8b6914;
-}
-
-.tl-root .tl-legend__swatch--animal {
-  background: #4a3d2a;
-}
-
 .tl-root .tl-animals-section {
   display: flex;
   align-items: center;

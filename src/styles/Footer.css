@@ -19,30 +19,6 @@
     pointer-events: none;
   }
 
-  .scroll-top-btn {
-    position: absolute;
-    top: -20px;
-    right: 2rem;
-    background: linear-gradient(135deg, #d4c190, #f4e4b8);
-    color: #75553f;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-
-    &:hover {
-      transform: translateY(-3px) scale(1.1);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-  }
-
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -306,10 +282,6 @@
 
     .footer-container {
       padding: 2rem 1rem 1rem;
-    }
-
-    .scroll-top-btn {
-      right: 1rem;
     }
   }
 }

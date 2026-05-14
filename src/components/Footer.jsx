@@ -17,10 +17,6 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <button className="scroll-top-btn" onClick={scrollToTop} aria-label="Retour en haut">
-        <FaArrowUp />
-      </button>
-
       <section className="footer-container">
         {/* Section principale */}
         <section className="footer-main">
