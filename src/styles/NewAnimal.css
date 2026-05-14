@@ -52,13 +52,6 @@
   outline-offset: 3px;
 }
 
-.na-notif:hover .na-notif__tooltip,
-.na-notif:focus .na-notif__tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(-6px);
-}
-
 @keyframes na-pulse {
   0%,
   100% {
@@ -131,35 +124,6 @@
   }
 }
 
-.na-notif__tooltip {
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(6px);
-  background: rgba(0, 0, 0, 0.88);
-  color: white;
-  padding: 7px 12px;
-  border-radius: 10px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.25s ease;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.na-notif__tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 5px solid transparent;
-  border-top-color: rgba(0, 0, 0, 0.88);
-}
-
 /* ============================================================
    OVERLAY
    ============================================================ */
@@ -170,22 +134,16 @@
   background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  /* Centrage sur tous les formats */
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 16px;
   animation: na-fade-in 0.28s ease;
 }
 
 .na-overlay--closing {
   animation: na-fade-out 0.32s ease forwards;
-}
-
-@media (min-width: 600px) {
-  .na-overlay {
-    align-items: center;
-    padding: 20px;
-  }
 }
 
 @keyframes na-fade-in {
@@ -211,53 +169,32 @@
 .na-modal {
   background: var(--na-cream);
   width: 100%;
-  max-height: 96svh;
-  border-radius: 22px 22px 0 0;
+  max-width: 560px;
+  /* On laisse la modale s'adapter à son contenu sans dépasser l'écran */
+  max-height: calc(100svh - 32px);
+  border-radius: 22px;
   border: 2px solid var(--na-brown);
-  border-bottom: none;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: na-slide-up 0.38s var(--na-ease-spring);
+  animation: na-scale-in 0.38s var(--na-ease-spring);
   will-change: transform;
 }
 
 .na-modal--closing {
-  animation: na-slide-down 0.32s var(--na-ease-smooth) forwards;
+  animation: na-scale-out 0.32s var(--na-ease-smooth) forwards;
 }
 
 @media (min-width: 600px) {
   .na-modal {
-    width: min(780px, 100%);
-    max-height: min(680px, calc(100svh - 40px));
-    border-radius: 22px;
-    border-bottom: 2px solid var(--na-brown);
-    animation: na-scale-in 0.38s var(--na-ease-spring);
-  }
-  .na-modal--closing {
-    animation: na-scale-out 0.32s var(--na-ease-smooth) forwards;
+    max-width: 780px;
+    max-height: min(720px, calc(100svh - 40px));
   }
 }
 
-@keyframes na-slide-up {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-@keyframes na-slide-down {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(100%);
-  }
-}
 @keyframes na-scale-in {
   from {
-    transform: scale(0.88) translateY(-16px);
+    transform: scale(0.88) translateY(16px);
     opacity: 0;
   }
   to {
@@ -403,13 +340,17 @@
       transparent 28px
     );
   border-bottom: 3px solid var(--na-cork-dark);
-  padding: 14px 14px 12px;
+  /* Padding vertical généreux pour absorber les transformations des épingles
+     sans provoquer de scrollbar surprise */
+  padding: 20px 14px 18px;
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   justify-content: center;
   align-items: flex-start;
   align-content: flex-start;
+  /* Empêche les débordements liés aux rotations/scales des épingles */
+  overflow: hidden;
 }
 
 /* ============================================================
@@ -439,17 +380,19 @@
   }
 }
 
+/* Hover : légère rotation sans scale pour éviter tout débordement */
 .na-pin:hover {
-  transform: rotate(0deg) scale(1.06) !important;
+  transform: rotate(1deg) !important;
   z-index: 20;
 }
 
+/* Sélectionné : on redresse sans agrandir */
 .na-pin--selected {
-  transform: rotate(0deg) scale(1.1) !important;
+  transform: rotate(0deg) !important;
   z-index: 30;
 }
 
-/* Épingle fraîchement révélée : petite secousse de célébration */
+/* Épingle fraîchement révélée : petite secousse de célébration sur la carte seule */
 .na-pin--just-revealed .na-pin__card {
   animation: na-celebrate 0.6s var(--na-ease-spring);
 }
@@ -459,10 +402,10 @@
     transform: scale(1);
   }
   30% {
-    transform: scale(1.14) rotate(-3deg);
+    transform: scale(1.08) rotate(-3deg);
   }
   60% {
-    transform: scale(0.96) rotate(2deg);
+    transform: scale(0.97) rotate(2deg);
   }
   100% {
     transform: scale(1) rotate(0deg);
@@ -728,7 +671,6 @@
   position: relative;
 }
 
-/* Petite lumière sur le fill */
 .na-footer__fill::after {
   content: '';
   position: absolute;
@@ -764,33 +706,47 @@
   }
 
   .na-board {
-    padding: 18px 22px 16px;
-    gap: 18px;
+    padding: 22px 26px 20px;
+    gap: 20px;
   }
 
+  /* Cards notablement plus grandes sur desktop */
   .na-pin__card {
-    width: 140px;
+    width: 160px;
   }
   .na-pin__mud-block {
-    width: 100px;
-    height: 82px;
-  }
-  .na-pin__emoji {
-    font-size: 60px;
-  }
-  .na-pin__img {
-    width: 96px;
-    height: 96px;
+    width: 112px;
+    height: 92px;
   }
   .na-pin__mud {
-    min-height: 184px;
+    min-height: 210px;
   }
   .na-pin__animal {
-    min-height: 184px;
+    min-height: 210px;
+    padding: 14px 8px 12px;
+    gap: 7px;
+  }
+  .na-pin__emoji {
+    font-size: 72px;
+  }
+  .na-pin__img {
+    width: 112px;
+    height: 112px;
+  }
+  .na-pin__name {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .na-pin__new {
+    font-size: 9px;
+    padding: 2px 8px;
   }
   .na-pin__link {
+    font-size: 11px;
+    padding: 5px 13px;
+  }
+  .na-pin__mud-label {
     font-size: 10px;
-    padding: 5px 12px;
   }
 }
 
@@ -799,11 +755,23 @@
    ============================================================ */
 @media (min-width: 768px) {
   .na-pin__card {
-    width: 148px;
+    width: 172px;
   }
   .na-pin__img {
-    width: 104px;
-    height: 104px;
+    width: 120px;
+    height: 120px;
+  }
+  .na-pin__emoji {
+    font-size: 80px;
+  }
+  .na-pin__mud {
+    min-height: 224px;
+  }
+  .na-pin__animal {
+    min-height: 224px;
+  }
+  .na-pin__name {
+    font-size: 13px;
   }
 }
 
@@ -811,9 +779,12 @@
    RESPONSIVE — MOBILE TRÈS PETIT ≤ 360px
    ============================================================ */
 @media (max-width: 360px) {
+  .na-overlay {
+    padding: 8px;
+  }
   .na-board {
     gap: 9px;
-    padding: 10px 10px 8px;
+    padding: 12px 10px 10px;
   }
   .na-pin__card {
     width: 108px;

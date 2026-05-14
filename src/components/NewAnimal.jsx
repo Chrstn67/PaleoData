@@ -15,8 +15,7 @@ const loadRevealedFromStorage = (animals) => {
   try {
     const raw = localStorage.getItem(LS_KEY);
     if (!raw) return [];
-    const names = JSON.parse(raw); // tableau de noms d'animaux
-    // Reconvertir en indices selon la liste courante
+    const names = JSON.parse(raw);
     return animals.map((a, i) => (names.includes(a.nom) ? i : null)).filter((i) => i !== null);
   } catch {
     return [];
@@ -33,11 +32,12 @@ const saveRevealedToStorage = (animals, revealedIndices) => {
 };
 
 const NewAnimal = ({ animals }) => {
+  // ✅ TOUS les hooks doivent être appelés avant tout early return
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [revealed, setRevealed] = useState([]);
   const [selectedPin, setSelectedPin] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
-  const [justRevealed, setJustRevealed] = useState(null); // index fraîchement gratté
+  const [justRevealed, setJustRevealed] = useState(null);
 
   /* ─── Filtrer les animaux ajoutés cette semaine ─── */
   const newAnimals = animals
@@ -48,16 +48,17 @@ const NewAnimal = ({ animals }) => {
     })
     .sort((a, b) => a.nom.localeCompare(b.nom));
 
-  if (newAnimals.length === 0) return null;
-
   /* ─── Charger les révélés depuis localStorage au montage ─── */
   useEffect(() => {
-    const saved = loadRevealedFromStorage(newAnimals);
-    if (saved.length > 0) setRevealed(saved);
-  }, []);
+    if (newAnimals.length > 0) {
+      const saved = loadRevealedFromStorage(newAnimals);
+      if (saved.length > 0) setRevealed(saved);
+    }
+  }, [newAnimals.length]); // Ajout de la dépendance
 
   /* ─── Ouvrir / Fermer la modale ─── */
   const open = () => {
+    if (newAnimals.length === 0) return; // ✅ Vérification après les hooks
     setIsModalOpen(true);
     setSelectedPin(null);
     setJustRevealed(null);
@@ -100,6 +101,9 @@ const NewAnimal = ({ animals }) => {
   const allRevealed = revealed.length === newAnimals.length;
   const revealedCount = revealed.length;
 
+  // ✅ Early return APRÈS tous les hooks
+  if (newAnimals.length === 0) return null;
+
   return (
     <>
       {/* ─── Bouton notification ─── */}
@@ -118,9 +122,6 @@ const NewAnimal = ({ animals }) => {
           </span>
           <span className="na-notif__ring" aria-hidden="true" />
         </div>
-        <span className="na-notif__tooltip">
-          {newAnimals.length === 1 ? '1 nouvel animal !' : `${newAnimals.length} nouveaux animaux !`}
-        </span>
       </aside>
 
       {/* ─── Modale ─── */}
