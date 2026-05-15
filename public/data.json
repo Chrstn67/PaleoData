@@ -11735,7 +11735,7 @@
     "regime_alimentaire": "Végétarien",
     "habitat": "Forêts polaires",
     "geologie": {
-      "ere": "Mésozoïque ",
+      "ere": "Mésozoïque",
       "periode": "Crétacé",
       "epoque": "Supérieur",
       "stage": "Aptien",
@@ -11898,7 +11898,7 @@
     "regime_alimentaire": "Végétarien",
     "habitat": "Marécages et forêts",
     "geologie": {
-      "ere": "Mézozoïque",
+      "ere": "Mésozoïque",
       "periode": "Crétacé",
       "epoque": "Supérieur",
       "stage": "Campanien",
@@ -11979,7 +11979,7 @@
     "regime_alimentaire": "Carnivore",
     "habitat": "Marécages, forêts et zones côtières",
     "geologie": {
-      "ere": "Mézozoïque",
+      "ere": "Mésozoïque",
       "periode": "Jurassique",
       "epoque": "Supérieur",
       "stage": "Kimmeridgien",
@@ -12262,6 +12262,506 @@
         [
           51.888995349721704,
           82.47802641450471
+        ]
+      ]
+    ]
+  },
+  {
+    "nom": "Moeritherium",
+    "etymologie": "Terrible animal du Lac Moéris",
+    "image_url": "./assets/images/Moeritherium.webp",
+    "date_ajout": "2026-05-14",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Mammalia",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "",
+      "ordre": "Proboscidea",
+      "sous_ordre": "",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Moeritheriidae",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Moeritherium",
+      "espèces": "Moeritherium andrewsi, Moeritherium chehbeurameuri, Moeritherium gracile, Moeritherium lyonsi, Moeritherium trigodon"
+    },
+    "regime_alimentaire": "Végétarien",
+    "habitat": "Marécages",
+    "geologie": {
+      "ere": "Cénozoïque",
+      "periode": "Paléocène",
+      "epoque": "Éocène",
+      "stage": "Priabonien",
+      "apparition": -37,
+      "extinction": -35
+    },
+    "description": "<i>Moeritherium</i> était un mammifère herbivore au corps trapu et allongé, dont l’allure évoquait à la fois un petit hippopotame et un tapir. <br/>Sa tête était basse, avec un museau large et une lèvre supérieure flexible, probablement utile pour saisir la végétation tendre dans les zones humides. <br/><br/>Contrairement aux éléphants actuels, il ne possédait pas de véritable trompe développée. <br/>Ses deuxième incisives formaient déjà de petites défenses, mais celles-ci restaient modestes et peu saillantes, tandis que ses dents étaient adaptées à la consommation de plantes molles, notamment aquatiques. <br/><br/>Ses pattes courtes et robustes lui permettaient de marcher dans les marais, les berges et les eaux peu profondes, où il passait sans doute une grande partie de son temps. <br/>Son mode de vie devait être semi-aquatique, avec un comportement discret, proche de celui d’un grand herbivore vivant dans les zones inondées, utilisant son corps compact pour se déplacer calmement dans la vase et l’eau peu profonde.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "3 mètres",
+        "hauteur": "70 centimètres"
+      },
+      "poids": "400 kilogrammes"
+    },
+    "decouverte": {
+      "date": "1901",
+      "lieu": "Lac Moéris, Égypte",
+      "coords": [
+        29.522285178590945,
+        30.585307022221553
+      ]
+    },
+    "habitatCoords": [
+      [
+        31.145286057250452,
+        25.260537483338403
+      ],
+      [
+        33.72517579443589,
+        39.18784807377255
+      ],
+      [
+        23.34901284556762,
+        39.78883896229035
+      ],
+      [
+        21.85342511518978,
+        28.056451616877716
+      ],
+      [
+        31.145286057250452,
+        25.260537483338403
+      ]
+    ]
+  },
+  {
+    "nom": "Brachiosaurus",
+    "etymologie": "Lézard à bras",
+    "image_url": "./assets/images/Brachiosaurus.jpg",
+    "date_ajout": "2026-05-14",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Sauropsida",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "Dinosauria",
+      "ordre": "Saurischia",
+      "sous_ordre": "Sauropodomorpha",
+      "infra_ordre": "Sauropoda",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Brachiosauridae",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Brachiosaurus",
+      "espèces": "Brachiosaurus altithorax"
+    },
+    "regime_alimentaire": "Végétarien",
+    "habitat": "Plaines et forêts",
+    "geologie": {
+      "ere": "Mésozoïque",
+      "periode": "Jurassique",
+      "epoque": "Supérieur",
+      "stage": "Tithonien",
+      "apparition": -155.6,
+      "extinction": -145.5
+    },
+    "description": "Le nom de ce dinosaure fait référence à la longueur disproportionnée de ses membres antérieurs par rapport à ses membres postérieurs. <br/><br/><i>Brachiosaurus</i> était un immense dinosaure herbivore au corps très élevé. Cette silhouette particulière lui donnait une posture inclinée vers l’arrière, idéale pour atteindre la végétation située en hauteur, notamment les feuilles de grands arbres. <br/><br/>Son très long cou lui permettait de parcourir différentes hauteurs de feuillage sans déplacer tout son corps, tandis que sa petite tête portait un bec muni de dents simples, utiles pour arracher les plantes mais non pour les mâcher longuement. <br/>La nourriture était avalée puis digérée grâce à un système interne efficace pour traiter les végétaux coriaces. <br/><br/>Son corps massif était soutenu par des membres robustes en forme de colonnes, et sa longue queue servait de contrepoids pour stabiliser l’ensemble. <br/>Son mode de vie était celui d’un grand brouteur paisible, se déplaçant lentement dans des environnements riches en végétation, où il utilisait sa taille pour accéder à une nourriture hors de portée de nombreux autres herbivores.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "18-22 mètres",
+        "hauteur": "12 mètres"
+      },
+      "poids": "31-51 tonnes"
+    },
+    "decouverte": {
+      "date": "1900",
+      "lieu": "Colorado, États-Unis",
+      "coords": [
+        34.25652589476217,
+        -114.12753724087646
+      ]
+    },
+    "habitatCoords": [
+      [
+        39.983591857352486,
+        -122.07663986070253
+      ],
+      [
+        29.853988726376752,
+        -109.42970116319759
+      ],
+      [
+        38.853206021637014,
+        -86.43526716773411
+      ],
+      [
+        44.32018172931701,
+        -93.12455705732347
+      ],
+      [
+        39.983591857352486,
+        -122.07663986070253
+      ]
+    ]
+  },
+  {
+    "nom": "Coelurosauravus",
+    "etymologie": "Grand-père lézard à queue creuse",
+    "image_url": "./assets/images/Coelurosauravus.png",
+    "date_ajout": "2026-05-14",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Reptilia",
+      "sous_classe": "Diapsida",
+      "division": "",
+      "super_ordre": "",
+      "ordre": "",
+      "sous_ordre": "",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Weigeltisauridae",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Coelurosauravus",
+      "espèces": "Coelurosauravus elivensis"
+    },
+    "regime_alimentaire": "Insectivore",
+    "habitat": "Airs et arbres",
+    "geologie": {
+      "ere": "Paléozoïque",
+      "periode": "Permien",
+      "epoque": "Supérieur",
+      "stage": "Lopingien",
+      "apparition": -260.5,
+      "extinction": -251
+    },
+    "description": "<i>Coelurosauravus</i> était un petit reptile diapside au corps allongé et aplati, adapté à la vie dans les arbres et au déplacement par glissement. <br/>De chaque côté de son corps, des structures osseuses spécialisées soutenaient une membrane de peau formant de véritables ailes, qu’il pouvait déployer pour planer d’une branche à l’autre. <br/><br/>Sa longue queue fine et souple servait de gouvernail, lui permettant de mieux diriger ses trajectoires dans l’air. <br/>Son crâne, de type lézard, portait un museau pointu et une silhouette robuste à l’arrière, ce qui lui donnait un aspect assez particulier parmi les reptiles de son groupe. <br/><br/>Son mode de vie devait être arboricole et agile, passant une grande partie de son temps à grimper puis à se laisser glisser entre les arbres pour échapper aux dangers ou se déplacer rapidement. <br/>Ses membres légers et son corps étroit complétaient parfaitement cet ensemble d’adaptations, faisant de lui un animal spécialisé dans le vol plané plutôt que dans le vol actif.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "40 centimètres",
+        "hauteur": "",
+        "envergure": "50 centimètres"
+      },
+      "poids": "1 kilogramme"
+    },
+    "decouverte": {
+      "date": "1907",
+      "lieu": "Madagascar",
+      "coords": [
+        -17.889326750442272,
+        47.61347754979991
+      ]
+    },
+    "habitatCoords": [
+      [
+        [
+          -10.703826864796556,
+          38.87045274548242
+        ],
+        [
+          -24.741218823133806,
+          37.61403527488442
+        ],
+        [
+          -25.343847659087423,
+          52.17369655181409
+        ],
+        [
+          -9.758325581308004,
+          53.87355548262313
+        ],
+        [
+          -10.703826864796556,
+          38.87045274548242
+        ]
+      ],
+      [
+        [
+          52.407027599479775,
+          7.673173010703457
+        ],
+        [
+          49.37298548860434,
+          7.563309731626336
+        ],
+        [
+          49.12916276185286,
+          14.396805690223305
+        ],
+        [
+          53.23029066348276,
+          12.243485420311718
+        ],
+        [
+          52.407027599479775,
+          7.673173010703457
+        ]
+      ]
+    ]
+  },
+  {
+    "nom": "Toxodon",
+    "etymologie": "Dent en forme de flèche",
+    "image_url": "./assets/images/Toxodon.png",
+    "date_ajout": "2026-05-14",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Mammalia",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "",
+      "ordre": "Notoungulata",
+      "sous_ordre": "Toxodonta",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Toxodontidae",
+      "sous_famille": "Toxodontinae",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Toxodon",
+      "espèces": "Toxodon platensis"
+    },
+    "regime_alimentaire": "Herbivore",
+    "habitat": "Plaines arides",
+    "geologie": {
+      "ere": "Cénozoïque",
+      "periode": "Quaternaire",
+      "epoque": "Pléistocène",
+      "stage": "Calabrien",
+      "apparition": -1,
+      "extinction": -0.005
+    },
+    "description": "<i>Toxodon</i> était un grand mammifère herbivore au corps massif et à l’allure générale proche de celle d’un rhinocéros, avec une tête large, un museau puissant et un cou relativement court. <br/>Son crâne portait des ouvertures nasales situées haut sur la tête, ce qui suggère un museau bien développé, utile pour saisir une végétation variée. <br/><br/>Ses incisives étaient séparées les unes des autres, ainsi que des dents jugales, par de grands espaces, et ses dents à croissance continue étaient adaptées à l’usure provoquée par la consommation de plantes coriaces. <br/>Ses membres courts mais robustes soutenaient un corps lourd, et ses pieds larges à trois doigts fonctionnels lui permettaient de bien répartir son poids sur le sol. <br/><br/>Longtemps pris pour un animal amphibie (la position de la tête, au-dessous du sommet de la colonne vertébrale prouvant le contraire), son mode de vie était celui d’un herbivore terrestre puissant, probablement capable de brouter aussi bien des herbes que des feuillages bas, dans des milieux ouverts ou marécageux. <br/>Sa silhouette trapue, ses pattes solides et sa mâchoire efficace en faisaient un animal bien adapté à une alimentation de végétation variée et à une marche stable sur des terrains parfois meubles.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "2.70 mètres",
+        "hauteur": "1.30 mètre"
+      },
+      "poids": "2 tonnes"
+    },
+    "decouverte": {
+      "date": "1832",
+      "lieu": "Amérique du Sud (position exacte incconnue)",
+      "coords": [
+        -28.81644123036993,
+        -63.53544384032784
+      ]
+    },
+    "habitatCoords": [
+      [
+        8.525975972260039,
+        -86.03544339532236
+      ],
+      [
+        9.047129060816232,
+        -35.5862256431081
+      ],
+      [
+        -56.10309120052412,
+        -53.164350295447576
+      ],
+      [
+        -55.70895730393815,
+        -82.69559971137787
+      ],
+      [
+        8.525975972260039,
+        -86.03544339532236
+      ]
+    ]
+  },
+  {
+    "nom": "Pliosaurus",
+    "etymologie": "Encore un lézard",
+    "image_url": "./assets/images/Pliosaurus.webp",
+    "date_ajout": "2026-05-14",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Reptilia",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "Sauropterygia",
+      "ordre": "Plesiosauria",
+      "sous_ordre": "Pliosauroidea",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Pliosauridae",
+      "sous_famille": "Thalassophonea",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Pliosaurus",
+      "espèces": "Pliosaurus brachydeirus, Plesiosaurus carpenteri, Plesiosaurus funkei, Plesiosaurus kevani, Plesiosaurus rossicus, Plesiosaurus westburyensis"
+    },
+    "regime_alimentaire": "Carnivore",
+    "habitat": "Mers et océans",
+    "geologie": {
+      "ere": "Mésozoïque",
+      "periode": "Jurassique",
+      "epoque": "Supérieur",
+      "stage": "Kiaméridgien",
+      "apparition": -154,
+      "extinction": -137
+    },
+    "description": "<i>Pliosaurus</i> était un grand reptile marin au corps massif, doté d’une tête énorme, d’un cou très court et de quatre nageoires puissantes. <br/>Sa silhouette était conçue pour la nage active : il avançait en utilisant ses larges palettes natatoires, qui lui donnaient une grande force de propulsion dans l’eau. <br/><br/>Son crâne allongé (2 mètres de long) portait des mâchoires très robustes, garnies de dents coniques et tranchantes, adaptées pour saisir et retenir de grandes proies. <br/>Sa morsure devait être extrêmement puissante, ce qui en faisait un prédateur redoutable capable de s’attaquer à d’autres reptiles marins et à de gros poissons. <br/><br/>Ses yeux orientés vers l’avant lui procuraient probablement une bonne perception de la profondeur, utile pour viser ses proies avec précision. <br/>Son corps hydrodynamique, combiné à sa musculature solide, lui permettait de chasser efficacement dans la mer, en profitant à la fois de sa vitesse et de sa puissance.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "10 mètres",
+        "hauteur": ""
+      },
+      "poids": "11 tonnes"
+    },
+    "decouverte": {
+      "date": "1824",
+      "lieu": "Angleterre",
+      "coords": [
+        53.38021883139446,
+        -0.30357030935669155
+      ]
+    },
+    "habitatCoords": [
+      [
+        [
+          60,
+          110
+        ],
+        [
+          60,
+          -70
+        ],
+        [
+          -60,
+          -70
+        ],
+        [
+          -60,
+          110
+        ]
+      ],
+      [
+        [
+          70,
+          -80
+        ],
+        [
+          70,
+          20
+        ],
+        [
+          -60,
+          20
+        ],
+        [
+          -60,
+          -80
+        ]
+      ],
+      [
+        [
+          30,
+          20
+        ],
+        [
+          30,
+          120
+        ],
+        [
+          -60,
+          120
+        ],
+        [
+          -60,
+          20
+        ]
+      ],
+      [
+        [
+          90,
+          -180
+        ],
+        [
+          90,
+          180
+        ],
+        [
+          66,
+          180
+        ],
+        [
+          66,
+          -180
+        ]
+      ],
+      [
+        [
+          -60,
+          -180
+        ],
+        [
+          -60,
+          180
+        ],
+        [
+          -90,
+          180
+        ],
+        [
+          -90,
+          -180
         ]
       ]
     ]

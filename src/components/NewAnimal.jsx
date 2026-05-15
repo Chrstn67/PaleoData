@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../styles/NewAnimal.css';
@@ -32,7 +32,6 @@ const saveRevealedToStorage = (animals, revealedIndices) => {
 };
 
 const NewAnimal = ({ animals }) => {
-  // ✅ TOUS les hooks doivent être appelés avant tout early return
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [revealed, setRevealed] = useState([]);
   const [selectedPin, setSelectedPin] = useState(null);
@@ -54,11 +53,11 @@ const NewAnimal = ({ animals }) => {
       const saved = loadRevealedFromStorage(newAnimals);
       if (saved.length > 0) setRevealed(saved);
     }
-  }, [newAnimals.length]); // Ajout de la dépendance
+  }, [newAnimals.length]);
 
   /* ─── Ouvrir / Fermer la modale ─── */
   const open = () => {
-    if (newAnimals.length === 0) return; // ✅ Vérification après les hooks
+    if (newAnimals.length === 0) return;
     setIsModalOpen(true);
     setSelectedPin(null);
     setJustRevealed(null);
@@ -87,7 +86,6 @@ const NewAnimal = ({ animals }) => {
   /* ─── Scratch : révéler un animal ─── */
   const scratchPin = (animalIdx) => {
     setSelectedPin(animalIdx);
-
     if (!revealed.includes(animalIdx)) {
       const newRevealed = [...revealed, animalIdx];
       setRevealed(newRevealed);
@@ -100,8 +98,8 @@ const NewAnimal = ({ animals }) => {
 
   const allRevealed = revealed.length === newAnimals.length;
   const revealedCount = revealed.length;
+  const unrevealedCount = newAnimals.length - revealedCount;
 
-  // ✅ Early return APRÈS tous les hooks
   if (newAnimals.length === 0) return null;
 
   return (
@@ -112,14 +110,24 @@ const NewAnimal = ({ animals }) => {
         onClick={open}
         role="button"
         tabIndex={0}
-        aria-label={newAnimals.length === 1 ? '1 nouvel animal !' : `${newAnimals.length} nouveaux animaux !`}
+        aria-label={`${newAnimals.length} nouveaux animaux, ${unrevealedCount} à gratter`}
         onKeyDown={(e) => e.key === 'Enter' && open()}
       >
         <div className="na-notif__icon">
           <span aria-hidden="true">🦕</span>
-          <span className="na-notif__badge" aria-hidden="true">
+
+          {/* Pastille rouge : nombre total d'animaux de la semaine */}
+          <span className="na-notif__badge na-notif__badge--green" aria-hidden="true">
             {newAnimals.length}
           </span>
+
+          {/* Pastille verte : nombre restant à gratter — disparaît quand tout est révélé */}
+          {!allRevealed && (
+            <span className="na-notif__badge na-notif__badge--red" aria-hidden="true">
+              {unrevealedCount}
+            </span>
+          )}
+
           <span className="na-notif__ring" aria-hidden="true" />
         </div>
       </aside>
