@@ -1,46 +1,244 @@
-.scroll-to-top-button {
+:root {
+  --sand-50: #faf8f0;
+  --sand-100: #f5f0e0;
+  --sand-200: #e8dfc0;
+  --sand-300: #d4c49a;
+  --sand-400: #b8a070;
+  --sand-500: #9a7d50;
+  --sand-600: #7d6038;
+  --sand-700: #604828;
+  --sand-800: #3d2d18;
+  --sand-900: #1e1508;
+
+  --navbar-height: 45px;
+}
+
+/* ════════════════════════════════════════════
+   DESKTOP — bouton rond en bas à droite
+════════════════════════════════════════════ */
+
+.stt-wrapper {
   position: fixed;
-  bottom: 2em;
-  right: 2em;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 999;
+  bottom: 2.5rem;
+  right: 2rem;
+  z-index: 9999;
+  pointer-events: none;
+  display: none;
+}
 
-  &.show {
-    opacity: 1;
-  }
-
-  .progress-circle {
-    position: relative;
-    width: 3em;
-    height: 3em;
-    border-radius: 50%;
-    border: 0.25em solid transparent;
-    cursor: pointer;
-    transition: border-image 0.01s ease-in-out;
-
-    &:hover {
-      border-color: #ffb300;
-    }
-
-    .arrow-up {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-135deg);
-      width: 1.5em;
-      height: 1.5em;
-      border: solid #ffb300;
-      border-width: 0 0.2em 0.2em 0;
-      display: inline-block;
-
-      border-radius: 0.2em;
-    }
+/* Afficher uniquement sur desktop (min-width 769px) */
+@media (min-width: 769px) {
+  .stt-wrapper {
+    display: block;
   }
 }
 
+.stt-btn {
+  pointer-events: all;
+  position: relative;
+  width: clamp(52px, 8vw, 68px);
+  height: clamp(52px, 8vw, 68px);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--sand-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  opacity: 0;
+  transform: scale(0.7) translateY(12px);
+  transition:
+    opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stt-btn.stt-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.stt-btn:focus-visible {
+  box-shadow: 0 0 0 3px var(--sand-400);
+}
+
+.stt-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+  overflow: visible;
+}
+
+.stt-track {
+  fill: none;
+  stroke: var(--sand-200);
+  stroke-width: 3.5;
+}
+
+.stt-progress {
+  fill: none;
+  stroke: var(--sand-600);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.15s linear;
+}
+
+.stt-icon {
+  position: relative;
+  z-index: 2;
+  width: clamp(16px, 3vw, 22px);
+  height: clamp(16px, 3vw, 22px);
+  color: var(--sand-700);
+  transition:
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.stt-btn:hover .stt-icon {
+  transform: translateY(-2px);
+  color: var(--sand-900);
+}
+
+.stt-btn:active .stt-icon {
+  transform: translateY(1px) scale(0.9);
+}
+
+.stt-inner {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: var(--sand-100);
+  transition: background 0.2s ease;
+  box-shadow: inset 0 1px 3px rgba(96, 72, 40, 0.12);
+}
+
+.stt-btn:hover .stt-inner {
+  background: var(--sand-200);
+}
+
+.stt-tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background: var(--sand-800);
+  color: var(--sand-50);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-family: inherit;
+}
+
+.stt-btn:focus-visible .stt-tooltip,
+.stt-btn:hover .stt-tooltip {
+  opacity: 1;
+}
+
+/* ════════════════════════════════════════════
+   MOBILE — UNIQUEMENT le pill centré, collé sur la navbar
+   (pas de doublon, le bouton rond est caché)
+════════════════════════════════════════════ */
+
+/* Masquer complètement le wrapper desktop sur mobile */
 @media (max-width: 768px) {
-  .scroll-to-top-button {
-    bottom: 3em;
+  .stt-wrapper {
+    display: none !important;
+  }
+}
+
+.stt-pill-wrapper {
+  display: none;
+}
+
+/* Afficher le pill uniquement sur mobile */
+@media (max-width: 768px) {
+  .stt-pill-wrapper {
+    display: block;
+    position: fixed;
+    bottom: var(--navbar-height);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .stt-pill-wrapper.stt-pill-visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .stt-pill-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px 6px;
+    border: 1px solid var(--sand-300);
+    border-bottom: none;
+    border-radius: 99px 99px 0 0;
+    background: #d4c190;
+    box-shadow: 0 -2px 10px rgba(96, 72, 40, 0.13);
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+
+  .stt-pill-btn:hover {
+    background: var(--sand-100);
+  }
+
+  .stt-pill-btn:active {
+    transform: scale(0.96);
+  }
+
+  .stt-pill-btn:focus-visible {
+    box-shadow:
+      0 -2px 10px rgba(96, 72, 40, 0.13),
+      0 0 0 3px var(--sand-400);
+  }
+
+  .stt-pill-ring {
+    transform: rotate(-90deg);
+    flex-shrink: 0;
+  }
+
+  .stt-pill-ring-track {
+    fill: none;
+    stroke: var(--sand-200);
+    stroke-width: 3;
+  }
+
+  .stt-pill-ring-fill {
+    fill: none;
+    stroke: var(--sand-600);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.15s linear;
+  }
+
+  .stt-pill-arrow {
+    color: var(--sand-700);
+    flex-shrink: 0;
+  }
+
+  .stt-pill-pct {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--sand-600);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    min-width: 22px;
   }
 }
