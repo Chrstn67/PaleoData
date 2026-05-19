@@ -8523,7 +8523,6 @@ const data = [
     nom: 'Dodo',
     etymologie: "Du portugais 'doudo' qui signifie 'stupide' ou 'maladroit'",
     image_url: './assets/images/Dodo.jpg',
-    date_ajout: '2024-05-05',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8635,7 +8634,6 @@ const data = [
     nom: 'Arctocyon',
     etymologie: 'Ours-Chien',
     image_url: './assets/images/Arctocyon.webp',
-    date_ajout: '2024-05-05',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8708,7 +8706,6 @@ const data = [
     nom: 'Hynerpeton',
     etymologie: 'Animal rampant de Hyner',
     image_url: './assets/images/Hynerpeton.jpeg',
-    date_ajout: '2024-05-05',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8764,7 +8761,6 @@ const data = [
     nom: 'Hyneria',
     etymologie: 'En référence à la ville de Hyner',
     image_url: './assets/images/Hyneria.webp',
-    date_ajout: '2024-05-05',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8820,7 +8816,6 @@ const data = [
     nom: 'Petrolacosaurus',
     etymologie: 'Lézard du lac de roche',
     image_url: './assets/images/Petrolacosaurus.jpeg',
-    date_ajout: '2024-05-06',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8876,7 +8871,6 @@ const data = [
     nom: 'Dryosaurus',
     etymologie: 'Lézard des arbres',
     image_url: './assets/images/Dryosaurus.webp',
-    date_ajout: '2024-05-06',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8932,7 +8926,6 @@ const data = [
     nom: 'Bambiraptor',
     etymologie: 'Bambi le voleur',
     image_url: './assets/images/Bambiraptor.jpg',
-    date_ajout: '2024-05-09',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -8993,7 +8986,6 @@ const data = [
     nom: 'Sinornithosaurus',
     etymologie: 'Oiseau-lézard chinois',
     image_url: './assets/images/Sinornithosaurus.jpg',
-    date_ajout: '2024-05-09',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9049,7 +9041,6 @@ const data = [
     nom: 'Mononykus',
     etymologie: 'Une griffe',
     image_url: './assets/images/Mononykus.jpg',
-    date_ajout: '2024-05-09',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9105,7 +9096,6 @@ const data = [
     nom: 'Hatzegopteryx',
     etymologie: "L'ailé du bassin de Hatzeg",
     image_url: './assets/images/Hatzegopteryxx.webp',
-    date_ajout: '2024-05-15',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9162,7 +9152,6 @@ const data = [
     nom: 'Koolasuchus',
     etymologie: "Crocodile de Kool (en l'honneur de la paléontologue Lesley Kool)",
     image_url: './assets/images/Koolasuchus.png',
-    date_ajout: '2024-05-15',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9218,7 +9207,6 @@ const data = [
     nom: 'Scutosaurus',
     etymologie: 'Reptile à bouclier',
     image_url: './assets/images/Scutosaurus.jpg',
-    date_ajout: '2024-05-16',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9274,7 +9262,6 @@ const data = [
     nom: 'Rhamphorhynchus',
     etymologie: 'Bec-museau',
     image_url: './assets/images/Rhamphorhynchus.webp',
-    date_ajout: '2024-05-16',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9331,7 +9318,6 @@ const data = [
     nom: 'Archaeopteryx',
     etymologie: 'Aile antique',
     image_url: './assets/images/Archaeopteryx.jpg',
-    date_ajout: '2024-05-16',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9396,7 +9382,6 @@ const data = [
     nom: 'Cryptoclidus',
     etymologie: 'Clavicule cachée',
     image_url: './assets/images/Cryptoclidus.jpg',
-    date_ajout: '2024-05-21',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9452,7 +9437,6 @@ const data = [
     nom: 'Hybodus',
     etymologie: 'Dent tordue',
     image_url: './assets/images/Hybodus.webp',
-    date_ajout: '2024-05-21',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9508,7 +9492,6 @@ const data = [
     nom: 'Iberomesornis',
     etymologie: 'Oiseau espagnol intermédiaire',
     image_url: './assets/images/Iberomesornis.webp',
-    date_ajout: '2024-05-21',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9565,7 +9548,6 @@ const data = [
     nom: 'Caulkicephalus',
     etymologie: "Tête de Caulkhead (du surnom des habitants de l'île de Wight)",
     image_url: './assets/images/Caulkicephalus.jpg',
-    date_ajout: '2024-05-21',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9622,7 +9604,6 @@ const data = [
     nom: 'Anhanguera',
     etymologie: 'Vieux diable (en langue Tupi)',
     image_url: './assets/images/Anhanguera.webp',
-    date_ajout: '2024-05-21',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9687,7 +9668,6 @@ const data = [
     nom: 'Dromaeosaurus',
     etymologie: 'Lézard qui court',
     image_url: './assets/images/Dromaeosaurus.jpg',
-    date_ajout: '2024-05-23',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9743,7 +9723,6 @@ const data = [
     nom: 'Thoracosaurus',
     etymologie: 'Lézard à cuirasse',
     image_url: './assets/images/Thoracosaurus.jpg',
-    date_ajout: '2024-05-23',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9799,7 +9778,6 @@ const data = [
     nom: 'Pteranodon',
     etymologie: 'Ailes sans dents',
     image_url: './assets/images/Pteranodon.jpg',
-    date_ajout: '2024-06-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9856,7 +9834,6 @@ const data = [
     nom: 'Pterodactylus',
     etymologie: 'Doigt ailé',
     image_url: './assets/images/Pterodactylus.jpg',
-    date_ajout: '2024-06-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9922,7 +9899,6 @@ const data = [
     nom: 'Rhabdodon',
     etymologie: 'Dents cannelées',
     image_url: './assets/images/Rhabdodon.jpg',
-    date_ajout: '2025-02-04',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -9987,7 +9963,6 @@ const data = [
     nom: 'Spinosaurus',
     etymologie: 'Lézard épineux',
     image_url: './assets/images/Spinosaurus.jpg',
-    date_ajout: '2025-02-04',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10051,7 +10026,6 @@ const data = [
     nom: 'Pyroraptor',
     etymologie: 'Voleur de feu',
     image_url: './assets/images/Pyroraptor.png',
-    date_ajout: '2025-07-10',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10116,7 +10090,6 @@ const data = [
     etymologie:
       'Fait référence au dieu serpent à plumes Quetzalcóatl de la mythologie aztèque, symbolisant le ciel et le vent.',
     image_url: './assets/images/Quetzalcoaltus.jpg',
-    date_ajout: '2025-07-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10181,7 +10154,6 @@ const data = [
     nom: 'Onychodictyon',
     etymologie: 'Réseau de griffes',
     image_url: './assets/images/Onychodictyon.webp',
-    date_ajout: '2025-07-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10245,7 +10217,6 @@ const data = [
     nom: 'Eoraptor',
     etymologie: "Voleur de l'aube",
     image_url: './assets/images/Eoraptor.jpg',
-    date_ajout: '2025-07-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10309,7 +10280,6 @@ const data = [
     nom: 'Plateosaurus',
     etymologie: 'Lézard large',
     image_url: './assets/images/Plateosaurus.jpg',
-    date_ajout: '2025-07-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10373,7 +10343,6 @@ const data = [
     nom: 'Kostensuchus',
     etymologie: 'Crocodile osseux',
     image_url: './assets/images/Kostensuchus.webp',
-    date_ajout: '2025-09-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10437,7 +10406,6 @@ const data = [
     nom: 'Spicomellus',
     etymologie: 'Collier de pointes',
     image_url: './assets/images/Spicomellus.avif',
-    date_ajout: '2025-09-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10501,7 +10469,6 @@ const data = [
     nom: 'Tricératops',
     etymologie: 'Tête à trois cornes',
     image_url: './assets/images/Triceratops.webp',
-    date_ajout: '2025-09-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10567,7 +10534,6 @@ const data = [
     nom: 'Baryonyx',
     etymologie: 'Griffe pesante',
     image_url: './assets/images/Baryonyx.jpg',
-    date_ajout: '2025-09-14',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10632,7 +10598,6 @@ const data = [
     nom: 'Sollasina',
     etymologie: '',
     image_url: './assets/images/Sollasina.webp',
-    date_ajout: '2025-11-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10698,7 +10663,6 @@ const data = [
     nom: 'Platybelodon',
     etymologie: 'Défense large et plate',
     image_url: './assets/images/Platybelodon.jpg',
-    date_ajout: '2025-11-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10770,7 +10734,6 @@ const data = [
     nom: 'Arambourgiania',
     etymologie: "En l'honneur de Camille Arambourg qui fut le premier à décrire un fossile de cet animal",
     image_url: './assets/images/Arambourgiania.png',
-    date_ajout: '2025-11-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10837,7 +10800,6 @@ const data = [
     etymologie:
       "En l'honneur de Leaellyn Rich, fille des paléontologues Thomas et Patricia Rich qui ont découvert les fossiles de ce dinosaure",
     image_url: './assets/images/Leaellynasaura.jpg',
-    date_ajout: '2026-02-24',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10903,7 +10865,6 @@ const data = [
     nom: 'Edmontosaurus',
     etymologie: 'Lézard d’Edmonton',
     image_url: './assets/images/Edmontosaurus.jpeg',
-    date_ajout: '2026-05-07',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -10968,7 +10929,6 @@ const data = [
     nom: 'Parasaurolophus',
     etymologie: 'Lézard à crêtes à cloisons parallèles',
     image_url: './assets/images/Parasaurolophus.webp',
-    date_ajout: '2026-05-07',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -11100,7 +11060,6 @@ const data = [
     nom: 'Pelagornis',
     etymologie: 'Oiseau de haute mer',
     image_url: './assets/images/Pelagornis.webp',
-    date_ajout: '2026-05-11',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -11182,7 +11141,6 @@ const data = [
     nom: 'Saurolophus',
     etymologie: 'Lézard à crête',
     image_url: './assets/images/Saurolophus.png',
-    date_ajout: '2026-05-12',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
