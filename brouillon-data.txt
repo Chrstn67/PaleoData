@@ -66,44 +66,21 @@
    },
 
 
-Gigantoraptor
 
+Helicoprion 
+Moschops 
+Cotylorhynchus 
+Prionosuchus  
+Desmatosuchus
+Placodus 
+Silesaurus 
 
-Helicoprion – Requin à dent en spirale (scie dentée).
-Estemmenosuchus – Synapside therapside avec bosses crâniennes (Permien).
-Moschops – Thérapside herbivore massif à tête épaisse.
-Cotylorhynchus – Synapside pelycosaurien géant à petite tête.
-Prionosuchus – Amphibien géant aquatique (jusqu’à 9-10 m). 
+Didelphodon 
+Pakasuchus
 
+Thylacosmilus 
+Arctodus 
 
-Desmatosuchus – Aetosaure (reptile blindé herbivore/carnivore).
-Tanystropheus – Reptile au cou extrêmement long.
-
-Placodus – Reptile marin à dents broyeuses pour coquillages.
-Silesaurus – Dinosauriforme (proche des dinosaures mais pas un vrai). 
-
-Xiphactinus – Poisson osseux géant prédateur (jusqu’à 6 m).
-Didelphodon – Mammifère primitif ressemblant à un opossum.
-
-Deinosuchus – Crocodylomorphe géant (moins connu que Sarcosuchus).
-Nemicolopterus – Ptérosaure minuscule (envergure ~25 cm).
-Pakasuchus – Crocodyliforme au crâne mammaliforme (Crétacé africain). 
-
-
-
-
-Entelodon (« hell pig ») – Artiodactyle carnassier massif.
-Megalictis – Mustélidé géant (genre de glouton préhistorique).
-Sivatherium – Giraffidé à cornes palmées (Miocène-Pliocène).
-Thylacosmilus – Marsupial « sabre-dent » sud-américain.
-Propaléotherieum
-
-
-Arctodus (ours à face courte) – Ours géant nord-américain.
-Castoroides – Castor géant nord-américain.
-Megalania (Varanus priscus) – Varane géant australien.
-
-Hippidion – Cheval sud-américain distinct.
-
-Aenocyon dirus (loup terrible) – Moins connu que souvent pensé dans le détail.
+Hippidion 
+Aenocyon dirus 
  
