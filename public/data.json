@@ -13341,5 +13341,496 @@
         70.16080995278195
       ]
     ]
+  },
+  {
+    "nom": "Gigantoraptor",
+    "etymologie": "Voleur géant",
+    "image_url": "./assets/images/Gigantoraptor.jpg",
+    "date_ajout": "2026-05-21",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Reptilia",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "Dinosauria",
+      "ordre": "Saurischia",
+      "sous_ordre": "Theropoda",
+      "infra_ordre": "Coelurosauria",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Caenagnathidae",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Gigantoraptor",
+      "espèces": "Gigantoraptor erlianensis"
+    },
+    "regime_alimentaire": "Omnivore",
+    "habitat": "Plaines ouvertes",
+    "geologie": {
+      "ere": "Mésozoïque",
+      "periode": "Crétacé",
+      "epoque": "Supérieur",
+      "stage": "Cénomanien",
+      "apparition": -95,
+      "extinction": -90
+    },
+    "description": "<i>Gigantoraptor</i> était un très grand dinosaure bipède au corps élancé, à long cou, petite tête et queue allongée servant de balancier. <br/>Son crâne portait un bec édenté, tandis que ses membres postérieurs très développés lui assuraient une démarche rapide et stable. <br/><br/>Ses membres antérieurs, longs et munis de grandes griffes, suggèrent une anatomie à la fois agile et puissante, utile pour saisir la végétation, manipuler des objets ou se défendre. <br/>Sa silhouette générale, avec un corps couvert de plumes ou de structures filamenteuses probables, lui donnait l’allure d’un gigantesque oviraptorosaure. <br/><br/>Son mode de vie reste en partie mystérieux, mais il devait être omnivore ou herbivore opportuniste, utilisant son bec pour couper des aliments variés et ses membres pour se déplacer efficacement dans les plaines ouvertes de son environnement.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "8 mètres",
+        "hauteur": "4 mètres"
+      },
+      "poids": "2 tonnes"
+    },
+    "decouverte": {
+      "date": "2005",
+      "lieu": "Chine",
+      "coords": [
+        43.949042414594324,
+        111.9284115106556
+      ]
+    },
+    "habitatCoords": [
+      [
+        45.31884550092537,
+        108.72066681189203
+      ],
+      [
+        46.33729625985111,
+        116.98733293239184
+      ],
+      [
+        43.469971967218875,
+        116.81960347487444
+      ],
+      [
+        43.88588089372517,
+        110.35003868491808
+      ],
+      [
+        45.31884550092537,
+        108.72066681189203
+      ]
+    ]
+  },
+  {
+    "nom": "Xiphactinus",
+    "etymologie": "Épée-raie",
+    "image_url": "./assets/images/Xiphactinus.webp",
+    "date_ajout": "2026-05-21",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Actinopterygii",
+      "sous_classe": "Neopterygii",
+      "infra_classe": "Teleostei",
+      "division": "",
+      "super_ordre": "",
+      "ordre": "Ichthyodectiformes",
+      "sous_ordre": "",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Ichthyodectidae",
+      "sous_famille": "Ichthyodectinae",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Xiphactinus",
+      "espèces": "Xiphactinus audax, Xiphactinus vetus"
+    },
+    "regime_alimentaire": "Piscivore",
+    "habitat": "Mers et océans",
+    "geologie": {
+      "ere": "Mésozoïque",
+      "periode": "Crétacé",
+      "epoque": "Supérieur",
+      "stage": "Albien",
+      "apparition": -100,
+      "extinction": -65
+    },
+    "description": "<i>Xiphactinus</i> était un grand poisson marin prédateur au corps allongé et fuselé, conçu pour la nage rapide en pleine eau. <br/>Sa tête massive portait une large bouche armée de dents pointues et coniques, adaptées pour saisir et avaler d’autres poissons avec efficacité. <br/><br/>Ses nageoires pectorales, assez développées, lui servaient à stabiliser ses mouvements, tandis que sa puissante nageoire caudale fournissait l’essentiel de la propulsion. <br/>Son corps recouvert d’écailles lisses et sa silhouette hydrodynamique en faisaient un chasseur agile, capable de poursuites brusques dans les mers peu profondes. <br/><br/>Son mode de vie était celui d’un prédateur actif, dominant les eaux marines où il chassait surtout d’autres poissons, parfois de grande taille, qu’il pouvait engloutir en entier grâce à sa gueule très extensible. <br/>Son anatomie générale évoquait celle d’un tarpon géant, mais avec une mâchoire bien plus redoutable et une puissance de morsure nettement supérieure.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "4-5 mètres",
+        "hauteur": ""
+      },
+      "poids": "2 tonnes"
+    },
+    "decouverte": {
+      "date": "1850",
+      "lieu": "Wioming, États-Unis",
+      "coords": [
+        42.85282781965481,
+        -104.80673759301743
+      ]
+    },
+    "habitatCoords": [
+      [
+        46.06452243055472,
+        -124.42429575415107
+      ],
+      [
+        43.571297761020176,
+        -68.96531247602007
+      ],
+      [
+        32.462105587487095,
+        -77.9301560487132
+      ],
+      [
+        31.41795268722703,
+        -121.17234269346827
+      ],
+      [
+        46.06452243055472,
+        -124.42429575415107
+      ]
+    ]
+  },
+  {
+    "nom": "Propalaeotherium",
+    "etymologie": "Avant Palaeotherium",
+    "image_url": "./assets/images/Propalaeotherium.webp",
+    "date_ajout": "2026-05-21",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Mammalia",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "Laurasiatheria",
+      "ordre": "Perissodactyla",
+      "sous_ordre": "Hippomorpha",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "Equoidea",
+      "famille": "Palaeotheriidae",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Propalaeotherium",
+      "espèces": "Propalaeotherium argentonicum, Propalaeotherium hassiacum, Propalaeotherium helveticum, Propalaeotherium isselanum, Propalaeotherium sudrei, Propalaeotherium voigti"
+    },
+    "regime_alimentaire": "Végétarien",
+    "habitat": "Forêts",
+    "geologie": {
+      "ere": "Cénozoïque",
+      "periode": "Pléogène",
+      "epoque": "Éocène",
+      "stage": "Yprésien",
+      "apparition": -56,
+      "extinction": -47.8
+    },
+    "description": "<i>Propalaeotherium</i> était un petit mammifère herbivore au corps léger, à l’allure générale proche de celle d’un minuscule tapir. <br/>Ses pattes fines se terminaient par de petits sabots ou ongles cornés, plutôt que par de vrais sabots massifs, ce qui lui donnait une démarche discrète et agile sur le sol forestier. <br/><br/>Sa tête était relativement allongée, avec un museau adapté à la cueillette de la nourriture au ras du sol, et ses dents permettaient de consommer des feuilles tendres, des bourgeons et des fruits. <br/>Son corps peu massif et sa silhouette souple lui facilitaient les déplacements dans les sous-bois denses. <br/><br/>Son mode de vie était celui d’un brouteur forestier, actif au sol, qui se nourrissait surtout de végétaux ramassés dans la litière végétale et sur les branches basses. <br/>Ses adaptations anatomiques indiquent un animal tranquille, rapide à l’échelle de sa taille, bien adapté à la vie dans des milieux boisés.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "80 centimètres",
+        "hauteur": "30-60 centimètres"
+      },
+      "poids": "10-20 kilogrammes"
+    },
+    "decouverte": {
+      "date": "1824",
+      "lieu": "Allemagne",
+      "coords": [
+        49.94365272778077,
+        8.741279230028326
+      ]
+    },
+    "habitatCoords": [
+      [
+        54.01204709954241,
+        19.449089863179797
+      ],
+      [
+        53.55773632191349,
+        3.708003343603286
+      ],
+      [
+        49.27392917110481,
+        -5.338598104429188
+      ],
+      [
+        42.5845456467658,
+        -2.7150836844997746
+      ],
+      [
+        44.550719776962836,
+        25.012749753719763
+      ],
+      [
+        54.01204709954241,
+        19.449089863179797
+      ]
+    ]
+  },
+  {
+    "nom": "Estemmenosuchus",
+    "etymologie": "Crocodile à couronne",
+    "image_url": "./assets/images/Estemmenosuchus.webp",
+    "date_ajout": "2026-05-21",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Synapsida",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "",
+      "ordre": "Therapsida",
+      "sous_ordre": "Dinocephalia",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Estemmenosuchidae",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Estemmenosuchus",
+      "espèces": "Estemmenosuchus mirabilis, Estemmenosuchus uralensis"
+    },
+    "regime_alimentaire": "Omnivore",
+    "habitat": "Plaines et forêts",
+    "geologie": {
+      "ere": "Paléozoïque",
+      "periode": "Permien",
+      "epoque": "Guadalupien",
+      "stage": "Wordien",
+      "apparition": -267,
+      "extinction": -265
+    },
+    "description": "<i>Estemmenosuchus</i> était un grand thérapside au corps massif, à l’allure robuste et au port étalé, avec des membres placés de façon assez écartée sous le corps. <br/>Sa tête était large et lourde, munie de plusieurs excroissances osseuses en forme de cornes, situées sur les côtés et au sommet du crâne, qui devaient surtout servir à l’intimidation ou à la reconnaissance entre individus. <br/><br/>Son museau portait des dents différenciées, avec des incisives, des canines marquées et des dents jugales plus petites, ce qui indique une alimentation variée. <br/>Son corps trapu, son cou court et sa mâchoire puissante lui donnaient l’apparence d’un animal solide, capable de mâcher une grande diversité de nourriture. <br/><br/>Son mode de vie était probablement lent et puissant, dans des environnements terrestres humides, où il se déplaçait sans grande vivacité mais avec stabilité. <br/>Bien que son anatomie suggère une consommation de végétaux, il pouvait aussi exploiter des ressources animales plus petites, ce qui en faisait un omnivore bien adapté à un mode de vie opportuniste.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "3 mètres",
+        "hauteur": "65 centimètres"
+      },
+      "poids": "800 kilogrammes"
+    },
+    "decouverte": {
+      "date": "1960",
+      "lieu": "Russie",
+      "coords": [
+        58.5661639283053,
+        39.105416886568385
+      ]
+    },
+    "habitatCoords": [
+      [
+        60.26566886266924,
+        36.22628146128462
+      ],
+      [
+        56.052061691629284,
+        32.00753154472316
+      ],
+      [
+        55.35877909457527,
+        45.982140643333025
+      ],
+      [
+        59.605228777857235,
+        46.685265629426596
+      ],
+      [
+        60.26566886266924,
+        36.22628146128462
+      ]
+    ]
+  },
+  {
+    "nom": "Entelodon",
+    "etymologie": "Dent complète",
+    "image_url": "./assets/images/Entelodon.jpg",
+    "date_ajout": "2026-05-21",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "",
+      "classe": "Mammalia",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "",
+      "ordre": "Artiodactyla",
+      "sous_ordre": "",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "Entelodontidae",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Entelodon",
+      "espèces": "Entelodon antiquus, Entelodon aymardi, Entelodon deguilhemi, Entelodon dirus, Entelodon gobiensis, Entelodon magnus, Entelodon major, Entelodon ronzonii, Entelodon verdeaui "
+    },
+    "regime_alimentaire": "Omnivore",
+    "habitat": "Plaines",
+    "geologie": {
+      "ere": "Cénozoïque",
+      "periode": "Paléogène",
+      "epoque": "Éocène",
+      "stage": "Priabonnien",
+      "apparition": -37.2,
+      "extinction": -28.4
+    },
+    "description": "<i>Entelodon</i> était un grand mammifère artiodactyle au corps massif, au cou court et à la tête très développée. <br/>Son crâne long et large portait un museau puissant, des mâchoires robustes et des dents complètes, adaptées à une alimentation très variée. <br/><br/>Ses membres, assez longs et relativement fins par rapport à son corps, lui donnaient une allure de coureur terrestre plus que de brouteur lourd. <br/>Les os du visage, des joues et de la mâchoire présentaient des excroissances marquées, qui renforçaient l’aspect impressionnant de sa tête. <br/><br/>Son mode de vie était probablement opportuniste, avec un régime omnivore comprenant aussi bien des végétaux que des ressources animales, selon ce qu’il trouvait dans son environnement. <br/>Il vivait sur la terre ferme et devait se déplacer avec agilité malgré sa silhouette imposante, en exploitant des milieux ouverts ou boisés d’Eurasie.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "2-3 mètres",
+        "hauteur": "1.70 mètre"
+      },
+      "poids": "6.0 kilogrammes"
+    },
+    "decouverte": {
+      "date": "1846",
+      "lieu": "Auvergne, France",
+      "coords": [
+        45.498443380401,
+        2.820840263164054
+      ]
+    },
+    "habitatCoords": [
+      [
+        49.30612497680033,
+        -4.92855941171731
+      ],
+      [
+        58.22004274261874,
+        30.85608984777791
+      ],
+      [
+        38.42926617157421,
+        43.590266836517216
+      ],
+      [
+        34.94023457230491,
+        -5.653923923734104
+      ],
+      [
+        49.30612497680033,
+        -4.92855941171731
+      ]
+    ]
+  },
+  {
+    "nom": "Deinosuchus",
+    "etymologie": "Crocodile terrible",
+    "image_url": "./assets/images/Deinosuchus.jpg",
+    "date_ajout": "2026-05-21",
+    "taxonomie": {
+      "règne": "Animalia",
+      "sous_règne": "",
+      "rameau": "",
+      "infra_règne": "",
+      "super_embranchement": "",
+      "embranchement": "Chordata",
+      "sous_embranchement": "Vertebrata",
+      "infra_embranchement": "",
+      "micro_embranchement": "",
+      "super_classe": "Reptilia",
+      "classe": "Archosauria",
+      "sous_classe": "",
+      "division": "",
+      "super_ordre": "",
+      "ordre": "",
+      "sous_ordre": "",
+      "infra_ordre": "",
+      "micro_ordre": "",
+      "super_famille": "",
+      "famille": "",
+      "sous_famille": "",
+      "tribu": "",
+      "sous_tribu": "",
+      "genre": "Deinosuchus",
+      "espèces": "Deinosuchus hatcheri"
+    },
+    "regime_alimentaire": "Carnivore",
+    "habitat": "Rivières et fleuves",
+    "geologie": {
+      "ere": "Mésozoïque",
+      "periode": "Crétacé",
+      "epoque": "Supérieur",
+      "stage": "",
+      "apparition": -82,
+      "extinction": -73
+    },
+    "description": "<i>Deinosuchus</i> était un grand crocodyliforme semi‑aquatique au corps massif, à longue queue et à membres puissants adaptés à la nage et à la marche sur le fond. <br/>Sa tête était énorme, avec une gueule allongée et des mâchoires très fortes, garnies de larges dents robustes conçues pour broyer des proies dures comme les os et les carapaces (morsure estimée à 102750 N). <br/><br/>Son dos et son ventre étaient recouverts de nombreuses plaques osseuses en forme de boucliers, très épaisses et légèrement bosselées, qui formaient une véritable armure naturelle. <br/>Son corps, proche de celui des alligators actuels mais nettement plus imposant, lui donnait une silhouette massive et stable dans l’eau. <br/><br/>Son mode de vie était celui d’un prédateur ambulant des rives et des eaux peu profondes, où il attendait que des animaux viennent s’abreuver ou traverser, puis les saisissait avec une morsure écrasante. <br/>Il pouvait consommer aussi bien de gros poissons, tortues marines et petits reptiles que de grands dinosaures venant à l’eau (d'ou son surnom 'Tueur de dinosaure'), profitant de sa force et de son armure pour s’imposer à la surface comme au‑dessous.<br/><br/> Pouvant vivre au moins 50 ans, <i>Deinosuchus</i> était un des plus grands et des plus redoutables prédateurs de son époque, rivalisant avec les grands dinosaures carnivores pour la suprématie dans les écosystèmes aquatiques du Crétacé supérieur.",
+    "autres_infos": {
+      "taille": {
+        "longueur": "11-15 mètres",
+        "hauteur": ""
+      },
+      "poids": "9 tonnes"
+    },
+    "decouverte": {
+      "date": "1850",
+      "lieu": "Caroline du Nord, États-Unis",
+      "coords": [
+        39.9156805154569,
+        -122.04632743892782
+      ]
+    },
+    "habitatCoords": [
+      [
+        47.215800457288445,
+        -127.76706429722535
+      ],
+      [
+        25.23967903405205,
+        -118.09909573843862
+      ],
+      [
+        26.34752758783157,
+        -77.75729966131958
+      ],
+      [
+        46.49457367172478,
+        -73.27487787497301
+      ],
+      [
+        47.215800457288445,
+        -127.76706429722535
+      ]
+    ]
   }
 ]
