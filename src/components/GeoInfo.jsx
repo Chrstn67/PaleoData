@@ -1,14 +1,48 @@
 'use client';
 
 import PropTypes from 'prop-types';
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { TIMELINE_MIN, TIMELINE_MAX, ERAS, PERIODS, EPOCHS, STAGES, TICK_INTERVALS } from '../data/geoConstants';
 
 import '../styles/GeoInfo.css';
+import rawData from '../data/data';
 
 const TODAY = new Date().getFullYear();
 
-// Ajout de la méthode roundRect si non existante
+// ─────────────────────────────────────────────────────────────────────────────
+// BASE DE DONNÉES ANIMAUX
+// ─────────────────────────────────────────────────────────────────────────────
+const KNOWN_ANIMALS = rawData
+  .filter((a) => a.geologie?.apparition != null)
+  .map((a) => ({
+    nom: a.nom,
+    apparition: a.geologie.apparition,
+    extinction: a.geologie.extinction ?? 0,
+    groupe:
+      a.taxonomie?.ordre?.trim() ||
+      a.taxonomie?.classe?.trim() ||
+      a.taxonomie?.embranchement?.trim() ||
+      a.geologie?.periode ||
+      '',
+  }))
+  .sort((a, b) => a.nom.localeCompare(b.nom, 'fr', { sensitivity: 'base' }));
+
+const COMPARE_PALETTE = [
+  '#E84393',
+  '#FF6B35',
+  '#4ECDC4',
+  '#A855F7',
+  '#F59E0B',
+  '#10B981',
+  '#3B82F6',
+  '#EF4444',
+  '#8B5CF6',
+  '#06B6D4',
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+// roundRect polyfill
+// ─────────────────────────────────────────────────────────────────────────────
 if (!CanvasRenderingContext2D.prototype.roundRect) {
   CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
     if (w < 2 * r) r = w / 2;
@@ -83,6 +117,14 @@ function toMa(val) {
   return typeof val === 'number' ? val : null;
 }
 
+function overlaps(a1, a2, b1, b2) {
+  const aMin = Math.min(a1, a2);
+  const aMax = Math.max(a1, a2);
+  const bMin = Math.min(b1, b2);
+  const bMax = Math.max(b1, b2);
+  return aMax >= bMin && bMax >= aMin;
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // STRATIGRAPHIC LOOKUP
 // ─────────────────────────────────────────────────────────────────────────────
@@ -106,7 +148,7 @@ function findContextAt(ma, isExtinction = false) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CANVAS DRAWING
+// CANVAS DRAWING HELPERS
 // ─────────────────────────────────────────────────────────────────────────────
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
 const ERA_Y = 0,
@@ -150,10 +192,6 @@ function drawBands(ctx, list, W, maToX, yStart, rowH, minWidthForText, fontSize)
       ctx.clip();
       ctx.fillText(item.name, (rx1 + rx2) / 2, yStart + rowH / 2 + fs * 0.35);
       ctx.restore();
-    } else if (bw >= 3 && item.tiny) {
-      const cx = (rx1 + rx2) / 2;
-      ctx.fillStyle = item.fill + 'AA';
-      ctx.fillRect(cx - 1, yStart + 2, 2, rowH - 6);
     }
   });
 }
@@ -191,28 +229,14 @@ function StratColumn({ label, dotClass, dateLabel, context }) {
   );
 }
 
-function getEraDuration(ma) {
-  if (ma == null) return null;
-  const era = ERAS.find((e) => ma >= e.start && ma < e.end);
-  if (!era) return null;
-  return Math.abs(era.start - era.end);
-}
-
 function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition, extinction }) {
   const isAlive = extinctionRaw == null || extinctionRaw === 0;
-
   const duration = apparition != null && extinction != null ? Math.abs(apparition - extinction) : null;
-
-  const eraDur = getEraDuration(apparition ?? extinction);
-  const ratio = duration != null && eraDur ? Math.min(100, (duration / eraDur) * 100) : null;
-
   const appContext = findContextAt(apparition, false);
   const extContext = findContextAt(extinction, true);
-
   const appText = isUnknown(apparitionRaw) ? 'Inconnue' : formatMaFull(apparitionRaw);
   const extText = isUnknown(extinctionRaw) ? 'Inconnue' : formatMaFull(extinctionRaw);
   const durStr = formatDuration(duration);
-
   const hasStrat = apparition != null || extinction != null;
 
   return (
@@ -269,6 +293,282 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// DUAL PANE COMPARE — palette latérale + chips dock
+// ─────────────────────────────────────────────────────────────────────────────
+function DualPaneCompare({
+  compareList,
+  onAdd,
+  onRemove,
+  onReset,
+  onJumpTo,
+  apparition,
+  extinction,
+  currentNom,
+  paletteOpen,
+  onTogglePalette,
+  view,
+}) {
+  const [query, setQuery] = useState('');
+
+  const filtered = useMemo(() => {
+    const q = query.toLowerCase().trim();
+    return KNOWN_ANIMALS.filter(
+      (a) =>
+        a.nom !== currentNom && (q === '' || a.nom.toLowerCase().includes(q) || a.groupe.toLowerCase().includes(q)),
+    );
+  }, [query, currentNom]);
+
+  const contemporaries = useMemo(() => {
+    if (apparition == null && extinction == null) return new Set();
+    const a1 = apparition ?? extinction;
+    const a2 = extinction ?? 0;
+    return new Set(
+      KNOWN_ANIMALS.filter((a) => a.nom !== currentNom && overlaps(a1, a2, a.apparition, a.extinction ?? 0)).map(
+        (a) => a.nom,
+      ),
+    );
+  }, [apparition, extinction, currentNom]);
+
+  const hasItems = compareList.length > 0;
+
+  // Determine which chips are out of view
+  function isOutOfView(animal) {
+    const startMa = toMa(animal.apparition);
+    const endMa = toMa(animal.extinction) ?? 0;
+    if (startMa == null) return false;
+    const barStart = Math.min(startMa, endMa);
+    const barEnd = Math.max(startMa, endMa);
+    return barEnd < view.start || barStart > view.end;
+  }
+
+  return (
+    <div className="dp-wrapper">
+      {/* ── Barre de titre du bloc comparaison ── */}
+      <div className="dp-topbar">
+        <button
+          className={`dp-toggle-btn ${paletteOpen ? 'dp-toggle-btn--open' : ''}`}
+          onClick={onTogglePalette}
+          aria-expanded={paletteOpen}
+          aria-label={paletteOpen ? 'Fermer la palette' : 'Ouvrir la palette de comparaison'}
+        >
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="8" cy="8" r="6" />
+            <circle cx="16" cy="16" r="6" />
+          </svg>
+          {hasItems
+            ? `Comparaison (${compareList.length} animal${compareList.length > 1 ? 'x' : ''})`
+            : "Comparer avec d'autres animaux"}
+          <svg
+            className="dp-toggle-btn__chevron"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+
+        {hasItems && (
+          <button
+            className="dp-reset-btn"
+            onClick={onReset}
+            aria-label="Réinitialiser la comparaison"
+            title="Tout effacer"
+          >
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="1 4 1 10 7 10" />
+              <path d="M3.51 15a9 9 0 1 0 .49-3.85" />
+            </svg>
+            Tout effacer
+          </button>
+        )}
+      </div>
+
+      {/* ── Panneau dual-pane (collapsible) ── */}
+      {paletteOpen && (
+        <div className="dp-panel">
+          {/* Palette gauche */}
+          <div className="dp-sidebar">
+            <div className="dp-sidebar__header">
+              <span className="dp-sidebar__title">Animaux</span>
+              <span className="dp-sidebar__count">
+                {filtered.length} entrée{filtered.length > 1 ? 's' : ''}
+              </span>
+            </div>
+
+            <div className="dp-sidebar__search">
+              <svg
+                className="dp-search-icon"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+              <input
+                className="dp-search-input"
+                type="text"
+                placeholder="Filtrer…"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                autoComplete="off"
+                aria-label="Filtrer les animaux"
+              />
+              {query && (
+                <button className="dp-search-clear" onClick={() => setQuery('')} aria-label="Effacer la recherche">
+                  ×
+                </button>
+              )}
+            </div>
+
+            <div className="dp-animal-list" role="list">
+              {filtered.map((a) => {
+                const active = !!compareList.find((c) => c.nom === a.nom);
+                const color = compareList.find((c) => c.nom === a.nom)?.color ?? null;
+                const isContemp = contemporaries.has(a.nom);
+                return (
+                  <button
+                    key={a.nom}
+                    className={`dp-animal-item${active ? ' dp-animal-item--active' : ''}`}
+                    onClick={() => (active ? onRemove(a.nom) : onAdd(a))}
+                    role="listitem"
+                    aria-pressed={active}
+                    aria-label={`${active ? 'Retirer' : 'Ajouter'} ${a.nom}`}
+                  >
+                    <span className="dp-animal-dot" style={active ? { background: color, borderColor: color } : {}} />
+                    <span className="dp-animal-nom">{a.nom}</span>
+                    {isContemp && !active && (
+                      <span className="dp-animal-contemp" title="Contemporain">
+                        <svg
+                          width="9"
+                          height="9"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12" />
+                        </svg>
+                      </span>
+                    )}
+                    {active && (
+                      <span className="dp-animal-check" aria-hidden="true">
+                        ✓
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+              {filtered.length === 0 && <p className="dp-empty">Aucun résultat</p>}
+            </div>
+          </div>
+
+          {/* Dock chips à droite */}
+          <div className="dp-dock-area">
+            <div className="dp-dock-label">
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+              Superposés sur la frise
+            </div>
+            {hasItems ? (
+              <div className="dp-dock-chips">
+                {compareList.map((animal) => {
+                  const outOfView = isOutOfView(animal);
+                  return (
+                    <div
+                      key={animal.nom}
+                      className="dp-chip"
+                      style={{
+                        '--chip-color': animal.color,
+                        borderColor: animal.color + '99',
+                        background: animal.color + '14',
+                      }}
+                    >
+                      <span className="dp-chip__dot" style={{ background: animal.color }} />
+                      <span className="dp-chip__nom">{animal.nom}</span>
+                      <span className="dp-chip__range">
+                        {formatMaFull(animal.apparition)} →{' '}
+                        {animal.extinction === 0 ? 'Auj.' : formatMaFull(animal.extinction)}
+                      </span>
+                      {outOfView && (
+                        <button
+                          className="dp-chip__jump"
+                          onClick={() => onJumpTo(animal)}
+                          title={`Centrer la frise sur ${animal.nom}`}
+                          aria-label={`Centrer la vue sur ${animal.nom}`}
+                        >
+                          ⤦ voir
+                        </button>
+                      )}
+                      <button
+                        className="dp-chip__remove"
+                        onClick={() => onRemove(animal.nom)}
+                        aria-label={`Retirer ${animal.nom}`}
+                      >
+                        ×
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <p className="dp-dock-hint">Cliquez sur un animal dans la palette pour le superposer à la frise.</p>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // VIEW HELPERS
 // ─────────────────────────────────────────────────────────────────────────────
 function computeInitialView(apparition, extinction) {
@@ -285,6 +585,25 @@ function computeInitialView(apparition, extinction) {
   };
 }
 
+/**
+ * Compute a view that centers on a compare animal, keeping similar span scale
+ * as the current view but ensuring the animal's bar is fully visible.
+ */
+function computeAnimalView(animal, currentSpan) {
+  const startMa = toMa(animal.apparition);
+  const endMa = toMa(animal.extinction) ?? 0;
+  const a = startMa ?? endMa ?? -300;
+  const e = endMa;
+  const mid = (a + e) / 2;
+  const dur = Math.abs(a - e);
+  // Keep the current zoom level unless the animal range is larger
+  const margin = Math.max(dur * 2, currentSpan * 0.4, 20);
+  return {
+    start: Math.max(TIMELINE_MIN, mid - margin),
+    end: Math.min(TIMELINE_MAX, mid + margin * 0.6),
+  };
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // COMPOSANT PRINCIPAL
 // ─────────────────────────────────────────────────────────────────────────────
@@ -293,6 +612,11 @@ const GeoInfo = ({ geologie, animalNom }) => {
   const wrapperRef = useRef(null);
   const dragRef = useRef({ active: false, lastX: 0 });
   const [tooltip, setTooltip] = useState(null);
+  // arrows: array of { nom, color, direction: 'left'|'right', apparition, extinction }
+  const [outOfViewArrows, setOutOfViewArrows] = useState([]);
+  const [compareList, setCompareList] = useState([]);
+  const [paletteOpen, setPaletteOpen] = useState(false);
+  const colorIndexRef = useRef(0);
 
   const apparitionRaw = geologie?.apparition ?? null;
   const extinctionRaw = geologie?.extinction ?? null;
@@ -305,13 +629,54 @@ const GeoInfo = ({ geologie, animalNom }) => {
     setView(computeInitialView(apparitionRaw, extinctionRaw));
   }, [String(apparitionRaw), String(extinctionRaw)]);
 
+  // Reset color index when all animals are removed
+  useEffect(() => {
+    if (compareList.length === 0) colorIndexRef.current = 0;
+  }, [compareList.length]);
+
+  const handleAddCompare = useCallback((animal) => {
+    setCompareList((prev) => {
+      if (prev.find((a) => a.nom === animal.nom)) return prev;
+      const color = COMPARE_PALETTE[colorIndexRef.current % COMPARE_PALETTE.length];
+      colorIndexRef.current++;
+      return [...prev, { ...animal, color }];
+    });
+  }, []);
+
+  const handleRemoveCompare = useCallback((nom) => {
+    setCompareList((prev) => prev.filter((a) => a.nom !== nom));
+  }, []);
+
+  const handleResetCompare = useCallback(() => {
+    setCompareList([]);
+    colorIndexRef.current = 0;
+  }, []);
+
+  /**
+   * Jump the view to center on a compare animal
+   */
+  const handleJumpToAnimal = useCallback(
+    (animal) => {
+      const span = view.end - view.start;
+      setView(computeAnimalView(animal, span));
+    },
+    [view],
+  );
+
+  // ── CANVAS DRAW ──────────────────────────────────────────────────────────
   useEffect(() => {
     const canvas = canvasRef.current;
     const wrapper = wrapperRef.current;
     if (!canvas || !wrapper) return;
 
     const W = wrapper.offsetWidth || 600;
-    const H = 220;
+    const compareBarsCount = compareList.length;
+    const COMPARE_BAR_H = 18;
+    const COMPARE_SECTION_H = compareBarsCount > 0 ? compareBarsCount * (COMPARE_BAR_H + 4) + 28 : 0;
+    const BAR_Y = AXIS_Y + 18;
+    const BAR_H = 26;
+    const H = BAR_Y + BAR_H + 8 + COMPARE_SECTION_H + 8;
+
     const dpr = window.devicePixelRatio || 1;
     canvas.width = W * dpr;
     canvas.height = H * dpr;
@@ -331,6 +696,7 @@ const GeoInfo = ({ geologie, animalNom }) => {
     drawBands(ctx, EPOCHS, W, maToX, EPO_Y, EPO_H, 14, 10);
     drawBands(ctx, STAGES, W, maToX, STA_Y, STA_H, 12, 9);
 
+    // Axis line
     ctx.strokeStyle = 'rgba(30,30,30,0.25)';
     ctx.lineWidth = 1;
     ctx.beginPath();
@@ -338,26 +704,26 @@ const GeoInfo = ({ geologie, animalNom }) => {
     ctx.lineTo(W, AXIS_Y);
     ctx.stroke();
 
+    // Tick marks
     const tickInterval = TICK_INTERVALS.find((t) => span / t <= 9) ?? 500;
     const startTick = Math.ceil(vs / tickInterval) * tickInterval;
     for (let ma = startTick; ma <= ve; ma += tickInterval) {
       const maNorm = Math.round(ma / tickInterval) * tickInterval;
       const x = maToX(maNorm);
       if (x < 2 || x > W - 2) continue;
-
       ctx.strokeStyle = 'rgba(30,30,30,0.1)';
       ctx.lineWidth = 0.75;
       ctx.beginPath();
       ctx.moveTo(x, AXIS_Y);
       ctx.lineTo(x, H);
       ctx.stroke();
-
       ctx.fillStyle = '#4A3D2A';
       ctx.font = `500 12px ${FONT}`;
       ctx.textAlign = 'center';
       ctx.fillText(formatTickMa(maNorm), x, AXIS_Y + 14);
     }
 
+    // Now line
     const nowX = maToX(0);
     if (nowX >= 0 && nowX <= W) {
       ctx.strokeStyle = '#C0392B';
@@ -369,11 +735,10 @@ const GeoInfo = ({ geologie, animalNom }) => {
       ctx.fillStyle = '#C0392B';
       ctx.font = `700 11px ${FONT}`;
       ctx.textAlign = 'center';
-      ctx.fillText(TODAY, nowX, H - 3);
+      ctx.fillText(TODAY, nowX, AXIS_Y + 14);
     }
 
-    const BAR_Y = AXIS_Y + 18,
-      BAR_H = 26;
+    // Main animal bar
     if (apparition != null || extinction != null) {
       const barStartMa = apparition ?? extinction;
       const barEndMa = extinction ?? 0;
@@ -384,6 +749,11 @@ const GeoInfo = ({ geologie, animalNom }) => {
         const rbx1 = Math.max(2, bx1);
         const rbx2 = Math.min(W - 2, bx2);
         const barW = Math.max(rbx2 - rbx1, 10);
+
+        // Visible center: clamp both endpoints into [0, W], find midpoint of visible segment
+        const visibleLeft = Math.max(0, bx1);
+        const visibleRight = Math.min(W, bx2);
+        const visibleCenterX = (visibleLeft + visibleRight) / 2;
 
         const midMa = (barStartMa + barEndMa) / 2;
         const matchEra = ERAS.find((er) => midMa >= er.start && midMa < er.end);
@@ -403,7 +773,8 @@ const GeoInfo = ({ geologie, animalNom }) => {
           ctx.beginPath();
           ctx.rect(rbx1 + 4, BAR_Y, barW - 8, BAR_H);
           ctx.clip();
-          ctx.fillText(animalNom || '', rbx1 + barW / 2, BAR_Y + BAR_H / 2 + 4);
+          // Use visible center so text stays on screen when bar extends beyond edges
+          ctx.fillText(animalNom || '', visibleCenterX, BAR_Y + BAR_H / 2 + 4);
           ctx.restore();
         }
 
@@ -418,7 +789,7 @@ const GeoInfo = ({ geologie, animalNom }) => {
           ctx.stroke();
         });
 
-        const midBarX = rbx1 + barW / 2;
+        const midBarX = visibleCenterX;
         ctx.strokeStyle = barFill + '66';
         ctx.lineWidth = 1;
         ctx.setLineDash([2, 3]);
@@ -429,8 +800,136 @@ const GeoInfo = ({ geologie, animalNom }) => {
         ctx.setLineDash([]);
       }
     }
-  }, [view, apparition, extinction, animalNom]);
 
+    // ── Compare bars ────────────────────────────────────────────────────────
+    const newArrows = [];
+
+    if (compareBarsCount > 0) {
+      const SECTION_TOP = BAR_Y + BAR_H + 12;
+
+      // Section label
+      ctx.fillStyle = 'rgba(74,46,26,0.45)';
+      ctx.font = `600 9px ${FONT}`;
+      ctx.textAlign = 'left';
+      ctx.fillText('COMPARAISON', 8, SECTION_TOP + 9);
+
+      compareList.forEach((animal, i) => {
+        const rowY = SECTION_TOP + 16 + i * (COMPARE_BAR_H + 4);
+        const startMa = animal.apparition;
+        const endMa = animal.extinction ?? 0;
+        const bx1 = maToX(startMa);
+        const bx2 = maToX(endMa);
+
+        // Overlap highlight
+        if (apparition != null || extinction != null) {
+          const mainStart = apparition ?? extinction;
+          const mainEnd = extinction ?? 0;
+          const overlapStart = Math.max(Math.min(startMa, endMa), Math.min(mainStart, mainEnd));
+          const overlapEnd = Math.min(Math.max(startMa, endMa), Math.max(mainStart, mainEnd));
+          if (overlapEnd > overlapStart) {
+            const ox1 = Math.max(0, maToX(overlapStart));
+            const ox2 = Math.min(W, maToX(overlapEnd));
+            if (ox2 > ox1) {
+              ctx.fillStyle = animal.color + '15';
+              ctx.fillRect(ox1, BAR_Y - 2, ox2 - ox1, BAR_H + COMPARE_BAR_H + 6 + i * (COMPARE_BAR_H + 4));
+            }
+          }
+        }
+
+        if (bx2 < 0 || bx1 > W) {
+          // Register for React overlay arrow instead of drawing a static triangle
+          const direction = bx1 > W ? 'right' : 'left';
+          newArrows.push({
+            nom: animal.nom,
+            color: animal.color,
+            direction,
+            apparition: animal.apparition,
+            extinction: animal.extinction,
+          });
+          return;
+        }
+
+        const rbx1 = Math.max(2, bx1);
+        const rbx2 = Math.min(W - 2, bx2);
+        const barW = Math.max(rbx2 - rbx1, 6);
+
+        // Visible center for compare bar label
+        const visLeft = Math.max(0, bx1);
+        const visRight = Math.min(W, bx2);
+        const visCenterX = (visLeft + visRight) / 2;
+
+        // Bar bg
+        ctx.fillStyle = animal.color + '28';
+        ctx.beginPath();
+        ctx.roundRect(rbx1, rowY, barW, COMPARE_BAR_H, 4);
+        ctx.fill();
+
+        // Bar stroke
+        ctx.strokeStyle = animal.color + 'BB';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.roundRect(rbx1, rowY, barW, COMPARE_BAR_H, 4);
+        ctx.stroke();
+
+        // Centered label above the bar
+        if (barW > 14) {
+          const fs = 9;
+          ctx.font = `700 ${fs}px ${FONT}`;
+          const textW = ctx.measureText(animal.nom).width;
+          const padH = 3,
+            padV = 2;
+          const flagBgW = textW + padH * 2;
+          const flagBgH = fs + padV * 2;
+
+          // Center the flag on visible center, clamped to canvas
+          const flagX = Math.max(2, Math.min(W - flagBgW - 2, visCenterX - flagBgW / 2));
+          const flagY = rowY - 2;
+
+          // Flag background pill
+          ctx.fillStyle = animal.color + 'EE';
+          ctx.beginPath();
+          ctx.roundRect(flagX, flagY - flagBgH, flagBgW, flagBgH, 3);
+          ctx.fill();
+
+          // Flag text — centered in the pill
+          ctx.fillStyle = '#FFFFFF';
+          ctx.textAlign = 'center';
+          ctx.save();
+          ctx.beginPath();
+          ctx.rect(0, 0, W, H);
+          ctx.clip();
+          ctx.fillText(animal.nom, flagX + flagBgW / 2, flagY - padV);
+          ctx.restore();
+
+          // Connector line from pill center to bar
+          ctx.strokeStyle = animal.color + '66';
+          ctx.lineWidth = 0.75;
+          ctx.setLineDash([2, 2]);
+          ctx.beginPath();
+          ctx.moveTo(visCenterX, flagY);
+          ctx.lineTo(visCenterX, rowY);
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+
+        // Endpoints
+        [rbx1, rbx1 + barW].forEach((px) => {
+          if (px < 2 || px > W - 2) return;
+          ctx.beginPath();
+          ctx.arc(px, rowY + COMPARE_BAR_H / 2, 3, 0, Math.PI * 2);
+          ctx.fillStyle = animal.color;
+          ctx.fill();
+          ctx.strokeStyle = '#FFFFFF';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        });
+      });
+    }
+
+    setOutOfViewArrows(newArrows);
+  }, [view, apparition, extinction, animalNom, compareList]);
+
+  // ── EVENT HANDLERS ───────────────────────────────────────────────────────
   const handleMouseMoveCanvas = useCallback(
     (e) => {
       if (dragRef.current.active) return;
@@ -523,6 +1022,10 @@ const GeoInfo = ({ geologie, animalNom }) => {
     );
   }
 
+  // Group arrows by side for layered rendering
+  const leftArrows = outOfViewArrows.filter((a) => a.direction === 'left');
+  const rightArrows = outOfViewArrows.filter((a) => a.direction === 'right');
+
   return (
     <section className="animal-geologie geo-timeline-mode">
       <div className="geo-tl-header">
@@ -568,6 +1071,59 @@ const GeoInfo = ({ geologie, animalNom }) => {
         }}
       >
         <canvas ref={canvasRef} />
+
+        {/* ── Left out-of-view arrows ── */}
+        {leftArrows.length > 0 && (
+          <div className="geo-tl-arrow geo-tl-arrow--left" style={{ top: '60%' }}>
+            {leftArrows.map((a, idx) => (
+              <button
+                key={a.nom}
+                className="geo-tl-arrow__pip"
+                style={{ background: a.color, animationDelay: `${idx * 0.05}s` }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleJumpToAnimal(a);
+                }}
+                title={`Aller à ${a.nom}`}
+                aria-label={`Centrer la vue sur ${a.nom}`}
+              >
+                ‹
+              </button>
+            ))}
+            {leftArrows.map((a) => (
+              <span key={a.nom + '-lbl'} className="geo-tl-arrow__label" style={{ color: a.color }}>
+                {a.nom}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* ── Right out-of-view arrows ── */}
+        {rightArrows.length > 0 && (
+          <div className="geo-tl-arrow geo-tl-arrow--right" style={{ top: '60%' }}>
+            {rightArrows.map((a, idx) => (
+              <button
+                key={a.nom}
+                className="geo-tl-arrow__pip"
+                style={{ background: a.color, animationDelay: `${idx * 0.05}s` }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleJumpToAnimal(a);
+                }}
+                title={`Aller à ${a.nom}`}
+                aria-label={`Centrer la vue sur ${a.nom}`}
+              >
+                ›
+              </button>
+            ))}
+            {rightArrows.map((a) => (
+              <span key={a.nom + '-lbl'} className="geo-tl-arrow__label" style={{ color: a.color }}>
+                {a.nom}
+              </span>
+            ))}
+          </div>
+        )}
+
         {tooltip && (
           <div className="geo-tl-tooltip" style={{ left: tooltip.x, top: tooltip.y }}>
             {tooltip.name}
@@ -607,6 +1163,21 @@ const GeoInfo = ({ geologie, animalNom }) => {
           Récent →
         </button>
       </div>
+
+      {/* DUAL PANE COMPARE */}
+      <DualPaneCompare
+        compareList={compareList}
+        onAdd={handleAddCompare}
+        onRemove={handleRemoveCompare}
+        onReset={handleResetCompare}
+        onJumpTo={handleJumpToAnimal}
+        apparition={apparition}
+        extinction={extinction}
+        currentNom={animalNom}
+        paletteOpen={paletteOpen}
+        onTogglePalette={() => setPaletteOpen((o) => !o)}
+        view={view}
+      />
 
       <GeoCard
         geologie={geologie}

@@ -5608,8 +5608,8 @@ const data = [
       periode: 'Crétacé',
       epoque: 'Inférieur',
       stage: 'Aptien',
-      apparition: -115,
-      extinction: -116,
+      apparition: -116,
+      extinction: -115,
     },
     description:
       '<i>Qijianglong</i> était un sauropode herbivore remarquable par son cou extrêmement allongé, qui représentait près de la moitié de la longueur totale de son corps.<br/><br/>Son cou était constitué de vertèbres particulièrement longues, remplies d’air, ce qui le rendait léger malgré sa taille imposante. Ces vertèbres présentaient aussi des épines neurales larges et des articulations imbriquées, lui permettant de soulever ou d’abaisser son cou presque comme un bras de grue, mais réduisant les mouvements latéraux.<br/><br/>Son corps était porté par quatre robustes membres en forme de piliers, typiques des grands sauropodes, et il possédait probablement une longue queue assurant l’équilibre du corps.<br/><br/><i>Qijianglong</i> se nourrissait de végétaux situés à différentes hauteurs, profitant de la portée offerte par son long cou pour accéder à des feuillages hors d’atteinte d’autres animaux. Ce mode de vie paisible impliquait des déplacements lents à la recherche de nourriture dans les forêts du Jurassique.<br/><br/>Grâce à ses multiples adaptations — légèreté du cou, portée d’alimentation, robustesse du squelette — il occupait une niche écologique très spécialisée parmi les dinosaures à long cou de son environnement.',
