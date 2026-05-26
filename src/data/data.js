@@ -3102,7 +3102,7 @@ const data = [
   {
     nom: 'Argentavis',
     etymologie: 'Oiseau argentin',
-    image_url: './assets/images/Argentavis.jpg',
+    image_url: './assets/images/Argentavis.avif',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
@@ -3408,7 +3408,7 @@ const data = [
     nom: 'Arsinoitherium',
     etymologie:
       "Doit son nom à Arsinoé II, une reine lagide d'Égypte dont le palais se situait à proximité du lieu de la découverte de Arsinoitherium zitteli.",
-    image_url: './assets/images/Arsinoitherium.jpg',
+    image_url: './assets/images/Arsinoitherium.webp',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',
