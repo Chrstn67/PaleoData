@@ -407,6 +407,67 @@
   transform: rotate(180deg);
 }
 
+/* ── Bouton contemporains ── */
+.dp-contemp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px 7px 10px;
+  background: linear-gradient(135deg, #fff8e8 0%, #fef3d0 100%);
+  border: 1.5px solid #e8c84a;
+  border-radius: 10px;
+  color: #7a5c00;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s,
+    box-shadow 0.15s,
+    transform 0.12s;
+  box-shadow: 0 1px 3px rgba(232, 200, 74, 0.25);
+  letter-spacing: 0.01em;
+}
+
+.dp-contemp-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #fef3d0 0%, #fce87a 100%);
+  border-color: #c8a800;
+  color: #5a4400;
+  box-shadow: 0 2px 8px rgba(200, 168, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.dp-contemp-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(200, 168, 0, 0.2);
+}
+
+.dp-contemp-btn--done {
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border-color: #6abf69;
+  color: #2e6b30;
+  cursor: default;
+  box-shadow: 0 1px 3px rgba(106, 191, 105, 0.2);
+}
+
+.dp-contemp-btn--done:hover {
+  transform: none;
+}
+
+.dp-contemp-btn__label {
+  line-height: 1;
+}
+
+.dp-contemp-btn__check {
+  font-size: 0.7rem;
+  color: #2e6b30;
+  font-weight: 800;
+}
+
 .dp-reset-btn {
   display: flex;
   align-items: center;
@@ -545,6 +606,49 @@
   color: #4a2e1a;
 }
 
+/* ── Barre raccourci contemporains dans la sidebar ── */
+.dp-sidebar__contemp-bar {
+  padding: 5px 8px;
+  border-bottom: 1px solid rgba(74, 46, 26, 0.08);
+  background: #fffdf5;
+}
+
+.dp-sidebar__contemp-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 4px 8px;
+  background: linear-gradient(135deg, #fff8e8 0%, #fef3d0 100%);
+  border: 1px solid #e8c84a;
+  border-radius: 6px;
+  color: #7a5c00;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dp-sidebar__contemp-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #fef3d0 0%, #fce87a 100%);
+  border-color: #c8a800;
+  color: #5a4400;
+}
+
+.dp-sidebar__contemp-btn--done {
+  background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+  border-color: #6abf69;
+  color: #2e6b30;
+  cursor: default;
+}
+
 .dp-animal-list {
   flex: 1;
   overflow-y: auto;
@@ -593,6 +697,15 @@
   background: rgba(26, 107, 107, 0.1);
 }
 
+/* Contemporain non sélectionné : léger fond doré */
+.dp-animal-item--contemp {
+  background: rgba(232, 200, 74, 0.06);
+}
+
+.dp-animal-item--contemp:hover {
+  background: rgba(232, 200, 74, 0.14);
+}
+
 .dp-animal-dot {
   width: 8px;
   height: 8px;
@@ -626,7 +739,7 @@
 }
 
 .dp-animal-contemp {
-  color: #e09040;
+  color: #c8a000;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -655,7 +768,6 @@
   flex-direction: column;
   gap: 6px;
   min-width: 0;
-  /* Limite la hauteur sur desktop — scroll interne si trop d'animaux */
   max-height: 260px;
   overflow: hidden;
 }
@@ -703,7 +815,6 @@
   border: 1px solid;
   border-left: 3px solid var(--chip-color, #ccc);
   animation: chipIn 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
-  min-height: 0;
 }
 
 @keyframes chipIn {
@@ -731,6 +842,13 @@
   flex-shrink: 0;
 }
 
+.dp-chip__contemp-badge {
+  color: #c8a000;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .dp-chip__range {
   font-size: 0.62rem;
   color: #8b7355;
@@ -741,7 +859,6 @@
   white-space: nowrap;
 }
 
-/* ── Chip "jump-to" button ── */
 .dp-chip__jump {
   background: none;
   border: none;
@@ -1179,6 +1296,12 @@
 
   .dp-topbar {
     flex-wrap: wrap;
+  }
+
+  .dp-contemp-btn {
+    order: 3;
+    flex: 1 1 auto;
+    justify-content: center;
   }
 
   .dp-panel {

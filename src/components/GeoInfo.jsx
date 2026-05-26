@@ -1,5 +1,3 @@
-'use client';
-
 import PropTypes from 'prop-types';
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { TIMELINE_MIN, TIMELINE_MAX, ERAS, PERIODS, EPOCHS, STAGES, TICK_INTERVALS } from '../data/geoConstants';
@@ -38,6 +36,16 @@ const COMPARE_PALETTE = [
   '#EF4444',
   '#8B5CF6',
   '#06B6D4',
+  '#FFB800',
+  '#FF3366',
+  '#00CED1',
+  '#FF8C42',
+  '#7B2CBF',
+  '#2D6A4F',
+  '#E63946',
+  '#1D3557',
+  '#F4A261',
+  '#9C89B8',
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -117,12 +125,52 @@ function toMa(val) {
   return typeof val === 'number' ? val : null;
 }
 
+// Chevauchement strict : deux intervalles qui se touchent uniquement à un point
+// (extinction de A == apparition de B) ne sont PAS contemporains.
 function overlaps(a1, a2, b1, b2) {
   const aMin = Math.min(a1, a2);
   const aMax = Math.max(a1, a2);
   const bMin = Math.min(b1, b2);
   const bMax = Math.max(b1, b2);
-  return aMax >= bMin && bMax >= aMin;
+  return aMax > bMin && bMax > aMin;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// LANE ASSIGNMENT
+// ─────────────────────────────────────────────────────────────────────────────
+function assignCompareLanes(compareList) {
+  if (!compareList.length) return { laned: [], laneCount: 0 };
+
+  const items = compareList
+    .map((a) => {
+      const startMa = toMa(a.apparition);
+      const endMa = toMa(a.extinction) ?? 0;
+      const s = startMa ?? endMa ?? 0;
+      const e = endMa;
+      return { ...a, _startMa: Math.min(s, e), _endMa: Math.max(s, e) };
+    })
+    .sort((a, b) => a._startMa - b._startMa);
+
+  const laneEnd = [];
+  const laned = items.map((item) => {
+    let assigned = false;
+    let lane = 0;
+    for (let l = 0; l < laneEnd.length; l++) {
+      if (item._startMa > laneEnd[l] + 0.001) {
+        lane = l;
+        laneEnd[l] = item._endMa;
+        assigned = true;
+        break;
+      }
+    }
+    if (!assigned) {
+      lane = laneEnd.length;
+      laneEnd.push(item._endMa);
+    }
+    return { ...item, lane };
+  });
+
+  return { laned, laneCount: laneEnd.length };
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -160,6 +208,9 @@ const EPO_Y = 72,
 const STA_Y = 98,
   STA_H = 22;
 const AXIS_Y = 120;
+
+const COMPARE_LANE_H = 22;
+const COMPARE_LANE_GAP = 3;
 
 function drawBands(ctx, list, W, maToX, yStart, rowH, minWidthForText, fontSize) {
   list.forEach((item) => {
@@ -293,13 +344,14 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// DUAL PANE COMPARE — palette latérale + chips dock
+// DUAL PANE COMPARE
 // ─────────────────────────────────────────────────────────────────────────────
 function DualPaneCompare({
   compareList,
   onAdd,
   onRemove,
   onReset,
+  onAddAll,
   onJumpTo,
   apparition,
   extinction,
@@ -329,9 +381,14 @@ function DualPaneCompare({
     );
   }, [apparition, extinction, currentNom]);
 
+  const unselectedContemporaries = useMemo(() => {
+    return KNOWN_ANIMALS.filter((a) => contemporaries.has(a.nom) && !compareList.find((c) => c.nom === a.nom));
+  }, [contemporaries, compareList]);
+
+  const allContemporariesSelected = contemporaries.size > 0 && unselectedContemporaries.length === 0;
+
   const hasItems = compareList.length > 0;
 
-  // Determine which chips are out of view
   function isOutOfView(animal) {
     const startMa = toMa(animal.apparition);
     const endMa = toMa(animal.extinction) ?? 0;
@@ -341,9 +398,26 @@ function DualPaneCompare({
     return barEnd < view.start || barStart > view.end;
   }
 
+  // Icône soleil / contemporains
+  const IconSun = ({ size = 11 }) => (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  );
+
   return (
     <div className="dp-wrapper">
-      {/* ── Barre de titre du bloc comparaison ── */}
       <div className="dp-topbar">
         <button
           className={`dp-toggle-btn ${paletteOpen ? 'dp-toggle-btn--open' : ''}`}
@@ -366,7 +440,7 @@ function DualPaneCompare({
             <circle cx="16" cy="16" r="6" />
           </svg>
           {hasItems
-            ? `Comparaison (${compareList.length} animal${compareList.length > 1 ? 'x' : ''})`
+            ? `Comparaison (${compareList.length} ${compareList.length > 1 ? 'animaux' : 'animal'})`
             : "Comparer avec d'autres animaux"}
           <svg
             className="dp-toggle-btn__chevron"
@@ -383,6 +457,29 @@ function DualPaneCompare({
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </button>
+
+        {/* ── Bouton contemporains ── */}
+        {contemporaries.size > 0 && (
+          <button
+            className={`dp-contemp-btn${allContemporariesSelected ? ' dp-contemp-btn--done' : ''}`}
+            onClick={() => !allContemporariesSelected && onAddAll(unselectedContemporaries)}
+            disabled={allContemporariesSelected}
+            title={
+              allContemporariesSelected
+                ? 'Tous les contemporains sont sélectionnés'
+                : `Ajouter les ${unselectedContemporaries.length} contemporain${unselectedContemporaries.length > 1 ? 's' : ''} restant${unselectedContemporaries.length > 1 ? 's' : ''}`
+            }
+            aria-label="Sélectionner tous les contemporains"
+          >
+            <IconSun size={12} />
+            <span className="dp-contemp-btn__label">
+              {allContemporariesSelected
+                ? `${contemporaries.size} contemporain${contemporaries.size > 1 ? 's' : ''}`
+                : `${unselectedContemporaries.length} contemporain${unselectedContemporaries.length > 1 ? 's' : ''}`}
+            </span>
+            {allContemporariesSelected && <span className="dp-contemp-btn__check">✓</span>}
+          </button>
+        )}
 
         {hasItems && (
           <button
@@ -410,10 +507,8 @@ function DualPaneCompare({
         )}
       </div>
 
-      {/* ── Panneau dual-pane (collapsible) ── */}
       {paletteOpen && (
         <div className="dp-panel">
-          {/* Palette gauche */}
           <div className="dp-sidebar">
             <div className="dp-sidebar__header">
               <span className="dp-sidebar__title">Animaux</span>
@@ -454,6 +549,35 @@ function DualPaneCompare({
               )}
             </div>
 
+            {/* ── Raccourci contemporains dans la sidebar ── */}
+            {contemporaries.size > 0 && (
+              <div className="dp-sidebar__contemp-bar">
+                <button
+                  className={`dp-sidebar__contemp-btn${allContemporariesSelected ? ' dp-sidebar__contemp-btn--done' : ''}`}
+                  onClick={() => !allContemporariesSelected && onAddAll(unselectedContemporaries)}
+                  disabled={allContemporariesSelected}
+                >
+                  <svg
+                    width="9"
+                    height="9"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                  </svg>
+                  {allContemporariesSelected
+                    ? 'Tous ajoutés'
+                    : `+ ${unselectedContemporaries.length} contemporain${unselectedContemporaries.length > 1 ? 's' : ''}`}
+                </button>
+              </div>
+            )}
+
             <div className="dp-animal-list" role="list">
               {filtered.map((a) => {
                 const active = !!compareList.find((c) => c.nom === a.nom);
@@ -462,7 +586,7 @@ function DualPaneCompare({
                 return (
                   <button
                     key={a.nom}
-                    className={`dp-animal-item${active ? ' dp-animal-item--active' : ''}`}
+                    className={`dp-animal-item${active ? ' dp-animal-item--active' : ''}${isContemp && !active ? ' dp-animal-item--contemp' : ''}`}
                     onClick={() => (active ? onRemove(a.nom) : onAdd(a))}
                     role="listitem"
                     aria-pressed={active}
@@ -483,7 +607,8 @@ function DualPaneCompare({
                           strokeLinejoin="round"
                           aria-hidden="true"
                         >
-                          <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12" />
+                          <circle cx="12" cy="12" r="4" />
+                          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
                         </svg>
                       </span>
                     )}
@@ -499,7 +624,6 @@ function DualPaneCompare({
             </div>
           </div>
 
-          {/* Dock chips à droite */}
           <div className="dp-dock-area">
             <div className="dp-dock-label">
               <svg
@@ -521,10 +645,11 @@ function DualPaneCompare({
               <div className="dp-dock-chips">
                 {compareList.map((animal) => {
                   const outOfView = isOutOfView(animal);
+                  const isContemp = contemporaries.has(animal.nom);
                   return (
                     <div
                       key={animal.nom}
-                      className="dp-chip"
+                      className={`dp-chip${isContemp ? ' dp-chip--contemp' : ''}`}
                       style={{
                         '--chip-color': animal.color,
                         borderColor: animal.color + '99',
@@ -533,6 +658,24 @@ function DualPaneCompare({
                     >
                       <span className="dp-chip__dot" style={{ background: animal.color }} />
                       <span className="dp-chip__nom">{animal.nom}</span>
+                      {isContemp && (
+                        <span className="dp-chip__contemp-badge" title="Contemporain">
+                          <svg
+                            width="8"
+                            height="8"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
+                          >
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                          </svg>
+                        </span>
+                      )}
                       <span className="dp-chip__range">
                         {formatMaFull(animal.apparition)} →{' '}
                         {animal.extinction === 0 ? 'Auj.' : formatMaFull(animal.extinction)}
@@ -585,10 +728,6 @@ function computeInitialView(apparition, extinction) {
   };
 }
 
-/**
- * Compute a view that centers on a compare animal, keeping similar span scale
- * as the current view but ensuring the animal's bar is fully visible.
- */
 function computeAnimalView(animal, currentSpan) {
   const startMa = toMa(animal.apparition);
   const endMa = toMa(animal.extinction) ?? 0;
@@ -596,7 +735,6 @@ function computeAnimalView(animal, currentSpan) {
   const e = endMa;
   const mid = (a + e) / 2;
   const dur = Math.abs(a - e);
-  // Keep the current zoom level unless the animal range is larger
   const margin = Math.max(dur * 2, currentSpan * 0.4, 20);
   return {
     start: Math.max(TIMELINE_MIN, mid - margin),
@@ -612,7 +750,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
   const wrapperRef = useRef(null);
   const dragRef = useRef({ active: false, lastX: 0 });
   const [tooltip, setTooltip] = useState(null);
-  // arrows: array of { nom, color, direction: 'left'|'right', apparition, extinction }
   const [outOfViewArrows, setOutOfViewArrows] = useState([]);
   const [compareList, setCompareList] = useState([]);
   const [paletteOpen, setPaletteOpen] = useState(false);
@@ -629,7 +766,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     setView(computeInitialView(apparitionRaw, extinctionRaw));
   }, [String(apparitionRaw), String(extinctionRaw)]);
 
-  // Reset color index when all animals are removed
   useEffect(() => {
     if (compareList.length === 0) colorIndexRef.current = 0;
   }, [compareList.length]);
@@ -643,6 +779,19 @@ const GeoInfo = ({ geologie, animalNom }) => {
     });
   }, []);
 
+  const handleAddAllContemporaries = useCallback((animals) => {
+    setCompareList((prev) => {
+      const toAdd = animals.filter((a) => !prev.find((p) => p.nom === a.nom));
+      if (toAdd.length === 0) return prev;
+      const newItems = toAdd.map((a) => {
+        const color = COMPARE_PALETTE[colorIndexRef.current % COMPARE_PALETTE.length];
+        colorIndexRef.current++;
+        return { ...a, color };
+      });
+      return [...prev, ...newItems];
+    });
+  }, []);
+
   const handleRemoveCompare = useCallback((nom) => {
     setCompareList((prev) => prev.filter((a) => a.nom !== nom));
   }, []);
@@ -652,9 +801,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     colorIndexRef.current = 0;
   }, []);
 
-  /**
-   * Jump the view to center on a compare animal
-   */
   const handleJumpToAnimal = useCallback(
     (animal) => {
       const span = view.end - view.start;
@@ -670,9 +816,13 @@ const GeoInfo = ({ geologie, animalNom }) => {
     if (!canvas || !wrapper) return;
 
     const W = wrapper.offsetWidth || 600;
-    const compareBarsCount = compareList.length;
-    const COMPARE_BAR_H = 18;
-    const COMPARE_SECTION_H = compareBarsCount > 0 ? compareBarsCount * (COMPARE_BAR_H + 4) + 28 : 0;
+
+    const { laned: lanedCompare, laneCount } = assignCompareLanes(compareList);
+
+    const COMPARE_SECTION_LABEL_H = laneCount > 0 ? 18 : 0;
+    const COMPARE_SECTION_H =
+      laneCount > 0 ? COMPARE_SECTION_LABEL_H + laneCount * (COMPARE_LANE_H + COMPARE_LANE_GAP) + 8 : 0;
+
     const BAR_Y = AXIS_Y + 18;
     const BAR_H = 26;
     const H = BAR_Y + BAR_H + 8 + COMPARE_SECTION_H + 8;
@@ -696,7 +846,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     drawBands(ctx, EPOCHS, W, maToX, EPO_Y, EPO_H, 14, 10);
     drawBands(ctx, STAGES, W, maToX, STA_Y, STA_H, 12, 9);
 
-    // Axis line
     ctx.strokeStyle = 'rgba(30,30,30,0.25)';
     ctx.lineWidth = 1;
     ctx.beginPath();
@@ -704,7 +853,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     ctx.lineTo(W, AXIS_Y);
     ctx.stroke();
 
-    // Tick marks
     const tickInterval = TICK_INTERVALS.find((t) => span / t <= 9) ?? 500;
     const startTick = Math.ceil(vs / tickInterval) * tickInterval;
     for (let ma = startTick; ma <= ve; ma += tickInterval) {
@@ -723,7 +871,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
       ctx.fillText(formatTickMa(maNorm), x, AXIS_Y + 14);
     }
 
-    // Now line
     const nowX = maToX(0);
     if (nowX >= 0 && nowX <= W) {
       ctx.strokeStyle = '#C0392B';
@@ -738,7 +885,7 @@ const GeoInfo = ({ geologie, animalNom }) => {
       ctx.fillText(TODAY, nowX, AXIS_Y + 14);
     }
 
-    // Main animal bar
+    // ── Main animal bar ──────────────────────────────────────────────────
     if (apparition != null || extinction != null) {
       const barStartMa = apparition ?? extinction;
       const barEndMa = extinction ?? 0;
@@ -750,11 +897,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
         const rbx2 = Math.min(W - 2, bx2);
         const barW = Math.max(rbx2 - rbx1, 10);
 
-        // Visible center: clamp both endpoints into [0, W], find midpoint of visible segment
-        const visibleLeft = Math.max(0, bx1);
-        const visibleRight = Math.min(W, bx2);
-        const visibleCenterX = (visibleLeft + visibleRight) / 2;
-
         const midMa = (barStartMa + barEndMa) / 2;
         const matchEra = ERAS.find((er) => midMa >= er.start && midMa < er.end);
         const barFill = matchEra ? matchEra.fill : '#4A3D2A';
@@ -764,17 +906,19 @@ const GeoInfo = ({ geologie, animalNom }) => {
         ctx.roundRect(rbx1, BAR_Y, barW, BAR_H, 5);
         ctx.fill();
 
-        if (barW > 40) {
+        if (barW > 30) {
+          const visibleLeft = Math.max(0, bx1 + 4);
+          const visibleRight = Math.min(W, bx2 - 4);
+          const visCenterX = (visibleLeft + visibleRight) / 2;
           const fs = Math.max(11, Math.min(13, barW / 10));
           ctx.fillStyle = '#FFFFFF';
           ctx.font = `700 ${fs}px ${FONT}`;
           ctx.textAlign = 'center';
           ctx.save();
           ctx.beginPath();
-          ctx.rect(rbx1 + 4, BAR_Y, barW - 8, BAR_H);
+          ctx.rect(rbx1 + 3, BAR_Y + 2, barW - 6, BAR_H - 4);
           ctx.clip();
-          // Use visible center so text stays on screen when bar extends beyond edges
-          ctx.fillText(animalNom || '', visibleCenterX, BAR_Y + BAR_H / 2 + 4);
+          ctx.fillText(animalNom || '', visCenterX, BAR_Y + BAR_H / 2 + fs * 0.35);
           ctx.restore();
         }
 
@@ -789,7 +933,7 @@ const GeoInfo = ({ geologie, animalNom }) => {
           ctx.stroke();
         });
 
-        const midBarX = visibleCenterX;
+        const midBarX = (Math.max(0, bx1) + Math.min(W, bx2)) / 2;
         ctx.strokeStyle = barFill + '66';
         ctx.lineWidth = 1;
         ctx.setLineDash([2, 3]);
@@ -801,43 +945,40 @@ const GeoInfo = ({ geologie, animalNom }) => {
       }
     }
 
-    // ── Compare bars ────────────────────────────────────────────────────────
+    // ── Compare bars ──────────────────────────────────────────────────────
     const newArrows = [];
 
-    if (compareBarsCount > 0) {
-      const SECTION_TOP = BAR_Y + BAR_H + 12;
+    if (laneCount > 0) {
+      const SECTION_TOP = BAR_Y + BAR_H + 10;
 
-      // Section label
-      ctx.fillStyle = 'rgba(74,46,26,0.45)';
-      ctx.font = `600 9px ${FONT}`;
+      ctx.fillStyle = 'rgba(245, 241, 236, 0.55)';
+      ctx.fillRect(0, SECTION_TOP, W, COMPARE_SECTION_H);
+
+      ctx.strokeStyle = 'rgba(74,46,26,0.15)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, SECTION_TOP);
+      ctx.lineTo(W, SECTION_TOP);
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(74,46,26,0.32)';
+      ctx.font = `700 8px ${FONT}`;
       ctx.textAlign = 'left';
-      ctx.fillText('COMPARAISON', 8, SECTION_TOP + 9);
+      ctx.fillText('COMPARAISON', 8, SECTION_TOP + 11);
 
-      compareList.forEach((animal, i) => {
-        const rowY = SECTION_TOP + 16 + i * (COMPARE_BAR_H + 4);
-        const startMa = animal.apparition;
-        const endMa = animal.extinction ?? 0;
-        const bx1 = maToX(startMa);
-        const bx2 = maToX(endMa);
+      const LANES_TOP = SECTION_TOP + COMPARE_SECTION_LABEL_H;
 
-        // Overlap highlight
-        if (apparition != null || extinction != null) {
-          const mainStart = apparition ?? extinction;
-          const mainEnd = extinction ?? 0;
-          const overlapStart = Math.max(Math.min(startMa, endMa), Math.min(mainStart, mainEnd));
-          const overlapEnd = Math.min(Math.max(startMa, endMa), Math.max(mainStart, mainEnd));
-          if (overlapEnd > overlapStart) {
-            const ox1 = Math.max(0, maToX(overlapStart));
-            const ox2 = Math.min(W, maToX(overlapEnd));
-            if (ox2 > ox1) {
-              ctx.fillStyle = animal.color + '15';
-              ctx.fillRect(ox1, BAR_Y - 2, ox2 - ox1, BAR_H + COMPARE_BAR_H + 6 + i * (COMPARE_BAR_H + 4));
-            }
-          }
-        }
+      lanedCompare.forEach((animal) => {
+        const startMa = toMa(animal.apparition);
+        const endMa = toMa(animal.extinction) ?? 0;
+        if (startMa == null && endMa == null) return;
+
+        const bStartMa = startMa ?? endMa;
+        const bEndMa = endMa;
+        const bx1 = maToX(bStartMa);
+        const bx2 = maToX(bEndMa);
 
         if (bx2 < 0 || bx1 > W) {
-          // Register for React overlay arrow instead of drawing a static triangle
           const direction = bx1 > W ? 'right' : 'left';
           newArrows.push({
             nom: animal.nom,
@@ -849,74 +990,60 @@ const GeoInfo = ({ geologie, animalNom }) => {
           return;
         }
 
+        const laneY = LANES_TOP + animal.lane * (COMPARE_LANE_H + COMPARE_LANE_GAP) + 2;
         const rbx1 = Math.max(2, bx1);
         const rbx2 = Math.min(W - 2, bx2);
         const barW = Math.max(rbx2 - rbx1, 6);
 
-        // Visible center for compare bar label
         const visLeft = Math.max(0, bx1);
         const visRight = Math.min(W, bx2);
         const visCenterX = (visLeft + visRight) / 2;
 
-        // Bar bg
-        ctx.fillStyle = animal.color + '28';
+        // ── Overlap highlight — aplat simple, sans hachures ──
+        if (apparition != null || extinction != null) {
+          const mainStart = apparition ?? extinction;
+          const mainEnd = extinction ?? 0;
+          const overlapStart = Math.max(Math.min(bStartMa, bEndMa), Math.min(mainStart, mainEnd));
+          const overlapEnd = Math.min(Math.max(bStartMa, bEndMa), Math.max(mainStart, mainEnd));
+          if (overlapEnd > overlapStart) {
+            const ox1 = Math.max(0, maToX(overlapStart));
+            const ox2 = Math.min(W, maToX(overlapEnd));
+            if (ox2 > ox1) {
+              ctx.fillStyle = animal.color + '0C';
+              ctx.fillRect(ox1, BAR_Y - 1, ox2 - ox1, laneY + COMPARE_LANE_H - BAR_Y + 3);
+            }
+          }
+        }
+
+        // ── Bar fill ──
+        ctx.fillStyle = animal.color + 'BB';
         ctx.beginPath();
-        ctx.roundRect(rbx1, rowY, barW, COMPARE_BAR_H, 4);
+        ctx.roundRect(rbx1, laneY, barW, COMPARE_LANE_H, 4);
         ctx.fill();
 
-        // Bar stroke
-        ctx.strokeStyle = animal.color + 'BB';
+        ctx.strokeStyle = animal.color + 'FF';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
-        ctx.roundRect(rbx1, rowY, barW, COMPARE_BAR_H, 4);
+        ctx.roundRect(rbx1, laneY, barW, COMPARE_LANE_H, 4);
         ctx.stroke();
 
-        // Centered label above the bar
-        if (barW > 14) {
-          const fs = 9;
-          ctx.font = `700 ${fs}px ${FONT}`;
-          const textW = ctx.measureText(animal.nom).width;
-          const padH = 3,
-            padV = 2;
-          const flagBgW = textW + padH * 2;
-          const flagBgH = fs + padV * 2;
-
-          // Center the flag on visible center, clamped to canvas
-          const flagX = Math.max(2, Math.min(W - flagBgW - 2, visCenterX - flagBgW / 2));
-          const flagY = rowY - 2;
-
-          // Flag background pill
-          ctx.fillStyle = animal.color + 'EE';
-          ctx.beginPath();
-          ctx.roundRect(flagX, flagY - flagBgH, flagBgW, flagBgH, 3);
-          ctx.fill();
-
-          // Flag text — centered in the pill
+        if (barW > 20) {
+          const fs = Math.min(11, Math.max(9, barW / 12));
           ctx.fillStyle = '#FFFFFF';
+          ctx.font = `600 ${fs}px ${FONT}`;
           ctx.textAlign = 'center';
           ctx.save();
           ctx.beginPath();
-          ctx.rect(0, 0, W, H);
+          ctx.rect(rbx1 + 3, laneY, barW - 6, COMPARE_LANE_H);
           ctx.clip();
-          ctx.fillText(animal.nom, flagX + flagBgW / 2, flagY - padV);
+          ctx.fillText(animal.nom, visCenterX, laneY + COMPARE_LANE_H / 2 + fs * 0.35);
           ctx.restore();
-
-          // Connector line from pill center to bar
-          ctx.strokeStyle = animal.color + '66';
-          ctx.lineWidth = 0.75;
-          ctx.setLineDash([2, 2]);
-          ctx.beginPath();
-          ctx.moveTo(visCenterX, flagY);
-          ctx.lineTo(visCenterX, rowY);
-          ctx.stroke();
-          ctx.setLineDash([]);
         }
 
-        // Endpoints
         [rbx1, rbx1 + barW].forEach((px) => {
           if (px < 2 || px > W - 2) return;
           ctx.beginPath();
-          ctx.arc(px, rowY + COMPARE_BAR_H / 2, 3, 0, Math.PI * 2);
+          ctx.arc(px, laneY + COMPARE_LANE_H / 2, 3, 0, Math.PI * 2);
           ctx.fillStyle = animal.color;
           ctx.fill();
           ctx.strokeStyle = '#FFFFFF';
@@ -1022,7 +1149,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
     );
   }
 
-  // Group arrows by side for layered rendering
   const leftArrows = outOfViewArrows.filter((a) => a.direction === 'left');
   const rightArrows = outOfViewArrows.filter((a) => a.direction === 'right');
 
@@ -1072,7 +1198,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
       >
         <canvas ref={canvasRef} />
 
-        {/* ── Left out-of-view arrows ── */}
         {leftArrows.length > 0 && (
           <div className="geo-tl-arrow geo-tl-arrow--left" style={{ top: '60%' }}>
             {leftArrows.map((a, idx) => (
@@ -1098,7 +1223,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
           </div>
         )}
 
-        {/* ── Right out-of-view arrows ── */}
         {rightArrows.length > 0 && (
           <div className="geo-tl-arrow geo-tl-arrow--right" style={{ top: '60%' }}>
             {rightArrows.map((a, idx) => (
@@ -1164,12 +1288,12 @@ const GeoInfo = ({ geologie, animalNom }) => {
         </button>
       </div>
 
-      {/* DUAL PANE COMPARE */}
       <DualPaneCompare
         compareList={compareList}
         onAdd={handleAddCompare}
         onRemove={handleRemoveCompare}
         onReset={handleResetCompare}
+        onAddAll={handleAddAllContemporaries}
         onJumpTo={handleJumpToAnimal}
         apparition={apparition}
         extinction={extinction}

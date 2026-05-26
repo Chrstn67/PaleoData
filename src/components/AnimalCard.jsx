@@ -188,7 +188,7 @@ const AnimalCard = ({ data }) => {
           </section>
 
           {/* GeoInfo placé ici, sous Régime / Morphologie / Découverte */}
-          <GeoInfo geologie={animal.geologie} />
+          <GeoInfo key={animal.nom} geologie={animal.geologie} animalNom={animal.nom} />
         </section>
 
         <section className="habitat-section-wrapper">
