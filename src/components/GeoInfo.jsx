@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useRef, useState, useCallback, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { TIMELINE_MIN, TIMELINE_MAX, ERAS, PERIODS, EPOCHS, STAGES, TICK_INTERVALS } from '../data/geoConstants';
 
 import '../styles/GeoInfo.css';
@@ -22,6 +23,8 @@ const KNOWN_ANIMALS = rawData
       a.taxonomie?.embranchement?.trim() ||
       a.geologie?.periode ||
       '',
+    image_url: a.image_url ?? null,
+    geo: a.geologie ?? {},
   }))
   .sort((a, b) => a.nom.localeCompare(b.nom, 'fr', { sensitivity: 'base' }));
 
@@ -71,6 +74,8 @@ if (!CanvasRenderingContext2D.prototype.roundRect) {
 // ─────────────────────────────────────────────────────────────────────────────
 // UTILS
 // ─────────────────────────────────────────────────────────────────────────────
+const TYPE_LABELS = { era: 'Ère', period: 'Période', epoch: 'Époque', stage: 'Étage', animal: 'Animal' };
+
 function isUnknown(val) {
   if (val == null) return true;
   if (typeof val === 'string' && val.toLowerCase().includes('inconnu')) return true;
@@ -116,6 +121,14 @@ function formatTickMa(ma) {
   return `${Number.isInteger(abs) ? abs : abs.toFixed(1)} Ma`;
 }
 
+function durationStr(s, e) {
+  const d = Math.abs(e - s);
+  if (d < 0.001) return `${Math.round(d * 1e6)} ans`;
+  if (d < 0.1) return `${(d * 1000).toFixed(1)} ka`;
+  if (d < 1) return `${Math.round(d * 1000)} ka`;
+  return `${d.toLocaleString('fr-FR', { maximumFractionDigits: 2 })} Ma`;
+}
+
 function toMa(val) {
   if (isUnknown(val)) return null;
   if (isPositiveYear(val)) {
@@ -125,8 +138,6 @@ function toMa(val) {
   return typeof val === 'number' ? val : null;
 }
 
-// Chevauchement strict : deux intervalles qui se touchent uniquement à un point
-// (extinction de A == apparition de B) ne sont PAS contemporains.
 function overlaps(a1, a2, b1, b2) {
   const aMin = Math.min(a1, a2);
   const aMax = Math.max(a1, a2);
@@ -344,6 +355,123 @@ function GeoCard({ geologie, animalNom, apparitionRaw, extinctionRaw, apparition
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// MODAL — identique à Timeline
+// ─────────────────────────────────────────────────────────────────────────────
+function Modal({ item, onClose }) {
+  const ref = useRef(null);
+
+  // Fonction pour défiler vers le haut de la page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(() => {
+    const fn = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', fn);
+    return () => document.removeEventListener('keydown', fn);
+  }, [onClose]);
+
+  if (!item) return null;
+
+  const isAnimal = item.type === 'animal';
+  const accentColor = isAnimal ? item.color : item.fill;
+  const displayName = isAnimal ? item.nom : item.name;
+
+  return (
+    <div
+      ref={ref}
+      className="tl-modal-backdrop"
+      onClick={(e) => {
+        if (e.target === ref.current) onClose();
+      }}
+    >
+      <div className="tl-modal" style={{ borderLeft: `5px solid ${accentColor}` }}>
+        {/* Header */}
+        <div className="tl-modal__header">
+          <div className="tl-modal__dot" style={{ background: accentColor }} />
+          <div className="tl-modal__header-inner">
+            <div className="tl-modal__name-row">
+              <span className={`tl-modal__name ${isAnimal ? 'tl-modal__name--italic' : ''}`}>{displayName}</span>
+              <span className={`badge badge--${item.type}`}>{TYPE_LABELS[item.type]}</span>
+              {isAnimal && item.hasZeroDuration && <span className="badge badge--warning">Durée très courte</span>}
+            </div>
+          </div>
+          <button className="tl-modal__close" onClick={onClose} aria-label="Fermer">
+            ✕
+          </button>
+        </div>
+
+        {/* Dates */}
+        <div className="tl-modal__dates">
+          {[
+            { label: 'Apparition', value: formatMaFull(item.start) },
+            { label: isAnimal ? 'Extinction' : 'Fin', value: formatMaFull(item.end) },
+            {
+              label: 'Durée',
+              value: isAnimal && item.hasZeroDuration ? "< 1 million d'années" : durationStr(item.start, item.end),
+            },
+          ].map((c, i) => (
+            <div key={i} className="tl-modal__date-cell">
+              <div className="tl-modal__date-label">{c.label}</div>
+              <div className="tl-modal__date-value">{c.value}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Badges géo + image (animaux uniquement) */}
+        {isAnimal && (
+          <>
+            {(item.geo?.ere || item.geo?.periode || item.geo?.epoque || item.geo?.stage) && (
+              <div className="tl-modal__geo-badges">
+                {item.geo?.ere && <span className="geo-badge geo-badge--era">{item.geo.ere}</span>}
+                {item.geo?.periode && <span className="geo-badge geo-badge--period">{item.geo.periode}</span>}
+                {item.geo?.epoque && <span className="geo-badge geo-badge--epoch">{item.geo.epoque}</span>}
+                {item.geo?.stage && <span className="geo-badge geo-badge--stage">{item.geo.stage}</span>}
+              </div>
+            )}
+            {item.image_url ? (
+              <div className="tl-modal__image-container">
+                <Link
+                  to={`/animal/${encodeURIComponent(item.nom)}`}
+                  className="tl-modal__image-link"
+                  onClick={scrollToTop}
+                >
+                  <img src={item.image_url} alt={item.nom} className="tl-modal__image" />
+                  <div className="tl-modal__image-overlay tl-modal__image-overlay--always">
+                    <span className="tl-modal__view-button">Voir +</span>
+                  </div>
+                </Link>
+              </div>
+            ) : (
+              <div className="tl-modal__link-container">
+                <Link
+                  to={`/animal/${encodeURIComponent(item.nom)}`}
+                  className="tl-modal__text-link"
+                  onClick={scrollToTop}
+                >
+                  Voir la fiche complète de {item.nom} →
+                </Link>
+              </div>
+            )}
+          </>
+        )}
+
+        {item.info && (
+          <div className="tl-modal__body">
+            <p className="tl-modal__text">{item.info}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // DUAL PANE COMPARE
 // ─────────────────────────────────────────────────────────────────────────────
 function DualPaneCompare({
@@ -398,7 +526,6 @@ function DualPaneCompare({
     return barEnd < view.start || barStart > view.end;
   }
 
-  // Icône soleil / contemporains
   const IconSun = ({ size = 11 }) => (
     <svg
       width={size}
@@ -458,7 +585,6 @@ function DualPaneCompare({
           </svg>
         </button>
 
-        {/* ── Bouton contemporains ── */}
         {contemporaries.size > 0 && (
           <button
             className={`dp-contemp-btn${allContemporariesSelected ? ' dp-contemp-btn--done' : ''}`}
@@ -549,7 +675,6 @@ function DualPaneCompare({
               )}
             </div>
 
-            {/* ── Raccourci contemporains dans la sidebar ── */}
             {contemporaries.size > 0 && (
               <div className="dp-sidebar__contemp-bar">
                 <button
@@ -749,10 +874,14 @@ const GeoInfo = ({ geologie, animalNom }) => {
   const canvasRef = useRef(null);
   const wrapperRef = useRef(null);
   const dragRef = useRef({ active: false, lastX: 0 });
+  const mouseDownXRef = useRef(0);
+  const lanedCompareRef = useRef([]);
+  const compareSectionTopRef = useRef(0);
   const [tooltip, setTooltip] = useState(null);
   const [outOfViewArrows, setOutOfViewArrows] = useState([]);
   const [compareList, setCompareList] = useState([]);
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [selectedAnimal, setSelectedAnimal] = useState(null);
   const colorIndexRef = useRef(0);
 
   const apparitionRaw = geologie?.apparition ?? null;
@@ -999,7 +1128,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
         const visRight = Math.min(W, bx2);
         const visCenterX = (visLeft + visRight) / 2;
 
-        // ── Overlap highlight — aplat simple, sans hachures ──
         if (apparition != null || extinction != null) {
           const mainStart = apparition ?? extinction;
           const mainEnd = extinction ?? 0;
@@ -1015,7 +1143,6 @@ const GeoInfo = ({ geologie, animalNom }) => {
           }
         }
 
-        // ── Bar fill ──
         ctx.fillStyle = animal.color + 'BB';
         ctx.beginPath();
         ctx.roundRect(rbx1, laneY, barW, COMPARE_LANE_H, 4);
@@ -1054,6 +1181,8 @@ const GeoInfo = ({ geologie, animalNom }) => {
     }
 
     setOutOfViewArrows(newArrows);
+    lanedCompareRef.current = lanedCompare;
+    compareSectionTopRef.current = laneCount > 0 ? AXIS_Y + 18 + 26 + 10 : 0;
   }, [view, apparition, extinction, animalNom, compareList]);
 
   // ── EVENT HANDLERS ───────────────────────────────────────────────────────
@@ -1072,10 +1201,34 @@ const GeoInfo = ({ geologie, animalNom }) => {
       if (my >= STA_Y && my <= STA_Y + STA_H) {
         const hit = STAGES.find((s) => ma >= s.start && ma < s.end);
         if (hit) {
-          setTooltip({ x: e.clientX - rect.left, y: STA_Y - 4, name: hit.name });
+          setTooltip({ x: mx, y: STA_Y - 4, name: hit.name });
+          wrapper.style.cursor = 'grab';
           return;
         }
       }
+
+      const SECTION_TOP = compareSectionTopRef.current;
+      const laned = lanedCompareRef.current;
+      if (SECTION_TOP > 0 && laned.length > 0 && my >= SECTION_TOP) {
+        const LANES_TOP = SECTION_TOP + 18;
+        for (const animal of laned) {
+          const startMa = toMa(animal.apparition);
+          const endMa = toMa(animal.extinction) ?? 0;
+          if (startMa == null) continue;
+          const bStartMa = startMa;
+          const bEndMa = endMa;
+          const laneY = LANES_TOP + animal.lane * (COMPARE_LANE_H + COMPARE_LANE_GAP) + 2;
+          if (my >= laneY && my <= laneY + COMPARE_LANE_H) {
+            if (ma >= Math.min(bStartMa, bEndMa) && ma <= Math.max(bStartMa, bEndMa)) {
+              setTooltip({ x: mx, y: laneY - 4, name: animal.nom });
+              wrapper.style.cursor = 'pointer';
+              return;
+            }
+          }
+        }
+      }
+
+      wrapper.style.cursor = 'grab';
       setTooltip(null);
     },
     [view],
@@ -1100,7 +1253,10 @@ const GeoInfo = ({ geologie, animalNom }) => {
       const span = v.end - v.start;
       const pivotMa = v.start + pivotRatio * span;
       const newSpan = Math.min(Math.abs(TIMELINE_MAX - TIMELINE_MIN), Math.max(0.00005, span * factor));
-      return clampView({ start: pivotMa - pivotRatio * newSpan, end: pivotMa + (1 - pivotRatio) * newSpan });
+      return clampView({
+        start: pivotMa - pivotRatio * newSpan,
+        end: pivotMa + (1 - pivotRatio) * newSpan,
+      });
     });
   }
 
@@ -1152,6 +1308,24 @@ const GeoInfo = ({ geologie, animalNom }) => {
   const leftArrows = outOfViewArrows.filter((a) => a.direction === 'left');
   const rightArrows = outOfViewArrows.filter((a) => a.direction === 'right');
 
+  // ── Helpers pour construire l'item de modale ──────────────────────────────
+  function buildModalItem(animal) {
+    const startMa = toMa(animal.apparition);
+    const endMa = toMa(animal.extinction) ?? 0;
+    const s = startMa ?? endMa;
+    const e = endMa;
+    const hasZeroDuration = s != null && Math.abs(s - e) < 0.001;
+    return {
+      ...animal,
+      type: 'animal',
+      name: animal.nom,
+      start: s,
+      end: e,
+      info: '',
+      hasZeroDuration,
+    };
+  }
+
   return (
     <section className="animal-geologie geo-timeline-mode">
       <div className="geo-tl-header">
@@ -1169,6 +1343,7 @@ const GeoInfo = ({ geologie, animalNom }) => {
         className="geo-tl-track"
         onMouseDown={(e) => {
           dragRef.current = { active: true, lastX: e.clientX };
+          mouseDownXRef.current = e.clientX;
         }}
         onMouseMove={(e) => {
           if (dragRef.current.active) {
@@ -1177,12 +1352,40 @@ const GeoInfo = ({ geologie, animalNom }) => {
           }
           handleMouseMoveCanvas(e);
         }}
-        onMouseUp={() => {
+        onMouseUp={(e) => {
           dragRef.current.active = false;
+          // Clic simple (pas un drag)
+          if (Math.abs(e.clientX - mouseDownXRef.current) > 5) return;
+          const wrapper = wrapperRef.current;
+          if (!wrapper) return;
+          const rect = wrapper.getBoundingClientRect();
+          const mx = e.clientX - rect.left;
+          const my = e.clientY - rect.top;
+          const { start: vs, end: ve } = view;
+          const W = wrapper.offsetWidth;
+          const ma = vs + (mx / W) * (ve - vs);
+          const SECTION_TOP = compareSectionTopRef.current;
+          const laned = lanedCompareRef.current;
+          if (SECTION_TOP > 0 && laned.length > 0 && my >= SECTION_TOP) {
+            const LANES_TOP = SECTION_TOP + 18;
+            for (const animal of laned) {
+              const startMa = toMa(animal.apparition);
+              const endMa = toMa(animal.extinction) ?? 0;
+              if (startMa == null) continue;
+              const laneY = LANES_TOP + animal.lane * (COMPARE_LANE_H + COMPARE_LANE_GAP) + 2;
+              if (my >= laneY && my <= laneY + COMPARE_LANE_H) {
+                if (ma >= Math.min(startMa, endMa) && ma <= Math.max(startMa, endMa)) {
+                  setSelectedAnimal(buildModalItem(animal));
+                  return;
+                }
+              }
+            }
+          }
         }}
         onMouseLeave={() => {
           dragRef.current.active = false;
           setTooltip(null);
+          if (wrapperRef.current) wrapperRef.current.style.cursor = 'grab';
         }}
         onTouchStart={(e) => {
           dragRef.current = { active: true, lastX: e.touches[0].clientX };
@@ -1311,6 +1514,8 @@ const GeoInfo = ({ geologie, animalNom }) => {
         apparition={apparition}
         extinction={extinction}
       />
+
+      {selectedAnimal && <Modal item={selectedAnimal} onClose={() => setSelectedAnimal(null)} />}
     </section>
   );
 };
