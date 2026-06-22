@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FaPaw } from 'react-icons/fa';
@@ -7,6 +7,50 @@ import '../styles/AnimalListingSection.css';
 
 const AnimalCard = ({ animal }) => {
   const cardRef = useRef(null);
+  const [isVideo, setIsVideo] = useState(false);
+  const [mediaUrl, setMediaUrl] = useState(null);
+
+  // Vérifier si l'animal a des médias (image et/ou vidéo)
+  useEffect(() => {
+    if (animal.image_url) {
+      if (Array.isArray(animal.image_url) && animal.image_url.length > 0) {
+        // Si c'est un tableau, utiliser le premier élément comme média initial
+        setMediaUrl(animal.image_url[0]);
+        setIsVideo(animal.image_url[0]?.endsWith('.mp4') || animal.image_url[0]?.endsWith('.webm'));
+      } else if (typeof animal.image_url === 'string') {
+        // Si c'est une chaîne, vérifier si c'est une vidéo
+        setMediaUrl(animal.image_url);
+        setIsVideo(animal.image_url.endsWith('.mp4') || animal.image_url.endsWith('.webm'));
+      }
+    }
+  }, [animal.image_url]);
+
+  // Alterner entre image et vidéo toutes les 5 secondes
+  useEffect(() => {
+    // Vérifier si nous avons un tableau avec au moins 2 éléments
+    if (!Array.isArray(animal.image_url) || animal.image_url.length < 2) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setIsVideo((prev) => {
+        const newIsVideo = !prev;
+        // Sélectionner le média approprié en fonction du type
+        const mediaToShow = newIsVideo
+          ? animal.image_url.find((url) => url.endsWith('.mp4') || url.endsWith('.webm'))
+          : animal.image_url.find((url) => !url.endsWith('.mp4') && !url.endsWith('.webm'));
+
+        if (mediaToShow) {
+          setMediaUrl(mediaToShow);
+        }
+        return newIsVideo;
+      });
+    }, 5000); // 5000ms = 5 secondes
+
+    // Nettoyer l'intervalle lors du démontage du composant
+    return () => clearInterval(interval);
+  }, [animal.image_url]);
+
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
     const { left, top, width, height } = cardRef.current.getBoundingClientRect();
@@ -14,14 +58,27 @@ const AnimalCard = ({ animal }) => {
     const y = (clientY - top) / height - 0.5;
     cardRef.current.style.transform = `perspective(500px) rotateX(${y * -20}deg) rotateY(${x * 20}deg)`;
   };
+
   const resetCardTransform = () => {
     cardRef.current.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
   };
+
+  // Si aucun média n'est disponible, ne rien afficher
+  if (!mediaUrl) {
+    return null;
+  }
+
+  const isVideoMedia = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.webm');
+
   return (
     <li ref={cardRef} onMouseMove={handleMouseMove} onMouseLeave={resetCardTransform}>
       <div className="image-container">
         <Link to={`/animal/${encodeURIComponent(animal.nom)}`}>
-          <img src={animal.image_url} alt={animal.nom} />
+          {isVideoMedia ? (
+            <video src={mediaUrl} alt={animal.nom} muted loop autoPlay playsInline className="animal-media" />
+          ) : (
+            <img src={mediaUrl} alt={animal.nom} className="animal-media" />
+          )}
           <h3>{animal.nom}</h3>
         </Link>
       </div>
@@ -32,7 +89,7 @@ const AnimalCard = ({ animal }) => {
 AnimalCard.propTypes = {
   animal: PropTypes.shape({
     nom: PropTypes.string.isRequired,
-    image_url: PropTypes.string.isRequired,
+    image_url: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).isRequired,
   }).isRequired,
 };
 
@@ -74,8 +131,7 @@ AnimalListingSection.propTypes = {
   animals: PropTypes.arrayOf(
     PropTypes.shape({
       nom: PropTypes.string.isRequired,
-      image_url: PropTypes.string.isRequired,
-      // Ajout des PropTypes pour les autres propriétés utilisées dans l'application
+      image_url: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).isRequired,
       regime_alimentaire: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
       geologie: PropTypes.shape({
         ere: PropTypes.string,
@@ -83,7 +139,6 @@ AnimalListingSection.propTypes = {
         epoque: PropTypes.string,
         stage: PropTypes.string,
       }),
-      // Ajout de date_ajout comme optionnel
       date_ajout: PropTypes.string,
     }),
   ).isRequired,

@@ -141,7 +141,22 @@
   border-radius: 10px;
 }
 
-.animal-listing ul li:hover .image-container img {
+/* Styles pour les vidéos - identiques aux images */
+.animal-listing ul li .image-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: all 0.4s ease;
+  filter: contrast(1.1) brightness(1.05);
+  padding: 10px;
+  border-radius: 10px;
+  background: #000;
+  background: linear-gradient(45deg, #2a1a0e, #3d2817);
+}
+
+.animal-listing ul li:hover .image-container img,
+.animal-listing ul li:hover .image-container video {
   transform: scale(1.1);
   filter: contrast(1.2) brightness(1.1);
 }
