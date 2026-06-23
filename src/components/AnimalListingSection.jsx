@@ -45,7 +45,7 @@ const AnimalCard = ({ animal }) => {
         }
         return newIsVideo;
       });
-    }, 5000); // 5000ms = 5 secondes
+    }, 3000); // 3000ms = 3 secondes
 
     // Nettoyer l'intervalle lors du démontage du composant
     return () => clearInterval(interval);

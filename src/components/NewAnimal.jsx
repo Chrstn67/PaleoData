@@ -31,12 +31,55 @@ const saveRevealedToStorage = (animals, revealedIndices) => {
   }
 };
 
+// Fonction utilitaire pour extraire l'image et la vidéo d'un tableau
+const extractMedia = (imageUrl) => {
+  if (!imageUrl) return { image: null, video: null, hasBoth: false };
+
+  // Si c'est un tableau
+  if (Array.isArray(imageUrl)) {
+    const image = imageUrl.find(
+      (url) =>
+        typeof url === 'string' &&
+        !url.endsWith('.mp4') &&
+        !url.endsWith('.webm') &&
+        !url.endsWith('.mov') &&
+        !url.endsWith('.avi'),
+    );
+    const video = imageUrl.find(
+      (url) =>
+        typeof url === 'string' &&
+        (url.endsWith('.mp4') || url.endsWith('.webm') || url.endsWith('.mov') || url.endsWith('.avi')),
+    );
+    return {
+      image: image || null,
+      video: video || null,
+      hasBoth: !!(image && video),
+    };
+  }
+
+  // Si c'est une chaîne
+  if (typeof imageUrl === 'string') {
+    const isVideo =
+      imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.mov') || imageUrl.endsWith('.avi');
+    return {
+      image: isVideo ? null : imageUrl,
+      video: isVideo ? imageUrl : null,
+      hasBoth: false,
+    };
+  }
+
+  return { image: null, video: null, hasBoth: false };
+};
+
 const NewAnimal = ({ animals }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [revealed, setRevealed] = useState([]);
   const [selectedPin, setSelectedPin] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
   const [justRevealed, setJustRevealed] = useState(null);
+
+  // État pour l'alternance image/vidéo
+  const [mediaStates, setMediaStates] = useState({});
 
   /* ─── Filtrer les animaux ajoutés cette semaine ─── */
   const newAnimals = animals
@@ -54,6 +97,55 @@ const NewAnimal = ({ animals }) => {
       if (saved.length > 0) setRevealed(saved);
     }
   }, [newAnimals.length]);
+
+  /* ─── Initialiser les états média pour chaque animal ─── */
+  useEffect(() => {
+    if (newAnimals.length === 0) return;
+    const initialStates = {};
+    newAnimals.forEach((animal, index) => {
+      const { image, video, hasBoth } = extractMedia(animal.image_url);
+      initialStates[index] = {
+        currentMedia: image || video || null,
+        isVideo: !!(video && !image),
+        image,
+        video,
+        hasBoth,
+      };
+    });
+    setMediaStates(initialStates);
+  }, [newAnimals.length]); // initialisation uniquement au montage / changement de liste
+
+  /* ─── Alternance image/vidéo toutes les 5 secondes ─── */
+  useEffect(() => {
+    if (Object.keys(mediaStates).length === 0) return;
+
+    const intervals = {};
+
+    newAnimals.forEach((_, index) => {
+      const state = mediaStates[index];
+      if (state?.hasBoth) {
+        intervals[index] = setInterval(() => {
+          setMediaStates((prev) => {
+            const current = prev[index];
+            if (!current) return prev;
+            const newIsVideo = !current.isVideo;
+            return {
+              ...prev,
+              [index]: {
+                ...current,
+                currentMedia: newIsVideo ? current.video : current.image,
+                isVideo: newIsVideo,
+              },
+            };
+          });
+        }, 3000);
+      }
+    });
+
+    return () => {
+      Object.values(intervals).forEach(clearInterval);
+    };
+  }, [Object.keys(mediaStates).length]); // démarre une seule fois quand mediaStates est peuplé
 
   /* ─── Ouvrir / Fermer la modale ─── */
   const open = () => {
@@ -116,12 +208,12 @@ const NewAnimal = ({ animals }) => {
         <div className="na-notif__icon">
           <span aria-hidden="true">🦕</span>
 
-          {/* Pastille rouge : nombre total d'animaux de la semaine */}
+          {/* Pastille verte : nombre total d'animaux de la semaine */}
           <span className="na-notif__badge na-notif__badge--green" aria-hidden="true">
             {newAnimals.length}
           </span>
 
-          {/* Pastille verte : nombre restant à gratter — disparaît quand tout est révélé */}
+          {/* Pastille rouge : nombre restant à gratter — disparaît quand tout est révélé */}
           {!allRevealed && (
             <span className="na-notif__badge na-notif__badge--red" aria-hidden="true">
               {unrevealedCount}
@@ -177,6 +269,7 @@ const NewAnimal = ({ animals }) => {
                   const isRevealed = revealed.includes(i);
                   const isSelected = selectedPin === i;
                   const isNew = justRevealed === i;
+                  const mediaState = mediaStates[i];
 
                   return (
                     <div
@@ -210,15 +303,27 @@ const NewAnimal = ({ animals }) => {
                           aria-hidden={!isRevealed}
                         >
                           <span className="na-pin__emoji" aria-hidden="true">
-                            {animal.image_url ? (
-                              <img
-                                src={animal.image_url}
-                                alt=""
-                                className="na-pin__img"
-                                onError={(e) => {
-                                  e.target.style.display = 'none';
-                                }}
-                              />
+                            {mediaState && mediaState.currentMedia ? (
+                              mediaState.isVideo ? (
+                                <video
+                                  src={mediaState.currentMedia}
+                                  alt=""
+                                  className="na-pin__media"
+                                  muted
+                                  loop
+                                  autoPlay
+                                  playsInline
+                                />
+                              ) : (
+                                <img
+                                  src={mediaState.currentMedia}
+                                  alt=""
+                                  className="na-pin__media"
+                                  onError={(e) => {
+                                    e.target.style.display = 'none';
+                                  }}
+                                />
+                              )
                             ) : (
                               '🦕'
                             )}
@@ -270,7 +375,7 @@ NewAnimal.propTypes = {
   animals: PropTypes.arrayOf(
     PropTypes.shape({
       nom: PropTypes.string.isRequired,
-      image_url: PropTypes.string,
+      image_url: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
       regime_alimentaire: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
       geologie: PropTypes.shape({
         ere: PropTypes.string,

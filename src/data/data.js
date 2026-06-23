@@ -11792,7 +11792,7 @@ const data = [
     etymologie: 'Grand poisson des basses eaux, en langue inukitut',
     image_url: ['./assets/images/Tiktaalik.jpg', './assets/images/Tiktaalik.mp4'],
     image_fossile: './assets/images/Fossiles/Tiktaalik.jpg',
-    date_ajout: '2026-05-15',
+    date_ajout: '2026-06-22',
     taxonomie: {
       règne: 'Animalia',
       sous_règne: '',

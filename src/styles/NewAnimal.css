@@ -557,7 +557,6 @@
   display: none;
   flex-direction: column;
   align-items: center;
-  /* Pas de min-height fixe : la carte s'adapte au contenu */
   padding: 10px 8px 10px;
   gap: 5px;
 }
@@ -589,13 +588,35 @@
   flex-shrink: 0;
 }
 
-.na-pin__img {
+/* ─── Médias (images et vidéos) ─── */
+.na-pin__media {
   width: 88px;
   height: 88px;
   object-fit: contain;
   display: block;
   border-radius: 6px;
   flex-shrink: 0;
+  transition: opacity 0.5s ease;
+}
+
+.na-pin__media:not([src]) {
+  display: none;
+}
+
+/* Transition fluide lors du changement */
+.na-pin__media {
+  animation: na-media-fade 0.5s ease;
+}
+
+@keyframes na-media-fade {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .na-pin__name {
@@ -605,7 +626,6 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   text-align: center;
-  /* Retour à la ligne naturel — pas de coupure brutale */
   word-break: break-word;
   overflow-wrap: anywhere;
   hyphens: auto;
@@ -754,7 +774,7 @@
   .na-pin__emoji {
     font-size: 72px;
   }
-  .na-pin__img {
+  .na-pin__media {
     width: 112px;
     height: 112px;
   }
@@ -782,7 +802,7 @@
   .na-pin__card {
     width: 172px;
   }
-  .na-pin__img {
+  .na-pin__media {
     width: 120px;
     height: 120px;
   }
@@ -818,7 +838,7 @@
   .na-pin__emoji {
     font-size: 42px;
   }
-  .na-pin__img {
+  .na-pin__media {
     width: 70px;
     height: 70px;
   }
@@ -846,7 +866,8 @@
   .na-modal,
   .na-overlay,
   .na-footer__fill,
-  .na-notif__badge--green {
+  .na-notif__badge--green,
+  .na-pin__media {
     animation: none !important;
     transition: none !important;
   }
