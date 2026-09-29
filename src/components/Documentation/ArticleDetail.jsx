@@ -23,14 +23,7 @@ const ArticleDetail = ({ data, category, categoryTitle }) => {
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Scroll to top when component mounts
-  useEffect(() => {
-    scrollToTop();
-  }, [slug]);
+  // ❌ SUPPRIMÉ : scrollToTop() + useEffect sur [slug]
 
   // Function to create URL-friendly slug from title
   const createSlug = (text) => {
@@ -47,7 +40,7 @@ const ArticleDetail = ({ data, category, categoryTitle }) => {
   // Find the article by slug
   const article = data.find((item) => createSlug(item.notion) === slug);
 
-  // Get navigation articles (previous/next) - Identique à AnimalCard
+  // Get navigation articles (previous/next)
   const sortedData = [...data].sort((a, b) => a.notion.localeCompare(b.notion));
   const currentIndex = sortedData.findIndex((item) => createSlug(item.notion) === slug);
   const previousArticle = currentIndex > 0 ? sortedData[currentIndex - 1] : null;
@@ -76,7 +69,6 @@ const ArticleDetail = ({ data, category, categoryTitle }) => {
     );
   }
 
-  // Function to share article - IDENTIQUE à AnimalCard
   const shareLink = async (article) => {
     if (navigator.share) {
       try {
@@ -146,25 +138,17 @@ const ArticleDetail = ({ data, category, categoryTitle }) => {
         </div>
       </div>
 
-      {/* Navigation identique à AnimalCard */}
+      {/* Navigation - sans window.scrollTo */}
       <div className="navigation-section">
         <div className="navigation-links">
           {previousArticle && (
-            <Link
-              to={`/documentation/${category}/${createSlug(previousArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/${category}/${createSlug(previousArticle.notion)}`} className="navigation-link">
               ← {previousArticle.notion}
             </Link>
           )}
 
           {nextArticle && (
-            <Link
-              to={`/documentation/${category}/${createSlug(nextArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/${category}/${createSlug(nextArticle.notion)}`} className="navigation-link">
               {nextArticle.notion} →
             </Link>
           )}

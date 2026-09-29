@@ -9,11 +9,6 @@ const FossileDetail = () => {
   const { slug } = useParams();
   const fossile = findBySlug(fossilesData, slug);
 
-  // Scroll to top au chargement
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [slug]);
-
   if (!fossile) {
     return (
       <div className="article-detail-page">
@@ -116,18 +111,13 @@ const FossileDetail = () => {
             <Link
               to={`/documentation/fossiles-celebres/${slugify(previousArticle.notion)}`}
               className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
             >
               ← {previousArticle.notion}
             </Link>
           )}
 
           {nextArticle && (
-            <Link
-              to={`/documentation/fossiles-celebres/${slugify(nextArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/fossiles-celebres/${slugify(nextArticle.notion)}`} className="navigation-link">
               {nextArticle.notion} →
             </Link>
           )}

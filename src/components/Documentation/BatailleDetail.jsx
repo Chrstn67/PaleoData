@@ -9,11 +9,6 @@ const BatailleDetail = () => {
   const { slug } = useParams();
   const bataille = findBySlug(bataillesData, slug);
 
-  // Scroll to top au chargement
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [slug]);
-
   if (!bataille) {
     return (
       <div className="article-detail-page">
@@ -107,21 +102,13 @@ const BatailleDetail = () => {
       <div className="navigation-section">
         <div className="navigation-links">
           {previousArticle && (
-            <Link
-              to={`/documentation/batailles/${slugify(previousArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/batailles/${slugify(previousArticle.notion)}`} className="navigation-link">
               ← {previousArticle.notion}
             </Link>
           )}
 
           {nextArticle && (
-            <Link
-              to={`/documentation/batailles/${slugify(nextArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/batailles/${slugify(nextArticle.notion)}`} className="navigation-link">
               {nextArticle.notion} →
             </Link>
           )}

@@ -9,11 +9,6 @@ const FictionDetail = () => {
   const { slug } = useParams();
   const fiction = findBySlug(fictionsData, slug);
 
-  // Scroll to top au chargement
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [slug]);
-
   if (!fiction) {
     return (
       <div className="article-detail-page">
@@ -107,21 +102,13 @@ const FictionDetail = () => {
       <div className="navigation-section">
         <div className="navigation-links">
           {previousArticle && (
-            <Link
-              to={`/documentation/fiction/${slugify(previousArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/fiction/${slugify(previousArticle.notion)}`} className="navigation-link">
               ← {previousArticle.notion}
             </Link>
           )}
 
           {nextArticle && (
-            <Link
-              to={`/documentation/fiction/${slugify(nextArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/fiction/${slugify(nextArticle.notion)}`} className="navigation-link">
               {nextArticle.notion} →
             </Link>
           )}

@@ -27,6 +27,7 @@ import FictionDetail from './Documentation/FictionDetail';
 import Gisements from './Documentation/Gisements/Gisements';
 
 import ScrollToTopButton from './ScrollToTopButton';
+import ScrollRestoration from './ScrollRestoration'; // 👈 AJOUT
 
 import MentionsLegales from './MentionsLegales';
 
@@ -38,6 +39,7 @@ function App() {
   return (
     <main className="App">
       <HashRouter>
+        <ScrollRestoration /> {/* 👈 AJOUT */}
         <section>
           <Header />
 

@@ -82,10 +82,6 @@ MediaBadge.propTypes = { src: PropTypes.string.isRequired };
 const AnimalCard = ({ data }) => {
   const [modalState, setModalState] = useState({ open: false, type: null, index: 0 });
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   // Fermer la modale avec la touche Escape
   useEffect(() => {
     if (!modalState.open) return;
@@ -374,20 +370,12 @@ const AnimalCard = ({ data }) => {
       <section className="navigation-section">
         <section className="navigation-links">
           {previousAnimal && (
-            <Link
-              to={`/animal/${encodeURIComponent(previousAnimal.nom)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/animal/${encodeURIComponent(previousAnimal.nom)}`} className="navigation-link">
               ← {previousAnimal.nom}
             </Link>
           )}
           {nextAnimal && (
-            <Link
-              to={`/animal/${encodeURIComponent(nextAnimal.nom)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/animal/${encodeURIComponent(nextAnimal.nom)}`} className="navigation-link">
               {nextAnimal.nom} →
             </Link>
           )}

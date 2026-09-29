@@ -9,11 +9,6 @@ const DecouverteDetail = () => {
   const { slug } = useParams();
   const decouverte = findBySlug(decouvertesRecentesData, slug);
 
-  // Scroll to top au chargement
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [slug]);
-
   if (!decouverte) {
     return (
       <div className="article-detail-page">
@@ -110,18 +105,13 @@ const DecouverteDetail = () => {
             <Link
               to={`/documentation/decouvertes-recentes/${slugify(previousArticle.notion)}`}
               className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
             >
               ← {previousArticle.notion}
             </Link>
           )}
 
           {nextArticle && (
-            <Link
-              to={`/documentation/decouvertes-recentes/${slugify(nextArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/decouvertes-recentes/${slugify(nextArticle.notion)}`} className="navigation-link">
               {nextArticle.notion} →
             </Link>
           )}

@@ -9,11 +9,6 @@ const PaleontologueDetail = () => {
   const { slug } = useParams();
   const paleontologue = findBySlug(paleontologuesData, slug);
 
-  // Scroll to top au chargement
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [slug]);
-
   if (!paleontologue) {
     return (
       <div className="article-detail-page">
@@ -110,21 +105,13 @@ const PaleontologueDetail = () => {
       <div className="navigation-section">
         <div className="navigation-links">
           {previousArticle && (
-            <Link
-              to={`/documentation/paleontologues/${slugify(previousArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/paleontologues/${slugify(previousArticle.notion)}`} className="navigation-link">
               ← {previousArticle.notion}
             </Link>
           )}
 
           {nextArticle && (
-            <Link
-              to={`/documentation/paleontologues/${slugify(nextArticle.notion)}`}
-              className="navigation-link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
+            <Link to={`/documentation/paleontologues/${slugify(nextArticle.notion)}`} className="navigation-link">
               {nextArticle.notion} →
             </Link>
           )}
